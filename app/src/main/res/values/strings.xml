@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymTracker</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_history">Historia</string>
+    <string name="nav_exercises">Ćwiczenia</string>
+    <string name="nav_profile">Profil</string>
+
+    <!-- Home -->
+    <string name="home_start_workout">Rozpocznij trening</string>
+    <string name="home_continue_workout">Kontynuuj trening</string>
+    <string name="home_no_workouts">Jeszcze nie było żadnego treningu.\nKliknij przycisk żeby zacząć.</string>
+    <string name="home_recent">Ostatnie treningi</string>
+
+    <!-- Workout -->
+    <string name="workout_add_exercise">Dodaj ćwiczenie</string>
+    <string name="workout_finish">Zakończ trening</string>
+    <string name="workout_finish_confirm">Zakończyć trening?</string>
+    <string name="workout_finish_yes">Zakończ</string>
+    <string name="workout_finish_no">Anuluj</string>
+    <string name="workout_set">Seria %1$d</string>
+    <string name="workout_weight">Ciężar (kg)</string>
+    <string name="workout_reps">Powt.</string>
+    <string name="workout_add_set">+ Dodaj serię</string>
+    <string name="workout_no_exercises">Dodaj pierwsze ćwiczenie</string>
+    <string name="workout_duration">Czas: %1$s</string>
+    <string name="workout_remove_exercise">Usuń ćwiczenie</string>
+
+    <!-- Timer -->
+    <string name="timer_rest">Odpoczynek</string>
+    <string name="timer_skip">Pomiń</string>
+    <string name="timer_add_15">+15s</string>
+    <string name="timer_remove_15">-15s</string>
+    <string name="timer_done">Koniec odpoczynku!</string>
+
+    <!-- Exercise picker -->
+    <string name="picker_search">Szukaj ćwiczenia…</string>
+    <string name="picker_all">Wszystkie</string>
+
+    <!-- History -->
+    <string name="history_empty">Brak treningów. Zrób pierwszy!</string>
+
+    <!-- Profile -->
+    <string name="profile_goal">Cel</string>
+    <string name="profile_experience">Doświadczenie</string>
+    <string name="profile_days_per_week">Dni w tygodniu</string>
+    <string name="profile_session_minutes">Czas sesji (min)</string>
+    <string name="profile_unit">Jednostka</string>
+    <string name="profile_default_rest">Domyślny odpoczynek (s)</string>
+    <string name="profile_save">Zapisz</string>
+    <string name="profile_saved">Zapisano</string>
+
+    <!-- Backup -->
+    <string name="backup_export">Eksportuj dane (JSON)</string>
+    <string name="backup_import">Importuj dane (JSON)</string>
+    <string name="backup_export_done">Eksport gotowy</string>
+    <string name="backup_import_done">Import gotowy</string>
+    <string name="backup_section">Backup</string>
+
+    <!-- Notification channels -->
+    <string name="notif_channel_timer">Timer odpoczynku</string>
+    <string name="notif_channel_timer_desc">Powiadomienia podczas odpoczynku między seriami</string>
+
+    <!-- Common -->
+    <string name="common_cancel">Anuluj</string>
+    <string name="common_ok">OK</string>
+    <string name="common_delete">Usuń</string>
+    <string name="common_edit">Edytuj</string>
+    <string name="common_save">Zapisz</string>
+</resources>

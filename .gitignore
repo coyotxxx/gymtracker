@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+out/
+
+# Local config
+local.properties
+captures/
+
+# Native
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+hs_err_pid*
+
+# Output
+release/
+*.apk.idsig
