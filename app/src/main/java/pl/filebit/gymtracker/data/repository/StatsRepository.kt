@@ -339,6 +339,60 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Stagnacja: dla każdego ćwiczenia w bieżącym treningu sprawdź czy max waga
+     * w ostatnich 3+ treningach nie urosła (jest dokładnie taka sama).
+     */
+    suspend fun detectStagnation(currentWorkoutId: Long, threshold: Int = 3): List<StagnationAlert> {
+        val curSets = setDao.getForWorkout(currentWorkoutId)
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        if (curSets.isEmpty()) return emptyList()
+        val byExercise = curSets.groupBy { it.exerciseId }
+        val results = mutableListOf<StagnationAlert>()
+
+        // Tylko zakończone treningi
+        val finishedIds = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .associateBy { it.id }
+        if (finishedIds.size < threshold) return emptyList()
+
+        for ((exId, _) in byExercise) {
+            val allSets = setDao.getAllForExercise(exId)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP && it.workoutId in finishedIds.keys }
+            if (allSets.isEmpty()) continue
+
+            // Pogrupuj per workout, weź max wagę i datę startu
+            val perWorkoutMaxWeight = allSets.groupBy { it.workoutId }
+                .map { (wid, list) ->
+                    val w = finishedIds[wid]!!
+                    w.startedAt to list.maxOf { it.weightKg }
+                }
+                .sortedByDescending { it.first }   // od najnowszych
+                .map { it.second }
+                .take(threshold + 1)
+
+            if (perWorkoutMaxWeight.size < threshold) continue
+
+            // Sprawdź czy ostatnie `threshold` treningów mają tę samą max wagę
+            val lastN = perWorkoutMaxWeight.take(threshold)
+            val firstWeight = lastN.first()
+            if (firstWeight <= 0) continue
+            val allEqual = lastN.all { it == firstWeight }
+            if (allEqual) {
+                val name = exerciseDao.getById(exId)?.name ?: "?"
+                results.add(
+                    StagnationAlert(
+                        exerciseId = exId,
+                        exerciseName = name,
+                        stuckAtKg = firstWeight,
+                        workoutsAtSameWeight = threshold
+                    )
+                )
+            }
+        }
+        return results
+    }
+
+    /**
      * Czy któryś set z bieżącego treningu pobił max wagę × powt dla swojego ćwiczenia
      * w porównaniu do innych zakończonych treningów (excl. obecnego).
      */
@@ -432,5 +486,12 @@ data class MuscleEngagement(
     val volumeKg: Double,       // suma reps × weight (working sets, bez warm-upów)
     val totalSets: Int,         // ile working sets dotknęło tej grupy
     val percentOfTotal: Int     // 0-100, udział w całym wolumenie okresu
+)
+
+data class StagnationAlert(
+    val exerciseId: Long,
+    val exerciseName: String,
+    val stuckAtKg: Double,
+    val workoutsAtSameWeight: Int   // ile treningów z rzędu ta sama max waga
 )
 

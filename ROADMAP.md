@@ -64,7 +64,7 @@
 
 - [x] **Wykres progresji per ćwiczenie** — ExerciseDetailScreen z Compose Canvas linechart (max waga w czasie). Klik na kartę ćwiczenia w bibliotece → szczegóły z PR / wykresem / notatką (edytowalną) / pełną historią setów.
 - [x] **Sugestia progresji** — `progressionTipsForWorkout` w StatsRepository + UI w finish dialog (v0.18.0). Po Zakończ trening dialog pokazuje 🏆 nowe rekordy + 💡 sugestie progresji w jednym widoku.
-- [ ] Alert stagnacji (brak progresu przez 3-4 treningi → sugestia deload) — V2.1
+- [x] **Alert stagnacji** ✅ v0.23.0 — `StatsRepository.detectStagnation(currentWorkoutId, threshold=3)` wykrywa ćwiczenia, w których max waga była identyczna w ostatnich 3 zakończonych treningach. Po Zakończ trening pokazuje się sekcja ⚠️ Stagnacja w dialogu (Active i Coach mode) z sugestią deload (-10%) lub zmiany zakresu powtórzeń.
 
 ### Faza 16 — Plany zaawansowane ✅ v0.13.0 (częściowo)
 

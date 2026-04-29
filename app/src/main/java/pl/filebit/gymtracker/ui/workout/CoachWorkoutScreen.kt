@@ -82,6 +82,7 @@ fun CoachWorkoutScreen(
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
+    val pendingStagnation by vm.pendingStagnation.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showConfirmDialog by remember { mutableStateOf(false) }
@@ -191,14 +192,17 @@ fun CoachWorkoutScreen(
         )
     }
 
-    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty()) {
-        val title = if (pendingPRs.isNotEmpty())
-            stringResource(R.string.pr_dialog_title)
-        else stringResource(R.string.tip_dialog_title)
+    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty()) {
+        val title = when {
+            pendingPRs.isNotEmpty() -> stringResource(R.string.pr_dialog_title)
+            pendingTips.isNotEmpty() -> stringResource(R.string.tip_dialog_title)
+            else -> stringResource(R.string.stagnation_dialog_title)
+        }
         AlertDialog(
             onDismissRequest = {
                 vm.consumePendingPRs()
                 vm.consumePendingTips()
+                vm.consumePendingStagnation()
                 onWorkoutFinished()
             },
             title = { Text(title, fontWeight = FontWeight.Bold) },
@@ -253,12 +257,42 @@ fun CoachWorkoutScreen(
                             Spacer(Modifier.height(8.dp))
                         }
                     }
+                    if (pendingStagnation.isNotEmpty()) {
+                        if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty()) {
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                stringResource(R.string.stagnation_dialog_section),
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.error
+                            )
+                            Spacer(Modifier.height(4.dp))
+                        }
+                        pendingStagnation.forEach { s ->
+                            Text(
+                                "⚠️ ${s.exerciseName}",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                stringResource(
+                                    R.string.stagnation_dialog_line,
+                                    pl.filebit.gymtracker.util.formatWeight(s.stuckAtKg),
+                                    s.workoutsAtSameWeight
+                                ),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.error
+                            )
+                            Spacer(Modifier.height(8.dp))
+                        }
+                    }
                 }
             },
             confirmButton = {
                 TextButton(onClick = {
                     vm.consumePendingPRs()
                     vm.consumePendingTips()
+                    vm.consumePendingStagnation()
                     onWorkoutFinished()
                 }) { Text(stringResource(R.string.pr_dialog_ok)) }
             }

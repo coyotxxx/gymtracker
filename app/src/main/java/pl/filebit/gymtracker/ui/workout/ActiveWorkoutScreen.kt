@@ -93,6 +93,7 @@ fun ActiveWorkoutScreen(
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
+    val pendingStagnation by vm.pendingStagnation.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
@@ -239,13 +240,15 @@ fun ActiveWorkoutScreen(
         }
     }
 
-    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty()) {
+    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty()) {
         FinishSummaryDialog(
             prs = pendingPRs,
             tips = pendingTips,
+            stagnation = pendingStagnation,
             onDismiss = {
                 vm.consumePendingPRs()
                 vm.consumePendingTips()
+                vm.consumePendingStagnation()
                 onWorkoutFinished()
             }
         )
@@ -286,11 +289,14 @@ fun ActiveWorkoutScreen(
 private fun FinishSummaryDialog(
     prs: List<NewPrWithName>,
     tips: List<pl.filebit.gymtracker.data.repository.ProgressionTip>,
+    stagnation: List<pl.filebit.gymtracker.data.repository.StagnationAlert>,
     onDismiss: () -> Unit
 ) {
-    val title = if (prs.isNotEmpty())
-        stringResource(R.string.pr_dialog_title)
-    else stringResource(R.string.tip_dialog_title)
+    val title = when {
+        prs.isNotEmpty() -> stringResource(R.string.pr_dialog_title)
+        tips.isNotEmpty() -> stringResource(R.string.tip_dialog_title)
+        else -> stringResource(R.string.stagnation_dialog_title)
+    }
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
@@ -347,6 +353,35 @@ private fun FinishSummaryDialog(
                             ),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.tertiary
+                        )
+                        Spacer(Modifier.height(8.dp))
+                    }
+                }
+                if (stagnation.isNotEmpty()) {
+                    if (prs.isNotEmpty() || tips.isNotEmpty()) {
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            stringResource(R.string.stagnation_dialog_section),
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.error
+                        )
+                        Spacer(Modifier.height(4.dp))
+                    }
+                    stagnation.forEach { s ->
+                        Text(
+                            "⚠️ ${s.exerciseName}",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Text(
+                            stringResource(
+                                R.string.stagnation_dialog_line,
+                                pl.filebit.gymtracker.util.formatWeight(s.stuckAtKg),
+                                s.workoutsAtSameWeight
+                            ),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.error
                         )
                         Spacer(Modifier.height(8.dp))
                     }

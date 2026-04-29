@@ -60,8 +60,12 @@ class CoachWorkoutViewModel @Inject constructor(
     private val _pendingTips = MutableStateFlow<List<pl.filebit.gymtracker.data.repository.ProgressionTip>>(emptyList())
     val pendingTips: StateFlow<List<pl.filebit.gymtracker.data.repository.ProgressionTip>> = _pendingTips.asStateFlow()
 
+    private val _pendingStagnation = MutableStateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>>(emptyList())
+    val pendingStagnation: StateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>> = _pendingStagnation.asStateFlow()
+
     fun consumePendingPRs() { _pendingPRs.value = emptyList() }
     fun consumePendingTips() { _pendingTips.value = emptyList() }
+    fun consumePendingStagnation() { _pendingStagnation.value = emptyList() }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<CoachUiState> = workoutRepo.observeActive()
@@ -173,10 +177,12 @@ class CoachWorkoutViewModel @Inject constructor(
                 NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
             }
             val tips = statsRepo.progressionTipsForWorkout(id)
+            val stagnation = statsRepo.detectStagnation(id)
             workoutRepo.finish(id)
-            if (withNames.isNotEmpty() || tips.isNotEmpty()) {
+            if (withNames.isNotEmpty() || tips.isNotEmpty() || stagnation.isNotEmpty()) {
                 _pendingPRs.value = withNames
                 _pendingTips.value = tips
+                _pendingStagnation.value = stagnation
             } else {
                 onDone()
             }
