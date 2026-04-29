@@ -62,7 +62,7 @@ class PlanEditViewModel @Inject constructor(
             }
             val exes = planRepo.getPlanExercises(planId)
             val withDetails = exes.map { pe ->
-                val ex = exerciseRepo.getById(pe.exerciseId)
+                val ex = exerciseRepo.get(pe.exerciseId)
                 PlanExerciseWithDetail(pe, ex)
             }
             _state.update {
@@ -89,7 +89,7 @@ class PlanEditViewModel @Inject constructor(
 
     fun addExercise(exerciseId: Long) {
         viewModelScope.launch {
-            val ex = exerciseRepo.getById(exerciseId) ?: return@launch
+            val ex = exerciseRepo.get(exerciseId) ?: return@launch
             val newPe = PlanExercise(
                 id = nextLocalId--, // unikalne tymczasowe id
                 planId = planId,
