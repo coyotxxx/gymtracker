@@ -119,8 +119,9 @@ fun WorkoutDetailScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            // Origin label: from plan or ad-hoc
+            // Origin label: from plan (with day) or ad-hoc
             val planName = state.planName
+            val dayLabel = state.planDayOfWeek?.let { dayLongLabel(it) }
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -137,10 +138,15 @@ fun WorkoutDetailScreen(
                     ),
                     shape = RoundedCornerShape(8.dp)
                 ) {
-                    Text(
-                        text = if (planName != null)
+                    val labelText = when {
+                        planName != null && dayLabel != null ->
+                            stringResource(R.string.detail_from_plan_day, planName, dayLabel)
+                        planName != null ->
                             stringResource(R.string.detail_from_plan, planName)
-                        else stringResource(R.string.detail_adhoc),
+                        else -> stringResource(R.string.detail_adhoc)
+                    }
+                    Text(
+                        text = labelText,
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
@@ -224,6 +230,18 @@ fun WorkoutDetailScreen(
             )
         }
     }
+}
+
+@Composable
+private fun dayLongLabel(day: Int): String? = when (day) {
+    1 -> stringResource(R.string.day_mon_long)
+    2 -> stringResource(R.string.day_tue_long)
+    3 -> stringResource(R.string.day_wed_long)
+    4 -> stringResource(R.string.day_thu_long)
+    5 -> stringResource(R.string.day_fri_long)
+    6 -> stringResource(R.string.day_sat_long)
+    7 -> stringResource(R.string.day_sun_long)
+    else -> null
 }
 
 @Composable

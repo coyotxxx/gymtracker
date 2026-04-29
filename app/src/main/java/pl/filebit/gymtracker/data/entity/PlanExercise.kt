@@ -27,6 +27,7 @@ data class PlanExercise(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val planId: Long,
     val exerciseId: Long,
+    val dayOfWeek: Int = 1,         // 1=Pon ... 7=Nd ISO
     val orderIndex: Int,
     val plannedSets: Int = 3,
     val plannedReps: Int = 8,

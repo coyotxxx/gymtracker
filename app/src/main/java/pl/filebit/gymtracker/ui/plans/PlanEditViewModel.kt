@@ -27,8 +27,12 @@ data class PlanEditUiState(
     val daysOfWeek: Set<Int> = emptySet(),
     val notes: String = "",
     val exercises: List<PlanExerciseWithDetail> = emptyList(),
+    val selectedDay: Int = 1, // 1=Pon..7=Nd, currently active tab
     val isLoading: Boolean = true
-)
+) {
+    val exercisesForSelectedDay: List<PlanExerciseWithDetail>
+        get() = exercises.filter { it.planEx.dayOfWeek == selectedDay }
+}
 
 @HiltViewModel
 class PlanEditViewModel @Inject constructor(
@@ -46,8 +50,15 @@ class PlanEditViewModel @Inject constructor(
 
     init {
         createdAt = System.currentTimeMillis()
+        // domyślny dzień = dzisiaj (ISO 1=Pon..7=Nd)
+        val today = kotlinx.datetime.Clock.System
+            .todayIn(kotlinx.datetime.TimeZone.currentSystemDefault())
+            .dayOfWeek.isoDayNumber
+        _state.update { it.copy(selectedDay = today) }
         load()
     }
+
+    fun setSelectedDay(day: Int) = _state.update { it.copy(selectedDay = day) }
 
     private fun load() {
         viewModelScope.launch {
@@ -90,16 +101,22 @@ class PlanEditViewModel @Inject constructor(
     fun addExercise(exerciseId: Long) {
         viewModelScope.launch {
             val ex = exerciseRepo.get(exerciseId) ?: return@launch
+            val day = _state.value.selectedDay
+            val orderInDay = _state.value.exercises.count { it.planEx.dayOfWeek == day }
             val newPe = PlanExercise(
                 id = nextLocalId--, // unikalne tymczasowe id
                 planId = planId,
                 exerciseId = exerciseId,
-                orderIndex = _state.value.exercises.size,
+                dayOfWeek = day,
+                orderIndex = orderInDay,
                 plannedSets = 3,
                 plannedReps = 8
             )
             _state.update {
-                it.copy(exercises = it.exercises + PlanExerciseWithDetail(newPe, ex))
+                it.copy(
+                    exercises = it.exercises + PlanExerciseWithDetail(newPe, ex),
+                    daysOfWeek = it.daysOfWeek + day
+                )
             }
         }
     }
@@ -142,23 +159,30 @@ class PlanEditViewModel @Inject constructor(
     fun save(onDone: () -> Unit) {
         viewModelScope.launch {
             val st = _state.value
+            // daysOfWeek wynika ze ćwiczeń (auto)
+            val derivedDays = st.exercises.map { it.planEx.dayOfWeek }.distinct().sorted()
             val plan = TrainingPlan(
                 id = if (st.isNew) 0L else planId,
                 name = st.name.trim(),
-                daysOfWeek = st.daysOfWeek.toList().sorted(),
+                daysOfWeek = derivedDays,
                 notes = st.notes.trim(),
                 createdAt = createdAt
             )
             val savedId = planRepo.upsertPlan(plan)
-            // wyczyść stare i wstaw nowe w nowej kolejności
+            // wyczyść stare i wstaw nowe w nowej kolejności (per dzień)
             planRepo.deleteAllPlanExercises(savedId)
-            st.exercises.forEachIndexed { idx, pe ->
-                val toInsert = pe.planEx.copy(
-                    id = 0L,
-                    planId = savedId,
-                    orderIndex = idx
-                )
-                planRepo.upsertPlanExercise(toInsert)
+            // grupuj per dzień, w obrębie dnia zachowaj kolejność z UI
+            val groupedByDay = st.exercises.groupBy { it.planEx.dayOfWeek }
+            for ((day, list) in groupedByDay) {
+                list.forEachIndexed { idx, pe ->
+                    val toInsert = pe.planEx.copy(
+                        id = 0L,
+                        planId = savedId,
+                        dayOfWeek = day,
+                        orderIndex = idx
+                    )
+                    planRepo.upsertPlanExercise(toInsert)
+                }
             }
             onDone()
         }

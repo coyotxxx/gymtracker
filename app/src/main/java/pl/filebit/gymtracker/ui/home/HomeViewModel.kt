@@ -44,8 +44,17 @@ class HomeViewModel @Inject constructor(
         planRepo.observeAllPlans()
     ) { active, recent, plans ->
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
-        val todaysPlan = plans.firstOrNull { it.daysOfWeek.contains(isoDay) }
-        val todaysCount = todaysPlan?.let { planRepo.getPlanExercises(it.id).size } ?: 0
+        // pierwszy plan który ma JAKIEKOLWIEK ćwiczenia na dzisiejszy dzień
+        var todaysPlan: pl.filebit.gymtracker.data.entity.TrainingPlan? = null
+        var todaysCount = 0
+        for (plan in plans) {
+            val exesForToday = planRepo.getPlanExercisesForDay(plan.id, isoDay)
+            if (exesForToday.isNotEmpty()) {
+                todaysPlan = plan
+                todaysCount = exesForToday.size
+                break
+            }
+        }
         val items = recent.map { w ->
             val sets = workoutRepo.getSetsForWorkout(w.id)
             RecentWorkoutItem(
@@ -81,10 +90,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun startWorkoutFromPlan(planId: Long, onReady: () -> Unit) {
+    fun startWorkoutFromPlanForDay(planId: Long, day: Int, onReady: () -> Unit) {
         viewModelScope.launch {
-            val active = workoutRepo.startOrResume(fromPlanId = planId)
-            val planExercises = planRepo.getPlanExercises(planId)
+            val active = workoutRepo.startOrResume(fromPlanId = planId, fromDayOfWeek = day)
+            val planExercises = planRepo.getPlanExercisesForDay(planId, day)
             planExercises.forEach { pe ->
                 repeat(pe.plannedSets) {
                     workoutRepo.addPlannedSet(

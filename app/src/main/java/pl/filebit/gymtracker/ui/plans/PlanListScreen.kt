@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -28,10 +29,14 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -39,6 +44,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.isoDayNumber
+import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -50,6 +59,7 @@ fun PlanListScreen(
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
+    var dayPickerForPlan by remember { mutableStateOf<PlanListItem?>(null) }
 
     Scaffold(
         topBar = {
@@ -92,13 +102,23 @@ fun PlanListScreen(
                     PlanCard(
                         item = item,
                         onEdit = { onEditPlan(item.plan.id) },
-                        onStart = {
-                            vm.startWorkoutFromPlan(item.plan.id, onStartedCoachWorkout)
-                        }
+                        onStart = { dayPickerForPlan = item }
                     )
                 }
             }
         }
+    }
+
+    dayPickerForPlan?.let { item ->
+        DayPickerDialog(
+            planName = item.plan.name,
+            daysWithExercises = item.daysWithExercises.toSet(),
+            onDismiss = { dayPickerForPlan = null },
+            onPickDay = { day ->
+                dayPickerForPlan = null
+                vm.startWorkoutFromPlanForDay(item.plan.id, day, onStartedCoachWorkout)
+            }
+        )
     }
 }
 
@@ -118,12 +138,12 @@ private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        item.plan.name,
+                        item.plan.name.ifBlank { "(plan bez nazwy)" },
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        formatDays(item.plan.daysOfWeek),
+                        formatDays(item.daysWithExercises),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -137,6 +157,7 @@ private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit
             Spacer(Modifier.height(12.dp))
             Button(
                 onClick = onStart,
+                enabled = item.exerciseCount > 0,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp),
@@ -152,6 +173,61 @@ private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit
             }
         }
     }
+}
+
+@Composable
+private fun DayPickerDialog(
+    planName: String,
+    daysWithExercises: Set<Int>,
+    onDismiss: () -> Unit,
+    onPickDay: (Int) -> Unit
+) {
+    val today = remember {
+        Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
+    }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.plan_pick_day_title, planName)) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                if (daysWithExercises.isEmpty()) {
+                    Text(stringResource(R.string.plan_no_days_with_exercises))
+                } else {
+                    listOf(
+                        1 to R.string.day_mon_long,
+                        2 to R.string.day_tue_long,
+                        3 to R.string.day_wed_long,
+                        4 to R.string.day_thu_long,
+                        5 to R.string.day_fri_long,
+                        6 to R.string.day_sat_long,
+                        7 to R.string.day_sun_long
+                    ).forEach { (day, labelRes) ->
+                        val enabled = daysWithExercises.contains(day)
+                        val isToday = day == today
+                        TextButton(
+                            onClick = { onPickDay(day) },
+                            enabled = enabled,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            val prefix = if (isToday) "▶ " else ""
+                            Text(
+                                prefix + stringResource(labelRes) +
+                                    if (isToday) " " + stringResource(R.string.plan_day_today_suffix) else "",
+                                color = if (isToday && enabled) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.onSurface,
+                                fontWeight = if (isToday) FontWeight.SemiBold else FontWeight.Normal
+                            )
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.common_cancel))
+            }
+        }
+    )
 }
 
 @Composable

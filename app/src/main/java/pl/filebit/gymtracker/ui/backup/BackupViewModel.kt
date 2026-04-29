@@ -199,6 +199,7 @@ class BackupViewModel @Inject constructor(
                             startedAt = w.startedAt,
                             finishedAt = w.finishedAt,
                             fromPlanId = null,
+                            fromDayOfWeek = null,
                             notes = w.notes
                         )
                     )

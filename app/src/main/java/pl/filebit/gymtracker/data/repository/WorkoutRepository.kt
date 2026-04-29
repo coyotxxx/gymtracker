@@ -28,13 +28,14 @@ class WorkoutRepository @Inject constructor(
 
     /**
      * Tworzy nowy trening jeśli nie ma aktywnego, w przeciwnym razie zwraca aktywny.
-     * Jeśli aktywny już istnieje, fromPlanId jest IGNOROWANY (nie nadpisujemy istniejącego treningu).
+     * Jeśli aktywny już istnieje, fromPlanId/fromDayOfWeek są IGNOROWANE.
      */
-    suspend fun startOrResume(fromPlanId: Long? = null): Workout {
+    suspend fun startOrResume(fromPlanId: Long? = null, fromDayOfWeek: Int? = null): Workout {
         workoutDao.getActive()?.let { return it }
         val newWorkout = Workout(
             startedAt = System.currentTimeMillis(),
-            fromPlanId = fromPlanId
+            fromPlanId = fromPlanId,
+            fromDayOfWeek = fromDayOfWeek
         )
         val id = workoutDao.insert(newWorkout)
         return newWorkout.copy(id = id)

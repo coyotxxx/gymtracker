@@ -33,6 +33,12 @@ class PlanRepository @Inject constructor(
     suspend fun getPlanExercises(planId: Long): List<PlanExercise> =
         planExerciseDao.getForPlan(planId)
 
+    suspend fun getPlanExercisesForDay(planId: Long, day: Int): List<PlanExercise> =
+        planExerciseDao.getForPlanAndDay(planId, day)
+
+    suspend fun getDaysWithExercises(planId: Long): List<Int> =
+        planExerciseDao.getDaysWithExercises(planId)
+
     suspend fun upsertPlanExercise(pe: PlanExercise): Long = planExerciseDao.upsert(pe)
 
     suspend fun updatePlanExercise(pe: PlanExercise) = planExerciseDao.update(pe)

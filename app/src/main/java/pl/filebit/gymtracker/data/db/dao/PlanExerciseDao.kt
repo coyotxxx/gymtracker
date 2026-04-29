@@ -12,11 +12,17 @@ import pl.filebit.gymtracker.data.entity.PlanExercise
 @Dao
 interface PlanExerciseDao {
 
-    @Query("SELECT * FROM plan_exercises WHERE planId = :planId ORDER BY orderIndex ASC")
+    @Query("SELECT * FROM plan_exercises WHERE planId = :planId ORDER BY dayOfWeek ASC, orderIndex ASC")
     fun observeForPlan(planId: Long): Flow<List<PlanExercise>>
 
-    @Query("SELECT * FROM plan_exercises WHERE planId = :planId ORDER BY orderIndex ASC")
+    @Query("SELECT * FROM plan_exercises WHERE planId = :planId ORDER BY dayOfWeek ASC, orderIndex ASC")
     suspend fun getForPlan(planId: Long): List<PlanExercise>
+
+    @Query("SELECT * FROM plan_exercises WHERE planId = :planId AND dayOfWeek = :day ORDER BY orderIndex ASC")
+    suspend fun getForPlanAndDay(planId: Long, day: Int): List<PlanExercise>
+
+    @Query("SELECT DISTINCT dayOfWeek FROM plan_exercises WHERE planId = :planId ORDER BY dayOfWeek ASC")
+    suspend fun getDaysWithExercises(planId: Long): List<Int>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(pe: PlanExercise): Long

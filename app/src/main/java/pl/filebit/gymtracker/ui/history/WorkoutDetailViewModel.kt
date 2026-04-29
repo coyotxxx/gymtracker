@@ -25,6 +25,7 @@ data class WorkoutDetailUiState(
     val workout: Workout? = null,
     val groups: List<DetailGroup> = emptyList(),
     val planName: String? = null, // null = ad-hoc lub plan usunięty
+    val planDayOfWeek: Int? = null, // 1=Pon..7=Nd
     val loading: Boolean = true
 )
 
@@ -53,6 +54,7 @@ class WorkoutDetailViewModel @Inject constructor(
                 workout = workout,
                 groups = groups,
                 planName = planName,
+                planDayOfWeek = workout?.fromDayOfWeek,
                 loading = false
             )
         }

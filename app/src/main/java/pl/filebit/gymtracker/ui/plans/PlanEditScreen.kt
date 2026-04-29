@@ -119,21 +119,6 @@ fun PlanEditScreen(
                     shape = RoundedCornerShape(12.dp)
                 )
             }
-            item { SectionHeader(stringResource(R.string.plan_days)) }
-            item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    DayChip(1, R.string.day_mon_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(2, R.string.day_tue_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(3, R.string.day_wed_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(4, R.string.day_thu_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(5, R.string.day_fri_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(6, R.string.day_sat_short, state.daysOfWeek, vm::toggleDay)
-                    DayChip(7, R.string.day_sun_short, state.daysOfWeek, vm::toggleDay)
-                }
-            }
             item {
                 OutlinedTextField(
                     value = state.notes,
@@ -145,9 +130,28 @@ fun PlanEditScreen(
                     shape = RoundedCornerShape(12.dp)
                 )
             }
+            item { SectionHeader(stringResource(R.string.plan_day_tab_header)) }
+            item {
+                DayTabRow(
+                    selected = state.selectedDay,
+                    daysWithExercises = state.exercises.map { it.planEx.dayOfWeek }.toSet(),
+                    onSelect = vm::setSelectedDay
+                )
+            }
             item { SectionHeader(stringResource(R.string.plan_exercises_header)) }
 
-            items(state.exercises, key = { it.planEx.id }) { item ->
+            val visibleExercises = state.exercisesForSelectedDay
+            if (visibleExercises.isEmpty()) {
+                item {
+                    Text(
+                        stringResource(R.string.plan_day_empty),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            items(visibleExercises, key = { it.planEx.id }) { item ->
                 PlanExerciseCard(
                     item = item,
                     onSets = { v -> vm.updatePlanExercise(item.planEx.id, sets = v) },
@@ -167,7 +171,7 @@ fun PlanEditScreen(
                 ) {
                     Icon(Icons.Default.Add, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
-                    Text(stringResource(R.string.plan_add_exercise))
+                    Text(stringResource(R.string.plan_add_exercise_to_day))
                 }
             }
         }
@@ -203,18 +207,36 @@ private fun SectionHeader(text: String) {
 }
 
 @Composable
-private fun DayChip(
-    day: Int,
-    labelRes: Int,
-    selected: Set<Int>,
-    onToggle: (Int) -> Unit
+private fun DayTabRow(
+    selected: Int,
+    daysWithExercises: Set<Int>,
+    onSelect: (Int) -> Unit
 ) {
-    Box(modifier = Modifier.padding(end = 4.dp)) {
-        FilterChip(
-            selected = selected.contains(day),
-            onClick = { onToggle(day) },
-            label = { Text(stringResource(labelRes)) }
-        )
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        listOf(
+            1 to R.string.day_mon_short,
+            2 to R.string.day_tue_short,
+            3 to R.string.day_wed_short,
+            4 to R.string.day_thu_short,
+            5 to R.string.day_fri_short,
+            6 to R.string.day_sat_short,
+            7 to R.string.day_sun_short
+        ).forEach { (day, labelRes) ->
+            val hasExercises = daysWithExercises.contains(day)
+            FilterChip(
+                selected = day == selected,
+                onClick = { onSelect(day) },
+                label = {
+                    Text(
+                        if (hasExercises) "● " + stringResource(labelRes)
+                        else stringResource(labelRes)
+                    )
+                }
+            )
+        }
     }
 }
 

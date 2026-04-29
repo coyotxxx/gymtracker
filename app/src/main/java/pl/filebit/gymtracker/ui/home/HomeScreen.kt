@@ -98,7 +98,17 @@ fun HomeScreen(
                     item {
                         TodayHintCard(
                             planName = state.todaysPlan!!.name,
-                            onSelectPlan = onSelectPlanTab
+                            exerciseCount = state.todaysPlanExerciseCount,
+                            onStartToday = {
+                                val isoDay = kotlinx.datetime.Clock.System
+                                    .todayIn(kotlinx.datetime.TimeZone.currentSystemDefault())
+                                    .dayOfWeek.isoDayNumber
+                                vm.startWorkoutFromPlanForDay(
+                                    state.todaysPlan!!.id,
+                                    isoDay,
+                                    onStartCoachWorkout
+                                )
+                            }
                         )
                     }
                 }
@@ -209,9 +219,9 @@ private fun AdhocHubCard(onStart: () -> Unit) {
 }
 
 @Composable
-private fun TodayHintCard(planName: String, onSelectPlan: () -> Unit) {
+private fun TodayHintCard(planName: String, exerciseCount: Int, onStartToday: () -> Unit) {
     Card(
-        onClick = onSelectPlan,
+        onClick = onStartToday,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.tertiaryContainer,
@@ -219,11 +229,17 @@ private fun TodayHintCard(planName: String, onSelectPlan: () -> Unit) {
         ),
         shape = RoundedCornerShape(12.dp)
     ) {
-        Text(
-            stringResource(R.string.home_today_hint, planName),
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(12.dp)
-        )
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                stringResource(R.string.home_today_hint, planName),
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                stringResource(R.string.home_today_hint_exercises, exerciseCount),
+                style = MaterialTheme.typography.bodySmall
+            )
+        }
     }
 }
 
