@@ -97,7 +97,7 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [x] **Body measurements** — encja `BodyMeasurement` (waga, klatka, pas, biodra, ramię, udo, łydka, BF%, notatki). Profil → 'Pomiary ciała' → ekran z FAB do dodawania
 - [x] **Wykres masy ciała w czasie** — Compose Canvas linechart, pokazuje się gdy ≥2 pomiary z wagą
 - [ ] Zdjęcia progresu (przód/bok/tył) — V2.1 (wymaga camera permissions + ImagePicker + filesystem)
-- [ ] Cel masy (redukcja / masa / utrzymanie) — V2.1
+- [x] **Cel masy** ✅ v0.24.0 — `WeightGoalType` (NONE/CUT/BULK/MAINTAIN) + `targetWeightKg` w `UserProfile` (DB v=10). Profil → 'Cel masy ciała': chipsy z 4 trybami + pole docelowej wagi. W ekranie 'Pomiary ciała' karta tertiary container z aktualnym postępem (zostało X kg do celu, lub 🎯 cel osiągnięty).
 
 ### Faza 20 — Mapa mięśni ✅ v0.17.0 (lista, bez sylwetki)
 

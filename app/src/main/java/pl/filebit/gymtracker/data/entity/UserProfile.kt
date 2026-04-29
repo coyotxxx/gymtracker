@@ -17,6 +17,13 @@ enum class ExperienceLevel {
 
 enum class WeightUnit { KG, LB }
 
+enum class WeightGoalType {
+    NONE,       // user nie deklaruje celu
+    CUT,        // redukcja
+    BULK,       // masa
+    MAINTAIN    // utrzymanie
+}
+
 @Entity(tableName = "user_profile")
 data class UserProfile(
     @PrimaryKey val id: Int = 1,                        // singleton row
@@ -27,5 +34,7 @@ data class UserProfile(
     val preferredUnit: WeightUnit = WeightUnit.KG,
     val defaultRestSeconds: Int = 120,
     val injuriesNotes: String = "",
-    val showAdvancedSetFields: Boolean = false
+    val showAdvancedSetFields: Boolean = false,
+    val weightGoalType: WeightGoalType = WeightGoalType.NONE,
+    val targetWeightKg: Double? = null
 )

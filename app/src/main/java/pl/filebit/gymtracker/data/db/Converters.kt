@@ -6,6 +6,7 @@ import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.entity.WeightUnit
 
 class Converters {
@@ -28,6 +29,10 @@ class Converters {
     @TypeConverter fun unitToString(u: WeightUnit): String = u.name
     @TypeConverter fun stringToUnit(s: String): WeightUnit =
         runCatching { WeightUnit.valueOf(s) }.getOrDefault(WeightUnit.KG)
+
+    @TypeConverter fun weightGoalToString(g: WeightGoalType): String = g.name
+    @TypeConverter fun stringToWeightGoal(s: String): WeightGoalType =
+        runCatching { WeightGoalType.valueOf(s) }.getOrDefault(WeightGoalType.NONE)
 
     @TypeConverter fun setTypeToString(t: SetType): String = t.name
     @TypeConverter fun stringToSetType(s: String): SetType = SetType.safeValueOf(s)

@@ -52,8 +52,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
+import kotlin.math.abs
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,6 +64,7 @@ fun BodyMeasurementsScreen(
     vm: BodyMeasurementsViewModel = hiltViewModel()
 ) {
     val measurements by vm.measurements.collectAsStateWithLifecycle()
+    val profile by vm.profile.collectAsStateWithLifecycle()
     var showAddDialog by remember { mutableStateOf(false) }
 
     Scaffold(
@@ -107,6 +110,20 @@ fun BodyMeasurementsScreen(
                 val weightPoints = measurements
                     .filter { it.weightKg != null }
                     .sortedBy { it.date }
+
+                // Karta celu (jeśli ustawiony) — pokazuj zawsze gdy goal != NONE i target ustawiony
+                val target = profile.targetWeightKg
+                val goalType = profile.weightGoalType
+                val latestWeight = weightPoints.lastOrNull()?.weightKg
+                if (goalType != WeightGoalType.NONE && target != null && target > 0) {
+                    item {
+                        WeightGoalCard(
+                            goalType = goalType,
+                            target = target,
+                            current = latestWeight
+                        )
+                    }
+                }
                 if (weightPoints.size >= 2) {
                     item {
                         Card(
@@ -305,6 +322,64 @@ private fun NumberField(label: String, value: String, suffix: String, onChange: 
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
         modifier = Modifier.fillMaxWidth()
     )
+}
+
+@Composable
+private fun WeightGoalCard(
+    goalType: WeightGoalType,
+    target: Double,
+    current: Double?
+) {
+    val (label, emoji) = when (goalType) {
+        WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut) to "📉"
+        WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk) to "📈"
+        WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain) to "🎯"
+        WeightGoalType.NONE -> "" to ""
+    }
+    val deltaTxt = current?.let {
+        val diff = target - it
+        when {
+            goalType == WeightGoalType.MAINTAIN && abs(diff) <= 1.5 ->
+                stringResource(R.string.body_goal_maintain_in_range, formatWeight(target))
+            goalType == WeightGoalType.CUT && it <= target ->
+                stringResource(R.string.body_goal_reached, formatWeight(target))
+            goalType == WeightGoalType.BULK && it >= target ->
+                stringResource(R.string.body_goal_reached, formatWeight(target))
+            else ->
+                stringResource(
+                    R.string.body_goal_progress_to_target,
+                    formatWeight(target),
+                    formatWeight(abs(diff))
+                )
+        }
+    } ?: stringResource(R.string.body_goal_progress_to_target, formatWeight(target), "—")
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+        ),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "$emoji $label",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(deltaTxt, style = MaterialTheme.typography.bodyMedium)
+            current?.let {
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "Aktualnie: ${formatWeight(it)} kg",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onTertiaryContainer.copy(alpha = 0.8f)
+                )
+            }
+        }
+    }
 }
 
 @Composable

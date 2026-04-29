@@ -52,6 +52,7 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.entity.WeightUnit
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -138,6 +139,30 @@ fun ProfileScreen(
                                 label = { Text(u.name) }
                             )
                         }
+                    }
+                }
+            }
+
+            item {
+                SectionCard(title = stringResource(R.string.profile_weight_goal)) {
+                    LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(vertical = 4.dp)
+                    ) {
+                        items(WeightGoalType.entries.toList()) { g ->
+                            FilterChip(
+                                selected = draft.weightGoalType == g,
+                                onClick = { draft = draft.copy(weightGoalType = g) },
+                                label = { Text(g.label()) }
+                            )
+                        }
+                    }
+                    if (draft.weightGoalType != WeightGoalType.NONE) {
+                        Spacer(Modifier.height(12.dp))
+                        TargetWeightField(
+                            value = draft.targetWeightKg,
+                            onChange = { draft = draft.copy(targetWeightKg = it) }
+                        )
                     }
                 }
             }
@@ -335,6 +360,34 @@ private fun NumberFieldCard(
             )
         }
     }
+}
+
+@Composable
+private fun TargetWeightField(
+    value: Double?,
+    onChange: (Double?) -> Unit
+) {
+    var text by remember(value) { mutableStateOf(value?.let { "%.1f".format(it).replace(',', '.') } ?: "") }
+    OutlinedTextField(
+        value = text,
+        onValueChange = { v ->
+            text = v
+            val parsed = v.replace(',', '.').toDoubleOrNull()
+            onChange(parsed)
+        },
+        label = { Text(stringResource(R.string.profile_target_weight)) },
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+        modifier = Modifier.fillMaxWidth()
+    )
+}
+
+@Composable
+private fun WeightGoalType.label(): String = when (this) {
+    WeightGoalType.NONE -> stringResource(R.string.weight_goal_none)
+    WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut)
+    WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk)
+    WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain)
 }
 
 private fun TrainingGoal.label(): String = when (this) {
