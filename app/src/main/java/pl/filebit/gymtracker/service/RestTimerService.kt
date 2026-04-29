@@ -6,6 +6,8 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.MediaPlayer
+import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
 import android.os.VibrationEffect
@@ -39,6 +41,7 @@ class RestTimerService : Service() {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var tickJob: Job? = null
+    private var mp: MediaPlayer? = null
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -77,6 +80,7 @@ class RestTimerService : Service() {
             }
             if (isActive) {
                 _state.value = _state.value.copy(remainingSec = 0, running = false)
+                playDoneSound()
                 vibrateDone()
                 stopForeground(STOP_FOREGROUND_REMOVE)
                 stopSelf()
@@ -128,6 +132,16 @@ class RestTimerService : Service() {
         nm.notify(NOTIF_ID, buildNotification(remainingSec))
     }
 
+    private fun playDoneSound() {
+        try {
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            mp?.release()
+            mp = MediaPlayer.create(this, uri)?.apply { start() }
+        } catch (_: Throwable) {
+            // dźwięk to nice-to-have, nie blokuj wibracji
+        }
+    }
+
     @Suppress("DEPRECATION")
     private fun vibrateDone() {
         val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -143,6 +157,8 @@ class RestTimerService : Service() {
     }
 
     override fun onDestroy() {
+        mp?.release()
+        mp = null
         scope.cancel()
         super.onDestroy()
     }

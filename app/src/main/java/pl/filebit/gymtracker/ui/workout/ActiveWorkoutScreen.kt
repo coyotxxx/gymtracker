@@ -63,7 +63,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.service.RestTimerService
-import pl.filebit.gymtracker.ui.components.RestTimerBar
+import pl.filebit.gymtracker.ui.components.RestTimerSheet
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -138,16 +138,6 @@ fun ActiveWorkoutScreen(
             .fillMaxSize()
             .padding(padding)) {
             Column(modifier = Modifier.fillMaxSize()) {
-                if (timerState.running) {
-                    RestTimerBar(
-                        remainingSec = timerState.remainingSec,
-                        totalSec = timerState.totalSec,
-                        onAdd = { safeTimer { RestTimerService.addSeconds(context, 15) } },
-                        onSub = { safeTimer { RestTimerService.addSeconds(context, -15) } },
-                        onSkip = { safeTimer { RestTimerService.stop(context) } }
-                    )
-                }
-
                 if (state.groups.isEmpty()) {
                     Box(
                         modifier = Modifier
@@ -197,6 +187,17 @@ fun ActiveWorkoutScreen(
                 Spacer(Modifier.width(8.dp))
                 Text(stringResource(R.string.workout_add_exercise))
             }
+
+            // Pełnoekranowy timer (ModalBottomSheet) na poziomie Box
+            RestTimerSheet(
+                visible = timerState.running,
+                remainingSec = timerState.remainingSec,
+                totalSec = timerState.totalSec,
+                onAdd = { safeTimer { RestTimerService.addSeconds(context, 15) } },
+                onSub = { safeTimer { RestTimerService.addSeconds(context, -15) } },
+                onSkip = { safeTimer { RestTimerService.stop(context) } },
+                onDismiss = { safeTimer { RestTimerService.stop(context) } }
+            )
         }
     }
 
