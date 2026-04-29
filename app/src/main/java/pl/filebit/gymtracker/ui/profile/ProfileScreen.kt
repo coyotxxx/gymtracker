@@ -14,7 +14,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
+import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -54,6 +56,8 @@ import pl.filebit.gymtracker.data.entity.WeightUnit
 @Composable
 fun ProfileScreen(
     onOpenBackup: () -> Unit,
+    onOpenStats: () -> Unit,
+    onOpenOneRm: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -174,6 +178,28 @@ fun ProfileScreen(
                 }
             }
 
+            item {
+                OutlinedButton(
+                    onClick = onOpenStats,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.QueryStats, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.stats_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenOneRm,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.Calculate, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.onerm_title)}")
+                }
+            }
             item {
                 OutlinedButton(
                     onClick = onOpenBackup,

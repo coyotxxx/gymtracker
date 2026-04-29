@@ -29,6 +29,9 @@ interface WorkoutSetDao {
     @Query("SELECT * FROM workout_sets WHERE id = :id")
     suspend fun getById(id: Long): WorkoutSet?
 
+    @Query("SELECT * FROM workout_sets WHERE exerciseId = :exerciseId")
+    suspend fun getAllForExercise(exerciseId: Long): List<WorkoutSet>
+
     /**
      * Ostatnia (zakończona) seria danego ćwiczenia — używana do auto-fill
      * "ostatni raz robiłeś X kg × Y reps".

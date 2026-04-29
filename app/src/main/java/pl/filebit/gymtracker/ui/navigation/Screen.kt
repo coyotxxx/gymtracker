@@ -9,6 +9,8 @@ sealed class Screen(val route: String) {
     object ActiveWorkout : Screen("workout/active")
     object CoachWorkout : Screen("workout/coach")
     object Backup : Screen("backup")
+    object Stats : Screen("stats")
+    object OneRm : Screen("tools/1rm")
 
     object PlanEdit : Screen("plans/{planId}") {
         fun create(planId: Long) = "plans/$planId"

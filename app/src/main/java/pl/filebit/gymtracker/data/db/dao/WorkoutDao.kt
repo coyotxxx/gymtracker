@@ -14,6 +14,9 @@ interface WorkoutDao {
     @Query("SELECT * FROM workouts ORDER BY startedAt DESC")
     fun observeAll(): Flow<List<Workout>>
 
+    @Query("SELECT * FROM workouts ORDER BY startedAt DESC")
+    suspend fun observeAllOnce(): List<Workout>
+
     @Query("SELECT * FROM workouts WHERE finishedAt IS NULL LIMIT 1")
     fun observeActive(): Flow<Workout?>
 

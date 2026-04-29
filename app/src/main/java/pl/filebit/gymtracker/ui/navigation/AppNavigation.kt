@@ -34,7 +34,9 @@ import pl.filebit.gymtracker.ui.history.WorkoutDetailScreen
 import pl.filebit.gymtracker.ui.home.HomeScreen
 import pl.filebit.gymtracker.ui.plans.PlanEditScreen
 import pl.filebit.gymtracker.ui.plans.PlanListScreen
+import pl.filebit.gymtracker.ui.onerm.OneRmCalculatorScreen
 import pl.filebit.gymtracker.ui.profile.ProfileScreen
+import pl.filebit.gymtracker.ui.stats.StatsScreen
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.CoachWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.ExercisePickerScreen
@@ -128,8 +130,16 @@ fun AppNavigation() {
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
-                    onOpenBackup = { navController.navigate(Screen.Backup.route) }
+                    onOpenBackup = { navController.navigate(Screen.Backup.route) },
+                    onOpenStats = { navController.navigate(Screen.Stats.route) },
+                    onOpenOneRm = { navController.navigate(Screen.OneRm.route) }
                 )
+            }
+            composable(Screen.Stats.route) {
+                StatsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.OneRm.route) {
+                OneRmCalculatorScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(
