@@ -1,6 +1,5 @@
 package pl.filebit.gymtracker.ui.home
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,13 +16,17 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.EventNote
+import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -42,6 +45,7 @@ import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onStartWorkout: () -> Unit,
@@ -60,62 +64,68 @@ fun HomeScreen(
             )
         }
     ) { padding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
-                .padding(horizontal = 16.dp)
+                .padding(padding),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // Big CTA: 3 stany - aktywny trening / dzisiejszy plan / ad-hoc
-            when {
-                state.activeWorkout != null -> StartWorkoutButton(
-                    label = stringResource(R.string.home_continue_workout),
-                    onClick = { vm.startOrResumeWorkout(onReady = onStartWorkout) }
-                )
-                state.todaysPlan != null -> TodaysPlanCard(
-                    planName = state.todaysPlan!!.name,
-                    exerciseCount = state.todaysPlanExerciseCount,
-                    onClick = {
-                        vm.startWorkoutFromPlan(state.todaysPlan!!.id, onStartWorkout)
-                    }
-                )
-                else -> StartWorkoutButton(
-                    label = stringResource(R.string.home_start_workout_adhoc),
-                    onClick = { vm.startOrResumeWorkout(onReady = onStartWorkout) }
-                )
-            }
-
-            Spacer(Modifier.height(24.dp))
-
-            // Recent workouts
-            Text(
-                stringResource(R.string.home_recent),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold
-            )
-            Spacer(Modifier.height(8.dp))
-
-            if (state.recentWorkouts.isEmpty()) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 32.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        stringResource(R.string.home_no_workouts),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+            // CTA: aktywny trening / plan dnia + ad-hoc
+            if (state.activeWorkout != null) {
+                item {
+                    ActiveWorkoutCard(
+                        onContinue = { vm.continueActiveWorkout(onStartWorkout) }
                     )
                 }
             } else {
-                LazyColumn(
-                    contentPadding = PaddingValues(vertical = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(state.recentWorkouts, key = { it.workout.id }) { item ->
-                        RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
+                if (state.todaysPlan != null) {
+                    item {
+                        PlanDayCard(
+                            planName = state.todaysPlan!!.name,
+                            exerciseCount = state.todaysPlanExerciseCount,
+                            daysLabel = formatDays(state.todaysPlan!!.daysOfWeek),
+                            onStart = {
+                                vm.startWorkoutFromPlan(state.todaysPlan!!.id, onStartWorkout)
+                            }
+                        )
                     }
+                }
+                item {
+                    AdhocCard(
+                        onStart = { vm.startWorkoutAdhoc(onStartWorkout) }
+                    )
+                }
+            }
+
+            // Ostatnie treningi
+            item {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    stringResource(R.string.home_recent),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+
+            if (state.recentWorkouts.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 32.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            stringResource(R.string.home_no_workouts),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            } else {
+                items(state.recentWorkouts, key = { it.workout.id }) { item ->
+                    RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
                 }
             }
         }
@@ -123,49 +133,29 @@ fun HomeScreen(
 }
 
 @Composable
-private fun StartWorkoutButton(label: String, onClick: () -> Unit) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(72.dp),
-        shape = RoundedCornerShape(16.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            contentColor = MaterialTheme.colorScheme.onPrimary
-        )
-    ) {
-        Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(28.dp))
-        Spacer(Modifier.width(12.dp))
-        Text(label, style = MaterialTheme.typography.titleLarge)
-    }
-}
-
-@Composable
-private fun TodaysPlanCard(planName: String, exerciseCount: Int, onClick: () -> Unit) {
+private fun ActiveWorkoutCard(onContinue: () -> Unit) {
     Card(
-        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
         ),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                stringResource(R.string.home_todays_plan, planName),
+                stringResource(R.string.home_active_title),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                stringResource(R.string.home_plan_exercises_count, exerciseCount),
+                stringResource(R.string.home_active_subtitle),
                 style = MaterialTheme.typography.bodyMedium
             )
             Spacer(Modifier.height(12.dp))
             Button(
-                onClick = onClick,
+                onClick = onContinue,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
@@ -178,7 +168,121 @@ private fun TodaysPlanCard(planName: String, exerciseCount: Int, onClick: () -> 
                 Icon(Icons.Default.PlayArrow, contentDescription = null)
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    stringResource(R.string.home_start_plan, planName),
+                    stringResource(R.string.home_continue_workout),
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PlanDayCard(
+    planName: String,
+    exerciseCount: Int,
+    daysLabel: String,
+    onStart: () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.EventNote,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.home_plan_label),
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+            Spacer(Modifier.height(12.dp))
+            Text(
+                planName,
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                stringResource(R.string.home_plan_subtitle, exerciseCount, daysLabel),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Spacer(Modifier.height(12.dp))
+            Button(
+                onClick = onStart,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Icon(Icons.Default.PlayArrow, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.home_start_plan_button),
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun AdhocCard(onStart: () -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface
+        ),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.FitnessCenter,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.home_adhoc_label),
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(R.string.home_adhoc_subtitle),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(Modifier.height(12.dp))
+            OutlinedButton(
+                onClick = onStart,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                Icon(Icons.Default.PlayArrow, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.home_start_adhoc_button),
                     style = MaterialTheme.typography.titleMedium
                 )
             }
@@ -230,4 +334,23 @@ private fun StatChip(label: String, value: String) {
             fontWeight = FontWeight.SemiBold
         )
     }
+}
+
+@Composable
+private fun formatDays(days: List<Int>): String {
+    if (days.isEmpty()) return stringResource(R.string.plan_no_schedule)
+    val labels = days.sorted().mapNotNull { dayShortLabel(it) }
+    return labels.joinToString(", ")
+}
+
+@Composable
+private fun dayShortLabel(day: Int): String? = when (day) {
+    1 -> stringResource(R.string.day_mon_short)
+    2 -> stringResource(R.string.day_tue_short)
+    3 -> stringResource(R.string.day_wed_short)
+    4 -> stringResource(R.string.day_thu_short)
+    5 -> stringResource(R.string.day_fri_short)
+    6 -> stringResource(R.string.day_sat_short)
+    7 -> stringResource(R.string.day_sun_short)
+    else -> null
 }

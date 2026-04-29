@@ -11,13 +11,17 @@
 
     <!-- Home -->
     <string name="home_start_workout">Rozpocznij trening</string>
-    <string name="home_start_workout_adhoc">Rozpocznij trening (ad-hoc)</string>
     <string name="home_continue_workout">Kontynuuj trening</string>
     <string name="home_no_workouts">Jeszcze nie było żadnego treningu.\nKliknij przycisk żeby zacząć.</string>
     <string name="home_recent">Ostatnie treningi</string>
-    <string name="home_todays_plan">Dziś: %1$s</string>
-    <string name="home_plan_exercises_count">%1$d ćwiczeń zaplanowanych</string>
-    <string name="home_start_plan">Rozpocznij %1$s</string>
+    <string name="home_active_title">Trening w toku</string>
+    <string name="home_active_subtitle">Masz aktywny trening — wróć i dokończ.</string>
+    <string name="home_plan_label">PLAN NA DZIŚ</string>
+    <string name="home_plan_subtitle">%1$d ćwicz. · %2$s</string>
+    <string name="home_start_plan_button">Rozpocznij plan</string>
+    <string name="home_adhoc_label">TRENING AD-HOC</string>
+    <string name="home_adhoc_subtitle">Bez planu — wybierasz ćwiczenia na bieżąco.</string>
+    <string name="home_start_adhoc_button">Rozpocznij ad-hoc</string>
 
     <!-- Workout -->
     <string name="workout_add_exercise">Dodaj ćwiczenie</string>
@@ -85,6 +89,9 @@
     <string name="plan_planned_weight">Waga</string>
     <string name="plan_rest">Odp. (s)</string>
     <string name="plan_exercise_count">%1$d ćwicz.</string>
+    <string name="plan_start_button">Rozpocznij ten plan</string>
+    <string name="detail_from_plan">Z planu: %1$s</string>
+    <string name="detail_adhoc">Trening ad-hoc</string>
     <string name="day_mon_short">Pon</string>
     <string name="day_tue_short">Wt</string>
     <string name="day_wed_short">Śr</string>

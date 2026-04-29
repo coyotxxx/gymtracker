@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
+import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
@@ -21,12 +22,14 @@ data class DetailGroup(
 data class WorkoutDetailUiState(
     val workout: Workout? = null,
     val groups: List<DetailGroup> = emptyList(),
+    val planName: String? = null, // null = ad-hoc lub plan usunięty
     val loading: Boolean = true
 )
 
 @HiltViewModel
 class WorkoutDetailViewModel @Inject constructor(
-    private val repo: WorkoutRepository
+    private val repo: WorkoutRepository,
+    private val planRepo: PlanRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(WorkoutDetailUiState())
@@ -43,7 +46,13 @@ class WorkoutDetailViewModel @Inject constructor(
                     val ex = repo.getExercise(exerciseId) ?: return@mapNotNull null
                     DetailGroup(exercise = ex, sets = list.sortedBy { it.setNumber })
                 }
-            _state.value = WorkoutDetailUiState(workout = workout, groups = groups, loading = false)
+            val planName = workout?.fromPlanId?.let { planRepo.getPlan(it)?.name }
+            _state.value = WorkoutDetailUiState(
+                workout = workout,
+                groups = groups,
+                planName = planName,
+                loading = false
+            )
         }
     }
 

@@ -85,6 +85,35 @@ fun WorkoutDetailScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
+            // Origin label: from plan or ad-hoc
+            val planName = state.planName
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = if (planName != null)
+                            MaterialTheme.colorScheme.primaryContainer
+                        else MaterialTheme.colorScheme.surfaceVariant,
+                        contentColor = if (planName != null)
+                            MaterialTheme.colorScheme.onPrimaryContainer
+                        else MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text(
+                        text = if (planName != null)
+                            stringResource(R.string.detail_from_plan, planName)
+                        else stringResource(R.string.detail_adhoc),
+                        style = MaterialTheme.typography.labelMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                    )
+                }
+            }
+
             // Summary header
             val totalSets = state.groups.sumOf { it.sets.size }
             val totalVolume = state.groups.sumOf { g ->

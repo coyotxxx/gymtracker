@@ -1,18 +1,25 @@
 package pl.filebit.gymtracker.ui.plans
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -39,6 +46,7 @@ import pl.filebit.gymtracker.R
 fun PlanListScreen(
     onEditPlan: (Long) -> Unit,
     onCreateNewPlan: () -> Unit,
+    onStartedWorkout: () -> Unit,
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
@@ -81,7 +89,13 @@ fun PlanListScreen(
                     .padding(padding)
             ) {
                 items(plans, key = { it.plan.id }) { item ->
-                    PlanCard(item = item, onClick = { onEditPlan(item.plan.id) })
+                    PlanCard(
+                        item = item,
+                        onEdit = { onEditPlan(item.plan.id) },
+                        onStart = {
+                            vm.startWorkoutFromPlan(item.plan.id, onStartedWorkout)
+                        }
+                    )
                 }
             }
         }
@@ -89,36 +103,53 @@ fun PlanListScreen(
 }
 
 @Composable
-private fun PlanCard(item: PlanListItem, onClick: () -> Unit) {
+private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit) {
     Card(
-        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         shape = RoundedCornerShape(16.dp)
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onEdit),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        item.plan.name,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        formatDays(item.plan.daysOfWeek),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
                 Text(
-                    item.plan.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    formatDays(item.plan.daysOfWeek),
+                    stringResource(R.string.plan_exercise_count, item.exerciseCount),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
-            Text(
-                stringResource(R.string.plan_exercise_count, item.exerciseCount),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.primary
-            )
+            Spacer(Modifier.height(12.dp))
+            Button(
+                onClick = onStart,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                shape = RoundedCornerShape(10.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Icon(Icons.Default.PlayArrow, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.plan_start_button))
+            }
         }
     }
 }

@@ -67,7 +67,14 @@ class HomeViewModel @Inject constructor(
         initialValue = HomeUiState()
     )
 
-    fun startOrResumeWorkout(onReady: () -> Unit) {
+    fun startWorkoutAdhoc(onReady: () -> Unit) {
+        viewModelScope.launch {
+            workoutRepo.startOrResume(fromPlanId = null)
+            onReady()
+        }
+    }
+
+    fun continueActiveWorkout(onReady: () -> Unit) {
         viewModelScope.launch {
             workoutRepo.startOrResume()
             onReady()
@@ -76,7 +83,7 @@ class HomeViewModel @Inject constructor(
 
     fun startWorkoutFromPlan(planId: Long, onReady: () -> Unit) {
         viewModelScope.launch {
-            val active = workoutRepo.startOrResume()
+            val active = workoutRepo.startOrResume(fromPlanId = planId)
             val planExercises = planRepo.getPlanExercises(planId)
             planExercises.forEach { pe ->
                 repeat(pe.plannedSets) {

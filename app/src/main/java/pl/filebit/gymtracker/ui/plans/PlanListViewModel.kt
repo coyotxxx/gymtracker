@@ -8,8 +8,10 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
 data class PlanListItem(
@@ -19,7 +21,8 @@ data class PlanListItem(
 
 @HiltViewModel
 class PlanListViewModel @Inject constructor(
-    private val planRepo: PlanRepository
+    private val planRepo: PlanRepository,
+    private val workoutRepo: WorkoutRepository
 ) : ViewModel() {
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -30,4 +33,22 @@ class PlanListViewModel @Inject constructor(
             }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    fun startWorkoutFromPlan(planId: Long, onReady: () -> Unit) {
+        viewModelScope.launch {
+            val active = workoutRepo.startOrResume(fromPlanId = planId)
+            val planExercises = planRepo.getPlanExercises(planId)
+            planExercises.forEach { pe ->
+                repeat(pe.plannedSets) {
+                    workoutRepo.addPlannedSet(
+                        workoutId = active.id,
+                        exerciseId = pe.exerciseId,
+                        reps = pe.plannedReps,
+                        weightKg = pe.plannedWeightKg ?: 0.0
+                    )
+                }
+            }
+            onReady()
+        }
+    }
 }

@@ -8,6 +8,7 @@ data class Workout(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val startedAt: Long,            // epoch millis
     val finishedAt: Long? = null,   // null = trening w toku
+    val fromPlanId: Long? = null,   // null = ad-hoc, inaczej id planu z którego wystartowano
     val notes: String = ""
 ) {
     val isActive: Boolean get() = finishedAt == null

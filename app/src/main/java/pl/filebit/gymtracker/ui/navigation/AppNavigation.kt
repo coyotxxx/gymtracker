@@ -108,7 +108,8 @@ fun AppNavigation() {
             composable(Screen.Plans.route) {
                 PlanListScreen(
                     onEditPlan = { id -> navController.navigate(Screen.PlanEdit.create(id)) },
-                    onCreateNewPlan = { navController.navigate(Screen.PlanEdit.create(0L)) }
+                    onCreateNewPlan = { navController.navigate(Screen.PlanEdit.create(0L)) },
+                    onStartedWorkout = { navController.navigate(Screen.ActiveWorkout.route) }
                 )
             }
             composable(Screen.ExerciseLibrary.route) {

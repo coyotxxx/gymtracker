@@ -26,10 +26,16 @@ class WorkoutRepository @Inject constructor(
     suspend fun getSetsForWorkout(id: Long): List<WorkoutSet> = setDao.getForWorkout(id)
     suspend fun getExercise(id: Long): Exercise? = exerciseDao.getById(id)
 
-    /** Tworzy nowy trening jeśli nie ma aktywnego, w przeciwnym razie zwraca aktywny. */
-    suspend fun startOrResume(): Workout {
+    /**
+     * Tworzy nowy trening jeśli nie ma aktywnego, w przeciwnym razie zwraca aktywny.
+     * Jeśli aktywny już istnieje, fromPlanId jest IGNOROWANY (nie nadpisujemy istniejącego treningu).
+     */
+    suspend fun startOrResume(fromPlanId: Long? = null): Workout {
         workoutDao.getActive()?.let { return it }
-        val newWorkout = Workout(startedAt = System.currentTimeMillis())
+        val newWorkout = Workout(
+            startedAt = System.currentTimeMillis(),
+            fromPlanId = fromPlanId
+        )
         val id = workoutDao.insert(newWorkout)
         return newWorkout.copy(id = id)
     }
