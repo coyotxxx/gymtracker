@@ -246,6 +246,42 @@ class PlanEditViewModel @Inject constructor(
         st.copy(exercises = st.exercises.filter { it.planEx.id != id })
     }
 
+    fun toggleSupersetWithPrev(id: Long) = _state.update { st ->
+        val day = st.selectedDay
+        val sameDay = st.exercises
+            .filter { it.planEx.dayOfWeek == day }
+            .sortedBy { it.planEx.orderIndex }
+        val idx = sameDay.indexOfFirst { it.planEx.id == id }
+        if (idx <= 0) return@update st  // pierwsze ćwiczenie nie może być "z poprzednim"
+        val current = sameDay[idx]
+        val prev = sameDay[idx - 1]
+
+        // Jeśli current jest w tej samej grupie co prev — wyłącz superseria current
+        if (current.planEx.supersetGroup != null && current.planEx.supersetGroup == prev.planEx.supersetGroup) {
+            val newList = st.exercises.map {
+                if (it.planEx.id == current.planEx.id)
+                    it.copy(planEx = it.planEx.copy(supersetGroup = null))
+                else it
+            }
+            return@update st.copy(exercises = newList)
+        }
+
+        // W przeciwnym razie — dołącz current do grupy prev
+        val targetGroup = prev.planEx.supersetGroup ?: run {
+            // Generuj nową literę A/B/C... niewystępującą w tym dniu
+            val existing = sameDay.mapNotNull { it.planEx.supersetGroup }.toSet()
+            ('A'..'Z').map { it.toString() }.firstOrNull { it !in existing } ?: "A"
+        }
+        val newList = st.exercises.map {
+            when (it.planEx.id) {
+                current.planEx.id -> it.copy(planEx = it.planEx.copy(supersetGroup = targetGroup))
+                prev.planEx.id -> it.copy(planEx = it.planEx.copy(supersetGroup = targetGroup))
+                else -> it
+            }
+        }
+        st.copy(exercises = newList)
+    }
+
     fun moveExerciseUp(id: Long) = _state.update { st ->
         val day = st.selectedDay
         val sameDay = st.exercises.filter { it.planEx.dayOfWeek == day }

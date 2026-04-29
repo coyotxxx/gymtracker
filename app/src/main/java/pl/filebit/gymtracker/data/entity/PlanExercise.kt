@@ -28,7 +28,8 @@ data class PlanExercise(
     val planId: Long,
     val exerciseId: Long,
     val dayOfWeek: Int = 1,         // 1=Pon ... 7=Nd ISO
-    val orderIndex: Int
+    val orderIndex: Int,
+    val supersetGroup: String? = null  // np. "A", "B", "C" — ćwiczenia z tym samym group są w superserii
     // Konkretne serie (powt/waga/odp) trzymane są w tabeli plan_exercise_sets
     // jako lista PlanExerciseSet (każda seria osobno edytowalna).
 )

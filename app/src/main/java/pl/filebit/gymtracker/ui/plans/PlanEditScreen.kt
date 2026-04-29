@@ -24,6 +24,8 @@ import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Link
+import androidx.compose.material.icons.filled.LinkOff
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -156,13 +158,23 @@ fun PlanEditScreen(
             }
 
             itemsIndexed(visibleExercises, key = { _, it -> it.planEx.id }) { idx, item ->
+                // Oblicz label A1/A2 dla superserii
+                val supersetLabel = computeSupersetLabel(visibleExercises, idx)
+                val isInSuperset = item.planEx.supersetGroup != null
+                val isLinkedToPrev = idx > 0 &&
+                    visibleExercises[idx - 1].planEx.supersetGroup == item.planEx.supersetGroup &&
+                    item.planEx.supersetGroup != null
                 PlanExerciseCard(
                     item = item,
                     showAdvanced = state.showAdvancedFields,
                     canMoveUp = idx > 0,
                     canMoveDown = idx < visibleExercises.size - 1,
+                    canSuperset = idx > 0,
+                    isLinkedToPrev = isLinkedToPrev,
+                    supersetLabel = supersetLabel,
                     onMoveUp = { vm.moveExerciseUp(item.planEx.id) },
                     onMoveDown = { vm.moveExerciseDown(item.planEx.id) },
+                    onToggleSuperset = { vm.toggleSupersetWithPrev(item.planEx.id) },
                     onUpdateSet = { setId, reps, weight, rest, clearWeight, clearRest ->
                         vm.updatePlanSet(
                             planExerciseId = item.planEx.id,
@@ -276,8 +288,12 @@ private fun PlanExerciseCard(
     showAdvanced: Boolean,
     canMoveUp: Boolean,
     canMoveDown: Boolean,
+    canSuperset: Boolean,
+    isLinkedToPrev: Boolean,
+    supersetLabel: String?,
     onMoveUp: () -> Unit,
     onMoveDown: () -> Unit,
+    onToggleSuperset: () -> Unit,
     onUpdateSet: (setId: Long, reps: Int?, weight: Double?, rest: Int?, clearWeight: Boolean, clearRest: Boolean) -> Unit,
     onUpdateSetAdvanced: (setId: Long, rpe: Int?, rir: Int?, tempo: String?, clearRpe: Boolean, clearRir: Boolean, clearTempo: Boolean) -> Unit,
     onAddSet: () -> Unit,
@@ -286,7 +302,10 @@ private fun PlanExerciseCard(
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        colors = CardDefaults.cardColors(
+            containerColor = if (supersetLabel != null) MaterialTheme.colorScheme.tertiaryContainer
+            else MaterialTheme.colorScheme.surface
+        ),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
@@ -294,12 +313,43 @@ private fun PlanExerciseCard(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                if (supersetLabel != null) {
+                    Box(
+                        modifier = Modifier
+                            .padding(end = 8.dp)
+                            .background(
+                                MaterialTheme.colorScheme.tertiary,
+                                RoundedCornerShape(6.dp)
+                            )
+                            .padding(horizontal = 6.dp, vertical = 2.dp)
+                    ) {
+                        Text(
+                            supersetLabel,
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onTertiary
+                        )
+                    }
+                }
                 Text(
                     item.exercise?.name ?: "(?)",
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier.weight(1f)
                 )
+                IconButton(
+                    onClick = onToggleSuperset,
+                    enabled = canSuperset,
+                    modifier = Modifier.size(36.dp)
+                ) {
+                    Icon(
+                        if (isLinkedToPrev) Icons.Default.LinkOff else Icons.Default.Link,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp),
+                        tint = if (isLinkedToPrev) MaterialTheme.colorScheme.tertiary
+                        else MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
                 IconButton(
                     onClick = onMoveUp,
                     enabled = canMoveUp,
@@ -446,6 +496,18 @@ private fun SetEditRow(
             Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(18.dp))
         }
     }
+}
+
+/**
+ * Oblicza label A1/A2/B1 dla pozycji w obrębie supersetGroup. Null gdy nie w grupie 2+.
+ */
+private fun computeSupersetLabel(list: List<PlanExerciseWithDetail>, idx: Int): String? {
+    val current = list[idx]
+    val group = current.planEx.supersetGroup ?: return null
+    val groupMembers = list.filter { it.planEx.supersetGroup == group }
+    if (groupMembers.size < 2) return null
+    val positionInGroup = groupMembers.indexOfFirst { it.planEx.id == current.planEx.id } + 1
+    return "$group$positionInGroup"
 }
 
 @Composable

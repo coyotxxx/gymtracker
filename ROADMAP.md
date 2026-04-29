@@ -71,7 +71,7 @@
 - [x] **Gotowe szablony planów** — 4 wbudowane (Full Body 3×/tydzień, Stronglifts 5×5, Upper/Lower, Push/Pull/Legs). FAB → "Z gotowego szablonu" → wybierz → PlanEdit prefilled.
 - [x] **Duplikuj plan** — overflow menu na karcie planu (3 kropki) → Duplikuj. Tworzy kopię z " (kopia)" w nazwie.
 - [x] **Reorder ćwiczeń** (strzałki ↑↓ w karcie) ✅ v0.20.0 — strzałki góra/dół przy każdym ćwiczeniu w PlanEdit. Pełen drag & drop biblioteczny — opcjonalnie później jeśli ten okaże się niewystarczający
-- [ ] **Superserie** A1/A2 — grupowanie ćwiczeń — Faza 24 (osobny push)
+- [x] **Superserie A1/A2** ✅ v0.21.0 — `PlanExercise.supersetGroup: String?` (DB v=9). PlanEdit: button 🔗/🔗⃠ (link/unlink) toggle "z superserii z poprzednim". Karta zmienia kolor na tertiary container gdy w grupie. Label A1/A2/B1 obok nazwy. Coach mode obsługuje superserie naturalnie (kolejne sety w listę), specjalna logika krótszego odpoczynku w grupie — V2.2 jeśli będzie potrzeba.
 
 Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej tylko z PlanEdit.
 
