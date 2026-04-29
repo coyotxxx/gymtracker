@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import pl.filebit.gymtracker.data.db.AppDatabase
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
+import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
 import pl.filebit.gymtracker.data.db.dao.TrainingPlanDao
@@ -38,6 +39,7 @@ object AppModule {
     @Provides fun provideTrainingPlanDao(db: AppDatabase): TrainingPlanDao = db.trainingPlanDao()
     @Provides fun providePlanExerciseDao(db: AppDatabase): PlanExerciseDao = db.planExerciseDao()
     @Provides fun providePlanExerciseSetDao(db: AppDatabase): PlanExerciseSetDao = db.planExerciseSetDao()
+    @Provides fun provideBodyMeasurementDao(db: AppDatabase): BodyMeasurementDao = db.bodyMeasurementDao()
 
     @Provides
     @Singleton
