@@ -26,5 +26,6 @@ data class UserProfile(
     val sessionMinutes: Int = 60,
     val preferredUnit: WeightUnit = WeightUnit.KG,
     val defaultRestSeconds: Int = 120,
-    val injuriesNotes: String = ""
+    val injuriesNotes: String = "",
+    val showAdvancedSetFields: Boolean = false
 )

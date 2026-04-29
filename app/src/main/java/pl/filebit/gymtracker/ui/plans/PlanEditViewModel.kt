@@ -19,6 +19,7 @@ import pl.filebit.gymtracker.data.entity.PlanExerciseSet
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 
 data class PlanExerciseWithDetail(
@@ -34,6 +35,7 @@ data class PlanEditUiState(
     val notes: String = "",
     val exercises: List<PlanExerciseWithDetail> = emptyList(),
     val selectedDay: Int = 1, // 1=Pon..7=Nd, currently active tab
+    val showAdvancedFields: Boolean = false,
     val isLoading: Boolean = true
 ) {
     val exercisesForSelectedDay: List<PlanExerciseWithDetail>
@@ -44,6 +46,7 @@ data class PlanEditUiState(
 class PlanEditViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
+    private val profileRepo: UserProfileRepository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -60,7 +63,47 @@ class PlanEditViewModel @Inject constructor(
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
             .dayOfWeek.isoDayNumber
         _state.update { it.copy(selectedDay = today) }
+        viewModelScope.launch {
+            val showAdvanced = profileRepo.get().showAdvancedSetFields
+            _state.update { it.copy(showAdvancedFields = showAdvanced) }
+        }
         load()
+    }
+
+    fun updatePlanSetAdvanced(
+        planExerciseId: Long,
+        setId: Long,
+        rpe: Int? = null,
+        rir: Int? = null,
+        tempo: String? = null,
+        clearRpe: Boolean = false,
+        clearRir: Boolean = false,
+        clearTempo: Boolean = false
+    ) = _state.update { st ->
+        val newList = st.exercises.map { ped ->
+            if (ped.planEx.id != planExerciseId) ped
+            else ped.copy(sets = ped.sets.map { s ->
+                if (s.id != setId) s
+                else s.copy(
+                    rpe = when {
+                        clearRpe -> null
+                        rpe != null -> rpe
+                        else -> s.rpe
+                    },
+                    rir = when {
+                        clearRir -> null
+                        rir != null -> rir
+                        else -> s.rir
+                    },
+                    tempo = when {
+                        clearTempo -> null
+                        tempo != null -> tempo
+                        else -> s.tempo
+                    }
+                )
+            })
+        }
+        st.copy(exercises = newList)
     }
 
     fun setSelectedDay(day: Int) = _state.update { it.copy(selectedDay = day) }

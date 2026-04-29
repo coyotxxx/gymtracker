@@ -166,6 +166,35 @@ fun ProfileScreen(
             }
 
             item {
+                SectionCard(title = stringResource(R.string.profile_advanced_section)) {
+                    androidx.compose.foundation.layout.Row(
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    ) {
+                        androidx.compose.material3.Switch(
+                            checked = draft.showAdvancedSetFields,
+                            onCheckedChange = { draft = draft.copy(showAdvancedSetFields = it) }
+                        )
+                        Spacer(Modifier.height(8.dp))
+                        androidx.compose.foundation.layout.Spacer(
+                            modifier = Modifier.padding(start = 12.dp)
+                        )
+                        Column {
+                            Text(
+                                stringResource(R.string.profile_advanced_toggle),
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(
+                                stringResource(R.string.profile_advanced_explain),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
                 Button(
                     onClick = {
                         vm.save(draft) {

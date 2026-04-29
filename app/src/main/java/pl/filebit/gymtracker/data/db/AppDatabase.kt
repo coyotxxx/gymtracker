@@ -28,7 +28,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         PlanExercise::class,
         PlanExerciseSet::class
     ],
-    version = 6,
+    version = 7,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

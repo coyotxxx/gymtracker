@@ -43,7 +43,8 @@ data class ProfileDto(
     val goal: String, val experience: String,
     val daysPerWeek: Int, val sessionMinutes: Int,
     val preferredUnit: String, val defaultRestSeconds: Int,
-    val injuriesNotes: String
+    val injuriesNotes: String,
+    val showAdvancedSetFields: Boolean = false
 )
 
 @Serializable
@@ -111,7 +112,8 @@ class BackupViewModel @Inject constructor(
                         sessionMinutes = profile.sessionMinutes,
                         preferredUnit = profile.preferredUnit.name,
                         defaultRestSeconds = profile.defaultRestSeconds,
-                        injuriesNotes = profile.injuriesNotes
+                        injuriesNotes = profile.injuriesNotes,
+                        showAdvancedSetFields = profile.showAdvancedSetFields
                     ),
                     exercises = exercises.map {
                         ExerciseDto(
@@ -208,7 +210,8 @@ class BackupViewModel @Inject constructor(
                             preferredUnit = runCatching { pl.filebit.gymtracker.data.entity.WeightUnit.valueOf(p.preferredUnit) }
                                 .getOrDefault(pl.filebit.gymtracker.data.entity.WeightUnit.KG),
                             defaultRestSeconds = p.defaultRestSeconds,
-                            injuriesNotes = p.injuriesNotes
+                            injuriesNotes = p.injuriesNotes,
+                            showAdvancedSetFields = p.showAdvancedSetFields
                         )
                     )
                 }

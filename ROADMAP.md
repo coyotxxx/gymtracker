@@ -82,11 +82,14 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [x] **Odznaki** — 9 wbudowanych: workouts (10/50/100/250), volume (100k/500k), streak (4/12/52). Grid 2 kolumny, zablokowane pokazują progressbar postępu.
 - [ ] Powiadomienia o niedokończonym treningu — V2.1 (wymaga WorkManager + POST_NOTIFICATIONS)
 
-### Faza 18 — Tempo / RPE / RIR
+### Faza 18 — Tempo / RPE / RIR ✅ v0.15.0 (częściowo)
 
-- [ ] Pole RPE (1-10) w `WorkoutSet` (opcjonalne)
-- [ ] Pole RIR (reps in reserve) w `WorkoutSet`
-- [ ] Tempo (eksc/pauza/konc/pauza, np. "3-1-1-0")
+- [x] **Pole RPE** (1-10) — w WorkoutSet (od poprzedniej fazy) i PlanExerciseSet
+- [x] **Pole RIR** (reps in reserve) — w WorkoutSet i PlanExerciseSet
+- [x] **Tempo** — String? (np. "3-1-1-0") w WorkoutSet i PlanExerciseSet
+- [x] **Toggle 'Pokaż pola zaawansowane'** w Profilu (UserProfile.showAdvancedSetFields)
+- [x] **UI pól w PlanEdit** — drugi rząd RPE / RIR / Tempo per set gdy toggle ON
+- [ ] UI pól w ActiveWorkout / Coach mode confirm — V2.1 (logic gotowy, schema zapisuje, brakuje tylko interfejsu wprowadzania w trakcie treningu)
 
 ### Faza 19 — Body & pomiary
 

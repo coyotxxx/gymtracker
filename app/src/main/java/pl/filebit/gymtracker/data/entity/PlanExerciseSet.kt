@@ -24,5 +24,8 @@ data class PlanExerciseSet(
     val reps: Int = 8,
     val weightKg: Double? = null,
     val restSeconds: Int? = null,
-    val setType: SetType = SetType.NORMAL
+    val setType: SetType = SetType.NORMAL,
+    val rpe: Int? = null,
+    val rir: Int? = null,
+    val tempo: String? = null
 )

@@ -155,6 +155,7 @@ fun PlanEditScreen(
             items(visibleExercises, key = { it.planEx.id }) { item ->
                 PlanExerciseCard(
                     item = item,
+                    showAdvanced = state.showAdvancedFields,
                     onUpdateSet = { setId, reps, weight, rest, clearWeight, clearRest ->
                         vm.updatePlanSet(
                             planExerciseId = item.planEx.id,
@@ -164,6 +165,18 @@ fun PlanEditScreen(
                             restSeconds = rest,
                             clearWeight = clearWeight,
                             clearRest = clearRest
+                        )
+                    },
+                    onUpdateSetAdvanced = { setId, rpe, rir, tempo, clearRpe, clearRir, clearTempo ->
+                        vm.updatePlanSetAdvanced(
+                            planExerciseId = item.planEx.id,
+                            setId = setId,
+                            rpe = rpe,
+                            rir = rir,
+                            tempo = tempo,
+                            clearRpe = clearRpe,
+                            clearRir = clearRir,
+                            clearTempo = clearTempo
                         )
                     },
                     onAddSet = { vm.addSetToExercise(item.planEx.id) },
@@ -253,7 +266,9 @@ private fun DayTabRow(
 @Composable
 private fun PlanExerciseCard(
     item: PlanExerciseWithDetail,
+    showAdvanced: Boolean,
     onUpdateSet: (setId: Long, reps: Int?, weight: Double?, rest: Int?, clearWeight: Boolean, clearRest: Boolean) -> Unit,
+    onUpdateSetAdvanced: (setId: Long, rpe: Int?, rir: Int?, tempo: String?, clearRpe: Boolean, clearRir: Boolean, clearTempo: Boolean) -> Unit,
     onAddSet: () -> Unit,
     onRemoveSet: (Long) -> Unit,
     onRemoveExercise: () -> Unit
@@ -324,6 +339,14 @@ private fun PlanExerciseCard(
                     },
                     onDelete = { onRemoveSet(setSpec.id) }
                 )
+                if (showAdvanced) {
+                    AdvancedSetRow(
+                        setSpec = setSpec,
+                        onRpe = { v -> onUpdateSetAdvanced(setSpec.id, v, null, null, v == null, false, false) },
+                        onRir = { v -> onUpdateSetAdvanced(setSpec.id, null, v, null, false, v == null, false) },
+                        onTempo = { v -> onUpdateSetAdvanced(setSpec.id, null, null, v, false, false, v.isNullOrBlank()) }
+                    )
+                }
             }
 
             Spacer(Modifier.height(8.dp))
@@ -397,6 +420,62 @@ private fun SetEditRow(
         IconButton(onClick = onDelete, modifier = Modifier.size(40.dp)) {
             Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(18.dp))
         }
+    }
+}
+
+@Composable
+private fun AdvancedSetRow(
+    setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
+    onRpe: (Int?) -> Unit,
+    onRir: (Int?) -> Unit,
+    onTempo: (String?) -> Unit
+) {
+    var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
+    var rirText by remember(setSpec.id) { mutableStateOf(setSpec.rir?.toString() ?: "") }
+    var tempoText by remember(setSpec.id) { mutableStateOf(setSpec.tempo ?: "") }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 40.dp, top = 2.dp, end = 40.dp, bottom = 6.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        OutlinedTextField(
+            value = rpeText,
+            onValueChange = {
+                rpeText = it.filter { c -> c.isDigit() }
+                if (rpeText.isBlank()) onRpe(null)
+                else rpeText.toIntOrNull()?.let(onRpe)
+            },
+            label = { Text("RPE", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.weight(1f)
+        )
+        OutlinedTextField(
+            value = rirText,
+            onValueChange = {
+                rirText = it.filter { c -> c.isDigit() }
+                if (rirText.isBlank()) onRir(null)
+                else rirText.toIntOrNull()?.let(onRir)
+            },
+            label = { Text("RIR", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.weight(1f)
+        )
+        OutlinedTextField(
+            value = tempoText,
+            onValueChange = {
+                tempoText = it
+                if (tempoText.isBlank()) onTempo(null) else onTempo(tempoText)
+            },
+            label = { Text("Tempo", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            placeholder = { Text("3-1-1-0", style = MaterialTheme.typography.bodySmall) },
+            modifier = Modifier.weight(1.4f)
+        )
     }
 }
 
