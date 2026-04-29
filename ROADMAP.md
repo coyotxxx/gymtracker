@@ -70,8 +70,8 @@
 
 - [x] **Gotowe szablony planów** — 4 wbudowane (Full Body 3×/tydzień, Stronglifts 5×5, Upper/Lower, Push/Pull/Legs). FAB → "Z gotowego szablonu" → wybierz → PlanEdit prefilled.
 - [x] **Duplikuj plan** — overflow menu na karcie planu (3 kropki) → Duplikuj. Tworzy kopię z " (kopia)" w nazwie.
-- [ ] **Drag & drop** kolejności ćwiczeń w PlanEdit — V2.1
-- [ ] **Superserie** A1/A2 — grupowanie ćwiczeń — V2.1
+- [x] **Reorder ćwiczeń** (strzałki ↑↓ w karcie) ✅ v0.20.0 — strzałki góra/dół przy każdym ćwiczeniu w PlanEdit. Pełen drag & drop biblioteczny — opcjonalnie później jeśli ten okaże się niewystarczający
+- [ ] **Superserie** A1/A2 — grupowanie ćwiczeń — Faza 24 (osobny push)
 
 Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej tylko z PlanEdit.
 

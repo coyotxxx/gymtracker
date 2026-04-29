@@ -246,6 +246,40 @@ class PlanEditViewModel @Inject constructor(
         st.copy(exercises = st.exercises.filter { it.planEx.id != id })
     }
 
+    fun moveExerciseUp(id: Long) = _state.update { st ->
+        val day = st.selectedDay
+        val sameDay = st.exercises.filter { it.planEx.dayOfWeek == day }
+        val idx = sameDay.indexOfFirst { it.planEx.id == id }
+        if (idx <= 0) return@update st
+        val swapWith = sameDay[idx - 1]
+        val current = sameDay[idx]
+        val newList = st.exercises.map {
+            when (it.planEx.id) {
+                current.planEx.id -> it.copy(planEx = it.planEx.copy(orderIndex = swapWith.planEx.orderIndex))
+                swapWith.planEx.id -> it.copy(planEx = it.planEx.copy(orderIndex = current.planEx.orderIndex))
+                else -> it
+            }
+        }.sortedWith(compareBy({ it.planEx.dayOfWeek }, { it.planEx.orderIndex }))
+        st.copy(exercises = newList)
+    }
+
+    fun moveExerciseDown(id: Long) = _state.update { st ->
+        val day = st.selectedDay
+        val sameDay = st.exercises.filter { it.planEx.dayOfWeek == day }
+        val idx = sameDay.indexOfFirst { it.planEx.id == id }
+        if (idx < 0 || idx >= sameDay.size - 1) return@update st
+        val swapWith = sameDay[idx + 1]
+        val current = sameDay[idx]
+        val newList = st.exercises.map {
+            when (it.planEx.id) {
+                current.planEx.id -> it.copy(planEx = it.planEx.copy(orderIndex = swapWith.planEx.orderIndex))
+                swapWith.planEx.id -> it.copy(planEx = it.planEx.copy(orderIndex = current.planEx.orderIndex))
+                else -> it
+            }
+        }.sortedWith(compareBy({ it.planEx.dayOfWeek }, { it.planEx.orderIndex }))
+        st.copy(exercises = newList)
+    }
+
     fun save(onDone: () -> Unit) {
         viewModelScope.launch {
             val st = _state.value

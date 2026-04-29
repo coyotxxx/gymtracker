@@ -14,11 +14,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.AlertDialog
@@ -152,10 +155,14 @@ fun PlanEditScreen(
                 }
             }
 
-            items(visibleExercises, key = { it.planEx.id }) { item ->
+            itemsIndexed(visibleExercises, key = { _, it -> it.planEx.id }) { idx, item ->
                 PlanExerciseCard(
                     item = item,
                     showAdvanced = state.showAdvancedFields,
+                    canMoveUp = idx > 0,
+                    canMoveDown = idx < visibleExercises.size - 1,
+                    onMoveUp = { vm.moveExerciseUp(item.planEx.id) },
+                    onMoveDown = { vm.moveExerciseDown(item.planEx.id) },
                     onUpdateSet = { setId, reps, weight, rest, clearWeight, clearRest ->
                         vm.updatePlanSet(
                             planExerciseId = item.planEx.id,
@@ -267,6 +274,10 @@ private fun DayTabRow(
 private fun PlanExerciseCard(
     item: PlanExerciseWithDetail,
     showAdvanced: Boolean,
+    canMoveUp: Boolean,
+    canMoveDown: Boolean,
+    onMoveUp: () -> Unit,
+    onMoveDown: () -> Unit,
     onUpdateSet: (setId: Long, reps: Int?, weight: Double?, rest: Int?, clearWeight: Boolean, clearRest: Boolean) -> Unit,
     onUpdateSetAdvanced: (setId: Long, rpe: Int?, rir: Int?, tempo: String?, clearRpe: Boolean, clearRir: Boolean, clearTempo: Boolean) -> Unit,
     onAddSet: () -> Unit,
@@ -289,6 +300,20 @@ private fun PlanExerciseCard(
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier.weight(1f)
                 )
+                IconButton(
+                    onClick = onMoveUp,
+                    enabled = canMoveUp,
+                    modifier = Modifier.size(36.dp)
+                ) {
+                    Icon(Icons.Default.ArrowUpward, contentDescription = null, modifier = Modifier.size(18.dp))
+                }
+                IconButton(
+                    onClick = onMoveDown,
+                    enabled = canMoveDown,
+                    modifier = Modifier.size(36.dp)
+                ) {
+                    Icon(Icons.Default.ArrowDownward, contentDescription = null, modifier = Modifier.size(18.dp))
+                }
                 IconButton(onClick = onRemoveExercise) {
                     Icon(Icons.Default.Delete, contentDescription = null)
                 }
