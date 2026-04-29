@@ -19,6 +19,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Replay
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -56,6 +57,7 @@ fun WorkoutDetailScreen(
     workoutId: Long,
     onBack: () -> Unit,
     onSavedAsPlan: (Long) -> Unit,
+    onRepeated: () -> Unit,
     vm: WorkoutDetailViewModel = hiltViewModel()
 ) {
     LaunchedEffect(workoutId) { vm.load(workoutId) }
@@ -85,6 +87,16 @@ fun WorkoutDetailScreen(
                             expanded = menuOpen,
                             onDismissRequest = { menuOpen = false }
                         ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_repeat_workout)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.Replay, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    vm.repeatWorkout(onRepeated)
+                                }
+                            )
                             DropdownMenuItem(
                                 text = { Text(stringResource(R.string.detail_save_as_plan)) },
                                 leadingIcon = {

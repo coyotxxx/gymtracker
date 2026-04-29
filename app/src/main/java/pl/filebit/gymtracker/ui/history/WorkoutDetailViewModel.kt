@@ -69,6 +69,31 @@ class WorkoutDetailViewModel @Inject constructor(
     }
 
     /**
+     * Tworzy nowy aktywny ad-hoc trening jako kopia tego (placeholdery isCompleted=false).
+     * Po utworzeniu callback nawigacji do ActiveWorkout.
+     */
+    fun repeatWorkout(onReady: () -> Unit) {
+        val srcId = _state.value.workout?.id ?: return
+        viewModelScope.launch {
+            val srcSets = repo.getSetsForWorkout(srcId).sortedWith(
+                compareBy({ it.orderIndex }, { it.setNumber })
+            )
+            if (srcSets.isEmpty()) { onReady(); return@launch }
+            val active = repo.startOrResume()
+            for (s in srcSets) {
+                repo.addPlannedSet(
+                    workoutId = active.id,
+                    exerciseId = s.exerciseId,
+                    reps = s.reps,
+                    weightKg = s.weightKg,
+                    setType = s.setType
+                )
+            }
+            onReady()
+        }
+    }
+
+    /**
      * Tworzy nowy plan z ćwiczeń tego treningu. Każda grupa ćwiczeń → PlanExercise.
      * Wagę bierzemy najwyższą (working set), reps z najcięższego setu, liczbę serii = wszystkie sety.
      * User dopracuje nazwę i dni tygodnia w PlanEdit.

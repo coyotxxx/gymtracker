@@ -153,4 +153,11 @@ class CoachWorkoutViewModel @Inject constructor(
             onDone()
         }
     }
+
+    fun setNotes(notes: String) {
+        val w = state.value.workout ?: return
+        viewModelScope.launch {
+            workoutRepo.updateWorkout(w.copy(notes = notes))
+        }
+    }
 }

@@ -36,7 +36,9 @@ data class WorkoutSet(
     val reps: Int,
     val weightKg: Double,
     val isCompleted: Boolean = true,
-    val isWarmup: Boolean = false,
+    val setType: SetType = SetType.NORMAL,
     val rpe: Int? = null,               // 1-10, opcjonalne
     val createdAt: Long = System.currentTimeMillis()
-)
+) {
+    val isWarmup: Boolean get() = setType == SetType.WARMUP
+}

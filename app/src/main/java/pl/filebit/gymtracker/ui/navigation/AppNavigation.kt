@@ -206,6 +206,10 @@ fun AppNavigation() {
                     onSavedAsPlan = { newPlanId ->
                         navController.popBackStack()
                         navController.navigate(Screen.PlanEdit.create(newPlanId))
+                    },
+                    onRepeated = {
+                        navController.popBackStack()
+                        navController.navigate(Screen.ActiveWorkout.route)
                     }
                 )
             }

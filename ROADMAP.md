@@ -34,13 +34,13 @@
 
 ## 🔴 V1 — kluczowe braki dla codziennego użytku
 
-### Faza 12 — Wartość operacyjna
+### Faza 12 — Wartość operacyjna ✅ v0.9.0
 
-- [ ] **Typy serii** — warm-up / working / drop set / failure / AMRAP (kolumna w `WorkoutSet` + `PlanExerciseSet`, kolorystyka + filtr w statystykach)
-- [ ] **"Ostatnio: X kg × Y"** w ad-hoc workout (już jest w Coach mode, dodać też do listy ad-hoc)
-- [ ] **Auto-fill "Dodaj serię"** — kopia z poprzedniej serii zamiast `8×0kg`
-- [ ] **Notatki per-trening** — textarea pokazywana w ActiveWorkout/CoachWorkout (icon notatki w TopAppBar)
-- [ ] **"Powtórz trening"** w WorkoutDetail (overflow menu — kopiuj sety jako placeholdery do nowego treningu, bez przechodzenia przez plan)
+- [x] **Typy serii** — `SetType` enum (NORMAL/WARMUP/DROP/FAILURE/AMRAP) w `WorkoutSet` + `PlanExerciseSet`. UI chips per-set zostawione na Fazę 12.1 (najpierw zapis w bazie, potem pełna prezentacja).
+- [x] **"Ostatnio: X kg × Y"** — już istnieje w `ExerciseGroupCard` (linijka pod tytułem ćwiczenia) i w Coach mode
+- [x] **Auto-fill "Dodaj serię"** — `+ Dodaj serię` w Active workout kopiuje wartości z poprzedniej serii (już istnieje w `ExerciseGroupCard.onAddSet`)
+- [x] **Notatki per-trening** — IconButton 📝 w TopAppBar Active/Coach, dialog z `OutlinedTextField` multiline, zapis do `Workout.notes`
+- [x] **"Powtórz trening"** w WorkoutDetail (overflow menu) — `repeatWorkout` tworzy nowy aktywny trening z placeholder-serie skopiowanymi z oryginału, nawigacja do ActiveWorkout
 
 ### Faza 13 — Statystyki & PR
 

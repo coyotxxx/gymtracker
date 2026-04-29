@@ -64,7 +64,10 @@ data class SetDto(
     val id: Long, val workoutId: Long, val exerciseId: Long,
     val setNumber: Int, val orderIndex: Int,
     val reps: Int, val weightKg: Double,
-    val isCompleted: Boolean, val isWarmup: Boolean,
+    val isCompleted: Boolean,
+    val setType: String = "NORMAL",
+    // legacy field (stary backup) — zachowane dla kompatybilności wstecz
+    val isWarmup: Boolean = false,
     val rpe: Int?, val createdAt: Long
 )
 
@@ -125,7 +128,9 @@ class BackupViewModel @Inject constructor(
                             it.id, it.workoutId, it.exerciseId,
                             it.setNumber, it.orderIndex,
                             it.reps, it.weightKg,
-                            it.isCompleted, it.isWarmup,
+                            it.isCompleted,
+                            setType = it.setType.name,
+                            isWarmup = it.setType == pl.filebit.gymtracker.data.entity.SetType.WARMUP,
                             it.rpe, it.createdAt
                         )
                     }
@@ -215,7 +220,11 @@ class BackupViewModel @Inject constructor(
                             reps = s.reps,
                             weightKg = s.weightKg,
                             isCompleted = s.isCompleted,
-                            isWarmup = s.isWarmup,
+                            setType = if (s.setType.isNotBlank()) {
+                                pl.filebit.gymtracker.data.entity.SetType.safeValueOf(s.setType)
+                            } else if (s.isWarmup) {
+                                pl.filebit.gymtracker.data.entity.SetType.WARMUP
+                            } else pl.filebit.gymtracker.data.entity.SetType.NORMAL,
                             rpe = s.rpe,
                             createdAt = s.createdAt
                         )

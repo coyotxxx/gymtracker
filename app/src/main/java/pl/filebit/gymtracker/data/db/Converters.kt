@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.MuscleGroup
+import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightUnit
 
@@ -27,6 +28,9 @@ class Converters {
     @TypeConverter fun unitToString(u: WeightUnit): String = u.name
     @TypeConverter fun stringToUnit(s: String): WeightUnit =
         runCatching { WeightUnit.valueOf(s) }.getOrDefault(WeightUnit.KG)
+
+    @TypeConverter fun setTypeToString(t: SetType): String = t.name
+    @TypeConverter fun stringToSetType(s: String): SetType = SetType.safeValueOf(s)
 
     @TypeConverter fun intListToString(l: List<Int>): String = l.joinToString(",")
     @TypeConverter fun stringToIntList(s: String): List<Int> =

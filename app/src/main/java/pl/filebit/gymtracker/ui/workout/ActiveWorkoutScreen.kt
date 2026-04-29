@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.automirrored.filled.Notes
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.EventNote
@@ -93,6 +94,7 @@ fun ActiveWorkoutScreen(
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
+    var showNotesDialog by remember { mutableStateOf(false) }
     var menuOpen by remember { mutableStateOf(false) }
 
     // Auto-tick czasu trwania treningu (Compose timer trigger)
@@ -127,6 +129,9 @@ fun ActiveWorkoutScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { showNotesDialog = true }) {
+                        Icon(Icons.AutoMirrored.Filled.Notes, contentDescription = null)
+                    }
                     Box {
                         IconButton(onClick = { menuOpen = true }) {
                             Icon(Icons.Default.MoreVert, contentDescription = null)
@@ -231,6 +236,17 @@ fun ActiveWorkoutScreen(
         }
     }
 
+    if (showNotesDialog) {
+        WorkoutNotesDialog(
+            initial = state.workout?.notes ?: "",
+            onSave = { newNotes ->
+                vm.setNotes(newNotes)
+                showNotesDialog = false
+            },
+            onDismiss = { showNotesDialog = false }
+        )
+    }
+
     if (showFinishDialog) {
         AlertDialog(
             onDismissRequest = { showFinishDialog = false },
@@ -249,6 +265,39 @@ fun ActiveWorkoutScreen(
             }
         )
     }
+}
+
+@Composable
+private fun WorkoutNotesDialog(
+    initial: String,
+    onSave: (String) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var text by remember { mutableStateOf(initial) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.workout_notes_title)) },
+        text = {
+            OutlinedTextField(
+                value = text,
+                onValueChange = { text = it },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text(stringResource(R.string.workout_notes_placeholder)) },
+                minLines = 3,
+                maxLines = 8
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = { onSave(text) }) {
+                Text(stringResource(R.string.common_save))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.common_cancel))
+            }
+        }
+    )
 }
 
 @Composable

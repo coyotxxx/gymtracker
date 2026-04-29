@@ -69,7 +69,7 @@ class WorkoutRepository @Inject constructor(
         exerciseId: Long,
         reps: Int,
         weightKg: Double,
-        isWarmup: Boolean = false
+        setType: pl.filebit.gymtracker.data.entity.SetType = pl.filebit.gymtracker.data.entity.SetType.NORMAL
     ): WorkoutSet {
         val sets = setDao.getForWorkout(workoutId)
         val existingForExercise = sets.filter { it.exerciseId == exerciseId }
@@ -84,7 +84,7 @@ class WorkoutRepository @Inject constructor(
             orderIndex = orderIndex,
             reps = reps,
             weightKg = weightKg,
-            isWarmup = isWarmup,
+            setType = setType,
             isCompleted = true
         )
         val id = setDao.insert(set)
@@ -99,7 +99,8 @@ class WorkoutRepository @Inject constructor(
         workoutId: Long,
         exerciseId: Long,
         reps: Int,
-        weightKg: Double
+        weightKg: Double,
+        setType: pl.filebit.gymtracker.data.entity.SetType = pl.filebit.gymtracker.data.entity.SetType.NORMAL
     ): WorkoutSet {
         val sets = setDao.getForWorkout(workoutId)
         val existingForExercise = sets.filter { it.exerciseId == exerciseId }
@@ -114,7 +115,7 @@ class WorkoutRepository @Inject constructor(
             orderIndex = orderIndex,
             reps = reps,
             weightKg = weightKg,
-            isWarmup = false,
+            setType = setType,
             isCompleted = false
         )
         val id = setDao.insert(set)
@@ -122,6 +123,7 @@ class WorkoutRepository @Inject constructor(
     }
 
     suspend fun updateSet(set: WorkoutSet) = setDao.update(set)
+    suspend fun updateWorkout(workout: Workout) = workoutDao.update(workout)
     suspend fun deleteSet(set: WorkoutSet) = setDao.delete(set)
 
     suspend fun getSet(id: Long): WorkoutSet? = setDao.getById(id)

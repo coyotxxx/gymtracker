@@ -85,7 +85,12 @@ class ActiveWorkoutViewModel @Inject constructor(
             initialValue = ActiveWorkoutUiState()
         )
 
-    fun addSet(exerciseId: Long, reps: Int, weightKg: Double, isWarmup: Boolean = false) {
+    fun addSet(
+        exerciseId: Long,
+        reps: Int,
+        weightKg: Double,
+        setType: pl.filebit.gymtracker.data.entity.SetType = pl.filebit.gymtracker.data.entity.SetType.NORMAL
+    ) {
         val workoutId = state.value.workout?.id ?: return
         viewModelScope.launch {
             workoutRepo.addSet(
@@ -93,8 +98,38 @@ class ActiveWorkoutViewModel @Inject constructor(
                 exerciseId = exerciseId,
                 reps = reps,
                 weightKg = weightKg,
-                isWarmup = isWarmup
+                setType = setType
             )
+        }
+    }
+
+    fun setNotes(notes: String) {
+        val w = state.value.workout ?: return
+        viewModelScope.launch {
+            workoutRepo.updateWorkout(w.copy(notes = notes))
+        }
+    }
+
+    /**
+     * Tworzy nowy aktywny trening jako kopia podanego treningu (placeholdery isCompleted=false).
+     * Używane przy "Powtórz trening".
+     */
+    fun cloneFromWorkout(sourceWorkoutId: Long, onReady: () -> Unit) {
+        viewModelScope.launch {
+            val src = workoutRepo.getWorkout(sourceWorkoutId) ?: return@launch
+            val srcSets = workoutRepo.getSetsForWorkout(sourceWorkoutId)
+            val active = workoutRepo.startOrResume()
+            val ordered = srcSets.sortedWith(compareBy({ it.orderIndex }, { it.setNumber }))
+            for (s in ordered) {
+                workoutRepo.addPlannedSet(
+                    workoutId = active.id,
+                    exerciseId = s.exerciseId,
+                    reps = s.reps,
+                    weightKg = s.weightKg,
+                    setType = s.setType
+                )
+            }
+            onReady()
         }
     }
 

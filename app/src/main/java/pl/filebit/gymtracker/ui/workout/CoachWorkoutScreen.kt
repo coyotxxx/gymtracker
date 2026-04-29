@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Notes
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -24,9 +25,11 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -81,6 +84,7 @@ fun CoachWorkoutScreen(
 
     var showConfirmDialog by remember { mutableStateOf(false) }
     var showFinishDialog by remember { mutableStateOf(false) }
+    var showNotesDialog by remember { mutableStateOf(false) }
 
     // Live duration tick
     var nowMillis by remember { mutableStateOf(System.currentTimeMillis()) }
@@ -116,6 +120,9 @@ fun CoachWorkoutScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { showNotesDialog = true }) {
+                        Icon(Icons.AutoMirrored.Filled.Notes, contentDescription = null)
+                    }
                     TextButton(onClick = { showFinishDialog = true }) {
                         Text(stringResource(R.string.workout_finish))
                     }
@@ -179,6 +186,35 @@ fun CoachWorkoutScreen(
                 }
             },
             onDismiss = { showConfirmDialog = false }
+        )
+    }
+
+    if (showNotesDialog) {
+        var text by remember { mutableStateOf(state.workout?.notes ?: "") }
+        AlertDialog(
+            onDismissRequest = { showNotesDialog = false },
+            title = { Text(stringResource(R.string.workout_notes_title)) },
+            text = {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(R.string.workout_notes_placeholder)) },
+                    minLines = 3,
+                    maxLines = 8
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.setNotes(text)
+                    showNotesDialog = false
+                }) { Text(stringResource(R.string.common_save)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showNotesDialog = false }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
+            }
         )
     }
 
