@@ -84,6 +84,36 @@ class WorkoutRepository @Inject constructor(
         return set.copy(id = id)
     }
 
+    /**
+     * Dodaje serię z planu jako placeholder (isCompleted=false).
+     * Logika setNumber/orderIndex identyczna jak w addSet.
+     */
+    suspend fun addPlannedSet(
+        workoutId: Long,
+        exerciseId: Long,
+        reps: Int,
+        weightKg: Double
+    ): WorkoutSet {
+        val sets = setDao.getForWorkout(workoutId)
+        val existingForExercise = sets.filter { it.exerciseId == exerciseId }
+        val orderIndex = existingForExercise.firstOrNull()?.orderIndex
+            ?: ((setDao.getMaxOrderIndex(workoutId) ?: -1) + 1)
+        val setNumber = (existingForExercise.maxOfOrNull { it.setNumber } ?: 0) + 1
+
+        val set = WorkoutSet(
+            workoutId = workoutId,
+            exerciseId = exerciseId,
+            setNumber = setNumber,
+            orderIndex = orderIndex,
+            reps = reps,
+            weightKg = weightKg,
+            isWarmup = false,
+            isCompleted = false
+        )
+        val id = setDao.insert(set)
+        return set.copy(id = id)
+    }
+
     suspend fun updateSet(set: WorkoutSet) = setDao.update(set)
     suspend fun deleteSet(set: WorkoutSet) = setDao.delete(set)
 

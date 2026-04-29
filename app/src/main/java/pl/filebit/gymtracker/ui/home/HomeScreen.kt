@@ -66,11 +66,24 @@ fun HomeScreen(
                 .padding(padding)
                 .padding(horizontal = 16.dp)
         ) {
-            // Big CTA: Start / Continue workout
-            StartWorkoutButton(
-                isResume = state.activeWorkout != null,
-                onClick = { vm.startOrResumeWorkout(onReady = onStartWorkout) }
-            )
+            // Big CTA: 3 stany - aktywny trening / dzisiejszy plan / ad-hoc
+            when {
+                state.activeWorkout != null -> StartWorkoutButton(
+                    label = stringResource(R.string.home_continue_workout),
+                    onClick = { vm.startOrResumeWorkout(onReady = onStartWorkout) }
+                )
+                state.todaysPlan != null -> TodaysPlanCard(
+                    planName = state.todaysPlan!!.name,
+                    exerciseCount = state.todaysPlanExerciseCount,
+                    onClick = {
+                        vm.startWorkoutFromPlan(state.todaysPlan!!.id, onStartWorkout)
+                    }
+                )
+                else -> StartWorkoutButton(
+                    label = stringResource(R.string.home_start_workout_adhoc),
+                    onClick = { vm.startOrResumeWorkout(onReady = onStartWorkout) }
+                )
+            }
 
             Spacer(Modifier.height(24.dp))
 
@@ -110,7 +123,7 @@ fun HomeScreen(
 }
 
 @Composable
-private fun StartWorkoutButton(isResume: Boolean, onClick: () -> Unit) {
+private fun StartWorkoutButton(label: String, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier
@@ -124,13 +137,52 @@ private fun StartWorkoutButton(isResume: Boolean, onClick: () -> Unit) {
     ) {
         Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(28.dp))
         Spacer(Modifier.width(12.dp))
-        Text(
-            stringResource(
-                if (isResume) R.string.home_continue_workout
-                else R.string.home_start_workout
-            ),
-            style = MaterialTheme.typography.titleLarge
-        )
+        Text(label, style = MaterialTheme.typography.titleLarge)
+    }
+}
+
+@Composable
+private fun TodaysPlanCard(planName: String, exerciseCount: Int, onClick: () -> Unit) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                stringResource(R.string.home_todays_plan, planName),
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                stringResource(R.string.home_plan_exercises_count, exerciseCount),
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Spacer(Modifier.height(12.dp))
+            Button(
+                onClick = onClick,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Icon(Icons.Default.PlayArrow, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(R.string.home_start_plan, planName),
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
+        }
     }
 }
 
