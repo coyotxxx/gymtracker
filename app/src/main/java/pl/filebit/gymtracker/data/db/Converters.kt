@@ -27,4 +27,9 @@ class Converters {
     @TypeConverter fun unitToString(u: WeightUnit): String = u.name
     @TypeConverter fun stringToUnit(s: String): WeightUnit =
         runCatching { WeightUnit.valueOf(s) }.getOrDefault(WeightUnit.KG)
+
+    @TypeConverter fun intListToString(l: List<Int>): String = l.joinToString(",")
+    @TypeConverter fun stringToIntList(s: String): List<Int> =
+        if (s.isBlank()) emptyList()
+        else s.split(",").mapNotNull { it.trim().toIntOrNull() }
 }
