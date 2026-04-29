@@ -91,11 +91,12 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [x] **UI pól w PlanEdit** — drugi rząd RPE / RIR / Tempo per set gdy toggle ON
 - [ ] UI pól w ActiveWorkout / Coach mode confirm — V2.1 (logic gotowy, schema zapisuje, brakuje tylko interfejsu wprowadzania w trakcie treningu)
 
-### Faza 19 — Body & pomiary
+### Faza 19 — Body & pomiary ✅ v0.16.0 (częściowo)
 
-- [ ] Body measurements (waga, obwód klatki/pasa/ramienia/uda, BF%)
-- [ ] Wykres masy ciała w czasie
-- [ ] Zdjęcia progresu (przód/bok/tył) — local storage
+- [x] **Body measurements** — encja `BodyMeasurement` (waga, klatka, pas, biodra, ramię, udo, łydka, BF%, notatki). Profil → 'Pomiary ciała' → ekran z FAB do dodawania
+- [x] **Wykres masy ciała w czasie** — Compose Canvas linechart, pokazuje się gdy ≥2 pomiary z wagą
+- [ ] Zdjęcia progresu (przód/bok/tył) — V2.1 (wymaga camera permissions + ImagePicker + filesystem)
+- [ ] Cel masy (redukcja / masa / utrzymanie) — V2.1
 
 ### Faza 20 — Mapa mięśni (statyczna)
 
