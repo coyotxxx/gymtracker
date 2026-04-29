@@ -75,12 +75,12 @@
 
 Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej tylko z PlanEdit.
 
-### Faza 17 — Streaki & motywacja
+### Faza 17 — Streaki & motywacja ✅ v0.14.0
 
-- [ ] Streak tygodniowy (X tygodni z rzędu)
-- [ ] Cele tygodniowe (3 treningi w tygodniu)
-- [ ] Odznaki (10 / 50 / 100 treningów, 100k kg objętości)
-- [ ] Powiadomienia o niedokończonym treningu
+- [x] **Streak tygodniowy** — current + best (kalendarz ISO weeks). W StatsScreen kafelek 'tertiary container' gdy current > 0.
+- [x] **Cel tygodnia** — postęp X/Y treningów + progressbar. Target z UserProfile.daysPerWeek.
+- [x] **Odznaki** — 9 wbudowanych: workouts (10/50/100/250), volume (100k/500k), streak (4/12/52). Grid 2 kolumny, zablokowane pokazują progressbar postępu.
+- [ ] Powiadomienia o niedokończonym treningu — V2.1 (wymaga WorkManager + POST_NOTIFICATIONS)
 
 ### Faza 18 — Tempo / RPE / RIR
 

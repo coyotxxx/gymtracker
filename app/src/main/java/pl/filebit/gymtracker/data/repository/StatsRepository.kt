@@ -51,6 +51,117 @@ class StatsRepository @Inject constructor(
         return weightKg * Math.pow(reps.toDouble(), 0.10)
     }
 
+    /**
+     * Streak tygodniowy: liczba kolejnych tygodni (ISO) z minimum 1 zakończonym treningiem,
+     * licząc wstecz od bieżącego tygodnia.
+     */
+    suspend fun streakInfo(): StreakInfo {
+        val finished = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .map { it.startedAt }
+        if (finished.isEmpty()) return StreakInfo(0, 0)
+        val weeks = finished.map { weekKey(it) }.toSet()
+
+        // Aktualny streak: licząc wstecz od dziś
+        var current = 0
+        var cursor = System.currentTimeMillis()
+        while (true) {
+            val key = weekKey(cursor)
+            if (key in weeks) {
+                current++
+                cursor -= 7L * 24L * 60L * 60L * 1000L
+            } else if (current == 0) {
+                // jeśli w bieżącym tygodniu nic — sprawdź poprzedni (streak nie pęka jeszcze)
+                cursor -= 7L * 24L * 60L * 60L * 1000L
+                val prevKey = weekKey(cursor)
+                if (prevKey in weeks) {
+                    current++
+                } else break
+            } else break
+        }
+
+        // Best streak: przeszukaj wszystkie tygodnie po kolei
+        val sortedWeeks = weeks.sorted()
+        var best = 0
+        var run = 0
+        var prevKey: String? = null
+        for (k in sortedWeeks) {
+            if (prevKey == null) {
+                run = 1
+            } else if (areConsecutiveWeeks(prevKey, k)) {
+                run++
+            } else {
+                run = 1
+            }
+            if (run > best) best = run
+            prevKey = k
+        }
+        return StreakInfo(current = current, best = best.coerceAtLeast(current))
+    }
+
+    private fun weekKey(epochMillis: Long): String {
+        val cal = java.util.Calendar.getInstance()
+        cal.timeInMillis = epochMillis
+        cal.firstDayOfWeek = java.util.Calendar.MONDAY
+        cal.minimalDaysInFirstWeek = 4 // ISO week
+        val year = cal.get(java.util.Calendar.YEAR)
+        val week = cal.get(java.util.Calendar.WEEK_OF_YEAR)
+        return "%04d-W%02d".format(year, week)
+    }
+
+    private fun areConsecutiveWeeks(a: String, b: String): Boolean {
+        // Czy b = a+1 tydzień
+        val cal = java.util.Calendar.getInstance()
+        cal.firstDayOfWeek = java.util.Calendar.MONDAY
+        cal.minimalDaysInFirstWeek = 4
+        val (ya, wa) = a.split("-W").let { it[0].toInt() to it[1].toInt() }
+        cal.clear()
+        cal.set(java.util.Calendar.YEAR, ya)
+        cal.set(java.util.Calendar.WEEK_OF_YEAR, wa)
+        cal.add(java.util.Calendar.WEEK_OF_YEAR, 1)
+        val nextYear = cal.get(java.util.Calendar.YEAR)
+        val nextWeek = cal.get(java.util.Calendar.WEEK_OF_YEAR)
+        return "%04d-W%02d".format(nextYear, nextWeek) == b
+    }
+
+    /**
+     * Cel tygodniowy: liczba ukończonych treningów w bieżącym tygodniu vs target.
+     */
+    suspend fun weekProgress(target: Int): WeekProgress {
+        val now = System.currentTimeMillis()
+        val key = weekKey(now)
+        val count = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && weekKey(it.startedAt) == key }
+            .size
+        return WeekProgress(current = count, target = target)
+    }
+
+    suspend fun unlockedAchievements(weeklyTarget: Int): List<Achievement> {
+        val o = overview()
+        val streak = streakInfo()
+        return listOf(
+            achievement("workouts_10",  "🌱", "Pierwszy krok",   "10 ukończonych treningów",  o.totalWorkouts.toLong(), 10),
+            achievement("workouts_50",  "💪", "Stała rutyna",     "50 treningów",                o.totalWorkouts.toLong(), 50),
+            achievement("workouts_100", "🏆", "Setka",            "100 treningów",               o.totalWorkouts.toLong(), 100),
+            achievement("workouts_250", "👑", "Wojownik",         "250 treningów",               o.totalWorkouts.toLong(), 250),
+            achievement("volume_100k",  "🏋️", "Tona w plecach",   "100 000 kg łącznej objętości", o.totalVolumeKg.toLong(), 100_000),
+            achievement("volume_500k",  "⚡", "Pół megatony",    "500 000 kg objętości",         o.totalVolumeKg.toLong(), 500_000),
+            achievement("streak_4",     "🔥", "Miesiąc mocy",     "4 tygodnie z rzędu",          streak.best.toLong(), 4),
+            achievement("streak_12",    "🔥🔥", "Kwartał",        "12 tygodni z rzędu",          streak.best.toLong(), 12),
+            achievement("streak_52",    "🌟", "Rok mocy",         "52 tygodnie z rzędu",         streak.best.toLong(), 52)
+        )
+    }
+
+    private fun achievement(id: String, emoji: String, title: String, desc: String, current: Long, target: Long): Achievement {
+        val unlocked = current >= target
+        val pct = if (target > 0) ((current * 100) / target).toInt().coerceAtMost(100) else 0
+        return Achievement(
+            id = id, emoji = emoji, title = title, description = desc,
+            unlocked = unlocked, progress = pct,
+            currentValue = current, targetValue = target
+        )
+    }
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -251,5 +362,28 @@ data class ProgressionTip(
     val currentWeightKg: Double,
     val suggestedWeightKg: Double,
     val reason: String
+)
+
+data class StreakInfo(
+    val current: Int,    // tygodnie z rzędu (włącznie z bieżącym jeśli jest trening)
+    val best: Int        // najlepszy streak w historii
+)
+
+data class WeekProgress(
+    val current: Int,
+    val target: Int
+) {
+    val percent: Int get() = if (target > 0) (current * 100 / target).coerceAtMost(100) else 0
+}
+
+data class Achievement(
+    val id: String,
+    val emoji: String,
+    val title: String,
+    val description: String,
+    val unlocked: Boolean,
+    val progress: Int = 0,    // 0-100
+    val targetValue: Long = 0,
+    val currentValue: Long = 0
 )
 
