@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.history
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -16,9 +17,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.EventNote
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -50,11 +55,13 @@ import pl.filebit.gymtracker.util.formatWeight
 fun WorkoutDetailScreen(
     workoutId: Long,
     onBack: () -> Unit,
+    onSavedAsPlan: (Long) -> Unit,
     vm: WorkoutDetailViewModel = hiltViewModel()
 ) {
     LaunchedEffect(workoutId) { vm.load(workoutId) }
     val state by vm.state.collectAsStateWithLifecycle()
     var showDelete by remember { mutableStateOf(false) }
+    var menuOpen by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -70,8 +77,35 @@ fun WorkoutDetailScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { showDelete = true }) {
-                        Icon(Icons.Default.Delete, contentDescription = null)
+                    Box {
+                        IconButton(onClick = { menuOpen = true }) {
+                            Icon(Icons.Default.MoreVert, contentDescription = null)
+                        }
+                        DropdownMenu(
+                            expanded = menuOpen,
+                            onDismissRequest = { menuOpen = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_save_as_plan)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.EventNote, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_delete_workout)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.Delete, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    showDelete = true
+                                }
+                            )
+                        }
                     }
                 }
             )

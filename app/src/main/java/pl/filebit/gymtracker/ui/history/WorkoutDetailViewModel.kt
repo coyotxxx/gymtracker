@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.PlanRepository
@@ -61,6 +63,43 @@ class WorkoutDetailViewModel @Inject constructor(
         viewModelScope.launch {
             repo.deleteWorkout(id)
             onDone()
+        }
+    }
+
+    /**
+     * Tworzy nowy plan z ćwiczeń tego treningu. Każda grupa ćwiczeń → PlanExercise.
+     * Wagę bierzemy najwyższą (working set), reps z najcięższego setu, liczbę serii = wszystkie sety.
+     * User dopracuje nazwę i dni tygodnia w PlanEdit.
+     */
+    fun saveAsPlan(onCreated: (Long) -> Unit) {
+        val groups = _state.value.groups
+        if (groups.isEmpty()) return
+        viewModelScope.launch {
+            val planId = planRepo.upsertPlan(
+                TrainingPlan(
+                    name = "",
+                    daysOfWeek = emptyList(),
+                    notes = ""
+                )
+            )
+            groups.forEachIndexed { idx, group ->
+                val maxWeight = group.sets.maxOfOrNull { it.weightKg } ?: 0.0
+                val workingSet = group.sets.firstOrNull { it.weightKg == maxWeight }
+                    ?: group.sets.firstOrNull()
+                val typicalReps = workingSet?.reps ?: 8
+                planRepo.upsertPlanExercise(
+                    PlanExercise(
+                        planId = planId,
+                        exerciseId = group.exercise.id,
+                        orderIndex = idx,
+                        plannedSets = group.sets.size,
+                        plannedReps = typicalReps,
+                        plannedWeightKg = if (maxWeight > 0.0) maxWeight else null,
+                        restSeconds = null
+                    )
+                )
+            }
+            onCreated(planId)
         }
     }
 }

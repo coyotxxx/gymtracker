@@ -190,7 +190,11 @@ fun AppNavigation() {
                 val id = entry.arguments?.getLong("workoutId") ?: 0L
                 WorkoutDetailScreen(
                     workoutId = id,
-                    onBack = { navController.popBackStack() }
+                    onBack = { navController.popBackStack() },
+                    onSavedAsPlan = { newPlanId ->
+                        navController.popBackStack()
+                        navController.navigate(Screen.PlanEdit.create(newPlanId))
+                    }
                 )
             }
         }
