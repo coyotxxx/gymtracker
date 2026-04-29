@@ -1,5 +1,8 @@
 package pl.filebit.gymtracker.ui.backup
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.BugReport
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material3.Button
@@ -33,13 +37,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.util.formatDate
+import java.io.File
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,6 +57,8 @@ fun BackupScreen(
 ) {
     val status by vm.status.collectAsStateWithLifecycle()
     val snackbar = remember { SnackbarHostState() }
+    val context = LocalContext.current
+    val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(status) {
         status?.let {
@@ -132,6 +142,33 @@ fun BackupScreen(
                 Icon(Icons.Default.CloudDownload, contentDescription = null)
                 Spacer(Modifier.height(4.dp))
                 Text("  ${stringResource(R.string.backup_import)}")
+            }
+
+            OutlinedButton(
+                onClick = {
+                    val crashFile = File(context.filesDir, "last_crash.txt")
+                    if (crashFile.exists()) {
+                        val text = crashFile.readText()
+                        val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                        cm.setPrimaryClip(ClipData.newPlainText("crash", text))
+                        coroutineScope.launch {
+                            snackbar.showSnackbar("Skopiowano - wklej w czacie")
+                        }
+                    } else {
+                        coroutineScope.launch {
+                            snackbar.showSnackbar("Brak crashu - aplikacja stabilna")
+                        }
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.outlinedButtonColors()
+            ) {
+                Icon(Icons.Default.BugReport, contentDescription = null)
+                Spacer(Modifier.height(4.dp))
+                Text("  Skopiuj log ostatniego crashu")
             }
         }
     }

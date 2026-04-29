@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.workout
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -66,6 +67,18 @@ import pl.filebit.gymtracker.ui.components.RestTimerBar
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 
+private const val TAG = "ActiveWorkout"
+
+private inline fun safeTimer(action: () -> Unit) {
+    try {
+        action()
+    } catch (e: SecurityException) {
+        Log.e(TAG, "Rest timer call failed (no permission)", e)
+    } catch (e: IllegalStateException) {
+        Log.e(TAG, "Rest timer call failed (illegal state)", e)
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActiveWorkoutScreen(
@@ -129,9 +142,9 @@ fun ActiveWorkoutScreen(
                     RestTimerBar(
                         remainingSec = timerState.remainingSec,
                         totalSec = timerState.totalSec,
-                        onAdd = { RestTimerService.addSeconds(context, 15) },
-                        onSub = { RestTimerService.addSeconds(context, -15) },
-                        onSkip = { RestTimerService.stop(context) }
+                        onAdd = { safeTimer { RestTimerService.addSeconds(context, 15) } },
+                        onSub = { safeTimer { RestTimerService.addSeconds(context, -15) } },
+                        onSkip = { safeTimer { RestTimerService.stop(context) } }
                     )
                 }
 
@@ -159,7 +172,7 @@ fun ActiveWorkoutScreen(
                                 defaultRestSec = state.profile.defaultRestSeconds,
                                 onAddSet = { reps, weight ->
                                     vm.addSet(group.exercise.id, reps, weight)
-                                    RestTimerService.start(context, state.profile.defaultRestSeconds)
+                                    safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds) }
                                 },
                                 onUpdateSet = vm::updateSet,
                                 onDeleteSet = vm::deleteSet,
@@ -194,7 +207,7 @@ fun ActiveWorkoutScreen(
             confirmButton = {
                 TextButton(onClick = {
                     showFinishDialog = false
-                    RestTimerService.stop(context)
+                    safeTimer { RestTimerService.stop(context) }
                     vm.finishWorkout(onWorkoutFinished)
                 }) { Text(stringResource(R.string.workout_finish_yes)) }
             },
