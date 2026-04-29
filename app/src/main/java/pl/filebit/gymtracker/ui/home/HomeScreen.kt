@@ -40,6 +40,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.datetime.isoDayNumber
+import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatDuration

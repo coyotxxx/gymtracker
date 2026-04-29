@@ -9,6 +9,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.isoDayNumber
+import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.PlanExercise
 import pl.filebit.gymtracker.data.entity.TrainingPlan
@@ -51,8 +55,7 @@ class PlanEditViewModel @Inject constructor(
     init {
         createdAt = System.currentTimeMillis()
         // domyślny dzień = dzisiaj (ISO 1=Pon..7=Nd)
-        val today = kotlinx.datetime.Clock.System
-            .todayIn(kotlinx.datetime.TimeZone.currentSystemDefault())
+        val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
             .dayOfWeek.isoDayNumber
         _state.update { it.copy(selectedDay = today) }
         load()
