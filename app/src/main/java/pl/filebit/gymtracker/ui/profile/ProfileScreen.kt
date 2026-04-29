@@ -195,6 +195,47 @@ fun ProfileScreen(
             }
 
             item {
+                SectionCard(title = stringResource(R.string.profile_unfinished_section)) {
+                    androidx.compose.foundation.layout.Row(
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    ) {
+                        androidx.compose.material3.Switch(
+                            checked = draft.unfinishedWorkoutNotifyEnabled,
+                            onCheckedChange = { draft = draft.copy(unfinishedWorkoutNotifyEnabled = it) }
+                        )
+                        Spacer(Modifier.padding(start = 12.dp))
+                        Column {
+                            Text(
+                                stringResource(R.string.profile_unfinished_toggle),
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(
+                                stringResource(R.string.profile_unfinished_explain),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                    if (draft.unfinishedWorkoutNotifyEnabled) {
+                        Spacer(Modifier.height(12.dp))
+                        OutlinedTextField(
+                            value = draft.unfinishedWorkoutNotifyHours.toString(),
+                            onValueChange = { v ->
+                                v.filter { it.isDigit() }.toIntOrNull()?.let { n ->
+                                    if (n in 1..12) draft = draft.copy(unfinishedWorkoutNotifyHours = n)
+                                }
+                            },
+                            label = { Text(stringResource(R.string.profile_unfinished_hours)) },
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
+            }
+
+            item {
                 SectionCard(title = stringResource(R.string.profile_advanced_section)) {
                     androidx.compose.foundation.layout.Row(
                         verticalAlignment = androidx.compose.ui.Alignment.CenterVertically

@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 28
-        versionName = "0.24.0"
+        versionCode = 29
+        versionName = "0.25.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -96,4 +96,9 @@ dependencies {
 
     // Coil (na przyszłość — obrazki ćwiczeń)
     implementation(libs.coil.compose)
+
+    // WorkManager + Hilt
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.hilt.work)
+    ksp(libs.hilt.compiler.androidx)
 }

@@ -36,5 +36,7 @@ data class UserProfile(
     val injuriesNotes: String = "",
     val showAdvancedSetFields: Boolean = false,
     val weightGoalType: WeightGoalType = WeightGoalType.NONE,
-    val targetWeightKg: Double? = null
+    val targetWeightKg: Double? = null,
+    val unfinishedWorkoutNotifyEnabled: Boolean = true,
+    val unfinishedWorkoutNotifyHours: Int = 3
 )

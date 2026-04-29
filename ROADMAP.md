@@ -80,7 +80,7 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [x] **Streak tygodniowy** — current + best (kalendarz ISO weeks). W StatsScreen kafelek 'tertiary container' gdy current > 0.
 - [x] **Cel tygodnia** — postęp X/Y treningów + progressbar. Target z UserProfile.daysPerWeek.
 - [x] **Odznaki** — 9 wbudowanych: workouts (10/50/100/250), volume (100k/500k), streak (4/12/52). Grid 2 kolumny, zablokowane pokazują progressbar postępu.
-- [ ] Powiadomienia o niedokończonym treningu — V2.1 (wymaga WorkManager + POST_NOTIFICATIONS)
+- [x] **Powiadomienia o niedokończonym treningu** ✅ v0.25.0 — WorkManager + Hilt Worker. Po starcie aktywnego treningu planowany OneTimeWorkRequest z opóźnieniem (default 3h, edytowalne 1-12h w Profilu). Worker sprawdza czy aktywny trening dalej istnieje i wysyła powiadomienie z deep linkiem do MainActivity. Anulowane przy finish/discard (obserwacja `observeActive()` w `GymTrackerApp` reaguje na zmiany id). Toggle ON/OFF w Profilu → 'Niedokończony trening'. POST_NOTIFICATIONS już request'owane z wcześniejszych faz (Android 13+).
 
 ### Faza 18 — Tempo / RPE / RIR ✅ v0.15.0 (częściowo)
 

@@ -4,13 +4,23 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.repository.UserProfileRepository
+import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import pl.filebit.gymtracker.data.seed.ExerciseSeeder
 import pl.filebit.gymtracker.service.RestTimerService
+import pl.filebit.gymtracker.service.UnfinishedWorkoutScheduler
+import pl.filebit.gymtracker.service.UnfinishedWorkoutWorker
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -18,11 +28,20 @@ import java.util.Locale
 import javax.inject.Inject
 
 @HiltAndroidApp
-class GymTrackerApp : Application() {
+class GymTrackerApp : Application(), Configuration.Provider {
 
     @Inject lateinit var exerciseSeeder: ExerciseSeeder
+    @Inject lateinit var workerFactory: HiltWorkerFactory
+    @Inject lateinit var workoutRepo: WorkoutRepository
+    @Inject lateinit var profileRepo: UserProfileRepository
+    @Inject lateinit var unfinishedScheduler: UnfinishedWorkoutScheduler
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
 
     override fun onCreate() {
         installCrashLogger()
@@ -31,6 +50,29 @@ class GymTrackerApp : Application() {
         appScope.launch {
             exerciseSeeder.seedIfEmpty()
         }
+        observeActiveWorkoutForReminder()
+    }
+
+    private fun observeActiveWorkoutForReminder() {
+        combine(
+            workoutRepo.observeActive(),
+            profileRepo.observe()
+        ) { workout, profile ->
+            Triple(
+                workout?.id,
+                profile.unfinishedWorkoutNotifyEnabled,
+                profile.unfinishedWorkoutNotifyHours
+            )
+        }
+            .distinctUntilChanged()
+            .onEach { (id, enabled, hours) ->
+                when {
+                    id == null -> unfinishedScheduler.cancel()
+                    enabled -> unfinishedScheduler.schedule(hours.coerceAtLeast(1))
+                    else -> unfinishedScheduler.cancel()
+                }
+            }
+            .launchIn(appScope)
     }
 
     private fun installCrashLogger() {
@@ -62,16 +104,27 @@ class GymTrackerApp : Application() {
     private fun createNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val nm = getSystemService(NotificationManager::class.java)
-            val channel = NotificationChannel(
-                RestTimerService.CHANNEL_ID,
-                getString(R.string.notif_channel_timer),
-                NotificationManager.IMPORTANCE_LOW
-            ).apply {
-                description = getString(R.string.notif_channel_timer_desc)
-                enableVibration(true)
-                setShowBadge(false)
-            }
-            nm.createNotificationChannel(channel)
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    RestTimerService.CHANNEL_ID,
+                    getString(R.string.notif_channel_timer),
+                    NotificationManager.IMPORTANCE_LOW
+                ).apply {
+                    description = getString(R.string.notif_channel_timer_desc)
+                    enableVibration(true)
+                    setShowBadge(false)
+                }
+            )
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    UnfinishedWorkoutWorker.CHANNEL_ID,
+                    getString(R.string.notif_channel_unfinished),
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = getString(R.string.notif_channel_unfinished_desc)
+                    setShowBadge(true)
+                }
+            )
         }
     }
 }

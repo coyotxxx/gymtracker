@@ -69,6 +69,16 @@
     <string name="profile_advanced_toggle">Pokaż RPE / RIR / Tempo</string>
     <string name="profile_advanced_explain">Dla zaawansowanych: ocena trudności (RPE 1-10), powtórzenia w rezerwie (RIR), tempo eksc/pauza/konc/pauza (np. 3-1-1-0)</string>
 
+    <!-- Powiadomienia o niedokończonym treningu -->
+    <string name="profile_unfinished_section">Niedokończony trening</string>
+    <string name="profile_unfinished_toggle">Przypomnij o niedokończonym treningu</string>
+    <string name="profile_unfinished_explain">Powiadomienie pojawia się jeśli trening pozostaje aktywny dłużej niż wskazana liczba godzin.</string>
+    <string name="profile_unfinished_hours">Po ilu godzinach (1-12)</string>
+    <string name="notif_channel_unfinished">Niedokończony trening</string>
+    <string name="notif_channel_unfinished_desc">Przypomnienia o aktywnym treningu który nie został zakończony</string>
+    <string name="unfinished_notif_title">Masz niedokończony trening</string>
+    <string name="unfinished_notif_text">Wróć do aplikacji aby go zakończyć lub odrzucić.</string>
+
     <!-- Cel masy -->
     <string name="profile_weight_goal">Cel masy ciała</string>
     <string name="weight_goal_none">Bez celu</string>

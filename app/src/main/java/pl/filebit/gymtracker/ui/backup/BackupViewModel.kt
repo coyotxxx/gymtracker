@@ -46,7 +46,9 @@ data class ProfileDto(
     val injuriesNotes: String,
     val showAdvancedSetFields: Boolean = false,
     val weightGoalType: String = "NONE",
-    val targetWeightKg: Double? = null
+    val targetWeightKg: Double? = null,
+    val unfinishedWorkoutNotifyEnabled: Boolean = true,
+    val unfinishedWorkoutNotifyHours: Int = 3
 )
 
 @Serializable
@@ -117,7 +119,9 @@ class BackupViewModel @Inject constructor(
                         injuriesNotes = profile.injuriesNotes,
                         showAdvancedSetFields = profile.showAdvancedSetFields,
                         weightGoalType = profile.weightGoalType.name,
-                        targetWeightKg = profile.targetWeightKg
+                        targetWeightKg = profile.targetWeightKg,
+                        unfinishedWorkoutNotifyEnabled = profile.unfinishedWorkoutNotifyEnabled,
+                        unfinishedWorkoutNotifyHours = profile.unfinishedWorkoutNotifyHours
                     ),
                     exercises = exercises.map {
                         ExerciseDto(
@@ -218,7 +222,9 @@ class BackupViewModel @Inject constructor(
                             showAdvancedSetFields = p.showAdvancedSetFields,
                             weightGoalType = runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
                                 .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE),
-                            targetWeightKg = p.targetWeightKg
+                            targetWeightKg = p.targetWeightKg,
+                            unfinishedWorkoutNotifyEnabled = p.unfinishedWorkoutNotifyEnabled,
+                            unfinishedWorkoutNotifyHours = p.unfinishedWorkoutNotifyHours
                         )
                     )
                 }
