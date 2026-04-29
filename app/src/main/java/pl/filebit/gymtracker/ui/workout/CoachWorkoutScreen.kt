@@ -165,14 +165,17 @@ fun CoachWorkoutScreen(
 
     if (showConfirmDialog) {
         val planned = state.currentSet?.reps ?: 0
+        val restSec = state.defaultRestSeconds
         ConfirmRepsDialog(
             plannedReps = planned,
             onConfirm = { actualReps ->
-                vm.confirmCurrentSet(actualReps)
                 showConfirmDialog = false
-                // Auto-start timer odpoczynku
-                safeCoachTimer {
-                    RestTimerService.start(context, state.defaultRestSeconds)
+                // Czekaj aż confirm zapisze się w bazie (state się przesunie),
+                // dopiero potem startuj timer — inaczej UI tła pokazuje stary set.
+                vm.confirmCurrentSet(actualReps) {
+                    safeCoachTimer {
+                        RestTimerService.start(context, restSec)
+                    }
                 }
             },
             onDismiss = { showConfirmDialog = false }

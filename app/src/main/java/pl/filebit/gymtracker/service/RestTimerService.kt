@@ -6,6 +6,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.os.Build
@@ -13,6 +14,7 @@ import android.os.IBinder
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import kotlinx.coroutines.CoroutineScope
@@ -135,10 +137,29 @@ class RestTimerService : Service() {
     private fun playDoneSound() {
         try {
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                ?: run {
+                    Log.w("RestTimerService", "No default notification/alarm URI on device")
+                    return
+                }
             mp?.release()
-            mp = MediaPlayer.create(this, uri)?.apply { start() }
-        } catch (_: Throwable) {
-            // dźwięk to nice-to-have, nie blokuj wibracji
+            mp = MediaPlayer().apply {
+                setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build()
+                )
+                setDataSource(this@RestTimerService, uri)
+                setOnPreparedListener { it.start() }
+                setOnErrorListener { _, what, extra ->
+                    Log.e("RestTimerService", "MediaPlayer error what=$what extra=$extra")
+                    true
+                }
+                prepareAsync()
+            }
+        } catch (e: Throwable) {
+            Log.e("RestTimerService", "playDoneSound failed", e)
         }
     }
 

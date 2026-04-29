@@ -131,10 +131,11 @@ class CoachWorkoutViewModel @Inject constructor(
         )
     }
 
-    fun confirmCurrentSet(actualReps: Int) {
+    fun confirmCurrentSet(actualReps: Int, onDone: () -> Unit = {}) {
         val setId = state.value.currentSet?.id ?: return
         viewModelScope.launch {
             workoutRepo.confirmSet(setId, actualReps)
+            onDone()
         }
     }
 
