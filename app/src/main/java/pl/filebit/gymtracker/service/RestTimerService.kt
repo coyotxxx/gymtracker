@@ -7,9 +7,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.media.Ringtone
 import android.media.RingtoneManager
+import android.media.ToneGenerator
 import android.os.Build
 import android.os.IBinder
 import android.os.VibrationEffect
@@ -139,25 +141,43 @@ class RestTimerService : Service() {
     }
 
     private fun playDoneSound() {
-        // Ringtone API — fire and forget, działa lepiej z foreground service niż MediaPlayer.
+        // Sekwencja 3 wysokich tonów na strumieniu ALARM — głośna, dynamiczna,
+        // niezależna od systemowego dźwięku powiadomień.
         try {
-            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                ?: run {
-                    Log.w("RestTimerService", "No default notification/alarm URI on device")
-                    return
+            val tg = ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME)
+            scope.launch {
+                try {
+                    tg.startTone(ToneGenerator.TONE_CDMA_HIGH_L, 200)
+                    delay(280)
+                    tg.startTone(ToneGenerator.TONE_CDMA_HIGH_L, 200)
+                    delay(280)
+                    tg.startTone(ToneGenerator.TONE_CDMA_HIGH_L, 500)
+                    delay(600)
+                } finally {
+                    tg.release()
                 }
+            }
+        } catch (e: Throwable) {
+            Log.e("RestTimerService", "ToneGenerator failed, falling back to Ringtone", e)
+            playRingtoneFallback()
+        }
+    }
+
+    private fun playRingtoneFallback() {
+        try {
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                ?: return
             ringtone?.stop()
             ringtone = RingtoneManager.getRingtone(this, uri)?.also { rt ->
                 rt.audioAttributes = AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                    .setUsage(AudioAttributes.USAGE_ALARM)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
                 rt.play()
-                Log.d("RestTimerService", "Ringtone.play() called for $uri")
             }
         } catch (e: Throwable) {
-            Log.e("RestTimerService", "playDoneSound failed", e)
+            Log.e("RestTimerService", "Ringtone fallback failed", e)
         }
     }
 
