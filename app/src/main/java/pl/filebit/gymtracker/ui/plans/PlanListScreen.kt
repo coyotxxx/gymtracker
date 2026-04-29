@@ -46,7 +46,7 @@ import pl.filebit.gymtracker.R
 fun PlanListScreen(
     onEditPlan: (Long) -> Unit,
     onCreateNewPlan: () -> Unit,
-    onStartedWorkout: () -> Unit,
+    onStartedCoachWorkout: () -> Unit,
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
@@ -93,7 +93,7 @@ fun PlanListScreen(
                         item = item,
                         onEdit = { onEditPlan(item.plan.id) },
                         onStart = {
-                            vm.startWorkoutFromPlan(item.plan.id, onStartedWorkout)
+                            vm.startWorkoutFromPlan(item.plan.id, onStartedCoachWorkout)
                         }
                     )
                 }

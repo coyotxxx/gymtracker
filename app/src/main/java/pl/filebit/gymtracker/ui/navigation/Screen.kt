@@ -7,6 +7,7 @@ sealed class Screen(val route: String) {
     object ExerciseLibrary : Screen("exercises")
     object Profile : Screen("profile")
     object ActiveWorkout : Screen("workout/active")
+    object CoachWorkout : Screen("workout/coach")
     object Backup : Screen("backup")
 
     object PlanEdit : Screen("plans/{planId}") {

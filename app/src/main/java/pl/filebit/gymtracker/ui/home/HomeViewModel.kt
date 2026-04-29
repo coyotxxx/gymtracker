@@ -74,10 +74,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun continueActiveWorkout(onReady: () -> Unit) {
+    fun continueActiveWorkout(onCoach: () -> Unit, onAdhoc: () -> Unit) {
         viewModelScope.launch {
-            workoutRepo.startOrResume()
-            onReady()
+            val w = workoutRepo.startOrResume()
+            if (w.fromPlanId != null) onCoach() else onAdhoc()
         }
     }
 

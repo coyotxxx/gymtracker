@@ -123,6 +123,17 @@ class WorkoutRepository @Inject constructor(
     suspend fun updateSet(set: WorkoutSet) = setDao.update(set)
     suspend fun deleteSet(set: WorkoutSet) = setDao.delete(set)
 
+    suspend fun getSet(id: Long): WorkoutSet? = setDao.getById(id)
+
+    /**
+     * Coach mode: zatwierdź planowaną serię, podając rzeczywistą liczbę powtórzeń.
+     * actualReps może być inne niż planowane (user mógł zrobić mniej lub więcej).
+     */
+    suspend fun confirmSet(setId: Long, actualReps: Int) {
+        val set = setDao.getById(setId) ?: return
+        setDao.update(set.copy(reps = actualReps, isCompleted = true))
+    }
+
     /** Usuwa wszystkie serie danego ćwiczenia z aktualnego treningu. */
     suspend fun removeExerciseFromWorkout(workoutId: Long, exerciseId: Long) {
         setDao.deleteAllForExerciseInWorkout(workoutId, exerciseId)

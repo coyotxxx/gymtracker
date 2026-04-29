@@ -36,6 +36,7 @@ import pl.filebit.gymtracker.ui.plans.PlanEditScreen
 import pl.filebit.gymtracker.ui.plans.PlanListScreen
 import pl.filebit.gymtracker.ui.profile.ProfileScreen
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
+import pl.filebit.gymtracker.ui.workout.CoachWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.ExercisePickerScreen
 
 private data class TabItem(
@@ -92,7 +93,8 @@ fun AppNavigation() {
         ) {
             composable(Screen.Home.route) {
                 HomeScreen(
-                    onStartWorkout = { navController.navigate(Screen.ActiveWorkout.route) },
+                    onStartCoachWorkout = { navController.navigate(Screen.CoachWorkout.route) },
+                    onStartAdhocWorkout = { navController.navigate(Screen.ActiveWorkout.route) },
                     onOpenWorkout = { id ->
                         navController.navigate(Screen.WorkoutDetail.create(id))
                     }
@@ -109,7 +111,7 @@ fun AppNavigation() {
                 PlanListScreen(
                     onEditPlan = { id -> navController.navigate(Screen.PlanEdit.create(id)) },
                     onCreateNewPlan = { navController.navigate(Screen.PlanEdit.create(0L)) },
-                    onStartedWorkout = { navController.navigate(Screen.ActiveWorkout.route) }
+                    onStartedCoachWorkout = { navController.navigate(Screen.CoachWorkout.route) }
                 )
             }
             composable(Screen.ExerciseLibrary.route) {
@@ -123,6 +125,13 @@ fun AppNavigation() {
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(
                     onAddExerciseClick = { navController.navigate(Screen.ExercisePicker.create("WORKOUT")) },
+                    onWorkoutFinished = {
+                        navController.popBackStack(Screen.Home.route, inclusive = false)
+                    }
+                )
+            }
+            composable(Screen.CoachWorkout.route) {
+                CoachWorkoutScreen(
                     onWorkoutFinished = {
                         navController.popBackStack(Screen.Home.route, inclusive = false)
                     }

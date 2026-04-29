@@ -48,7 +48,8 @@ import pl.filebit.gymtracker.util.formatWeight
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    onStartWorkout: () -> Unit,
+    onStartCoachWorkout: () -> Unit,
+    onStartAdhocWorkout: () -> Unit,
     onOpenWorkout: (Long) -> Unit,
     vm: HomeViewModel = hiltViewModel()
 ) {
@@ -75,7 +76,12 @@ fun HomeScreen(
             if (state.activeWorkout != null) {
                 item {
                     ActiveWorkoutCard(
-                        onContinue = { vm.continueActiveWorkout(onStartWorkout) }
+                        onContinue = {
+                            vm.continueActiveWorkout(
+                                onCoach = onStartCoachWorkout,
+                                onAdhoc = onStartAdhocWorkout
+                            )
+                        }
                     )
                 }
             } else {
@@ -86,14 +92,17 @@ fun HomeScreen(
                             exerciseCount = state.todaysPlanExerciseCount,
                             daysLabel = formatDays(state.todaysPlan!!.daysOfWeek),
                             onStart = {
-                                vm.startWorkoutFromPlan(state.todaysPlan!!.id, onStartWorkout)
+                                vm.startWorkoutFromPlan(
+                                    state.todaysPlan!!.id,
+                                    onStartCoachWorkout
+                                )
                             }
                         )
                     }
                 }
                 item {
                     AdhocCard(
-                        onStart = { vm.startWorkoutAdhoc(onStartWorkout) }
+                        onStart = { vm.startWorkoutAdhoc(onStartAdhocWorkout) }
                     )
                 }
             }
