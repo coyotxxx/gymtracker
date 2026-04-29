@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.media.AudioAttributes
 import android.media.MediaPlayer
+import android.media.Ringtone
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
@@ -44,6 +45,7 @@ class RestTimerService : Service() {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var tickJob: Job? = null
     private var mp: MediaPlayer? = null
+    private var ringtone: Ringtone? = null
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -84,6 +86,8 @@ class RestTimerService : Service() {
                 _state.value = _state.value.copy(remainingSec = 0, running = false)
                 playDoneSound()
                 vibrateDone()
+                // Daj dźwiękowi czas wybrzmieć — bez tego stopSelf() zabija audio.
+                delay(2500)
                 stopForeground(STOP_FOREGROUND_REMOVE)
                 stopSelf()
             }
@@ -135,6 +139,7 @@ class RestTimerService : Service() {
     }
 
     private fun playDoneSound() {
+        // Ringtone API — fire and forget, działa lepiej z foreground service niż MediaPlayer.
         try {
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
                 ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
@@ -142,21 +147,14 @@ class RestTimerService : Service() {
                     Log.w("RestTimerService", "No default notification/alarm URI on device")
                     return
                 }
-            mp?.release()
-            mp = MediaPlayer().apply {
-                setAudioAttributes(
-                    AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build()
-                )
-                setDataSource(this@RestTimerService, uri)
-                setOnPreparedListener { it.start() }
-                setOnErrorListener { _, what, extra ->
-                    Log.e("RestTimerService", "MediaPlayer error what=$what extra=$extra")
-                    true
-                }
-                prepareAsync()
+            ringtone?.stop()
+            ringtone = RingtoneManager.getRingtone(this, uri)?.also { rt ->
+                rt.audioAttributes = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build()
+                rt.play()
+                Log.d("RestTimerService", "Ringtone.play() called for $uri")
             }
         } catch (e: Throwable) {
             Log.e("RestTimerService", "playDoneSound failed", e)
@@ -180,6 +178,8 @@ class RestTimerService : Service() {
     override fun onDestroy() {
         mp?.release()
         mp = null
+        ringtone?.stop()
+        ringtone = null
         scope.cancel()
         super.onDestroy()
     }
