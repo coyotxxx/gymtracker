@@ -76,30 +76,33 @@ class WorkoutDetailViewModel @Inject constructor(
     fun saveAsPlan(onCreated: (Long) -> Unit) {
         val groups = _state.value.groups
         if (groups.isEmpty()) return
+        val srcWorkout = _state.value.workout
+        val day = srcWorkout?.fromDayOfWeek ?: 1
         viewModelScope.launch {
             val planId = planRepo.upsertPlan(
-                TrainingPlan(
-                    name = "",
-                    daysOfWeek = emptyList(),
-                    notes = ""
-                )
+                TrainingPlan(name = "", daysOfWeek = emptyList(), notes = "")
             )
             groups.forEachIndexed { idx, group ->
-                val maxWeight = group.sets.maxOfOrNull { it.weightKg } ?: 0.0
-                val workingSet = group.sets.firstOrNull { it.weightKg == maxWeight }
-                    ?: group.sets.firstOrNull()
-                val typicalReps = workingSet?.reps ?: 8
-                planRepo.upsertPlanExercise(
+                val newPeId = planRepo.upsertPlanExercise(
                     PlanExercise(
                         planId = planId,
                         exerciseId = group.exercise.id,
-                        orderIndex = idx,
-                        plannedSets = group.sets.size,
-                        plannedReps = typicalReps,
-                        plannedWeightKg = if (maxWeight > 0.0) maxWeight else null,
-                        restSeconds = null
+                        dayOfWeek = day,
+                        orderIndex = idx
                     )
                 )
+                // jeden plan-set per workout-set (zachowuje rzeczywiste wagi/powt)
+                group.sets.forEachIndexed { setIdx, ws ->
+                    planRepo.upsertPlanSet(
+                        pl.filebit.gymtracker.data.entity.PlanExerciseSet(
+                            planExerciseId = newPeId,
+                            setNumber = setIdx + 1,
+                            reps = ws.reps,
+                            weightKg = if (ws.weightKg > 0.0) ws.weightKg else null,
+                            restSeconds = null
+                        )
+                    )
+                }
             }
             onCreated(planId)
         }

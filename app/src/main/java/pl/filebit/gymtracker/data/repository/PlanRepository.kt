@@ -3,8 +3,10 @@ package pl.filebit.gymtracker.data.repository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
+import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
 import pl.filebit.gymtracker.data.db.dao.TrainingPlanDao
 import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.PlanExerciseSet
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,7 +14,8 @@ import javax.inject.Singleton
 @Singleton
 class PlanRepository @Inject constructor(
     private val planDao: TrainingPlanDao,
-    private val planExerciseDao: PlanExerciseDao
+    private val planExerciseDao: PlanExerciseDao,
+    private val planExerciseSetDao: PlanExerciseSetDao
 ) {
 
     fun observeAllPlans(): Flow<List<TrainingPlan>> = planDao.observeAll()
@@ -47,6 +50,19 @@ class PlanRepository @Inject constructor(
 
     suspend fun deleteAllPlanExercises(planId: Long) =
         planExerciseDao.deleteAllForPlan(planId)
+
+    // ===== Per-set w planie =====
+    suspend fun getSetsForPlanExercise(planExerciseId: Long): List<PlanExerciseSet> =
+        planExerciseSetDao.getForPlanExercise(planExerciseId)
+
+    suspend fun upsertPlanSet(set: PlanExerciseSet): Long = planExerciseSetDao.upsert(set)
+
+    suspend fun updatePlanSet(set: PlanExerciseSet) = planExerciseSetDao.update(set)
+
+    suspend fun deletePlanSet(set: PlanExerciseSet) = planExerciseSetDao.delete(set)
+
+    suspend fun deleteAllSetsForPlanExercise(planExerciseId: Long) =
+        planExerciseSetDao.deleteAllForPlanExercise(planExerciseId)
 
     suspend fun getMaxOrderIndex(planId: Long): Int? =
         planExerciseDao.getMaxOrderIndex(planId)

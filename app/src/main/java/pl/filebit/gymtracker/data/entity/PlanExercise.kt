@@ -28,9 +28,7 @@ data class PlanExercise(
     val planId: Long,
     val exerciseId: Long,
     val dayOfWeek: Int = 1,         // 1=Pon ... 7=Nd ISO
-    val orderIndex: Int,
-    val plannedSets: Int = 3,
-    val plannedReps: Int = 8,
-    val plannedWeightKg: Double? = null,
-    val restSeconds: Int? = null
+    val orderIndex: Int
+    // Konkretne serie (powt/waga/odp) trzymane są w tabeli plan_exercise_sets
+    // jako lista PlanExerciseSet (każda seria osobno edytowalna).
 )

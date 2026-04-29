@@ -154,11 +154,20 @@ fun PlanEditScreen(
             items(visibleExercises, key = { it.planEx.id }) { item ->
                 PlanExerciseCard(
                     item = item,
-                    onSets = { v -> vm.updatePlanExercise(item.planEx.id, sets = v) },
-                    onReps = { v -> vm.updatePlanExercise(item.planEx.id, reps = v) },
-                    onWeight = { v -> vm.updatePlanExercise(item.planEx.id, weightKg = v, clearWeight = v == null) },
-                    onRest = { v -> vm.updatePlanExercise(item.planEx.id, restSeconds = v, clearRest = v == null) },
-                    onRemove = { vm.removeExercise(item.planEx.id) }
+                    onUpdateSet = { setId, reps, weight, rest, clearWeight, clearRest ->
+                        vm.updatePlanSet(
+                            planExerciseId = item.planEx.id,
+                            setId = setId,
+                            reps = reps,
+                            weightKg = weight,
+                            restSeconds = rest,
+                            clearWeight = clearWeight,
+                            clearRest = clearRest
+                        )
+                    },
+                    onAddSet = { vm.addSetToExercise(item.planEx.id) },
+                    onRemoveSet = { setId -> vm.removeSetFromExercise(item.planEx.id, setId) },
+                    onRemoveExercise = { vm.removeExercise(item.planEx.id) }
                 )
             }
             item {
@@ -243,11 +252,10 @@ private fun DayTabRow(
 @Composable
 private fun PlanExerciseCard(
     item: PlanExerciseWithDetail,
-    onSets: (Int) -> Unit,
-    onReps: (Int) -> Unit,
-    onWeight: (Double?) -> Unit,
-    onRest: (Int?) -> Unit,
-    onRemove: () -> Unit
+    onUpdateSet: (setId: Long, reps: Int?, weight: Double?, rest: Int?, clearWeight: Boolean, clearRest: Boolean) -> Unit,
+    onAddSet: () -> Unit,
+    onRemoveSet: (Long) -> Unit,
+    onRemoveExercise: () -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -265,76 +273,146 @@ private fun PlanExerciseCard(
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier.weight(1f)
                 )
-                IconButton(onClick = onRemove) {
+                IconButton(onClick = onRemoveExercise) {
                     Icon(Icons.Default.Delete, contentDescription = null)
                 }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(4.dp))
             HorizontalDivider()
             Spacer(Modifier.height(8.dp))
 
-            var setsText by remember(item.planEx.id) {
-                mutableStateOf(item.planEx.plannedSets.toString())
+            // Header
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Text(
+                    "Seria",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.width(40.dp)
+                )
+                Text(
+                    stringResource(R.string.plan_planned_reps),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    stringResource(R.string.plan_planned_weight),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    stringResource(R.string.plan_rest),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(Modifier.width(40.dp)) // place for delete icon
             }
-            var repsText by remember(item.planEx.id) {
-                mutableStateOf(item.planEx.plannedReps.toString())
-            }
-            var weightText by remember(item.planEx.id) {
-                mutableStateOf(item.planEx.plannedWeightKg?.toString() ?: "")
-            }
-            var restText by remember(item.planEx.id) {
-                mutableStateOf(item.planEx.restSeconds?.toString() ?: "")
+            Spacer(Modifier.height(4.dp))
+
+            item.sets.forEach { setSpec ->
+                SetEditRow(
+                    setSpec = setSpec,
+                    onReps = { v -> onUpdateSet(setSpec.id, v, null, null, false, false) },
+                    onWeight = { v ->
+                        onUpdateSet(setSpec.id, null, v, null, v == null, false)
+                    },
+                    onRest = { v ->
+                        onUpdateSet(setSpec.id, null, null, v, false, v == null)
+                    },
+                    onDelete = { onRemoveSet(setSpec.id) }
+                )
             }
 
-            Row(
+            Spacer(Modifier.height(8.dp))
+            OutlinedButton(
+                onClick = onAddSet,
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                shape = RoundedCornerShape(10.dp)
             ) {
-                SmallNumberField(
-                    value = setsText,
-                    label = stringResource(R.string.plan_planned_sets),
-                    keyboardType = KeyboardType.Number,
-                    modifier = Modifier.weight(1f),
-                    onValueChange = {
-                        setsText = it
-                        it.toIntOrNull()?.let(onSets)
-                    }
-                )
-                SmallNumberField(
-                    value = repsText,
-                    label = stringResource(R.string.plan_planned_reps),
-                    keyboardType = KeyboardType.Number,
-                    modifier = Modifier.weight(1f),
-                    onValueChange = {
-                        repsText = it
-                        it.toIntOrNull()?.let(onReps)
-                    }
-                )
-                SmallNumberField(
-                    value = weightText,
-                    label = stringResource(R.string.plan_planned_weight),
-                    keyboardType = KeyboardType.Decimal,
-                    modifier = Modifier.weight(1f),
-                    onValueChange = {
-                        weightText = it
-                        if (it.isBlank()) onWeight(null)
-                        else it.replace(',', '.').toDoubleOrNull()?.let { v -> onWeight(v) }
-                    }
-                )
-                SmallNumberField(
-                    value = restText,
-                    label = stringResource(R.string.plan_rest),
-                    keyboardType = KeyboardType.Number,
-                    modifier = Modifier.weight(1f),
-                    onValueChange = {
-                        restText = it
-                        if (it.isBlank()) onRest(null)
-                        else it.toIntOrNull()?.let { v -> onRest(v) }
-                    }
-                )
+                Icon(Icons.Default.Add, contentDescription = null)
+                Spacer(Modifier.width(6.dp))
+                Text(stringResource(R.string.plan_add_set))
             }
         }
     }
+}
+
+@Composable
+private fun SetEditRow(
+    setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
+    onReps: (Int?) -> Unit,
+    onWeight: (Double?) -> Unit,
+    onRest: (Int?) -> Unit,
+    onDelete: () -> Unit
+) {
+    var repsText by remember(setSpec.id) { mutableStateOf(setSpec.reps.toString()) }
+    var weightText by remember(setSpec.id) { mutableStateOf(setSpec.weightKg?.toString() ?: "") }
+    var restText by remember(setSpec.id) { mutableStateOf(setSpec.restSeconds?.toString() ?: "") }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 2.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            "${setSpec.setNumber}",
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.width(40.dp)
+        )
+        SetNumberField(
+            value = repsText,
+            keyboardType = KeyboardType.Number,
+            modifier = Modifier.weight(1f),
+            onValueChange = {
+                repsText = it
+                if (it.isBlank()) onReps(null) else it.toIntOrNull()?.let(onReps)
+            }
+        )
+        Spacer(Modifier.width(4.dp))
+        SetNumberField(
+            value = weightText,
+            keyboardType = KeyboardType.Decimal,
+            modifier = Modifier.weight(1f),
+            onValueChange = {
+                weightText = it
+                if (it.isBlank()) onWeight(null)
+                else it.replace(',', '.').toDoubleOrNull()?.let(onWeight)
+            }
+        )
+        Spacer(Modifier.width(4.dp))
+        SetNumberField(
+            value = restText,
+            keyboardType = KeyboardType.Number,
+            modifier = Modifier.weight(1f),
+            onValueChange = {
+                restText = it
+                if (it.isBlank()) onRest(null) else it.toIntOrNull()?.let(onRest)
+            }
+        )
+        IconButton(onClick = onDelete, modifier = Modifier.size(40.dp)) {
+            Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(18.dp))
+        }
+    }
+}
+
+@Composable
+private fun SetNumberField(
+    value: String,
+    keyboardType: KeyboardType,
+    modifier: Modifier = Modifier,
+    onValueChange: (String) -> Unit
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        modifier = modifier,
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
+    )
 }
 
 @Composable

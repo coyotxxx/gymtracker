@@ -15,6 +15,7 @@ import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.PlanExerciseSet
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
@@ -22,7 +23,8 @@ import javax.inject.Inject
 
 data class PlanExerciseWithDetail(
     val planEx: PlanExercise,
-    val exercise: Exercise?
+    val exercise: Exercise?,
+    val sets: List<PlanExerciseSet> = emptyList()
 )
 
 data class PlanEditUiState(
@@ -48,13 +50,13 @@ class PlanEditViewModel @Inject constructor(
     private val planId: Long = savedStateHandle.get<Long>("planId") ?: 0L
     private val createdAt: Long
     private var nextLocalId: Long = -1L // ujemne ID dla niezapisanych
+    private var nextLocalSetId: Long = -1L
 
     private val _state = MutableStateFlow(PlanEditUiState(isNew = planId == 0L))
     val state: StateFlow<PlanEditUiState> = _state.asStateFlow()
 
     init {
         createdAt = System.currentTimeMillis()
-        // domyślny dzień = dzisiaj (ISO 1=Pon..7=Nd)
         val today = Clock.System.todayIn(TimeZone.currentSystemDefault())
             .dayOfWeek.isoDayNumber
         _state.update { it.copy(selectedDay = today) }
@@ -77,7 +79,8 @@ class PlanEditViewModel @Inject constructor(
             val exes = planRepo.getPlanExercises(planId)
             val withDetails = exes.map { pe ->
                 val ex = exerciseRepo.get(pe.exerciseId)
-                PlanExerciseWithDetail(pe, ex)
+                val sets = planRepo.getSetsForPlanExercise(pe.id)
+                PlanExerciseWithDetail(pe, ex, sets)
             }
             _state.update {
                 it.copy(
@@ -95,62 +98,103 @@ class PlanEditViewModel @Inject constructor(
     fun setName(s: String) = _state.update { it.copy(name = s) }
     fun setNotes(s: String) = _state.update { it.copy(notes = s) }
 
-    fun toggleDay(day: Int) = _state.update {
-        val days = it.daysOfWeek.toMutableSet()
-        if (days.contains(day)) days.remove(day) else days.add(day)
-        it.copy(daysOfWeek = days)
-    }
-
     fun addExercise(exerciseId: Long) {
         viewModelScope.launch {
             val ex = exerciseRepo.get(exerciseId) ?: return@launch
             val day = _state.value.selectedDay
             val orderInDay = _state.value.exercises.count { it.planEx.dayOfWeek == day }
+            val peId = nextLocalId--
             val newPe = PlanExercise(
-                id = nextLocalId--, // unikalne tymczasowe id
+                id = peId,
                 planId = planId,
                 exerciseId = exerciseId,
                 dayOfWeek = day,
-                orderIndex = orderInDay,
-                plannedSets = 3,
-                plannedReps = 8
+                orderIndex = orderInDay
             )
+            // 3 default sety: 8 powt, brak wagi, brak odp
+            val defaultSets = (1..3).map { setNum ->
+                PlanExerciseSet(
+                    id = nextLocalSetId--,
+                    planExerciseId = peId,
+                    setNumber = setNum,
+                    reps = 8,
+                    weightKg = null,
+                    restSeconds = null
+                )
+            }
             _state.update {
                 it.copy(
-                    exercises = it.exercises + PlanExerciseWithDetail(newPe, ex),
+                    exercises = it.exercises + PlanExerciseWithDetail(newPe, ex, defaultSets),
                     daysOfWeek = it.daysOfWeek + day
                 )
             }
         }
     }
 
-    fun updatePlanExercise(
-        id: Long,
-        sets: Int? = null,
+    fun addSetToExercise(planExerciseId: Long) = _state.update { st ->
+        val newList = st.exercises.map { ped ->
+            if (ped.planEx.id != planExerciseId) ped
+            else {
+                val nextNum = (ped.sets.maxOfOrNull { it.setNumber } ?: 0) + 1
+                // smart fill — kopiuj z ostatniej serii
+                val template = ped.sets.lastOrNull()
+                val newSet = PlanExerciseSet(
+                    id = nextLocalSetId--,
+                    planExerciseId = planExerciseId,
+                    setNumber = nextNum,
+                    reps = template?.reps ?: 8,
+                    weightKg = template?.weightKg,
+                    restSeconds = template?.restSeconds
+                )
+                ped.copy(sets = ped.sets + newSet)
+            }
+        }
+        st.copy(exercises = newList)
+    }
+
+    fun removeSetFromExercise(planExerciseId: Long, setId: Long) = _state.update { st ->
+        val newList = st.exercises.map { ped ->
+            if (ped.planEx.id != planExerciseId) ped
+            else {
+                val filtered = ped.sets.filter { it.id != setId }
+                // przenumeruj
+                val renumbered = filtered.mapIndexed { idx, s -> s.copy(setNumber = idx + 1) }
+                ped.copy(sets = renumbered)
+            }
+        }
+        st.copy(exercises = newList)
+    }
+
+    fun updatePlanSet(
+        planExerciseId: Long,
+        setId: Long,
         reps: Int? = null,
         weightKg: Double? = null,
         restSeconds: Int? = null,
         clearWeight: Boolean = false,
         clearRest: Boolean = false
     ) = _state.update { st ->
-        val newList = st.exercises.map { pe ->
-            if (pe.planEx.id != id) pe
-            else pe.copy(
-                planEx = pe.planEx.copy(
-                    plannedSets = sets ?: pe.planEx.plannedSets,
-                    plannedReps = reps ?: pe.planEx.plannedReps,
-                    plannedWeightKg = when {
-                        clearWeight -> null
-                        weightKg != null -> weightKg
-                        else -> pe.planEx.plannedWeightKg
-                    },
-                    restSeconds = when {
-                        clearRest -> null
-                        restSeconds != null -> restSeconds
-                        else -> pe.planEx.restSeconds
-                    }
-                )
-            )
+        val newList = st.exercises.map { ped ->
+            if (ped.planEx.id != planExerciseId) ped
+            else {
+                val newSets = ped.sets.map { s ->
+                    if (s.id != setId) s
+                    else s.copy(
+                        reps = reps ?: s.reps,
+                        weightKg = when {
+                            clearWeight -> null
+                            weightKg != null -> weightKg
+                            else -> s.weightKg
+                        },
+                        restSeconds = when {
+                            clearRest -> null
+                            restSeconds != null -> restSeconds
+                            else -> s.restSeconds
+                        }
+                    )
+                }
+                ped.copy(sets = newSets)
+            }
         }
         st.copy(exercises = newList)
     }
@@ -162,7 +206,6 @@ class PlanEditViewModel @Inject constructor(
     fun save(onDone: () -> Unit) {
         viewModelScope.launch {
             val st = _state.value
-            // daysOfWeek wynika ze ćwiczeń (auto)
             val derivedDays = st.exercises.map { it.planEx.dayOfWeek }.distinct().sorted()
             val plan = TrainingPlan(
                 id = if (st.isNew) 0L else planId,
@@ -171,20 +214,30 @@ class PlanEditViewModel @Inject constructor(
                 notes = st.notes.trim(),
                 createdAt = createdAt
             )
-            val savedId = planRepo.upsertPlan(plan)
-            // wyczyść stare i wstaw nowe w nowej kolejności (per dzień)
-            planRepo.deleteAllPlanExercises(savedId)
-            // grupuj per dzień, w obrębie dnia zachowaj kolejność z UI
+            val savedPlanId = planRepo.upsertPlan(plan)
+            planRepo.deleteAllPlanExercises(savedPlanId)
+            // grupuj per dzień, zachowaj kolejność
             val groupedByDay = st.exercises.groupBy { it.planEx.dayOfWeek }
             for ((day, list) in groupedByDay) {
-                list.forEachIndexed { idx, pe ->
-                    val toInsert = pe.planEx.copy(
-                        id = 0L,
-                        planId = savedId,
-                        dayOfWeek = day,
-                        orderIndex = idx
+                list.forEachIndexed { idx, ped ->
+                    val newPeId = planRepo.upsertPlanExercise(
+                        ped.planEx.copy(
+                            id = 0L,
+                            planId = savedPlanId,
+                            dayOfWeek = day,
+                            orderIndex = idx
+                        )
                     )
-                    planRepo.upsertPlanExercise(toInsert)
+                    // wstaw sety do nowo utworzonego planExerciseId
+                    ped.sets.forEachIndexed { setIdx, s ->
+                        planRepo.upsertPlanSet(
+                            s.copy(
+                                id = 0L,
+                                planExerciseId = newPeId,
+                                setNumber = setIdx + 1
+                            )
+                        )
+                    }
                 }
             }
             onDone()

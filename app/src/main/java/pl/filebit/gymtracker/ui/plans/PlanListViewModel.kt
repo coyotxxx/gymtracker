@@ -45,12 +45,13 @@ class PlanListViewModel @Inject constructor(
             val active = workoutRepo.startOrResume(fromPlanId = planId, fromDayOfWeek = day)
             val planExercises = planRepo.getPlanExercisesForDay(planId, day)
             planExercises.forEach { pe ->
-                repeat(pe.plannedSets) {
+                val setSpecs = planRepo.getSetsForPlanExercise(pe.id)
+                setSpecs.forEach { spec ->
                     workoutRepo.addPlannedSet(
                         workoutId = active.id,
                         exerciseId = pe.exerciseId,
-                        reps = pe.plannedReps,
-                        weightKg = pe.plannedWeightKg ?: 0.0
+                        reps = spec.reps,
+                        weightKg = spec.weightKg ?: 0.0
                     )
                 }
             }
