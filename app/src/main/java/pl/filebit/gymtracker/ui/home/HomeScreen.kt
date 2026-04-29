@@ -51,6 +51,7 @@ fun HomeScreen(
     onStartCoachWorkout: () -> Unit,
     onStartAdhocWorkout: () -> Unit,
     onOpenWorkout: (Long) -> Unit,
+    onSelectPlanTab: () -> Unit,
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -72,7 +73,7 @@ fun HomeScreen(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // CTA: aktywny trening / plan dnia + ad-hoc
+            // CTA: aktywny trening (jeśli jest) / 2-kafelkowy hub
             if (state.activeWorkout != null) {
                 item {
                     ActiveWorkoutCard(
@@ -85,25 +86,21 @@ fun HomeScreen(
                     )
                 }
             } else {
-                if (state.todaysPlan != null) {
-                    item {
-                        PlanDayCard(
-                            planName = state.todaysPlan!!.name,
-                            exerciseCount = state.todaysPlanExerciseCount,
-                            daysLabel = formatDays(state.todaysPlan!!.daysOfWeek),
-                            onStart = {
-                                vm.startWorkoutFromPlan(
-                                    state.todaysPlan!!.id,
-                                    onStartCoachWorkout
-                                )
-                            }
-                        )
-                    }
+                item {
+                    PlanHubCard(onClick = onSelectPlanTab)
                 }
                 item {
-                    AdhocCard(
+                    AdhocHubCard(
                         onStart = { vm.startWorkoutAdhoc(onStartAdhocWorkout) }
                     )
+                }
+                if (state.todaysPlan != null) {
+                    item {
+                        TodayHintCard(
+                            planName = state.todaysPlan!!.name,
+                            onSelectPlan = onSelectPlanTab
+                        )
+                    }
                 }
             }
 
@@ -138,6 +135,95 @@ fun HomeScreen(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun PlanHubCard(onClick: () -> Unit) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
+        shape = RoundedCornerShape(20.dp)
+    ) {
+        Column(modifier = Modifier.padding(20.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.EventNote,
+                    contentDescription = null,
+                    modifier = Modifier.size(28.dp)
+                )
+                Spacer(Modifier.width(12.dp))
+                Text(
+                    stringResource(R.string.home_hub_plan_title),
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(R.string.home_hub_plan_subtitle),
+                style = MaterialTheme.typography.bodyMedium
+            )
+        }
+    }
+}
+
+@Composable
+private fun AdhocHubCard(onStart: () -> Unit) {
+    Card(
+        onClick = onStart,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface
+        ),
+        shape = RoundedCornerShape(20.dp)
+    ) {
+        Column(modifier = Modifier.padding(20.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.FitnessCenter,
+                    contentDescription = null,
+                    modifier = Modifier.size(28.dp),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.width(12.dp))
+                Text(
+                    stringResource(R.string.home_hub_adhoc_title),
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(R.string.home_hub_adhoc_subtitle),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+@Composable
+private fun TodayHintCard(planName: String, onSelectPlan: () -> Unit) {
+    Card(
+        onClick = onSelectPlan,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Text(
+            stringResource(R.string.home_today_hint, planName),
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.padding(12.dp)
+        )
     }
 }
 

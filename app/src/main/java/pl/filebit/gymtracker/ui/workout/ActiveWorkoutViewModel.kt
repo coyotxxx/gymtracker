@@ -13,10 +13,13 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
+import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
@@ -38,6 +41,7 @@ data class ActiveWorkoutUiState(
 class ActiveWorkoutViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val exerciseRepo: ExerciseRepository,
+    private val planRepo: PlanRepository,
     profileRepo: UserProfileRepository
 ) : ViewModel() {
 
@@ -123,6 +127,38 @@ class ActiveWorkoutViewModel @Inject constructor(
         viewModelScope.launch {
             workoutRepo.discardActive()
             onDone()
+        }
+    }
+
+    /**
+     * Zapisuje obecny trening jako szablon planu (TrainingPlan + PlanExercise).
+     * Plan nie ma jeszcze nazwy ani dni — user uzupełni w PlanEdit.
+     */
+    fun saveAsPlan(onCreated: (Long) -> Unit) {
+        val groups = state.value.groups
+        if (groups.isEmpty()) return
+        viewModelScope.launch {
+            val planId = planRepo.upsertPlan(
+                TrainingPlan(name = "", daysOfWeek = emptyList(), notes = "")
+            )
+            groups.forEachIndexed { idx, group ->
+                val maxWeight = group.sets.maxOfOrNull { it.weightKg } ?: 0.0
+                val workingSet = group.sets.firstOrNull { it.weightKg == maxWeight }
+                    ?: group.sets.firstOrNull()
+                val typicalReps = workingSet?.reps ?: 8
+                planRepo.upsertPlanExercise(
+                    PlanExercise(
+                        planId = planId,
+                        exerciseId = group.exercise.id,
+                        orderIndex = idx,
+                        plannedSets = group.sets.size,
+                        plannedReps = typicalReps,
+                        plannedWeightKg = if (maxWeight > 0.0) maxWeight else null,
+                        restSeconds = null
+                    )
+                )
+            }
+            onCreated(planId)
         }
     }
 }

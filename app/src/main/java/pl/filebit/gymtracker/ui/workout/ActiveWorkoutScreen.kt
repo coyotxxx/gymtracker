@@ -23,6 +23,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -84,6 +85,7 @@ private inline fun safeTimer(action: () -> Unit) {
 fun ActiveWorkoutScreen(
     onAddExerciseClick: () -> Unit,
     onWorkoutFinished: () -> Unit,
+    onSavedAsPlan: (Long) -> Unit,
     vm: ActiveWorkoutViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -91,6 +93,7 @@ fun ActiveWorkoutScreen(
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
+    var menuOpen by remember { mutableStateOf(false) }
 
     // Auto-tick czasu trwania treningu (Compose timer trigger)
     var nowMillis by remember { mutableStateOf(System.currentTimeMillis()) }
@@ -124,8 +127,35 @@ fun ActiveWorkoutScreen(
                     }
                 },
                 actions = {
-                    TextButton(onClick = { showFinishDialog = true }) {
-                        Text(stringResource(R.string.workout_finish))
+                    Box {
+                        IconButton(onClick = { menuOpen = true }) {
+                            Icon(Icons.Default.MoreVert, contentDescription = null)
+                        }
+                        DropdownMenu(
+                            expanded = menuOpen,
+                            onDismissRequest = { menuOpen = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_save_as_plan)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.EventNote, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.workout_finish)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.Check, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    showFinishDialog = true
+                                }
+                            )
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(

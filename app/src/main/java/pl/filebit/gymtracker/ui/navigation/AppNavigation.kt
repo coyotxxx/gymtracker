@@ -97,6 +97,15 @@ fun AppNavigation() {
                     onStartAdhocWorkout = { navController.navigate(Screen.ActiveWorkout.route) },
                     onOpenWorkout = { id ->
                         navController.navigate(Screen.WorkoutDetail.create(id))
+                    },
+                    onSelectPlanTab = {
+                        navController.navigate(Screen.Plans.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
                     }
                 )
             }
@@ -127,6 +136,9 @@ fun AppNavigation() {
                     onAddExerciseClick = { navController.navigate(Screen.ExercisePicker.create("WORKOUT")) },
                     onWorkoutFinished = {
                         navController.popBackStack(Screen.Home.route, inclusive = false)
+                    },
+                    onSavedAsPlan = { newPlanId ->
+                        navController.navigate(Screen.PlanEdit.create(newPlanId))
                     }
                 )
             }
