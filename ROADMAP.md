@@ -3,6 +3,7 @@
 ## Zasady projektu
 
 - Aplikacja **całkowicie darmowa**, bez subskrypcji, bez płatności, bez reklam.
+- **Tylko Android** (smartfon / tablet). Bez Wear OS, bez Apple Watch, bez iOS.
 - **Offline-first** — wszystko lokalnie (Room DB, plik JSON/CSV w Dysku Google przez systemowy picker).
 - **Bez backendu** w MVP — żadnych serwerów, żadnego API z danymi user'a.
 - **Open source** styl — repo prywatne, ale kod ma być czysty i utrzymywalny.
@@ -104,7 +105,6 @@
 - [ ] **AI sugestia kolejnego treningu** — analiza historii przez LLM
 - [ ] **Cloud sync** — opcjonalnie przez Firebase/Supabase (osobne konto darmowe lub samodzielnie hostowane)
 - [ ] **Animacje GIF ćwiczeń** — pakiet zewnętrznych assetów (10-30 MB)
-- [ ] **Wear OS / Apple Watch** — osobna platforma
 - [ ] **Powiadomienia lokalizacyjne** — geofencing przy siłowni
 - [ ] **Mapa regeneracji mięśni** (Fitbod-level) — algorytm decay zaangażowania w czasie
 - [ ] **Strength standards** — porównanie do norm (Beginner/Intermediate/Advanced) per ćwiczenie + waga ciała

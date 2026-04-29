@@ -5,10 +5,11 @@ Repo: GymTracker — hobby Android app w Kotlin / Jetpack Compose / Hilt / Room.
 ## Naczelne zasady
 
 1. **Aplikacja całkowicie darmowa.** Żadnych subskrypcji, płatności, reklam, in-app purchases.
-2. **Offline-first.** Wszystko lokalnie (Room). Backup przez systemowy picker (Drive / USB / chmura usera).
-3. **Bez backendu.** Żadnych serwerów aplikacji, żadnego trackingu, żadnej telemetrii.
-4. **BYOK dla AI.** Jeśli kiedykolwiek dodamy AI features (V3), user wkleja własny klucz API.
-5. **Open code.** Kod czysty, utrzymywalny, komentarze tylko gdy WHY jest niejasne.
+2. **Tylko Android** (smartfon / tablet). Żadnych smartwatch'y (Wear OS / Apple Watch), żadnego iOS.
+3. **Offline-first.** Wszystko lokalnie (Room). Backup przez systemowy picker (Drive / USB / chmura usera).
+4. **Bez backendu.** Żadnych serwerów aplikacji, żadnego trackingu, żadnej telemetrii.
+5. **BYOK dla AI.** Jeśli kiedykolwiek dodamy AI features (V3), user wkleja własny klucz API.
+6. **Open code.** Kod czysty, utrzymywalny, komentarze tylko gdy WHY jest niejasne.
 
 ## Stack
 
