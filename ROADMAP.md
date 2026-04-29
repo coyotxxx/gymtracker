@@ -49,12 +49,12 @@
 - [x] **🏆 "Nowy rekord!"** dialog po zakończeniu treningu — porównanie szacowanego 1RM z najlepszym z poprzednich treningów (per ćwiczenie); alert pokazuje nazwę ćwiczenia + wagę × powt + nowe 1RM
 - [x] **1RM calculator** w Profilu (Profil → Kalkulator 1RM): pola Waga + Powt → wyniki Epley / Brzycki / Lombardi + średnia trzech
 
-### Faza 14 — Tools
+### Faza 14 — Tools ✅ v0.11.0
 
-- [ ] **Plate calculator** — kalkulator talerzy na sztangę (dialog z poziomu pola Waga w treningu lub osobny ekran w Profilu)
-- [ ] **Filtr "Sprzęt"** w bibliotece ćwiczeń (oprócz już istniejącego "Mięsień")
-- [ ] **Eksport CSV** w Backup (oprócz JSON) — treningi, sety, ćwiczenia
-- [ ] **Notatki per-ćwiczenie** — notatka per Exercise (np. "uważać na łokcie") + per WorkoutSet ("dziś czułem się słaby")
+- [x] **Plate calculator** — osobny ekran w Profilu, greedy load talerzami 25/20/15/10/5/2.5/1.25 kg, oblicz różnicę do celu
+- [x] **Filtr "Sprzęt"** w bibliotece — drugi rząd chipów pod filtrami mięśni (Sztanga, Hantle, Maszyna, Wyciąg, Ciężar ciała)
+- [x] **Eksport CSV** w Backup — `workout_id, started_at, finished_at, exercise, set_number, set_type, reps, weight_kg, is_completed` (jeden wiersz per WorkoutSet)
+- [x] **Notatki per-ćwiczenie** — klik na kartę ćwiczenia w bibliotece otwiera dialog edycji `Exercise.notes`, notatka wyświetla się jako 📝 pod kartą (per WorkoutSet zostaje na osobną fazę jeśli będzie potrzebne)
 
 ---
 

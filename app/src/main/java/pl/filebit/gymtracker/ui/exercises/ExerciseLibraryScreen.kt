@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,10 +24,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,8 +48,11 @@ import pl.filebit.gymtracker.util.formatWeight
 fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
+    val equipmentFilter by vm.equipmentFilter.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
     val prs by vm.prs.collectAsStateWithLifecycle()
+    var editingNotesForId by remember { mutableStateOf<Long?>(null) }
+    var editingNotesText by remember { mutableStateOf("") }
 
     Scaffold(
         topBar = {
@@ -96,6 +104,28 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
 
             Spacer(Modifier.height(8.dp))
 
+            LazyRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                contentPadding = PaddingValues(vertical = 4.dp)
+            ) {
+                item {
+                    FilterChip(
+                        selected = equipmentFilter == null,
+                        onClick = { vm.setEquipmentFilter(null) },
+                        label = { Text(stringResource(R.string.library_equipment_all)) }
+                    )
+                }
+                items(Equipment.entries.filter { it != Equipment.OTHER }) { e ->
+                    FilterChip(
+                        selected = equipmentFilter == e,
+                        onClick = { vm.setEquipmentFilter(e) },
+                        label = { Text(e.displayName()) }
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(8.dp))
+
             Text(
                 "${exercises.size} ćwiczeń",
                 style = MaterialTheme.typography.bodyMedium,
@@ -111,6 +141,10 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
                 items(exercises, key = { it.id }) { ex ->
                     val pr = prs[ex.id]
                     Card(
+                        onClick = {
+                            editingNotesForId = ex.id
+                            editingNotesText = ex.notes
+                        },
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.surface
@@ -142,11 +176,47 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
                                     fontWeight = FontWeight.SemiBold
                                 )
                             }
+                            if (ex.notes.isNotBlank()) {
+                                Spacer(Modifier.height(4.dp))
+                                Text(
+                                    "📝 ${ex.notes}",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    editingNotesForId?.let { exId ->
+        AlertDialog(
+            onDismissRequest = { editingNotesForId = null },
+            title = { Text(stringResource(R.string.exercise_notes_title)) },
+            text = {
+                OutlinedTextField(
+                    value = editingNotesText,
+                    onValueChange = { editingNotesText = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(R.string.exercise_notes_placeholder)) },
+                    minLines = 3,
+                    maxLines = 8
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.saveExerciseNotes(exId, editingNotesText)
+                    editingNotesForId = null
+                }) { Text(stringResource(R.string.common_save)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { editingNotesForId = null }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
+            }
+        )
     }
 }
 

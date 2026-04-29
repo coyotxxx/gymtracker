@@ -77,6 +77,11 @@ fun BackupScreen(
     ) { uri ->
         uri?.let { vm.import(it) }
     }
+    val csvLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("text/csv")
+    ) { uri ->
+        uri?.let { vm.exportCsv(it) }
+    }
 
     Scaffold(
         topBar = {
@@ -142,6 +147,22 @@ fun BackupScreen(
                 Icon(Icons.Default.CloudDownload, contentDescription = null)
                 Spacer(Modifier.height(4.dp))
                 Text("  ${stringResource(R.string.backup_import)}")
+            }
+
+            OutlinedButton(
+                onClick = {
+                    val name = "gymtracker-${formatDate(System.currentTimeMillis()).replace(" ", "_").replace(":", "-")}.csv"
+                    csvLauncher.launch(name)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.outlinedButtonColors()
+            ) {
+                Icon(Icons.Default.CloudUpload, contentDescription = null)
+                Spacer(Modifier.height(4.dp))
+                Text("  ${stringResource(R.string.backup_export_csv)}")
             }
 
             OutlinedButton(

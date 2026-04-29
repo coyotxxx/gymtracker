@@ -58,6 +58,7 @@ fun ProfileScreen(
     onOpenBackup: () -> Unit,
     onOpenStats: () -> Unit,
     onOpenOneRm: () -> Unit,
+    onOpenPlateCalc: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -198,6 +199,17 @@ fun ProfileScreen(
                     Icon(Icons.Default.Calculate, contentDescription = null)
                     Spacer(Modifier.height(4.dp))
                     Text("  ${stringResource(R.string.onerm_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenPlateCalc,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.Calculate, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.plate_title)}")
                 }
             }
             item {

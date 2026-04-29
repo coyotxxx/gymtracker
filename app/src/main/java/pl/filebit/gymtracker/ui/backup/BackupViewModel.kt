@@ -145,6 +145,40 @@ class BackupViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Eksport CSV — jeden wiersz per WorkoutSet, JOIN z workout (data) i ćwiczeniem (nazwa).
+     */
+    fun exportCsv(uri: Uri) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val workouts = db.workoutDao().observeAll().first()
+                val exMap = db.exerciseDao().observeAll().first().associateBy { it.id }
+                val sb = StringBuilder()
+                sb.append("workout_id,workout_started_at,workout_finished_at,exercise,set_number,set_type,reps,weight_kg,is_completed\n")
+                for (w in workouts) {
+                    val sets = workoutRepo.getSetsForWorkout(w.id)
+                        .sortedWith(compareBy({ it.orderIndex }, { it.setNumber }))
+                    for (s in sets) {
+                        val exName = exMap[s.exerciseId]?.name ?: "?"
+                        sb.append(w.id).append(',')
+                        sb.append(w.startedAt).append(',')
+                        sb.append(w.finishedAt ?: "").append(',')
+                        sb.append('"').append(exName.replace("\"", "\"\"")).append('"').append(',')
+                        sb.append(s.setNumber).append(',')
+                        sb.append(s.setType.name).append(',')
+                        sb.append(s.reps).append(',')
+                        sb.append(s.weightKg).append(',')
+                        sb.append(if (s.isCompleted) "1" else "0").append('\n')
+                    }
+                }
+                context.contentResolver.openOutputStream(uri)?.use { os ->
+                    os.write(sb.toString().toByteArray(Charsets.UTF_8))
+                }
+                _status.value = "CSV: ${workouts.size} treningów"
+            }
+        }
+    }
+
     fun import(uri: Uri) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {

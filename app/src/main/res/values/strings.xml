@@ -95,8 +95,25 @@
     <string name="pr_dialog_line">%1$s kg × %2$d  ·  1RM≈ %3$s kg</string>
     <string name="pr_dialog_ok">Super!</string>
 
+    <!-- Plate calculator -->
+    <string name="plate_title">Kalkulator talerzy</string>
+    <string name="plate_explain">Wpisz docelową wagę i wagę gryfu. Pokażę talerze do założenia na każdą stronę.</string>
+    <string name="plate_total">Łączna waga (kg)</string>
+    <string name="plate_bar">Gryf (kg)</string>
+    <string name="plate_per_side">Na jedną stronę</string>
+    <string name="plate_load_per_side">Talerze na każdą stronę:</string>
+    <string name="plate_empty">Wpisz wagę większą niż waga gryfu.</string>
+    <string name="plate_achieved">Osiągnięta waga: %1$s kg</string>
+    <string name="plate_diff">Różnica do celu: %1$s%2$s kg</string>
+
+    <!-- Library -->
+    <string name="library_equipment_all">Każdy sprzęt</string>
+    <string name="exercise_notes_title">Notatka do ćwiczenia</string>
+    <string name="exercise_notes_placeholder">Np. trzymać łokcie wąsko, ciężar zaczynać od…</string>
+
     <!-- Backup -->
     <string name="backup_export">Eksportuj dane (JSON)</string>
+    <string name="backup_export_csv">Eksportuj jako CSV (treningi)</string>
     <string name="backup_import">Importuj dane (JSON)</string>
     <string name="backup_export_done">Eksport gotowy</string>
     <string name="backup_import_done">Import gotowy</string>
