@@ -89,7 +89,8 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [x] **Tempo** — String? (np. "3-1-1-0") w WorkoutSet i PlanExerciseSet
 - [x] **Toggle 'Pokaż pola zaawansowane'** w Profilu (UserProfile.showAdvancedSetFields)
 - [x] **UI pól w PlanEdit** — drugi rząd RPE / RIR / Tempo per set gdy toggle ON
-- [ ] UI pól w ActiveWorkout / Coach mode confirm — V2.1 (logic gotowy, schema zapisuje, brakuje tylko interfejsu wprowadzania w trakcie treningu)
+- [x] **UI pól w ActiveWorkout** ✅ v0.19.0 — drugi rząd RPE / RIR / Tempo pod każdą serią gdy `showAdvancedSetFields=true`
+- [x] **UI w Coach mode confirm dialog** ✅ v0.19.0 — drugi slider RPE 1-10 (opcjonalny, 0 = pomiń) obok slidera reps
 
 ### Faza 19 — Body & pomiary ✅ v0.16.0 (częściowo)
 

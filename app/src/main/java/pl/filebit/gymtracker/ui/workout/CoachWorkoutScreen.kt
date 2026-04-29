@@ -175,13 +175,13 @@ fun CoachWorkoutScreen(
     if (showConfirmDialog) {
         val planned = state.currentSet?.reps ?: 0
         val restSec = state.defaultRestSeconds
+        // showAdvanced trzymane w state.workout? — niedostępne; pobieramy z VM.profile
+        // Dla MVP: zawsze pokazuj RPE slider w Coach mode (opcjonalny, można pominąć)
         ConfirmRepsDialog(
             plannedReps = planned,
-            onConfirm = { actualReps ->
+            onConfirm = { actualReps, actualRpe ->
                 showConfirmDialog = false
-                // Czekaj aż confirm zapisze się w bazie (state się przesunie),
-                // dopiero potem startuj timer — inaczej UI tła pokazuje stary set.
-                vm.confirmCurrentSet(actualReps) {
+                vm.confirmCurrentSet(actualReps, actualRpe) {
                     safeCoachTimer {
                         RestTimerService.start(context, restSec)
                     }
@@ -526,10 +526,11 @@ private fun BigStatColumn(label: String, value: String) {
 @Composable
 private fun ConfirmRepsDialog(
     plannedReps: Int,
-    onConfirm: (Int) -> Unit,
+    onConfirm: (Int, Int?) -> Unit,
     onDismiss: () -> Unit
 ) {
     var actualReps by remember { mutableStateOf(plannedReps) }
+    var rpe by remember { mutableStateOf(0) } // 0 = nie ustawione
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -567,10 +568,24 @@ private fun ConfirmRepsDialog(
                     valueRange = 0f..30f,
                     steps = 29
                 )
+                Spacer(Modifier.height(16.dp))
+                Text(
+                    stringResource(R.string.coach_rpe_label, if (rpe == 0) "—" else rpe.toString()),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Slider(
+                    value = rpe.toFloat(),
+                    onValueChange = { rpe = it.roundToInt() },
+                    valueRange = 0f..10f,
+                    steps = 9
+                )
             }
         },
         confirmButton = {
-            Button(onClick = { onConfirm(actualReps) }) {
+            Button(onClick = {
+                onConfirm(actualReps, if (rpe == 0) null else rpe)
+            }) {
                 Text(stringResource(R.string.coach_confirm_button, actualReps))
             }
         },

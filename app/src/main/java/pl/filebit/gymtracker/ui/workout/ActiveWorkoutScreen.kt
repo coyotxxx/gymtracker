@@ -197,6 +197,7 @@ fun ActiveWorkoutScreen(
                             ExerciseGroupCard(
                                 group = group,
                                 defaultRestSec = state.profile.defaultRestSeconds,
+                                showAdvanced = state.profile.showAdvancedSetFields,
                                 onAddSet = { reps, weight ->
                                     vm.addSet(group.exercise.id, reps, weight)
                                     safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds) }
@@ -397,6 +398,7 @@ private fun WorkoutNotesDialog(
 private fun ExerciseGroupCard(
     group: ExerciseGroup,
     defaultRestSec: Int,
+    showAdvanced: Boolean,
     onAddSet: (reps: Int, weight: Double) -> Unit,
     onUpdateSet: (WorkoutSet) -> Unit,
     onDeleteSet: (WorkoutSet) -> Unit,
@@ -468,6 +470,12 @@ private fun ExerciseGroupCard(
                     onUpdate = onUpdateSet,
                     onDelete = onDeleteSet
                 )
+                if (showAdvanced) {
+                    AdvancedFieldsRow(
+                        set = set,
+                        onUpdate = onUpdateSet
+                    )
+                }
             }
 
             Spacer(Modifier.height(8.dp))
@@ -507,6 +515,58 @@ private fun androidx.compose.foundation.layout.RowScope.HeaderCell(text: String,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
+    }
+}
+
+@Composable
+private fun AdvancedFieldsRow(
+    set: WorkoutSet,
+    onUpdate: (WorkoutSet) -> Unit
+) {
+    var rpeText by remember(set.id) { mutableStateOf(set.rpe?.toString() ?: "") }
+    var rirText by remember(set.id) { mutableStateOf(set.rir?.toString() ?: "") }
+    var tempoText by remember(set.id) { mutableStateOf(set.tempo ?: "") }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 40.dp, end = 48.dp, top = 2.dp, bottom = 6.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        OutlinedTextField(
+            value = rpeText,
+            onValueChange = {
+                rpeText = it.filter { c -> c.isDigit() }
+                onUpdate(set.copy(rpe = rpeText.toIntOrNull()))
+            },
+            label = { Text("RPE", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.weight(1f)
+        )
+        OutlinedTextField(
+            value = rirText,
+            onValueChange = {
+                rirText = it.filter { c -> c.isDigit() }
+                onUpdate(set.copy(rir = rirText.toIntOrNull()))
+            },
+            label = { Text("RIR", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.weight(1f)
+        )
+        OutlinedTextField(
+            value = tempoText,
+            onValueChange = {
+                tempoText = it
+                onUpdate(set.copy(tempo = if (tempoText.isBlank()) null else tempoText))
+            },
+            label = { Text("Tempo", style = MaterialTheme.typography.bodySmall) },
+            placeholder = { Text("3-1-1-0", style = MaterialTheme.typography.bodySmall) },
+            singleLine = true,
+            modifier = Modifier.weight(1.4f)
+        )
     }
 }
 
