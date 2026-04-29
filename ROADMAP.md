@@ -98,10 +98,10 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [ ] Zdjęcia progresu (przód/bok/tył) — V2.1 (wymaga camera permissions + ImagePicker + filesystem)
 - [ ] Cel masy (redukcja / masa / utrzymanie) — V2.1
 
-### Faza 20 — Mapa mięśni (statyczna)
+### Faza 20 — Mapa mięśni ✅ v0.17.0 (lista, bez sylwetki)
 
-- [ ] Silhouette ciała + procent zaangażowania (suma wolumen per grupa mięśniowa)
-- [ ] "Tydzień: ile pracy dla każdej partii?"
+- [x] **Procent zaangażowania per grupa mięśniowa** — `StatsRepository.muscleEngagement(periodDays)` agreguje volume kg × powt z working sets per `Exercise.primaryMuscle`. UI w Profil → 'Mapa mięśni': lista grup posortowana po wolumenie + progressbar procentowy + 4 zakresy czasu (tydzień / miesiąc / 3 miesiące / cały okres).
+- [ ] Silhouette ciała graficzna (przód/tył) — V2.1 (custom Compose Canvas drawing, dużo grafiki)
 
 ---
 

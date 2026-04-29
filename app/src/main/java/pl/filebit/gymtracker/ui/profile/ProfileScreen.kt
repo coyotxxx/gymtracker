@@ -16,6 +16,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
+import androidx.compose.material.icons.filled.AccessibilityNew
 import androidx.compose.material.icons.filled.MonitorWeight
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Button
@@ -61,6 +62,7 @@ fun ProfileScreen(
     onOpenOneRm: () -> Unit,
     onOpenPlateCalc: () -> Unit,
     onOpenBody: () -> Unit,
+    onOpenMuscles: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -252,6 +254,17 @@ fun ProfileScreen(
                     Icon(Icons.Default.MonitorWeight, contentDescription = null)
                     Spacer(Modifier.height(4.dp))
                     Text("  ${stringResource(R.string.body_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenMuscles,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.AccessibilityNew, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.muscles_title)}")
                 }
             }
             item {

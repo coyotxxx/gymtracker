@@ -162,6 +162,46 @@ class StatsRepository @Inject constructor(
         )
     }
 
+    /**
+     * Zaangażowanie mięśni w danym okresie (dni wstecz). Working sets, bez warm-upów.
+     * Każde ćwiczenie liczone tylko do swojej `primaryMuscle` (sekundarne na razie pomijane).
+     */
+    suspend fun muscleEngagement(periodDays: Int): List<MuscleEngagement> {
+        val now = System.currentTimeMillis()
+        val cutoff = if (periodDays > 0) now - periodDays.toLong() * 24L * 60L * 60L * 1000L else 0L
+        val finished = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && it.startedAt >= cutoff }
+        if (finished.isEmpty()) return emptyList()
+
+        val perMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Pair<Double, Int>>()
+        // (volumeSum, setsCount)
+
+        for (w in finished) {
+            val sets = setDao.getForWorkout(w.id)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP }
+            for (s in sets) {
+                val ex = exerciseDao.getById(s.exerciseId) ?: continue
+                val vol = s.reps * s.weightKg
+                val (v, c) = perMuscle.getOrDefault(ex.primaryMuscle, 0.0 to 0)
+                perMuscle[ex.primaryMuscle] = (v + vol) to (c + 1)
+            }
+        }
+
+        val total = perMuscle.values.sumOf { it.first }
+        if (total <= 0) return emptyList()
+
+        return perMuscle.entries
+            .map { (muscle, vc) ->
+                MuscleEngagement(
+                    muscle = muscle,
+                    volumeKg = vc.first,
+                    totalSets = vc.second,
+                    percentOfTotal = ((vc.first * 100) / total).toInt().coerceIn(0, 100)
+                )
+            }
+            .sortedByDescending { it.volumeKg }
+    }
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -385,5 +425,12 @@ data class Achievement(
     val progress: Int = 0,    // 0-100
     val targetValue: Long = 0,
     val currentValue: Long = 0
+)
+
+data class MuscleEngagement(
+    val muscle: pl.filebit.gymtracker.data.entity.MuscleGroup,
+    val volumeKg: Double,       // suma reps × weight (working sets, bez warm-upów)
+    val totalSets: Int,         // ile working sets dotknęło tej grupy
+    val percentOfTotal: Int     // 0-100, udział w całym wolumenie okresu
 )
 
