@@ -29,7 +29,8 @@ data class ExercisePr(
 @Singleton
 class StatsRepository @Inject constructor(
     private val workoutDao: WorkoutDao,
-    private val setDao: WorkoutSetDao
+    private val setDao: WorkoutSetDao,
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao
 ) {
 
     /**
@@ -99,6 +100,94 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Punkty wykresu progresji per ćwiczenie — po jednym na trening.
+     */
+    suspend fun progressionForExercise(exerciseId: Long): List<ExerciseProgressionPoint> {
+        val all = setDao.getAllForExercise(exerciseId)
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        if (all.isEmpty()) return emptyList()
+        val workoutsById = workoutDao.observeAllOnce().associateBy { it.id }
+        return all.groupBy { it.workoutId }
+            .mapNotNull { (workoutId, sets) ->
+                val w = workoutsById[workoutId] ?: return@mapNotNull null
+                if (w.finishedAt == null) return@mapNotNull null
+                val maxWeight = sets.maxOf { it.weightKg }
+                val repsAtMax = sets.filter { it.weightKg == maxWeight }.maxOf { it.reps }
+                val volume = sets.sumOf { it.reps * it.weightKg }
+                val best1Rm = sets.maxOf { epley1RM(it.weightKg, it.reps) }
+                ExerciseProgressionPoint(
+                    workoutId = workoutId,
+                    workoutDate = w.startedAt,
+                    maxWeightKg = maxWeight,
+                    repsAtMax = repsAtMax,
+                    volumeKg = volume,
+                    estimated1RM = (best1Rm * 10).roundToInt() / 10.0
+                )
+            }
+            .sortedBy { it.workoutDate }
+    }
+
+    /**
+     * Pełna historia setów ćwiczenia (po zakończonych treningach), posortowane od najnowszych.
+     */
+    suspend fun historyForExercise(exerciseId: Long): List<WorkoutSet> {
+        val finishedIds = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .map { it.id }
+            .toSet()
+        return setDao.getAllForExercise(exerciseId)
+            .filter { it.workoutId in finishedIds }
+            .sortedByDescending { it.createdAt }
+    }
+
+    /**
+     * Sugestie progresji: jeśli wszystkie working sety wykonane (isCompleted, nie warmup)
+     * z reps >= prog ostatniego treningu i tą samą lub większą wagą — sugeruj +2.5kg
+     * w następnym treningu.
+     */
+    suspend fun progressionTipsForWorkout(currentWorkoutId: Long): List<ProgressionTip> {
+        val curSets = setDao.getForWorkout(currentWorkoutId)
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        if (curSets.isEmpty()) return emptyList()
+        val byExercise = curSets.groupBy { it.exerciseId }
+        val tips = mutableListOf<ProgressionTip>()
+        for ((exId, list) in byExercise) {
+            val curMaxWeight = list.maxOf { it.weightKg }
+            val curMinRepsAtMax = list.filter { it.weightKg == curMaxWeight }.minOf { it.reps }
+            // wszystkie working sety dziś wykonane?
+            val allDone = list.all { it.isCompleted }
+            if (!allDone) continue
+            // poprzedni trening dla tego ćwiczenia
+            val previousAll = setDao.getAllForExercise(exId)
+                .filter { it.workoutId != currentWorkoutId && it.isCompleted && it.setType != SetType.WARMUP }
+            if (previousAll.isEmpty()) continue
+            val previousByWorkout = previousAll.groupBy { it.workoutId }
+            // weź ostatni trening (po max createdAt)
+            val lastWorkoutId = previousByWorkout.keys.maxByOrNull { wid ->
+                previousByWorkout[wid]!!.maxOf { it.createdAt }
+            } ?: continue
+            val prevSets = previousByWorkout[lastWorkoutId]!!
+            val prevMaxWeight = prevSets.maxOf { it.weightKg }
+            val prevMinRepsAtMax = prevSets.filter { it.weightKg == prevMaxWeight }.minOf { it.reps }
+            // warunek: dziś waga == lub > poprzednio AND dziś min reps >= poprzednie min reps
+            if (curMaxWeight >= prevMaxWeight && curMinRepsAtMax >= prevMinRepsAtMax && curMinRepsAtMax >= 8) {
+                val suggested = curMaxWeight + 2.5
+                val name = exerciseDao.getById(exId)?.name ?: "?"
+                tips.add(
+                    ProgressionTip(
+                        exerciseId = exId,
+                        exerciseName = name,
+                        currentWeightKg = curMaxWeight,
+                        suggestedWeightKg = suggested,
+                        reason = "wszystkie serie ✓"
+                    )
+                )
+            }
+        }
+        return tips
+    }
+
+    /**
      * Czy któryś set z bieżącego treningu pobił max wagę × powt dla swojego ćwiczenia
      * w porównaniu do innych zakończonych treningów (excl. obecnego).
      */
@@ -140,3 +229,27 @@ data class NewPr(
     val previousBest1RM: Double,
     val new1RM: Double
 )
+
+/**
+ * Punkt na wykresie: jeden trening, max waga × max powt × suma volume tego ćwiczenia.
+ */
+data class ExerciseProgressionPoint(
+    val workoutId: Long,
+    val workoutDate: Long,
+    val maxWeightKg: Double,
+    val repsAtMax: Int,
+    val volumeKg: Double,
+    val estimated1RM: Double
+)
+
+/**
+ * Sugestia: w danym ćwiczeniu spróbuj zwiększyć ciężar.
+ */
+data class ProgressionTip(
+    val exerciseId: Long,
+    val exerciseName: String,
+    val currentWeightKg: Double,
+    val suggestedWeightKg: Double,
+    val reason: String
+)
+

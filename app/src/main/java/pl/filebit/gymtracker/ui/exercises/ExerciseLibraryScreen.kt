@@ -45,14 +45,15 @@ import pl.filebit.gymtracker.util.formatWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
+fun ExerciseLibraryScreen(
+    onOpenDetail: (Long) -> Unit,
+    vm: ExerciseLibraryViewModel = hiltViewModel()
+) {
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
     val equipmentFilter by vm.equipmentFilter.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
     val prs by vm.prs.collectAsStateWithLifecycle()
-    var editingNotesForId by remember { mutableStateOf<Long?>(null) }
-    var editingNotesText by remember { mutableStateOf("") }
 
     Scaffold(
         topBar = {
@@ -141,10 +142,7 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
                 items(exercises, key = { it.id }) { ex ->
                     val pr = prs[ex.id]
                     Card(
-                        onClick = {
-                            editingNotesForId = ex.id
-                            editingNotesText = ex.notes
-                        },
+                        onClick = { onOpenDetail(ex.id) },
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.surface
@@ -191,33 +189,6 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
         }
     }
 
-    editingNotesForId?.let { exId ->
-        AlertDialog(
-            onDismissRequest = { editingNotesForId = null },
-            title = { Text(stringResource(R.string.exercise_notes_title)) },
-            text = {
-                OutlinedTextField(
-                    value = editingNotesText,
-                    onValueChange = { editingNotesText = it },
-                    modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text(stringResource(R.string.exercise_notes_placeholder)) },
-                    minLines = 3,
-                    maxLines = 8
-                )
-            },
-            confirmButton = {
-                TextButton(onClick = {
-                    vm.saveExerciseNotes(exId, editingNotesText)
-                    editingNotesForId = null
-                }) { Text(stringResource(R.string.common_save)) }
-            },
-            dismissButton = {
-                TextButton(onClick = { editingNotesForId = null }) {
-                    Text(stringResource(R.string.common_cancel))
-                }
-            }
-        )
-    }
 }
 
 private fun MuscleGroup.displayName(): String = when (this) {

@@ -13,6 +13,10 @@ sealed class Screen(val route: String) {
     object OneRm : Screen("tools/1rm")
     object PlateCalc : Screen("tools/plate")
 
+    object ExerciseDetail : Screen("exercises/{exerciseId}") {
+        fun create(exerciseId: Long) = "exercises/$exerciseId"
+    }
+
     object PlanEdit : Screen("plans/{planId}") {
         fun create(planId: Long) = "plans/$planId"
     }

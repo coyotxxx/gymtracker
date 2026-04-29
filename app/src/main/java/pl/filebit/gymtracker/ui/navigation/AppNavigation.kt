@@ -28,6 +28,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.ui.backup.BackupScreen
+import pl.filebit.gymtracker.ui.exercises.ExerciseDetailScreen
 import pl.filebit.gymtracker.ui.exercises.ExerciseLibraryScreen
 import pl.filebit.gymtracker.ui.history.HistoryScreen
 import pl.filebit.gymtracker.ui.history.WorkoutDetailScreen
@@ -127,7 +128,15 @@ fun AppNavigation() {
                 )
             }
             composable(Screen.ExerciseLibrary.route) {
-                ExerciseLibraryScreen()
+                ExerciseLibraryScreen(
+                    onOpenDetail = { id -> navController.navigate(Screen.ExerciseDetail.create(id)) }
+                )
+            }
+            composable(
+                route = Screen.ExerciseDetail.route,
+                arguments = listOf(navArgument("exerciseId") { type = NavType.LongType })
+            ) {
+                ExerciseDetailScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
