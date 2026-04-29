@@ -102,7 +102,7 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 ### Faza 20 — Mapa mięśni ✅ v0.17.0 (lista, bez sylwetki)
 
 - [x] **Procent zaangażowania per grupa mięśniowa** — `StatsRepository.muscleEngagement(periodDays)` agreguje volume kg × powt z working sets per `Exercise.primaryMuscle`. UI w Profil → 'Mapa mięśni': lista grup posortowana po wolumenie + progressbar procentowy + 4 zakresy czasu (tydzień / miesiąc / 3 miesiące / cały okres).
-- [ ] Silhouette ciała graficzna (przód/tył) — V2.1 (custom Compose Canvas drawing, dużo grafiki)
+- [x] **Silhouette ciała graficzna** ✅ v0.22.0 — Compose Canvas drawing: 2 schematyczne sylwetki (przód/tył) z głową, tułowiem, ramionami, nogami + 6 obszarów mięśniowych każda z heatmap intensity opartą na % engagement. Wyświetla się na górze MuscleEngagementScreen.
 
 ---
 
