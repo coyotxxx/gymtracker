@@ -15,5 +15,6 @@ class ExerciseRepository @Inject constructor(
     fun observeByMuscle(muscle: MuscleGroup): Flow<List<Exercise>> = dao.observeByMuscle(muscle)
     fun search(query: String): Flow<List<Exercise>> = dao.search(query)
     suspend fun get(id: Long): Exercise? = dao.getById(id)
+    suspend fun findByName(name: String): Exercise? = dao.findByName(name)
     suspend fun upsert(exercise: Exercise): Long = dao.upsert(exercise)
 }

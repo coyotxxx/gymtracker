@@ -27,6 +27,9 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises WHERE id = :id")
     suspend fun getById(id: Long): Exercise?
 
+    @Query("SELECT * FROM exercises WHERE LOWER(name) = LOWER(:name) LIMIT 1")
+    suspend fun findByName(name: String): Exercise?
+
     @Query("SELECT COUNT(*) FROM exercises")
     suspend fun count(): Int
 

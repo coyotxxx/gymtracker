@@ -17,15 +17,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -56,10 +62,13 @@ fun PlanListScreen(
     onEditPlan: (Long) -> Unit,
     onCreateNewPlan: () -> Unit,
     onStartedCoachWorkout: () -> Unit,
+    onOpenTemplates: () -> Unit,
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
     var dayPickerForPlan by remember { mutableStateOf<PlanListItem?>(null) }
+    var newMenuOpen by remember { mutableStateOf(false) }
+    var showDeleteDialog by remember { mutableStateOf<Long?>(null) }
 
     Scaffold(
         topBar = {
@@ -71,8 +80,31 @@ fun PlanListScreen(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onCreateNewPlan) {
-                Icon(Icons.Default.Add, contentDescription = null)
+            Box {
+                FloatingActionButton(onClick = { newMenuOpen = true }) {
+                    Icon(Icons.Default.Add, contentDescription = null)
+                }
+                DropdownMenu(
+                    expanded = newMenuOpen,
+                    onDismissRequest = { newMenuOpen = false }
+                ) {
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.plans_new_empty)) },
+                        leadingIcon = { Icon(Icons.Default.Add, contentDescription = null) },
+                        onClick = {
+                            newMenuOpen = false
+                            onCreateNewPlan()
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.plans_new_from_template)) },
+                        leadingIcon = { Icon(Icons.Default.ContentCopy, contentDescription = null) },
+                        onClick = {
+                            newMenuOpen = false
+                            onOpenTemplates()
+                        }
+                    )
+                }
             }
         }
     ) { padding ->
@@ -102,11 +134,31 @@ fun PlanListScreen(
                     PlanCard(
                         item = item,
                         onEdit = { onEditPlan(item.plan.id) },
-                        onStart = { dayPickerForPlan = item }
+                        onStart = { dayPickerForPlan = item },
+                        onDuplicate = { vm.duplicatePlan(item.plan.id) { newId -> onEditPlan(newId) } },
+                        onDelete = { showDeleteDialog = item.plan.id }
                     )
                 }
             }
         }
+    }
+
+    showDeleteDialog?.let { idToDelete ->
+        AlertDialog(
+            onDismissRequest = { showDeleteDialog = null },
+            title = { Text(stringResource(R.string.plan_delete_confirm)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.deletePlan(idToDelete)
+                    showDeleteDialog = null
+                }) { Text(stringResource(R.string.common_delete)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDeleteDialog = null }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
+            }
+        )
     }
 
     dayPickerForPlan?.let { item ->
@@ -123,7 +175,14 @@ fun PlanListScreen(
 }
 
 @Composable
-private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit) {
+private fun PlanCard(
+    item: PlanListItem,
+    onEdit: () -> Unit,
+    onStart: () -> Unit,
+    onDuplicate: () -> Unit,
+    onDelete: () -> Unit
+) {
+    var menuOpen by remember { mutableStateOf(false) }
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -153,6 +212,26 @@ private fun PlanCard(item: PlanListItem, onEdit: () -> Unit, onStart: () -> Unit
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.primary
                 )
+                Box {
+                    IconButton(onClick = { menuOpen = true }) {
+                        Icon(Icons.Default.MoreVert, contentDescription = null)
+                    }
+                    DropdownMenu(
+                        expanded = menuOpen,
+                        onDismissRequest = { menuOpen = false }
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.plans_duplicate)) },
+                            leadingIcon = { Icon(Icons.Default.ContentCopy, contentDescription = null) },
+                            onClick = { menuOpen = false; onDuplicate() }
+                        )
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.plan_delete)) },
+                            leadingIcon = { Icon(Icons.Default.Delete, contentDescription = null) },
+                            onClick = { menuOpen = false; onDelete() }
+                        )
+                    }
+                }
             }
             Spacer(Modifier.height(12.dp))
             Button(

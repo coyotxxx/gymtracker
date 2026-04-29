@@ -66,12 +66,14 @@
 - [x] **Sugestia progresji** — `progressionTipsForWorkout` w StatsRepository (logika gotowa: jeśli wszystkie sety wykonane + min reps ≥ 8 + waga ≥ poprzednio → +2.5kg). UI alertu w PR dialog do dorobienia w v0.12.1.
 - [ ] Alert stagnacji (brak progresu przez 3-4 treningi → sugestia deload) — V2.1
 
-### Faza 16 — Plany zaawansowane
+### Faza 16 — Plany zaawansowane ✅ v0.13.0 (częściowo)
 
-- [ ] **Gotowe szablony planów** (Push/Pull/Legs, Upper/Lower, 5x5 Stronglifts, Full Body 3x/tydzień) — wbudowane w aplikację
-- [ ] **Drag & drop** kolejności ćwiczeń w PlanEdit (DragAndDropTarget Compose)
-- [ ] **Duplikuj plan** — szybkie kopiowanie istniejącego planu
-- [ ] **Superserie** A1/A2 — grupowanie ćwiczeń
+- [x] **Gotowe szablony planów** — 4 wbudowane (Full Body 3×/tydzień, Stronglifts 5×5, Upper/Lower, Push/Pull/Legs). FAB → "Z gotowego szablonu" → wybierz → PlanEdit prefilled.
+- [x] **Duplikuj plan** — overflow menu na karcie planu (3 kropki) → Duplikuj. Tworzy kopię z " (kopia)" w nazwie.
+- [ ] **Drag & drop** kolejności ćwiczeń w PlanEdit — V2.1
+- [ ] **Superserie** A1/A2 — grupowanie ćwiczeń — V2.1
+
+Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej tylko z PlanEdit.
 
 ### Faza 17 — Streaki & motywacja
 

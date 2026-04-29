@@ -35,6 +35,7 @@ import pl.filebit.gymtracker.ui.history.WorkoutDetailScreen
 import pl.filebit.gymtracker.ui.home.HomeScreen
 import pl.filebit.gymtracker.ui.plans.PlanEditScreen
 import pl.filebit.gymtracker.ui.plans.PlanListScreen
+import pl.filebit.gymtracker.ui.plans.TemplatesScreen
 import pl.filebit.gymtracker.ui.onerm.OneRmCalculatorScreen
 import pl.filebit.gymtracker.ui.profile.ProfileScreen
 import pl.filebit.gymtracker.ui.stats.StatsScreen
@@ -124,7 +125,17 @@ fun AppNavigation() {
                 PlanListScreen(
                     onEditPlan = { id -> navController.navigate(Screen.PlanEdit.create(id)) },
                     onCreateNewPlan = { navController.navigate(Screen.PlanEdit.create(0L)) },
-                    onStartedCoachWorkout = { navController.navigate(Screen.CoachWorkout.route) }
+                    onStartedCoachWorkout = { navController.navigate(Screen.CoachWorkout.route) },
+                    onOpenTemplates = { navController.navigate(Screen.PlanTemplates.route) }
+                )
+            }
+            composable(Screen.PlanTemplates.route) {
+                TemplatesScreen(
+                    onBack = { navController.popBackStack() },
+                    onCreated = { newPlanId ->
+                        navController.popBackStack()
+                        navController.navigate(Screen.PlanEdit.create(newPlanId))
+                    }
                 )
             }
             composable(Screen.ExerciseLibrary.route) {
