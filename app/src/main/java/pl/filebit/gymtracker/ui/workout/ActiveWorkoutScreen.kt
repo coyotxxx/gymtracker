@@ -91,6 +91,7 @@ fun ActiveWorkoutScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
+    val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
@@ -236,6 +237,16 @@ fun ActiveWorkoutScreen(
         }
     }
 
+    if (pendingPRs.isNotEmpty()) {
+        NewPrDialog(
+            prs = pendingPRs,
+            onDismiss = {
+                vm.consumePendingPRs()
+                onWorkoutFinished()
+            }
+        )
+    }
+
     if (showNotesDialog) {
         WorkoutNotesDialog(
             initial = state.workout?.notes ?: "",
@@ -265,6 +276,50 @@ fun ActiveWorkoutScreen(
             }
         )
     }
+}
+
+@Composable
+private fun NewPrDialog(
+    prs: List<NewPrWithName>,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                stringResource(R.string.pr_dialog_title),
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold
+            )
+        },
+        text = {
+            Column {
+                prs.forEach { p ->
+                    Text(
+                        "🏆 ${p.exerciseName}",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Text(
+                        stringResource(
+                            R.string.pr_dialog_line,
+                            pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
+                            p.pr.reps,
+                            pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
+                        ),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Spacer(Modifier.height(8.dp))
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.pr_dialog_ok))
+            }
+        }
+    )
 }
 
 @Composable

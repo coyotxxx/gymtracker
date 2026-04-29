@@ -19,10 +19,14 @@ import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
+import pl.filebit.gymtracker.data.repository.NewPr
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
+
+data class NewPrWithName(val pr: NewPr, val exerciseName: String)
 
 data class ExerciseGroup(
     val exercise: Exercise,
@@ -42,11 +46,17 @@ class ActiveWorkoutViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val exerciseRepo: ExerciseRepository,
     private val planRepo: PlanRepository,
+    private val statsRepo: StatsRepository,
     profileRepo: UserProfileRepository
 ) : ViewModel() {
 
     private val _isFinishing = MutableStateFlow(false)
     val isFinishing: StateFlow<Boolean> = _isFinishing.asStateFlow()
+
+    private val _pendingPRs = MutableStateFlow<List<NewPrWithName>>(emptyList())
+    val pendingPRs: StateFlow<List<NewPrWithName>> = _pendingPRs.asStateFlow()
+
+    fun consumePendingPRs() { _pendingPRs.value = emptyList() }
 
     @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
     val state: StateFlow<ActiveWorkoutUiState> = combine(
@@ -152,9 +162,18 @@ class ActiveWorkoutViewModel @Inject constructor(
         val id = state.value.workout?.id ?: return
         _isFinishing.value = true
         viewModelScope.launch {
+            val prs = statsRepo.detectNewPRs(id)
+            val withNames = prs.map { p ->
+                NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
+            }
             workoutRepo.finish(id)
             _isFinishing.value = false
-            onDone()
+            if (withNames.isNotEmpty()) {
+                _pendingPRs.value = withNames
+                // UI obserwuje pendingPRs — pokaże dialog, po zamknięciu wywoła onDone
+            } else {
+                onDone()
+            }
         }
     }
 

@@ -80,6 +80,7 @@ fun CoachWorkoutScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
+    val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showConfirmDialog by remember { mutableStateOf(false) }
@@ -186,6 +187,49 @@ fun CoachWorkoutScreen(
                 }
             },
             onDismiss = { showConfirmDialog = false }
+        )
+    }
+
+    if (pendingPRs.isNotEmpty()) {
+        AlertDialog(
+            onDismissRequest = {
+                vm.consumePendingPRs()
+                onWorkoutFinished()
+            },
+            title = {
+                Text(
+                    stringResource(R.string.pr_dialog_title),
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Column {
+                    pendingPRs.forEach { p ->
+                        Text(
+                            "🏆 ${p.exerciseName}",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Text(
+                            stringResource(
+                                R.string.pr_dialog_line,
+                                pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
+                                p.pr.reps,
+                                pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
+                            ),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(Modifier.height(8.dp))
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.consumePendingPRs()
+                    onWorkoutFinished()
+                }) { Text(stringResource(R.string.pr_dialog_ok)) }
+            }
         )
     }
 

@@ -4,8 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
@@ -16,6 +18,7 @@ import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
@@ -47,8 +50,14 @@ class CoachWorkoutViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
+    private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository
 ) : ViewModel() {
+
+    private val _pendingPRs = MutableStateFlow<List<NewPrWithName>>(emptyList())
+    val pendingPRs: StateFlow<List<NewPrWithName>> = _pendingPRs.asStateFlow()
+
+    fun consumePendingPRs() { _pendingPRs.value = emptyList() }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<CoachUiState> = workoutRepo.observeActive()
@@ -149,8 +158,16 @@ class CoachWorkoutViewModel @Inject constructor(
     fun finishWorkout(onDone: () -> Unit) {
         val id = state.value.workout?.id ?: run { onDone(); return }
         viewModelScope.launch {
+            val prs = statsRepo.detectNewPRs(id)
+            val withNames = prs.map { p ->
+                NewPrWithName(p, exerciseRepo.get(p.exerciseId)?.name ?: "?")
+            }
             workoutRepo.finish(id)
-            onDone()
+            if (withNames.isNotEmpty()) {
+                _pendingPRs.value = withNames
+            } else {
+                onDone()
+            }
         }
     }
 

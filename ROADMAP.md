@@ -42,12 +42,12 @@
 - [x] **Notatki per-trening** — IconButton 📝 w TopAppBar Active/Coach, dialog z `OutlinedTextField` multiline, zapis do `Workout.notes`
 - [x] **"Powtórz trening"** w WorkoutDetail (overflow menu) — `repeatWorkout` tworzy nowy aktywny trening z placeholder-serie skopiowanymi z oryginału, nawigacja do ActiveWorkout
 
-### Faza 13 — Statystyki & PR
+### Faza 13 — Statystyki & PR ✅ v0.10.0
 
-- [ ] **Statystyki overview** — osobny ekran lub w Profilu: liczba treningów, łączna objętość, łączny czas, średnia objętość/trening, treningi w tym tygodniu/miesiącu
-- [ ] **PR per ćwiczenie** — max waga (×powt), max objętość, szacowane 1RM (formuła Epley `1RM = w × (1 + reps/30)`); pokazywane przy karcie ćwiczenia w bibliotece
-- [ ] **🏆 "Nowy rekord!"** alert po zakończeniu treningu (jeśli pobity rekord wagi/objętości/1RM)
-- [ ] **1RM calculator** w Profilu (osobny ekran: wpisz wagę + powt → wynik wg Epley + Brzycki + Lombardi)
+- [x] **Statystyki overview** w Profilu (Profil → Statystyki): liczba treningów, łączna objętość (bez warm-upów), łączny czas, średnia objętość/trening, treningi w tym tygodniu/miesiącu, łączna liczba serii
+- [x] **PR per ćwiczenie** w bibliotece — max waga × powt + szacowane 1RM (Epley) wyświetlane pod kartą ćwiczenia gdy historia istnieje
+- [x] **🏆 "Nowy rekord!"** dialog po zakończeniu treningu — porównanie szacowanego 1RM z najlepszym z poprzednich treningów (per ćwiczenie); alert pokazuje nazwę ćwiczenia + wagę × powt + nowe 1RM
+- [x] **1RM calculator** w Profilu (Profil → Kalkulator 1RM): pola Waga + Powt → wyniki Epley / Brzycki / Lombardi + średnia trzech
 
 ### Faza 14 — Tools
 

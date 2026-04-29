@@ -36,6 +36,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.MuscleGroup
+import pl.filebit.gymtracker.util.formatWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,6 +44,7 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
+    val prs by vm.prs.collectAsStateWithLifecycle()
 
     Scaffold(
         topBar = {
@@ -107,6 +109,7 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 items(exercises, key = { it.id }) { ex ->
+                    val pr = prs[ex.id]
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
@@ -125,6 +128,20 @@ fun ExerciseLibraryScreen(vm: ExerciseLibraryViewModel = hiltViewModel()) {
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
+                            if (pr != null) {
+                                Spacer(Modifier.height(4.dp))
+                                Text(
+                                    stringResource(
+                                        R.string.exercise_pr_line,
+                                        formatWeight(pr.maxWeightKg),
+                                        pr.repsAtMaxWeight,
+                                        formatWeight(pr.estimated1RM)
+                                    ),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.primary,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
                         }
                     }
                 }
