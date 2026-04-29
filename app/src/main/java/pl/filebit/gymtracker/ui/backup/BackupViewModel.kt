@@ -193,7 +193,15 @@ class BackupViewModel @Inject constructor(
 
                 // Workouts + sets
                 for (w in data.workouts) {
-                    wDao.insert(Workout(w.id, w.startedAt, w.finishedAt, w.notes))
+                    wDao.insert(
+                        Workout(
+                            id = w.id,
+                            startedAt = w.startedAt,
+                            finishedAt = w.finishedAt,
+                            fromPlanId = null,
+                            notes = w.notes
+                        )
+                    )
                 }
                 for (s in data.sets) {
                     sDao.insert(
