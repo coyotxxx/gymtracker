@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.ui.navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
@@ -12,11 +13,12 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -30,6 +32,8 @@ import pl.filebit.gymtracker.ui.exercises.ExerciseLibraryScreen
 import pl.filebit.gymtracker.ui.history.HistoryScreen
 import pl.filebit.gymtracker.ui.history.WorkoutDetailScreen
 import pl.filebit.gymtracker.ui.home.HomeScreen
+import pl.filebit.gymtracker.ui.plans.PlanEditScreen
+import pl.filebit.gymtracker.ui.plans.PlanListScreen
 import pl.filebit.gymtracker.ui.profile.ProfileScreen
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.ExercisePickerScreen
@@ -43,6 +47,7 @@ private data class TabItem(
 private val tabs = listOf(
     TabItem(Screen.Home, R.string.nav_home, Icons.Default.Home),
     TabItem(Screen.History, R.string.nav_history, Icons.Default.History),
+    TabItem(Screen.Plans, R.string.nav_plans, Icons.Default.EventNote),
     TabItem(Screen.ExerciseLibrary, R.string.nav_exercises, Icons.Default.FitnessCenter),
     TabItem(Screen.Profile, R.string.nav_profile, Icons.Default.Person)
 )
@@ -100,6 +105,12 @@ fun AppNavigation() {
                     }
                 )
             }
+            composable(Screen.Plans.route) {
+                PlanListScreen(
+                    onEditPlan = { id -> navController.navigate(Screen.PlanEdit.create(id)) },
+                    onCreateNewPlan = { navController.navigate(Screen.PlanEdit.create(0L)) }
+                )
+            }
             composable(Screen.ExerciseLibrary.route) {
                 ExerciseLibraryScreen()
             }
@@ -110,20 +121,57 @@ fun AppNavigation() {
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(
-                    onAddExerciseClick = { navController.navigate(Screen.ExercisePicker.route) },
+                    onAddExerciseClick = { navController.navigate(Screen.ExercisePicker.create("WORKOUT")) },
                     onWorkoutFinished = {
                         navController.popBackStack(Screen.Home.route, inclusive = false)
                     }
                 )
             }
-            composable(Screen.ExercisePicker.route) {
+            composable(
+                route = Screen.ExercisePicker.route,
+                arguments = listOf(
+                    navArgument("mode") {
+                        type = NavType.StringType
+                        defaultValue = "WORKOUT"
+                    }
+                )
+            ) { entry ->
+                val mode = entry.arguments?.getString("mode") ?: "WORKOUT"
                 ExercisePickerScreen(
+                    mode = mode,
                     onPicked = { navController.popBackStack() },
-                    onClose = { navController.popBackStack() }
+                    onClose = { navController.popBackStack() },
+                    onPickedForPlan = { exerciseId ->
+                        navController.previousBackStackEntry
+                            ?.savedStateHandle
+                            ?.set("picked_exercise_id", exerciseId)
+                        navController.popBackStack()
+                    }
                 )
             }
             composable(Screen.Backup.route) {
                 BackupScreen(onBack = { navController.popBackStack() })
+            }
+            composable(
+                route = Screen.PlanEdit.route,
+                arguments = listOf(navArgument("planId") { type = NavType.LongType })
+            ) { entry ->
+                val pickedExerciseId by entry.savedStateHandle
+                    .getStateFlow<Long?>("picked_exercise_id", null)
+                    .collectAsStateWithLifecycle()
+
+                PlanEditScreen(
+                    pickedExerciseId = pickedExerciseId,
+                    onConsumePickedExerciseId = {
+                        entry.savedStateHandle["picked_exercise_id"] = null
+                    },
+                    onBack = { navController.popBackStack() },
+                    onAddExercise = {
+                        navController.navigate(Screen.ExercisePicker.create("PLAN"))
+                    },
+                    onSaved = { navController.popBackStack() },
+                    onDeleted = { navController.popBackStack() }
+                )
             }
             composable(
                 route = Screen.WorkoutDetail.route,

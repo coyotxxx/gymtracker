@@ -5,6 +5,7 @@
     <!-- Bottom nav -->
     <string name="nav_home">Home</string>
     <string name="nav_history">Historia</string>
+    <string name="nav_plans">Plany</string>
     <string name="nav_exercises">Ćwiczenia</string>
     <string name="nav_profile">Profil</string>
 
@@ -62,6 +63,31 @@
     <!-- Notification channels -->
     <string name="notif_channel_timer">Timer odpoczynku</string>
     <string name="notif_channel_timer_desc">Powiadomienia podczas odpoczynku między seriami</string>
+
+    <!-- Plans -->
+    <string name="plans_empty">Brak planów - dodaj pierwszy</string>
+    <string name="plan_new">Nowy plan</string>
+    <string name="plan_name">Nazwa planu</string>
+    <string name="plan_days">Dni tygodnia</string>
+    <string name="plan_no_schedule">Bez harmonogramu</string>
+    <string name="plan_notes">Notatki</string>
+    <string name="plan_exercises_header">Ćwiczenia</string>
+    <string name="plan_add_exercise">Dodaj ćwiczenie</string>
+    <string name="plan_save">Zapisz plan</string>
+    <string name="plan_delete">Usuń plan</string>
+    <string name="plan_delete_confirm">Usunąć ten plan?</string>
+    <string name="plan_planned_sets">Serie</string>
+    <string name="plan_planned_reps">Powt.</string>
+    <string name="plan_planned_weight">Waga</string>
+    <string name="plan_rest">Odp. (s)</string>
+    <string name="plan_exercise_count">%1$d ćwicz.</string>
+    <string name="day_mon_short">Pon</string>
+    <string name="day_tue_short">Wt</string>
+    <string name="day_wed_short">Śr</string>
+    <string name="day_thu_short">Czw</string>
+    <string name="day_fri_short">Pt</string>
+    <string name="day_sat_short">Sb</string>
+    <string name="day_sun_short">Nd</string>
 
     <!-- Common -->
     <string name="common_cancel">Anuluj</string>

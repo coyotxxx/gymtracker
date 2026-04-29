@@ -38,8 +38,10 @@ import pl.filebit.gymtracker.data.entity.MuscleGroup
 
 @Composable
 fun ExercisePickerScreen(
+    mode: String = "WORKOUT",
     onPicked: () -> Unit,
     onClose: () -> Unit,
+    onPickedForPlan: (Long) -> Unit = {},
     vm: ExercisePickerViewModel = hiltViewModel()
 ) {
     val query by vm.query.collectAsStateWithLifecycle()
@@ -105,7 +107,10 @@ fun ExercisePickerScreen(
             ) {
                 items(exercises, key = { it.id }) { ex ->
                     Card(
-                        onClick = { vm.pick(ex, onPicked) },
+                        onClick = {
+                            if (mode == "PLAN") vm.pickForPlan(ex, onPickedForPlan)
+                            else vm.pickForWorkout(ex, onPicked)
+                        },
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.surface

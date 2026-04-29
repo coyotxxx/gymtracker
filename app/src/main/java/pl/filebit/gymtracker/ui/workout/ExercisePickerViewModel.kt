@@ -51,10 +51,10 @@ class ExercisePickerViewModel @Inject constructor(
     fun setMuscleFilter(m: MuscleGroup?) { _muscleFilter.value = m }
 
     /**
-     * Po wyborze ćwiczenia: dodaje pierwszą serię z auto-fill z ostatniej sesji
-     * (lub sensowny default). Picker po tym zamyka się i wraca do Active Workout.
+     * Tryb WORKOUT: dodaje pierwszą serię z auto-fill z ostatniej sesji
+     * (lub sensowny default). Picker zamyka się i wraca do Active Workout.
      */
-    fun pick(exercise: Exercise, onDone: () -> Unit) {
+    fun pickForWorkout(exercise: Exercise, onDone: () -> Unit) {
         viewModelScope.launch {
             val active = workoutRepo.startOrResume()
             val last = workoutRepo.getLastSetForExercise(exercise.id)
@@ -71,5 +71,12 @@ class ExercisePickerViewModel @Inject constructor(
             )
             onDone()
         }
+    }
+
+    /**
+     * Tryb PLAN: tylko zwraca exerciseId callbackiem, NIE dodaje serii.
+     */
+    fun pickForPlan(exercise: Exercise, onPicked: (Long) -> Unit) {
+        onPicked(exercise.id)
     }
 }
