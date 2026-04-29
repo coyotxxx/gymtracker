@@ -92,6 +92,7 @@ fun ActiveWorkoutScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
+    val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showFinishDialog by remember { mutableStateOf(false) }
@@ -237,11 +238,13 @@ fun ActiveWorkoutScreen(
         }
     }
 
-    if (pendingPRs.isNotEmpty()) {
-        NewPrDialog(
+    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty()) {
+        FinishSummaryDialog(
             prs = pendingPRs,
+            tips = pendingTips,
             onDismiss = {
                 vm.consumePendingPRs()
+                vm.consumePendingTips()
                 onWorkoutFinished()
             }
         )
@@ -279,38 +282,73 @@ fun ActiveWorkoutScreen(
 }
 
 @Composable
-private fun NewPrDialog(
+private fun FinishSummaryDialog(
     prs: List<NewPrWithName>,
+    tips: List<pl.filebit.gymtracker.data.repository.ProgressionTip>,
     onDismiss: () -> Unit
 ) {
+    val title = if (prs.isNotEmpty())
+        stringResource(R.string.pr_dialog_title)
+    else stringResource(R.string.tip_dialog_title)
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
             Text(
-                stringResource(R.string.pr_dialog_title),
+                title,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
         },
         text = {
             Column {
-                prs.forEach { p ->
-                    Text(
-                        "🏆 ${p.exerciseName}",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Text(
-                        stringResource(
-                            R.string.pr_dialog_line,
-                            pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
-                            p.pr.reps,
-                            pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
-                        ),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Spacer(Modifier.height(8.dp))
+                if (prs.isNotEmpty()) {
+                    prs.forEach { p ->
+                        Text(
+                            "🏆 ${p.exerciseName}",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Text(
+                            stringResource(
+                                R.string.pr_dialog_line,
+                                pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
+                                p.pr.reps,
+                                pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
+                            ),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(Modifier.height(8.dp))
+                    }
+                }
+                if (tips.isNotEmpty()) {
+                    if (prs.isNotEmpty()) {
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            stringResource(R.string.tip_dialog_section),
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.tertiary
+                        )
+                        Spacer(Modifier.height(4.dp))
+                    }
+                    tips.forEach { t ->
+                        Text(
+                            "💡 ${t.exerciseName}",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Text(
+                            stringResource(
+                                R.string.tip_dialog_line,
+                                pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg),
+                                pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)
+                            ),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.tertiary
+                        )
+                        Spacer(Modifier.height(8.dp))
+                    }
                 }
             }
         },

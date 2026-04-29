@@ -81,6 +81,7 @@ fun CoachWorkoutScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     val timerState by RestTimerService.state.collectAsStateWithLifecycle()
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
+    val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showConfirmDialog by remember { mutableStateOf(false) }
@@ -190,43 +191,74 @@ fun CoachWorkoutScreen(
         )
     }
 
-    if (pendingPRs.isNotEmpty()) {
+    if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty()) {
+        val title = if (pendingPRs.isNotEmpty())
+            stringResource(R.string.pr_dialog_title)
+        else stringResource(R.string.tip_dialog_title)
         AlertDialog(
             onDismissRequest = {
                 vm.consumePendingPRs()
+                vm.consumePendingTips()
                 onWorkoutFinished()
             },
-            title = {
-                Text(
-                    stringResource(R.string.pr_dialog_title),
-                    fontWeight = FontWeight.Bold
-                )
-            },
+            title = { Text(title, fontWeight = FontWeight.Bold) },
             text = {
                 Column {
-                    pendingPRs.forEach { p ->
-                        Text(
-                            "🏆 ${p.exerciseName}",
-                            style = MaterialTheme.typography.titleSmall,
-                            fontWeight = FontWeight.SemiBold
-                        )
-                        Text(
-                            stringResource(
-                                R.string.pr_dialog_line,
-                                pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
-                                p.pr.reps,
-                                pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
-                            ),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        Spacer(Modifier.height(8.dp))
+                    if (pendingPRs.isNotEmpty()) {
+                        pendingPRs.forEach { p ->
+                            Text(
+                                "🏆 ${p.exerciseName}",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                stringResource(
+                                    R.string.pr_dialog_line,
+                                    pl.filebit.gymtracker.util.formatWeight(p.pr.weightKg),
+                                    p.pr.reps,
+                                    pl.filebit.gymtracker.util.formatWeight(p.pr.new1RM)
+                                ),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(Modifier.height(8.dp))
+                        }
+                    }
+                    if (pendingTips.isNotEmpty()) {
+                        if (pendingPRs.isNotEmpty()) {
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                stringResource(R.string.tip_dialog_section),
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.tertiary
+                            )
+                            Spacer(Modifier.height(4.dp))
+                        }
+                        pendingTips.forEach { t ->
+                            Text(
+                                "💡 ${t.exerciseName}",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                stringResource(
+                                    R.string.tip_dialog_line,
+                                    pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg),
+                                    pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)
+                                ),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.tertiary
+                            )
+                            Spacer(Modifier.height(8.dp))
+                        }
                     }
                 }
             },
             confirmButton = {
                 TextButton(onClick = {
                     vm.consumePendingPRs()
+                    vm.consumePendingTips()
                     onWorkoutFinished()
                 }) { Text(stringResource(R.string.pr_dialog_ok)) }
             }

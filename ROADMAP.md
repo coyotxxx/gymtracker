@@ -63,7 +63,7 @@
 ### Faza 15 — Wykresy & analityka ✅ v0.12.0 (częściowo)
 
 - [x] **Wykres progresji per ćwiczenie** — ExerciseDetailScreen z Compose Canvas linechart (max waga w czasie). Klik na kartę ćwiczenia w bibliotece → szczegóły z PR / wykresem / notatką (edytowalną) / pełną historią setów.
-- [x] **Sugestia progresji** — `progressionTipsForWorkout` w StatsRepository (logika gotowa: jeśli wszystkie sety wykonane + min reps ≥ 8 + waga ≥ poprzednio → +2.5kg). UI alertu w PR dialog do dorobienia w v0.12.1.
+- [x] **Sugestia progresji** — `progressionTipsForWorkout` w StatsRepository + UI w finish dialog (v0.18.0). Po Zakończ trening dialog pokazuje 🏆 nowe rekordy + 💡 sugestie progresji w jednym widoku.
 - [ ] Alert stagnacji (brak progresu przez 3-4 treningi → sugestia deload) — V2.1
 
 ### Faza 16 — Plany zaawansowane ✅ v0.13.0 (częściowo)
