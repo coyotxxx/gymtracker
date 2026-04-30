@@ -1,5 +1,8 @@
 package pl.filebit.gymtracker.ui.navigation
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.EventNote
@@ -15,10 +18,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -43,8 +48,13 @@ import pl.filebit.gymtracker.ui.body.BodyMeasurementsScreen
 import pl.filebit.gymtracker.ui.muscles.MuscleEngagementScreen
 import pl.filebit.gymtracker.ui.photos.ProgressPhotosScreen
 import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
+import pl.filebit.gymtracker.ui.ai.AiConversationsScreen
+import pl.filebit.gymtracker.ui.ai.AiOverlayFab
+import pl.filebit.gymtracker.ui.ai.AiOverlayViewModel
 import pl.filebit.gymtracker.ui.ai.AiSettingsScreen
 import pl.filebit.gymtracker.ui.ai.AiTrainerScreen
+import pl.filebit.gymtracker.ui.shell.ActiveWorkoutMiniBar
+import pl.filebit.gymtracker.ui.shell.ActiveWorkoutShellViewModel
 import pl.filebit.gymtracker.ui.goals.GoalsScreen
 import pl.filebit.gymtracker.ui.glossary.GlossaryScreen
 import pl.filebit.gymtracker.ui.tools.PlateCalculatorScreen
@@ -72,28 +82,61 @@ fun AppNavigation() {
     val backStack by navController.currentBackStackEntryAsState()
     val currentRoute = backStack?.destination?.route
 
-    val showBottomBar = currentRoute in tabs.map { it.screen.route }
+    // Bottom nav widoczny też na ekranach aktywnego treningu — user może
+    // przeglądać aplikację bez konieczności kończenia treningu.
+    val workoutRoutes = setOf(Screen.ActiveWorkout.route, Screen.CoachWorkout.route)
+    val tabRoutes = tabs.map { it.screen.route }.toSet()
+    val showBottomBar = currentRoute in tabRoutes || currentRoute in workoutRoutes
 
-    Scaffold(
+    val overlayVm: AiOverlayViewModel = hiltViewModel()
+    val overlayState by overlayVm.state.collectAsStateWithLifecycle()
+    val hideOverlayRoutes = setOf(
+        Screen.AiTrainer.route,
+        Screen.AiSettings.route,
+        Screen.AiConversations.route
+    )
+    val showOverlay = overlayState.enabled && currentRoute !in hideOverlayRoutes
+
+    val workoutShellVm: ActiveWorkoutShellViewModel = hiltViewModel()
+    val workoutShellState by workoutShellVm.state.collectAsStateWithLifecycle()
+    val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        Scaffold(
         bottomBar = {
-            if (showBottomBar) {
-                NavigationBar {
-                    tabs.forEach { tab ->
-                        val selected = currentRoute == tab.screen.route
-                        NavigationBarItem(
-                            selected = selected,
-                            onClick = {
-                                navController.navigate(tab.screen.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
+            Column {
+                if (showActiveBar) {
+                    ActiveWorkoutMiniBar(
+                        state = workoutShellState,
+                        onClick = {
+                            val target = if (workoutShellState.isFromPlan)
+                                Screen.CoachWorkout.route
+                            else Screen.ActiveWorkout.route
+                            navController.navigate(target) {
+                                launchSingleTop = true
+                            }
+                        }
+                    )
+                }
+                if (showBottomBar) {
+                    NavigationBar {
+                        tabs.forEach { tab ->
+                            val selected = currentRoute == tab.screen.route
+                            NavigationBarItem(
+                                selected = selected,
+                                onClick = {
+                                    navController.navigate(tab.screen.route) {
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
                                     }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            },
-                            icon = { Icon(tab.icon, contentDescription = null) },
-                            label = { Text(stringResource(tab.labelRes)) }
-                        )
+                                },
+                                icon = { Icon(tab.icon, contentDescription = null) },
+                                label = { Text(stringResource(tab.labelRes)) }
+                            )
+                        }
                     }
                 }
             }
@@ -167,7 +210,7 @@ fun AppNavigation() {
                     onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
                     onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
-                    onOpenAiTrainer = { navController.navigate(Screen.AiTrainer.route) },
+                    onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) }
@@ -194,12 +237,36 @@ fun AppNavigation() {
             composable(Screen.StrengthStandards.route) {
                 StrengthStandardsScreen(onBack = { navController.popBackStack() })
             }
-            composable(Screen.AiTrainer.route) {
+            composable(Screen.AiConversations.route) {
+                AiConversationsScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenSettings = { navController.navigate(Screen.AiSettings.route) },
+                    onOpenConversation = { id ->
+                        navController.navigate(Screen.AiTrainer.create(id))
+                    },
+                    onNewConversation = {
+                        navController.navigate(Screen.AiTrainer.create(0L))
+                    }
+                )
+            }
+            composable(
+                route = Screen.AiTrainer.route,
+                arguments = listOf(navArgument("conversationId") {
+                    type = NavType.StringType
+                    defaultValue = "0"
+                })
+            ) {
                 AiTrainerScreen(
                     onBack = { navController.popBackStack() },
                     onOpenSettings = { navController.navigate(Screen.AiSettings.route) },
-                    onPlanApplied = { planId ->
-                        navController.navigate(Screen.PlanEdit.create(planId))
+                    onPlanApplied = { _ ->
+                        navController.navigate(Screen.Plans.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
                     }
                 )
             }
@@ -294,6 +361,23 @@ fun AppNavigation() {
                     }
                 )
             }
+        }
+
+        // Pływający FAB asystenta AI — widoczny tylko gdy włączony w Profilu
+        // i NIE jesteśmy już na ekranie AI. Pozycja: prawy dolny róg, nad
+        // bottom nav i mini-barem aktywnego treningu (jeśli widoczny).
+        if (showOverlay) {
+            val fabBottomDp = (if (showBottomBar) 96 else 24) + (if (showActiveBar) 52 else 0)
+            AiOverlayFab(
+                onClick = {
+                    val target = if (overlayState.connected) Screen.AiConversations.route
+                                 else Screen.AiSettings.route
+                    navController.navigate(target)
+                },
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(end = 16.dp, bottom = fabBottomDp.dp)
+            )
         }
     }
 }

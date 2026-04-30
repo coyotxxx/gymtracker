@@ -45,7 +45,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import android.widget.Toast
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -64,6 +66,8 @@ fun AiTrainerScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     var input by remember { mutableStateOf("") }
     val listState = rememberLazyListState()
+    val context = LocalContext.current
+    val toastText = stringResource(R.string.ai_plan_applied_toast)
 
     LaunchedEffect(state.messages.size) {
         if (state.messages.isNotEmpty()) {
@@ -73,6 +77,7 @@ fun AiTrainerScreen(
 
     LaunchedEffect(state.planAppliedId) {
         state.planAppliedId?.let {
+            Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show()
             onPlanApplied(it)
             vm.consumePlanAppliedNav()
         }
@@ -163,6 +168,7 @@ fun AiTrainerScreen(
                     val m = state.messages[idx]
                     MessageBubble(
                         message = m,
+                        isApplying = state.isApplying,
                         onApplyPlan = { vm.applyProposal(m) }
                     )
                 }
@@ -304,6 +310,7 @@ private fun QuickActionChip(
 @Composable
 private fun MessageBubble(
     message: ChatMessage,
+    isApplying: Boolean,
     onApplyPlan: () -> Unit
 ) {
     val isUser = message.role == AiRole.USER
@@ -332,6 +339,7 @@ private fun MessageBubble(
                 message.proposal?.let { p ->
                     Spacer(Modifier.height(8.dp))
                     Card(
+                        modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.tertiaryContainer
                         ),
@@ -348,16 +356,31 @@ private fun MessageBubble(
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onTertiaryContainer
                             )
-                            Spacer(Modifier.height(6.dp))
+                            Spacer(Modifier.height(8.dp))
                             if (message.applied) {
                                 Text(
-                                    "✅ Plan zapisany",
-                                    style = MaterialTheme.typography.bodySmall,
+                                    "✅ Plan zapisany w bibliotece",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    fontWeight = FontWeight.SemiBold,
                                     color = MaterialTheme.colorScheme.onTertiaryContainer
                                 )
                             } else {
-                                Button(onClick = onApplyPlan) {
-                                    Text(stringResource(R.string.ai_apply_plan))
+                                Button(
+                                    onClick = onApplyPlan,
+                                    enabled = !isApplying,
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    if (isApplying) {
+                                        CircularProgressIndicator(
+                                            modifier = Modifier.height(18.dp),
+                                            strokeWidth = 2.dp,
+                                            color = MaterialTheme.colorScheme.onPrimary
+                                        )
+                                        Spacer(Modifier.height(0.dp))
+                                        Text("  ${stringResource(R.string.ai_applying_plan)}")
+                                    } else {
+                                        Text(stringResource(R.string.ai_apply_plan))
+                                    }
                                 }
                             }
                         }

@@ -366,12 +366,21 @@ private fun CoachActiveContent(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Exercise progress
+        // Header — nazwa ćwiczenia + numer serii (kompaktowo)
+        Text(
+            exercise.name,
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Bold
+        )
         Text(
             stringResource(
+                R.string.coach_set_n_of_m,
+                state.currentSetIndexInExercise + 1,
+                state.totalSetsInCurrentExercise
+            ) + " · " + stringResource(
                 R.string.coach_exercise_n_of_m,
                 state.currentExerciseIndex + 1,
                 state.totalExercises
@@ -380,92 +389,77 @@ private fun CoachActiveContent(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // Big card with current set
-        Card(
+        Spacer(Modifier.height(4.dp))
+
+        // ──── Górny rząd: WAGA / POWT. ────
+        Row(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-            ),
-            shape = RoundedCornerShape(20.dp)
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(24.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    exercise.name,
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Bold
-                )
-                Spacer(Modifier.height(8.dp))
-                HorizontalDivider(
-                    modifier = Modifier.padding(horizontal = 32.dp),
-                    color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.3f)
-                )
-                Spacer(Modifier.height(16.dp))
-                Text(
-                    stringResource(
-                        R.string.coach_set_n_of_m,
-                        state.currentSetIndexInExercise + 1,
-                        state.totalSetsInCurrentExercise
-                    ),
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Spacer(Modifier.height(24.dp))
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(24.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    BigStatColumn(
-                        label = stringResource(R.string.coach_weight_label),
-                        value = if (current.weightKg > 0)
-                            "${formatWeight(current.weightKg)} kg" else "—"
-                    )
-                    BigStatColumn(
-                        label = stringResource(R.string.coach_reps_label),
-                        value = "${current.reps}"
-                    )
+            BigMetricCard(
+                label = stringResource(R.string.coach_weight_label),
+                value = if (current.weightKg > 0) formatWeight(current.weightKg) else "—",
+                unit = "kg",
+                modifier = Modifier.weight(1f)
+            )
+            BigMetricCard(
+                label = stringResource(R.string.coach_reps_label),
+                value = "${current.reps}",
+                unit = "powt.",
+                modifier = Modifier.weight(1f)
+            )
+        }
+
+        // ──── Dolny rząd: OSTATNIO / CEL ────
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // OSTATNIO
+            val lastSummary = state.previousSessionSummaryForCurrent
+            val lastFallback = state.lastSetForCurrent?.let { ls ->
+                "${formatWeight(ls.weightKg)} kg × ${ls.reps}"
+            }
+            ContextCard(
+                icon = "🕐",
+                label = "OSTATNIO",
+                primaryText = lastSummary?.substringBefore(" (")
+                    ?: lastFallback
+                    ?: "—",
+                secondaryText = lastSummary?.substringAfter(" (", missingDelimiterValue = "")
+                    ?.trimEnd(')')
+                    ?.takeIf { it.isNotBlank() },
+                modifier = Modifier.weight(1f)
+            )
+
+            // CEL / SUGESTIA
+            val sug = state.suggestionForCurrent
+            if (sug != null) {
+                val arrow = when {
+                    sug.suggestedWeightKg > sug.previousWeightKg -> "↑"
+                    sug.suggestedReps > sug.previousReps -> "↑"
+                    else -> "→"
                 }
-                state.previousSessionSummaryForCurrent?.let { summary ->
-                    Spacer(Modifier.height(16.dp))
-                    Text(
-                        "Ostatnio: $summary",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
-                    )
-                } ?: state.lastSetForCurrent?.let { last ->
-                    Spacer(Modifier.height(16.dp))
-                    Text(
-                        stringResource(
-                            R.string.coach_last_session,
-                            formatWeight(last.weightKg),
-                            last.reps
-                        ),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
-                    )
-                }
-                state.suggestionForCurrent?.let { sug ->
-                    Spacer(Modifier.height(8.dp))
-                    val arrow = when {
-                        sug.suggestedWeightKg > sug.previousWeightKg -> "↑"
-                        sug.suggestedReps > sug.previousReps -> "↑"
-                        else -> "→"
-                    }
-                    Text(
-                        "💡 $arrow ${formatWeight(sug.suggestedWeightKg)} kg × ${sug.suggestedReps}",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-                }
+                SuggestionCard(
+                    arrow = arrow,
+                    weightText = formatWeight(sug.suggestedWeightKg),
+                    repsText = "${sug.suggestedReps}",
+                    modifier = Modifier.weight(1f)
+                )
+            } else {
+                ContextCard(
+                    icon = "💡",
+                    label = "CEL",
+                    primaryText = "—",
+                    secondaryText = "brak sugestii",
+                    modifier = Modifier.weight(1f)
+                )
             }
         }
 
-        // Action buttons
+        Spacer(Modifier.weight(1f))
+
+        // ──── Przycisk Wykonana ────
         Button(
             onClick = onConfirmTap,
             modifier = Modifier
@@ -481,50 +475,220 @@ private fun CoachActiveContent(
             Spacer(Modifier.width(8.dp))
             Text(
                 stringResource(R.string.coach_done_button),
-                style = MaterialTheme.typography.titleLarge
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold
             )
         }
 
-        OutlinedButton(
+        // Pomiń (tekstowy podlinkowany)
+        TextButton(
             onClick = onSkip,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(48.dp),
-            shape = RoundedCornerShape(12.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Text(stringResource(R.string.coach_skip_button))
+            Text(
+                stringResource(R.string.coach_skip_button),
+                style = MaterialTheme.typography.bodyMedium,
+                textDecoration = androidx.compose.ui.text.style.TextDecoration.Underline
+            )
         }
 
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(4.dp))
 
-        // Progress indicator
+        // ──── Postęp treningu ────
         Column {
-            Text(
-                stringResource(
-                    R.string.coach_progress,
-                    state.completedSets,
-                    state.totalSets,
-                    (progress * 100).roundToInt()
-                ),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Spacer(Modifier.height(4.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(8.dp)
-                    .clip(RoundedCornerShape(4.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                LinearProgressIndicator(
-                    progress = { progress },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(8.dp),
-                    color = MaterialTheme.colorScheme.primary,
-                    trackColor = MaterialTheme.colorScheme.surfaceVariant
+                Text(
+                    "POSTĘP TRENINGU",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    "${state.completedSets} / ${state.totalSets} · ${(progress * 100).roundToInt()}%",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
+            Spacer(Modifier.height(4.dp))
+            LinearProgressIndicator(
+                progress = { progress },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(6.dp)
+                    .clip(RoundedCornerShape(3.dp)),
+                color = MaterialTheme.colorScheme.primary,
+                trackColor = MaterialTheme.colorScheme.surfaceVariant
+            )
+        }
+    }
+}
+
+/**
+ * Duża karta metryki — np. WAGA / POWT.
+ */
+@Composable
+private fun BigMetricCard(
+    label: String,
+    value: String,
+    unit: String,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+        ),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 16.dp, horizontal = 12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                label.uppercase(),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                value,
+                fontSize = 44.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            Text(
+                unit,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+/**
+ * Karta kontekstowa — OSTATNIO / CEL — z ikoną i 2 liniami tekstu.
+ */
+@Composable
+private fun ContextCard(
+    icon: String,
+    label: String,
+    primaryText: String,
+    secondaryText: String?,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(icon, style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.width(4.dp))
+                Text(
+                    label,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                primaryText,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            secondaryText?.let {
+                Text(
+                    it,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+/**
+ * Karta sugestii — wyróżniona kolorem primary.
+ */
+@Composable
+private fun SuggestionCard(
+    arrow: String,
+    weightText: String,
+    repsText: String,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f)
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("💡", style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.width(4.dp))
+                Text(
+                    "CEL",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+            Spacer(Modifier.height(4.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    arrow,
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(Modifier.width(2.dp))
+                Text(
+                    weightText,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    " kg × $repsText",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+            Text(
+                "progresja",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f)
+            )
         }
     }
 }
@@ -564,22 +728,6 @@ private fun CoachCompleteContent(onFinish: () -> Unit) {
         ) {
             Text(stringResource(R.string.coach_complete_finish))
         }
-    }
-}
-
-@Composable
-private fun BigStatColumn(label: String, value: String) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            label,
-            style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
-        )
-        Text(
-            value,
-            fontSize = 40.sp,
-            fontWeight = FontWeight.Bold
-        )
     }
 }
 

@@ -8,6 +8,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import pl.filebit.gymtracker.data.db.AppDatabase
+import pl.filebit.gymtracker.data.db.dao.AiChatMessageDao
+import pl.filebit.gymtracker.data.db.dao.AiConversationDao
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
@@ -46,6 +48,8 @@ object AppModule {
     @Provides fun provideBodyMeasurementDao(db: AppDatabase): BodyMeasurementDao = db.bodyMeasurementDao()
     @Provides fun provideProgressPhotoDao(db: AppDatabase): ProgressPhotoDao = db.progressPhotoDao()
     @Provides fun provideGoalDao(db: AppDatabase): GoalDao = db.goalDao()
+    @Provides fun provideAiConversationDao(db: AppDatabase): AiConversationDao = db.aiConversationDao()
+    @Provides fun provideAiChatMessageDao(db: AppDatabase): AiChatMessageDao = db.aiChatMessageDao()
 
     @Provides
     @Singleton

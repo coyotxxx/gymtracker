@@ -43,5 +43,6 @@ data class UserProfile(
     val unfinishedWorkoutNotifyHours: Int = 3,
     val gender: Gender = Gender.MALE,
     val bodyweightKg: Double? = null,   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
-    val flashOnTimerEnd: Boolean = false
+    val flashOnTimerEnd: Boolean = false,
+    val aiOverlayEnabled: Boolean = false   // pływający FAB Asystenta AI dostępny z każdego ekranu
 )

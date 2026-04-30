@@ -219,6 +219,32 @@ fun ProfileScreen(
             }
 
             item {
+                SectionCard(title = stringResource(R.string.profile_ai_overlay_section)) {
+                    androidx.compose.foundation.layout.Row(
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    ) {
+                        androidx.compose.material3.Switch(
+                            checked = draft.aiOverlayEnabled,
+                            onCheckedChange = { draft = draft.copy(aiOverlayEnabled = it) }
+                        )
+                        Spacer(Modifier.padding(start = 12.dp))
+                        Column {
+                            Text(
+                                stringResource(R.string.profile_ai_overlay_toggle),
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(
+                                stringResource(R.string.profile_ai_overlay_explain),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
                 SectionCard(title = stringResource(R.string.profile_flash_section)) {
                     androidx.compose.foundation.layout.Row(
                         verticalAlignment = androidx.compose.ui.Alignment.CenterVertically

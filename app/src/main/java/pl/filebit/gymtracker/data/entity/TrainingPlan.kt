@@ -9,5 +9,6 @@ data class TrainingPlan(
     val name: String,
     val daysOfWeek: List<Int> = emptyList(), // 1=Pon ... 7=Nd ISO
     val notes: String = "",
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+    val createdByAi: Boolean = false
 )

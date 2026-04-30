@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.plans
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +18,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.MoreVert
@@ -196,11 +198,18 @@ private fun PlanCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        item.plan.name.ifBlank { "(plan bez nazwy)" },
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            item.plan.name.ifBlank { "(plan bez nazwy)" },
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.weight(1f, fill = false)
+                        )
+                        if (item.plan.createdByAi) {
+                            Spacer(Modifier.width(6.dp))
+                            AiBadge()
+                        }
+                    }
                     Text(
                         formatDays(item.daysWithExercises),
                         style = MaterialTheme.typography.bodyMedium,
@@ -314,6 +323,33 @@ private fun formatDays(days: List<Int>): String {
     if (days.isEmpty()) return stringResource(R.string.plan_no_schedule)
     val labels = days.sorted().mapNotNull { dayShortLabel(it) }
     return labels.joinToString(", ")
+}
+
+@Composable
+private fun AiBadge() {
+    Row(
+        modifier = Modifier
+            .background(
+                color = MaterialTheme.colorScheme.tertiaryContainer,
+                shape = RoundedCornerShape(50)
+            )
+            .padding(horizontal = 8.dp, vertical = 2.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            Icons.Default.AutoAwesome,
+            contentDescription = stringResource(R.string.plan_ai_badge_full),
+            tint = MaterialTheme.colorScheme.onTertiaryContainer,
+            modifier = Modifier.height(12.dp)
+        )
+        Spacer(Modifier.width(3.dp))
+        Text(
+            stringResource(R.string.plan_ai_badge),
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onTertiaryContainer
+        )
+    }
 }
 
 @Composable

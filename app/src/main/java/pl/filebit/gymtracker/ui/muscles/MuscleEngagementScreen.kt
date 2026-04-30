@@ -1,6 +1,6 @@
 package pl.filebit.gymtracker.ui.muscles
 
-import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,10 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
@@ -41,6 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil3.compose.AsyncImage
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.repository.MuscleEngagement
@@ -119,9 +119,27 @@ fun MuscleEngagementScreen(
     }
 }
 
+/**
+ * Mapowanie grupy mięśniowej na plik maski w assets/muscle_masks/.
+ * Każda maska ma TĘ SAMĄ rozdzielczość i layout (przód+tył) co body_base.webp,
+ * więc mogą być nakładane jeden na drugi bez przesunięć.
+ */
+private fun MuscleGroup.maskAsset(): String? = when (this) {
+    MuscleGroup.CHEST -> "muscle_masks/mask_chest.webp"
+    MuscleGroup.BACK -> "muscle_masks/mask_back.webp"
+    MuscleGroup.SHOULDERS -> "muscle_masks/mask_shoulders.webp"
+    MuscleGroup.BICEPS -> "muscle_masks/mask_biceps.webp"
+    MuscleGroup.TRICEPS -> "muscle_masks/mask_triceps.webp"
+    MuscleGroup.QUADS -> "muscle_masks/mask_quads.webp"
+    MuscleGroup.HAMSTRINGS -> "muscle_masks/mask_hamstrings.webp"
+    MuscleGroup.GLUTES -> "muscle_masks/mask_glutes.webp"
+    MuscleGroup.CALVES -> "muscle_masks/mask_calves.webp"
+    MuscleGroup.CORE -> "muscle_masks/mask_core.webp"
+    MuscleGroup.CARDIO, MuscleGroup.OTHER -> null
+}
+
 @Composable
 private fun BodyHeatmapCard(engagement: List<MuscleEngagement>) {
-    val byMuscle = engagement.associateBy { it.muscle }
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -133,131 +151,60 @@ private fun BodyHeatmapCard(engagement: List<MuscleEngagement>) {
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(4.dp))
             Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Column(
-                    modifier = Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        stringResource(R.string.muscles_front),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    BodySilhouette(byMuscle = byMuscle, isFront = true)
-                }
-                Column(
-                    modifier = Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        stringResource(R.string.muscles_back),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    BodySilhouette(byMuscle = byMuscle, isFront = false)
-                }
+                Text(
+                    stringResource(R.string.muscles_front),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    stringResource(R.string.muscles_back),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
             }
+            Spacer(Modifier.height(8.dp))
+            BodyHeatmap(engagement = engagement)
         }
     }
 }
 
-private data class MuscleRegion(
-    val muscle: MuscleGroup,
-    // współrzędne ułamkowe 0..1 względem rozmiaru sylwetki
-    val cx: Float, val cy: Float, val w: Float, val h: Float
-)
-
+/**
+ * Heatmap ciała: warstwa bazy (szara sylwetka przód+tył) + dla każdego mięśnia
+ * z engagement > 0 dodatkowa warstwa maski tinted na kolor primary z alpha
+ * proporcjonalnym do procentu engagement.
+ */
 @Composable
-private fun BodySilhouette(
-    byMuscle: Map<MuscleGroup, MuscleEngagement>,
-    isFront: Boolean
-) {
-    val outline = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f)
-    val baseFill = MaterialTheme.colorScheme.surfaceVariant
-    val accent = MaterialTheme.colorScheme.primary
-
-    val regions = if (isFront) listOf(
-        MuscleRegion(MuscleGroup.SHOULDERS, cx = 0.5f, cy = 0.18f, w = 0.7f, h = 0.06f),
-        MuscleRegion(MuscleGroup.CHEST,     cx = 0.5f, cy = 0.27f, w = 0.5f, h = 0.10f),
-        MuscleRegion(MuscleGroup.BICEPS,    cx = 0.5f, cy = 0.37f, w = 0.78f, h = 0.05f),
-        MuscleRegion(MuscleGroup.CORE,      cx = 0.5f, cy = 0.42f, w = 0.45f, h = 0.10f),
-        MuscleRegion(MuscleGroup.QUADS,     cx = 0.5f, cy = 0.65f, w = 0.5f,  h = 0.16f),
-        MuscleRegion(MuscleGroup.CALVES,    cx = 0.5f, cy = 0.88f, w = 0.4f,  h = 0.08f)
-    ) else listOf(
-        MuscleRegion(MuscleGroup.SHOULDERS, cx = 0.5f, cy = 0.18f, w = 0.7f, h = 0.06f),
-        MuscleRegion(MuscleGroup.BACK,      cx = 0.5f, cy = 0.30f, w = 0.5f, h = 0.16f),
-        MuscleRegion(MuscleGroup.TRICEPS,   cx = 0.5f, cy = 0.37f, w = 0.78f, h = 0.05f),
-        MuscleRegion(MuscleGroup.GLUTES,    cx = 0.5f, cy = 0.50f, w = 0.5f,  h = 0.08f),
-        MuscleRegion(MuscleGroup.HAMSTRINGS, cx = 0.5f, cy = 0.65f, w = 0.5f,  h = 0.16f),
-        MuscleRegion(MuscleGroup.CALVES,    cx = 0.5f, cy = 0.88f, w = 0.4f,  h = 0.08f)
-    )
-
-    Canvas(
+private fun BodyHeatmap(engagement: List<MuscleEngagement>) {
+    val tint = MaterialTheme.colorScheme.primary
+    Box(
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(0.5f)
+            .aspectRatio(1.0f)   // body_base.webp jest kwadratowy (przód+tył obok siebie)
     ) {
-        val w = size.width
-        val h = size.height
-
-        // Sylwetka — uproszczone kształty
-        // Głowa
-        drawCircle(color = baseFill, radius = w * 0.13f, center = Offset(w / 2, h * 0.07f))
-        // Szyja
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.45f, h * 0.12f),
-            size = Size(w * 0.10f, h * 0.04f)
+        // Warstwa 1: szara sylwetka
+        AsyncImage(
+            model = "file:///android_asset/muscle_masks/body_base.webp",
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier.fillMaxSize()
         )
-        // Tułów (od barków do bioder)
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.20f, h * 0.16f),
-            size = Size(w * 0.60f, h * 0.34f),
-            cornerRadius = CornerRadius(w * 0.08f, w * 0.08f)
-        )
-        // Ramiona — boczne owale
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.02f, h * 0.18f),
-            size = Size(w * 0.18f, h * 0.22f),
-            cornerRadius = CornerRadius(w * 0.08f, w * 0.05f)
-        )
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.80f, h * 0.18f),
-            size = Size(w * 0.18f, h * 0.22f),
-            cornerRadius = CornerRadius(w * 0.08f, w * 0.05f)
-        )
-        // Nogi
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.22f, h * 0.52f),
-            size = Size(w * 0.24f, h * 0.45f),
-            cornerRadius = CornerRadius(w * 0.06f)
-        )
-        drawRoundRect(
-            color = baseFill,
-            topLeft = Offset(w * 0.54f, h * 0.52f),
-            size = Size(w * 0.24f, h * 0.45f),
-            cornerRadius = CornerRadius(w * 0.06f)
-        )
-
-        // Heatmap regiony
-        regions.forEach { r ->
-            val percent = byMuscle[r.muscle]?.percentOfTotal ?: 0
-            if (percent <= 0) return@forEach
-            val intensity = (percent / 50f).coerceIn(0.15f, 1f)
-            val color = accent.copy(alpha = intensity)
-            drawRoundRect(
-                color = color,
-                topLeft = Offset(w * (r.cx - r.w / 2), h * (r.cy - r.h / 2)),
-                size = Size(w * r.w, h * r.h),
-                cornerRadius = CornerRadius(w * 0.04f, h * 0.02f)
+        // Warstwa 2..N: kolorowe tints per mięsień
+        engagement.forEach { e ->
+            val asset = e.muscle.maskAsset() ?: return@forEach
+            // Intensywność: percent/40 zmapowane do 0.20..1.0 (małe % nadal widoczne)
+            val intensity = (e.percentOfTotal / 40f).coerceIn(0.20f, 1f)
+            AsyncImage(
+                model = "file:///android_asset/$asset",
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                colorFilter = ColorFilter.tint(tint.copy(alpha = intensity)),
+                modifier = Modifier.fillMaxSize()
             )
         }
     }

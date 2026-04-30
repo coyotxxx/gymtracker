@@ -70,6 +70,11 @@
     <string name="profile_advanced_toggle">Pokaż RPE / RIR / Tempo</string>
     <string name="profile_advanced_explain">Dla zaawansowanych: ocena trudności (RPE 1-10), powtórzenia w rezerwie (RIR), tempo eksc/pauza/konc/pauza (np. 3-1-1-0)</string>
 
+    <!-- Pływający FAB AI -->
+    <string name="profile_ai_overlay_section">Pływająca ikona AI</string>
+    <string name="profile_ai_overlay_toggle">Pokaż ikonę asystenta AI w całej aplikacji</string>
+    <string name="profile_ai_overlay_explain">Mała ikonka ✨ w prawym dolnym rogu pojawi się na każdym ekranie. Klik = otwiera asystenta. Bez klucza API → otwiera ustawienia połączenia.</string>
+
     <!-- Flash po końcu timera -->
     <string name="profile_flash_section">Lampa błyskowa</string>
     <string name="profile_flash_toggle">Mrugaj lampą po końcu odpoczynku</string>
@@ -312,6 +317,10 @@
     <string name="ai_input_placeholder">Zapytaj trenera…</string>
     <string name="ai_not_connected">Nie skonfigurowano klucza API. Kliknij aby ustawić.</string>
     <string name="ai_apply_plan">Zastosuj plan</string>
+    <string name="ai_applying_plan">Zapisywanie…</string>
+    <string name="ai_plan_applied_toast">Plan dodany do biblioteki</string>
+    <string name="plan_ai_badge">AI</string>
+    <string name="plan_ai_badge_full">Plan utworzony przez AI</string>
 
     <string name="ai_action_plan">Zaproponuj plan</string>
     <string name="ai_action_today">Co dziś trenować</string>
@@ -320,6 +329,17 @@
     <string name="ai_action_stats">Pełne statystyki</string>
     <string name="ai_action_weekly">Podsumowanie tygodnia</string>
     <string name="ai_action_goal">Postęp do celu</string>
+
+    <!-- AI - lista rozmów -->
+    <string name="ai_conversations_title">Asystent AI</string>
+    <string name="ai_conversations_empty">Brak rozmów</string>
+    <string name="ai_conversations_empty_hint">Naciśnij + żeby rozpocząć nową</string>
+    <string name="ai_conversation_default_title">Nowa rozmowa</string>
+    <string name="ai_conversation_message_count">%1$d wiad.</string>
+    <string name="ai_conversation_delete_title">Usunąć rozmowę?</string>
+    <string name="ai_conversation_delete_text">Cała historia tej rozmowy zostanie skasowana z urządzenia.</string>
+    <string name="ai_conversation_delete_all_title">Usunąć wszystkie rozmowy?</string>
+    <string name="ai_conversation_delete_all_text">Cała historia rozmów z asystentem AI zostanie skasowana z urządzenia.</string>
 
     <!-- Słowniczek -->
     <string name="glossary_title">Słowniczek</string>

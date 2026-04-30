@@ -119,7 +119,8 @@ class AiPlanApplier @Inject constructor(
                 name = proposal.name.ifBlank { "Plan AI" },
                 daysOfWeek = if (proposal.daysOfWeek.isNotEmpty()) proposal.daysOfWeek
                 else proposal.days.map { it.dayOfWeek }.distinct(),
-                notes = proposal.description
+                notes = proposal.description,
+                createdByAi = true
             )
         )
 
