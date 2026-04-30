@@ -119,23 +119,43 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
 
 @Composable
 private fun StatChip(label: String, value: String) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    // Z propozycji: wartości BIAŁE mono ExtraBold, etykieta UPPERCASE szara pod nimi.
+    // 'kg' jako mały szary suffix gdy wartość zawiera 'kg'.
+    val mainText = value.removeSuffix("kg").trim()
+    val hasKg = value != mainText
+    Column(horizontalAlignment = Alignment.Start) {
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(
+                mainText,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 18.sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+            )
+            if (hasKg) {
+                Spacer(Modifier.width(2.dp))
+                Text(
+                    "kg",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                    modifier = Modifier.padding(bottom = 2.dp)
+                )
+            }
+        }
+        Spacer(Modifier.height(2.dp))
         Text(
             label.uppercase(),
             style = MaterialTheme.typography.labelSmall.copy(
                 fontSize = 10.sp,
                 fontWeight = FontWeight.Bold,
-                letterSpacing = 1.0.sp
+                letterSpacing = 1.2.sp
             ),
             color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
-        )
-        Spacer(Modifier.height(2.dp))
-        Text(
-            value,
-            style = MaterialTheme.typography.titleMedium.copy(
-                fontWeight = FontWeight.ExtraBold
-            ),
-            color = pl.filebit.gymtracker.ui.theme.AccentOrange
         )
     }
 }

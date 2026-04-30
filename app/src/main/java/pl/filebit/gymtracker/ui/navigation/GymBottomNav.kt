@@ -97,32 +97,24 @@ private fun NavItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Box z pill-em za ikoną + dot pod ikoną gdy aktywne
-        Box(
-            modifier = Modifier
-                .size(width = 40.dp, height = 32.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            if (selected) {
-                // Mały pill 36x28dp z 10% akcentem (subtelne tło)
-                Box(
-                    modifier = Modifier
-                        .size(width = 36.dp, height = 28.dp)
-                        .background(
-                            AccentOrange.copy(alpha = 0.10f),
-                            RoundedCornerShape(14.dp)
-                        )
-                )
-            }
-            Icon(
-                icon,
-                contentDescription = null,
-                tint = if (selected) AccentOrange else DarkOnSurfaceVariant,
-                modifier = Modifier.size(22.dp)
-            )
-        }
-        Spacer(Modifier.height(2.dp))
-        // Dot indicator (4dp) pod ikoną gdy aktywne, w innym przypadku spacer 4dp
+        // Sama ikona — bez tła pill, tylko kolor sygnalizuje stan
+        Icon(
+            icon,
+            contentDescription = null,
+            tint = if (selected) AccentOrange else DarkOnSurfaceVariant,
+            modifier = Modifier.size(24.dp)
+        )
+        Spacer(Modifier.height(4.dp))
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            color = if (selected) AccentOrange else DarkOnSurfaceVariant
+        )
+        Spacer(Modifier.height(4.dp))
+        // Żółta kropka 4dp PONIŻEJ labelu — wskaźnik aktywnej zakładki
         if (selected) {
             Box(
                 modifier = Modifier
@@ -130,16 +122,7 @@ private fun NavItem(
                     .background(AccentOrange, CircleShape)
             )
         } else {
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.size(4.dp))
         }
-        Spacer(Modifier.height(2.dp))
-        Text(
-            label,
-            style = MaterialTheme.typography.labelSmall.copy(
-                fontSize = 10.sp,
-                fontWeight = FontWeight.SemiBold
-            ),
-            color = if (selected) AccentOrange else DarkOnSurfaceVariant
-        )
     }
 }
