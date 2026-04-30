@@ -15,9 +15,21 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 59
-        versionName = "0.46.0"
+        versionCode = 60
+        versionName = "0.47.0"
         vectorDrawables { useSupportLibrary = true }
+    }
+
+    signingConfigs {
+        getByName("debug") {
+            // Stały keystore w repo — bez tego każdy build CI ma inną sygnaturę
+            // i Android odmawia aktualizacji ('Nie zainstalowano aplikacji').
+            // To NIE jest klucz produkcyjny — debug only, hasło publicznie znane.
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
     }
 
     buildTypes {
@@ -25,6 +37,7 @@ android {
             isMinifyEnabled = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
+            signingConfig = signingConfigs.getByName("debug")
         }
         release {
             isMinifyEnabled = false
