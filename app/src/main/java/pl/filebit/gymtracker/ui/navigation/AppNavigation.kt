@@ -225,7 +225,15 @@ fun AppNavigation() {
                 )
             }
             composable(Screen.Stats.route) {
-                StatsScreen(onBack = { navController.popBackStack() })
+                StatsScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
+                )
+            }
+            composable(Screen.Achievements.route) {
+                pl.filebit.gymtracker.ui.stats.AchievementsScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.OneRm.route) {
                 OneRmCalculatorScreen(onBack = { navController.popBackStack() })

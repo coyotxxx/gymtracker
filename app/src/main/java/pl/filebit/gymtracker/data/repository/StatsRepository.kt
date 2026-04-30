@@ -30,7 +30,11 @@ data class ExercisePr(
 class StatsRepository @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
-    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
+    private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
+    private val goalDao: pl.filebit.gymtracker.data.db.dao.GoalDao,
+    private val unlockedDao: pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao,
+    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao
 ) {
 
     /**
@@ -136,30 +140,136 @@ class StatsRepository @Inject constructor(
         return WeekProgress(current = count, target = target)
     }
 
+    /**
+     * Pełen system odznak z kategoriami, poziomami i persystencją momentu odblokowania.
+     * Sprawdza po każdym wezwaniu — jeśli odznaka właśnie została osiągnięta i nie ma
+     * jej w DB, zapisuje wpis (z timestampem teraz).
+     */
     suspend fun unlockedAchievements(weeklyTarget: Int): List<Achievement> {
         val o = overview()
         val streak = streakInfo()
-        return listOf(
-            achievement("workouts_10",  "🌱", "Pierwszy krok",   "10 ukończonych treningów",  o.totalWorkouts.toLong(), 10),
-            achievement("workouts_50",  "💪", "Stała rutyna",     "50 treningów",                o.totalWorkouts.toLong(), 50),
-            achievement("workouts_100", "🏆", "Setka",            "100 treningów",               o.totalWorkouts.toLong(), 100),
-            achievement("workouts_250", "👑", "Wojownik",         "250 treningów",               o.totalWorkouts.toLong(), 250),
-            achievement("volume_100k",  "🏋️", "Tona w plecach",   "100 000 kg łącznej objętości", o.totalVolumeKg.toLong(), 100_000),
-            achievement("volume_500k",  "⚡", "Pół megatony",    "500 000 kg objętości",         o.totalVolumeKg.toLong(), 500_000),
-            achievement("streak_4",     "🔥", "Miesiąc mocy",     "4 tygodnie z rzędu",          streak.best.toLong(), 4),
-            achievement("streak_12",    "🔥🔥", "Kwartał",        "12 tygodni z rzędu",          streak.best.toLong(), 12),
-            achievement("streak_52",    "🌟", "Rok mocy",         "52 tygodnie z rzędu",         streak.best.toLong(), 52)
+        val finishedWorkouts = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val allSets = finishedWorkouts.flatMap { setDao.getForWorkout(it.id) }
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        val distinctExercises = allSets.map { it.exerciseId }.distinct().size
+        val musclesTrained = allSets.mapNotNull { exerciseDao.getById(it.exerciseId)?.primaryMuscle }
+            .distinct().size
+        val customExercises = exerciseDao.getAll().count { it.isCustom }
+
+        // PRs — ile rekordów ciężaru ustanowiono (count distinct exerciseIds gdzie jest set z 1RM > 0)
+        val prCount = run {
+            var count = 0
+            val byExercise = allSets.groupBy { it.exerciseId }
+            for ((_, sets) in byExercise) {
+                val maxW = sets.maxOf { it.weightKg }
+                if (maxW > 0) count++
+            }
+            count
+        }
+
+        // Pomiary — pierwszy/ostatni
+        val bodyAll = bodyDao.getAllAsc()
+        val firstBody = bodyAll.firstOrNull()
+        val lastBody = bodyAll.lastOrNull()
+        val bodyCount = bodyAll.size
+
+        // Cele — zrealizowane
+        val achievedGoals = goalDao.getAll().count { it.achieved }
+
+        // Profil — bodyweight i goal type
+        val profile = userProfileDao.get()
+        val targetWeightKg = profile?.targetWeightKg
+        val currentBodyweight = profile?.bodyweightKg ?: lastBody?.weightKg
+        val startBodyweight = firstBody?.weightKg ?: currentBodyweight
+        val weightGoal = profile?.weightGoalType?.name ?: "NONE"
+
+        val bodyweightDelta = if (currentBodyweight != null && startBodyweight != null) {
+            currentBodyweight - startBodyweight
+        } else 0.0
+
+        // Najlepsze obwody (delta od pierwszego pomiaru)
+        fun delta(getter: (pl.filebit.gymtracker.data.entity.BodyMeasurement) -> Double?): Double {
+            val first = firstBody?.let(getter) ?: return 0.0
+            val last = lastBody?.let(getter) ?: return 0.0
+            return last - first
+        }
+        val chestDelta = delta { it.chestCm }
+        val armDelta = delta { it.armCm }
+        val thighDelta = delta { it.thighCm }
+        val waistDrop = -delta { it.waistCm }   // dodatnie gdy spadł
+        val bodyFatDrop = -delta { it.bodyFatPercent }
+
+        // Strength — relative to bodyweight (1RM lub max set weight)
+        val benchMax = bestWeightForExerciseLike("Wyciskanie sztangi leżąc")
+        val squatMax = bestWeightForExerciseLike("Przysiad ze sztangą")
+        val deadliftMax = bestWeightForExerciseLike("Martwy ciąg klasyczny")
+        val ohpMax = bestWeightForExerciseLike("Wyciskanie żołnierskie")
+        val bw = currentBodyweight ?: 0.0
+
+        val all = AchievementDefinitions.all(
+            workoutsCount = o.totalWorkouts.toLong(),
+            totalVolume = o.totalVolumeKg.toLong(),
+            streakBestWeeks = streak.best.toLong(),
+            distinctExercises = distinctExercises.toLong(),
+            musclesTrained = musclesTrained.toLong(),
+            customExercises = customExercises.toLong(),
+            prCount = prCount.toLong(),
+            bodyMeasurementsCount = bodyCount.toLong(),
+            achievedGoalsCount = achievedGoals.toLong(),
+            bodyweightDelta = bodyweightDelta,
+            weightGoalType = weightGoal,
+            chestDelta = chestDelta,
+            armDelta = armDelta,
+            thighDelta = thighDelta,
+            waistDrop = waistDrop,
+            bodyFatDrop = bodyFatDrop,
+            benchMaxKg = benchMax,
+            squatMaxKg = squatMax,
+            deadliftMaxKg = deadliftMax,
+            ohpMaxKg = ohpMax,
+            bodyweightKg = bw
         )
+
+        // Persyst odblokowania
+        val now = System.currentTimeMillis()
+        val unlockedDb = unlockedDao.getAll().associateBy { it.code }
+        val results = all.map { def ->
+            val current = def.currentValue
+            val target = def.targetValue
+            val unlocked = current >= target
+            val unlockedAt = unlockedDb[def.code]?.unlockedAt
+                ?: if (unlocked) {
+                    runCatching {
+                        unlockedDao.insertIfNew(
+                            pl.filebit.gymtracker.data.entity.UnlockedAchievement(
+                                code = def.code, unlockedAt = now, valueAt = current.toDouble()
+                            )
+                        )
+                    }
+                    now
+                } else null
+            Achievement(
+                id = def.code, emoji = def.emoji,
+                title = def.title, description = def.description,
+                category = def.category, level = def.level,
+                unlocked = unlocked,
+                progress = if (target > 0) ((current * 100) / target).toInt().coerceAtMost(100) else 0,
+                currentValue = current, targetValue = target,
+                unlockedAt = unlockedAt
+            )
+        }
+        return results
     }
 
-    private fun achievement(id: String, emoji: String, title: String, desc: String, current: Long, target: Long): Achievement {
-        val unlocked = current >= target
-        val pct = if (target > 0) ((current * 100) / target).toInt().coerceAtMost(100) else 0
-        return Achievement(
-            id = id, emoji = emoji, title = title, description = desc,
-            unlocked = unlocked, progress = pct,
-            currentValue = current, targetValue = target
-        )
+    /**
+     * Najlepszy ciężar dla pierwszego ćwiczenia którego nazwa zawiera podany prefix.
+     */
+    private suspend fun bestWeightForExerciseLike(namePrefix: String): Double {
+        val ex = exerciseDao.getAll()
+            .firstOrNull { it.name.startsWith(namePrefix, ignoreCase = true) } ?: return 0.0
+        val sets = setDao.getAllForExercise(ex.id)
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        return sets.maxOfOrNull { it.weightKg } ?: 0.0
     }
 
     /**
@@ -638,8 +748,28 @@ data class Achievement(
     val unlocked: Boolean,
     val progress: Int = 0,    // 0-100
     val targetValue: Long = 0,
-    val currentValue: Long = 0
+    val currentValue: Long = 0,
+    val category: AchievementCategory = AchievementCategory.GENERAL,
+    val level: AchievementLevel = AchievementLevel.BRONZE,
+    val unlockedAt: Long? = null
 )
+
+enum class AchievementCategory(val labelPl: String, val emoji: String) {
+    CONSISTENCY("Wytrwałość", "🔥"),
+    VOLUME("Objętość", "🏋️"),
+    STRENGTH("Siła", "💪"),
+    EXPLORATION("Eksploracja", "🧭"),
+    BODY("Sylwetka", "📏"),
+    GOALS("Cele", "🎯"),
+    GENERAL("Ogólne", "✨")
+}
+
+enum class AchievementLevel(val labelPl: String) {
+    BRONZE("Brąz"),
+    SILVER("Srebro"),
+    GOLD("Złoto"),
+    PLATINUM("Platyna")
+}
 
 data class MuscleEngagement(
     val muscle: pl.filebit.gymtracker.data.entity.MuscleGroup,

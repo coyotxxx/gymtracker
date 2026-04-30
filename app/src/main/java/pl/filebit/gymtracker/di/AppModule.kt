@@ -11,6 +11,7 @@ import pl.filebit.gymtracker.data.db.AppDatabase
 import pl.filebit.gymtracker.data.db.dao.AiChatMessageDao
 import pl.filebit.gymtracker.data.db.dao.AiConversationDao
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
+import pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
@@ -50,6 +51,7 @@ object AppModule {
     @Provides fun provideGoalDao(db: AppDatabase): GoalDao = db.goalDao()
     @Provides fun provideAiConversationDao(db: AppDatabase): AiConversationDao = db.aiConversationDao()
     @Provides fun provideAiChatMessageDao(db: AppDatabase): AiChatMessageDao = db.aiChatMessageDao()
+    @Provides fun provideUnlockedAchievementDao(db: AppDatabase): UnlockedAchievementDao = db.unlockedAchievementDao()
 
     @Provides
     @Singleton

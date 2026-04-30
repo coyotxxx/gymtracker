@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.stats
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -46,6 +47,7 @@ import pl.filebit.gymtracker.util.formatWeight
 @Composable
 fun StatsScreen(
     onBack: () -> Unit,
+    onOpenAchievements: () -> Unit = {},
     vm: StatsViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -145,27 +147,47 @@ fun StatsScreen(
                 }
             }
 
-            // Odznaki
+            // Odznaki — pokaż top 6 (ostatnio odblokowane), reszta w osobnym ekranie
             if (state.achievements.isNotEmpty()) {
+                val unlockedCount = state.achievements.count { it.unlocked }
+                val total = state.achievements.size
+                val highlights = state.achievements
+                    .sortedWith(compareByDescending<Achievement> { it.unlocked }
+                        .thenByDescending { it.unlockedAt ?: 0L }
+                        .thenByDescending { it.progress })
+                    .take(6)
                 item {
                     Spacer(Modifier.height(8.dp))
-                    Text(
-                        stringResource(R.string.achievements_title),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold
-                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable(onClick = onOpenAchievements),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            stringResource(R.string.achievements_title),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.weight(1f)
+                        )
+                        Text(
+                            "$unlockedCount / $total →",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
                 }
                 item {
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(2),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(((state.achievements.size + 1) / 2 * 130).dp),
+                            .height(((highlights.size + 1) / 2 * 130).dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp),
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         userScrollEnabled = false
                     ) {
-                        items(state.achievements, key = { it.id }) { a ->
+                        items(highlights, key = { it.id }) { a ->
                             AchievementCard(a)
                         }
                     }

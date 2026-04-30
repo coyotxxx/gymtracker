@@ -10,6 +10,7 @@ sealed class Screen(val route: String) {
     object CoachWorkout : Screen("workout/coach")
     object Backup : Screen("backup")
     object Stats : Screen("stats")
+    object Achievements : Screen("stats/achievements")
     object OneRm : Screen("tools/1rm")
     object PlateCalc : Screen("tools/plate")
     object PlanTemplates : Screen("plans/templates")
