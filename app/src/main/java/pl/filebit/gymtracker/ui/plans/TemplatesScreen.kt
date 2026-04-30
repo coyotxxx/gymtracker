@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.ui.plans
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,12 +23,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.data.template.PlanGoalCategory
 import pl.filebit.gymtracker.data.template.PlanTemplate
 import pl.filebit.gymtracker.data.template.PlanTemplates
 
@@ -38,6 +41,7 @@ fun TemplatesScreen(
     onCreated: (Long) -> Unit,
     vm: PlanListViewModel = hiltViewModel()
 ) {
+    val grouped = PlanTemplates.byCategory()
     Scaffold(
         topBar = {
             TopAppBar(
@@ -55,21 +59,55 @@ fun TemplatesScreen(
                 .fillMaxSize()
                 .padding(padding),
             contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(
-                count = PlanTemplates.all.size,
-                key = { idx -> PlanTemplates.all[idx].id }
-            ) { idx ->
-                val tmpl = PlanTemplates.all[idx]
-                TemplateCard(
-                    template = tmpl,
-                    onClick = {
-                        vm.createFromTemplate(tmpl) { newPlanId -> onCreated(newPlanId) }
-                    }
-                )
+            // Iterujemy w kolejności enum żeby Beginner było zawsze pierwsze
+            PlanGoalCategory.entries.forEach { category ->
+                val templates = grouped[category].orEmpty()
+                if (templates.isEmpty()) return@forEach
+                item(key = "header_${category.name}") {
+                    CategoryHeader(category = category, count = templates.size)
+                }
+                items(
+                    count = templates.size,
+                    key = { idx -> templates[idx].id }
+                ) { idx ->
+                    val tmpl = templates[idx]
+                    TemplateCard(
+                        template = tmpl,
+                        onClick = {
+                            vm.createFromTemplate(tmpl) { newPlanId -> onCreated(newPlanId) }
+                        }
+                    )
+                }
+                item(key = "spacer_${category.name}") {
+                    Spacer(Modifier.height(8.dp))
+                }
             }
         }
+    }
+}
+
+@Composable
+private fun CategoryHeader(category: PlanGoalCategory, count: Int) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 12.dp, bottom = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            "${category.emoji}  ${category.labelPl}",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            "$count",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
 
@@ -104,4 +142,3 @@ private fun TemplateCard(template: PlanTemplate, onClick: () -> Unit) {
         }
     }
 }
-
