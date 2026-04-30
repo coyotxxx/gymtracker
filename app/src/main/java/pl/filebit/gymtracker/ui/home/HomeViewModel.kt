@@ -15,6 +15,8 @@ import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.StatsRepository
+import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
@@ -22,7 +24,11 @@ data class HomeUiState(
     val activeWorkout: Workout? = null,
     val todaysPlan: TrainingPlan? = null,
     val todaysPlanExerciseCount: Int = 0,
-    val recentWorkouts: List<RecentWorkoutItem> = emptyList()
+    val recentWorkouts: List<RecentWorkoutItem> = emptyList(),
+    val streakWeeks: Int = 0,
+    val streakBest: Int = 0,
+    val workoutsThisWeek: Int = 0,
+    val weeklyTarget: Int = 3
 )
 
 data class RecentWorkoutItem(
@@ -35,7 +41,9 @@ data class RecentWorkoutItem(
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
-    private val planRepo: PlanRepository
+    private val planRepo: PlanRepository,
+    private val statsRepo: StatsRepository,
+    private val profileRepo: UserProfileRepository
 ) : ViewModel() {
 
     val state: StateFlow<HomeUiState> = combine(
@@ -64,11 +72,20 @@ class HomeViewModel @Inject constructor(
                 exerciseCount = sets.map { it.exerciseId }.distinct().size
             )
         }
+        // Streak + week progress (best-effort, błędy ignorujemy)
+        val streak = runCatching { statsRepo.streakInfo() }.getOrNull()
+        val weeklyTarget = runCatching { profileRepo.get().daysPerWeek.coerceAtLeast(1) }.getOrDefault(3)
+        val weekProgress = runCatching { statsRepo.weekProgress(weeklyTarget) }.getOrNull()
+
         HomeUiState(
             activeWorkout = active,
             todaysPlan = todaysPlan,
             todaysPlanExerciseCount = todaysCount,
-            recentWorkouts = items
+            recentWorkouts = items,
+            streakWeeks = streak?.current ?: 0,
+            streakBest = streak?.best ?: 0,
+            workoutsThisWeek = weekProgress?.current ?: 0,
+            weeklyTarget = weeklyTarget
         )
     }.stateIn(
         scope = viewModelScope,

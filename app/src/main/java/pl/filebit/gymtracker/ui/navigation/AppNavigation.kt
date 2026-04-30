@@ -188,7 +188,8 @@ fun AppNavigation() {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    }
+                    },
+                    onOpenStats = { navController.navigate(Screen.Stats.route) }
                 )
             }
             composable(Screen.History.route) {
