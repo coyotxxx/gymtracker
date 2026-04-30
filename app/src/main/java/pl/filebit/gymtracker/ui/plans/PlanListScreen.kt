@@ -214,16 +214,18 @@ private fun PlanCard(
                         fontWeight = FontWeight.ExtraBold,
                         fontSize = 17.sp
                     ),
-                    modifier = Modifier.weight(1f, fill = false)
+                    maxLines = 1,
+                    modifier = Modifier.weight(1f)
                 )
-                Spacer(Modifier.width(8.dp))
                 if (isActive) {
-                    ActiveBadge(modifier = Modifier.padding(end = 4.dp))
+                    Spacer(Modifier.width(6.dp))
+                    ActiveBadge()
                 }
                 if (item.plan.createdByAi) {
-                    AiBadge(modifier = Modifier.padding(end = 4.dp))
+                    Spacer(Modifier.width(6.dp))
+                    AiBadge()
                 }
-                Spacer(Modifier.weight(1f))
+                Spacer(Modifier.width(4.dp))
                 Box {
                     IconButton(onClick = { menuOpen = true }) {
                         Icon(

@@ -21,8 +21,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Bolt
 import androidx.compose.material.icons.filled.LocalFireDepartment
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Card
@@ -70,6 +72,7 @@ fun HomeScreen(
     onOpenStats: () -> Unit = {},
     onOpenAchievements: () -> Unit = {},
     onOpenHistory: () -> Unit = {},
+    onOpenAiAssistant: () -> Unit = {},
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -80,9 +83,12 @@ fun HomeScreen(
         modifier = Modifier
             .fillMaxSize()
             .statusBarsPadding(),
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 16.dp),
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
+            item {
+                AppTopBar(onOpenAiAssistant = onOpenAiAssistant)
+            }
             item {
                 GreetingHeader(
                     displayName = state.displayName,
@@ -201,6 +207,67 @@ fun HomeScreen(
                     RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
                 }
             }
+    }
+}
+
+@Composable
+private fun AppTopBar(onOpenAiAssistant: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 4.dp, bottom = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Logo "● GymTracker" — żółta kropka + tekst
+        Box(
+            modifier = Modifier
+                .size(8.dp)
+                .background(AccentOrange, RoundedCornerShape(2.dp))
+        )
+        Spacer(Modifier.width(10.dp))
+        Text(
+            "GymTracker",
+            style = MaterialTheme.typography.titleMedium.copy(
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = 18.sp,
+                letterSpacing = (-0.2).sp
+            ),
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.weight(1f))
+        // Dzwonek — placeholder (na razie bez akcji)
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(Color.Transparent)
+                .clickable { /* TODO: notyfikacje */ },
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.Notifications,
+                contentDescription = "Powiadomienia",
+                tint = DarkOnSurfaceVariant,
+                modifier = Modifier.size(22.dp)
+            )
+        }
+        Spacer(Modifier.width(4.dp))
+        // AI button — żółte kółko
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(AccentOrange)
+                .clickable(onClick = onOpenAiAssistant),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.AutoAwesome,
+                contentDescription = "Asystent AI",
+                tint = Color.Black,
+                modifier = Modifier.size(20.dp)
+            )
+        }
     }
 }
 

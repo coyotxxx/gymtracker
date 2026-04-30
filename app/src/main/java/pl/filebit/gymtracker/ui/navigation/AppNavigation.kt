@@ -184,6 +184,9 @@ fun AppNavigation() {
                             launchSingleTop = true
                             restoreState = true
                         }
+                    },
+                    onOpenAiAssistant = {
+                        navController.navigate(Screen.AiConversations.route)
                     }
                 )
             }
