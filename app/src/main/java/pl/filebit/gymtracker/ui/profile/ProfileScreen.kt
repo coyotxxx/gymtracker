@@ -486,8 +486,31 @@ fun ProfileScreen(
                     Text("  ${stringResource(R.string.backup_section)}")
                 }
             }
+            item {
+                Spacer(Modifier.height(16.dp))
+                AppVersionFooter()
+                Spacer(Modifier.height(8.dp))
+            }
         }
     }
+}
+
+@Composable
+private fun AppVersionFooter() {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val version = remember {
+        runCatching {
+            val info = context.packageManager.getPackageInfo(context.packageName, 0)
+            info.versionName ?: "?"
+        }.getOrDefault("?")
+    }
+    Text(
+        text = "GymTracker v$version",
+        modifier = Modifier.fillMaxWidth(),
+        style = MaterialTheme.typography.labelSmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+    )
 }
 
 @Composable
