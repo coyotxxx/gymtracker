@@ -34,7 +34,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         BodyMeasurement::class,
         ProgressPhoto::class
     ],
-    version = 12,
+    version = 13,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

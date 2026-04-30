@@ -24,6 +24,9 @@ interface ExerciseDao {
     """)
     fun search(query: String): Flow<List<Exercise>>
 
+    @Query("SELECT * FROM exercises ORDER BY name COLLATE NOCASE ASC")
+    suspend fun getAll(): List<Exercise>
+
     @Query("SELECT * FROM exercises WHERE id = :id")
     suspend fun getById(id: Long): Exercise?
 

@@ -17,6 +17,8 @@ enum class ExperienceLevel {
 
 enum class WeightUnit { KG, LB }
 
+enum class Gender { MALE, FEMALE }
+
 enum class WeightGoalType {
     NONE,       // user nie deklaruje celu
     CUT,        // redukcja
@@ -38,5 +40,7 @@ data class UserProfile(
     val weightGoalType: WeightGoalType = WeightGoalType.NONE,
     val targetWeightKg: Double? = null,
     val unfinishedWorkoutNotifyEnabled: Boolean = true,
-    val unfinishedWorkoutNotifyHours: Int = 3
+    val unfinishedWorkoutNotifyHours: Int = 3,
+    val gender: Gender = Gender.MALE,
+    val bodyweightKg: Double? = null   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
 )

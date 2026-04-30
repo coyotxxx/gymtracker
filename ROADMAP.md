@@ -114,7 +114,7 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 - [ ] **Animacje GIF ćwiczeń** — pakiet zewnętrznych assetów (10-30 MB)
 - [ ] **Powiadomienia lokalizacyjne** — geofencing przy siłowni
 - [ ] **Mapa regeneracji mięśni** (Fitbod-level) — algorytm decay zaangażowania w czasie
-- [ ] **Strength standards** — porównanie do norm (Beginner/Intermediate/Advanced) per ćwiczenie + waga ciała
+- [x] **Strength standards** ✅ v0.27.0 — `Gender` enum + `bodyweightKg` w `UserProfile` (DB v=12→v=13). Hardcoded `StrengthStandards` (StrengthLevel.org-style) dla 6 głównych podnoszeń: bench, squat, deadlift, OHP, barbell row, pull-up. `StrengthRepository.evaluateAll()` liczy estimated 1RM (Epley) ÷ bodyweight, klasyfikuje na 5 progów (BEGINNER/NOVICE/INTERMEDIATE/ADVANCED/ELITE + BELOW). Ekran 'Standardy siłowe' w Profilu z polami płeć/waga ciała + karta per podnoszenie z aktualnym 1RM, ratio×BW, kolorową belką, etykietą poziomu i delta do następnego progu.
 
 ---
 

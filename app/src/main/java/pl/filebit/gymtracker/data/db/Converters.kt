@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.data.db
 import androidx.room.TypeConverter
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
+import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.SetType
@@ -34,6 +35,10 @@ class Converters {
     @TypeConverter fun weightGoalToString(g: WeightGoalType): String = g.name
     @TypeConverter fun stringToWeightGoal(s: String): WeightGoalType =
         runCatching { WeightGoalType.valueOf(s) }.getOrDefault(WeightGoalType.NONE)
+
+    @TypeConverter fun genderToString(g: Gender): String = g.name
+    @TypeConverter fun stringToGender(s: String): Gender =
+        runCatching { Gender.valueOf(s) }.getOrDefault(Gender.MALE)
 
     @TypeConverter fun setTypeToString(t: SetType): String = t.name
     @TypeConverter fun stringToSetType(s: String): SetType = SetType.safeValueOf(s)
