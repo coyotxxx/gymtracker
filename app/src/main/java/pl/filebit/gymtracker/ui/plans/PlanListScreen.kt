@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.plans
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -73,6 +74,7 @@ fun PlanListScreen(
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
+    val activePlanId by vm.activePlanId.collectAsStateWithLifecycle()
     var dayPickerForPlan by remember { mutableStateOf<PlanListItem?>(null) }
     var newMenuOpen by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf<Long?>(null) }
@@ -131,6 +133,7 @@ fun PlanListScreen(
                 items(plans, key = { it.plan.id }) { item ->
                     PlanCard(
                         item = item,
+                        isActive = item.plan.id == activePlanId,
                         onEdit = { onEditPlan(item.plan.id) },
                         onStart = { dayPickerForPlan = item },
                         onDuplicate = { vm.duplicatePlan(item.plan.id) { newId -> onEditPlan(newId) } },
@@ -180,6 +183,7 @@ fun PlanListScreen(
 @Composable
 private fun PlanCard(
     item: PlanListItem,
+    isActive: Boolean,
     onEdit: () -> Unit,
     onStart: () -> Unit,
     onDuplicate: () -> Unit,
@@ -197,7 +201,7 @@ private fun PlanCard(
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            // Górny rząd: tytuł + chip AI tuż przy 3 kropkach + 3 kropki
+            // Górny rząd: tytuł + chip AKTYWNY/AI + 3 kropki
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -210,11 +214,16 @@ private fun PlanCard(
                         fontWeight = FontWeight.ExtraBold,
                         fontSize = 17.sp
                     ),
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f, fill = false)
                 )
+                Spacer(Modifier.width(8.dp))
+                if (isActive) {
+                    ActiveBadge(modifier = Modifier.padding(end = 4.dp))
+                }
                 if (item.plan.createdByAi) {
                     AiBadge(modifier = Modifier.padding(end = 4.dp))
                 }
+                Spacer(Modifier.weight(1f))
                 Box {
                     IconButton(onClick = { menuOpen = true }) {
                         Icon(
@@ -482,7 +491,12 @@ private fun AiBadge(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .background(
-                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f),
+                color = androidx.compose.ui.graphics.Color.Transparent,
+                shape = RoundedCornerShape(50)
+            )
+            .border(
+                width = 1.dp,
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.55f),
                 shape = RoundedCornerShape(50)
             )
             .padding(horizontal = 8.dp, vertical = 3.dp),
@@ -500,6 +514,38 @@ private fun AiBadge(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.SemiBold,
             color = pl.filebit.gymtracker.ui.theme.AccentOrange
+        )
+    }
+}
+
+@Composable
+private fun ActiveBadge(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .background(
+                color = pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.18f),
+                shape = RoundedCornerShape(50)
+            )
+            .padding(horizontal = 8.dp, vertical = 3.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .size(6.dp)
+                .background(
+                    pl.filebit.gymtracker.ui.theme.SuccessGreen,
+                    shape = RoundedCornerShape(50)
+                )
+        )
+        Spacer(Modifier.width(5.dp))
+        Text(
+            "AKTYWNY",
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.6.sp,
+                fontSize = 10.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.SuccessGreen
         )
     }
 }

@@ -6,6 +6,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -30,6 +32,11 @@ class PlanListViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val exerciseRepo: ExerciseRepository
 ) : ViewModel() {
+
+    /** Plan ID aktywnego treningu (jeśli z planu) — używane do badge "AKTYWNY". */
+    val activePlanId: StateFlow<Long?> = workoutRepo.observeActive()
+        .map { it?.fromPlanId }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val plans: StateFlow<List<PlanListItem>> = planRepo.observeAllPlans()
