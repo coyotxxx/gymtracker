@@ -363,10 +363,12 @@ fun AppNavigation() {
                 )
             }
         }
+    }
 
         // Pływający FAB asystenta AI — widoczny tylko gdy włączony w Profilu
         // i NIE jesteśmy już na ekranie AI. Pozycja: prawy dolny róg, nad
         // bottom nav i mini-barem aktywnego treningu (jeśli widoczny).
+        // Musi być w outer Box (BoxScope), nie w Scaffold-content lambda.
         if (showOverlay) {
             val fabBottomDp = (if (showBottomBar) 96 else 24) + (if (showActiveBar) 52 else 0)
             AiOverlayFab(
@@ -379,7 +381,6 @@ fun AppNavigation() {
                     .align(Alignment.BottomEnd)
                     .padding(end = 16.dp, bottom = fabBottomDp.dp)
             )
-        }
         }
     }
 }
