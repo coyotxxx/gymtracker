@@ -123,32 +123,26 @@ fun ProfileScreen(
 
     Scaffold(
         containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        stringResource(R.string.nav_profile),
-                        style = MaterialTheme.typography.headlineSmall.copy(
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 22.sp
-                        )
-                    )
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface
-                )
-            )
-        },
         snackbarHost = { SnackbarHost(snackbar) }
     ) { padding ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 24.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            item {
+                Text(
+                    stringResource(R.string.nav_profile),
+                    style = MaterialTheme.typography.headlineSmall.copy(
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 22.sp
+                    ),
+                    color = DarkOnSurface,
+                    modifier = Modifier.padding(start = 4.dp, top = 4.dp, bottom = 8.dp)
+                )
+            }
             item {
                 pl.filebit.gymtracker.ui.update.UpdateCard(showWhenUpToDate = true)
             }

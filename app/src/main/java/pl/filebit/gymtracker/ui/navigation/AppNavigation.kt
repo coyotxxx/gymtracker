@@ -1,23 +1,45 @@
 package pl.filebit.gymtracker.ui.navigation
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -56,9 +78,7 @@ import pl.filebit.gymtracker.ui.muscles.MuscleEngagementScreen
 import pl.filebit.gymtracker.ui.photos.ProgressPhotosScreen
 import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
 import pl.filebit.gymtracker.ui.ai.AiConversationsScreen
-import pl.filebit.gymtracker.ui.ai.AiOverlayFab
 import pl.filebit.gymtracker.ui.ai.screenLabel
-import pl.filebit.gymtracker.ui.ai.AiOverlayViewModel
 import pl.filebit.gymtracker.ui.ai.AiSettingsScreen
 import pl.filebit.gymtracker.ui.ai.AiTrainerScreen
 import pl.filebit.gymtracker.ui.shell.ActiveWorkoutMiniBar
@@ -96,16 +116,10 @@ fun AppNavigation() {
     val tabRoutes = tabs.map { it.screen.route }.toSet()
     val showBottomBar = currentRoute in tabRoutes || currentRoute in workoutRoutes
 
-    val overlayVm: AiOverlayViewModel = hiltViewModel()
-    val overlayState by overlayVm.state.collectAsStateWithLifecycle()
     var aiChoiceVisible by remember { mutableStateOf(false) }
     var aiQuickAskVisible by remember { mutableStateOf(false) }
-    val hideOverlayRoutes = setOf(
-        Screen.AiTrainer.route,
-        Screen.AiSettings.route,
-        Screen.AiConversations.route
-    )
-    val showOverlay = overlayState.enabled && currentRoute !in hideOverlayRoutes
+    // TopBar tylko na 5 zakładkach (NIE na ekranach workout, AI, czy detail)
+    val showTopBar = currentRoute in tabRoutes
 
     val workoutShellVm: ActiveWorkoutShellViewModel = hiltViewModel()
     val workoutShellState by workoutShellVm.state.collectAsStateWithLifecycle()
@@ -113,6 +127,15 @@ fun AppNavigation() {
 
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
+        topBar = {
+            if (showTopBar) {
+                AppTopBar(
+                    onOpenAiAssistant = {
+                        navController.navigate(Screen.AiConversations.route)
+                    }
+                )
+            }
+        },
         bottomBar = {
             // navigationBarsPadding na cały Column gwarantuje że nawet gdy widoczny
                             // jest TYLKO mini-bar (bez NavigationBar), gesture bar Androida nie
@@ -184,9 +207,6 @@ fun AppNavigation() {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    },
-                    onOpenAiAssistant = {
-                        navController.navigate(Screen.AiConversations.route)
                     }
                 )
             }
@@ -398,25 +418,8 @@ fun AppNavigation() {
         }
     }
 
-        // Pływający FAB asystenta AI — widoczny tylko gdy włączony w Profilu
-        // i NIE jesteśmy już na ekranie AI. Pozycja: prawy górny róg, pod
-        // paskiem statusu systemu (statusBarsPadding bo activity = edgeToEdge).
-        // Małe (40dp) żeby mieściło się w obszarze TopAppBar bez zasłaniania.
-        if (showOverlay) {
-            AiOverlayFab(
-                onClick = {
-                    if (overlayState.connected) {
-                        aiChoiceVisible = true
-                    } else {
-                        navController.navigate(Screen.AiSettings.route)
-                    }
-                },
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .statusBarsPadding()
-                    .padding(top = 6.dp, end = 8.dp)
-            )
-        }
+        // FAB AI overlay usunięty w v0.55.1 — jedyny przycisk AI to ten
+        // w globalnym AppTopBar (tylko na 5 zakładkach).
 
         if (aiChoiceVisible) {
             pl.filebit.gymtracker.ui.ai.AiChoiceDialog(
@@ -437,6 +440,72 @@ fun AppNavigation() {
             pl.filebit.gymtracker.ui.ai.AiQuickAskSheet(
                 screenLabel = currentRoute.screenLabel(),
                 onDismiss = { aiQuickAskVisible = false }
+            )
+        }
+    }
+}
+
+/**
+ * Globalny TopBar — widoczny na 5 zakładkach (Home/Historia/Plany/Ćwiczenia/Profil).
+ * Logo "● GymTracker" po lewej, dzwonek + AI button po prawej.
+ */
+@Composable
+private fun AppTopBar(onOpenAiAssistant: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(DarkBg)
+            .statusBarsPadding()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Logo "● GymTracker"
+        Box(
+            modifier = Modifier
+                .size(8.dp)
+                .background(AccentOrange, RoundedCornerShape(2.dp))
+        )
+        Spacer(Modifier.width(10.dp))
+        Text(
+            "GymTracker",
+            style = MaterialTheme.typography.titleMedium.copy(
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = 18.sp,
+                letterSpacing = (-0.2).sp
+            ),
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.weight(1f))
+        // Dzwonek (placeholder bez akcji)
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .clickable { /* TODO: notyfikacje */ },
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.Notifications,
+                contentDescription = "Powiadomienia",
+                tint = DarkOnSurfaceVariant,
+                modifier = Modifier.size(22.dp)
+            )
+        }
+        Spacer(Modifier.width(4.dp))
+        // AI button — żółte kółko
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(AccentOrange)
+                .clickable(onClick = onOpenAiAssistant),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.AutoAwesome,
+                contentDescription = "Asystent AI",
+                tint = Color.Black,
+                modifier = Modifier.size(20.dp)
             )
         }
     }

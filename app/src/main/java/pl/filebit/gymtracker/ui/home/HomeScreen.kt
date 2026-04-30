@@ -72,7 +72,6 @@ fun HomeScreen(
     onOpenStats: () -> Unit = {},
     onOpenAchievements: () -> Unit = {},
     onOpenHistory: () -> Unit = {},
-    onOpenAiAssistant: () -> Unit = {},
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -81,14 +80,10 @@ fun HomeScreen(
     // Tylko statusBarsPadding na góra żeby content nie chował się pod statusbar.
     LazyColumn(
         modifier = Modifier
-            .fillMaxSize()
-            .statusBarsPadding(),
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
+            .fillMaxSize(),
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-            item {
-                AppTopBar(onOpenAiAssistant = onOpenAiAssistant)
-            }
             item {
                 GreetingHeader(
                     displayName = state.displayName,
@@ -207,67 +202,6 @@ fun HomeScreen(
                     RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
                 }
             }
-    }
-}
-
-@Composable
-private fun AppTopBar(onOpenAiAssistant: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 4.dp, bottom = 4.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        // Logo "● GymTracker" — żółta kropka + tekst
-        Box(
-            modifier = Modifier
-                .size(8.dp)
-                .background(AccentOrange, RoundedCornerShape(2.dp))
-        )
-        Spacer(Modifier.width(10.dp))
-        Text(
-            "GymTracker",
-            style = MaterialTheme.typography.titleMedium.copy(
-                fontWeight = FontWeight.ExtraBold,
-                fontSize = 18.sp,
-                letterSpacing = (-0.2).sp
-            ),
-            color = DarkOnSurface
-        )
-        Spacer(Modifier.weight(1f))
-        // Dzwonek — placeholder (na razie bez akcji)
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .background(Color.Transparent)
-                .clickable { /* TODO: notyfikacje */ },
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                Icons.Default.Notifications,
-                contentDescription = "Powiadomienia",
-                tint = DarkOnSurfaceVariant,
-                modifier = Modifier.size(22.dp)
-            )
-        }
-        Spacer(Modifier.width(4.dp))
-        // AI button — żółte kółko
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .background(AccentOrange)
-                .clickable(onClick = onOpenAiAssistant),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                Icons.Default.AutoAwesome,
-                contentDescription = "Asystent AI",
-                tint = Color.Black,
-                modifier = Modifier.size(20.dp)
-            )
-        }
     }
 }
 
@@ -483,12 +417,13 @@ private fun NoPlanHeroCard(onPickPlan: () -> Unit) {
     Card(
         onClick = onPickPlan,
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
         border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.30f)),
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
             modifier = Modifier
+                .fillMaxWidth()
                 .background(
                     Brush.linearGradient(
                         0f to AccentOrange.copy(alpha = 0.12f),
