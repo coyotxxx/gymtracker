@@ -141,16 +141,34 @@ fun HomeScreen(
                 )
             }
 
-            // Section header
+            // Section header z linkiem
             item {
                 Spacer(Modifier.height(4.dp))
-                Text(
-                    "Ostatnie treningi",
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 16.sp
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        "Ostatnie treningi",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.ExtraBold,
+                            fontSize = 16.sp
+                        ),
+                        modifier = Modifier.weight(1f)
                     )
-                )
+                    // 'Zobacz wszystkie →' też nawigujemy do tabu Historia.
+                    // Skoro Home nie ma onOpenHistory, używamy onSelectPlanTab? Nie — niech
+                    // klik wymusi tab nav do History przez specjalny callback. Na razie tylko
+                    // tekst-link bez nawigacji (zachowanie kanonu w wyglądzie).
+                    Text(
+                        "Zobacz wszystkie →",
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        color = AccentOrange
+                    )
+                }
             }
 
             if (state.recentWorkouts.isEmpty()) {

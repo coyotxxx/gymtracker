@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import pl.filebit.gymtracker.data.entity.Workout
+import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
@@ -15,23 +17,31 @@ data class HistoryItem(
     val workout: Workout,
     val totalSets: Int,
     val totalVolumeKg: Double,
-    val exerciseCount: Int
+    val exerciseCount: Int,
+    val planName: String? = null,
+    val hasPR: Boolean = false
 )
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
-    private val repo: WorkoutRepository
+    private val repo: WorkoutRepository,
+    private val planRepo: PlanRepository,
+    private val statsRepo: StatsRepository
 ) : ViewModel() {
 
     val workouts: StateFlow<List<HistoryItem>> = repo.observeAll()
         .map { list ->
             list.filter { !it.isActive }.map { w ->
                 val sets = repo.getSetsForWorkout(w.id)
+                val planName = w.fromPlanId?.let { planRepo.getPlan(it)?.name }
+                val prs = runCatching { statsRepo.detectNewPRs(w.id) }.getOrDefault(emptyList())
                 HistoryItem(
                     workout = w,
                     totalSets = sets.size,
                     totalVolumeKg = sets.sumOf { it.reps * it.weightKg },
-                    exerciseCount = sets.map { it.exerciseId }.distinct().size
+                    exerciseCount = sets.map { it.exerciseId }.distinct().size,
+                    planName = planName,
+                    hasPR = prs.isNotEmpty()
                 )
             }
         }

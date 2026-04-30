@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -49,7 +51,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.datetime.Clock
@@ -72,66 +77,57 @@ fun PlanListScreen(
     var newMenuOpen by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf<Long?>(null) }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.nav_plans)) },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background
-                )
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding()
+    ) {
+        // Top bar
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                stringResource(R.string.nav_plans),
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 22.sp
+                ),
+                modifier = Modifier.weight(1f)
             )
-        },
-        floatingActionButton = {
-            Box {
-                FloatingActionButton(onClick = { newMenuOpen = true }) {
-                    Icon(Icons.Default.Add, contentDescription = null)
-                }
-                DropdownMenu(
-                    expanded = newMenuOpen,
-                    onDismissRequest = { newMenuOpen = false }
-                ) {
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.plans_new_empty)) },
-                        leadingIcon = { Icon(Icons.Default.Add, contentDescription = null) },
-                        onClick = {
-                            newMenuOpen = false
-                            onCreateNewPlan()
-                        }
-                    )
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.plans_new_from_template)) },
-                        leadingIcon = { Icon(Icons.Default.ContentCopy, contentDescription = null) },
-                        onClick = {
-                            newMenuOpen = false
-                            onOpenTemplates()
-                        }
-                    )
-                }
-            }
         }
-    ) { padding ->
-        if (plans.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    stringResource(R.string.plans_empty),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+
+        LazyColumn(
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.fillMaxSize()
+        ) {
+            // Wielki przycisk szablonów na górze
+            item {
+                TemplatesBigButton(
+                    count = pl.filebit.gymtracker.data.template.PlanTemplates.all.size,
+                    onClick = onOpenTemplates
                 )
             }
-        } else {
-            LazyColumn(
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-            ) {
+
+            if (plans.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 32.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            stringResource(R.string.plans_empty),
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            } else {
                 items(plans, key = { it.plan.id }) { item ->
                     PlanCard(
                         item = item,
@@ -141,6 +137,11 @@ fun PlanListScreen(
                         onDelete = { showDeleteDialog = item.plan.id }
                     )
                 }
+            }
+
+            // Dashed 'Nowy pusty plan' na dole listy
+            item {
+                NewEmptyPlanCard(onClick = onCreateNewPlan)
             }
         }
     }
@@ -195,35 +196,34 @@ private fun PlanCard(
         ),
         shape = RoundedCornerShape(20.dp)
     ) {
-        Box(modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
+            // Górny rząd: tytuł + chip AI + 3 kropki
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable(onClick = onEdit),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        item.plan.name.ifBlank { "(plan bez nazwy)" },
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        formatDays(item.daysWithExercises),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
                 Text(
-                    stringResource(R.string.plan_exercise_count, item.exerciseCount),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(end = if (item.plan.createdByAi) 8.dp else 0.dp)
+                    item.plan.name.ifBlank { "(plan bez nazwy)" },
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 17.sp
+                    ),
+                    modifier = Modifier.weight(1f, fill = false)
                 )
+                if (item.plan.createdByAi) {
+                    Spacer(Modifier.width(8.dp))
+                    AiBadge()
+                }
+                Spacer(Modifier.weight(1f))
                 Box {
                     IconButton(onClick = { menuOpen = true }) {
-                        Icon(Icons.Default.MoreVert, contentDescription = null)
+                        Icon(
+                            Icons.Default.MoreVert,
+                            contentDescription = null,
+                            tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                        )
                     }
                     DropdownMenu(
                         expanded = menuOpen,
@@ -242,34 +242,180 @@ private fun PlanCard(
                     }
                 }
             }
-            Spacer(Modifier.height(12.dp))
-            Button(
-                onClick = onStart,
-                enabled = item.exerciseCount > 0,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp),
-                shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                )
-            ) {
-                Icon(Icons.Default.PlayArrow, contentDescription = null)
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.plan_start_button))
-            }
-        }
-        if (item.plan.createdByAi) {
-            AiBadge(
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .padding(top = 8.dp, end = 48.dp)
+            // Subtitle: częstotliwość + dni
+            Text(
+                buildString {
+                    val daysCount = item.daysWithExercises.size
+                    if (daysCount > 0) {
+                        append("${daysCount}×/tydz · ")
+                    }
+                    append(formatDays(item.daysWithExercises))
+                },
+                style = MaterialTheme.typography.bodyMedium,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
-        }
+            Spacer(Modifier.height(14.dp))
+            // Dolny rząd: liczba ćwiczeń (mono) + Start CTA
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        "${item.exerciseCount}",
+                        style = MaterialTheme.typography.headlineSmall.copy(
+                            fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontSize = 24.sp
+                        )
+                    )
+                    Text(
+                        "ĆWICZEŃ ŁĄCZNIE",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.2.sp
+                        ),
+                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                    )
+                }
+                Card(
+                    onClick = onStart,
+                    enabled = item.exerciseCount > 0,
+                    colors = CardDefaults.cardColors(
+                        containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                        disabledContainerColor = pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 18.dp, vertical = 10.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            Icons.Default.PlayArrow,
+                            contentDescription = null,
+                            tint = if (item.exerciseCount > 0)
+                                androidx.compose.ui.graphics.Color.Black
+                            else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                        )
+                        Spacer(Modifier.width(6.dp))
+                        Text(
+                            "Start",
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                fontWeight = FontWeight.ExtraBold,
+                                fontSize = 15.sp
+                            ),
+                            color = if (item.exerciseCount > 0)
+                                androidx.compose.ui.graphics.Color.Black
+                            else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                        )
+                    }
+                }
+            }
         }
     }
 }
+
+@Composable
+private fun TemplatesBigButton(count: Int, onClick: () -> Unit) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 4.dp),
+        colors = CardDefaults.cardColors(containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutline
+        ),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                Icons.Default.ContentCopy,
+                contentDescription = null,
+                tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                modifier = Modifier.size(18.dp)
+            )
+            Spacer(Modifier.width(10.dp))
+            Text(
+                "Wybierz z gotowych szablonów ($count)",
+                style = MaterialTheme.typography.titleSmall.copy(
+                    fontWeight = FontWeight.SemiBold
+                )
+            )
+        }
+    }
+}
+
+@Composable
+private fun NewEmptyPlanCard(onClick: () -> Unit) {
+    // Dashed outline na 'Nowy pusty plan' — wizualne odróżnienie od listy
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 4.dp)
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        // Dashed border przez Modifier.drawBehind z PathEffect
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(14.dp))
+                .background(androidx.compose.ui.graphics.Color.Transparent)
+                .drawDashedBorder(
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceDim,
+                    cornerRadius = 14.dp,
+                    strokeWidth = 1.dp
+                )
+                .padding(vertical = 16.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.Add,
+                    contentDescription = null,
+                    tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "Nowy pusty plan",
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+private fun Modifier.drawDashedBorder(
+    color: androidx.compose.ui.graphics.Color,
+    cornerRadius: androidx.compose.ui.unit.Dp,
+    strokeWidth: androidx.compose.ui.unit.Dp
+): Modifier = this.then(
+    Modifier.drawBehind {
+        val stroke = androidx.compose.ui.graphics.drawscope.Stroke(
+            width = strokeWidth.toPx(),
+            pathEffect = androidx.compose.ui.graphics.PathEffect.dashPathEffect(
+                floatArrayOf(8f, 6f), 0f
+            )
+        )
+        drawRoundRect(
+            color = color,
+            cornerRadius = androidx.compose.ui.geometry.CornerRadius(
+                cornerRadius.toPx(), cornerRadius.toPx()
+            ),
+            style = stroke
+        )
+    }
+)
 
 @Composable
 private fun DayPickerDialog(

@@ -1,5 +1,9 @@
 package pl.filebit.gymtracker.ui.history
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,78 +14,235 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import pl.filebit.gymtracker.R
-import pl.filebit.gymtracker.util.formatDate
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutline
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
-@OptIn(ExperimentalMaterial3Api::class)
+private enum class HistoryFilter(val labelPl: String) {
+    ALL("Wszystkie"),
+    FROM_PLAN("Z planu"),
+    ADHOC("Ad-hoc"),
+    WITH_PR("Z PR"),
+    LAST_30_DAYS("Ostatnie 30 dni")
+}
+
 @Composable
 fun HistoryScreen(
     onOpenWorkout: (Long) -> Unit,
     vm: HistoryViewModel = hiltViewModel()
 ) {
     val workouts by vm.workouts.collectAsStateWithLifecycle()
+    var query by remember { mutableStateOf("") }
+    var filter by remember { mutableStateOf(HistoryFilter.ALL) }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.nav_history)) },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background
-                )
+    val filtered = remember(workouts, query, filter) {
+        val now = System.currentTimeMillis()
+        val thirtyDaysAgo = now - 30L * 24L * 60L * 60L * 1000L
+        workouts.filter { item ->
+            val matchesQuery = if (query.isBlank()) true else {
+                // proste wyszukiwanie po nazwie planu lub notatce
+                (item.planName?.contains(query, ignoreCase = true) == true) ||
+                    item.workout.notes.contains(query, ignoreCase = true)
+            }
+            val matchesFilter = when (filter) {
+                HistoryFilter.ALL -> true
+                HistoryFilter.FROM_PLAN -> item.workout.fromPlanId != null
+                HistoryFilter.ADHOC -> item.workout.fromPlanId == null
+                HistoryFilter.WITH_PR -> item.hasPR
+                HistoryFilter.LAST_30_DAYS -> item.workout.startedAt >= thirtyDaysAgo
+            }
+            matchesQuery && matchesFilter
+        }
+    }
+
+    val grouped = remember(filtered) {
+        // Grupuj po miesiącu, zachowując kolejność DESC
+        val fmt = SimpleDateFormat("LLLL yyyy", Locale("pl", "PL"))
+        val map = linkedMapOf<String, MutableList<HistoryItem>>()
+        filtered.forEach { item ->
+            val key = fmt.format(Date(item.workout.startedAt))
+                .replaceFirstChar { it.titlecase(Locale("pl", "PL")) }
+            map.getOrPut(key) { mutableListOf() }.add(item)
+        }
+        map
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding()
+    ) {
+        // Top bar
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "Historia",
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 22.sp
+                ),
+                modifier = Modifier.weight(1f)
             )
         }
-    ) { padding ->
-        if (workouts.isEmpty()) {
+
+        // Search bar
+        OutlinedTextField(
+            value = query,
+            onValueChange = { query = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            placeholder = {
+                Text(
+                    "Szukaj po planie, ćwiczeniu…",
+                    color = DarkOnSurfaceVariant
+                )
+            },
+            leadingIcon = {
+                Icon(Icons.Default.Search, contentDescription = null, tint = DarkOnSurfaceVariant)
+            },
+            singleLine = true,
+            shape = RoundedCornerShape(12.dp),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = DarkSurface,
+                unfocusedContainerColor = DarkSurface,
+                focusedBorderColor = AccentOrange,
+                unfocusedBorderColor = DarkOutline,
+                cursorColor = AccentOrange
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search)
+        )
+
+        Spacer(Modifier.height(12.dp))
+
+        // Chip-y filtrów
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(HistoryFilter.entries.size) { idx ->
+                val f = HistoryFilter.entries[idx]
+                FilterPillChip(
+                    text = f.labelPl,
+                    selected = filter == f,
+                    onClick = { filter = f }
+                )
+            }
+        }
+
+        Spacer(Modifier.height(12.dp))
+
+        if (filtered.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding)
                     .padding(32.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    stringResource(R.string.history_empty),
+                    if (workouts.isEmpty()) "Brak treningów w historii"
+                    else "Brak wyników dla wybranych filtrów",
                     style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = DarkOnSurfaceVariant
                 )
             }
         } else {
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                contentPadding = PaddingValues(16.dp),
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(workouts, key = { it.workout.id }) { item ->
-                    HistoryRow(item = item, onClick = { onOpenWorkout(item.workout.id) })
+                grouped.forEach { (month, items) ->
+                    item(key = "header_$month") {
+                        Spacer(Modifier.height(8.dp))
+                        Text(
+                            month.uppercase(),
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 1.4.sp
+                            ),
+                            color = DarkOnSurfaceVariant,
+                            modifier = Modifier.padding(start = 4.dp, top = 4.dp, bottom = 4.dp)
+                        )
+                    }
+                    items.forEach { item ->
+                        item(key = item.workout.id) {
+                            HistoryRow(item = item, onClick = { onOpenWorkout(item.workout.id) })
+                        }
+                    }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun FilterPillChip(text: String, selected: Boolean, onClick: () -> Unit) {
+    val bg = if (selected) AccentOrange.copy(alpha = 0.12f) else DarkSurfaceVariant
+    val fg = if (selected) AccentOrange else DarkOnSurfaceVariant
+    val borderColor = if (selected) AccentOrange.copy(alpha = 0.50f) else Color.Transparent
+    Box(
+        modifier = Modifier
+            .background(bg, RoundedCornerShape(50))
+            .border(1.dp, borderColor, RoundedCornerShape(50))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 6.dp)
+    ) {
+        Text(
+            text.uppercase(),
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.7.sp
+            ),
+            color = fg
+        )
     }
 }
 
@@ -90,20 +251,32 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
-        ),
-        border = androidx.compose.foundation.BorderStroke(
-            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
-        ),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
         shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                formatDate(item.workout.startedAt),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.ExtraBold
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                val dateFmt = remember {
+                    SimpleDateFormat("EEEE · d MMM", Locale("pl", "PL"))
+                }
+                val raw = dateFmt.format(Date(item.workout.startedAt))
+                val nice = raw.replaceFirstChar { it.titlecase(Locale("pl", "PL")) }
+                Text(
+                    nice,
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold
+                    ),
+                    modifier = Modifier.weight(1f)
+                )
+                if (item.hasPR) {
+                    PrBadge()
+                }
+            }
             Spacer(Modifier.height(10.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -119,9 +292,31 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
 }
 
 @Composable
+private fun PrBadge() {
+    Box(
+        modifier = Modifier
+            .border(1.dp, AccentOrange.copy(alpha = 0.50f), RoundedCornerShape(50))
+            .background(AccentOrange.copy(alpha = 0.12f), RoundedCornerShape(50))
+            .padding(horizontal = 8.dp, vertical = 3.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("🏆", style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp))
+            Spacer(Modifier.size(4.dp))
+            Text(
+                "PR",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.5.sp
+                ),
+                color = AccentOrange
+            )
+        }
+    }
+}
+
+@Composable
 private fun StatChip(label: String, value: String) {
-    // Z propozycji: wartości BIAŁE mono ExtraBold, etykieta UPPERCASE szara pod nimi.
-    // 'kg' jako mały szary suffix gdy wartość zawiera 'kg'.
     val mainText = value.removeSuffix("kg").trim()
     val hasKg = value != mainText
     Column(horizontalAlignment = Alignment.Start) {
@@ -129,11 +324,11 @@ private fun StatChip(label: String, value: String) {
             Text(
                 mainText,
                 style = MaterialTheme.typography.titleMedium.copy(
-                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                    fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 18.sp
                 ),
-                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                color = DarkOnSurface
             )
             if (hasKg) {
                 Spacer(Modifier.width(2.dp))
@@ -143,7 +338,7 @@ private fun StatChip(label: String, value: String) {
                         fontSize = 11.sp,
                         fontWeight = FontWeight.SemiBold
                     ),
-                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                    color = DarkOnSurfaceVariant,
                     modifier = Modifier.padding(bottom = 2.dp)
                 )
             }
@@ -156,7 +351,7 @@ private fun StatChip(label: String, value: String) {
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 1.2.sp
             ),
-            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            color = DarkOnSurfaceVariant
         )
     }
 }
