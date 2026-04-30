@@ -21,6 +21,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -94,6 +97,8 @@ fun AppNavigation() {
 
     val overlayVm: AiOverlayViewModel = hiltViewModel()
     val overlayState by overlayVm.state.collectAsStateWithLifecycle()
+    var aiChoiceVisible by remember { mutableStateOf(false) }
+    var aiQuickAskVisible by remember { mutableStateOf(false) }
     val hideOverlayRoutes = setOf(
         Screen.AiTrainer.route,
         Screen.AiSettings.route,
@@ -387,14 +392,38 @@ fun AppNavigation() {
         if (showOverlay) {
             AiOverlayFab(
                 onClick = {
-                    val target = if (overlayState.connected) Screen.AiConversations.route
-                                 else Screen.AiSettings.route
-                    navController.navigate(target)
+                    if (overlayState.connected) {
+                        aiChoiceVisible = true
+                    } else {
+                        navController.navigate(Screen.AiSettings.route)
+                    }
                 },
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .statusBarsPadding()
                     .padding(top = 6.dp, end = 8.dp)
+            )
+        }
+
+        if (aiChoiceVisible) {
+            pl.filebit.gymtracker.ui.ai.AiChoiceDialog(
+                screenLabel = currentRoute.screenLabel(),
+                onDismiss = { aiChoiceVisible = false },
+                onOpenAssistant = {
+                    aiChoiceVisible = false
+                    navController.navigate(Screen.AiConversations.route)
+                },
+                onAskAboutScreen = {
+                    aiChoiceVisible = false
+                    aiQuickAskVisible = true
+                }
+            )
+        }
+
+        if (aiQuickAskVisible) {
+            pl.filebit.gymtracker.ui.ai.AiQuickAskSheet(
+                screenLabel = currentRoute.screenLabel(),
+                onDismiss = { aiQuickAskVisible = false }
             )
         }
     }
