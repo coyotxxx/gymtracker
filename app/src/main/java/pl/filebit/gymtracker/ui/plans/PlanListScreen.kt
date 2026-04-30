@@ -82,7 +82,6 @@ fun PlanListScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .statusBarsPadding()
     ) {
         // Top bar
         Row(

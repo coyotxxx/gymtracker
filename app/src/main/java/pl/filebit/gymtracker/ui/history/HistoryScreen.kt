@@ -111,7 +111,6 @@ fun HistoryScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .statusBarsPadding()
     ) {
         // Top bar
         Row(

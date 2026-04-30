@@ -66,7 +66,6 @@ fun ExerciseLibraryScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .statusBarsPadding()
     ) {
         // Top bar
         Row(
