@@ -44,6 +44,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
@@ -284,16 +285,43 @@ private fun dayLongLabel(day: Int): String? = when (day) {
 
 @Composable
 private fun StatBox(label: String, value: String) {
+    // Wartość mono ExtraBold biała, etykieta UPPERCASE szara z trackingiem
+    val mainText = value.removeSuffix("kg").trim()
+    val hasKg = value != mainText
     Column(horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
+        androidx.compose.foundation.layout.Row(
+            verticalAlignment = androidx.compose.ui.Alignment.Bottom
+        ) {
+            Text(
+                mainText,
+                style = MaterialTheme.typography.titleLarge.copy(
+                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 18.sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+            )
+            if (hasKg) {
+                Text(
+                    "kg",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                    modifier = Modifier.padding(start = 2.dp, bottom = 2.dp)
+                )
+            }
+        }
+        Spacer(Modifier.height(2.dp))
         Text(
-            value,
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            label,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            label.uppercase(),
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.2.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
         )
     }
 }

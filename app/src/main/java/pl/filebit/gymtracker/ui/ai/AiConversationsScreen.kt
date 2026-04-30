@@ -190,11 +190,16 @@ private fun ConversationRow(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(12.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(14.dp)
     ) {
         Row(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.padding(14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(modifier = Modifier.weight(1f)) {
@@ -202,8 +207,9 @@ private fun ConversationRow(
                     item.conversation.title.ifBlank {
                         stringResource(R.string.ai_conversation_default_title)
                     },
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.ExtraBold
+                    ),
                     maxLines = 2
                 )
                 Spacer(Modifier.height(4.dp))
@@ -212,7 +218,7 @@ private fun ConversationRow(
                         stringResource(R.string.ai_conversation_message_count, item.messageCount)
                     }",
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
                 )
             }
             Box {

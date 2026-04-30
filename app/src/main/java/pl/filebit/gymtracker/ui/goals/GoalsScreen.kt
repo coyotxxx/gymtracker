@@ -164,10 +164,16 @@ private fun GoalCard(gp: GoalProgress, onDelete: () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (gp.achieved) MaterialTheme.colorScheme.tertiaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (gp.achieved)
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
+            else pl.filebit.gymtracker.ui.theme.DarkSurface
         ),
-        shape = RoundedCornerShape(12.dp)
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            if (gp.achieved) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
+            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {

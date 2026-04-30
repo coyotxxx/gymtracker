@@ -50,6 +50,7 @@ import androidx.compose.ui.res.stringResource
 import android.widget.Toast
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
@@ -368,12 +369,17 @@ private fun MessageBubble(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
     ) {
+        // Bańki user: żółtawe; AI: ciemna z lekką obwódką (kanon)
         Card(
-            modifier = Modifier
-                .widthIn(max = 320.dp),
+            modifier = Modifier.widthIn(max = 320.dp),
             colors = CardDefaults.cardColors(
-                containerColor = if (isUser) MaterialTheme.colorScheme.primaryContainer
-                else MaterialTheme.colorScheme.surface
+                containerColor = if (isUser) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
+                else pl.filebit.gymtracker.ui.theme.DarkSurface
+            ),
+            border = androidx.compose.foundation.BorderStroke(
+                1.dp,
+                if (isUser) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
+                else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
             ),
             shape = RoundedCornerShape(
                 topStart = 16.dp, topEnd = 16.dp,
@@ -385,36 +391,53 @@ private fun MessageBubble(
                 SelectionContainer {
                     Text(
                         message.text,
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
                     )
                 }
                 message.proposal?.let { p ->
-                    Spacer(Modifier.height(8.dp))
+                    Spacer(Modifier.height(10.dp))
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.tertiaryContainer
+                            containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
                         ),
-                        shape = RoundedCornerShape(8.dp)
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp,
+                            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
+                        ),
+                        shape = RoundedCornerShape(10.dp)
                     ) {
                         Column(modifier = Modifier.padding(10.dp)) {
                             Text(
-                                "📋 ${p.name}",
-                                fontWeight = FontWeight.SemiBold,
-                                color = MaterialTheme.colorScheme.onTertiaryContainer
+                                "✨ PLAN",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    letterSpacing = 1.4.sp
+                                ),
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                            )
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                p.name,
+                                style = MaterialTheme.typography.titleSmall.copy(
+                                    fontWeight = FontWeight.ExtraBold
+                                ),
+                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
                             )
                             Text(
                                 "${p.days.size} dni · ${p.totalExercises} ćwiczeń",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onTertiaryContainer
+                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
                             )
                             if (message.applied) {
-                                Spacer(Modifier.height(4.dp))
+                                Spacer(Modifier.height(6.dp))
                                 Text(
                                     "✅ Plan zapisany w bibliotece",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.SemiBold,
-                                    color = MaterialTheme.colorScheme.onTertiaryContainer
+                                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
                                 )
                             }
                         }
