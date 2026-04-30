@@ -121,14 +121,9 @@ fun ProfileScreen(
         }
     }
 
-    Scaffold(
-        containerColor = DarkBg,
-        snackbarHost = { SnackbarHost(snackbar) }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
+            modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
@@ -432,6 +427,10 @@ fun ProfileScreen(
                 AppVersionFooter()
             }
         }
+        SnackbarHost(
+            hostState = snackbar,
+            modifier = Modifier.align(Alignment.BottomCenter)
+        )
     }
 
     if (showEditName) {

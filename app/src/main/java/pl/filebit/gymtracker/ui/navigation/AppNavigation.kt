@@ -118,8 +118,17 @@ fun AppNavigation() {
 
     var aiChoiceVisible by remember { mutableStateOf(false) }
     var aiQuickAskVisible by remember { mutableStateOf(false) }
-    // TopBar tylko na 5 zakładkach (NIE na ekranach workout, AI, czy detail)
-    val showTopBar = currentRoute in tabRoutes
+    // TopBar widoczny WSZĘDZIE poza ekranami workout (mają własny tytuł +
+    // skomplikowane akcje) i ekranami AI (Trener AI ma własny topBar z labelem
+    // "PLAN NA TYDZIEŃ" — duplikacja byłaby brzydka).
+    val hideTopBarRoutes = setOf(
+        Screen.ActiveWorkout.route,
+        Screen.CoachWorkout.route,
+        Screen.AiTrainer.route,
+        Screen.AiConversations.route,
+        Screen.AiSettings.route
+    )
+    val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
     val workoutShellVm: ActiveWorkoutShellViewModel = hiltViewModel()
     val workoutShellState by workoutShellVm.state.collectAsStateWithLifecycle()
@@ -130,9 +139,7 @@ fun AppNavigation() {
         topBar = {
             if (showTopBar) {
                 AppTopBar(
-                    onOpenAiAssistant = {
-                        navController.navigate(Screen.AiConversations.route)
-                    }
+                    onOpenAiAssistant = { aiChoiceVisible = true }
                 )
             }
         },
