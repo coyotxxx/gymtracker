@@ -14,6 +14,12 @@ import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
 import pl.filebit.gymtracker.data.db.dao.TrainingPlanDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
+import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.PlanExerciseSet
+import pl.filebit.gymtracker.data.entity.TrainingPlan
+import pl.filebit.gymtracker.data.entity.Workout
+import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.BodyRepository
 import pl.filebit.gymtracker.data.repository.ProgressPhotoRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
@@ -44,10 +50,25 @@ class AiContextBuilder @Inject constructor(
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
     private val pretty = Json { prettyPrint = true; encodeDefaults = true }
 
-    /**
-     * Buduje pełny kontekst usera jako JSON. recentWorkoutsLimit kontroluje ile
-     * ostatnich treningów dołączyć (default 30).
-     */
+    private data class PlanWithDays(
+        val plan: TrainingPlan,
+        val days: List<DayWithExercises>
+    )
+    private data class DayWithExercises(
+        val dayOfWeek: Int,
+        val exercises: List<ExerciseWithSets>
+    )
+    private data class ExerciseWithSets(
+        val planExercise: PlanExercise,
+        val exercise: Exercise?,
+        val sets: List<PlanExerciseSet>
+    )
+
+    private data class WorkoutWithExercises(
+        val workout: Workout,
+        val byExercise: List<Pair<Exercise?, List<WorkoutSet>>>
+    )
+
     suspend fun buildContextJson(recentWorkoutsLimit: Int = 30): String {
         val profile = profileRepo.get()
         val measurements = bodyRepo.getAllAsc().takeLast(15)
@@ -58,12 +79,36 @@ class AiContextBuilder @Inject constructor(
         val muscle = statsRepo.muscleEngagement(periodDays = 90)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
-
-        val plans = planDao.getAll()
         val allExercises = exerciseDao.getAll()
+
+        // Pre-collect plans
+        val plansData: List<PlanWithDays> = planDao.getAll().map { plan ->
+            val days = planExerciseDao.getDaysWithExercises(plan.id)
+            val daysData = days.map { day ->
+                val pes = planExerciseDao.getForPlanAndDay(plan.id, day)
+                val exercisesData = pes.map { pe ->
+                    ExerciseWithSets(
+                        planExercise = pe,
+                        exercise = exerciseDao.getById(pe.exerciseId),
+                        sets = planSetDao.getForPlanExercise(pe.id)
+                    )
+                }
+                DayWithExercises(day, exercisesData)
+            }
+            PlanWithDays(plan, daysData)
+        }
+
+        // Pre-collect recent workouts
         val recentWorkouts = workoutDao.observeAllOnce()
             .filter { it.finishedAt != null }
             .take(recentWorkoutsLimit)
+        val workoutsData: List<WorkoutWithExercises> = recentWorkouts.map { w ->
+            val sets = setDao.getForWorkout(w.id)
+            val byExercise = sets.groupBy { it.exerciseId }.map { (exId, list) ->
+                exerciseDao.getById(exId) to list
+            }
+            WorkoutWithExercises(w, byExercise)
+        }
 
         val obj = buildJsonObject {
             put("now", dfTime.format(Date()))
@@ -147,29 +192,27 @@ class AiContextBuilder @Inject constructor(
             }
 
             putJsonArray("plans") {
-                plans.forEach { plan ->
+                plansData.forEach { pwd ->
                     add(buildJsonObject {
-                        put("id", plan.id)
-                        put("name", plan.name)
-                        put("daysOfWeek", buildJsonArray { plan.daysOfWeek.forEach { add(it) } })
-                        put("notes", plan.notes)
+                        put("id", pwd.plan.id)
+                        put("name", pwd.plan.name)
+                        put("daysOfWeek", buildJsonArray { pwd.plan.daysOfWeek.forEach { add(it) } })
+                        put("notes", pwd.plan.notes)
                         put("days", buildJsonArray {
-                            val days = planExerciseDao.getDaysWithExercises(plan.id)
-                            days.forEach { day ->
-                                val pes = planExerciseDao.getForPlanAndDay(plan.id, day)
+                            pwd.days.forEach { dwe ->
                                 add(buildJsonObject {
-                                    put("dayOfWeek", day)
+                                    put("dayOfWeek", dwe.dayOfWeek)
                                     put("exercises", buildJsonArray {
-                                        pes.forEach { pe ->
-                                            val ex = exerciseDao.getById(pe.exerciseId)
-                                            val sets = planSetDao.getForPlanExercise(pe.id)
+                                        dwe.exercises.forEach { ews ->
                                             add(buildJsonObject {
-                                                put("name", ex?.name ?: "?")
-                                                put("primaryMuscle", ex?.primaryMuscle?.name ?: "")
-                                                put("equipment", ex?.equipment?.name ?: "")
-                                                pe.supersetGroup?.let { put("supersetGroup", it) }
+                                                put("name", ews.exercise?.name ?: "?")
+                                                put("primaryMuscle", ews.exercise?.primaryMuscle?.name ?: "")
+                                                put("equipment", ews.exercise?.equipment?.name ?: "")
+                                                ews.planExercise.supersetGroup?.let {
+                                                    put("supersetGroup", it)
+                                                }
                                                 put("sets", buildJsonArray {
-                                                    sets.forEach { s ->
+                                                    ews.sets.forEach { s ->
                                                         add(buildJsonObject {
                                                             put("setNumber", s.setNumber)
                                                             put("reps", s.reps)
@@ -189,19 +232,18 @@ class AiContextBuilder @Inject constructor(
             }
 
             putJsonArray("recent_workouts") {
-                recentWorkouts.forEach { w ->
-                    val sets = setDao.getForWorkout(w.id)
-                    val byExercise = sets.groupBy { it.exerciseId }
+                workoutsData.forEach { wwe ->
                     add(buildJsonObject {
-                        put("id", w.id)
-                        put("startedAt", dfTime.format(Date(w.startedAt)))
-                        w.finishedAt?.let { put("finishedAt", dfTime.format(Date(it))) }
-                        put("durationMin",
-                            ((w.finishedAt ?: w.startedAt) - w.startedAt) / 60_000)
-                        if (w.notes.isNotBlank()) put("notes", w.notes)
+                        put("id", wwe.workout.id)
+                        put("startedAt", dfTime.format(Date(wwe.workout.startedAt)))
+                        wwe.workout.finishedAt?.let { put("finishedAt", dfTime.format(Date(it))) }
+                        put(
+                            "durationMin",
+                            ((wwe.workout.finishedAt ?: wwe.workout.startedAt) - wwe.workout.startedAt) / 60_000
+                        )
+                        if (wwe.workout.notes.isNotBlank()) put("notes", wwe.workout.notes)
                         put("exercises", buildJsonArray {
-                            byExercise.forEach { (exId, list) ->
-                                val ex = exerciseDao.getById(exId)
+                            wwe.byExercise.forEach { (ex, list) ->
                                 add(buildJsonObject {
                                     put("name", ex?.name ?: "?")
                                     put("sets", buildJsonArray {
@@ -247,14 +289,5 @@ class AiContextBuilder @Inject constructor(
         }
 
         return pretty.encodeToString(kotlinx.serialization.json.JsonObject.serializer(), obj)
-    }
-
-    /**
-     * Krótki kontekst dla quick actions — bez listy 200 ćwiczeń (LLM może o nią poprosić jeśli potrzeba).
-     */
-    suspend fun buildShortContextJson(recentWorkoutsLimit: Int = 10): String {
-        val full = buildContextJson(recentWorkoutsLimit)
-        // skróć — usuń available_exercises blok
-        return full
     }
 }
