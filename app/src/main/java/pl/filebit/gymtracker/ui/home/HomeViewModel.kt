@@ -21,7 +21,9 @@ import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
 data class HomeUiState(
+    val displayName: String = "",
     val activeWorkout: Workout? = null,
+    val activePlanName: String = "",
     val todaysPlan: TrainingPlan? = null,
     val todaysPlanExerciseCount: Int = 0,
     val recentWorkouts: List<RecentWorkoutItem> = emptyList(),
@@ -48,7 +50,7 @@ class HomeViewModel @Inject constructor(
 
     val state: StateFlow<HomeUiState> = combine(
         workoutRepo.observeActive(),
-        workoutRepo.observeRecent(10),
+        workoutRepo.observeRecent(4),
         planRepo.observeAllPlans()
     ) { active, recent, plans ->
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
@@ -74,11 +76,17 @@ class HomeViewModel @Inject constructor(
         }
         // Streak + week progress (best-effort, błędy ignorujemy)
         val streak = runCatching { statsRepo.streakInfo() }.getOrNull()
-        val weeklyTarget = runCatching { profileRepo.get().daysPerWeek.coerceAtLeast(1) }.getOrDefault(3)
+        val profile = runCatching { profileRepo.get() }.getOrNull()
+        val weeklyTarget = (profile?.daysPerWeek ?: 3).coerceAtLeast(1)
         val weekProgress = runCatching { statsRepo.weekProgress(weeklyTarget) }.getOrNull()
+        val activePlanName = active?.fromPlanId?.let { planId ->
+            plans.firstOrNull { it.id == planId }?.name.orEmpty()
+        }.orEmpty()
 
         HomeUiState(
+            displayName = profile?.displayName.orEmpty(),
             activeWorkout = active,
+            activePlanName = activePlanName,
             todaysPlan = todaysPlan,
             todaysPlanExerciseCount = todaysCount,
             recentWorkouts = items,

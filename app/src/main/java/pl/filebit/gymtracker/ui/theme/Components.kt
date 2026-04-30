@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -21,6 +22,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -253,6 +255,33 @@ fun HeroValueCard(
             MonoBigValue(value = value, suffix = suffix, valueSize = 56.sp, suffixSize = 18.sp)
         }
     }
+}
+
+/** Pulsująca kropka — używana w "TRENING W TOKU" / "wróć do treningu". */
+@Composable
+fun PulsingDot(
+    color: Color = AccentOrange,
+    size: androidx.compose.ui.unit.Dp = 8.dp,
+    modifier: Modifier = Modifier
+) {
+    val transition = androidx.compose.animation.core.rememberInfiniteTransition(label = "pulse")
+    val alpha by transition.animateFloat(
+        initialValue = 0.35f,
+        targetValue = 1f,
+        animationSpec = androidx.compose.animation.core.infiniteRepeatable(
+            animation = androidx.compose.animation.core.tween(
+                durationMillis = 900,
+                easing = androidx.compose.animation.core.LinearEasing
+            ),
+            repeatMode = androidx.compose.animation.core.RepeatMode.Reverse
+        ),
+        label = "pulseAlpha"
+    )
+    Box(
+        modifier = modifier
+            .size(size)
+            .background(color.copy(alpha = alpha), RoundedCornerShape(50))
+    )
 }
 
 /** Sekcja z nagłówkiem ('h2' w stylu) + opcjonalny link 'więcej →' po prawej. */

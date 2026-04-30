@@ -120,6 +120,23 @@ fun ProfileScreen(
                 ProfileHeaderCard(profile = draft)
             }
             item {
+                SectionCard(title = "Imię") {
+                    OutlinedTextField(
+                        value = draft.displayName,
+                        onValueChange = { draft = draft.copy(displayName = it.take(30)) },
+                        placeholder = { Text("np. Maciej") },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        "Pokaże się na ekranie głównym jako \"Cześć, Imię\". Zostaw puste żeby wyłączyć.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+            item {
                 SectionCard(title = stringResource(R.string.profile_goal)) {
                     Text(
                         stringResource(R.string.profile_goal_explain),

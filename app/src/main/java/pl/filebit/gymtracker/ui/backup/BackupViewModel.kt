@@ -77,7 +77,8 @@ data class ProfileDto(
     val gender: String = "MALE",
     val bodyweightKg: Double? = null,
     val flashOnTimerEnd: Boolean = false,
-    val aiOverlayEnabled: Boolean = false
+    val aiOverlayEnabled: Boolean = false,
+    val displayName: String = ""
 )
 
 @Serializable
@@ -244,7 +245,8 @@ class BackupViewModel @Inject constructor(
                         gender = profile.gender.name,
                         bodyweightKg = profile.bodyweightKg,
                         flashOnTimerEnd = profile.flashOnTimerEnd,
-                        aiOverlayEnabled = profile.aiOverlayEnabled
+                        aiOverlayEnabled = profile.aiOverlayEnabled,
+                        displayName = profile.displayName
                     ),
                     exercises = allExercises.map {
                         ExerciseDto(it.id, it.name, it.primaryMuscle.name, it.equipment.name,
@@ -390,7 +392,8 @@ class BackupViewModel @Inject constructor(
                                 .getOrDefault(pl.filebit.gymtracker.data.entity.Gender.MALE),
                             bodyweightKg = p.bodyweightKg,
                             flashOnTimerEnd = p.flashOnTimerEnd,
-                            aiOverlayEnabled = p.aiOverlayEnabled
+                            aiOverlayEnabled = p.aiOverlayEnabled,
+                            displayName = p.displayName
                         )
                     )
                 }

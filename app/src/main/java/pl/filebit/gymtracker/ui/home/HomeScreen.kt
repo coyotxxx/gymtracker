@@ -83,7 +83,13 @@ fun HomeScreen(
         contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-            item { GreetingHeader() }
+            item {
+                GreetingHeader(
+                    displayName = state.displayName,
+                    isActive = state.activeWorkout != null,
+                    activePlanName = state.activePlanName.ifBlank { "Aktywny trening" }
+                )
+            }
 
             // Hero card — Plan na dziś LUB Trening w toku LUB CTA "Wybierz plan"
             item {
@@ -199,7 +205,11 @@ fun HomeScreen(
 }
 
 @Composable
-private fun GreetingHeader() {
+private fun GreetingHeader(
+    displayName: String,
+    isActive: Boolean,
+    activePlanName: String
+) {
     val today = remember {
         SimpleDateFormat("EEEE · d MMM", Locale("pl", "PL")).format(Date())
             .replaceFirstChar { it.titlecase(Locale("pl", "PL")) }
@@ -215,21 +225,60 @@ private fun GreetingHeader() {
             color = DarkOnSurfaceVariant
         )
         Spacer(Modifier.height(4.dp))
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(
-                modifier = Modifier
-                    .size(8.dp)
-                    .background(AccentOrange, RoundedCornerShape(2.dp))
-            )
-            Spacer(Modifier.width(10.dp))
+        // "Cześć[, Maciej]" — imię w żółci
+        Row(verticalAlignment = Alignment.Bottom) {
             Text(
-                "GymTracker",
+                if (displayName.isBlank()) "Cześć" else "Cześć,",
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontSize = 26.sp,
                     fontWeight = FontWeight.ExtraBold,
                     letterSpacing = (-0.4).sp
-                )
+                ),
+                color = DarkOnSurface
             )
+            if (displayName.isNotBlank()) {
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    displayName,
+                    style = MaterialTheme.typography.headlineSmall.copy(
+                        fontSize = 26.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        letterSpacing = (-0.4).sp
+                    ),
+                    color = AccentOrange
+                )
+            }
+        }
+        if (isActive) {
+            Spacer(Modifier.height(8.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                pl.filebit.gymtracker.ui.theme.PulsingDot(size = 8.dp)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "TRENING W TOKU",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = AccentOrange
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "·",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    activePlanName,
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = DarkOnSurface,
+                    maxLines = 1
+                )
+            }
         }
     }
 }

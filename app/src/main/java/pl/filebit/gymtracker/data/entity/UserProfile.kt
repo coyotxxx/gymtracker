@@ -29,6 +29,7 @@ enum class WeightGoalType {
 @Entity(tableName = "user_profile")
 data class UserProfile(
     @PrimaryKey val id: Int = 1,                        // singleton row
+    val displayName: String = "",                       // imię użytkownika ("Cześć, X" w Home)
     val goal: TrainingGoal = TrainingGoal.HYPERTROPHY,
     val experience: ExperienceLevel = ExperienceLevel.INTERMEDIATE,
     val daysPerWeek: Int = 4,

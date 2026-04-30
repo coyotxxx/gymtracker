@@ -46,7 +46,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         AiChatMessageEntity::class,
         UnlockedAchievement::class
     ],
-    version = 21,
+    version = 22,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

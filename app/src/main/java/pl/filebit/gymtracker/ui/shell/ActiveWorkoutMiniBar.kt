@@ -67,12 +67,8 @@ fun ActiveWorkoutMiniBar(
                 .padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Pulsująca kropka
-            Box(
-                modifier = Modifier
-                    .size(8.dp)
-                    .background(AccentOrange, CircleShape)
-            )
+            // Pulsująca kropka — wspólny komponent z motywu
+            pl.filebit.gymtracker.ui.theme.PulsingDot(size = 8.dp)
             Spacer(Modifier.width(10.dp))
             // Ikona w kolorowym kwadracie
             Box(
