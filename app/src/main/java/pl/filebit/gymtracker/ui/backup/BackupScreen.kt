@@ -114,6 +114,12 @@ fun BackupScreen(
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
+                        "Import wczytuje backup z pliku .json (z opcji Eksport powyżej) i nadpisuje aktualne dane. Eksport CSV służy tylko do podglądu w Excelu — nie da się go zaimportować z powrotem.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Text(
                         "Import nadpisuje aktualne dane. Używaj ostrożnie.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.error
@@ -137,7 +143,19 @@ fun BackupScreen(
             }
 
             OutlinedButton(
-                onClick = { importLauncher.launch(arrayOf("application/json")) },
+                onClick = {
+                    // Niektóre menedżery plików raportują JSON jako octet-stream
+                    // lub text/plain — bez tych pozycji plik bywa zaszarzony.
+                    importLauncher.launch(
+                        arrayOf(
+                            "application/json",
+                            "application/octet-stream",
+                            "text/json",
+                            "text/plain",
+                            "*/*"
+                        )
+                    )
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
