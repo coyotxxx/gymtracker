@@ -24,6 +24,8 @@ class ProgressPhotosViewModel @Inject constructor(
 
     fun fileFor(photo: ProgressPhoto): File = repo.fileFor(photo)
 
+    fun prepareCameraUri(): Uri = repo.prepareCameraCaptureUri()
+
     fun importPhoto(uri: Uri, type: PhotoType, notes: String = "") {
         viewModelScope.launch {
             runCatching { repo.importPhoto(uri, type, notes = notes) }

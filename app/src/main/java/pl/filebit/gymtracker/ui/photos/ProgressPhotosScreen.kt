@@ -26,7 +26,11 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
@@ -69,6 +73,8 @@ fun ProgressPhotosScreen(
     var pickedUri by remember { mutableStateOf<Uri?>(null) }
     var fullscreenPhoto by remember { mutableStateOf<ProgressPhoto?>(null) }
     var pendingDelete by remember { mutableStateOf<ProgressPhoto?>(null) }
+    var sourceMenuOpen by remember { mutableStateOf(false) }
+    var pendingCameraUri by remember { mutableStateOf<Uri?>(null) }
 
     val pickerLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.PickVisualMedia()
@@ -77,6 +83,46 @@ fun ProgressPhotosScreen(
             pickedUri = uri
             showAddDialog = true
         }
+    }
+
+    val cameraLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { success ->
+        if (success && pendingCameraUri != null) {
+            pickedUri = pendingCameraUri
+            showAddDialog = true
+        }
+        pendingCameraUri = null
+    }
+
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            val uri = vm.prepareCameraUri()
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        }
+    }
+
+    val context = androidx.compose.ui.platform.LocalContext.current
+    fun launchCamera() {
+        val granted = androidx.core.content.ContextCompat.checkSelfPermission(
+            context, android.Manifest.permission.CAMERA
+        ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+        if (granted) {
+            val uri = vm.prepareCameraUri()
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        } else {
+            cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
+        }
+    }
+
+    fun launchGallery() {
+        pickerLauncher.launch(
+            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+        )
     }
 
     Scaffold(
@@ -91,12 +137,31 @@ fun ProgressPhotosScreen(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = {
-                pickerLauncher.launch(
-                    PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
-                )
-            }) {
-                Icon(Icons.Default.Add, contentDescription = null)
+            Box {
+                FloatingActionButton(onClick = { sourceMenuOpen = true }) {
+                    Icon(Icons.Default.Add, contentDescription = null)
+                }
+                DropdownMenu(
+                    expanded = sourceMenuOpen,
+                    onDismissRequest = { sourceMenuOpen = false }
+                ) {
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.photos_source_camera)) },
+                        leadingIcon = { Icon(Icons.Default.PhotoCamera, contentDescription = null) },
+                        onClick = {
+                            sourceMenuOpen = false
+                            launchCamera()
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.photos_source_gallery)) },
+                        leadingIcon = { Icon(Icons.Default.PhotoLibrary, contentDescription = null) },
+                        onClick = {
+                            sourceMenuOpen = false
+                            launchGallery()
+                        }
+                    )
+                }
             }
         }
     ) { padding ->

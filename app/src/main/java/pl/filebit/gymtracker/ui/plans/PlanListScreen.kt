@@ -190,6 +190,7 @@ private fun PlanCard(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         shape = RoundedCornerShape(16.dp)
     ) {
+        Box(modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(
                 modifier = Modifier
@@ -198,18 +199,11 @@ private fun PlanCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            item.plan.name.ifBlank { "(plan bez nazwy)" },
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.weight(1f, fill = false)
-                        )
-                        if (item.plan.createdByAi) {
-                            Spacer(Modifier.width(6.dp))
-                            AiBadge()
-                        }
-                    }
+                    Text(
+                        item.plan.name.ifBlank { "(plan bez nazwy)" },
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold
+                    )
                     Text(
                         formatDays(item.daysWithExercises),
                         style = MaterialTheme.typography.bodyMedium,
@@ -219,7 +213,8 @@ private fun PlanCard(
                 Text(
                     stringResource(R.string.plan_exercise_count, item.exerciseCount),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(end = if (item.plan.createdByAi) 8.dp else 0.dp)
                 )
                 Box {
                     IconButton(onClick = { menuOpen = true }) {
@@ -259,6 +254,14 @@ private fun PlanCard(
                 Spacer(Modifier.width(8.dp))
                 Text(stringResource(R.string.plan_start_button))
             }
+        }
+        if (item.plan.createdByAi) {
+            AiBadge(
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(top = 8.dp, end = 48.dp)
+            )
+        }
         }
     }
 }
@@ -326,14 +329,14 @@ private fun formatDays(days: List<Int>): String {
 }
 
 @Composable
-private fun AiBadge() {
+private fun AiBadge(modifier: Modifier = Modifier) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .background(
                 color = MaterialTheme.colorScheme.tertiaryContainer,
                 shape = RoundedCornerShape(50)
             )
-            .padding(horizontal = 8.dp, vertical = 2.dp),
+            .padding(horizontal = 8.dp, vertical = 3.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(

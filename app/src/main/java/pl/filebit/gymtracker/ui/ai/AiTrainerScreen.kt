@@ -26,7 +26,6 @@ import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -167,11 +166,7 @@ fun AiTrainerScreen(
                 }
                 items(state.messages.size) { idx ->
                     val m = state.messages[idx]
-                    MessageBubble(
-                        message = m,
-                        isApplying = state.isApplying,
-                        onApplyPlan = { vm.applyProposal(m) }
-                    )
+                    MessageBubble(message = m)
                 }
                 if (state.isLoading) {
                     item {
@@ -366,9 +361,7 @@ private fun QuickActionChip(
 
 @Composable
 private fun MessageBubble(
-    message: ChatMessage,
-    isApplying: Boolean,
-    onApplyPlan: () -> Unit
+    message: ChatMessage
 ) {
     val isUser = message.role == AiRole.USER
     Row(
@@ -398,13 +391,7 @@ private fun MessageBubble(
                 message.proposal?.let { p ->
                     Spacer(Modifier.height(8.dp))
                     Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .then(
-                                if (!message.applied && !isApplying)
-                                    Modifier.clickable { onApplyPlan() }
-                                else Modifier
-                            ),
+                        modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.tertiaryContainer
                         ),
@@ -421,32 +408,14 @@ private fun MessageBubble(
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onTertiaryContainer
                             )
-                            Spacer(Modifier.height(8.dp))
                             if (message.applied) {
+                                Spacer(Modifier.height(4.dp))
                                 Text(
                                     "✅ Plan zapisany w bibliotece",
-                                    style = MaterialTheme.typography.bodyMedium,
+                                    style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.SemiBold,
                                     color = MaterialTheme.colorScheme.onTertiaryContainer
                                 )
-                            } else {
-                                Button(
-                                    onClick = onApplyPlan,
-                                    enabled = !isApplying,
-                                    modifier = Modifier.fillMaxWidth()
-                                ) {
-                                    if (isApplying) {
-                                        CircularProgressIndicator(
-                                            modifier = Modifier.height(18.dp),
-                                            strokeWidth = 2.dp,
-                                            color = MaterialTheme.colorScheme.onPrimary
-                                        )
-                                        Spacer(Modifier.height(0.dp))
-                                        Text("  ${stringResource(R.string.ai_applying_plan)}")
-                                    } else {
-                                        Text(stringResource(R.string.ai_apply_plan))
-                                    }
-                                }
                             }
                         }
                     }

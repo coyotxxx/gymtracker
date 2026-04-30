@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.data.repository
 
 import android.content.Context
 import android.net.Uri
+import androidx.core.content.FileProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -29,6 +30,21 @@ class ProgressPhotoRepository @Inject constructor(
     }
 
     fun fileFor(photo: ProgressPhoto): File = File(photosDir(), photo.filename)
+
+    /**
+     * Tworzy nowy plik w cache i zwraca content:// URI przez FileProvider.
+     * Używane jako output do ActivityResultContracts.TakePicture.
+     */
+    fun prepareCameraCaptureUri(): Uri {
+        val dir = File(context.cacheDir, "camera_captures").apply { mkdirs() }
+        val file = File(dir, "capture_${System.currentTimeMillis()}.jpg")
+        if (!file.exists()) file.createNewFile()
+        return FileProvider.getUriForFile(
+            context,
+            "${context.packageName}.fileprovider",
+            file
+        )
+    }
 
     /**
      * Kopiuje zdjęcie spod zewnętrznego Uri do app-private storage,
