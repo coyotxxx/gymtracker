@@ -54,7 +54,8 @@ class CoachWorkoutViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
     private val statsRepo: StatsRepository,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService
 ) : ViewModel() {
 
     private val _pendingPRs = MutableStateFlow<List<NewPrWithName>>(emptyList())
@@ -202,12 +203,22 @@ class CoachWorkoutViewModel @Inject constructor(
             val tips = statsRepo.progressionTipsForWorkout(id)
             val stagnation = statsRepo.detectStagnation(id)
             workoutRepo.finish(id)
+            // AI summary w tle — nie blokuje wyjścia z ekranu
+            generateAiSummaryInBackground(id)
             if (withNames.isNotEmpty() || tips.isNotEmpty() || stagnation.isNotEmpty()) {
                 _pendingPRs.value = withNames
                 _pendingTips.value = tips
                 _pendingStagnation.value = stagnation
             } else {
                 onDone()
+            }
+        }
+    }
+
+    private fun generateAiSummaryInBackground(workoutId: Long) {
+        viewModelScope.launch {
+            aiSummaryService.generate(workoutId).onSuccess { text ->
+                workoutRepo.setAiSummary(workoutId, text)
             }
         }
     }

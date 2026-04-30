@@ -43,7 +43,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         AiConversation::class,
         AiChatMessageEntity::class
     ],
-    version = 19,
+    version = 20,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

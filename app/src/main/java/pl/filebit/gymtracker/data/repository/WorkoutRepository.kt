@@ -60,6 +60,16 @@ class WorkoutRepository @Inject constructor(
 
     suspend fun deleteWorkout(id: Long) = workoutDao.deleteById(id)
 
+    suspend fun setAiSummary(workoutId: Long, summary: String) {
+        val w = workoutDao.getById(workoutId) ?: return
+        workoutDao.update(
+            w.copy(
+                aiSummary = summary,
+                aiSummaryGeneratedAt = System.currentTimeMillis()
+            )
+        )
+    }
+
     /**
      * Dodaje nową serię. Auto-numeracja setNumber w obrębie ćwiczenia,
      * orderIndex liczony tak, że ćwiczenie zachowuje swoją grupę.

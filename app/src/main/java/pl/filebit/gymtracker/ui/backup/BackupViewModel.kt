@@ -92,7 +92,9 @@ data class WorkoutDto(
     val id: Long, val startedAt: Long,
     val finishedAt: Long?, val notes: String,
     val fromPlanId: Long? = null,
-    val fromDayOfWeek: Int? = null
+    val fromDayOfWeek: Int? = null,
+    val aiSummary: String? = null,
+    val aiSummaryGeneratedAt: Long? = null
 )
 
 @Serializable
@@ -250,7 +252,8 @@ class BackupViewModel @Inject constructor(
                     },
                     workouts = allWorkouts.map {
                         WorkoutDto(it.id, it.startedAt, it.finishedAt, it.notes,
-                            it.fromPlanId, it.fromDayOfWeek)
+                            it.fromPlanId, it.fromDayOfWeek,
+                            it.aiSummary, it.aiSummaryGeneratedAt)
                     },
                     sets = allSets.map {
                         SetDto(it.id, it.workoutId, it.exerciseId, it.setNumber, it.orderIndex,
@@ -412,7 +415,9 @@ class BackupViewModel @Inject constructor(
                         Workout(
                             id = w.id, startedAt = w.startedAt, finishedAt = w.finishedAt,
                             fromPlanId = w.fromPlanId, fromDayOfWeek = w.fromDayOfWeek,
-                            notes = w.notes
+                            notes = w.notes,
+                            aiSummary = w.aiSummary,
+                            aiSummaryGeneratedAt = w.aiSummaryGeneratedAt
                         )
                     )
                 }

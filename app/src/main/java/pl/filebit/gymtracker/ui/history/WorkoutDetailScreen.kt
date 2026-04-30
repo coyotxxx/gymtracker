@@ -182,6 +182,32 @@ fun WorkoutDetailScreen(
                 StatBox("Serie", "$totalSets")
                 StatBox("Volume", "${formatWeight(totalVolume)}kg")
             }
+            workout.aiSummary?.takeIf { it.isNotBlank() }?.let { summary ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 4.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.tertiaryContainer
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Column(modifier = Modifier.padding(12.dp)) {
+                        Text(
+                            "✨ Podsumowanie trenera AI",
+                            style = MaterialTheme.typography.labelMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onTertiaryContainer
+                        )
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            summary,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onTertiaryContainer
+                        )
+                    }
+                }
+            }
             HorizontalDivider()
 
             LazyColumn(
