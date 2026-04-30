@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
+import pl.filebit.gymtracker.data.db.dao.GoalDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
 import pl.filebit.gymtracker.data.db.dao.ProgressPhotoDao
@@ -14,6 +15,7 @@ import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
+import pl.filebit.gymtracker.data.entity.Goal
 import pl.filebit.gymtracker.data.entity.PlanExercise
 import pl.filebit.gymtracker.data.entity.PlanExerciseSet
 import pl.filebit.gymtracker.data.entity.ProgressPhoto
@@ -32,9 +34,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         PlanExercise::class,
         PlanExerciseSet::class,
         BodyMeasurement::class,
-        ProgressPhoto::class
+        ProgressPhoto::class,
+        Goal::class
     ],
-    version = 14,
+    version = 15,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -48,6 +51,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun planExerciseSetDao(): PlanExerciseSetDao
     abstract fun bodyMeasurementDao(): BodyMeasurementDao
     abstract fun progressPhotoDao(): ProgressPhotoDao
+    abstract fun goalDao(): GoalDao
 
     companion object {
         const val NAME = "gymtracker.db"

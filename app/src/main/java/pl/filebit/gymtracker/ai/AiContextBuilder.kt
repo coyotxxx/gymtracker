@@ -21,6 +21,7 @@ import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.BodyRepository
+import pl.filebit.gymtracker.data.repository.GoalRepository
 import pl.filebit.gymtracker.data.repository.ProgressPhotoRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.StrengthRepository
@@ -38,6 +39,7 @@ class AiContextBuilder @Inject constructor(
     private val statsRepo: StatsRepository,
     private val strengthRepo: StrengthRepository,
     private val photoRepo: ProgressPhotoRepository,
+    private val goalRepo: GoalRepository,
     private val planDao: TrainingPlanDao,
     private val planExerciseDao: PlanExerciseDao,
     private val planSetDao: PlanExerciseSetDao,
@@ -79,6 +81,7 @@ class AiContextBuilder @Inject constructor(
         val muscle = statsRepo.muscleEngagement(periodDays = 90)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
+        val goalProgresses = goalRepo.computeAllActiveProgress()
         val allExercises = exerciseDao.getAll()
 
         // Pre-collect plans
@@ -175,6 +178,29 @@ class AiContextBuilder @Inject constructor(
                         m.calfCm?.let { put("calfCm", it) }
                         m.bodyFatPercent?.let { put("bodyFatPercent", it) }
                         if (m.notes.isNotBlank()) put("notes", m.notes)
+                    })
+                }
+            }
+
+            putJsonArray("active_goals") {
+                goalProgresses.forEach { gp ->
+                    add(buildJsonObject {
+                        put("type", gp.goal.type.name)
+                        put("title", gp.goal.title)
+                        put("description", gp.goal.description)
+                        put("unit", gp.goal.unit.name)
+                        put("startValue", gp.goal.startValue)
+                        put("targetValue", gp.goal.targetValue)
+                        put("currentValue", gp.currentValue)
+                        put("startDate", df.format(Date(gp.goal.startDate)))
+                        put("deadline", df.format(Date(gp.goal.deadline)))
+                        put("daysElapsed", gp.daysElapsed)
+                        put("daysTotal", gp.daysTotal)
+                        put("daysRemaining", gp.daysRemaining)
+                        put("percentDone", gp.percentDone)
+                        put("pacePercent", gp.pacePercent)
+                        put("onTrack", gp.onTrack)
+                        put("achieved", gp.achieved)
                     })
                 }
             }

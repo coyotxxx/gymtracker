@@ -4,6 +4,8 @@ import androidx.room.TypeConverter
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.GoalType
+import pl.filebit.gymtracker.data.entity.GoalUnit
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.SetType
@@ -39,6 +41,14 @@ class Converters {
     @TypeConverter fun genderToString(g: Gender): String = g.name
     @TypeConverter fun stringToGender(s: String): Gender =
         runCatching { Gender.valueOf(s) }.getOrDefault(Gender.MALE)
+
+    @TypeConverter fun goalTypeToString(g: GoalType): String = g.name
+    @TypeConverter fun stringToGoalType(s: String): GoalType =
+        runCatching { GoalType.valueOf(s) }.getOrDefault(GoalType.LOSE_WEIGHT)
+
+    @TypeConverter fun goalUnitToString(u: GoalUnit): String = u.name
+    @TypeConverter fun stringToGoalUnit(s: String): GoalUnit =
+        runCatching { GoalUnit.valueOf(s) }.getOrDefault(GoalUnit.KG)
 
     @TypeConverter fun setTypeToString(t: SetType): String = t.name
     @TypeConverter fun stringToSetType(s: String): SetType = SetType.safeValueOf(s)

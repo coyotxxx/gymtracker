@@ -12,6 +12,7 @@ import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
+import pl.filebit.gymtracker.data.db.dao.GoalDao
 import pl.filebit.gymtracker.data.db.dao.ProgressPhotoDao
 import pl.filebit.gymtracker.data.db.dao.TrainingPlanDao
 import pl.filebit.gymtracker.data.db.dao.UserProfileDao
@@ -44,6 +45,7 @@ object AppModule {
     @Provides fun providePlanExerciseSetDao(db: AppDatabase): PlanExerciseSetDao = db.planExerciseSetDao()
     @Provides fun provideBodyMeasurementDao(db: AppDatabase): BodyMeasurementDao = db.bodyMeasurementDao()
     @Provides fun provideProgressPhotoDao(db: AppDatabase): ProgressPhotoDao = db.progressPhotoDao()
+    @Provides fun provideGoalDao(db: AppDatabase): GoalDao = db.goalDao()
 
     @Provides
     @Singleton

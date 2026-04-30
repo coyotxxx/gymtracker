@@ -61,6 +61,10 @@ enum class QuickAction(val labelKey: String, val prompt: String) {
     WEEKLY_SUMMARY(
         "ai_action_weekly",
         "Zrób podsumowanie ostatniego tygodnia treningowego: ile treningów, jakie partie, łączna objętość, najlepsze sety (PR), porównanie do tygodnia poprzedniego. Wnioski + co zrobić w nadchodzącym tygodniu."
+    ),
+    GOAL_PROGRESS(
+        "ai_action_goal",
+        "Zanalizuj mój postęp do aktywnych celów (active_goals). Dla każdego celu: czy idę zgodnie z planem, czy dotrę na czas, co konkretnie zmienić w treningu/diecie/cardio żeby przyspieszyć. Cytuj liczby i daty."
     )
 }
 

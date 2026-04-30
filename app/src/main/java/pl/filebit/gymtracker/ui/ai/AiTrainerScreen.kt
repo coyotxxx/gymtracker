@@ -276,6 +276,7 @@ private fun QuickActionChip(
         QuickAction.DELOAD -> "😴" to stringResource(R.string.ai_action_deload)
         QuickAction.FULL_STATS -> "📊" to stringResource(R.string.ai_action_stats)
         QuickAction.WEEKLY_SUMMARY -> "📝" to stringResource(R.string.ai_action_weekly)
+        QuickAction.GOAL_PROGRESS -> "🎯" to stringResource(R.string.ai_action_goal)
     }
     Card(
         modifier = Modifier.clickable(enabled = enabled, onClick = onClick),
