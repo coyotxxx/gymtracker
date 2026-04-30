@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.theme
 
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
