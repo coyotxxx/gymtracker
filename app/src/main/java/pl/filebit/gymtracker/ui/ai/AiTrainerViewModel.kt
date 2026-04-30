@@ -41,7 +41,11 @@ data class AiTrainerUiState(
     val providerName: String = "",
     val modelName: String = "",
     val planAppliedId: Long? = null
-)
+) {
+    /** Ostatnia wiadomość ASSISTANT z planem, której jeszcze nie zastosowano. */
+    val pendingProposalMessage: ChatMessage?
+        get() = messages.lastOrNull { it.proposal != null && !it.applied }
+}
 
 enum class QuickAction(val labelKey: String, val prompt: String) {
     PROPOSE_PLAN(

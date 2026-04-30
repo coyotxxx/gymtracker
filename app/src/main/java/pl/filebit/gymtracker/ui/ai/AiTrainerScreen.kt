@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.ui.ai
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -213,6 +214,62 @@ fun AiTrainerScreen(
                 }
             }
 
+            // Pasek "Dodaj plan" — widoczny gdy ostatnia odpowiedź AI ma plan
+            // do zastosowania. Poza LazyColumn → na pewno reaguje na klik.
+            state.pendingProposalMessage?.let { msg ->
+                val p = msg.proposal!!
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                        .clickable(enabled = !state.isApplying) { vm.applyProposal(msg) },
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        if (state.isApplying) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.height(20.dp),
+                                strokeWidth = 2.dp,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                            Spacer(Modifier.height(0.dp))
+                            Text(
+                                "  ${stringResource(R.string.ai_applying_plan)}",
+                                color = MaterialTheme.colorScheme.onPrimary,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        } else {
+                            Icon(
+                                Icons.Default.Check,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                            Spacer(Modifier.height(0.dp))
+                            Column(modifier = Modifier.weight(1f).padding(start = 10.dp)) {
+                                Text(
+                                    "✨ ${stringResource(R.string.ai_apply_plan)}: ${p.name}",
+                                    style = MaterialTheme.typography.titleSmall,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = MaterialTheme.colorScheme.onPrimary,
+                                    maxLines = 1
+                                )
+                                Text(
+                                    "${p.days.size} dni · ${p.totalExercises} ćwiczeń",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f)
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
             // Input
             Row(
                 modifier = Modifier
@@ -332,10 +389,12 @@ private fun MessageBubble(
             )
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
-                Text(
-                    message.text,
-                    style = MaterialTheme.typography.bodyMedium
-                )
+                SelectionContainer {
+                    Text(
+                        message.text,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
                 message.proposal?.let { p ->
                     Spacer(Modifier.height(8.dp))
                     Card(
