@@ -28,8 +28,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -148,7 +148,7 @@ fun HistoryScreen(
             },
             singleLine = true,
             shape = RoundedCornerShape(12.dp),
-            colors = TextFieldDefaults.colors(
+            colors = OutlinedTextFieldDefaults.colors(
                 focusedContainerColor = DarkSurface,
                 unfocusedContainerColor = DarkSurface,
                 focusedBorderColor = AccentOrange,
@@ -197,7 +197,7 @@ fun HistoryScreen(
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                grouped.forEach { (month, items) ->
+                grouped.forEach { (month, monthItems) ->
                     item(key = "header_$month") {
                         Spacer(Modifier.height(8.dp))
                         Text(
@@ -211,9 +211,9 @@ fun HistoryScreen(
                             modifier = Modifier.padding(start = 4.dp, top = 4.dp, bottom = 4.dp)
                         )
                     }
-                    items.forEach { item ->
-                        item(key = item.workout.id) {
-                            HistoryRow(item = item, onClick = { onOpenWorkout(item.workout.id) })
+                    monthItems.forEach { historyItem ->
+                        item(key = historyItem.workout.id) {
+                            HistoryRow(item = historyItem, onClick = { onOpenWorkout(historyItem.workout.id) })
                         }
                     }
                 }
