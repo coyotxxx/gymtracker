@@ -197,7 +197,7 @@ private fun PlanCard(
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            // Górny rząd: tytuł + chip AI + 3 kropki
+            // Górny rząd: tytuł + chip AI tuż przy 3 kropkach + 3 kropki
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -210,13 +210,11 @@ private fun PlanCard(
                         fontWeight = FontWeight.ExtraBold,
                         fontSize = 17.sp
                     ),
-                    modifier = Modifier.weight(1f, fill = false)
+                    modifier = Modifier.weight(1f)
                 )
                 if (item.plan.createdByAi) {
-                    Spacer(Modifier.width(8.dp))
-                    AiBadge()
+                    AiBadge(modifier = Modifier.padding(end = 4.dp))
                 }
-                Spacer(Modifier.weight(1f))
                 Box {
                     IconButton(onClick = { menuOpen = true }) {
                         Icon(

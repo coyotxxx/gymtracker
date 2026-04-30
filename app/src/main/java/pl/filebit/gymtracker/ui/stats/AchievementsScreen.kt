@@ -34,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.data.repository.Achievement
@@ -84,6 +85,10 @@ fun AchievementsScreen(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            // Hero header: X / Y ZDOBYTYCH
+            item {
+                AchievementsHero(unlocked = unlockedCount, total = achievements.size)
+            }
             // Kolejność kategorii zgodna z definicją enuma (z generalnymi na końcu)
             AchievementCategory.entries.forEach { cat ->
                 val items = grouped[cat].orEmpty()
@@ -100,6 +105,49 @@ fun AchievementsScreen(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun AchievementsHero(unlocked: Int, total: Int) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(
+                "$unlocked",
+                style = MaterialTheme.typography.displayLarge.copy(
+                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                    fontSize = 56.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = (-1).sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange
+            )
+            Text(
+                " / $total",
+                style = MaterialTheme.typography.headlineMedium.copy(
+                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.SemiBold
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                modifier = Modifier.padding(bottom = 6.dp)
+            )
+        }
+        Spacer(Modifier.height(4.dp))
+        Text(
+            "ODZNAK ZDOBYTYCH",
+            style = MaterialTheme.typography.labelMedium.copy(
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.6.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+        )
     }
 }
 
