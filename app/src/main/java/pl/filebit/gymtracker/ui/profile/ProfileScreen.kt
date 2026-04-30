@@ -105,7 +105,7 @@ fun ProfileScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
-                pl.filebit.gymtracker.ui.update.UpdateCard()
+                pl.filebit.gymtracker.ui.update.UpdateCard(showWhenUpToDate = true)
             }
             item {
                 SectionCard(title = stringResource(R.string.profile_goal)) {
@@ -520,14 +520,20 @@ private fun AppVersionFooter() {
 private fun SectionCard(title: String, content: @Composable () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(12.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 title,
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight.ExtraBold
             )
             Spacer(Modifier.height(8.dp))
             content()

@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,7 +62,24 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.app_name)) },
+                title = {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        // Mała żółta kropka akcentowa
+                        Box(
+                            modifier = Modifier
+                                .size(8.dp)
+                                .background(
+                                    pl.filebit.gymtracker.ui.theme.AccentOrange,
+                                    androidx.compose.foundation.shape.RoundedCornerShape(2.dp)
+                                )
+                        )
+                        Spacer(Modifier.width(10.dp))
+                        Text(
+                            stringResource(R.string.app_name),
+                            fontWeight = FontWeight.ExtraBold
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
                 )
@@ -152,12 +170,13 @@ fun HomeScreen(
 
 @Composable
 private fun PlanHubCard(onClick: () -> Unit) {
+    // Główne CTA — żółty z glow, czarny tekst, kanon stylu Coach Workout
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+            contentColor = androidx.compose.ui.graphics.Color.Black
         ),
         shape = RoundedCornerShape(20.dp)
     ) {
@@ -166,19 +185,23 @@ private fun PlanHubCard(onClick: () -> Unit) {
                 Icon(
                     Icons.Default.EventNote,
                     contentDescription = null,
-                    modifier = Modifier.size(28.dp)
+                    modifier = Modifier.size(28.dp),
+                    tint = androidx.compose.ui.graphics.Color.Black
                 )
                 Spacer(Modifier.width(12.dp))
                 Text(
                     stringResource(R.string.home_hub_plan_title),
                     style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.ExtraBold,
+                    color = androidx.compose.ui.graphics.Color.Black
                 )
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(6.dp))
             Text(
                 stringResource(R.string.home_hub_plan_subtitle),
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                color = androidx.compose.ui.graphics.Color.Black.copy(alpha = 0.85f),
+                fontWeight = FontWeight.Medium
             )
         }
     }
@@ -186,28 +209,43 @@ private fun PlanHubCard(onClick: () -> Unit) {
 
 @Composable
 private fun AdhocHubCard(onStart: () -> Unit) {
+    // Drugorzędna — ciemna karta z akcentową ikoną i lekkim glow obramowaniem
     Card(
         onClick = onStart,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface,
             contentColor = MaterialTheme.colorScheme.onSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
         ),
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    Icons.Default.FitnessCenter,
-                    contentDescription = null,
-                    modifier = Modifier.size(28.dp),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                Box(
+                    modifier = Modifier
+                        .size(40.dp)
+                        .background(
+                            color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.12f),
+                            shape = RoundedCornerShape(12.dp)
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Default.FitnessCenter,
+                        contentDescription = null,
+                        modifier = Modifier.size(22.dp),
+                        tint = pl.filebit.gymtracker.ui.theme.AccentOrange
+                    )
+                }
                 Spacer(Modifier.width(12.dp))
                 Text(
                     stringResource(R.string.home_hub_adhoc_title),
                     style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.ExtraBold
                 )
             }
             Spacer(Modifier.height(8.dp))

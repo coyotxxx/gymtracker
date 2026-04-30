@@ -132,8 +132,13 @@ fun AppNavigation() {
                     )
                 }
                 if (showBottomBar) {
-                    // windowInsets = zero — bottom inset zarządza Column wyżej
-                    NavigationBar(windowInsets = WindowInsets(0, 0, 0, 0)) {
+                    // windowInsets = zero — bottom inset zarządza Column wyżej.
+                    // Customowe NavigationBarItemColors: aktywna ikona/label akcent żółty,
+                    // indicator z bardzo lekkim tłem zamiast pełnego pill-a (kanon).
+                    NavigationBar(
+                        windowInsets = WindowInsets(0, 0, 0, 0),
+                        containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+                    ) {
                         tabs.forEach { tab ->
                             val selected = currentRoute == tab.screen.route
                             NavigationBarItem(
@@ -148,7 +153,14 @@ fun AppNavigation() {
                                     }
                                 },
                                 icon = { Icon(tab.icon, contentDescription = null) },
-                                label = { Text(stringResource(tab.labelRes)) }
+                                label = { Text(stringResource(tab.labelRes)) },
+                                colors = androidx.compose.material3.NavigationBarItemDefaults.colors(
+                                    selectedIconColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                                    selectedTextColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                                    indicatorColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.12f),
+                                    unselectedIconColor = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                                    unselectedTextColor = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                                )
                             )
                         }
                     }
