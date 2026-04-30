@@ -20,6 +20,8 @@ import androidx.compose.material.icons.filled.AccessibilityNew
 import androidx.compose.material.icons.filled.MonitorWeight
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.FitnessCenter
+import androidx.compose.material.icons.filled.AutoAwesome
+import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -68,6 +70,8 @@ fun ProfileScreen(
     onOpenMuscles: () -> Unit,
     onOpenPhotos: () -> Unit,
     onOpenStrength: () -> Unit,
+    onOpenAiTrainer: () -> Unit,
+    onOpenAiSettings: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -357,6 +361,28 @@ fun ProfileScreen(
                     Icon(Icons.Default.FitnessCenter, contentDescription = null)
                     Spacer(Modifier.height(4.dp))
                     Text("  ${stringResource(R.string.strength_section_title)}")
+                }
+            }
+            item {
+                Button(
+                    onClick = onOpenAiTrainer,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.AutoAwesome, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.ai_trainer_section_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenAiSettings,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.Key, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.ai_settings_section_title)}")
                 }
             }
             item {

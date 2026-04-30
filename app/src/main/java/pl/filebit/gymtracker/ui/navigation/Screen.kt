@@ -17,6 +17,8 @@ sealed class Screen(val route: String) {
     object MuscleEngagement : Screen("tools/muscles")
     object ProgressPhotos : Screen("tools/photos")
     object StrengthStandards : Screen("tools/strength")
+    object AiTrainer : Screen("ai/trainer")
+    object AiSettings : Screen("ai/settings")
 
     object ExerciseDetail : Screen("exercises/{exerciseId}") {
         fun create(exerciseId: Long) = "exercises/$exerciseId"

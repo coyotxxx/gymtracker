@@ -276,6 +276,43 @@
     <string name="common_save">Zapisz</string>
     <string name="common_close">Zamknij</string>
 
+    <!-- AI Trener -->
+    <string name="ai_trainer_title">Asystent AI (trener)</string>
+    <string name="ai_trainer_section_title">🤖 Asystent AI</string>
+    <string name="ai_settings_title">Połączenie z AI</string>
+    <string name="ai_settings_section_title">🔑 Połączenie AI</string>
+    <string name="ai_step1_title">Wybierz dostawcę</string>
+    <string name="ai_step2_title">Wprowadź klucz API</string>
+    <string name="ai_step2_subtitle">Klucz przechowywany lokalnie w zaszyfrowanej formie. Nigdy nie idzie do backupu JSON.</string>
+    <string name="ai_step3_title">Wybierz model</string>
+    <string name="ai_show_instructions">Pokaż instrukcję krok po kroku</string>
+    <string name="ai_api_key_label">Klucz API</string>
+    <string name="ai_model_custom_label">Model (możesz wpisać dowolny)</string>
+    <string name="ai_model_explain">Wybierz preset lub wpisz dowolną nazwę modelu — np. nową generację, jeśli pojawi się szybciej niż aktualizacja apki.</string>
+    <string name="ai_test_button">Test połączenia</string>
+    <string name="ai_test_success">Połączenie działa</string>
+    <string name="ai_saved">Zapisano ustawienia</string>
+    <string name="ai_clear_key">Usuń klucz i ustawienia</string>
+    <string name="ai_clear_confirm_title">Usunąć klucz API?</string>
+    <string name="ai_clear_confirm_text">Klucz zostanie skasowany z urządzenia. Aplikacja przestanie się komunikować z AI dopóki nie wpiszesz nowego.</string>
+    <string name="ai_security_title">Bezpieczeństwo</string>
+    <string name="ai_security_text">• Klucz przechowywany w EncryptedSharedPreferences (Android Keystore)\n• Nigdy nie wysyłany nigdzie poza wybranym dostawcą AI\n• Twoje dane nie są wysyłane bez Twojego kliknięcia (każda rozmowa = świadoma akcja)\n• Klucz NIE jest dołączany do backupu JSON</string>
+    <string name="ai_system_prompt_title">System prompt (rola asystenta)</string>
+    <string name="ai_system_prompt_reset">Przywróć domyślny</string>
+
+    <string name="ai_chat_empty">Wpisz pytanie lub kliknij jedną z akcji powyżej.\nAsystent ma dostęp do Twoich treningów, planów, pomiarów i statystyk.</string>
+    <string name="ai_thinking">AI myśli…</string>
+    <string name="ai_input_placeholder">Zapytaj trenera…</string>
+    <string name="ai_not_connected">Nie skonfigurowano klucza API. Kliknij aby ustawić.</string>
+    <string name="ai_apply_plan">Zastosuj plan</string>
+
+    <string name="ai_action_plan">Zaproponuj plan</string>
+    <string name="ai_action_today">Co dziś trenować</string>
+    <string name="ai_action_progress">Analizuj progres</string>
+    <string name="ai_action_deload">Sugestia regeneracji</string>
+    <string name="ai_action_stats">Pełne statystyki</string>
+    <string name="ai_action_weekly">Podsumowanie tygodnia</string>
+
     <!-- Standardy siłowe -->
     <string name="strength_title">Standardy siłowe</string>
     <string name="strength_section_title">Standardy siłowe</string>

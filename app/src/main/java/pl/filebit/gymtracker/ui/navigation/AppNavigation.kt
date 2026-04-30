@@ -43,6 +43,8 @@ import pl.filebit.gymtracker.ui.body.BodyMeasurementsScreen
 import pl.filebit.gymtracker.ui.muscles.MuscleEngagementScreen
 import pl.filebit.gymtracker.ui.photos.ProgressPhotosScreen
 import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
+import pl.filebit.gymtracker.ui.ai.AiSettingsScreen
+import pl.filebit.gymtracker.ui.ai.AiTrainerScreen
 import pl.filebit.gymtracker.ui.tools.PlateCalculatorScreen
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.CoachWorkoutScreen
@@ -162,7 +164,9 @@ fun AppNavigation() {
                     onOpenBody = { navController.navigate(Screen.BodyMeasurements.route) },
                     onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
-                    onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) }
+                    onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
+                    onOpenAiTrainer = { navController.navigate(Screen.AiTrainer.route) },
+                    onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) }
                 )
             }
             composable(Screen.Stats.route) {
@@ -185,6 +189,18 @@ fun AppNavigation() {
             }
             composable(Screen.StrengthStandards.route) {
                 StrengthStandardsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.AiTrainer.route) {
+                AiTrainerScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenSettings = { navController.navigate(Screen.AiSettings.route) },
+                    onPlanApplied = { planId ->
+                        navController.navigate(Screen.PlanEdit.create(planId))
+                    }
+                )
+            }
+            composable(Screen.AiSettings.route) {
+                AiSettingsScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(

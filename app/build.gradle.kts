@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 31
-        versionName = "0.27.0"
+        versionCode = 32
+        versionName = "0.28.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -101,4 +101,8 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.hilt.work)
     ksp(libs.hilt.compiler.androidx)
+
+    // AI integration
+    implementation(libs.okhttp)
+    implementation(libs.androidx.security.crypto)
 }

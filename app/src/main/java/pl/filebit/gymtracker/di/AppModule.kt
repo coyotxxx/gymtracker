@@ -18,6 +18,8 @@ import pl.filebit.gymtracker.data.db.dao.UserProfileDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.seed.ExerciseSeeder
+import pl.filebit.gymtracker.ai.AiClient
+import pl.filebit.gymtracker.ai.AiClientImpl
 import javax.inject.Singleton
 
 @Module
@@ -49,4 +51,8 @@ object AppModule {
         @ApplicationContext context: Context,
         dao: ExerciseDao
     ): ExerciseSeeder = ExerciseSeeder(context, dao)
+
+    @Provides
+    @Singleton
+    fun provideAiClient(impl: AiClientImpl): AiClient = impl
 }

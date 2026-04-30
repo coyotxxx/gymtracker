@@ -108,8 +108,7 @@ Bonus dodany: **usuwanie planu** też w overflow menu (kropki) — wcześniej ty
 
 ## 🟢 V3 — FUTURE (wymaga backendu / dużego nakładu)
 
-- [ ] **AI workout generator** — model BYOK (user wkleja klucz Anthropic/OpenAI w ustawieniach), generuje plan na podstawie celu+sprzętu+dni
-- [ ] **AI sugestia kolejnego treningu** — analiza historii przez LLM
+- [x] **AI Trener (BYOK Anthropic + OpenAI)** ✅ v0.28.0 — pełnoprawny chat z trenerem AI. Klucz API w EncryptedSharedPreferences (Android Keystore), nie idzie do backupu JSON. 3-krokowy wizard połączenia z instrukcjami krok po kroku + bezpośrednim linkiem do panelu Anthropic/OpenAI. AiContextBuilder dołącza pełen kontekst usera (profil, ostatnie 30 treningów z setami/RPE/RIR, pomiary ciała, plany, statystyki, PR per ćwiczenie, mapa mięśni, poziomy siły, achievements, lista 200 ćwiczeń biblioteki). 6 quick actions: Plan / Dziś / Progres / Deload / Statystyki / Tygodniowe podsumowanie. Plan-applier wykrywa blok ```json``` w odpowiedzi i parsuje do TrainingPlan + PlanExercise + PlanExerciseSet (mapping nazw ćwiczeń przez prefix matching). Modele preselect: claude-opus-4-7 / claude-sonnet-4-6 / claude-haiku-4-5 dla Anthropic, gpt-4o / o1 / o3-mini / gpt-4.1 dla OpenAI + custom string. System prompt edytowalny (default po polsku, opisuje rolę trenera).
 - [ ] **Cloud sync** — opcjonalnie przez Firebase/Supabase (osobne konto darmowe lub samodzielnie hostowane)
 - [ ] **Animacje GIF ćwiczeń** — pakiet zewnętrznych assetów (10-30 MB)
 - [ ] **Powiadomienia lokalizacyjne** — geofencing przy siłowni
