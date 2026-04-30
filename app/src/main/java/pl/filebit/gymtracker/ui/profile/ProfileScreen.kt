@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material.icons.filled.AccessibilityNew
 import androidx.compose.material.icons.filled.MonitorWeight
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -64,6 +65,7 @@ fun ProfileScreen(
     onOpenPlateCalc: () -> Unit,
     onOpenBody: () -> Unit,
     onOpenMuscles: () -> Unit,
+    onOpenPhotos: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -331,6 +333,17 @@ fun ProfileScreen(
                     Icon(Icons.Default.AccessibilityNew, contentDescription = null)
                     Spacer(Modifier.height(4.dp))
                     Text("  ${stringResource(R.string.muscles_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenPhotos,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.PhotoLibrary, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.photos_section_title)}")
                 }
             }
             item {

@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.MuscleGroup
+import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightGoalType
@@ -36,6 +37,10 @@ class Converters {
 
     @TypeConverter fun setTypeToString(t: SetType): String = t.name
     @TypeConverter fun stringToSetType(s: String): SetType = SetType.safeValueOf(s)
+
+    @TypeConverter fun photoTypeToString(p: PhotoType): String = p.name
+    @TypeConverter fun stringToPhotoType(s: String): PhotoType =
+        runCatching { PhotoType.valueOf(s) }.getOrDefault(PhotoType.FRONT)
 
     @TypeConverter fun intListToString(l: List<Int>): String = l.joinToString(",")
     @TypeConverter fun stringToIntList(s: String): List<Int> =
