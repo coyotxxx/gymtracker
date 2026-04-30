@@ -44,6 +44,13 @@ class AiClientImpl @Inject constructor() : AiClient {
 
     private val json = Json { ignoreUnknownKeys = true }
 
+    /**
+     * Sanityzacja klucza API: usuwa białe znaki + trailing kropki/przecinki/cudzysłowy
+     * (częste artefakty kopiowania z dokumentów/maili).
+     */
+    private fun sanitizeKey(raw: String): String =
+        raw.trim().trimEnd('.', ',', ';', ':', ' ', '\t', '\n', '\r', '\'', '"')
+
     override suspend fun chat(
         config: AiConfig,
         messages: List<AiMessage>
@@ -83,7 +90,7 @@ class AiClientImpl @Inject constructor() : AiClient {
 
         val req = Request.Builder()
             .url("https://api.anthropic.com/v1/messages")
-            .header("x-api-key", config.apiKey.trim())
+            .header("x-api-key", sanitizeKey(config.apiKey))
             .header("anthropic-version", "2023-06-01")
             .header("content-type", "application/json")
             .post(body.toRequestBody("application/json".toMediaType()))
@@ -115,7 +122,7 @@ class AiClientImpl @Inject constructor() : AiClient {
 
         val req = Request.Builder()
             .url("https://api.openai.com/v1/chat/completions")
-            .header("Authorization", "Bearer ${config.apiKey.trim()}")
+            .header("Authorization", "Bearer ${sanitizeKey(config.apiKey)}")
             .header("content-type", "application/json")
             .post(body.toRequestBody("application/json".toMediaType()))
             .build()
