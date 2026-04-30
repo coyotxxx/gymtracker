@@ -106,6 +106,12 @@ fun ProfileScreen(
         ) {
             item {
                 SectionCard(title = stringResource(R.string.profile_goal)) {
+                    Text(
+                        stringResource(R.string.profile_goal_explain),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.height(8.dp))
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
@@ -157,6 +163,12 @@ fun ProfileScreen(
 
             item {
                 SectionCard(title = stringResource(R.string.profile_weight_goal)) {
+                    Text(
+                        stringResource(R.string.profile_weight_goal_explain),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(Modifier.height(8.dp))
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
