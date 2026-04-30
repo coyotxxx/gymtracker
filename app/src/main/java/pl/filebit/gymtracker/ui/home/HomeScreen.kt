@@ -68,6 +68,8 @@ fun HomeScreen(
     onOpenWorkout: (Long) -> Unit,
     onSelectPlanTab: () -> Unit,
     onOpenStats: () -> Unit = {},
+    onOpenAchievements: () -> Unit = {},
+    onOpenHistory: () -> Unit = {},
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -131,13 +133,14 @@ fun HomeScreen(
                 }
             }
 
-            // Streak compact card
+            // Streak compact card — klik otwiera ekran Odznak (streak to odznaka)
             item {
                 StreakCompactCard(
                     weeks = state.streakWeeks,
                     best = state.streakBest,
                     weekCurrent = state.workoutsThisWeek,
-                    weekTarget = state.weeklyTarget
+                    weekTarget = state.weeklyTarget,
+                    onClick = onOpenAchievements
                 )
             }
 
@@ -166,7 +169,8 @@ fun HomeScreen(
                             fontSize = 12.sp,
                             fontWeight = FontWeight.SemiBold
                         ),
-                        color = AccentOrange
+                        color = AccentOrange,
+                        modifier = Modifier.clickable(onClick = onOpenHistory)
                     )
                 }
             }
@@ -537,10 +541,12 @@ private fun StreakCompactCard(
     weeks: Int,
     best: Int,
     weekCurrent: Int,
-    weekTarget: Int
+    weekTarget: Int,
+    onClick: () -> Unit = {}
 ) {
     val percent = if (weekTarget > 0) (weekCurrent * 100 / weekTarget).coerceAtMost(100) else 0
     Card(
+        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
         border = BorderStroke(1.dp, DarkOutlineSoft),

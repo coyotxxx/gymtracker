@@ -174,7 +174,17 @@ fun AppNavigation() {
                             restoreState = true
                         }
                     },
-                    onOpenStats = { navController.navigate(Screen.Stats.route) }
+                    onOpenStats = { navController.navigate(Screen.Stats.route) },
+                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
+                    onOpenHistory = {
+                        navController.navigate(Screen.History.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
                 )
             }
             composable(Screen.History.route) {
