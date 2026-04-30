@@ -457,11 +457,32 @@ private fun ExerciseGroupCard(
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold
                     )
-                    if (group.lastSessionWeight != null && group.lastSessionReps != null) {
+                    group.previousSessionSummary?.let { summary ->
                         Text(
-                            "Ostatnio: ${formatWeight(group.lastSessionWeight)} kg × ${group.lastSessionReps}",
-                            style = MaterialTheme.typography.bodyMedium,
+                            "Ostatnio: $summary",
+                            style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    } ?: run {
+                        if (group.lastSessionWeight != null && group.lastSessionReps != null) {
+                            Text(
+                                "Ostatnio: ${formatWeight(group.lastSessionWeight)} kg × ${group.lastSessionReps}",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                    group.suggestion?.let { sug ->
+                        val arrow = when {
+                            sug.suggestedWeightKg > sug.previousWeightKg -> "↑"
+                            sug.suggestedReps > sug.previousReps -> "↑"
+                            else -> "→"
+                        }
+                        Text(
+                            "💡 Sugestia: $arrow ${formatWeight(sug.suggestedWeightKg)} kg × ${sug.suggestedReps}",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.tertiary,
+                            fontWeight = FontWeight.Medium
                         )
                     }
                 }
@@ -515,13 +536,13 @@ private fun ExerciseGroupCard(
 
             Spacer(Modifier.height(8.dp))
 
-            // Add set button
+            // Add set button — auto-fill: ostatni set bieżącej sesji > sugestia AI > ostatnia sesja
             TextButton(
                 onClick = {
                     val last = group.sets.lastOrNull()
                     onAddSet(
-                        last?.reps ?: group.lastSessionReps ?: 8,
-                        last?.weightKg ?: group.lastSessionWeight ?: 20.0
+                        last?.reps ?: group.suggestion?.suggestedReps ?: group.lastSessionReps ?: 8,
+                        last?.weightKg ?: group.suggestion?.suggestedWeightKg ?: group.lastSessionWeight ?: 20.0
                     )
                 },
                 modifier = Modifier.fillMaxWidth()

@@ -425,7 +425,14 @@ private fun CoachActiveContent(
                         value = "${current.reps}"
                     )
                 }
-                state.lastSetForCurrent?.let { last ->
+                state.previousSessionSummaryForCurrent?.let { summary ->
+                    Spacer(Modifier.height(16.dp))
+                    Text(
+                        "Ostatnio: $summary",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
+                    )
+                } ?: state.lastSetForCurrent?.let { last ->
                     Spacer(Modifier.height(16.dp))
                     Text(
                         stringResource(
@@ -435,6 +442,20 @@ private fun CoachActiveContent(
                         ),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
+                    )
+                }
+                state.suggestionForCurrent?.let { sug ->
+                    Spacer(Modifier.height(8.dp))
+                    val arrow = when {
+                        sug.suggestedWeightKg > sug.previousWeightKg -> "↑"
+                        sug.suggestedReps > sug.previousReps -> "↑"
+                        else -> "→"
+                    }
+                    Text(
+                        "💡 $arrow ${formatWeight(sug.suggestedWeightKg)} kg × ${sug.suggestedReps}",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 }
             }

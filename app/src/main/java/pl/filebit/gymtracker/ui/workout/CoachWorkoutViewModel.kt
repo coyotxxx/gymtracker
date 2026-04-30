@@ -42,6 +42,8 @@ data class CoachUiState(
     val totalSets: Int = 0,
     val isComplete: Boolean = false,          // wszystkie sety zrobione
     val lastSetForCurrent: WorkoutSet? = null, // dla "ostatnio" w UI
+    val previousSessionSummaryForCurrent: String? = null,
+    val suggestionForCurrent: pl.filebit.gymtracker.data.repository.NextSetSuggestion? = null,
     val defaultRestSeconds: Int = 90,
     val flashOnTimerEnd: Boolean = false
 )
@@ -132,6 +134,22 @@ class CoachWorkoutViewModel @Inject constructor(
         val currentSetIndexInExercise = currentGroup?.sets?.indexOfFirst { it.id == currentSet.id } ?: 0
         val lastSet = workoutRepo.getLastSetForExercise(currentSet.exerciseId)
 
+        val prevSession = statsRepo.getPreviousSessionForExercise(
+            currentSet.exerciseId, excludeWorkoutId = workout.id
+        )
+        val prevSummary = prevSession?.sets?.takeIf { it.isNotEmpty() }?.let { ss ->
+            val maxW = ss.maxOf { it.weightKg }
+            val repsList = ss.filter { it.weightKg == maxW }.joinToString(" / ") { it.reps.toString() }
+            val rpeAvg = ss.mapNotNull { it.rpe }.takeIf { l -> l.isNotEmpty() }?.average()
+            val rpePart = rpeAvg?.let { v -> " (RPE ${"%.1f".format(v)})" } ?: ""
+            "${pl.filebit.gymtracker.util.formatWeight(maxW)} kg × $repsList$rpePart"
+        }
+        val suggestion = statsRepo.suggestNextSet(
+            currentSet.exerciseId,
+            excludeWorkoutId = workout.id,
+            goal = profile.goal
+        )
+
         return CoachUiState(
             workout = workout,
             planName = planName,
@@ -146,6 +164,8 @@ class CoachWorkoutViewModel @Inject constructor(
             totalSets = totalSets,
             isComplete = false,
             lastSetForCurrent = lastSet,
+            previousSessionSummaryForCurrent = prevSummary,
+            suggestionForCurrent = suggestion,
             defaultRestSeconds = rest,
             flashOnTimerEnd = profile.flashOnTimerEnd
         )

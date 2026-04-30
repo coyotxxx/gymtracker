@@ -32,7 +32,9 @@ data class ExerciseGroup(
     val exercise: Exercise,
     val sets: List<WorkoutSet>,
     val lastSessionWeight: Double? = null,
-    val lastSessionReps: Int? = null
+    val lastSessionReps: Int? = null,
+    val previousSessionSummary: String? = null,   // np. "Ostatnio: 80 kg × 8 / 8 / 6 (RPE 9)"
+    val suggestion: pl.filebit.gymtracker.data.repository.NextSetSuggestion? = null
 )
 
 data class ActiveWorkoutUiState(
@@ -84,11 +86,35 @@ class ActiveWorkoutViewModel @Inject constructor(
                                 .mapNotNull { (exerciseId, list) ->
                                     val ex = exerciseRepo.get(exerciseId) ?: return@mapNotNull null
                                     val last = workoutRepo.getLastSetForExercise(exerciseId)
+                                    val prevSession = statsRepo.getPreviousSessionForExercise(
+                                        exerciseId, excludeWorkoutId = workout.id
+                                    )
+                                    val prevSummary = prevSession?.let {
+                                        val sessionSets = it.sets
+                                        if (sessionSets.isEmpty()) null
+                                        else {
+                                            val maxW = sessionSets.maxOf { s -> s.weightKg }
+                                            val repsList = sessionSets
+                                                .filter { s -> s.weightKg == maxW }
+                                                .joinToString(" / ") { s -> s.reps.toString() }
+                                            val rpeAvg = sessionSets.mapNotNull { s -> s.rpe }
+                                                .takeIf { l -> l.isNotEmpty() }?.average()
+                                            val rpePart = rpeAvg?.let { v -> " (RPE ${"%.1f".format(v)})" } ?: ""
+                                            "${pl.filebit.gymtracker.util.formatWeight(maxW)} kg × $repsList$rpePart"
+                                        }
+                                    }
+                                    val suggestion = statsRepo.suggestNextSet(
+                                        exerciseId,
+                                        excludeWorkoutId = workout.id,
+                                        goal = profile.goal
+                                    )
                                     ExerciseGroup(
                                         exercise = ex,
                                         sets = list.sortedBy { it.setNumber },
                                         lastSessionWeight = last?.weightKg,
-                                        lastSessionReps = last?.reps
+                                        lastSessionReps = last?.reps,
+                                        previousSessionSummary = prevSummary,
+                                        suggestion = suggestion
                                     )
                                 }
                             emit(ActiveWorkoutUiState(workout = workout, groups = groups, profile = profile))

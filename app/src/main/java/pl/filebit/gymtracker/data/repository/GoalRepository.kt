@@ -48,18 +48,7 @@ class GoalRepository @Inject constructor(
         val daysElapsed = ((now - goal.startDate) / DAY).toInt().coerceIn(0, daysTotal)
         val daysRemaining = (daysTotal - daysElapsed).coerceAtLeast(0)
 
-        val currentValue = goal.currentValue ?: when (goal.type) {
-            GoalType.LOSE_WEIGHT, GoalType.GAIN_MASS ->
-                bodyRepo.getLatest()?.weightKg ?: goal.startValue
-            GoalType.INCREASE_STRENGTH -> {
-                val exId = goal.exerciseId ?: return@when goal.startValue
-                val sets = setDao.getAllForExercise(exId)
-                    .filter { it.isCompleted && it.setType != SetType.WARMUP }
-                sets.maxOfOrNull { statsRepo.epley1RM(it.weightKg, it.reps) }
-                    ?: goal.startValue
-            }
-            else -> goal.startValue
-        }
+        val currentValue = goal.currentValue ?: computeCurrentValue(goal)
 
         val deltaSoFar = currentValue - goal.startValue
         val deltaTotal = goal.targetValue - goal.startValue
@@ -92,6 +81,21 @@ class GoalRepository @Inject constructor(
             pacePercent = pacePercent,
             achieved = achieved
         )
+    }
+
+    private suspend fun computeCurrentValue(goal: Goal): Double {
+        return when (goal.type) {
+            GoalType.LOSE_WEIGHT, GoalType.GAIN_MASS ->
+                bodyRepo.getLatest()?.weightKg ?: goal.startValue
+            GoalType.INCREASE_STRENGTH -> {
+                val exId = goal.exerciseId ?: return goal.startValue
+                val sets = setDao.getAllForExercise(exId)
+                    .filter { it.isCompleted && it.setType != SetType.WARMUP }
+                sets.maxOfOrNull { statsRepo.epley1RM(it.weightKg, it.reps) }
+                    ?: goal.startValue
+            }
+            else -> goal.startValue
+        }
     }
 
     suspend fun computeAllActiveProgress(): List<GoalProgress> =

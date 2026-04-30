@@ -339,6 +339,94 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Pobiera sety z OSTATNIEGO ukończonego treningu zawierającego dane ćwiczenie,
+     * z wykluczeniem currentWorkoutId. Zwraca null gdy brak.
+     */
+    suspend fun getPreviousSessionForExercise(
+        exerciseId: Long,
+        excludeWorkoutId: Long? = null
+    ): PreviousSession? {
+        val all = setDao.getAllForExercise(exerciseId)
+            .filter { excludeWorkoutId == null || it.workoutId != excludeWorkoutId }
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        if (all.isEmpty()) return null
+
+        // weź sety z najnowszego ukończonego treningu
+        val finished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val byId = finished.associateBy { it.id }
+        val grouped = all.groupBy { it.workoutId }
+            .filterKeys { it in byId }
+            .toList()
+            .sortedByDescending { (wid, _) -> byId[wid]!!.startedAt }
+
+        val (wid, sets) = grouped.firstOrNull() ?: return null
+        val w = byId[wid]!!
+        return PreviousSession(
+            workoutId = wid,
+            workoutDate = w.startedAt,
+            sets = sets.sortedBy { it.setNumber }
+        )
+    }
+
+    /**
+     * Sugeruje następną wagę × powt. dla danego ćwiczenia bazując na poprzedniej sesji
+     * + celu treningowym usera. Heurystyka:
+     * - Jeśli RPE ≤ 7 lub brak RPE z planem zrealizowanym → +Δ kg
+     * - Jeśli RPE 8-9 i plan zrealizowany → utrzymaj wagę, +1 rep
+     * - Jeśli RPE 10 lub plan nie zrealizowany → utrzymaj
+     * - Δ zależy od celu: STRENGTH → +2.5kg, HYPERTROPHY → +1.25kg, inne → +1kg
+     */
+    suspend fun suggestNextSet(
+        exerciseId: Long,
+        excludeWorkoutId: Long? = null,
+        goal: pl.filebit.gymtracker.data.entity.TrainingGoal
+    ): NextSetSuggestion? {
+        val prev = getPreviousSessionForExercise(exerciseId, excludeWorkoutId) ?: return null
+        val sets = prev.sets
+        if (sets.isEmpty()) return null
+
+        // Bazuj na ostatnim secie roboczym z najwyższą wagą
+        val ref = sets.maxByOrNull { it.weightKg } ?: return null
+        val refWeight = ref.weightKg
+        val refReps = ref.reps
+        val avgRpe = sets.mapNotNull { it.rpe }.takeIf { it.isNotEmpty() }?.average()
+
+        val delta = when (goal) {
+            pl.filebit.gymtracker.data.entity.TrainingGoal.STRENGTH -> 2.5
+            pl.filebit.gymtracker.data.entity.TrainingGoal.HYPERTROPHY -> 1.25
+            pl.filebit.gymtracker.data.entity.TrainingGoal.MIX -> 1.25
+            pl.filebit.gymtracker.data.entity.TrainingGoal.GENERAL_FITNESS -> 1.0
+            pl.filebit.gymtracker.data.entity.TrainingGoal.CARDIO_LIFTING -> 1.0
+        }
+
+        val (newWeight, newReps, rationale) = when {
+            // brak RPE — patrz na liczbę zrealizowanych
+            avgRpe == null -> {
+                Triple(refWeight + delta, refReps, "Brak RPE — sugestia +$delta kg dla celu ${goal.name.lowercase()}")
+            }
+            avgRpe <= 7.0 -> {
+                Triple(refWeight + delta, refReps, "Ostatni RPE ${"%.1f".format(avgRpe)} (lekko) → +$delta kg")
+            }
+            avgRpe <= 9.0 -> {
+                Triple(refWeight, refReps + 1, "Ostatni RPE ${"%.1f".format(avgRpe)} → utrzymaj wagę, +1 powt.")
+            }
+            else -> {
+                Triple(refWeight, refReps, "Ostatni RPE ${"%.1f".format(avgRpe)} (max) → utrzymaj")
+            }
+        }
+
+        val rounded = ((newWeight * 4).roundToInt() / 4.0)  // 0.25 kg precision
+
+        return NextSetSuggestion(
+            suggestedWeightKg = rounded,
+            suggestedReps = newReps,
+            rationale = rationale,
+            previousWeightKg = refWeight,
+            previousReps = refReps
+        )
+    }
+
+    /**
      * Stagnacja: dla każdego ćwiczenia w bieżącym treningu sprawdź czy max waga
      * w ostatnich 3+ treningach nie urosła (jest dokładnie taka sama).
      */
@@ -493,5 +581,25 @@ data class StagnationAlert(
     val exerciseName: String,
     val stuckAtKg: Double,
     val workoutsAtSameWeight: Int   // ile treningów z rzędu ta sama max waga
+)
+
+/**
+ * Sugestia progresji dla następnego setu/sesji ćwiczenia.
+ */
+data class NextSetSuggestion(
+    val suggestedWeightKg: Double,
+    val suggestedReps: Int,
+    val rationale: String,   // krótki opis dlaczego (np. "RPE 7 + cel siła = +2.5kg")
+    val previousWeightKg: Double,
+    val previousReps: Int
+)
+
+/**
+ * Snapshot poprzedniej sesji ćwiczenia — sety z poprzedniego ukończonego treningu.
+ */
+data class PreviousSession(
+    val workoutId: Long,
+    val workoutDate: Long,
+    val sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>
 )
 
