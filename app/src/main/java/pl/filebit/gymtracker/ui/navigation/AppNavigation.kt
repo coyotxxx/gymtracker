@@ -57,6 +57,7 @@ import pl.filebit.gymtracker.ui.photos.ProgressPhotosScreen
 import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
 import pl.filebit.gymtracker.ui.ai.AiConversationsScreen
 import pl.filebit.gymtracker.ui.ai.AiOverlayFab
+import pl.filebit.gymtracker.ui.ai.screenLabel
 import pl.filebit.gymtracker.ui.ai.AiOverlayViewModel
 import pl.filebit.gymtracker.ui.ai.AiSettingsScreen
 import pl.filebit.gymtracker.ui.ai.AiTrainerScreen
