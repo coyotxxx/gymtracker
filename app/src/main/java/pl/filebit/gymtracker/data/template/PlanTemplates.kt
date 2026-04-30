@@ -10,7 +10,9 @@ data class PlanTemplate(
     val description: String,
     val category: PlanGoalCategory,
     val days: List<TemplateDay>
-)
+) {
+    val daysPerWeek: Int get() = days.size
+}
 
 data class TemplateDay(
     val dayOfWeek: Int,             // 1=Pon..7=Nd
@@ -29,7 +31,8 @@ enum class PlanGoalCategory(val labelPl: String, val emoji: String) {
     HYPERTROPHY("Masa / Hipertrofia", "💪"),
     STRENGTH("Siła", "🏋️"),
     POWERLIFTING("Trójbój / Powerlifting", "🦾"),
-    ATHLETIC_CUT("Redukcja / Sport", "⚡"),
+    CUT("Redukcja", "⚡"),
+    SPORT("Sportowe (piłka, atletyka)", "⚽"),
     GLUTE_FOCUS("Pośladki / Lower-body", "🍑")
 }
 
@@ -465,7 +468,7 @@ object PlanTemplates {
         id = "conditioning_4",
         name = "Conditioning + Cardio (4×/tydzień)",
         description = "Krótkie odpoczynki, wysokie powt., 2× cardio HIIT — pod redukcję tłuszczu z zachowaniem masy.",
-        category = PlanGoalCategory.ATHLETIC_CUT,
+        category = PlanGoalCategory.CUT,
         days = listOf(
             TemplateDay(1, listOf( // Pon — Full body strength
                 TemplateExercise("Przysiad ze sztangą (back squat)", 4, 12, 60),
@@ -501,7 +504,7 @@ object PlanTemplates {
         id = "calisthenics_4",
         name = "Calisthenics 4× (bez sprzętu)",
         description = "Trening kalisteniczny — siła własną masą ciała. Drążek + poręcze + podłoga. Idealne na dwór lub w domu.",
-        category = PlanGoalCategory.ATHLETIC_CUT,
+        category = PlanGoalCategory.CUT,
         days = listOf(
             TemplateDay(1, listOf( // Pon — Push
                 TemplateExercise("Pompki", 4, 15, 60),
@@ -608,26 +611,417 @@ object PlanTemplates {
         )
     )
 
+    // ========== SPORT — PIŁKARZE / ATLETYKA ==========
+
+    val footballOffSeason = PlanTemplate(
+        id = "football_off_4",
+        name = "Piłka — Off-season Power 4×",
+        description = "Plan dla piłkarzy poza sezonem: budowa siły funkcjonalnej, eksplozywności i odporności na kontuzje.",
+        category = PlanGoalCategory.SPORT,
+        days = listOf(
+            TemplateDay(1, listOf( // Pon — Lower power
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 5, 180),
+                TemplateExercise("Box jumps (skoki na skrzynię)", 4, 5, 120),
+                TemplateExercise("Hip thrust", 4, 8, 90),
+                TemplateExercise("Wykrok kroczący (walking lunge)", 3, 12, 60),
+                TemplateExercise("Plank (deska)", 3, 60, 30)
+            )),
+            TemplateDay(2, listOf( // Wt — Upper + core
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 6, 150),
+                TemplateExercise("Podciąganie nachwytem", 4, 8, 120),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 8, 90),
+                TemplateExercise("Pallof press", 3, 12, 45),
+                TemplateExercise("Russian twist", 3, 20, 30)
+            )),
+            TemplateDay(4, listOf( // Czw — Posterior chain + sprint
+                TemplateExercise("Martwy ciąg klasyczny", 4, 5, 180),
+                TemplateExercise("Sprint biegowy", 6, 30, 90),
+                TemplateExercise("Nordic curl (uginanie nordyckie)", 3, 6, 90),
+                TemplateExercise("Glute bridge", 3, 12, 60),
+                TemplateExercise("Side plank (deska boczna)", 3, 30, 30)
+            )),
+            TemplateDay(5, listOf( // Pt — Conditioning + plyo
+                TemplateExercise("Bułgarski przysiad", 3, 10, 60),
+                TemplateExercise("Pompki plyometryczne", 3, 8, 60),
+                TemplateExercise("Burpees", 4, 12, 60),
+                TemplateExercise("Mountain climbers", 4, 30, 30),
+                TemplateExercise("Skakanka", 1, 10, 0)
+            ))
+        )
+    )
+
+    val footballInSeason = PlanTemplate(
+        id = "football_in_2",
+        name = "Piłka — In-season Maintenance 2×",
+        description = "Lekki plan w sezonie: utrzymanie siły bez zmęczenia przed meczem. 2 krótkie sesje.",
+        category = PlanGoalCategory.SPORT,
+        days = listOf(
+            TemplateDay(2, listOf( // Wt — full body lekko
+                TemplateExercise("Goblet squat", 3, 8, 90),
+                TemplateExercise("Wyciskanie sztangielek leżąc", 3, 6, 120),
+                TemplateExercise("Wiosłowanie sztangielką (jednorącz)", 3, 8, 90),
+                TemplateExercise("Hip thrust", 3, 8, 90),
+                TemplateExercise("Pallof press", 3, 10, 45)
+            )),
+            TemplateDay(4, listOf( // Czw — power maintenance
+                TemplateExercise("Martwy ciąg rumuński", 3, 5, 150),
+                TemplateExercise("Box jumps (skoki na skrzynię)", 3, 4, 120),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 6, 120),
+                TemplateExercise("Podciąganie nachwytem", 3, 6, 120),
+                TemplateExercise("Plank (deska)", 3, 45, 30)
+            ))
+        )
+    )
+
+    val footballPlyoSprint = PlanTemplate(
+        id = "football_plyo_3",
+        name = "Piłka — Plyo + Sprint 3×",
+        description = "Eksplozywność + zwinność — szczególnie na boki, zmiany kierunku, sprint, skoki. Mało ciężarów, dużo plyo.",
+        category = PlanGoalCategory.SPORT,
+        days = listOf(
+            TemplateDay(1, listOf( // Pon — Lower plyo
+                TemplateExercise("Box jumps (skoki na skrzynię)", 5, 5, 90),
+                TemplateExercise("Bułgarski przysiad", 3, 8, 90),
+                TemplateExercise("Jumping lunges (skok wykrok)", 3, 12, 60),
+                TemplateExercise("Sprint biegowy", 8, 20, 90),
+                TemplateExercise("Plank (deska)", 3, 45, 30)
+            )),
+            TemplateDay(3, listOf( // Śr — Upper power + core
+                TemplateExercise("Pompki plyometryczne", 4, 6, 90),
+                TemplateExercise("Medicine ball slam", 4, 10, 60),
+                TemplateExercise("Podciąganie nachwytem", 3, 6, 120),
+                TemplateExercise("Pallof press", 3, 10, 45),
+                TemplateExercise("Side plank (deska boczna)", 3, 30, 30)
+            )),
+            TemplateDay(5, listOf( // Pt — Conditioning HIIT
+                TemplateExercise("Burpees", 5, 10, 60),
+                TemplateExercise("Mountain climbers", 5, 30, 30),
+                TemplateExercise("Wioślarz (rowing)", 1, 15, 0),
+                TemplateExercise("Skakanka", 1, 10, 0),
+                TemplateExercise("Russian twist", 3, 30, 30)
+            ))
+        )
+    )
+
+    val athleticPerformance = PlanTemplate(
+        id = "athletic_4",
+        name = "Atletyczny 4× — siła + plyo dla sportów",
+        description = "Uniwersalny plan dla sportowców: siatkarze, koszykarze, biegacze, MMA. Mix siły, eksplozywności i kondycji.",
+        category = PlanGoalCategory.SPORT,
+        days = listOf(
+            TemplateDay(1, listOf( // Pon — Lower strength
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 5, 180),
+                TemplateExercise("Hip thrust", 4, 8, 90),
+                TemplateExercise("Bułgarski przysiad", 3, 10, 60),
+                TemplateExercise("Wspięcia na palce stojąc (calf raise)", 4, 12, 45)
+            )),
+            TemplateDay(2, listOf( // Wt — Upper strength
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 5, 180),
+                TemplateExercise("Wiosłowanie sztangą", 4, 6, 120),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 6, 120),
+                TemplateExercise("Podciąganie nachwytem", 3, 6, 120)
+            )),
+            TemplateDay(4, listOf( // Czw — Power + plyo
+                TemplateExercise("Martwy ciąg klasyczny", 4, 3, 180),
+                TemplateExercise("Box jumps (skoki na skrzynię)", 5, 5, 90),
+                TemplateExercise("Pompki plyometryczne", 3, 6, 90),
+                TemplateExercise("Medicine ball slam", 3, 10, 60),
+                TemplateExercise("Plank (deska)", 3, 60, 30)
+            )),
+            TemplateDay(5, listOf( // Pt — Conditioning + agility
+                TemplateExercise("Sprint biegowy", 8, 20, 90),
+                TemplateExercise("Burpees", 4, 12, 60),
+                TemplateExercise("Battle ropes", 4, 30, 60),
+                TemplateExercise("Russian twist", 3, 20, 30),
+                TemplateExercise("Side plank (deska boczna)", 3, 30, 30)
+            ))
+        )
+    )
+
+    // ========== HYPERTROPHY — DODATKOWE per częstotliwość ==========
+
+    val mass3x = PlanTemplate(
+        id = "mass_3x",
+        name = "Masa 3× — full body objętościowy",
+        description = "3 dni full body, każde duże ćwiczenie 1 boj + akcesoria. Dla zaczynających masę z mniejszą dostępnością.",
+        category = PlanGoalCategory.HYPERTROPHY,
+        days = listOf(
+            TemplateDay(1, listOf(
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 8, 150),
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 8, 120),
+                TemplateExercise("Wiosłowanie sztangą", 4, 8, 120),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 10, 90),
+                TemplateExercise("Plank (deska)", 3, 60, 30)
+            )),
+            TemplateDay(3, listOf(
+                TemplateExercise("Martwy ciąg klasyczny", 3, 5, 180),
+                TemplateExercise("Wyciskanie sztangielek - skos dodatni", 4, 10, 90),
+                TemplateExercise("Podciąganie nachwytem", 4, 8, 120),
+                TemplateExercise("Wznosy bokiem (lateral raise)", 3, 12, 60),
+                TemplateExercise("Uginanie ramion ze sztangą", 3, 10, 60)
+            )),
+            TemplateDay(5, listOf(
+                TemplateExercise("Przysiad przedni (front squat)", 3, 8, 150),
+                TemplateExercise("Wyciskanie sztangielek leżąc", 4, 10, 90),
+                TemplateExercise("Lat pulldown młotkowy", 4, 10, 90),
+                TemplateExercise("Pec deck (rozpiętki maszyną)", 3, 12, 60),
+                TemplateExercise("Wyciskanie francuskie ze sztangą", 3, 10, 60)
+            ))
+        )
+    )
+
+    val mass5x = PlanTemplate(
+        id = "mass_5x",
+        name = "Masa 5× — Upper / Lower / Push / Pull / Legs",
+        description = "Hybrydowy 5-dniowy split: każda partia 2× w tygodniu. Wysoka objętość, długie odpoczynki.",
+        category = PlanGoalCategory.HYPERTROPHY,
+        days = listOf(
+            TemplateDay(1, listOf( // Upper heavy
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 6, 150),
+                TemplateExercise("Wiosłowanie sztangą", 4, 6, 150),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 8, 120),
+                TemplateExercise("Podciąganie nachwytem", 3, 8, 120),
+                TemplateExercise("Uginanie ramion ze sztangą", 3, 10, 60)
+            )),
+            TemplateDay(2, listOf( // Lower heavy
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 6, 180),
+                TemplateExercise("Martwy ciąg rumuński", 4, 8, 120),
+                TemplateExercise("Suwnica (leg press)", 3, 10, 120),
+                TemplateExercise("Wspięcia na palce stojąc (calf raise)", 4, 15, 45)
+            )),
+            TemplateDay(4, listOf( // Push volume
+                TemplateExercise("Wyciskanie sztangielek - skos dodatni", 4, 10, 90),
+                TemplateExercise("Pompki na poręczach (dipy)", 3, 10, 90),
+                TemplateExercise("Wznosy bokiem (lateral raise)", 4, 12, 45),
+                TemplateExercise("Pec deck (rozpiętki maszyną)", 3, 12, 60),
+                TemplateExercise("Prostowanie ramion na wyciągu drążkiem", 3, 12, 60)
+            )),
+            TemplateDay(5, listOf( // Pull volume
+                TemplateExercise("Ściąganie drążka wyciągu (lat pulldown)", 4, 10, 90),
+                TemplateExercise("Wiosłowanie na wyciągu siedząc", 4, 10, 90),
+                TemplateExercise("Face pull", 3, 15, 45),
+                TemplateExercise("Uginanie młotkowe", 3, 12, 45),
+                TemplateExercise("Uginanie na modlitewniku ze sztangą", 3, 10, 60)
+            )),
+            TemplateDay(6, listOf( // Legs volume
+                TemplateExercise("Hack squat (maszyna hack)", 4, 10, 120),
+                TemplateExercise("Hip thrust", 4, 10, 90),
+                TemplateExercise("Wykrok ze sztangielkami", 3, 12, 60),
+                TemplateExercise("Uginanie nóg leżąc (leg curl)", 4, 12, 60),
+                TemplateExercise("Wspięcia na palce siedząc", 5, 15, 30)
+            ))
+        )
+    )
+
+    // ========== REDUKCJA — per częstotliwość ==========
+
+    val cut3x = PlanTemplate(
+        id = "cut_3x",
+        name = "Redukcja 3× — full body szybka",
+        description = "3 krótkie treningi full body z superseriami + cardio na koniec. Dla osób z mniejszą dostępnością czasu na redukcji.",
+        category = PlanGoalCategory.CUT,
+        days = listOf(
+            TemplateDay(1, listOf(
+                TemplateExercise("Goblet squat", 4, 12, 45),
+                TemplateExercise("Wyciskanie sztangielek leżąc", 4, 12, 45),
+                TemplateExercise("Wiosłowanie sztangielką (jednorącz)", 4, 12, 45),
+                TemplateExercise("Plank (deska)", 3, 45, 30),
+                TemplateExercise("Bieżnia interwały (HIIT)", 1, 15, 0)
+            )),
+            TemplateDay(3, listOf(
+                TemplateExercise("Martwy ciąg rumuński", 4, 10, 60),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 12, 60),
+                TemplateExercise("Podciąganie nachwytem", 3, 8, 90),
+                TemplateExercise("Mountain climbers", 3, 30, 30),
+                TemplateExercise("Wioślarz (rowing)", 1, 15, 0)
+            )),
+            TemplateDay(5, listOf(
+                TemplateExercise("Wykrok kroczący (walking lunge)", 4, 15, 45),
+                TemplateExercise("Pompki", 4, 15, 45),
+                TemplateExercise("Lat pulldown młotkowy", 4, 12, 45),
+                TemplateExercise("Burpees", 3, 12, 60),
+                TemplateExercise("Skakanka", 1, 10, 0)
+            ))
+        )
+    )
+
+    val cut5x = PlanTemplate(
+        id = "cut_5x",
+        name = "Redukcja 5× — high frequency + HIIT",
+        description = "5 krótkich treningów: 3 siłowe (Push/Pull/Legs) + 2 czysto HIIT/cardio. Maksymalny deficyt z zachowaniem masy.",
+        category = PlanGoalCategory.CUT,
+        days = listOf(
+            TemplateDay(1, listOf( // Push
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 10, 60),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 10, 60),
+                TemplateExercise("Pompki na poręczach (dipy)", 3, 12, 60),
+                TemplateExercise("Wznosy bokiem (lateral raise)", 3, 15, 30),
+                TemplateExercise("Bieżnia (bieg)", 1, 15, 0)
+            )),
+            TemplateDay(2, listOf( // HIIT
+                TemplateExercise("Burpees", 5, 15, 45),
+                TemplateExercise("Box jumps (skoki na skrzynię)", 5, 10, 60),
+                TemplateExercise("Mountain climbers", 5, 30, 30),
+                TemplateExercise("Wioślarz (rowing)", 1, 20, 0)
+            )),
+            TemplateDay(3, listOf( // Pull
+                TemplateExercise("Podciąganie nachwytem", 4, 8, 90),
+                TemplateExercise("Wiosłowanie sztangą", 4, 10, 60),
+                TemplateExercise("Lat pulldown młotkowy", 3, 12, 60),
+                TemplateExercise("Uginanie ramion ze sztangą", 3, 12, 45),
+                TemplateExercise("Skakanka", 1, 10, 0)
+            )),
+            TemplateDay(5, listOf( // Legs
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 10, 90),
+                TemplateExercise("Hip thrust", 3, 12, 60),
+                TemplateExercise("Wykrok kroczący (walking lunge)", 3, 15, 45),
+                TemplateExercise("Wspięcia na palce stojąc (calf raise)", 4, 15, 30),
+                TemplateExercise("Bieżnia interwały (HIIT)", 1, 15, 0)
+            )),
+            TemplateDay(6, listOf( // Cardio long
+                TemplateExercise("Bieżnia (bieg)", 1, 40, 0),
+                TemplateExercise("Plank (deska)", 4, 60, 30)
+            ))
+        )
+    )
+
+    val cut6x = PlanTemplate(
+        id = "cut_6x",
+        name = "Redukcja 6× — PPL + cardio",
+        description = "Klasyczny PPL 6 dni + 2-3 dni cardio LISS na koniec sesji. Dla zaawansowanych w deficycie.",
+        category = PlanGoalCategory.CUT,
+        days = listOf(
+            TemplateDay(1, listOf( // Push
+                TemplateExercise("Wyciskanie sztangi leżąc", 4, 8, 90),
+                TemplateExercise("Wyciskanie sztangielek nad głowę", 3, 10, 60),
+                TemplateExercise("Pompki na poręczach (dipy)", 3, 10, 60),
+                TemplateExercise("Wznosy bokiem (lateral raise)", 3, 15, 30),
+                TemplateExercise("Bieżnia (bieg)", 1, 15, 0)
+            )),
+            TemplateDay(2, listOf( // Pull
+                TemplateExercise("Martwy ciąg rumuński", 3, 8, 90),
+                TemplateExercise("Podciąganie nachwytem", 4, 8, 90),
+                TemplateExercise("Wiosłowanie sztangielką (jednorącz)", 3, 10, 60),
+                TemplateExercise("Uginanie ramion ze sztangą", 3, 12, 45),
+                TemplateExercise("Wioślarz (rowing)", 1, 15, 0)
+            )),
+            TemplateDay(3, listOf( // Legs
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 10, 90),
+                TemplateExercise("Suwnica (leg press)", 3, 12, 60),
+                TemplateExercise("Uginanie nóg leżąc (leg curl)", 3, 12, 45),
+                TemplateExercise("Wspięcia na palce stojąc (calf raise)", 4, 15, 30),
+                TemplateExercise("Bieżnia interwały (HIIT)", 1, 15, 0)
+            )),
+            TemplateDay(4, listOf( // Push 2
+                TemplateExercise("Wyciskanie sztangielek - skos dodatni", 4, 10, 60),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 8, 90),
+                TemplateExercise("Pec deck (rozpiętki maszyną)", 3, 12, 45),
+                TemplateExercise("Prostowanie ramion na wyciągu drążkiem", 3, 12, 45),
+                TemplateExercise("Skakanka", 1, 10, 0)
+            )),
+            TemplateDay(5, listOf( // Pull 2
+                TemplateExercise("Ściąganie drążka wyciągu (lat pulldown)", 4, 10, 60),
+                TemplateExercise("Wiosłowanie T-bar", 3, 10, 60),
+                TemplateExercise("Face pull", 3, 15, 45),
+                TemplateExercise("Uginanie młotkowe", 3, 12, 45),
+                TemplateExercise("Bieżnia (bieg)", 1, 20, 0)
+            )),
+            TemplateDay(6, listOf( // Legs 2
+                TemplateExercise("Hip thrust", 4, 10, 90),
+                TemplateExercise("Hack squat (maszyna hack)", 3, 10, 60),
+                TemplateExercise("Wykrok ze sztangielkami", 3, 12, 60),
+                TemplateExercise("Wspięcia na palce siedząc", 4, 15, 30),
+                TemplateExercise("Bieżnia interwały (HIIT)", 1, 15, 0)
+            ))
+        )
+    )
+
+    // ========== SIŁA — DODATKOWE ==========
+
+    val madcow5x5 = PlanTemplate(
+        id = "madcow_5x5",
+        name = "Madcow 5×5 (3×) — siła pośrednia",
+        description = "Następca Stronglifts dla średniozaawansowanych. Tygodniowa progresja, 3 boje główne + akcesoria.",
+        category = PlanGoalCategory.STRENGTH,
+        days = listOf(
+            TemplateDay(1, listOf(
+                TemplateExercise("Przysiad ze sztangą (back squat)", 5, 5, 180),
+                TemplateExercise("Wyciskanie sztangi leżąc", 5, 5, 180),
+                TemplateExercise("Wiosłowanie sztangą", 5, 5, 120)
+            )),
+            TemplateDay(3, listOf(
+                TemplateExercise("Przysiad ze sztangą (back squat)", 4, 5, 180),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 5, 5, 180),
+                TemplateExercise("Martwy ciąg klasyczny", 5, 5, 240),
+                TemplateExercise("Pompki na poręczach (dipy)", 3, 8, 90)
+            )),
+            TemplateDay(5, listOf(
+                TemplateExercise("Przysiad ze sztangą (back squat)", 5, 3, 180),
+                TemplateExercise("Wyciskanie sztangi leżąc", 5, 3, 180),
+                TemplateExercise("Wiosłowanie sztangą", 5, 3, 150),
+                TemplateExercise("Podciąganie nachwytem", 3, 8, 120)
+            ))
+        )
+    )
+
+    val texasMethod = PlanTemplate(
+        id = "texas_method",
+        name = "Texas Method (3×)",
+        description = "Klasyczny program siłowy: poniedziałek volume, środa light/skill, piątek intensity test PR.",
+        category = PlanGoalCategory.STRENGTH,
+        days = listOf(
+            TemplateDay(1, listOf( // Volume day
+                TemplateExercise("Przysiad ze sztangą (back squat)", 5, 5, 180),
+                TemplateExercise("Wyciskanie sztangi leżąc", 5, 5, 180),
+                TemplateExercise("Wiosłowanie sztangą", 5, 5, 150)
+            )),
+            TemplateDay(3, listOf( // Light day
+                TemplateExercise("Przysiad ze sztangą (back squat)", 2, 5, 180),
+                TemplateExercise("Wyciskanie żołnierskie (OHP)", 3, 5, 150),
+                TemplateExercise("Martwy ciąg klasyczny", 1, 5, 240),
+                TemplateExercise("Podciąganie nachwytem", 3, 8, 120)
+            )),
+            TemplateDay(5, listOf( // Intensity day — 5RM
+                TemplateExercise("Przysiad ze sztangą (back squat)", 1, 5, 240),
+                TemplateExercise("Wyciskanie sztangi leżąc", 1, 5, 240),
+                TemplateExercise("Martwy ciąg klasyczny", 1, 5, 300),
+                TemplateExercise("Wiosłowanie sztangą", 3, 5, 150)
+            ))
+        )
+    )
+
     val all: List<PlanTemplate> = listOf(
         // Beginner
         fullBody3x,
         beginnerBodyweight,
         // Hypertrophy
+        mass3x,
         upperLower,
         pushPullLegs,
         broSplit,
+        mass5x,
         arnoldSplit,
         germanVolume,
         // Strength
         stronglifts5x5,
         greyskullLP,
+        madcow5x5,
+        texasMethod,
         fiveThreeOneBBB,
         // Powerlifting
         powerbuilding4,
         sheikoBeginner,
-        // Athletic / Cut
+        // Cut / redukcja
+        cut3x,
         conditioning4,
+        cut5x,
+        cut6x,
         calisthenics4,
+        // Sport
+        footballPlyoSprint,
+        footballOffSeason,
+        footballInSeason,
+        athleticPerformance,
         // Glute focus
         gluteBuilder,
         lowerBodyFocus
