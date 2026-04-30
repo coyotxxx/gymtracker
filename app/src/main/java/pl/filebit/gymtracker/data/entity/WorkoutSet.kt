@@ -40,6 +40,8 @@ data class WorkoutSet(
     val rpe: Int? = null,               // 1-10, opcjonalne
     val rir: Int? = null,               // reps in reserve, opcjonalne
     val tempo: String? = null,          // np. "3-1-1-0" (eksc/pauza/konc/pauza)
+    val durationSec: Int? = null,       // czas trwania (DURATION, DISTANCE_DURATION)
+    val distanceM: Double? = null,      // dystans w metrach (DISTANCE_DURATION)
     val createdAt: Long = System.currentTimeMillis()
 ) {
     val isWarmup: Boolean get() = setType == SetType.WARMUP

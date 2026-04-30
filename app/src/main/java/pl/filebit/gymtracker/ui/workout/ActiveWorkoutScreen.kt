@@ -510,11 +510,29 @@ private fun ExerciseGroupCard(
             HorizontalDivider()
             Spacer(Modifier.height(8.dp))
 
-            // Header row
+            // Header row — różne dla różnych metricType
             Row(modifier = Modifier.fillMaxWidth()) {
                 HeaderCell("Set", weight = 0.6f)
-                HeaderCell("kg", weight = 1f)
-                HeaderCell(stringResource(R.string.workout_reps), weight = 1f)
+                when (group.exercise.metricType) {
+                    pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
+                        HeaderCell("kg", weight = 1f)
+                        HeaderCell(stringResource(R.string.workout_reps), weight = 1f)
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
+                        HeaderCell(stringResource(R.string.workout_reps), weight = 2f)
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
+                        HeaderCell("Czas (s)", weight = 2f)
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
+                        HeaderCell("km", weight = 1f)
+                        HeaderCell("min", weight = 1f)
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> {
+                        HeaderCell("kg", weight = 1f)
+                        HeaderCell("s", weight = 1f)
+                    }
+                }
                 Spacer(Modifier.width(48.dp)) // for ✓ button
             }
 
@@ -523,6 +541,7 @@ private fun ExerciseGroupCard(
             group.sets.forEach { set ->
                 SetRow(
                     set = set,
+                    metricType = group.exercise.metricType,
                     onUpdate = onUpdateSet,
                     onDelete = onDeleteSet
                 )
@@ -629,11 +648,16 @@ private fun AdvancedFieldsRow(
 @Composable
 private fun SetRow(
     set: WorkoutSet,
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
     onUpdate: (WorkoutSet) -> Unit,
     onDelete: (WorkoutSet) -> Unit
 ) {
     var weightText by remember(set.id) { mutableStateOf(formatWeight(set.weightKg)) }
     var repsText by remember(set.id) { mutableStateOf(set.reps.toString()) }
+    var durationText by remember(set.id) { mutableStateOf(set.durationSec?.toString() ?: "") }
+    var distanceKmText by remember(set.id) {
+        mutableStateOf(set.distanceM?.let { (it / 1000.0).let { km -> "%.2f".format(km).replace(',', '.') } } ?: "")
+    }
     var completed by remember(set.id) { mutableStateOf(set.isCompleted) }
 
     Row(
@@ -662,35 +686,54 @@ private fun SetRow(
 
         Spacer(Modifier.width(8.dp))
 
-        // Weight
-        OutlinedTextField(
-            value = weightText,
-            onValueChange = { v ->
-                weightText = v
-                v.replace(',', '.').toDoubleOrNull()?.let {
-                    onUpdate(set.copy(weightKg = it))
-                }
-            },
-            modifier = Modifier.weight(1f),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
-        )
-
-        Spacer(Modifier.width(8.dp))
-
-        // Reps
-        OutlinedTextField(
-            value = repsText,
-            onValueChange = { v ->
-                repsText = v
-                v.toIntOrNull()?.let {
-                    onUpdate(set.copy(reps = it))
-                }
-            },
-            modifier = Modifier.weight(1f),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-        )
+        when (metricType) {
+            pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
+                NumField(weightText, { v ->
+                    weightText = v
+                    v.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                }, KeyboardType.Decimal, Modifier.weight(1f))
+                Spacer(Modifier.width(8.dp))
+                NumField(repsText, { v ->
+                    repsText = v
+                    v.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
+                }, KeyboardType.Number, Modifier.weight(1f))
+            }
+            pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
+                NumField(repsText, { v ->
+                    repsText = v
+                    v.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
+                }, KeyboardType.Number, Modifier.weight(2f))
+            }
+            pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
+                NumField(durationText, { v ->
+                    durationText = v
+                    onUpdate(set.copy(durationSec = v.toIntOrNull()))
+                }, KeyboardType.Number, Modifier.weight(2f))
+            }
+            pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
+                NumField(distanceKmText, { v ->
+                    distanceKmText = v
+                    val km = v.replace(',', '.').toDoubleOrNull()
+                    onUpdate(set.copy(distanceM = km?.let { it * 1000.0 }))
+                }, KeyboardType.Decimal, Modifier.weight(1f))
+                Spacer(Modifier.width(8.dp))
+                NumField(durationText, { v ->
+                    durationText = v
+                    onUpdate(set.copy(durationSec = v.toIntOrNull()?.let { it * 60 }))
+                }, KeyboardType.Number, Modifier.weight(1f))
+            }
+            pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> {
+                NumField(weightText, { v ->
+                    weightText = v
+                    v.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                }, KeyboardType.Decimal, Modifier.weight(1f))
+                Spacer(Modifier.width(8.dp))
+                NumField(durationText, { v ->
+                    durationText = v
+                    onUpdate(set.copy(durationSec = v.toIntOrNull()))
+                }, KeyboardType.Number, Modifier.weight(1f))
+            }
+        }
 
         Spacer(Modifier.width(8.dp))
 
@@ -716,4 +759,20 @@ private fun SetRow(
             )
         }
     }
+}
+
+@Composable
+private fun NumField(
+    value: String,
+    onChange: (String) -> Unit,
+    keyboardType: KeyboardType,
+    modifier: Modifier
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onChange,
+        modifier = modifier,
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
+    )
 }

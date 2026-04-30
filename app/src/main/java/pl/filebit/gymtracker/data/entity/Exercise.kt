@@ -13,6 +13,17 @@ enum class Equipment {
     BARBELL, DUMBBELLS, MACHINE, CABLE, BODYWEIGHT, OTHER
 }
 
+/**
+ * Typ metryki — co loguje user dla danego ćwiczenia.
+ */
+enum class MetricType {
+    WEIGHT_REPS,        // klasyczne: kg + powt. (siłowe, większość)
+    REPS_ONLY,          // tylko powt. (np. pompki BW, sit-up)
+    DURATION,           // tylko czas (plank, deska, izometryczne)
+    DISTANCE_DURATION,  // dystans + czas (bieżnia, rower, bieg)
+    DURATION_WEIGHT     // czas + ciężar (farmer's walk, plank z obciążeniem)
+}
+
 @Entity(tableName = "exercises")
 data class Exercise(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -20,5 +31,6 @@ data class Exercise(
     val primaryMuscle: MuscleGroup,
     val equipment: Equipment,
     val isCustom: Boolean = false,
-    val notes: String = ""
+    val notes: String = "",
+    val metricType: MetricType = MetricType.WEIGHT_REPS
 )

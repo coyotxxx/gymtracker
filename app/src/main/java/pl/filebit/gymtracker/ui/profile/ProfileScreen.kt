@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.Flag
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -74,6 +75,7 @@ fun ProfileScreen(
     onOpenAiTrainer: () -> Unit,
     onOpenAiSettings: () -> Unit,
     onOpenGoals: () -> Unit,
+    onOpenGlossary: () -> Unit,
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -422,6 +424,17 @@ fun ProfileScreen(
                     Icon(Icons.Default.Key, contentDescription = null)
                     Spacer(Modifier.height(4.dp))
                     Text("  ${stringResource(R.string.ai_settings_section_title)}")
+                }
+            }
+            item {
+                OutlinedButton(
+                    onClick = onOpenGlossary,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Icon(Icons.Default.MenuBook, contentDescription = null)
+                    Spacer(Modifier.height(4.dp))
+                    Text("  ${stringResource(R.string.glossary_section_title)}")
                 }
             }
             item {

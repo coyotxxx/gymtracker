@@ -6,6 +6,7 @@ import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.GoalType
 import pl.filebit.gymtracker.data.entity.GoalUnit
+import pl.filebit.gymtracker.data.entity.MetricType
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.SetType
@@ -56,6 +57,10 @@ class Converters {
     @TypeConverter fun photoTypeToString(p: PhotoType): String = p.name
     @TypeConverter fun stringToPhotoType(s: String): PhotoType =
         runCatching { PhotoType.valueOf(s) }.getOrDefault(PhotoType.FRONT)
+
+    @TypeConverter fun metricTypeToString(m: MetricType): String = m.name
+    @TypeConverter fun stringToMetricType(s: String): MetricType =
+        runCatching { MetricType.valueOf(s) }.getOrDefault(MetricType.WEIGHT_REPS)
 
     @TypeConverter fun intListToString(l: List<Int>): String = l.joinToString(",")
     @TypeConverter fun stringToIntList(s: String): List<Int> =

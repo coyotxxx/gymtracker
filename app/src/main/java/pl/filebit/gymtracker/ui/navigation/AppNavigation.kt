@@ -46,6 +46,7 @@ import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
 import pl.filebit.gymtracker.ui.ai.AiSettingsScreen
 import pl.filebit.gymtracker.ui.ai.AiTrainerScreen
 import pl.filebit.gymtracker.ui.goals.GoalsScreen
+import pl.filebit.gymtracker.ui.glossary.GlossaryScreen
 import pl.filebit.gymtracker.ui.tools.PlateCalculatorScreen
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.CoachWorkoutScreen
@@ -168,7 +169,8 @@ fun AppNavigation() {
                     onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
                     onOpenAiTrainer = { navController.navigate(Screen.AiTrainer.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
-                    onOpenGoals = { navController.navigate(Screen.Goals.route) }
+                    onOpenGoals = { navController.navigate(Screen.Goals.route) },
+                    onOpenGlossary = { navController.navigate(Screen.Glossary.route) }
                 )
             }
             composable(Screen.Stats.route) {
@@ -206,6 +208,9 @@ fun AppNavigation() {
             }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.Glossary.route) {
+                GlossaryScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(
