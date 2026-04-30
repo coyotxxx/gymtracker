@@ -238,7 +238,8 @@ fun AppNavigation() {
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
-                    onOpenGlossary = { navController.navigate(Screen.Glossary.route) }
+                    onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
+                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
                 )
             }
             composable(Screen.Stats.route) {

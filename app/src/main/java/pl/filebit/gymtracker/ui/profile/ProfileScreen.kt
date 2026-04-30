@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.ui.profile
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,37 +15,42 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.AccessibilityNew
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
-import androidx.compose.material.icons.filled.AccessibilityNew
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.FitnessCenter
+import androidx.compose.material.icons.filled.Flag
+import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.MonitorWeight
 import androidx.compose.material.icons.filled.PhotoLibrary
-import androidx.compose.material.icons.filled.FitnessCenter
-import androidx.compose.material.icons.filled.AutoAwesome
-import androidx.compose.material.icons.filled.Key
-import androidx.compose.material.icons.filled.Flag
-import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.QueryStats
-import androidx.compose.material3.Button
+import androidx.compose.material.icons.filled.Scale
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -55,7 +62,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -67,8 +76,16 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.entity.WeightUnit
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,6 +102,7 @@ fun ProfileScreen(
     onOpenAiSettings: () -> Unit,
     onOpenGoals: () -> Unit,
     onOpenGlossary: () -> Unit,
+    onOpenAchievements: () -> Unit = {},
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -92,15 +110,33 @@ fun ProfileScreen(
     val snackbar = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val savedMsg = stringResource(R.string.profile_saved)
+    var showEditName by remember { mutableStateOf(false) }
 
     LaunchedEffect(profile) { draft = profile }
 
+    // Auto-save: każda zmiana drafta zapisuje profil bez przycisku Zapisz
+    LaunchedEffect(draft) {
+        if (draft != profile) {
+            vm.save(draft) { /* no-op */ }
+        }
+    }
+
     Scaffold(
+        containerColor = DarkBg,
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.nav_profile)) },
+                title = {
+                    Text(
+                        stringResource(R.string.nav_profile),
+                        style = MaterialTheme.typography.headlineSmall.copy(
+                            fontWeight = FontWeight.ExtraBold,
+                            fontSize = 22.sp
+                        )
+                    )
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background
+                    containerColor = DarkBg,
+                    titleContentColor = DarkOnSurface
                 )
             )
         },
@@ -110,40 +146,118 @@ fun ProfileScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 24.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             item {
                 pl.filebit.gymtracker.ui.update.UpdateCard(showWhenUpToDate = true)
             }
+
+            // === HERO: avatar + imię + level + dni + ołówek ===
             item {
-                ProfileHeaderCard(profile = draft)
+                ProfileHeaderCard(
+                    profile = draft,
+                    onEdit = { showEditName = true }
+                )
+            }
+
+            item { Spacer(Modifier.height(4.dp)) }
+
+            // === POSTĘP ===
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.QueryStats,
+                    title = stringResource(R.string.stats_title),
+                    subtitle = "Twój postęp w czasie",
+                    onClick = onOpenStats
+                )
             }
             item {
-                SectionCard(title = "Imię") {
-                    OutlinedTextField(
-                        value = draft.displayName,
-                        onValueChange = { draft = draft.copy(displayName = it.take(30)) },
-                        placeholder = { Text("np. Maciej") },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                    Spacer(Modifier.height(4.dp))
-                    Text(
-                        "Pokaże się na ekranie głównym jako \"Cześć, Imię\". Zostaw puste żeby wyłączyć.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
+                ProfileNavRow(
+                    icon = Icons.Default.EmojiEvents,
+                    title = "Odznaki",
+                    subtitle = "Wszystkie zdobyte odznaki",
+                    onClick = onOpenAchievements
+                )
             }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Flag,
+                    title = "Cele",
+                    subtitle = "Cele długoterminowe",
+                    onClick = onOpenGoals
+                )
+            }
+
+            // === NARZĘDZIA ===
+            item { ProfileSectionLabel("Narzędzia") }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Calculate,
+                    title = stringResource(R.string.onerm_title),
+                    onClick = onOpenOneRm
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Scale,
+                    title = "Kalkulator obciążeń",
+                    onClick = onOpenPlateCalc
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.MonitorWeight,
+                    title = stringResource(R.string.body_title),
+                    onClick = onOpenBody
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.PhotoLibrary,
+                    title = "Zdjęcia progresu",
+                    onClick = onOpenPhotos
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.AccessibilityNew,
+                    title = stringResource(R.string.muscles_title),
+                    onClick = onOpenMuscles
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.FitnessCenter,
+                    title = "Standardy siłowe",
+                    onClick = onOpenStrength
+                )
+            }
+
+            // === AI ===
+            item { ProfileSectionLabel("Asystent AI") }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.AutoAwesome,
+                    title = "Trener AI",
+                    subtitle = "Plany, analizy i sugestie",
+                    onClick = onOpenAiTrainer
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Key,
+                    title = "Połączenie AI",
+                    subtitle = "Klucz API i model",
+                    onClick = onOpenAiSettings
+                )
+            }
+
+            // === USTAWIENIA TRENINGU ===
+            item { ProfileSectionLabel("Ustawienia treningu") }
+
             item {
                 SectionCard(title = stringResource(R.string.profile_goal)) {
-                    Text(
-                        stringResource(R.string.profile_goal_explain),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    Spacer(Modifier.height(8.dp))
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
@@ -195,12 +309,6 @@ fun ProfileScreen(
 
             item {
                 SectionCard(title = stringResource(R.string.profile_weight_goal)) {
-                    Text(
-                        stringResource(R.string.profile_weight_goal_explain),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    Spacer(Modifier.height(8.dp))
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
@@ -251,80 +359,23 @@ fun ProfileScreen(
             }
 
             item {
-                SectionCard(title = stringResource(R.string.profile_ai_overlay_section)) {
-                    androidx.compose.foundation.layout.Row(
-                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
-                    ) {
-                        androidx.compose.material3.Switch(
-                            checked = draft.aiOverlayEnabled,
-                            onCheckedChange = { draft = draft.copy(aiOverlayEnabled = it) }
-                        )
-                        Spacer(Modifier.padding(start = 12.dp))
-                        Column {
-                            Text(
-                                stringResource(R.string.profile_ai_overlay_toggle),
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                stringResource(R.string.profile_ai_overlay_explain),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                }
+                ToggleSection(
+                    title = stringResource(R.string.profile_advanced_section),
+                    label = stringResource(R.string.profile_advanced_toggle),
+                    explain = stringResource(R.string.profile_advanced_explain),
+                    checked = draft.showAdvancedSetFields,
+                    onChange = { draft = draft.copy(showAdvancedSetFields = it) }
+                )
             }
 
             item {
-                SectionCard(title = stringResource(R.string.profile_flash_section)) {
-                    androidx.compose.foundation.layout.Row(
-                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
-                    ) {
-                        androidx.compose.material3.Switch(
-                            checked = draft.flashOnTimerEnd,
-                            onCheckedChange = { draft = draft.copy(flashOnTimerEnd = it) }
-                        )
-                        Spacer(Modifier.padding(start = 12.dp))
-                        Column {
-                            Text(
-                                stringResource(R.string.profile_flash_toggle),
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                stringResource(R.string.profile_flash_explain),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                }
-            }
-
-            item {
-                SectionCard(title = stringResource(R.string.profile_unfinished_section)) {
-                    androidx.compose.foundation.layout.Row(
-                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
-                    ) {
-                        androidx.compose.material3.Switch(
-                            checked = draft.unfinishedWorkoutNotifyEnabled,
-                            onCheckedChange = { draft = draft.copy(unfinishedWorkoutNotifyEnabled = it) }
-                        )
-                        Spacer(Modifier.padding(start = 12.dp))
-                        Column {
-                            Text(
-                                stringResource(R.string.profile_unfinished_toggle),
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                stringResource(R.string.profile_unfinished_explain),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
+                ToggleSection(
+                    title = stringResource(R.string.profile_unfinished_section),
+                    label = stringResource(R.string.profile_unfinished_toggle),
+                    explain = stringResource(R.string.profile_unfinished_explain),
+                    checked = draft.unfinishedWorkoutNotifyEnabled,
+                    onChange = { draft = draft.copy(unfinishedWorkoutNotifyEnabled = it) }
+                ) {
                     if (draft.unfinishedWorkoutNotifyEnabled) {
                         Spacer(Modifier.height(12.dp))
                         OutlinedTextField(
@@ -344,186 +395,278 @@ fun ProfileScreen(
             }
 
             item {
-                SectionCard(title = stringResource(R.string.profile_advanced_section)) {
-                    androidx.compose.foundation.layout.Row(
-                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
-                    ) {
-                        androidx.compose.material3.Switch(
-                            checked = draft.showAdvancedSetFields,
-                            onCheckedChange = { draft = draft.copy(showAdvancedSetFields = it) }
-                        )
-                        Spacer(Modifier.height(8.dp))
-                        androidx.compose.foundation.layout.Spacer(
-                            modifier = Modifier.padding(start = 12.dp)
-                        )
-                        Column {
-                            Text(
-                                stringResource(R.string.profile_advanced_toggle),
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                stringResource(R.string.profile_advanced_explain),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                }
+                ToggleSection(
+                    title = stringResource(R.string.profile_flash_section),
+                    label = stringResource(R.string.profile_flash_toggle),
+                    explain = stringResource(R.string.profile_flash_explain),
+                    checked = draft.flashOnTimerEnd,
+                    onChange = { draft = draft.copy(flashOnTimerEnd = it) }
+                )
             }
 
             item {
-                Button(
-                    onClick = {
-                        vm.save(draft) {
-                            scope.launch { snackbar.showSnackbar(savedMsg) }
-                        }
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Text(stringResource(R.string.profile_save))
-                }
+                ToggleSection(
+                    title = stringResource(R.string.profile_ai_overlay_section),
+                    label = stringResource(R.string.profile_ai_overlay_toggle),
+                    explain = stringResource(R.string.profile_ai_overlay_explain),
+                    checked = draft.aiOverlayEnabled,
+                    onChange = { draft = draft.copy(aiOverlayEnabled = it) }
+                )
             }
 
+            // === DANE ===
+            item { ProfileSectionLabel("Dane i pomoc") }
             item {
-                OutlinedButton(
-                    onClick = onOpenStats,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.QueryStats, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.stats_title)}")
-                }
+                ProfileNavRow(
+                    icon = Icons.AutoMirrored.Filled.MenuBook,
+                    title = "Słowniczek",
+                    subtitle = "Skróty: RPE, RIR, AMRAP…",
+                    onClick = onOpenGlossary
+                )
             }
             item {
-                OutlinedButton(
-                    onClick = onOpenOneRm,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Calculate, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.onerm_title)}")
-                }
+                ProfileNavRow(
+                    icon = Icons.Default.CloudUpload,
+                    title = stringResource(R.string.backup_section),
+                    subtitle = "Eksport / Import / Wyczyść",
+                    onClick = onOpenBackup
+                )
             }
-            item {
-                OutlinedButton(
-                    onClick = onOpenPlateCalc,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Calculate, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.plate_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenBody,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.MonitorWeight, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.body_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenMuscles,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.AccessibilityNew, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.muscles_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenPhotos,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.PhotoLibrary, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.photos_section_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenStrength,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.FitnessCenter, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.strength_section_title)}")
-                }
-            }
-            item {
-                Button(
-                    onClick = onOpenGoals,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Flag, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.goals_section_title)}")
-                }
-            }
-            item {
-                Button(
-                    onClick = onOpenAiTrainer,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.AutoAwesome, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.ai_trainer_section_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenAiSettings,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Key, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.ai_settings_section_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenGlossary,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.MenuBook, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.glossary_section_title)}")
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = onOpenBackup,
-                    modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.CloudUpload, contentDescription = null)
-                    Spacer(Modifier.height(4.dp))
-                    Text("  ${stringResource(R.string.backup_section)}")
-                }
-            }
+
             item {
                 Spacer(Modifier.height(16.dp))
                 AppVersionFooter()
-                Spacer(Modifier.height(8.dp))
             }
         }
+    }
+
+    if (showEditName) {
+        EditNameDialog(
+            current = draft.displayName,
+            onDismiss = { showEditName = false },
+            onSave = { newName ->
+                draft = draft.copy(displayName = newName)
+                showEditName = false
+                scope.launch { snackbar.showSnackbar(savedMsg) }
+            }
+        )
+    }
+}
+
+// ============================================================
+// Komponenty pomocnicze
+// ============================================================
+
+@Composable
+private fun ProfileSectionLabel(text: String) {
+    Text(
+        text = text.uppercase(),
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.4.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        modifier = Modifier.padding(start = 4.dp, top = 16.dp, bottom = 4.dp)
+    )
+}
+
+@Composable
+private fun ProfileNavRow(
+    icon: ImageVector,
+    title: String,
+    subtitle: String? = null,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .background(DarkSurfaceVariant, RoundedCornerShape(10.dp)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    icon,
+                    contentDescription = null,
+                    tint = DarkOnSurface,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+            Spacer(Modifier.width(14.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    title,
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = DarkOnSurface
+                )
+                if (subtitle != null) {
+                    Text(
+                        subtitle,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant,
+                        maxLines = 1
+                    )
+                }
+            }
+            Icon(
+                Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                contentDescription = null,
+                tint = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+@Composable
+private fun ProfileHeaderCard(
+    profile: UserProfile,
+    onEdit: () -> Unit
+) {
+    val initial = profile.displayName.firstOrNull()?.uppercase() ?: "?"
+    val displayName = profile.displayName.ifBlank { "Twoje imię" }
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(20.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(56.dp)
+                    .background(AccentOrange, CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    initial,
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 26.sp
+                    ),
+                    color = Color.Black
+                )
+            }
+            Spacer(Modifier.width(14.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    displayName,
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 20.sp
+                    ),
+                    color = if (profile.displayName.isBlank()) DarkOnSurfaceVariant else DarkOnSurface,
+                    maxLines = 1
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    "${profile.experience.label()} · ${profile.daysPerWeek}×/tydz",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .clickable(onClick = onEdit),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    Icons.Default.Edit,
+                    contentDescription = "Edytuj imię",
+                    tint = DarkOnSurfaceVariant,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun EditNameDialog(
+    current: String,
+    onDismiss: () -> Unit,
+    onSave: (String) -> Unit
+) {
+    var text by remember { mutableStateOf(current) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Imię") },
+        text = {
+            Column {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it.take(30) },
+                    placeholder = { Text("np. Maciej") },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    "Pokaże się na ekranie głównym jako \"Cześć, Imię\". Zostaw puste żeby wyłączyć.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = { onSave(text.trim()) }) {
+                Text(stringResource(R.string.common_save))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.common_cancel))
+            }
+        }
+    )
+}
+
+@Composable
+private fun ToggleSection(
+    title: String,
+    label: String,
+    explain: String,
+    checked: Boolean,
+    onChange: (Boolean) -> Unit,
+    extra: @Composable () -> Unit = {}
+) {
+    SectionCard(title = title) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Switch(checked = checked, onCheckedChange = onChange)
+            Spacer(Modifier.width(12.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    label,
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Medium,
+                    color = DarkOnSurface
+                )
+                Text(
+                    explain,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+        extra()
     }
 }
 
@@ -540,7 +683,7 @@ private fun AppVersionFooter() {
         text = "GymTracker v$version",
         modifier = Modifier.fillMaxWidth(),
         style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        color = DarkOnSurfaceVariant,
         textAlign = androidx.compose.ui.text.style.TextAlign.Center
     )
 }
@@ -549,20 +692,16 @@ private fun AppVersionFooter() {
 private fun SectionCard(title: String, content: @Composable () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
-        ),
-        border = androidx.compose.foundation.BorderStroke(
-            1.dp,
-            pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
-        ),
-        shape = RoundedCornerShape(18.dp)
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 title,
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.ExtraBold
+                fontWeight = FontWeight.ExtraBold,
+                color = DarkOnSurface
             )
             Spacer(Modifier.height(8.dp))
             content()
@@ -578,31 +717,19 @@ private fun NumberFieldCard(
     onChange: (Int) -> Unit
 ) {
     var text by remember(value) { mutableStateOf(value.toString()) }
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(12.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                label,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold
-            )
-            Spacer(Modifier.height(8.dp))
-            OutlinedTextField(
-                value = text,
-                onValueChange = { v ->
-                    text = v.filter { it.isDigit() }
-                    text.toIntOrNull()?.let { n ->
-                        if (n in range) onChange(n)
-                    }
-                },
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                modifier = Modifier.fillMaxWidth()
-            )
-        }
+    SectionCard(title = label) {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { v ->
+                text = v.filter { it.isDigit() }
+                text.toIntOrNull()?.let { n ->
+                    if (n in range) onChange(n)
+                }
+            },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
@@ -644,61 +771,6 @@ private fun TrainingGoal.label(): String = when (this) {
 
 private fun ExperienceLevel.label(): String = when (this) {
     ExperienceLevel.BEGINNER -> "Początkujący"
-    ExperienceLevel.INTERMEDIATE -> "Średnio-zaawansowany"
+    ExperienceLevel.INTERMEDIATE -> "Średnio zaawansowany"
     ExperienceLevel.ADVANCED -> "Zaawansowany"
-}
-
-@Composable
-private fun ProfileHeaderCard(profile: pl.filebit.gymtracker.data.entity.UserProfile) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
-        ),
-        border = androidx.compose.foundation.BorderStroke(
-            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
-        ),
-        shape = RoundedCornerShape(20.dp)
-    ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            // Avatar — żółte kółko z inicjałem
-            Box(
-                modifier = Modifier
-                    .size(56.dp)
-                    .background(
-                        pl.filebit.gymtracker.ui.theme.AccentOrange,
-                        CircleShape
-                    ),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    "G",
-                    style = MaterialTheme.typography.titleLarge.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 26.sp
-                    ),
-                    color = Color.Black
-                )
-            }
-            Spacer(Modifier.width(14.dp))
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    "GymTracker",
-                    style = MaterialTheme.typography.titleLarge.copy(
-                        fontWeight = FontWeight.ExtraBold,
-                        fontSize = 20.sp
-                    )
-                )
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    "${profile.experience.label()} · ${profile.daysPerWeek}×/tydz",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
-                )
-            }
-        }
-    }
 }
