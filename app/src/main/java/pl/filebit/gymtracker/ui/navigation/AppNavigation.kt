@@ -70,7 +70,7 @@ import pl.filebit.gymtracker.ui.workout.ActiveWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.CoachWorkoutScreen
 import pl.filebit.gymtracker.ui.workout.ExercisePickerScreen
 
-private data class TabItem(
+internal data class TabItem(
     val screen: Screen,
     val labelRes: Int,
     val icon: ImageVector
@@ -132,38 +132,23 @@ fun AppNavigation() {
                     )
                 }
                 if (showBottomBar) {
-                    // windowInsets = zero — bottom inset zarządza Column wyżej.
-                    // Customowe NavigationBarItemColors: aktywna ikona/label akcent żółty,
-                    // indicator z bardzo lekkim tłem zamiast pełnego pill-a (kanon).
-                    NavigationBar(
-                        windowInsets = WindowInsets(0, 0, 0, 0),
-                        containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
-                    ) {
-                        tabs.forEach { tab ->
-                            val selected = currentRoute == tab.screen.route
-                            NavigationBarItem(
-                                selected = selected,
-                                onClick = {
-                                    navController.navigate(tab.screen.route) {
-                                        popUpTo(navController.graph.findStartDestination().id) {
-                                            saveState = true
-                                        }
-                                        launchSingleTop = true
-                                        restoreState = true
-                                    }
-                                },
-                                icon = { Icon(tab.icon, contentDescription = null) },
-                                label = { Text(stringResource(tab.labelRes)) },
-                                colors = androidx.compose.material3.NavigationBarItemDefaults.colors(
-                                    selectedIconColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                                    selectedTextColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                                    indicatorColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.12f),
-                                    unselectedIconColor = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
-                                    unselectedTextColor = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
-                                )
-                            )
+                    // Customowy bottom nav zgodny z propozycją Claude Design:
+                    // - 80dp wysokość, surface tło, top border 4% white
+                    // - Aktywny: mały pill 36x28dp 10% akcent + dot 4x4 z glow pod ikoną
+                    // - Label 10sp SemiBold, ikona 22dp, akcent żółty na aktywnej
+                    GymBottomNav(
+                        currentRoute = currentRoute,
+                        tabs = tabs,
+                        onTabClick = { route ->
+                            navController.navigate(route) {
+                                popUpTo(navController.graph.findStartDestination().id) {
+                                    saveState = true
+                                }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
                         }
-                    }
+                    )
                 }
             }
         }
