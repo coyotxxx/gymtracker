@@ -163,6 +163,78 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Pełna analiza mięśniowa: dla każdej głównej grupy mięśniowej zwraca aktualny
+     * udział, zalecany udział, status (zaniedbany/balans/przetrenowany) oraz dni
+     * od ostatniego treningu. Daje sensowne dane także po długim okresie — pokazuje
+     * GDZIE są braki, nie tylko że "wszystko trenowane".
+     */
+    suspend fun muscleAnalysis(periodDays: Int): MuscleAnalysisReport {
+        val now = System.currentTimeMillis()
+        val cutoff = if (periodDays > 0) now - periodDays.toLong() * 86_400_000L else 0L
+        val finished = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && it.startedAt >= cutoff }
+
+        // Per mięsień: (volumeSum, setsCount, lastTrainedAtMs)
+        val perMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Triple<Double, Int, Long>>()
+        for (w in finished) {
+            val sets = setDao.getForWorkout(w.id)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP }
+            for (s in sets) {
+                val ex = exerciseDao.getById(s.exerciseId) ?: continue
+                val muscle = ex.primaryMuscle
+                val vol = s.reps * s.weightKg
+                val (v, c, lastTs) = perMuscle.getOrDefault(muscle, Triple(0.0, 0, 0L))
+                perMuscle[muscle] = Triple(v + vol, c + 1, maxOf(lastTs, w.startedAt))
+            }
+        }
+
+        val total = perMuscle.values.sumOf { it.first }.coerceAtLeast(0.0001)
+        val analyses = MAIN_MUSCLES.map { muscle ->
+            val (vol, sets, lastTs) = perMuscle[muscle] ?: Triple(0.0, 0, 0L)
+            val actualPct = ((vol * 100.0) / total).toInt().coerceIn(0, 100)
+            val recommendedPct = RECOMMENDED_DISTRIBUTION[muscle] ?: 0
+            val daysSinceLast = if (lastTs > 0) ((now - lastTs) / 86_400_000L).toInt() else null
+            val status = computeStatus(
+                actualPct = actualPct,
+                recommendedPct = recommendedPct,
+                daysSinceLast = daysSinceLast,
+                periodDays = periodDays
+            )
+            MuscleAnalysis(
+                muscle = muscle,
+                volumeKg = vol,
+                totalSets = sets,
+                actualPercent = actualPct,
+                recommendedPercent = recommendedPct,
+                daysSinceLast = daysSinceLast,
+                status = status
+            )
+        }
+        return MuscleAnalysisReport(
+            periodDays = periodDays,
+            totalVolumeKg = total,
+            analyses = analyses.sortedWith(compareBy({ it.status.priority }, { -it.actualPercent }))
+        )
+    }
+
+    private fun computeStatus(
+        actualPct: Int,
+        recommendedPct: Int,
+        daysSinceLast: Int?,
+        periodDays: Int
+    ): MuscleStatus {
+        // Brak treningu w ogóle lub > 21 dni temu — zaniedbany
+        if (daysSinceLast == null) return MuscleStatus.NEGLECTED
+        if (daysSinceLast > 21) return MuscleStatus.NEGLECTED
+        // Powyżej 1.8× zalecanego — przetrenowany
+        if (recommendedPct > 0 && actualPct > recommendedPct * 1.8) return MuscleStatus.OVER
+        // Poniżej 0.5× zalecanego — undertrained
+        if (recommendedPct > 0 && actualPct < recommendedPct * 0.5) return MuscleStatus.UNDER
+        // W przeciwnym razie — w granicach normy
+        return MuscleStatus.BALANCED
+    }
+
+    /**
      * Zaangażowanie mięśni w danym okresie (dni wstecz). Working sets, bez warm-upów.
      * Każde ćwiczenie liczone tylko do swojej `primaryMuscle` (sekundarne na razie pomijane).
      */
@@ -574,6 +646,61 @@ data class MuscleEngagement(
     val volumeKg: Double,       // suma reps × weight (working sets, bez warm-upów)
     val totalSets: Int,         // ile working sets dotknęło tej grupy
     val percentOfTotal: Int     // 0-100, udział w całym wolumenie okresu
+)
+
+enum class MuscleStatus(val priority: Int) {
+    NEGLECTED(0),   // 0 treningów lub > 21 dni — pokazujemy najwyżej
+    UNDER(1),       // poniżej 50% zalecanego udziału
+    OVER(2),        // powyżej 180% zalecanego udziału (przetrenowany)
+    BALANCED(3)     // w granicach
+}
+
+data class MuscleAnalysis(
+    val muscle: pl.filebit.gymtracker.data.entity.MuscleGroup,
+    val volumeKg: Double,
+    val totalSets: Int,
+    val actualPercent: Int,
+    val recommendedPercent: Int,
+    val daysSinceLast: Int?,
+    val status: MuscleStatus
+)
+
+data class MuscleAnalysisReport(
+    val periodDays: Int,
+    val totalVolumeKg: Double,
+    val analyses: List<MuscleAnalysis>
+)
+
+/** Główne grupy mięśniowe brane pod uwagę w analizie balansu. */
+private val MAIN_MUSCLES = listOf(
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BACK,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CORE
+)
+
+/**
+ * Zalecany rozkład objętości treningowej dla harmonijnej sylwetki (suma=100).
+ * Bazuje na typowych rekomendacjach hipertroficznych — punkt odniesienia,
+ * nie sztywna reguła.
+ */
+private val RECOMMENDED_DISTRIBUTION = mapOf(
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BACK to 22,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS to 18,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST to 16,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS to 10,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES to 10,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS to 10,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS to 5,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS to 5,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES to 2,
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CORE to 2
 )
 
 data class StagnationAlert(

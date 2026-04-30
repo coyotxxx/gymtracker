@@ -1,6 +1,6 @@
 package pl.filebit.gymtracker.ui.muscles
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,12 +12,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
@@ -35,6 +34,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -43,7 +45,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.MuscleGroup
-import pl.filebit.gymtracker.data.repository.MuscleEngagement
+import pl.filebit.gymtracker.data.repository.MuscleAnalysis
+import pl.filebit.gymtracker.data.repository.MuscleStatus
 import pl.filebit.gymtracker.util.formatWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -93,37 +96,50 @@ fun MuscleEngagementScreen(
                 }
                 return@Column
             }
-            if (state.engagement.isEmpty()) {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(
-                        stringResource(R.string.muscles_empty),
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
+            val analysis = state.analysis
+            if (analysis == null || analysis.analyses.all { it.status == MuscleStatus.NEGLECTED }) {
+                if (state.engagement.isEmpty()) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(
+                            stringResource(R.string.muscles_empty),
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    return@Column
                 }
-                return@Column
             }
+
+            val analyses = analysis?.analyses.orEmpty()
+            val problems = analyses.filter {
+                it.status == MuscleStatus.NEGLECTED || it.status == MuscleStatus.UNDER
+            }
+            val balanced = analyses.filter { it.status == MuscleStatus.BALANCED }
+            val over = analyses.filter { it.status == MuscleStatus.OVER }
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                item {
-                    BodyHeatmapCard(state.engagement)
+                item { BodyHeatmapCard(analyses) }
+                item { LegendCard() }
+                if (problems.isNotEmpty()) {
+                    item { SectionHeader("⚠️ Wymagają uwagi", problems.size) }
+                    items(problems.size) { idx -> MuscleAnalysisRow(problems[idx]) }
                 }
-                items(state.engagement.size) { idx ->
-                    MuscleRow(state.engagement[idx])
+                if (over.isNotEmpty()) {
+                    item { SectionHeader("🔥 Wysoka objętość", over.size) }
+                    items(over.size) { idx -> MuscleAnalysisRow(over[idx]) }
+                }
+                if (balanced.isNotEmpty()) {
+                    item { SectionHeader("✅ W balansie", balanced.size) }
+                    items(balanced.size) { idx -> MuscleAnalysisRow(balanced[idx]) }
                 }
             }
         }
     }
 }
 
-/**
- * Mapowanie grupy mięśniowej na plik maski w assets/muscle_masks/.
- * Każda maska ma TĘ SAMĄ rozdzielczość i layout (przód+tył) co body_base.webp,
- * więc mogą być nakładane jeden na drugi bez przesunięć.
- */
 private fun MuscleGroup.maskAsset(): String? = when (this) {
     MuscleGroup.CHEST -> "muscle_masks/mask_chest.webp"
     MuscleGroup.BACK -> "muscle_masks/mask_back.webp"
@@ -139,7 +155,7 @@ private fun MuscleGroup.maskAsset(): String? = when (this) {
 }
 
 @Composable
-private fun BodyHeatmapCard(engagement: List<MuscleEngagement>) {
+private fun BodyHeatmapCard(analyses: List<MuscleAnalysis>) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -152,9 +168,7 @@ private fun BodyHeatmapCard(engagement: List<MuscleEngagement>) {
                 fontWeight = FontWeight.SemiBold
             )
             Spacer(Modifier.height(4.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth()
-            ) {
+            Row(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     stringResource(R.string.muscles_front),
                     style = MaterialTheme.typography.labelMedium,
@@ -169,41 +183,42 @@ private fun BodyHeatmapCard(engagement: List<MuscleEngagement>) {
                 )
             }
             Spacer(Modifier.height(8.dp))
-            BodyHeatmap(engagement = engagement)
+            BodyHeatmap(analyses = analyses)
         }
     }
 }
 
 /**
- * Heatmap ciała: warstwa bazy (szara sylwetka przód+tył) + dla każdego mięśnia
- * z engagement > 0 dodatkowa warstwa maski tinted na kolor primary z alpha
- * proporcjonalnym do procentu engagement.
+ * Heatmap ciała: kolor maski zależy od statusu mięśnia, nie tylko intensywności.
+ * Dzięki temu po 30 dniach widać GDZIE są problemy, a nie wszystko zaznaczone.
  */
 @Composable
-private fun BodyHeatmap(engagement: List<MuscleEngagement>) {
-    val tint = MaterialTheme.colorScheme.primary
+private fun BodyHeatmap(analyses: List<MuscleAnalysis>) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(1.0f)   // body_base.webp jest kwadratowy (przód+tył obok siebie)
+            .aspectRatio(1.0f)
     ) {
-        // Warstwa 1: szara sylwetka
         AsyncImage(
             model = "file:///android_asset/muscle_masks/body_base.webp",
             contentDescription = null,
             contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxSize()
         )
-        // Warstwa 2..N: kolorowe tints per mięsień
-        engagement.forEach { e ->
-            val asset = e.muscle.maskAsset() ?: return@forEach
-            // Intensywność: percent/40 zmapowane do 0.20..1.0 (małe % nadal widoczne)
-            val intensity = (e.percentOfTotal / 40f).coerceIn(0.20f, 1f)
+        analyses.forEach { a ->
+            val asset = a.muscle.maskAsset() ?: return@forEach
+            val color = a.status.tint()
+            val alpha = when (a.status) {
+                MuscleStatus.NEGLECTED -> 0.55f
+                MuscleStatus.UNDER -> 0.55f
+                MuscleStatus.OVER -> 0.75f
+                MuscleStatus.BALANCED -> 0.55f
+            }
             AsyncImage(
                 model = "file:///android_asset/$asset",
                 contentDescription = null,
                 contentScale = ContentScale.Fit,
-                colorFilter = ColorFilter.tint(tint.copy(alpha = intensity)),
+                colorFilter = ColorFilter.tint(color.copy(alpha = alpha)),
                 modifier = Modifier.fillMaxSize()
             )
         }
@@ -211,7 +226,70 @@ private fun BodyHeatmap(engagement: List<MuscleEngagement>) {
 }
 
 @Composable
-private fun MuscleRow(e: MuscleEngagement) {
+private fun LegendCard() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            LegendDot(StatusColor.NEGLECTED, "Zaniedb.")
+            LegendDot(StatusColor.UNDER, "Mało")
+            LegendDot(StatusColor.BALANCED, "Balans")
+            LegendDot(StatusColor.OVER, "Dużo")
+        }
+    }
+}
+
+@Composable
+private fun LegendDot(color: Color, label: String) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Box(
+            modifier = Modifier
+                .size(10.dp)
+                .background(color, CircleShape)
+        )
+        Spacer(Modifier.size(4.dp))
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+
+@Composable
+private fun SectionHeader(label: String, count: Int) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 12.dp, bottom = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            "$count",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+
+@Composable
+private fun MuscleAnalysisRow(a: MuscleAnalysis) {
+    val statusColor = a.status.tint()
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -222,43 +300,100 @@ private fun MuscleRow(e: MuscleEngagement) {
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                Box(
+                    modifier = Modifier
+                        .size(10.dp)
+                        .background(statusColor, CircleShape)
+                )
+                Spacer(Modifier.size(8.dp))
                 Text(
-                    e.muscle.displayName(),
+                    a.muscle.displayName(),
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.weight(1f)
                 )
                 Text(
-                    "${e.percentOfTotal}%",
+                    "${a.actualPercent}% / ${a.recommendedPercent}%",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.primary
+                    color = statusColor
                 )
             }
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(6.dp))
+            // Pasek pokazuje aktualny % z markerem zalecanego
+            val progress = (a.actualPercent / 30f).coerceIn(0f, 1f) // skala 0..30%
             LinearProgressIndicator(
-                progress = { e.percentOfTotal / 100f },
+                progress = { progress },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp),
-                color = colorForPercent(e.percentOfTotal),
+                color = statusColor,
                 trackColor = MaterialTheme.colorScheme.surfaceVariant
             )
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(6.dp))
             Text(
-                stringResource(R.string.muscles_volume_sets, formatWeight(e.volumeKg), e.totalSets),
+                buildString {
+                    if (a.totalSets > 0) {
+                        append(formatWeight(a.volumeKg))
+                        append(" · ")
+                        append("${a.totalSets} serii")
+                    } else {
+                        append("Brak treningów w okresie")
+                    }
+                    a.daysSinceLast?.let {
+                        append(" · ")
+                        append(
+                            when {
+                                it == 0 -> "dziś"
+                                it == 1 -> "wczoraj"
+                                else -> "$it dni temu"
+                            }
+                        )
+                    }
+                },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+            statusHint(a)?.let { hint ->
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    hint,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = statusColor,
+                    fontWeight = FontWeight.Medium
+                )
+            }
         }
     }
 }
 
-@Composable
-private fun colorForPercent(pct: Int): androidx.compose.ui.graphics.Color = when {
-    pct >= 25 -> MaterialTheme.colorScheme.primary
-    pct >= 10 -> MaterialTheme.colorScheme.tertiary
-    else -> MaterialTheme.colorScheme.outline
+private fun statusHint(a: MuscleAnalysis): String? = when (a.status) {
+    MuscleStatus.NEGLECTED ->
+        if (a.daysSinceLast == null) "Nie trenowane w tym okresie"
+        else "Zaniedbane — ostatni raz ${a.daysSinceLast} dni temu"
+    MuscleStatus.UNDER ->
+        "Poniżej zalecanego — dodaj 1-2 ćwiczenia w tygodniu"
+    MuscleStatus.OVER ->
+        "Wysoka objętość — uważaj na regenerację"
+    MuscleStatus.BALANCED -> null
+}
+
+/**
+ * Stałe kolory statusów — celowo NIE z theme, bo czerwony/zielony powinien
+ * być rozpoznawalny niezależnie od trybu jasny/ciemny.
+ */
+private object StatusColor {
+    val NEGLECTED = Color(0xFFE74C3C)  // czerwony
+    val UNDER = Color(0xFFF39C12)      // pomarańczowy
+    val BALANCED = Color(0xFF2ECC71)   // zielony
+    val OVER = Color(0xFF9B59B6)       // fiolet
+}
+
+private fun MuscleStatus.tint(): Color = when (this) {
+    MuscleStatus.NEGLECTED -> StatusColor.NEGLECTED
+    MuscleStatus.UNDER -> StatusColor.UNDER
+    MuscleStatus.BALANCED -> StatusColor.BALANCED
+    MuscleStatus.OVER -> StatusColor.OVER
 }
 
 private fun MuscleGroup.displayName(): String = when (this) {
@@ -275,4 +410,3 @@ private fun MuscleGroup.displayName(): String = when (this) {
     MuscleGroup.CARDIO -> "Cardio"
     MuscleGroup.OTHER -> "Inne"
 }
-

@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.repository.MuscleAnalysisReport
 import pl.filebit.gymtracker.data.repository.MuscleEngagement
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import javax.inject.Inject
@@ -21,7 +22,8 @@ enum class EngagementPeriod(val days: Int, val labelRes: Int) {
 data class MuscleUiState(
     val loading: Boolean = true,
     val period: EngagementPeriod = EngagementPeriod.WEEK,
-    val engagement: List<MuscleEngagement> = emptyList()
+    val engagement: List<MuscleEngagement> = emptyList(),
+    val analysis: MuscleAnalysisReport? = null
 )
 
 @HiltViewModel
@@ -41,8 +43,14 @@ class MuscleEngagementViewModel @Inject constructor(
 
     private fun reload() {
         viewModelScope.launch {
-            val list = statsRepo.muscleEngagement(_state.value.period.days)
-            _state.value = _state.value.copy(loading = false, engagement = list)
+            val period = _state.value.period.days
+            val list = statsRepo.muscleEngagement(period)
+            val analysis = statsRepo.muscleAnalysis(period)
+            _state.value = _state.value.copy(
+                loading = false,
+                engagement = list,
+                analysis = analysis
+            )
         }
     }
 }
