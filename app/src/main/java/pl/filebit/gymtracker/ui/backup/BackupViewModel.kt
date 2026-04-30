@@ -16,26 +16,51 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import pl.filebit.gymtracker.ai.AiConfig
+import pl.filebit.gymtracker.ai.AiPreferences
+import pl.filebit.gymtracker.ai.AiProvider
+import pl.filebit.gymtracker.data.db.AppDatabase
+import pl.filebit.gymtracker.data.entity.AiChatMessageEntity
+import pl.filebit.gymtracker.data.entity.AiConversation
+import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.Goal
+import pl.filebit.gymtracker.data.entity.GoalType
+import pl.filebit.gymtracker.data.entity.GoalUnit
 import pl.filebit.gymtracker.data.entity.MuscleGroup
+import pl.filebit.gymtracker.data.entity.PhotoType
+import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.PlanExerciseSet
+import pl.filebit.gymtracker.data.entity.ProgressPhoto
+import pl.filebit.gymtracker.data.entity.SetType
+import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
-import pl.filebit.gymtracker.data.db.AppDatabase
 import javax.inject.Inject
 
 @Serializable
 data class BackupData(
-    val version: Int = 1,
+    val version: Int = 2,
     val exportedAt: Long,
     val profile: ProfileDto?,
     val exercises: List<ExerciseDto>,
     val workouts: List<WorkoutDto>,
-    val sets: List<SetDto>
+    val sets: List<SetDto>,
+    // v2 — wszystko poniżej dodane, defaults dla wstecz kompatybilności
+    val plans: List<PlanDto> = emptyList(),
+    val planExercises: List<PlanExerciseDto> = emptyList(),
+    val planSets: List<PlanSetDto> = emptyList(),
+    val bodyMeasurements: List<BodyMeasurementDto> = emptyList(),
+    val goals: List<GoalDto> = emptyList(),
+    val progressPhotos: List<ProgressPhotoDto> = emptyList(),
+    val aiPrefs: AiPrefsDto? = null,
+    val aiConversations: List<AiConversationDto> = emptyList(),
+    val aiMessages: List<AiMessageDto> = emptyList()
 )
 
 @Serializable
@@ -65,7 +90,9 @@ data class ExerciseDto(
 @Serializable
 data class WorkoutDto(
     val id: Long, val startedAt: Long,
-    val finishedAt: Long?, val notes: String
+    val finishedAt: Long?, val notes: String,
+    val fromPlanId: Long? = null,
+    val fromDayOfWeek: Int? = null
 )
 
 @Serializable
@@ -75,9 +102,85 @@ data class SetDto(
     val reps: Int, val weightKg: Double,
     val isCompleted: Boolean,
     val setType: String = "NORMAL",
-    // legacy field (stary backup) — zachowane dla kompatybilności wstecz
     val isWarmup: Boolean = false,
     val rpe: Int?, val createdAt: Long
+)
+
+@Serializable
+data class PlanDto(
+    val id: Long, val name: String,
+    val daysOfWeek: List<Int>, val notes: String,
+    val createdAt: Long, val createdByAi: Boolean = false
+)
+
+@Serializable
+data class PlanExerciseDto(
+    val id: Long, val planId: Long, val exerciseId: Long,
+    val dayOfWeek: Int, val orderIndex: Int,
+    val supersetGroup: String? = null
+)
+
+@Serializable
+data class PlanSetDto(
+    val id: Long, val planExerciseId: Long, val setNumber: Int,
+    val reps: Int, val weightKg: Double? = null,
+    val restSeconds: Int? = null,
+    val setType: String = "NORMAL",
+    val rpe: Int? = null, val rir: Int? = null,
+    val tempo: String? = null,
+    val durationSec: Int? = null, val distanceM: Double? = null
+)
+
+@Serializable
+data class BodyMeasurementDto(
+    val id: Long, val date: Long,
+    val weightKg: Double? = null, val chestCm: Double? = null,
+    val waistCm: Double? = null, val hipsCm: Double? = null,
+    val armCm: Double? = null, val thighCm: Double? = null,
+    val calfCm: Double? = null, val bodyFatPercent: Double? = null,
+    val notes: String = "", val createdAt: Long = 0L
+)
+
+@Serializable
+data class GoalDto(
+    val id: Long, val type: String, val title: String,
+    val description: String, val unit: String,
+    val startValue: Double, val targetValue: Double,
+    val currentValue: Double? = null,
+    val startDate: Long, val deadline: Long,
+    val achieved: Boolean, val achievedAt: Long? = null,
+    val createdAt: Long, val exerciseId: Long? = null
+)
+
+@Serializable
+data class ProgressPhotoDto(
+    val id: Long, val date: Long,
+    val photoType: String, val filename: String,
+    val notes: String = "", val createdAt: Long = 0L
+)
+
+/**
+ * Ustawienia AI bez klucza API (świadoma decyzja — klucz nigdy nie ląduje
+ * w pliku eksportu, użytkownik wpisuje go ponownie po reinstall).
+ */
+@Serializable
+data class AiPrefsDto(
+    val provider: String,
+    val model: String,
+    val systemPrompt: String
+)
+
+@Serializable
+data class AiConversationDto(
+    val id: Long, val title: String,
+    val createdAt: Long, val updatedAt: Long
+)
+
+@Serializable
+data class AiMessageDto(
+    val id: Long, val conversationId: Long,
+    val role: String, val text: String,
+    val applied: Boolean, val createdAt: Long
 )
 
 @HiltViewModel
@@ -86,6 +189,7 @@ class BackupViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
+    private val aiPrefs: AiPreferences,
     private val db: AppDatabase
 ) : ViewModel() {
 
@@ -97,21 +201,30 @@ class BackupViewModel @Inject constructor(
     fun export(uri: Uri) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val workouts = mutableListOf<Workout>()
-                val sets = mutableListOf<WorkoutSet>()
-                val exercises = mutableListOf<Exercise>()
-
-                // Pobierz wszystkie dane jednorazowo (snapshot)
                 val allWorkouts = db.workoutDao().observeAll().first()
-                workouts.addAll(allWorkouts)
-                for (w in allWorkouts) sets.addAll(workoutRepo.getSetsForWorkout(w.id))
-
+                val allSets = mutableListOf<WorkoutSet>().apply {
+                    for (w in allWorkouts) addAll(workoutRepo.getSetsForWorkout(w.id))
+                }
                 val allExercises = db.exerciseDao().observeAll().first()
-                exercises.addAll(allExercises)
-
                 val profile = profileRepo.get()
+                val allPlans = db.trainingPlanDao().getAll()
+                val allPlanExercises = mutableListOf<PlanExercise>().apply {
+                    for (p in allPlans) addAll(db.planExerciseDao().getForPlan(p.id))
+                }
+                val allPlanSets = mutableListOf<PlanExerciseSet>().apply {
+                    for (pe in allPlanExercises) addAll(db.planExerciseSetDao().getForPlanExercise(pe.id))
+                }
+                val allBody = db.bodyMeasurementDao().getAllAsc()
+                val allGoals = db.goalDao().observeAll().first()
+                val allPhotos = db.progressPhotoDao().observeAll().first()
+                val aiCfg = aiPrefs.load()
+                val allConversations = db.aiConversationDao().observeAll().first()
+                val allMessages = mutableListOf<AiChatMessageEntity>().apply {
+                    for (c in allConversations) addAll(db.aiChatMessageDao().getForConversation(c.id))
+                }
 
                 val data = BackupData(
+                    version = 2,
                     exportedAt = System.currentTimeMillis(),
                     profile = ProfileDto(
                         goal = profile.goal.name,
@@ -131,26 +244,57 @@ class BackupViewModel @Inject constructor(
                         flashOnTimerEnd = profile.flashOnTimerEnd,
                         aiOverlayEnabled = profile.aiOverlayEnabled
                     ),
-                    exercises = exercises.map {
-                        ExerciseDto(
-                            it.id, it.name,
-                            it.primaryMuscle.name, it.equipment.name,
-                            it.isCustom, it.notes
-                        )
+                    exercises = allExercises.map {
+                        ExerciseDto(it.id, it.name, it.primaryMuscle.name, it.equipment.name,
+                            it.isCustom, it.notes)
                     },
-                    workouts = workouts.map {
-                        WorkoutDto(it.id, it.startedAt, it.finishedAt, it.notes)
+                    workouts = allWorkouts.map {
+                        WorkoutDto(it.id, it.startedAt, it.finishedAt, it.notes,
+                            it.fromPlanId, it.fromDayOfWeek)
                     },
-                    sets = sets.map {
-                        SetDto(
-                            it.id, it.workoutId, it.exerciseId,
-                            it.setNumber, it.orderIndex,
-                            it.reps, it.weightKg,
-                            it.isCompleted,
+                    sets = allSets.map {
+                        SetDto(it.id, it.workoutId, it.exerciseId, it.setNumber, it.orderIndex,
+                            it.reps, it.weightKg, it.isCompleted,
                             setType = it.setType.name,
-                            isWarmup = it.setType == pl.filebit.gymtracker.data.entity.SetType.WARMUP,
-                            it.rpe, it.createdAt
-                        )
+                            isWarmup = it.setType == SetType.WARMUP,
+                            it.rpe, it.createdAt)
+                    },
+                    plans = allPlans.map {
+                        PlanDto(it.id, it.name, it.daysOfWeek, it.notes, it.createdAt, it.createdByAi)
+                    },
+                    planExercises = allPlanExercises.map {
+                        PlanExerciseDto(it.id, it.planId, it.exerciseId, it.dayOfWeek, it.orderIndex, it.supersetGroup)
+                    },
+                    planSets = allPlanSets.map {
+                        PlanSetDto(it.id, it.planExerciseId, it.setNumber, it.reps, it.weightKg,
+                            it.restSeconds, it.setType.name, it.rpe, it.rir, it.tempo,
+                            it.durationSec, it.distanceM)
+                    },
+                    bodyMeasurements = allBody.map {
+                        BodyMeasurementDto(it.id, it.date, it.weightKg, it.chestCm, it.waistCm,
+                            it.hipsCm, it.armCm, it.thighCm, it.calfCm, it.bodyFatPercent,
+                            it.notes, it.createdAt)
+                    },
+                    goals = allGoals.map {
+                        GoalDto(it.id, it.type.name, it.title, it.description, it.unit.name,
+                            it.startValue, it.targetValue, it.currentValue,
+                            it.startDate, it.deadline, it.achieved, it.achievedAt,
+                            it.createdAt, it.exerciseId)
+                    },
+                    progressPhotos = allPhotos.map {
+                        ProgressPhotoDto(it.id, it.date, it.photoType.name, it.filename, it.notes, it.createdAt)
+                    },
+                    aiPrefs = AiPrefsDto(
+                        provider = aiCfg.provider.name,
+                        model = aiCfg.model,
+                        systemPrompt = aiCfg.systemPrompt
+                        // klucz API celowo NIE jest w pliku — bezpieczeństwo
+                    ),
+                    aiConversations = allConversations.map {
+                        AiConversationDto(it.id, it.title, it.createdAt, it.updatedAt)
+                    },
+                    aiMessages = allMessages.map {
+                        AiMessageDto(it.id, it.conversationId, it.role, it.text, it.applied, it.createdAt)
                     }
                 )
 
@@ -158,7 +302,7 @@ class BackupViewModel @Inject constructor(
                 context.contentResolver.openOutputStream(uri)?.use { os ->
                     os.write(text.toByteArray(Charsets.UTF_8))
                 }
-                _status.value = "Eksport: ${workouts.size} treningów, ${sets.size} serii"
+                _status.value = "Eksport: ${allWorkouts.size} treningów, ${allPlans.size} planów, ${allConversations.size} rozmów AI"
             }
         }
     }
@@ -206,12 +350,18 @@ class BackupViewModel @Inject constructor(
 
                 val data = json.decodeFromString<BackupData>(text)
 
-                // Restoring: wstawiamy customowe ćwiczenia, wszystkie workouts i sets
-                // Zachowujemy ID dla relacji
                 val exDao = db.exerciseDao()
                 val wDao = db.workoutDao()
                 val sDao = db.workoutSetDao()
                 val pDao = db.userProfileDao()
+                val planDao = db.trainingPlanDao()
+                val peDao = db.planExerciseDao()
+                val pesDao = db.planExerciseSetDao()
+                val bDao = db.bodyMeasurementDao()
+                val gDao = db.goalDao()
+                val phDao = db.progressPhotoDao()
+                val convDao = db.aiConversationDao()
+                val msgDao = db.aiChatMessageDao()
 
                 // Profile
                 data.profile?.let { p ->
@@ -242,19 +392,16 @@ class BackupViewModel @Inject constructor(
                     )
                 }
 
-                // Exercises - wstawiamy tylko niestandardowe (seed już jest)
-                val customExercises = data.exercises.filter { it.isCustom }
-                for (ex in customExercises) {
+                // Exercises - tylko niestandardowe (seed jest auto)
+                for (ex in data.exercises.filter { it.isCustom }) {
                     exDao.upsert(
                         Exercise(
-                            id = ex.id,
-                            name = ex.name,
+                            id = ex.id, name = ex.name,
                             primaryMuscle = runCatching { MuscleGroup.valueOf(ex.primaryMuscle) }
                                 .getOrDefault(MuscleGroup.OTHER),
                             equipment = runCatching { Equipment.valueOf(ex.equipment) }
                                 .getOrDefault(Equipment.OTHER),
-                            isCustom = true,
-                            notes = ex.notes
+                            isCustom = true, notes = ex.notes
                         )
                     )
                 }
@@ -263,11 +410,8 @@ class BackupViewModel @Inject constructor(
                 for (w in data.workouts) {
                     wDao.insert(
                         Workout(
-                            id = w.id,
-                            startedAt = w.startedAt,
-                            finishedAt = w.finishedAt,
-                            fromPlanId = null,
-                            fromDayOfWeek = null,
+                            id = w.id, startedAt = w.startedAt, finishedAt = w.finishedAt,
+                            fromPlanId = w.fromPlanId, fromDayOfWeek = w.fromDayOfWeek,
                             notes = w.notes
                         )
                     )
@@ -275,26 +419,126 @@ class BackupViewModel @Inject constructor(
                 for (s in data.sets) {
                     sDao.insert(
                         WorkoutSet(
-                            id = s.id,
-                            workoutId = s.workoutId,
-                            exerciseId = s.exerciseId,
-                            setNumber = s.setNumber,
-                            orderIndex = s.orderIndex,
-                            reps = s.reps,
-                            weightKg = s.weightKg,
-                            isCompleted = s.isCompleted,
-                            setType = if (s.setType.isNotBlank()) {
-                                pl.filebit.gymtracker.data.entity.SetType.safeValueOf(s.setType)
-                            } else if (s.isWarmup) {
-                                pl.filebit.gymtracker.data.entity.SetType.WARMUP
-                            } else pl.filebit.gymtracker.data.entity.SetType.NORMAL,
-                            rpe = s.rpe,
-                            createdAt = s.createdAt
+                            id = s.id, workoutId = s.workoutId, exerciseId = s.exerciseId,
+                            setNumber = s.setNumber, orderIndex = s.orderIndex,
+                            reps = s.reps, weightKg = s.weightKg, isCompleted = s.isCompleted,
+                            setType = if (s.setType.isNotBlank()) SetType.safeValueOf(s.setType)
+                                else if (s.isWarmup) SetType.WARMUP else SetType.NORMAL,
+                            rpe = s.rpe, createdAt = s.createdAt
                         )
                     )
                 }
 
-                _status.value = "Import: ${data.workouts.size} treningów, ${data.sets.size} serii"
+                // Plans + plan exercises + plan sets
+                for (p in data.plans) {
+                    planDao.upsert(
+                        TrainingPlan(
+                            id = p.id, name = p.name, daysOfWeek = p.daysOfWeek,
+                            notes = p.notes, createdAt = p.createdAt, createdByAi = p.createdByAi
+                        )
+                    )
+                }
+                for (pe in data.planExercises) {
+                    peDao.upsert(
+                        PlanExercise(
+                            id = pe.id, planId = pe.planId, exerciseId = pe.exerciseId,
+                            dayOfWeek = pe.dayOfWeek, orderIndex = pe.orderIndex,
+                            supersetGroup = pe.supersetGroup
+                        )
+                    )
+                }
+                for (ps in data.planSets) {
+                    pesDao.upsert(
+                        PlanExerciseSet(
+                            id = ps.id, planExerciseId = ps.planExerciseId,
+                            setNumber = ps.setNumber, reps = ps.reps,
+                            weightKg = ps.weightKg, restSeconds = ps.restSeconds,
+                            setType = SetType.safeValueOf(ps.setType),
+                            rpe = ps.rpe, rir = ps.rir, tempo = ps.tempo,
+                            durationSec = ps.durationSec, distanceM = ps.distanceM
+                        )
+                    )
+                }
+
+                // Body measurements
+                for (b in data.bodyMeasurements) {
+                    bDao.upsert(
+                        BodyMeasurement(
+                            id = b.id, date = b.date,
+                            weightKg = b.weightKg, chestCm = b.chestCm,
+                            waistCm = b.waistCm, hipsCm = b.hipsCm,
+                            armCm = b.armCm, thighCm = b.thighCm,
+                            calfCm = b.calfCm, bodyFatPercent = b.bodyFatPercent,
+                            notes = b.notes,
+                            createdAt = if (b.createdAt > 0) b.createdAt else System.currentTimeMillis()
+                        )
+                    )
+                }
+
+                // Goals
+                for (g in data.goals) {
+                    gDao.upsert(
+                        Goal(
+                            id = g.id,
+                            type = runCatching { GoalType.valueOf(g.type) }.getOrDefault(GoalType.CUSTOM),
+                            title = g.title, description = g.description,
+                            unit = runCatching { GoalUnit.valueOf(g.unit) }.getOrDefault(GoalUnit.CUSTOM),
+                            startValue = g.startValue, targetValue = g.targetValue,
+                            currentValue = g.currentValue,
+                            startDate = g.startDate, deadline = g.deadline,
+                            achieved = g.achieved, achievedAt = g.achievedAt,
+                            createdAt = g.createdAt, exerciseId = g.exerciseId
+                        )
+                    )
+                }
+
+                // Progress photos (tylko metadata — pliki .jpg zostają w cache, gdy
+                // usunięte przez czyszczenie aplikacji odzyskanie nie jest możliwe)
+                for (ph in data.progressPhotos) {
+                    phDao.upsert(
+                        ProgressPhoto(
+                            id = ph.id, date = ph.date,
+                            photoType = runCatching { PhotoType.valueOf(ph.photoType) }
+                                .getOrDefault(PhotoType.FRONT),
+                            filename = ph.filename, notes = ph.notes,
+                            createdAt = if (ph.createdAt > 0) ph.createdAt else System.currentTimeMillis()
+                        )
+                    )
+                }
+
+                // AI prefs (provider, model, system prompt — klucz API zostaje pusty,
+                // user musi go wpisać ponownie po reinstall)
+                data.aiPrefs?.let { ap ->
+                    val current = aiPrefs.load()
+                    aiPrefs.save(
+                        AiConfig(
+                            provider = runCatching { AiProvider.valueOf(ap.provider) }
+                                .getOrDefault(AiProvider.ANTHROPIC),
+                            apiKey = current.apiKey,  // zachowaj jeśli już był
+                            model = ap.model,
+                            systemPrompt = ap.systemPrompt
+                        )
+                    )
+                }
+
+                // AI conversations + messages
+                for (c in data.aiConversations) {
+                    convDao.upsert(
+                        AiConversation(id = c.id, title = c.title,
+                            createdAt = c.createdAt, updatedAt = c.updatedAt)
+                    )
+                }
+                for (m in data.aiMessages) {
+                    msgDao.upsert(
+                        AiChatMessageEntity(
+                            id = m.id, conversationId = m.conversationId,
+                            role = m.role, text = m.text,
+                            applied = m.applied, createdAt = m.createdAt
+                        )
+                    )
+                }
+
+                _status.value = "Import: ${data.workouts.size} treningów, ${data.plans.size} planów, ${data.aiConversations.size} rozmów AI"
             }
         }
     }

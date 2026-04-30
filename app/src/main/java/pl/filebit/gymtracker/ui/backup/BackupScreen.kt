@@ -109,12 +109,12 @@ fun BackupScreen(
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
-                        "Backup zapisuje wszystkie dane do pliku JSON który możesz schować na Dysku Google, USB albo gdzie chcesz.",
+                        "Backup zapisuje całą aplikację do pliku JSON: profil, treningi, plany, pomiary ciała, cele, ustawienia AI, historię rozmów. Możesz wgrać go po reinstalacji żeby odzyskać wszystko.",
                         style = MaterialTheme.typography.bodyMedium
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
-                        "Import wczytuje backup z pliku .json (z opcji Eksport powyżej) i nadpisuje aktualne dane. Eksport CSV służy tylko do podglądu w Excelu — nie da się go zaimportować z powrotem.",
+                        "Klucz API i pliki zdjęć NIE są w backupie (ze względów bezpieczeństwa i rozmiaru). Po imporcie wpiszesz klucz ponownie. Eksport CSV służy tylko do podglądu w Excelu — nie da się go zaimportować z powrotem.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
