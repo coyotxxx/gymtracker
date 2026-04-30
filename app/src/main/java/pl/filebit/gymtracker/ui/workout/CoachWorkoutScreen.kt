@@ -175,11 +175,15 @@ fun CoachWorkoutScreen(
 
     if (showConfirmDialog) {
         val planned = state.currentSet?.reps ?: 0
+        val plannedWeight = state.currentSet?.weightKg ?: 0.0
+        val setNum = state.currentSetIndexInExercise + 1
+        val totalSets = state.totalSetsInCurrentExercise
         val restSec = state.defaultRestSeconds
-        // showAdvanced trzymane w state.workout? — niedostępne; pobieramy z VM.profile
-        // Dla MVP: zawsze pokazuj RPE slider w Coach mode (opcjonalny, można pominąć)
         ConfirmRepsDialog(
             plannedReps = planned,
+            plannedWeightKg = plannedWeight,
+            setNumber = setNum,
+            totalSets = totalSets,
             onConfirm = { actualReps, actualRpe ->
                 showConfirmDialog = false
                 val flash = state.flashOnTimerEnd
@@ -582,73 +586,162 @@ private fun BigStatColumn(label: String, value: String) {
 @Composable
 private fun ConfirmRepsDialog(
     plannedReps: Int,
+    plannedWeightKg: Double,
+    setNumber: Int,
+    totalSets: Int,
     onConfirm: (Int, Int?) -> Unit,
     onDismiss: () -> Unit
 ) {
     var actualReps by remember { mutableStateOf(plannedReps) }
     var rpe by remember { mutableStateOf(0) } // 0 = nie ustawione
 
-    AlertDialog(
+    androidx.compose.ui.window.Dialog(
         onDismissRequest = onDismiss,
-        title = {
-            Text(stringResource(R.string.coach_confirm_title, plannedReps))
-        },
-        text = {
-            Column {
+        properties = androidx.compose.ui.window.DialogProperties(
+            usePlatformDefaultWidth = false
+        )
+    ) {
+        androidx.compose.material3.Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            shape = RoundedCornerShape(20.dp),
+            color = MaterialTheme.colorScheme.surface,
+            tonalElevation = 6.dp
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp)
+            ) {
+                // Header z kontekstem (numer setu + waga)
+                Text(
+                    "Seria $setNumber/$totalSets · ${pl.filebit.gymtracker.util.formatWeight(plannedWeightKg)} kg",
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    stringResource(R.string.coach_confirm_title, plannedReps),
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(Modifier.height(4.dp))
                 Text(
                     stringResource(R.string.coach_confirm_text),
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
-                Spacer(Modifier.height(16.dp))
+
+                Spacer(Modifier.height(20.dp))
+
+                // ──── REPS ────
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(
-                            MaterialTheme.colorScheme.surfaceVariant,
-                            RoundedCornerShape(12.dp)
+                            MaterialTheme.colorScheme.primaryContainer,
+                            RoundedCornerShape(16.dp)
                         )
-                        .padding(vertical = 12.dp),
+                        .padding(vertical = 20.dp),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
                         "$actualReps",
-                        style = MaterialTheme.typography.headlineLarge,
+                        fontSize = 56.sp,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 }
-                Spacer(Modifier.height(8.dp))
+                Spacer(Modifier.height(4.dp))
                 Slider(
                     value = actualReps.toFloat(),
                     onValueChange = { actualReps = it.roundToInt() },
                     valueRange = 0f..30f,
                     steps = 29
                 )
-                Spacer(Modifier.height(16.dp))
                 Text(
-                    stringResource(R.string.coach_rpe_label, if (rpe == 0) "—" else rpe.toString()),
-                    style = MaterialTheme.typography.bodyMedium,
+                    "Powtórzenia (0-30)",
+                    style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+
+                Spacer(Modifier.height(24.dp))
+
+                // ──── RPE ────
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        "Trudność (RPE)",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.weight(1f)
+                    )
+                    pl.filebit.gymtracker.ui.glossary.InfoIcon(glossaryKey = "RPE")
+                    Text(
+                        if (rpe == 0) "—" else "$rpe/10",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = if (rpe == 0) MaterialTheme.colorScheme.onSurfaceVariant
+                        else MaterialTheme.colorScheme.primary
+                    )
+                }
                 Slider(
                     value = rpe.toFloat(),
                     onValueChange = { rpe = it.roundToInt() },
                     valueRange = 0f..10f,
                     steps = 9
                 )
-            }
-        },
-        confirmButton = {
-            Button(onClick = {
-                onConfirm(actualReps, if (rpe == 0) null else rpe)
-            }) {
-                Text(stringResource(R.string.coach_confirm_button, actualReps))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text(stringResource(R.string.common_cancel))
+                Text(
+                    rpeHint(rpe),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    "Opcjonalne — 0 = pomiń. Pomaga aplikacji sugerować lepsze ciężary.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+
+                Spacer(Modifier.height(24.dp))
+
+                // Buttons
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text(stringResource(R.string.common_cancel))
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    Button(
+                        onClick = {
+                            onConfirm(actualReps, if (rpe == 0) null else rpe)
+                        },
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text(stringResource(R.string.coach_confirm_button, actualReps))
+                    }
+                }
             }
         }
-    )
+    }
+}
+
+/**
+ * Krótka wskazówka opisowa dla danej wartości RPE.
+ */
+private fun rpeHint(rpe: Int): String = when (rpe) {
+    0 -> "Pomiń ocenę trudności"
+    1, 2, 3 -> "Bardzo lekko — rozgrzewka"
+    4, 5 -> "Lekko — wciąż dużo w zapasie"
+    6 -> "Średnio — 4 powt. w zapasie"
+    7 -> "Trudno — 3 powt. w zapasie"
+    8 -> "Bardzo trudno — 2 powt. w zapasie"
+    9 -> "Prawie max — 1 powt. w zapasie"
+    10 -> "Padłem — bez zapasu, do upadku"
+    else -> ""
 }
