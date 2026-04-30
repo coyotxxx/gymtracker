@@ -14,9 +14,10 @@ import androidx.compose.ui.unit.dp
 /**
  * Mały pływający FAB asystenta AI.
  *
- * - Rozmiar 48dp (mniejszy niż standard 56dp żeby nie zasłaniał treści)
- * - Kolor tertiaryContainer — subtle, nie konkuruje z głównymi CTA
- * - Domyślnie nad bottom nav w prawym dolnym rogu
+ * - Rozmiar 40dp (mieści się w obszarze TopAppBar)
+ * - Kolor tertiaryContainer z półprzezroczystym tłem — nie konkuruje
+ *   z głównymi akcjami w TopAppBar
+ * - Domyślnie w prawym górnym rogu, pod statusBar
  */
 @Composable
 fun AiOverlayFab(
@@ -25,15 +26,16 @@ fun AiOverlayFab(
 ) {
     FloatingActionButton(
         onClick = onClick,
-        modifier = modifier.size(48.dp),
+        modifier = modifier.size(40.dp),
+        shape = CircleShape,
         containerColor = MaterialTheme.colorScheme.tertiaryContainer,
         contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
-        elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 4.dp)
+        elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 2.dp)
     ) {
         Icon(
             Icons.Default.AutoAwesome,
             contentDescription = "Asystent AI",
-            modifier = Modifier.size(22.dp)
+            modifier = Modifier.size(20.dp)
         )
     }
 }

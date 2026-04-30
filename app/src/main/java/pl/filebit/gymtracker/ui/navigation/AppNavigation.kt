@@ -2,8 +2,11 @@ package pl.filebit.gymtracker.ui.navigation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.FitnessCenter
@@ -105,7 +108,10 @@ fun AppNavigation() {
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
         bottomBar = {
-            Column {
+            // navigationBarsPadding na cały Column gwarantuje że nawet gdy widoczny
+                            // jest TYLKO mini-bar (bez NavigationBar), gesture bar Androida nie
+            // przykrywa jego klikalnego obszaru.
+            Column(modifier = Modifier.navigationBarsPadding()) {
                 if (showActiveBar) {
                     ActiveWorkoutMiniBar(
                         state = workoutShellState,
@@ -120,7 +126,8 @@ fun AppNavigation() {
                     )
                 }
                 if (showBottomBar) {
-                    NavigationBar {
+                    // windowInsets = zero — bottom inset zarządza Column wyżej
+                    NavigationBar(windowInsets = WindowInsets(0, 0, 0, 0)) {
                         tabs.forEach { tab ->
                             val selected = currentRoute == tab.screen.route
                             NavigationBarItem(
@@ -366,11 +373,10 @@ fun AppNavigation() {
     }
 
         // Pływający FAB asystenta AI — widoczny tylko gdy włączony w Profilu
-        // i NIE jesteśmy już na ekranie AI. Pozycja: prawy dolny róg, nad
-        // bottom nav i mini-barem aktywnego treningu (jeśli widoczny).
-        // Musi być w outer Box (BoxScope), nie w Scaffold-content lambda.
+        // i NIE jesteśmy już na ekranie AI. Pozycja: prawy górny róg, pod
+        // paskiem statusu systemu (statusBarsPadding bo activity = edgeToEdge).
+        // Małe (40dp) żeby mieściło się w obszarze TopAppBar bez zasłaniania.
         if (showOverlay) {
-            val fabBottomDp = (if (showBottomBar) 96 else 24) + (if (showActiveBar) 52 else 0)
             AiOverlayFab(
                 onClick = {
                     val target = if (overlayState.connected) Screen.AiConversations.route
@@ -378,8 +384,9 @@ fun AppNavigation() {
                     navController.navigate(target)
                 },
                 modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(end = 16.dp, bottom = fabBottomDp.dp)
+                    .align(Alignment.TopEnd)
+                    .statusBarsPadding()
+                    .padding(top = 6.dp, end = 8.dp)
             )
         }
     }
