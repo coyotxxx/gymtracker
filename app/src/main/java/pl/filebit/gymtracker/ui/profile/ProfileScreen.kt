@@ -105,6 +105,9 @@ fun ProfileScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
+                pl.filebit.gymtracker.ui.update.UpdateCard()
+            }
+            item {
                 SectionCard(title = stringResource(R.string.profile_goal)) {
                     Text(
                         stringResource(R.string.profile_goal_explain),
