@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.ai
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -53,8 +54,28 @@ import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.ai.AiConfig
 import pl.filebit.gymtracker.ai.AiProvider
 
-private val ANTHROPIC_MODELS = listOf("claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5")
-private val OPENAI_MODELS = listOf("gpt-4o", "o1", "o3-mini", "gpt-4.1")
+private data class ModelOption(val id: String, val description: String)
+
+private val ANTHROPIC_MODELS = listOf(
+    ModelOption("claude-opus-4-7", "Najmocniejszy — złożone analizy, agentic reasoning"),
+    ModelOption("claude-sonnet-4-6", "Rekomendowany — najlepszy balans szybkość/inteligencja"),
+    ModelOption("claude-haiku-4-5", "Najszybszy — niemal frontier, niski koszt"),
+    ModelOption("claude-opus-4-6", "Legacy — poprzedni Opus"),
+    ModelOption("claude-sonnet-4-5", "Legacy — poprzedni Sonnet")
+)
+
+private val OPENAI_MODELS = listOf(
+    ModelOption("gpt-5.5", "Najnowszy flagowy — kodowanie i praca profesjonalna"),
+    ModelOption("gpt-5.5-pro", "Pro — bardziej precyzyjne odpowiedzi"),
+    ModelOption("gpt-5.4", "Tańszy do kodowania i pracy profesjonalnej"),
+    ModelOption("gpt-5.4-mini", "Najlepszy mini — kodowanie, niskie koszty"),
+    ModelOption("gpt-5.4-nano", "Najtańszy GPT-5.4 — proste zadania, duża skala"),
+    ModelOption("gpt-5", "Reasoning z konfigurowalnym wysiłkiem"),
+    ModelOption("gpt-5-mini", "Tani, niska latencja, wysoka skala"),
+    ModelOption("gpt-4.1", "Najmądrzejszy non-reasoning"),
+    ModelOption("o3-pro", "Reasoning extended compute — bardzo złożone zadania"),
+    ModelOption("o3", "Reasoning legacy")
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -149,16 +170,16 @@ fun AiSettingsScreen(
                 StepCard(stepNumber = 3, title = stringResource(R.string.ai_step3_title)) {
                     val presets = if (cfg.provider == AiProvider.ANTHROPIC) ANTHROPIC_MODELS
                     else OPENAI_MODELS
-                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        items(presets) { m ->
-                            FilterChip(
-                                selected = cfg.model == m,
-                                onClick = { vm.setModel(m) },
-                                label = { Text(m) }
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        presets.forEach { m ->
+                            ModelOptionCard(
+                                option = m,
+                                selected = cfg.model == m.id,
+                                onClick = { vm.setModel(m.id) }
                             )
                         }
                     }
-                    Spacer(Modifier.height(8.dp))
+                    Spacer(Modifier.height(12.dp))
                     OutlinedTextField(
                         value = cfg.model,
                         onValueChange = vm::setModel,
@@ -329,6 +350,46 @@ fun AiSettingsScreen(
                 }
             }
         )
+    }
+}
+
+@Composable
+private fun ModelOptionCard(
+    option: ModelOption,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(
+            containerColor = if (selected) MaterialTheme.colorScheme.primaryContainer
+            else MaterialTheme.colorScheme.surface
+        ),
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    if (selected) "● " else "○ ",
+                    color = if (selected) MaterialTheme.colorScheme.primary
+                    else MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    option.id,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+            Text(
+                option.description,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(start = 24.dp)
+            )
+        }
     }
 }
 

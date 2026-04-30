@@ -19,7 +19,7 @@ data class AiConfig(
 
     companion object {
         const val DEFAULT_ANTHROPIC = "claude-opus-4-7"
-        const val DEFAULT_OPENAI = "gpt-4o"
+        const val DEFAULT_OPENAI = "gpt-5.5"
 
         // Domyślny system prompt po polsku — opisuje rolę trenera
         val DEFAULT_SYSTEM_PROMPT = """
