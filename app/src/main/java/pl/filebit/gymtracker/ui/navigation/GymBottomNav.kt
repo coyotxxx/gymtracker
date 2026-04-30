@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -89,15 +90,17 @@ private fun NavItem(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    // clip + clickable dają ripple wewnątrz zaokrąglonego prostokąta — bez clip
+    // ripple szedłby na całą wysokość/szerokość kwadratowo.
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp)
-            .clickable(onClick = onClick),
+            .clip(RoundedCornerShape(18.dp))
+            .clickable(onClick = onClick)
+            .padding(vertical = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Sama ikona — bez tła pill, tylko kolor sygnalizuje stan
         Icon(
             icon,
             contentDescription = null,
@@ -113,16 +116,5 @@ private fun NavItem(
             ),
             color = if (selected) AccentOrange else DarkOnSurfaceVariant
         )
-        Spacer(Modifier.height(4.dp))
-        // Żółta kropka 4dp PONIŻEJ labelu — wskaźnik aktywnej zakładki
-        if (selected) {
-            Box(
-                modifier = Modifier
-                    .size(4.dp)
-                    .background(AccentOrange, CircleShape)
-            )
-        } else {
-            Spacer(Modifier.size(4.dp))
-        }
     }
 }
