@@ -26,21 +26,21 @@ class AiConversationsViewModel @Inject constructor(
     aiPrefs: AiPreferences
 ) : ViewModel() {
 
-    /** Etykieta modelu pokazywana w nagłówku ("GPT-4o", "claude-3-5-sonnet…"). */
-    val modelLabel: String = aiPrefs.load().model
-        .removePrefix("claude-")
-        .replace("-", " ")
-        .ifBlank { aiPrefs.load().provider.name.lowercase().replaceFirstChar { it.uppercase() } }
-        .let {
-            // skróć: gpt-4o → "GPT-4o", "3 5 sonnet 20241022" → "Sonnet 3.5"
-            when {
-                it.contains("gpt", ignoreCase = true) -> aiPrefs.load().model.uppercase()
-                it.contains("sonnet", ignoreCase = true) -> "Claude Sonnet"
-                it.contains("haiku", ignoreCase = true) -> "Claude Haiku"
-                it.contains("opus", ignoreCase = true) -> "Claude Opus"
-                else -> aiPrefs.load().model
-            }
+    /** Etykieta modelu pokazywana w nagłówku ("GPT-4o", "Claude Sonnet"…). */
+    val modelLabel: String = run {
+        val model = aiPrefs.load().model.lowercase()
+        when {
+            model.isBlank() -> aiPrefs.load().provider.name
+                .lowercase()
+                .replaceFirstChar { it.uppercase() }
+            model.startsWith("gpt") -> aiPrefs.load().model.uppercase()
+            "opus" in model -> "Claude Opus"
+            "sonnet" in model -> "Claude Sonnet"
+            "haiku" in model -> "Claude Haiku"
+            // Custom: pokaż surową nazwę bez prefiksu, max 16 znaków
+            else -> aiPrefs.load().model.removePrefix("claude-").take(16)
         }
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val conversations: StateFlow<List<AiConversationListItem>> = repo.observeConversations()

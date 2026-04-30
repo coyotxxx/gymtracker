@@ -417,8 +417,19 @@ private fun WeightGoalCard(
             Spacer(Modifier.height(8.dp))
 
             val cur = current
+            val maintainTolerance = 1.5
             val displayProgress = when {
-                cur == null || start == null || start <= 0.0 -> 0f
+                cur == null -> 0f
+                goalType == WeightGoalType.MAINTAIN -> {
+                    val distance = abs(cur - target)
+                    if (distance <= maintainTolerance) 1f
+                    else {
+                        // Liniowo opada od krawędzi tolerancji w skali 5kg
+                        val outsideBy = distance - maintainTolerance
+                        (1f - (outsideBy.toFloat() / 5f)).coerceIn(0f, 1f)
+                    }
+                }
+                start == null || start <= 0.0 -> 0f
                 goalType == WeightGoalType.CUT -> {
                     val total = start - target
                     if (total > 0.01) ((start - cur) / total).toFloat().coerceIn(0f, 1f) else 0f
@@ -427,11 +438,19 @@ private fun WeightGoalCard(
                     val total = target - start
                     if (total > 0.01) ((cur - start) / total).toFloat().coerceIn(0f, 1f) else 0f
                 }
-                else -> 1f - (abs(cur - target).toFloat() / 5f).coerceIn(0f, 1f)
+                else -> 0f
             }
-            val statusText = if (cur != null)
-                "Cel: ${formatWeight(target)} kg (zostało ${formatWeight(abs(target - cur))} kg)"
-            else stringResource(R.string.body_goal_progress_to_target, formatWeight(target), "—")
+            val statusText = when {
+                cur == null -> stringResource(
+                    R.string.body_goal_progress_to_target, formatWeight(target), "—"
+                )
+                goalType == WeightGoalType.MAINTAIN && abs(cur - target) <= maintainTolerance ->
+                    stringResource(R.string.body_goal_maintain_in_range, formatWeight(target))
+                (goalType == WeightGoalType.CUT && cur <= target) ||
+                (goalType == WeightGoalType.BULK && cur >= target) ->
+                    stringResource(R.string.body_goal_reached, formatWeight(target))
+                else -> "Cel: ${formatWeight(target)} kg (zostało ${formatWeight(abs(target - cur))} kg)"
+            }
 
             LinearProgressIndicator(
                 progress = { displayProgress },
