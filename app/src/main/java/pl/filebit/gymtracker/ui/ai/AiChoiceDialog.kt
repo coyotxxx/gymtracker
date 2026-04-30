@@ -75,7 +75,10 @@ private fun ChoiceCard(
             .fillMaxWidth()
             .clickable(onClick = onClick),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
         ),
         shape = RoundedCornerShape(12.dp)
     ) {
@@ -87,19 +90,20 @@ private fun ChoiceCard(
                 icon,
                 contentDescription = null,
                 modifier = Modifier.size(28.dp),
-                tint = MaterialTheme.colorScheme.primary
+                tint = pl.filebit.gymtracker.ui.theme.AccentOrange
             )
             Spacer(Modifier.size(12.dp))
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     title,
                     style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.SemiBold,
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
                 )
                 Text(
                     subtitle,
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
                     maxLines = 2
                 )
             }

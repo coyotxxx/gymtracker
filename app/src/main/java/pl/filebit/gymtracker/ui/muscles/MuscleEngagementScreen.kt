@@ -58,6 +58,7 @@ fun MuscleEngagementScreen(
     val state by vm.state.collectAsStateWithLifecycle()
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.muscles_title)) },
@@ -65,7 +66,12 @@ fun MuscleEngagementScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         }
     ) { padding ->

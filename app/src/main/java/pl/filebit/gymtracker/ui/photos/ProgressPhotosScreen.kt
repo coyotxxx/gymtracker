@@ -126,6 +126,7 @@ fun ProgressPhotosScreen(
     }
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.photos_title)) },
@@ -133,12 +134,22 @@ fun ProgressPhotosScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         },
         floatingActionButton = {
             Box {
-                FloatingActionButton(onClick = { sourceMenuOpen = true }) {
+                FloatingActionButton(
+                    onClick = { sourceMenuOpen = true },
+                    containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                    contentColor = androidx.compose.ui.graphics.Color.Black,
+                    shape = RoundedCornerShape(16.dp)
+                ) {
                     Icon(Icons.Default.Add, contentDescription = null)
                 }
                 DropdownMenu(

@@ -482,7 +482,7 @@ private fun AiBadge(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .background(
-                color = MaterialTheme.colorScheme.tertiaryContainer,
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f),
                 shape = RoundedCornerShape(50)
             )
             .padding(horizontal = 8.dp, vertical = 3.dp),
@@ -491,7 +491,7 @@ private fun AiBadge(modifier: Modifier = Modifier) {
         Icon(
             Icons.Default.AutoAwesome,
             contentDescription = stringResource(R.string.plan_ai_badge_full),
-            tint = MaterialTheme.colorScheme.onTertiaryContainer,
+            tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
             modifier = Modifier.height(12.dp)
         )
         Spacer(Modifier.width(3.dp))
@@ -499,7 +499,7 @@ private fun AiBadge(modifier: Modifier = Modifier) {
             stringResource(R.string.plan_ai_badge),
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colorScheme.onTertiaryContainer
+            color = pl.filebit.gymtracker.ui.theme.AccentOrange
         )
     }
 }

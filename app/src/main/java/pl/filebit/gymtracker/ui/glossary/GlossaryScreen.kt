@@ -38,6 +38,7 @@ fun GlossaryScreen(onBack: () -> Unit) {
     var open by remember { mutableStateOf<Pair<String, String>?>(null) }
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.glossary_title)) },
@@ -45,7 +46,12 @@ fun GlossaryScreen(onBack: () -> Unit) {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         }
     ) { padding ->
@@ -80,7 +86,12 @@ private fun GlossaryCard(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

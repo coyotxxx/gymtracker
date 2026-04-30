@@ -335,7 +335,7 @@ private fun FinishSummaryDialog(
                             stringResource(R.string.tip_dialog_section),
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.tertiary
+                            color = pl.filebit.gymtracker.ui.theme.SuccessGreen
                         )
                         Spacer(Modifier.height(4.dp))
                     }
@@ -352,7 +352,7 @@ private fun FinishSummaryDialog(
                                 pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)
                             ),
                             style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.tertiary
+                            color = pl.filebit.gymtracker.ui.theme.SuccessGreen
                         )
                         Spacer(Modifier.height(8.dp))
                     }
@@ -481,7 +481,7 @@ private fun ExerciseGroupCard(
                         Text(
                             "💡 Sugestia: $arrow ${formatWeight(sug.suggestedWeightKg)} kg × ${sug.suggestedReps}",
                             style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.tertiary,
+                            color = pl.filebit.gymtracker.ui.theme.SuccessGreen,
                             fontWeight = FontWeight.Medium
                         )
                     }

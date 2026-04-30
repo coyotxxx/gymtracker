@@ -639,11 +639,11 @@ private fun SuggestionCard(
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f)
+            containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
         ),
         border = androidx.compose.foundation.BorderStroke(
             1.dp,
-            MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
+            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.40f)
         ),
         shape = RoundedCornerShape(12.dp)
     ) {
@@ -789,7 +789,7 @@ private fun ConfirmRepsDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(
-                            MaterialTheme.colorScheme.primaryContainer,
+                            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f),
                             RoundedCornerShape(16.dp)
                         )
                         .padding(vertical = 20.dp),
@@ -798,8 +798,9 @@ private fun ConfirmRepsDialog(
                     Text(
                         "$actualReps",
                         fontSize = 56.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                        fontWeight = FontWeight.ExtraBold,
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                        color = pl.filebit.gymtracker.ui.theme.AccentOrange
                     )
                 }
                 Spacer(Modifier.height(4.dp))

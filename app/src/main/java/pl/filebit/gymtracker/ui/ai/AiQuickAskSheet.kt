@@ -130,13 +130,16 @@ fun AiQuickAskSheet(
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.errorContainer
+                        containerColor = pl.filebit.gymtracker.ui.theme.ErrorRed.copy(alpha = 0.10f)
+                    ),
+                    border = androidx.compose.foundation.BorderStroke(
+                        1.dp, pl.filebit.gymtracker.ui.theme.ErrorRed.copy(alpha = 0.40f)
                     )
                 ) {
                     Text(
                         "❌ $err",
                         modifier = Modifier.padding(8.dp),
-                        color = MaterialTheme.colorScheme.onErrorContainer,
+                        color = pl.filebit.gymtracker.ui.theme.ErrorRed,
                         style = MaterialTheme.typography.bodySmall
                     )
                 }
@@ -182,8 +185,11 @@ private fun QuickAskBubble(m: QuickAskMessage) {
         Card(
             modifier = Modifier.widthIn(max = 320.dp),
             colors = CardDefaults.cardColors(
-                containerColor = if (isUser) MaterialTheme.colorScheme.primaryContainer
-                else MaterialTheme.colorScheme.surface
+                containerColor = if (isUser) pl.filebit.gymtracker.ui.theme.AccentOrange
+                else pl.filebit.gymtracker.ui.theme.DarkSurface
+            ),
+            border = if (isUser) null else androidx.compose.foundation.BorderStroke(
+                1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
             ),
             shape = RoundedCornerShape(12.dp)
         ) {
@@ -191,6 +197,8 @@ private fun QuickAskBubble(m: QuickAskMessage) {
                 Text(
                     m.text,
                     style = MaterialTheme.typography.bodyMedium,
+                    color = if (isUser) androidx.compose.ui.graphics.Color.Black
+                    else pl.filebit.gymtracker.ui.theme.DarkOnSurface,
                     modifier = Modifier.padding(10.dp)
                 )
             }

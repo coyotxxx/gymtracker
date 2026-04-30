@@ -26,6 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.util.formatTimerSeconds
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,8 +64,9 @@ fun RestTimerSheet(
             Text(
                 formatTimerSeconds(remainingSec),
                 fontSize = 96.sp,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                color = AccentOrange
             )
             Spacer(Modifier.height(16.dp))
             Box(
@@ -77,8 +80,8 @@ fun RestTimerSheet(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(8.dp),
-                    color = MaterialTheme.colorScheme.primary,
-                    trackColor = MaterialTheme.colorScheme.surfaceVariant
+                    color = AccentOrange,
+                    trackColor = DarkSurfaceVariant
                 )
             }
             Spacer(Modifier.height(32.dp))

@@ -65,6 +65,7 @@ fun StrengthStandardsScreen(
     var gender by remember(profile.gender) { mutableStateOf(profile.gender) }
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.strength_title)) },
@@ -72,7 +73,12 @@ fun StrengthStandardsScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         }
     ) { padding ->

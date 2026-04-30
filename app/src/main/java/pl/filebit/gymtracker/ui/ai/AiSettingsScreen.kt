@@ -92,6 +92,7 @@ fun AiSettingsScreen(
     var showResetConfirm by remember { mutableStateOf(false) }
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.ai_settings_title)) },
@@ -99,7 +100,12 @@ fun AiSettingsScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         }
     ) { padding ->
@@ -226,23 +232,25 @@ fun AiSettingsScreen(
             // Status testu
             state.testResult?.let { result ->
                 item {
+                    val ok = result.isEmpty()
+                    val tone = if (ok) pl.filebit.gymtracker.ui.theme.SuccessGreen
+                    else pl.filebit.gymtracker.ui.theme.ErrorRed
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
-                            containerColor = if (result.isEmpty())
-                                MaterialTheme.colorScheme.tertiaryContainer
-                            else MaterialTheme.colorScheme.errorContainer
+                            containerColor = tone.copy(alpha = 0.12f)
+                        ),
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp, tone.copy(alpha = 0.40f)
                         ),
                         shape = RoundedCornerShape(12.dp)
                     ) {
                         Text(
-                            text = if (result.isEmpty())
+                            text = if (ok)
                                 "✅ ${stringResource(R.string.ai_test_success)}"
                             else "❌ $result",
                             modifier = Modifier.padding(16.dp),
-                            color = if (result.isEmpty())
-                                MaterialTheme.colorScheme.onTertiaryContainer
-                            else MaterialTheme.colorScheme.onErrorContainer
+                            color = tone
                         )
                     }
                 }
@@ -364,8 +372,14 @@ private fun ModelOptionCard(
             .fillMaxWidth()
             .clickable(onClick = onClick),
         colors = CardDefaults.cardColors(
-            containerColor = if (selected) MaterialTheme.colorScheme.primaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (selected)
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.12f)
+            else pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            if (selected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.40f)
+            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
         ),
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -373,20 +387,21 @@ private fun ModelOptionCard(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     if (selected) "● " else "○ ",
-                    color = if (selected) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = if (selected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                    else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
                     option.id,
                     style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.SemiBold,
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
                 )
             }
             Text(
                 option.description,
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
                 modifier = Modifier.padding(start = 24.dp)
             )
         }

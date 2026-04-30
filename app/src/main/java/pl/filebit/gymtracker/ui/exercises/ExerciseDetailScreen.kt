@@ -42,10 +42,14 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.repository.ExerciseProgressionPoint
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -95,26 +99,37 @@ fun ExerciseDetailScreen(
             item {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+                    colors = CardDefaults.cardColors(
+                        containerColor = AccentOrange.copy(alpha = 0.10f)
+                    ),
+                    border = androidx.compose.foundation.BorderStroke(
+                        1.dp, AccentOrange.copy(alpha = 0.35f)
+                    ),
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(
-                            stringResource(R.string.exercise_pr_section),
-                            style = MaterialTheme.typography.labelLarge
+                            stringResource(R.string.exercise_pr_section).uppercase(),
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 1.4.sp
+                            ),
+                            color = AccentOrange
                         )
                         Spacer(Modifier.height(4.dp))
                         val pr = state.pr
                         if (pr == null) {
                             Text(
                                 stringResource(R.string.exercise_no_history),
-                                style = MaterialTheme.typography.bodyMedium
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = DarkOnSurface
                             )
                         } else {
                             Text(
                                 "🏆 ${formatWeight(pr.maxWeightKg)} kg × ${pr.repsAtMaxWeight}",
                                 style = MaterialTheme.typography.headlineSmall,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.Bold,
+                                color = DarkOnSurface
                             )
                             Text(
                                 stringResource(
@@ -123,7 +138,8 @@ fun ExerciseDetailScreen(
                                     formatWeight(pr.maxVolumeKg),
                                     pr.totalSetsLogged
                                 ),
-                                style = MaterialTheme.typography.bodySmall
+                                style = MaterialTheme.typography.bodySmall,
+                                color = DarkOnSurface.copy(alpha = 0.85f)
                             )
                         }
                     }
@@ -291,9 +307,9 @@ private fun ProgressionLineChart(
     val minW = points.minOf { it.maxWeightKg }
     val range = (maxW - minW).coerceAtLeast(1.0)
 
-    val lineColor = MaterialTheme.colorScheme.primary
-    val pointColor = MaterialTheme.colorScheme.primary
-    val gridColor = MaterialTheme.colorScheme.outlineVariant
+    val lineColor = AccentOrange
+    val pointColor = AccentOrange
+    val gridColor = DarkOutlineSoft
 
     Canvas(modifier = modifier) {
         val w = size.width

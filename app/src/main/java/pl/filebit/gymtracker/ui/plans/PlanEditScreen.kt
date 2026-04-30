@@ -304,8 +304,14 @@ private fun PlanExerciseCard(
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (supersetLabel != null) MaterialTheme.colorScheme.tertiaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (supersetLabel != null)
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
+            else pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            if (supersetLabel != null) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.40f)
+            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
         ),
         shape = RoundedCornerShape(12.dp)
     ) {
@@ -319,7 +325,7 @@ private fun PlanExerciseCard(
                         modifier = Modifier
                             .padding(end = 8.dp)
                             .background(
-                                MaterialTheme.colorScheme.tertiary,
+                                pl.filebit.gymtracker.ui.theme.AccentOrange,
                                 RoundedCornerShape(6.dp)
                             )
                             .padding(horizontal = 6.dp, vertical = 2.dp)
@@ -328,7 +334,7 @@ private fun PlanExerciseCard(
                             supersetLabel,
                             style = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onTertiary
+                            color = androidx.compose.ui.graphics.Color.Black
                         )
                     }
                 }

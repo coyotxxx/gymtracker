@@ -293,8 +293,14 @@ private fun AchievementCard(a: Achievement) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (a.unlocked) MaterialTheme.colorScheme.primaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (a.unlocked)
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
+            else pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            if (a.unlocked) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.35f)
+            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
         ),
         shape = RoundedCornerShape(12.dp)
     ) {
@@ -308,13 +314,13 @@ private fun AchievementCard(a: Achievement) {
                 a.title,
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.SemiBold,
-                color = if (a.unlocked) MaterialTheme.colorScheme.onPrimaryContainer
-                else MaterialTheme.colorScheme.onSurfaceVariant
+                color = if (a.unlocked) pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
             Text(
                 a.description,
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
             if (!a.unlocked && a.targetValue > 0) {
                 Spacer(Modifier.height(4.dp))
