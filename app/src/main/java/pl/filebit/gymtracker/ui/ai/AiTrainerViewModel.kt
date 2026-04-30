@@ -1,9 +1,13 @@
 package pl.filebit.gymtracker.ui.ai
 
+import android.content.Context
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -77,12 +81,17 @@ enum class QuickAction(val labelKey: String, val prompt: String) {
 @HiltViewModel
 class AiTrainerViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
+    @ApplicationContext private val app: Context,
     private val client: AiClient,
     private val prefs: AiPreferences,
     private val contextBuilder: AiContextBuilder,
     private val planApplier: AiPlanApplier,
     private val chatRepo: AiChatRepository
 ) : ViewModel() {
+
+    private fun toast(text: String) {
+        Toast.makeText(app, text, Toast.LENGTH_SHORT).show()
+    }
 
     // 0L = nowa konwersacja (utworzy się przy pierwszej wiadomości)
     private val initialConversationId: Long =
@@ -231,8 +240,18 @@ class AiTrainerViewModel @Inject constructor(
     }
 
     fun applyProposal(message: ChatMessage) {
-        val proposal = message.proposal ?: return
-        if (_state.value.isApplying) return
+        Log.d("AiTrainerVM", "applyProposal click: msg.id=${message.id} hasProposal=${message.proposal != null} applied=${message.applied}")
+        toast("Zapisuję plan…")
+        val proposal = message.proposal
+        if (proposal == null) {
+            Log.w("AiTrainerVM", "applyProposal: proposal is null")
+            _state.value = _state.value.copy(error = "Brak danych planu w wiadomości")
+            return
+        }
+        if (_state.value.isApplying) {
+            Log.d("AiTrainerVM", "applyProposal: already applying, ignored")
+            return
+        }
         val targetIndex = _state.value.messages.indexOfFirst { it.id != 0L && it.id == message.id }
             .takeIf { it >= 0 }
             ?: _state.value.messages.indexOfLast { it.proposal != null && !it.applied }
@@ -240,6 +259,7 @@ class AiTrainerViewModel @Inject constructor(
         viewModelScope.launch {
             planApplier.applyProposal(proposal).fold(
                 onSuccess = { planId ->
+                    Log.d("AiTrainerVM", "applyProposal SUCCESS planId=$planId")
                     val updatedList = _state.value.messages.toMutableList()
                     if (targetIndex >= 0 && targetIndex < updatedList.size) {
                         val msg = updatedList[targetIndex]
@@ -253,9 +273,10 @@ class AiTrainerViewModel @Inject constructor(
                     )
                 },
                 onFailure = { err ->
+                    Log.e("AiTrainerVM", "applyProposal FAIL: ${err.message}", err)
                     _state.value = _state.value.copy(
                         isApplying = false,
-                        error = err.message ?: "Nie udało się dodać planu"
+                        error = "Błąd zapisu: ${err.message ?: err::class.simpleName ?: "?"}"
                     )
                 }
             )

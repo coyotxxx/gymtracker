@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ai
 
+import android.util.Log
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.boolean
 import kotlinx.serialization.json.booleanOrNull
@@ -55,10 +56,45 @@ class AiPlanApplier @Inject constructor(
      * Wykrywa blok ```json {…}``` w odpowiedzi AI i parsuje do AiPlanProposal.
      */
     fun extractProposal(aiText: String): AiPlanProposal? {
-        val rx = Regex("```json\\s*(\\{[\\s\\S]*?\\})\\s*```", RegexOption.MULTILINE)
-        val match = rx.find(aiText) ?: return null
-        val block = match.groupValues[1].trim()
-        return runCatching { parse(block) }.getOrNull()
+        // Fenced block ```json ... ``` — najczęściej. Jeśli AI zapomni, próbujemy
+        // też goły JSON (pierwszy balansowany blok {...}).
+        val fenced = Regex("```json\\s*([\\s\\S]+?)```", RegexOption.MULTILINE).find(aiText)
+        val raw = fenced?.groupValues?.get(1)?.trim()
+            ?: extractBalancedJson(aiText)
+            ?: run {
+                Log.w("AiPlanApplier", "extractProposal: no JSON block found")
+                return null
+            }
+        return runCatching { parse(raw) }
+            .onFailure { Log.e("AiPlanApplier", "parse failed: ${it.message}\n--- raw ---\n$raw", it) }
+            .getOrNull()
+    }
+
+    /** Znajduje pierwszy obiekt JSON {…} z poprawnie zbalansowanymi nawiasami. */
+    private fun extractBalancedJson(text: String): String? {
+        val start = text.indexOf('{')
+        if (start < 0) return null
+        var depth = 0
+        var inStr = false
+        var esc = false
+        for (i in start until text.length) {
+            val c = text[i]
+            if (inStr) {
+                if (esc) esc = false
+                else if (c == '\\') esc = true
+                else if (c == '"') inStr = false
+                continue
+            }
+            when (c) {
+                '"' -> inStr = true
+                '{' -> depth++
+                '}' -> {
+                    depth--
+                    if (depth == 0) return text.substring(start, i + 1)
+                }
+            }
+        }
+        return null
     }
 
     private fun parse(jsonText: String): AiPlanProposal {
@@ -113,7 +149,9 @@ class AiPlanApplier @Inject constructor(
      * Zwraca id utworzonego TrainingPlan lub error.
      */
     suspend fun applyProposal(proposal: AiPlanProposal): Result<Long> = runCatching {
+        Log.d("AiPlanApplier", "applyProposal name='${proposal.name}' daysOfWeek=${proposal.daysOfWeek} days=${proposal.days.size} totalEx=${proposal.totalExercises}")
         val library = exerciseDao.getAll()
+        Log.d("AiPlanApplier", "exercise library size=${library.size}")
         val planId = planRepo.upsertPlan(
             TrainingPlan(
                 name = proposal.name.ifBlank { "Plan AI" },
@@ -123,6 +161,7 @@ class AiPlanApplier @Inject constructor(
                 createdByAi = true
             )
         )
+        Log.d("AiPlanApplier", "plan created id=$planId")
 
         proposal.days.forEach { day ->
             day.exercises.forEachIndexed { idx, aiEx ->
@@ -132,7 +171,10 @@ class AiPlanApplier @Inject constructor(
                     it.name.startsWith(aiEx.exerciseName, ignoreCase = true)
                 } ?: library.firstOrNull {
                     it.name.contains(aiEx.exerciseName, ignoreCase = true)
-                } ?: return@forEachIndexed   // pomiń jeśli brak match — user widzi w description
+                } ?: run {
+                    Log.w("AiPlanApplier", "no match for exercise '${aiEx.exerciseName}'")
+                    return@forEachIndexed
+                }
 
                 val peId = planRepo.upsertPlanExercise(
                     PlanExercise(

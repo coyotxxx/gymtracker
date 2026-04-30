@@ -339,7 +339,13 @@ private fun MessageBubble(
                 message.proposal?.let { p ->
                     Spacer(Modifier.height(8.dp))
                     Card(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .then(
+                                if (!message.applied && !isApplying)
+                                    Modifier.clickable { onApplyPlan() }
+                                else Modifier
+                            ),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.tertiaryContainer
                         ),
