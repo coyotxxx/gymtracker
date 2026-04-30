@@ -6,8 +6,10 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -189,6 +191,67 @@ fun GymChip(
             ),
             color = fg
         )
+    }
+}
+
+/** Wielka liczba mono ExtraBold w żółci + sufiks (np. "kg") mniejszy. */
+@Composable
+fun MonoBigValue(
+    value: String,
+    suffix: String? = null,
+    modifier: Modifier = Modifier,
+    valueSize: androidx.compose.ui.unit.TextUnit = 44.sp,
+    suffixSize: androidx.compose.ui.unit.TextUnit = 16.sp,
+    valueColor: Color = AccentOrange,
+    suffixColor: Color = AccentOrange.copy(alpha = 0.85f)
+) {
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.Bottom
+    ) {
+        Text(
+            value,
+            style = MaterialTheme.typography.headlineLarge.copy(
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = valueSize,
+                letterSpacing = 0.5.sp
+            ),
+            color = valueColor
+        )
+        if (suffix != null) {
+            Text(
+                suffix,
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = suffixSize
+                ),
+                color = suffixColor,
+                modifier = Modifier.padding(start = 4.dp, bottom = 6.dp)
+            )
+        }
+    }
+}
+
+/** Hero blok ze środkiem wycentrowanym: label UPPERCASE + duża wartość mono. */
+@Composable
+fun HeroValueCard(
+    label: String,
+    value: String,
+    suffix: String? = null,
+    modifier: Modifier = Modifier
+) {
+    GymCard(modifier = modifier) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 24.dp, horizontal = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            LabelUp(label, accent = true)
+            androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))
+            MonoBigValue(value = value, suffix = suffix, valueSize = 56.sp, suffixSize = 18.sp)
+        }
     }
 }
 

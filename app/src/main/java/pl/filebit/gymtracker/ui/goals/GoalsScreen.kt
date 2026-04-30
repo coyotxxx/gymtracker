@@ -69,6 +69,7 @@ fun GoalsScreen(
     var pendingDelete by remember { mutableStateOf<Goal?>(null) }
 
     Scaffold(
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.goals_title)) },
@@ -76,11 +77,21 @@ fun GoalsScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
+                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { showAddDialog = true }) {
+            FloatingActionButton(
+                onClick = { showAddDialog = true },
+                containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                contentColor = Color.Black,
+                shape = RoundedCornerShape(16.dp)
+            ) {
                 Icon(Icons.Default.Add, contentDescription = null)
             }
         }
@@ -147,101 +158,132 @@ fun GoalsScreen(
     }
 }
 
+private fun goalEmoji(type: GoalType, achieved: Boolean): String = when {
+    achieved -> "🏆"
+    type == GoalType.LOSE_WEIGHT -> "📉"
+    type == GoalType.GAIN_MASS -> "💪"
+    type == GoalType.INCREASE_STRENGTH -> "🏋️"
+    type == GoalType.IMPROVE_CARDIO -> "🏃"
+    else -> "🎯"
+}
+
 @Composable
 private fun GoalCard(gp: GoalProgress, onDelete: () -> Unit) {
-    val statusEmoji = when {
-        gp.achieved -> "🏆"
-        gp.onTrack -> "✅"
-        gp.daysRemaining == 0 -> "⏰"
-        else -> "⚠️"
-    }
-    val statusColor = when {
-        gp.achieved -> Color(0xFF6A1B9A)
-        gp.onTrack -> Color(0xFF2E7D32)
-        else -> Color(0xFFEF6C00)
-    }
+    val emoji = goalEmoji(gp.goal.type, gp.achieved)
+    val accent = pl.filebit.gymtracker.ui.theme.AccentOrange
 
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (gp.achieved)
-                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
-            else pl.filebit.gymtracker.ui.theme.DarkSurface
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
         ),
         border = androidx.compose.foundation.BorderStroke(
             1.dp,
-            if (gp.achieved) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
-            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+            pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
         ),
         shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    "$statusEmoji ${gp.goal.title}",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.weight(1f)
-                )
+            Row(verticalAlignment = Alignment.Top) {
+                // Emoji tile po lewej
+                Box(
+                    modifier = Modifier
+                        .padding(end = 12.dp)
+                        .background(
+                            pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
+                            RoundedCornerShape(10.dp)
+                        )
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                ) {
+                    Text(emoji, style = MaterialTheme.typography.titleLarge)
+                }
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        gp.goal.title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                    )
+                    Text(
+                        "Termin: ${formatDate(gp.goal.deadline)}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                    )
+                }
                 IconButton(onClick = onDelete) {
-                    Icon(Icons.Default.Delete, contentDescription = null)
+                    Icon(
+                        Icons.Default.Delete,
+                        contentDescription = null,
+                        tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                    )
                 }
             }
-            if (gp.goal.description.isNotBlank()) {
+            Spacer(Modifier.height(12.dp))
+
+            // current vs target
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Text(
-                    gp.goal.description,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    formatWeight(gp.currentValue),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                )
+                Text(
+                    "cel: ${formatWeight(gp.goal.targetValue)}",
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace
+                    ),
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
                 )
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(6.dp))
 
-            // Pasek postępu
+            // Pasek postępu — żółty
             val progress = (gp.percentDone / 100f).coerceIn(0f, 1f)
             LinearProgressIndicator(
                 progress = { progress },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(10.dp),
-                color = statusColor,
-                trackColor = MaterialTheme.colorScheme.surfaceVariant
+                    .height(8.dp),
+                color = accent,
+                trackColor = pl.filebit.gymtracker.ui.theme.DarkSurface3,
+                strokeCap = androidx.compose.ui.graphics.StrokeCap.Round,
+                gapSize = 0.dp,
+                drawStopIndicator = {}
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
 
-            // Aktualne wartości
-            Text(
-                "${formatWeight(gp.currentValue)} ${gp.goal.unit.label()} → ${formatWeight(gp.goal.targetValue)} ${gp.goal.unit.label()}  (${gp.percentDone}%)",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Medium
-            )
-            Text(
-                "Start: ${formatWeight(gp.goal.startValue)} ${gp.goal.unit.label()} · od ${formatDate(gp.goal.startDate)}",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-
-            Spacer(Modifier.height(4.dp))
-
-            // Dni
-            Text(
-                "Dni: ${gp.daysElapsed}/${gp.daysTotal} · pozostało ${gp.daysRemaining}",
-                style = MaterialTheme.typography.bodySmall
-            )
-
-            // Status
-            Spacer(Modifier.height(6.dp))
-            val statusText = when {
-                gp.achieved -> stringResource(R.string.goals_status_achieved)
-                gp.daysRemaining == 0 && !gp.achieved -> stringResource(R.string.goals_status_overdue)
-                gp.pacePercent >= 110 -> stringResource(R.string.goals_status_ahead, gp.pacePercent)
-                gp.onTrack -> stringResource(R.string.goals_status_on_track, gp.pacePercent)
-                else -> stringResource(R.string.goals_status_behind, gp.pacePercent)
+            // Status — emoji + tekst w 1 linii
+            val (statusEmoji, statusText, statusColor) = when {
+                gp.achieved -> Triple("🏆", stringResource(R.string.goals_status_achieved), accent)
+                gp.daysRemaining == 0 && !gp.achieved -> Triple(
+                    "⏰",
+                    stringResource(R.string.goals_status_overdue),
+                    pl.filebit.gymtracker.ui.theme.ErrorRed
+                )
+                gp.pacePercent >= 110 -> Triple(
+                    "🚀",
+                    stringResource(R.string.goals_status_ahead, gp.pacePercent),
+                    pl.filebit.gymtracker.ui.theme.SuccessGreen
+                )
+                gp.onTrack -> Triple(
+                    "✅",
+                    stringResource(R.string.goals_status_on_track, gp.pacePercent),
+                    pl.filebit.gymtracker.ui.theme.SuccessGreen
+                )
+                else -> Triple(
+                    "⚠️",
+                    stringResource(R.string.goals_status_behind, gp.pacePercent),
+                    pl.filebit.gymtracker.ui.theme.ErrorRed
+                )
             }
-            Box(
-                modifier = Modifier
-                    .background(statusColor.copy(alpha = 0.18f), RoundedCornerShape(6.dp))
-                    .padding(horizontal = 8.dp, vertical = 4.dp)
-            ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(statusEmoji, style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.padding(horizontal = 3.dp))
                 Text(
                     statusText,
                     style = MaterialTheme.typography.bodySmall,

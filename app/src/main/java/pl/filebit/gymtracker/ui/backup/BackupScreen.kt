@@ -5,47 +5,66 @@ import android.content.ClipboardManager
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.BugReport
-import androidx.compose.material.icons.filled.CloudDownload
-import androidx.compose.material.icons.filled.CloudUpload
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material.icons.filled.DeleteForever
+import androidx.compose.material.icons.filled.FileDownload
+import androidx.compose.material.icons.filled.FileUpload
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.util.formatDate
 import java.io.File
 
@@ -59,6 +78,7 @@ fun BackupScreen(
     val snackbar = remember { SnackbarHostState() }
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
+    var showWipeDialog by remember { mutableStateOf(false) }
 
     LaunchedEffect(status) {
         status?.let {
@@ -69,21 +89,16 @@ fun BackupScreen(
 
     val exportLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument("application/json")
-    ) { uri ->
-        uri?.let { vm.export(it) }
-    }
+    ) { uri -> uri?.let { vm.export(it) } }
     val importLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument()
-    ) { uri ->
-        uri?.let { vm.import(it) }
-    }
+    ) { uri -> uri?.let { vm.import(it) } }
     val csvLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument("text/csv")
-    ) { uri ->
-        uri?.let { vm.exportCsv(it) }
-    }
+    ) { uri -> uri?.let { vm.exportCsv(it) } }
 
     Scaffold(
+        containerColor = DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.backup_section)) },
@@ -91,124 +106,263 @@ fun BackupScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = DarkBg,
+                    titleContentColor = DarkOnSurface,
+                    navigationIconContentColor = DarkOnSurface
+                )
             )
         },
         snackbarHost = { SnackbarHost(snackbar) }
     ) { padding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
-                .padding(16.dp),
+                .padding(padding),
+            contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Card(
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "Backup zapisuje całą aplikację do pliku JSON: profil, treningi, plany, pomiary ciała, cele, ustawienia AI, historię rozmów. Możesz wgrać go po reinstalacji żeby odzyskać wszystko.",
-                        style = MaterialTheme.typography.bodyMedium
+            // === Eksport danych ===
+            item {
+                SectionCard(
+                    title = "Eksport danych",
+                    subtitle = "Pełny backup bazy + ustawień (bez klucza AI)."
+                ) {
+                    OutlinedActionButton(
+                        text = stringResource(R.string.backup_export),
+                        icon = Icons.Default.FileDownload,
+                        onClick = {
+                            val name = "gymtracker-backup-${
+                                formatDate(System.currentTimeMillis())
+                                    .replace(" ", "_").replace(":", "-")
+                            }.json"
+                            exportLauncher.launch(name)
+                        }
                     )
-                    Spacer(Modifier.height(8.dp))
-                    Text(
-                        "Klucz API i pliki zdjęć NIE są w backupie (ze względów bezpieczeństwa i rozmiaru). Po imporcie wpiszesz klucz ponownie. Eksport CSV służy tylko do podglądu w Excelu — nie da się go zaimportować z powrotem.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    Spacer(Modifier.height(6.dp))
-                    Text(
-                        "Import nadpisuje aktualne dane. Używaj ostrożnie.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.error
+                    Spacer(Modifier.height(10.dp))
+                    OutlinedActionButton(
+                        text = stringResource(R.string.backup_export_csv),
+                        icon = Icons.Default.FileDownload,
+                        onClick = {
+                            val name = "gymtracker-${
+                                formatDate(System.currentTimeMillis())
+                                    .replace(" ", "_").replace(":", "-")
+                            }.csv"
+                            csvLauncher.launch(name)
+                        }
                     )
                 }
             }
 
-            Button(
-                onClick = {
-                    val name = "gymtracker-backup-${formatDate(System.currentTimeMillis()).replace(" ", "_").replace(":", "-")}.json"
-                    exportLauncher.launch(name)
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Icon(Icons.Default.CloudUpload, contentDescription = null)
-                Spacer(Modifier.height(4.dp))
-                Text("  ${stringResource(R.string.backup_export)}")
-            }
-
-            OutlinedButton(
-                onClick = {
-                    // Niektóre menedżery plików raportują JSON jako octet-stream
-                    // lub text/plain — bez tych pozycji plik bywa zaszarzony.
-                    importLauncher.launch(
-                        arrayOf(
-                            "application/json",
-                            "application/octet-stream",
-                            "text/json",
-                            "text/plain",
-                            "*/*"
-                        )
+            // === Import danych ===
+            item {
+                SectionCard(
+                    title = "Import danych",
+                    subtitle = "Wczytaj wcześniej wyeksportowany plik JSON."
+                ) {
+                    OutlinedActionButton(
+                        text = stringResource(R.string.backup_import),
+                        icon = Icons.Default.FileUpload,
+                        onClick = {
+                            // Niektóre menedżery plików raportują JSON jako octet-stream
+                            // — bez tych pozycji plik bywa zaszarzony.
+                            importLauncher.launch(
+                                arrayOf(
+                                    "application/json",
+                                    "application/octet-stream",
+                                    "text/json",
+                                    "text/plain",
+                                    "*/*"
+                                )
+                            )
+                        }
                     )
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.outlinedButtonColors()
-            ) {
-                Icon(Icons.Default.CloudDownload, contentDescription = null)
-                Spacer(Modifier.height(4.dp))
-                Text("  ${stringResource(R.string.backup_import)}")
+                }
             }
 
-            OutlinedButton(
-                onClick = {
-                    val name = "gymtracker-${formatDate(System.currentTimeMillis()).replace(" ", "_").replace(":", "-")}.csv"
-                    csvLauncher.launch(name)
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.outlinedButtonColors()
-            ) {
-                Icon(Icons.Default.CloudUpload, contentDescription = null)
-                Spacer(Modifier.height(4.dp))
-                Text("  ${stringResource(R.string.backup_export_csv)}")
+            // === Crash log (utility) ===
+            item {
+                SectionCard(
+                    title = "Diagnostyka",
+                    subtitle = null
+                ) {
+                    OutlinedActionButton(
+                        text = "Skopiuj log ostatniego crashu",
+                        icon = Icons.Default.BugReport,
+                        onClick = {
+                            val crashFile = File(context.filesDir, "last_crash.txt")
+                            if (crashFile.exists()) {
+                                val text = crashFile.readText()
+                                val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                                cm.setPrimaryClip(ClipData.newPlainText("crash", text))
+                                coroutineScope.launch {
+                                    snackbar.showSnackbar("Skopiowano - wklej w czacie")
+                                }
+                            } else {
+                                coroutineScope.launch {
+                                    snackbar.showSnackbar("Brak crashu - aplikacja stabilna")
+                                }
+                            }
+                        }
+                    )
+                }
             }
 
-            OutlinedButton(
-                onClick = {
-                    val crashFile = File(context.filesDir, "last_crash.txt")
-                    if (crashFile.exists()) {
-                        val text = crashFile.readText()
-                        val cm = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                        cm.setPrimaryClip(ClipData.newPlainText("crash", text))
-                        coroutineScope.launch {
-                            snackbar.showSnackbar("Skopiowano - wklej w czacie")
-                        }
-                    } else {
-                        coroutineScope.launch {
-                            snackbar.showSnackbar("Brak crashu - aplikacja stabilna")
-                        }
+            // === Strefa niebezpieczna ===
+            item {
+                DangerZoneCard(
+                    onWipe = { showWipeDialog = true }
+                )
+            }
+        }
+    }
+
+    if (showWipeDialog) {
+        AlertDialog(
+            onDismissRequest = { showWipeDialog = false },
+            icon = {
+                Icon(Icons.Default.Warning, contentDescription = null, tint = ErrorRed)
+            },
+            title = { Text("Wyczyścić wszystkie dane?") },
+            text = {
+                Text(
+                    "Skasujesz wszystkie treningi, plany, pomiary, cele, ustawienia AI " +
+                        "i klucz API. Tej operacji nie można cofnąć."
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showWipeDialog = false
+                        vm.wipeAll(onDone = {})
                     }
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.outlinedButtonColors()
-            ) {
-                Icon(Icons.Default.BugReport, contentDescription = null)
-                Spacer(Modifier.height(4.dp))
-                Text("  Skopiuj log ostatniego crashu")
+                ) { Text("Skasuj wszystko", color = ErrorRed) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showWipeDialog = false }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
             }
+        )
+    }
+}
+
+@Composable
+private fun SectionCard(
+    title: String,
+    subtitle: String?,
+    content: @Composable () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(18.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                title,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.sp
+                ),
+                color = DarkOnSurface
+            )
+            if (subtitle != null) {
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    subtitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Spacer(Modifier.height(14.dp))
+            content()
+        }
+    }
+}
+
+@Composable
+private fun OutlinedActionButton(
+    text: String,
+    icon: ImageVector,
+    onClick: () -> Unit,
+    danger: Boolean = false
+) {
+    val border = if (danger) ErrorRed.copy(alpha = 0.55f) else DarkSurfaceVariant
+    val fg = if (danger) ErrorRed else DarkOnSurface
+    Card(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(52.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (danger) ErrorRed.copy(alpha = 0.10f) else Color.Transparent
+        ),
+        border = BorderStroke(1.dp, border),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(icon, contentDescription = null, tint = fg)
+            Spacer(Modifier.padding(horizontal = 5.dp))
+            Text(
+                text,
+                style = MaterialTheme.typography.titleSmall.copy(
+                    fontWeight = FontWeight.SemiBold
+                ),
+                color = fg
+            )
+        }
+    }
+}
+
+@Composable
+private fun DangerZoneCard(onWipe: () -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = ErrorRed.copy(alpha = 0.07f)
+        ),
+        border = BorderStroke(1.dp, ErrorRed.copy(alpha = 0.40f)),
+        shape = RoundedCornerShape(18.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.Warning,
+                    contentDescription = null,
+                    tint = ErrorRed
+                )
+                Spacer(Modifier.padding(horizontal = 4.dp))
+                Text(
+                    "Strefa niebezpieczna",
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 17.sp
+                    ),
+                    color = ErrorRed
+                )
+            }
+            Spacer(Modifier.height(6.dp))
+            Text(
+                "Skasuje wszystkie dane lokalne. Nie można cofnąć.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(14.dp))
+            OutlinedActionButton(
+                text = "Wyczyść wszystkie dane",
+                icon = Icons.Default.DeleteForever,
+                onClick = onWipe,
+                danger = true
+            )
         }
     }
 }

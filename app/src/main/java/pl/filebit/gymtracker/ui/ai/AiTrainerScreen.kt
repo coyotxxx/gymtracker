@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.ui.ai
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.layout.Arrangement
@@ -9,11 +11,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -23,6 +25,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.Settings
@@ -34,9 +37,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -45,6 +50,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import android.widget.Toast
@@ -55,6 +61,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.ai.AiRole
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -87,18 +100,27 @@ fun AiTrainerScreen(
     LaunchedEffect(Unit) { vm.refreshConnection() }
 
     Scaffold(
+        containerColor = DarkBg,
         topBar = {
             TopAppBar(
                 title = {
                     Column {
-                        Text(stringResource(R.string.ai_trainer_title))
-                        if (state.isConnected) {
-                            Text(
-                                "${state.providerName} · ${state.modelName}",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
+                        Text(
+                            "PLAN NA TYDZIEŃ",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 1.4.sp
+                            ),
+                            color = AccentOrange
+                        )
+                        Text(
+                            stringResource(R.string.ai_trainer_title),
+                            style = MaterialTheme.typography.titleLarge.copy(
+                                fontWeight = FontWeight.Bold
+                            ),
+                            color = DarkOnSurface
+                        )
                     }
                 },
                 navigationIcon = {
@@ -108,12 +130,25 @@ fun AiTrainerScreen(
                 },
                 actions = {
                     IconButton(onClick = vm::clearChat) {
-                        Icon(Icons.Default.DeleteSweep, contentDescription = null)
+                        Icon(
+                            Icons.Default.DeleteSweep,
+                            contentDescription = null,
+                            tint = DarkOnSurfaceVariant
+                        )
                     }
                     IconButton(onClick = onOpenSettings) {
-                        Icon(Icons.Default.Settings, contentDescription = null)
+                        Icon(
+                            Icons.Default.Settings,
+                            contentDescription = null,
+                            tint = DarkOnSurfaceVariant
+                        )
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = DarkBg,
+                    titleContentColor = DarkOnSurface,
+                    navigationIconContentColor = DarkOnSurface
+                )
             )
         }
     ) { padding ->
@@ -171,16 +206,20 @@ fun AiTrainerScreen(
                 }
                 if (state.isLoading) {
                     item {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.height(16.dp),
-                                strokeWidth = 2.dp
-                            )
-                            Spacer(Modifier.height(0.dp))
+                        Row(
+                            modifier = Modifier.padding(start = 8.dp, top = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
                             Text(
-                                "  ${stringResource(R.string.ai_thinking)}",
+                                "✨✨✨",
+                                color = AccentOrange.copy(alpha = 0.7f),
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                            Spacer(Modifier.size(6.dp))
+                            Text(
+                                stringResource(R.string.ai_thinking),
                                 style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                color = DarkOnSurfaceVariant
                             )
                         }
                     }
@@ -277,21 +316,46 @@ fun AiTrainerScreen(
                     value = input,
                     onValueChange = { input = it },
                     modifier = Modifier.weight(1f),
-                    placeholder = { Text(stringResource(R.string.ai_input_placeholder)) },
+                    placeholder = {
+                        Text(
+                            stringResource(R.string.ai_input_placeholder),
+                            color = DarkOnSurfaceVariant
+                        )
+                    },
                     minLines = 1,
                     maxLines = 4,
-                    enabled = state.isConnected && !state.isLoading
+                    enabled = state.isConnected && !state.isLoading,
+                    shape = RoundedCornerShape(20.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = AccentOrange.copy(alpha = 0.6f),
+                        unfocusedBorderColor = DarkSurfaceVariant,
+                        cursorColor = AccentOrange,
+                        focusedTextColor = DarkOnSurface,
+                        unfocusedTextColor = DarkOnSurface,
+                        focusedContainerColor = DarkSurface,
+                        unfocusedContainerColor = DarkSurface
+                    )
                 )
-                Spacer(Modifier.height(0.dp))
-                IconButton(
-                    onClick = {
-                        vm.sendMessage(input)
-                        input = ""
-                    },
-                    enabled = input.isNotBlank() && state.isConnected && !state.isLoading,
-                    modifier = Modifier.padding(start = 8.dp)
+                Spacer(Modifier.size(8.dp))
+                val sendEnabled = input.isNotBlank() && state.isConnected && !state.isLoading
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .background(
+                            if (sendEnabled) AccentOrange else DarkSurfaceVariant,
+                            RoundedCornerShape(14.dp)
+                        )
+                        .clickable(enabled = sendEnabled) {
+                            vm.sendMessage(input)
+                            input = ""
+                        },
+                    contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.AutoMirrored.Filled.Send, contentDescription = null)
+                    Icon(
+                        Icons.AutoMirrored.Filled.Send,
+                        contentDescription = null,
+                        tint = if (sendEnabled) Color.Black else DarkOnSurfaceVariant
+                    )
                 }
             }
         }
@@ -328,33 +392,40 @@ private fun QuickActionChip(
     enabled: Boolean,
     onClick: () -> Unit
 ) {
-    val (emoji, label) = when (action) {
-        QuickAction.PROPOSE_PLAN -> "📋" to stringResource(R.string.ai_action_plan)
-        QuickAction.TODAY -> "🔥" to stringResource(R.string.ai_action_today)
-        QuickAction.ANALYZE_PROGRESS -> "📈" to stringResource(R.string.ai_action_progress)
-        QuickAction.DELOAD -> "😴" to stringResource(R.string.ai_action_deload)
-        QuickAction.FULL_STATS -> "📊" to stringResource(R.string.ai_action_stats)
-        QuickAction.WEEKLY_SUMMARY -> "📝" to stringResource(R.string.ai_action_weekly)
-        QuickAction.GOAL_PROGRESS -> "🎯" to stringResource(R.string.ai_action_goal)
+    val label = when (action) {
+        QuickAction.PROPOSE_PLAN -> stringResource(R.string.ai_action_plan)
+        QuickAction.TODAY -> stringResource(R.string.ai_action_today)
+        QuickAction.ANALYZE_PROGRESS -> stringResource(R.string.ai_action_progress)
+        QuickAction.DELOAD -> stringResource(R.string.ai_action_deload)
+        QuickAction.FULL_STATS -> stringResource(R.string.ai_action_stats)
+        QuickAction.WEEKLY_SUMMARY -> stringResource(R.string.ai_action_weekly)
+        QuickAction.GOAL_PROGRESS -> stringResource(R.string.ai_action_goal)
     }
-    Card(
-        modifier = Modifier.clickable(enabled = enabled, onClick = onClick),
-        colors = CardDefaults.cardColors(
-            containerColor = if (enabled) MaterialTheme.colorScheme.primaryContainer
-            else MaterialTheme.colorScheme.surfaceVariant
-        ),
-        shape = RoundedCornerShape(20.dp)
+    val borderColor = if (enabled) AccentOrange.copy(alpha = 0.45f) else DarkSurfaceVariant
+    val textColor = if (enabled) AccentOrange else DarkOnSurfaceVariant
+    Box(
+        modifier = Modifier
+            .clickable(enabled = enabled, onClick = onClick)
+            .background(Color.Transparent, RoundedCornerShape(999.dp))
+            .border(1.dp, borderColor, RoundedCornerShape(999.dp))
+            .padding(horizontal = 12.dp, vertical = 8.dp)
     ) {
-        Row(
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(emoji, style = MaterialTheme.typography.titleSmall)
-            Spacer(Modifier.height(0.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                Icons.Default.AutoAwesome,
+                contentDescription = null,
+                tint = textColor,
+                modifier = Modifier.size(14.dp)
+            )
+            Spacer(Modifier.size(6.dp))
             Text(
-                "  $label",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Medium
+                label.uppercase(),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.8.sp
+                ),
+                color = textColor
             )
         }
     }
@@ -367,24 +438,38 @@ private fun MessageBubble(
     val isUser = message.role == AiRole.USER
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
+        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start,
+        verticalAlignment = Alignment.Top
     ) {
-        // Bańki user: żółtawe; AI: ciemna z lekką obwódką (kanon)
+        if (!isUser) {
+            // Awatar AI — żółty kwadracik z gwiazdką
+            Box(
+                modifier = Modifier
+                    .size(28.dp)
+                    .background(AccentOrange, RoundedCornerShape(8.dp)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    Icons.Default.AutoAwesome,
+                    contentDescription = null,
+                    tint = Color.Black,
+                    modifier = Modifier.size(16.dp)
+                )
+            }
+            Spacer(Modifier.size(6.dp))
+        }
+        // Bańki user: pełna żółć + czarny tekst; AI: ciemna z lekką obwódką
         Card(
             modifier = Modifier.widthIn(max = 320.dp),
             colors = CardDefaults.cardColors(
-                containerColor = if (isUser) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
-                else pl.filebit.gymtracker.ui.theme.DarkSurface
+                containerColor = if (isUser) AccentOrange else DarkSurface
             ),
-            border = androidx.compose.foundation.BorderStroke(
-                1.dp,
-                if (isUser) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
-                else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
-            ),
+            border = if (isUser) null else BorderStroke(1.dp, DarkOutlineSoft),
             shape = RoundedCornerShape(
-                topStart = 16.dp, topEnd = 16.dp,
-                bottomStart = if (isUser) 16.dp else 4.dp,
-                bottomEnd = if (isUser) 4.dp else 16.dp
+                topStart = if (isUser) 16.dp else 4.dp,
+                topEnd = if (isUser) 4.dp else 16.dp,
+                bottomStart = 16.dp,
+                bottomEnd = 16.dp
             )
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
@@ -392,7 +477,7 @@ private fun MessageBubble(
                     Text(
                         message.text,
                         style = MaterialTheme.typography.bodyMedium,
-                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                        color = if (isUser) Color.Black else DarkOnSurface
                     )
                 }
                 message.proposal?.let { p ->
@@ -400,36 +485,42 @@ private fun MessageBubble(
                     Card(
                         modifier = Modifier.fillMaxWidth(),
                         colors = CardDefaults.cardColors(
-                            containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
+                            containerColor = AccentOrange.copy(alpha = 0.10f)
                         ),
-                        border = androidx.compose.foundation.BorderStroke(
-                            1.dp,
-                            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
-                        ),
+                        border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.40f)),
                         shape = RoundedCornerShape(10.dp)
                     ) {
                         Column(modifier = Modifier.padding(10.dp)) {
-                            Text(
-                                "✨ PLAN",
-                                style = MaterialTheme.typography.labelSmall.copy(
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    letterSpacing = 1.4.sp
-                                ),
-                                color = pl.filebit.gymtracker.ui.theme.AccentOrange
-                            )
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(
+                                    Icons.Default.AutoAwesome,
+                                    contentDescription = null,
+                                    tint = AccentOrange,
+                                    modifier = Modifier.size(12.dp)
+                                )
+                                Spacer(Modifier.size(4.dp))
+                                Text(
+                                    "SUGESTIA",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 10.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                            }
                             Spacer(Modifier.height(4.dp))
                             Text(
                                 p.name,
                                 style = MaterialTheme.typography.titleSmall.copy(
                                     fontWeight = FontWeight.ExtraBold
                                 ),
-                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                                color = DarkOnSurface
                             )
                             Text(
                                 "${p.days.size} dni · ${p.totalExercises} ćwiczeń",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                                color = DarkOnSurfaceVariant
                             )
                             if (message.applied) {
                                 Spacer(Modifier.height(6.dp))
@@ -437,7 +528,7 @@ private fun MessageBubble(
                                     "✅ Plan zapisany w bibliotece",
                                     style = MaterialTheme.typography.bodySmall,
                                     fontWeight = FontWeight.SemiBold,
-                                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                                    color = AccentOrange
                                 )
                             }
                         }

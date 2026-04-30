@@ -549,4 +549,19 @@ class BackupViewModel @Inject constructor(
     }
 
     fun clearStatus() { _status.value = null }
+
+    /**
+     * Pełne wyczyszczenie: wszystkie tabele Room + ustawienia AI (klucz, prompt).
+     * Profil zostaje zresetowany do domyślnego przy kolejnym `pDao.upsert()` w UI.
+     */
+    fun wipeAll(onDone: () -> Unit) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                db.clearAllTables()
+                aiPrefs.clear()
+                _status.value = "Wyczyszczono wszystkie dane"
+            }
+            onDone()
+        }
+    }
 }

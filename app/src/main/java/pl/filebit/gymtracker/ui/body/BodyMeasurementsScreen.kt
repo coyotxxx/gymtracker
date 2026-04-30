@@ -18,7 +18,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -28,12 +31,14 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,7 +47,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -53,6 +60,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.WeightGoalType
+import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurface3
+import pl.filebit.gymtracker.ui.theme.ErrorRed
+import pl.filebit.gymtracker.ui.theme.LabelUp
+import pl.filebit.gymtracker.ui.theme.MonoBigValue
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
 import kotlin.math.abs
@@ -68,6 +86,7 @@ fun BodyMeasurementsScreen(
     var showAddDialog by remember { mutableStateOf(false) }
 
     Scaffold(
+        containerColor = DarkBg,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.body_title)) },
@@ -75,11 +94,21 @@ fun BodyMeasurementsScreen(
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = DarkBg,
+                    titleContentColor = DarkOnSurface,
+                    navigationIconContentColor = DarkOnSurface
+                )
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { showAddDialog = true }) {
+            FloatingActionButton(
+                onClick = { showAddDialog = true },
+                containerColor = AccentOrange,
+                contentColor = Color.Black,
+                shape = RoundedCornerShape(16.dp)
+            ) {
                 Icon(Icons.Default.Add, contentDescription = null)
             }
         }
@@ -120,7 +149,9 @@ fun BodyMeasurementsScreen(
                         WeightGoalCard(
                             goalType = goalType,
                             target = target,
-                            current = latestWeight
+                            current = latestWeight,
+                            previous = weightPoints.dropLast(1).lastOrNull()?.weightKg,
+                            start = weightPoints.firstOrNull()?.weightKg
                         )
                     }
                 }
@@ -128,40 +159,27 @@ fun BodyMeasurementsScreen(
                     item {
                         Card(
                             modifier = Modifier.fillMaxWidth(),
-                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
                             shape = RoundedCornerShape(16.dp)
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
-                                Text(
-                                    stringResource(R.string.body_weight_chart),
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.SemiBold
-                                )
-                                Spacer(Modifier.height(8.dp))
+                                LabelUp("Postęp wagi (90 dni)")
+                                Spacer(Modifier.height(12.dp))
                                 WeightLineChart(
                                     points = weightPoints,
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(160.dp)
+                                        .height(120.dp)
                                 )
-                                Spacer(Modifier.height(4.dp))
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        formatDate(weightPoints.first().date),
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                    Text(
-                                        formatDate(weightPoints.last().date),
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
                             }
                         }
+                    }
+                    item {
+                        LabelUp(
+                            "Ostatnie pomiary",
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
                     }
                 }
 
@@ -185,58 +203,66 @@ fun BodyMeasurementsScreen(
 
 @Composable
 private fun MeasurementCard(m: BodyMeasurement, onDelete: () -> Unit) {
+    val date = formatDate(m.date)
+    // skrót: "29 kwi" – druga część daty
+    val shortDate = date.substringAfter(" ", date)
+    val secondary = buildList {
+        m.chestCm?.let { add("Klatka ${formatWeight(it)}") }
+        m.waistCm?.let { add("Pas ${formatWeight(it)}") }
+        m.bodyFatPercent?.let { add("BF ${formatWeight(it)}%") }
+    }.joinToString(" · ")
+
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(12.dp)
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(14.dp)
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    formatDate(m.date),
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.weight(1f)
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Lewa: duża żółta waga
+            m.weightKg?.let { kg ->
+                MonoBigValue(
+                    value = formatWeight(kg),
+                    suffix = "kg",
+                    valueSize = 24.sp,
+                    suffixSize = 12.sp
                 )
-                IconButton(onClick = onDelete) {
-                    Icon(Icons.Default.Delete, contentDescription = null)
+                Spacer(Modifier.width(14.dp))
+            }
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    shortDate,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface,
+                    fontWeight = FontWeight.SemiBold
+                )
+                if (secondary.isNotBlank()) {
+                    Text(
+                        secondary,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+                if (m.notes.isNotBlank()) {
+                    Text(
+                        "📝 ${m.notes}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant,
+                        maxLines = 1
+                    )
                 }
             }
-            HorizontalDivider()
-            Spacer(Modifier.height(8.dp))
-            m.weightKg?.let { Field(stringResource(R.string.body_weight), "${formatWeight(it)} kg") }
-            m.chestCm?.let { Field(stringResource(R.string.body_chest), "${formatWeight(it)} cm") }
-            m.waistCm?.let { Field(stringResource(R.string.body_waist), "${formatWeight(it)} cm") }
-            m.hipsCm?.let { Field(stringResource(R.string.body_hips), "${formatWeight(it)} cm") }
-            m.armCm?.let { Field(stringResource(R.string.body_arm), "${formatWeight(it)} cm") }
-            m.thighCm?.let { Field(stringResource(R.string.body_thigh), "${formatWeight(it)} cm") }
-            m.calfCm?.let { Field(stringResource(R.string.body_calf), "${formatWeight(it)} cm") }
-            m.bodyFatPercent?.let { Field(stringResource(R.string.body_bf), "${formatWeight(it)} %") }
-            if (m.notes.isNotBlank()) {
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "📝 ${m.notes}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+            IconButton(onClick = onDelete) {
+                Icon(
+                    Icons.Default.Delete,
+                    contentDescription = null,
+                    tint = DarkOnSurfaceVariant
                 )
             }
         }
-    }
-}
-
-@Composable
-private fun Field(label: String, value: String) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 2.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(label, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Text(value, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium)
     }
 }
 
@@ -328,56 +354,101 @@ private fun NumberField(label: String, value: String, suffix: String, onChange: 
 private fun WeightGoalCard(
     goalType: WeightGoalType,
     target: Double,
-    current: Double?
+    current: Double?,
+    previous: Double?,
+    start: Double?
 ) {
-    val (label, emoji) = when (goalType) {
-        WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut) to "📉"
-        WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk) to "📈"
-        WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain) to "🎯"
-        WeightGoalType.NONE -> "" to ""
-    }
-    val deltaTxt = current?.let {
-        val diff = target - it
-        when {
-            goalType == WeightGoalType.MAINTAIN && abs(diff) <= 1.5 ->
-                stringResource(R.string.body_goal_maintain_in_range, formatWeight(target))
-            goalType == WeightGoalType.CUT && it <= target ->
-                stringResource(R.string.body_goal_reached, formatWeight(target))
-            goalType == WeightGoalType.BULK && it >= target ->
-                stringResource(R.string.body_goal_reached, formatWeight(target))
-            else ->
-                stringResource(
-                    R.string.body_goal_progress_to_target,
-                    formatWeight(target),
-                    formatWeight(abs(diff))
-                )
-        }
-    } ?: stringResource(R.string.body_goal_progress_to_target, formatWeight(target), "—")
-
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
-        ),
-        shape = RoundedCornerShape(16.dp)
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                "$emoji $label",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold
-            )
-            Spacer(Modifier.height(4.dp))
-            Text(deltaTxt, style = MaterialTheme.typography.bodyMedium)
-            current?.let {
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "Aktualnie: ${formatWeight(it)} kg",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onTertiaryContainer.copy(alpha = 0.8f)
-                )
+            LabelUp("Aktualna waga", accent = true)
+            Spacer(Modifier.height(8.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.Bottom
+            ) {
+                val cur = current
+                if (cur != null) {
+                    MonoBigValue(
+                        value = formatWeight(cur),
+                        suffix = "kg",
+                        valueSize = 44.sp,
+                        suffixSize = 16.sp,
+                        valueColor = DarkOnSurface,
+                        suffixColor = DarkOnSurfaceVariant
+                    )
+                } else {
+                    Text("—", style = MaterialTheme.typography.headlineLarge, color = DarkOnSurface)
+                }
+                Spacer(Modifier.weight(1f))
+                if (cur != null && previous != null) {
+                    val delta = cur - previous
+                    if (abs(delta) >= 0.05) {
+                        val isLoss = delta < 0
+                        val goodLoss = goalType == WeightGoalType.CUT
+                        val goodGain = goalType == WeightGoalType.BULK
+                        val good = (isLoss && goodLoss) || (!isLoss && goodGain) ||
+                            (goalType == WeightGoalType.MAINTAIN && abs(delta) <= 1.0)
+                        val color = if (good) SuccessGreen else ErrorRed
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                if (isLoss) Icons.Default.ArrowDownward else Icons.Default.ArrowUpward,
+                                contentDescription = null,
+                                tint = color,
+                                modifier = Modifier.padding(end = 2.dp)
+                            )
+                            Text(
+                                "${if (delta > 0) "+" else "−"}${formatWeight(abs(delta))} kg",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = color
+                            )
+                        }
+                    }
+                }
             }
+
+            Spacer(Modifier.height(8.dp))
+
+            val cur = current
+            val displayProgress = when {
+                cur == null || start == null || start <= 0.0 -> 0f
+                goalType == WeightGoalType.CUT -> {
+                    val total = start - target
+                    if (total > 0.01) ((start - cur) / total).toFloat().coerceIn(0f, 1f) else 0f
+                }
+                goalType == WeightGoalType.BULK -> {
+                    val total = target - start
+                    if (total > 0.01) ((cur - start) / total).toFloat().coerceIn(0f, 1f) else 0f
+                }
+                else -> 1f - (abs(cur - target).toFloat() / 5f).coerceIn(0f, 1f)
+            }
+            val statusText = if (cur != null)
+                "Cel: ${formatWeight(target)} kg (zostało ${formatWeight(abs(target - cur))} kg)"
+            else stringResource(R.string.body_goal_progress_to_target, formatWeight(target), "—")
+
+            LinearProgressIndicator(
+                progress = { displayProgress },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(8.dp),
+                color = AccentOrange,
+                trackColor = DarkSurface3,
+                strokeCap = StrokeCap.Round,
+                gapSize = 0.dp,
+                drawStopIndicator = {}
+            )
+            Spacer(Modifier.height(6.dp))
+            Text(
+                statusText,
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
         }
     }
 }
@@ -393,8 +464,8 @@ private fun WeightLineChart(
     val minW = weights.min()
     val range = (maxW - minW).coerceAtLeast(0.5)
 
-    val lineColor = MaterialTheme.colorScheme.primary
-    val gridColor = MaterialTheme.colorScheme.outlineVariant
+    val lineColor = AccentOrange
+    val gridColor = DarkOutlineSoft
 
     Canvas(modifier = modifier) {
         val w = size.width
