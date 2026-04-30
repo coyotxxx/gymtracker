@@ -203,6 +203,32 @@ fun ProfileScreen(
             }
 
             item {
+                SectionCard(title = stringResource(R.string.profile_flash_section)) {
+                    androidx.compose.foundation.layout.Row(
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    ) {
+                        androidx.compose.material3.Switch(
+                            checked = draft.flashOnTimerEnd,
+                            onCheckedChange = { draft = draft.copy(flashOnTimerEnd = it) }
+                        )
+                        Spacer(Modifier.padding(start = 12.dp))
+                        Column {
+                            Text(
+                                stringResource(R.string.profile_flash_toggle),
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(
+                                stringResource(R.string.profile_flash_explain),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
                 SectionCard(title = stringResource(R.string.profile_unfinished_section)) {
                     androidx.compose.foundation.layout.Row(
                         verticalAlignment = androidx.compose.ui.Alignment.CenterVertically

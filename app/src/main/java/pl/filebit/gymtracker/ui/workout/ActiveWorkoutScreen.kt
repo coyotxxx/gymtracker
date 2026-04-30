@@ -201,7 +201,7 @@ fun ActiveWorkoutScreen(
                                 showAdvanced = state.profile.showAdvancedSetFields,
                                 onAddSet = { reps, weight ->
                                     vm.addSet(group.exercise.id, reps, weight)
-                                    safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds) }
+                                    safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds, state.profile.flashOnTimerEnd) }
                                 },
                                 onUpdateSet = vm::updateSet,
                                 onDeleteSet = vm::deleteSet,

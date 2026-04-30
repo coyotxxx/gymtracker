@@ -42,7 +42,8 @@ data class CoachUiState(
     val totalSets: Int = 0,
     val isComplete: Boolean = false,          // wszystkie sety zrobione
     val lastSetForCurrent: WorkoutSet? = null, // dla "ostatnio" w UI
-    val defaultRestSeconds: Int = 90
+    val defaultRestSeconds: Int = 90,
+    val flashOnTimerEnd: Boolean = false
 )
 
 @HiltViewModel
@@ -121,6 +122,7 @@ class CoachWorkoutViewModel @Inject constructor(
                 totalSets = totalSets,
                 isComplete = isComplete,
                 defaultRestSeconds = rest,
+                flashOnTimerEnd = profile.flashOnTimerEnd,
                 totalExercises = groups.size
             )
         }
@@ -144,7 +146,8 @@ class CoachWorkoutViewModel @Inject constructor(
             totalSets = totalSets,
             isComplete = false,
             lastSetForCurrent = lastSet,
-            defaultRestSeconds = rest
+            defaultRestSeconds = rest,
+            flashOnTimerEnd = profile.flashOnTimerEnd
         )
     }
 

@@ -42,5 +42,6 @@ data class UserProfile(
     val unfinishedWorkoutNotifyEnabled: Boolean = true,
     val unfinishedWorkoutNotifyHours: Int = 3,
     val gender: Gender = Gender.MALE,
-    val bodyweightKg: Double? = null   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
+    val bodyweightKg: Double? = null,   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
+    val flashOnTimerEnd: Boolean = false
 )

@@ -182,9 +182,10 @@ fun CoachWorkoutScreen(
             plannedReps = planned,
             onConfirm = { actualReps, actualRpe ->
                 showConfirmDialog = false
+                val flash = state.flashOnTimerEnd
                 vm.confirmCurrentSet(actualReps, actualRpe) {
                     safeCoachTimer {
-                        RestTimerService.start(context, restSec)
+                        RestTimerService.start(context, restSec, flash)
                     }
                 }
             },

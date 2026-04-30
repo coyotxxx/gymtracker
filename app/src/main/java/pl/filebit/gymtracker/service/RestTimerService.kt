@@ -6,6 +6,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.hardware.camera2.CameraManager
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.MediaPlayer
@@ -48,6 +49,7 @@ class RestTimerService : Service() {
     private var tickJob: Job? = null
     private var mp: MediaPlayer? = null
     private var ringtone: Ringtone? = null
+    private var flashEnabled: Boolean = false
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -55,6 +57,7 @@ class RestTimerService : Service() {
         when (intent?.action) {
             ACTION_START -> {
                 val seconds = intent.getIntExtra(EXTRA_SECONDS, 120)
+                flashEnabled = intent.getBooleanExtra(EXTRA_FLASH, false)
                 startTimer(seconds)
             }
             ACTION_ADD -> adjustTimer(15)
@@ -88,6 +91,9 @@ class RestTimerService : Service() {
                 _state.value = _state.value.copy(remainingSec = 0, running = false)
                 playDoneSound()
                 vibrateDone()
+                if (flashEnabled) {
+                    scope.launch { blinkFlash() }
+                }
                 // Daj dźwiękowi czas wybrzmieć — bez tego stopSelf() zabija audio.
                 delay(2500)
                 stopForeground(STOP_FOREGROUND_REMOVE)
@@ -181,6 +187,24 @@ class RestTimerService : Service() {
         }
     }
 
+    private suspend fun blinkFlash() {
+        try {
+            val cm = getSystemService(Context.CAMERA_SERVICE) as CameraManager
+            val cameraId = cm.cameraIdList.firstOrNull { id ->
+                val ch = cm.getCameraCharacteristics(id)
+                ch.get(android.hardware.camera2.CameraCharacteristics.FLASH_INFO_AVAILABLE) == true
+            } ?: return
+            repeat(3) {
+                runCatching { cm.setTorchMode(cameraId, true) }
+                delay(150)
+                runCatching { cm.setTorchMode(cameraId, false) }
+                delay(150)
+            }
+        } catch (e: Throwable) {
+            Log.w("RestTimerService", "Flash blink failed", e)
+        }
+    }
+
     @Suppress("DEPRECATION")
     private fun vibrateDone() {
         val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -219,14 +243,16 @@ class RestTimerService : Service() {
         const val ACTION_ADD = "pl.filebit.gymtracker.timer.ADD"
         const val ACTION_SUB = "pl.filebit.gymtracker.timer.SUB"
         const val EXTRA_SECONDS = "extra_seconds"
+        const val EXTRA_FLASH = "extra_flash"
 
         private val _state = MutableStateFlow(TimerState())
         val state: StateFlow<TimerState> = _state.asStateFlow()
 
-        fun start(context: Context, seconds: Int) {
+        fun start(context: Context, seconds: Int, flash: Boolean = false) {
             val i = Intent(context, RestTimerService::class.java)
                 .setAction(ACTION_START)
                 .putExtra(EXTRA_SECONDS, seconds)
+                .putExtra(EXTRA_FLASH, flash)
             context.startForegroundService(i)
         }
 

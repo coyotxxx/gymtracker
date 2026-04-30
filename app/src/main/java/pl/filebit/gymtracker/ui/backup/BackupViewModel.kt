@@ -50,7 +50,8 @@ data class ProfileDto(
     val unfinishedWorkoutNotifyEnabled: Boolean = true,
     val unfinishedWorkoutNotifyHours: Int = 3,
     val gender: String = "MALE",
-    val bodyweightKg: Double? = null
+    val bodyweightKg: Double? = null,
+    val flashOnTimerEnd: Boolean = false
 )
 
 @Serializable
@@ -125,7 +126,8 @@ class BackupViewModel @Inject constructor(
                         unfinishedWorkoutNotifyEnabled = profile.unfinishedWorkoutNotifyEnabled,
                         unfinishedWorkoutNotifyHours = profile.unfinishedWorkoutNotifyHours,
                         gender = profile.gender.name,
-                        bodyweightKg = profile.bodyweightKg
+                        bodyweightKg = profile.bodyweightKg,
+                        flashOnTimerEnd = profile.flashOnTimerEnd
                     ),
                     exercises = exercises.map {
                         ExerciseDto(
@@ -231,7 +233,8 @@ class BackupViewModel @Inject constructor(
                             unfinishedWorkoutNotifyHours = p.unfinishedWorkoutNotifyHours,
                             gender = runCatching { pl.filebit.gymtracker.data.entity.Gender.valueOf(p.gender) }
                                 .getOrDefault(pl.filebit.gymtracker.data.entity.Gender.MALE),
-                            bodyweightKg = p.bodyweightKg
+                            bodyweightKg = p.bodyweightKg,
+                            flashOnTimerEnd = p.flashOnTimerEnd
                         )
                     )
                 }
