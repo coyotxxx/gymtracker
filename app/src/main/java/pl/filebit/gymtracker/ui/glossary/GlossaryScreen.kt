@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.glossary
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -37,31 +38,20 @@ import pl.filebit.gymtracker.R
 fun GlossaryScreen(onBack: () -> Unit) {
     var open by remember { mutableStateOf<Pair<String, String>?>(null) }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.glossary_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
-                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                )
-            )
-        }
-    ) { padding ->
+    androidx.compose.foundation.layout.Box(
+        modifier = Modifier.fillMaxSize().background(pl.filebit.gymtracker.ui.theme.DarkBg)
+    ) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            item {
+                pl.filebit.gymtracker.ui.theme.ScreenHeader(
+                    title = stringResource(R.string.glossary_title),
+                    onBack = onBack
+                )
+            }
             items(Glossary.all()) { (_, entry) ->
                 GlossaryCard(entry, onClick = { open = entry })
             }

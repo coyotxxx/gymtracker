@@ -98,32 +98,18 @@ fun BackupScreen(
         ActivityResultContracts.CreateDocument("text/csv")
     ) { uri -> uri?.let { vm.exportCsv(it) } }
 
-    Scaffold(
-        containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.backup_section)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface,
-                    navigationIconContentColor = DarkOnSurface
-                )
-            )
-        },
-        snackbarHost = { SnackbarHost(snackbar) }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            item {
+                pl.filebit.gymtracker.ui.theme.ScreenHeader(
+                    title = stringResource(R.string.backup_section),
+                    onBack = onBack
+                )
+            }
             // === Eksport danych ===
             item {
                 SectionCard(
@@ -217,6 +203,10 @@ fun BackupScreen(
                 )
             }
         }
+        SnackbarHost(
+            hostState = snackbar,
+            modifier = Modifier.align(Alignment.BottomCenter)
+        )
     }
 
     if (showWipeDialog) {

@@ -258,6 +258,54 @@ fun HeroValueCard(
     }
 }
 
+/**
+ * Header detail-ekranu — back arrow + tytuł (+ opcjonalne akcje).
+ * Bez jaśniejszego tła (TopAppBar Material3 daje surface), bez statusBarsPadding
+ * (globalny TopBar w AppNavigation już to obsługuje).
+ */
+@Composable
+fun ScreenHeader(
+    title: String,
+    onBack: (() -> Unit)? = null,
+    actions: @Composable Row.() -> Unit = {}
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 4.dp, end = 8.dp, top = 4.dp, bottom = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        if (onBack != null) {
+            Box(
+                modifier = Modifier
+                    .padding(end = 4.dp)
+                    .background(Color.Transparent, RoundedCornerShape(50))
+                    .clickable(onClick = onBack)
+                    .padding(8.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    androidx.compose.material.icons.Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = null,
+                    tint = DarkOnSurface
+                )
+            }
+        }
+        Text(
+            title,
+            style = MaterialTheme.typography.headlineSmall.copy(
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = 22.sp
+            ),
+            color = DarkOnSurface,
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = if (onBack == null) 12.dp else 0.dp)
+        )
+        actions()
+    }
+}
+
 /** Pulsująca kropka — używana w "TRENING W TOKU" / "wróć do treningu". */
 @Composable
 fun PulsingDot(

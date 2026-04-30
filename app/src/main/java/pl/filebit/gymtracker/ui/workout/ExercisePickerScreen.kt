@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.ui.workout
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -13,18 +15,14 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -35,6 +33,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.MuscleGroup
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 @Composable
 fun ExercisePickerScreen(
@@ -48,24 +48,16 @@ fun ExercisePickerScreen(
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.workout_add_exercise)) },
-                navigationIcon = {
-                    IconButton(onClick = onClose) {
-                        Icon(Icons.Default.Close, contentDescription = null)
-                    }
-                }
-            )
-        }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
                 .padding(horizontal = 16.dp)
         ) {
+            ScreenHeader(
+                title = stringResource(R.string.workout_add_exercise),
+                onBack = onClose
+            )
             OutlinedTextField(
                 value = query,
                 onValueChange = vm::setQuery,

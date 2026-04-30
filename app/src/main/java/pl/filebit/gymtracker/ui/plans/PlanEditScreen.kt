@@ -19,7 +19,6 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
@@ -38,10 +37,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -57,6 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -79,43 +79,32 @@ fun PlanEditScreen(
         }
     }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        if (state.isNew) stringResource(R.string.plan_new)
-                        else state.name.ifBlank { stringResource(R.string.plan_new) }
-                    )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                actions = {
-                    if (!state.isNew) {
-                        IconButton(onClick = { showDeleteDialog = true }) {
-                            Icon(Icons.Default.Delete, contentDescription = null)
-                        }
-                    }
-                    IconButton(
-                        onClick = { vm.save(onSaved) },
-                        enabled = state.name.isNotBlank()
-                    ) {
-                        Icon(Icons.Default.Check, contentDescription = null)
-                    }
-                }
-            )
-        }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            item {
+                ScreenHeader(
+                    title = if (state.isNew) stringResource(R.string.plan_new)
+                    else state.name.ifBlank { stringResource(R.string.plan_new) },
+                    onBack = onBack,
+                    actions = {
+                        if (!state.isNew) {
+                            IconButton(onClick = { showDeleteDialog = true }) {
+                                Icon(Icons.Default.Delete, contentDescription = null, tint = DarkOnSurface)
+                            }
+                        }
+                        IconButton(
+                            onClick = { vm.save(onSaved) },
+                            enabled = state.name.isNotBlank()
+                        ) {
+                            Icon(Icons.Default.Check, contentDescription = null, tint = DarkOnSurface)
+                        }
+                    }
+                )
+            }
             item {
                 OutlinedTextField(
                     value = state.name,

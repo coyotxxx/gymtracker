@@ -22,7 +22,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
@@ -35,12 +34,10 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -60,6 +57,7 @@ import coil3.compose.AsyncImage
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.ProgressPhoto
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.formatDate
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -127,21 +125,6 @@ fun ProgressPhotosScreen(
 
     Scaffold(
         containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.photos_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
-                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                )
-            )
-        },
         floatingActionButton = {
             Box {
                 FloatingActionButton(
@@ -176,36 +159,43 @@ fun ProgressPhotosScreen(
             }
         }
     ) { padding ->
-        if (photos.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    stringResource(R.string.photos_empty),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        } else {
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(3),
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                contentPadding = PaddingValues(8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(photos, key = { it.id }) { p ->
-                    PhotoThumb(
-                        photo = p,
-                        fileProvider = vm::fileFor,
-                        onClick = { fullscreenPhoto = p }
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+        ) {
+            ScreenHeader(
+                title = stringResource(R.string.photos_title),
+                onBack = onBack
+            )
+            if (photos.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        stringResource(R.string.photos_empty),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
+                }
+            } else {
+                LazyVerticalGrid(
+                    columns = GridCells.Fixed(3),
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    items(photos, key = { it.id }) { p ->
+                        PhotoThumb(
+                            photo = p,
+                            fileProvider = vm::fileFor,
+                            onClick = { fullscreenPhoto = p }
+                        )
+                    }
                 }
             }
         }

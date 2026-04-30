@@ -16,20 +16,14 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -48,6 +42,8 @@ import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.repository.StrengthEvaluation
 import pl.filebit.gymtracker.data.strength.StrengthLevel
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.formatWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,31 +60,18 @@ fun StrengthStandardsScreen(
     }
     var gender by remember(profile.gender) { mutableStateOf(profile.gender) }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.strength_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
-                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                )
-            )
-        }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            item {
+                ScreenHeader(
+                    title = stringResource(R.string.strength_title),
+                    onBack = onBack
+                )
+            }
             item {
                 Card(
                     modifier = Modifier.fillMaxWidth(),

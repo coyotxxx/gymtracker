@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.ui.plans
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -12,18 +14,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -39,6 +35,8 @@ import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.template.PlanGoalCategory
 import pl.filebit.gymtracker.data.template.PlanTemplate
 import pl.filebit.gymtracker.data.template.PlanTemplates
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,23 +52,12 @@ fun TemplatesScreen(
     }
     val grouped = filtered.groupBy { it.category }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.templates_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                }
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            ScreenHeader(
+                title = stringResource(R.string.templates_title),
+                onBack = onBack
             )
-        }
-    ) { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-        ) {
             // Filtr częstotliwości
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),

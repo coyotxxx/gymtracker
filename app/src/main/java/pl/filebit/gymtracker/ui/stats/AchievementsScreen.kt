@@ -15,18 +15,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -40,6 +34,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.data.repository.AchievementCategory
 import pl.filebit.gymtracker.data.repository.AchievementLevel
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,46 +47,37 @@ fun AchievementsScreen(
     val achievements = state.achievements
     val unlockedCount = achievements.count { it.unlocked }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text("Odznaki ($unlockedCount/${achievements.size})") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
-                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                )
-            )
-        }
-    ) { padding ->
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         if (achievements.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    "Brak odznak — zacznij trening żeby je zdobywać!",
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+            Column(modifier = Modifier.fillMaxSize()) {
+                ScreenHeader(
+                    title = "Odznaki ($unlockedCount/${achievements.size})",
+                    onBack = onBack
                 )
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Brak odznak — zacznij trening żeby je zdobywać!",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
-            return@Scaffold
+            return
         }
         val grouped = achievements.groupBy { it.category }
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            item {
+                ScreenHeader(
+                    title = "Odznaki ($unlockedCount/${achievements.size})",
+                    onBack = onBack
+                )
+            }
             // Hero header: X / Y ZDOBYTYCH
             item {
                 AchievementsHero(unlocked = unlockedCount, total = achievements.size)

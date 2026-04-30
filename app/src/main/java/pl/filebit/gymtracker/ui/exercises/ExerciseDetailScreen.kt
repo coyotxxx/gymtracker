@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.exercises
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -25,10 +25,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -48,8 +46,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.repository.ExerciseProgressionPoint
 import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -63,38 +63,33 @@ fun ExerciseDetailScreen(
     var editingNotes by remember { mutableStateOf(false) }
     var notesText by remember { mutableStateOf("") }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(state.exercise?.name ?: stringResource(R.string.exercise_detail_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+        val ex = state.exercise
+        if (state.loading || ex == null) {
+            Column(modifier = Modifier.fillMaxSize()) {
+                ScreenHeader(
+                    title = ex?.name ?: stringResource(R.string.exercise_detail_title),
+                    onBack = onBack
+                )
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(stringResource(R.string.stats_loading))
                 }
-            )
-        }
-    ) { padding ->
-        if (state.loading || state.exercise == null) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(stringResource(R.string.stats_loading))
             }
-            return@Scaffold
-        }
-        val ex = state.exercise!!
-
+        } else {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            item {
+                ScreenHeader(
+                    title = ex.name,
+                    onBack = onBack
+                )
+            }
             // PR
             item {
                 Card(
@@ -265,6 +260,7 @@ fun ExerciseDetailScreen(
                     HorizontalDivider()
                 }
             }
+        }
         }
     }
 

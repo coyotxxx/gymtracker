@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.onerm
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -73,31 +74,22 @@ fun OneRmCalculatorScreen(onBack: () -> Unit) {
         if (list.isEmpty()) 0.0 else list.average()
     }
 
-    Scaffold(
-        containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.onerm_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface,
-                    navigationIconContentColor = DarkOnSurface
-                )
-            )
-        }
-    ) { padding ->
+    androidx.compose.foundation.layout.Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(DarkBg)
+    ) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            item {
+                pl.filebit.gymtracker.ui.theme.ScreenHeader(
+                    title = stringResource(R.string.onerm_title),
+                    onBack = onBack
+                )
+            }
             item {
                 Text(
                     stringResource(R.string.onerm_explain),

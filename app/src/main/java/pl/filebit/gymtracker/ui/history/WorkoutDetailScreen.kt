@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.history
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,7 +16,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.MoreVert
@@ -30,10 +30,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -48,6 +46,9 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
@@ -66,23 +67,28 @@ fun WorkoutDetailScreen(
     var showDelete by remember { mutableStateOf(false) }
     var menuOpen by remember { mutableStateOf(false) }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        state.workout?.startedAt?.let { formatDate(it) } ?: "Trening"
-                    )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
+    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+        val workout = state.workout
+        if (state.loading || workout == null) {
+            Column(modifier = Modifier.fillMaxSize()) {
+                ScreenHeader(
+                    title = workout?.startedAt?.let { formatDate(it) } ?: "Trening",
+                    onBack = onBack
+                )
+            }
+        } else {
+        Column(modifier = Modifier.fillMaxSize()) {
+            ScreenHeader(
+                title = formatDate(workout.startedAt),
+                onBack = onBack,
                 actions = {
                     Box {
                         IconButton(onClick = { menuOpen = true }) {
-                            Icon(Icons.Default.MoreVert, contentDescription = null)
+                            Icon(
+                                Icons.Default.MoreVert,
+                                contentDescription = null,
+                                tint = DarkOnSurface
+                            )
                         }
                         DropdownMenu(
                             expanded = menuOpen,
@@ -122,16 +128,6 @@ fun WorkoutDetailScreen(
                     }
                 }
             )
-        }
-    ) { padding ->
-        if (state.loading) return@Scaffold
-        val workout = state.workout ?: return@Scaffold
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-        ) {
             // Origin label: from plan (with day) or ad-hoc
             val planName = state.planName
             val dayLabel = state.planDayOfWeek?.let { dayLongLabel(it) }
@@ -248,6 +244,7 @@ fun WorkoutDetailScreen(
                     }
                 }
             }
+        }
         }
 
         if (showDelete) {

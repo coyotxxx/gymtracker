@@ -17,8 +17,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
@@ -28,7 +26,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -37,8 +34,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -71,6 +66,7 @@ import pl.filebit.gymtracker.ui.theme.DarkSurface3
 import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.MonoBigValue
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
@@ -88,21 +84,6 @@ fun BodyMeasurementsScreen(
 
     Scaffold(
         containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.body_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface,
-                    navigationIconContentColor = DarkOnSurface
-                )
-            )
-        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { showAddDialog = true },
@@ -114,28 +95,35 @@ fun BodyMeasurementsScreen(
             }
         }
     ) { padding ->
-        if (measurements.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    stringResource(R.string.body_empty),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            item {
+                ScreenHeader(
+                    title = stringResource(R.string.body_title),
+                    onBack = onBack
                 )
             }
-        } else {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
+            if (measurements.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(32.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            stringResource(R.string.body_empty),
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            } else {
                 // Wykres wagi (jeśli ≥2 punkty z weightKg)
                 val weightPoints = measurements
                     .filter { it.weightKg != null }
