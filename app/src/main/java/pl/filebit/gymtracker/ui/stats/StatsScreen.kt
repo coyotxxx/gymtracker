@@ -35,7 +35,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
@@ -199,27 +201,39 @@ fun StatsScreen(
 
 @Composable
 private fun StreakCard(current: Int, best: Int) {
+    val active = current > 0
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (current > 0) MaterialTheme.colorScheme.tertiaryContainer
-            else MaterialTheme.colorScheme.surface
+            containerColor = if (active)
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
+            else pl.filebit.gymtracker.ui.theme.DarkSurface
         ),
-        shape = RoundedCornerShape(16.dp)
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp,
+            if (active) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.30f)
+            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                stringResource(R.string.streak_title),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                stringResource(R.string.streak_title).uppercase(),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = if (active) pl.filebit.gymtracker.ui.theme.AccentOrange
+                else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(6.dp))
             Text(
                 stringResource(R.string.streak_current_value, "🔥", current),
-                style = MaterialTheme.typography.headlineMedium,
-                fontWeight = FontWeight.Bold,
-                color = if (current > 0) MaterialTheme.colorScheme.onTertiaryContainer
-                else MaterialTheme.colorScheme.onSurface
+                style = MaterialTheme.typography.displaySmall.copy(
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.ExtraBold
+                )
             )
             Spacer(Modifier.height(4.dp))
             Text(
@@ -235,30 +249,40 @@ private fun StreakCard(current: Int, best: Int) {
 private fun WeekTargetCard(current: Int, target: Int, percent: Int) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(16.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                stringResource(R.string.week_target_title),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                stringResource(R.string.week_target_title).uppercase(),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(6.dp))
             Text(
                 stringResource(R.string.week_target_value, current, target, percent),
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.titleLarge.copy(
+                    fontWeight = FontWeight.ExtraBold
+                )
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
             LinearProgressIndicator(
                 progress = { percent / 100f },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(8.dp),
-                color = if (percent >= 100) MaterialTheme.colorScheme.tertiary
-                else MaterialTheme.colorScheme.primary,
-                trackColor = MaterialTheme.colorScheme.surfaceVariant
+                    .height(6.dp)
+                    .clip(RoundedCornerShape(3.dp)),
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                trackColor = pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
             )
         }
     }
@@ -309,20 +333,39 @@ private fun AchievementCard(a: Achievement) {
 private fun BigStatCard(label: String, value: String, sub: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(16.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(18.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(label, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Spacer(Modifier.height(4.dp))
+            Text(
+                label.uppercase(),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(6.dp))
             Text(
                 value,
-                style = MaterialTheme.typography.headlineMedium,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
+                style = MaterialTheme.typography.displaySmall.copy(
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.ExtraBold
+                ),
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange
             )
             Spacer(Modifier.height(4.dp))
-            Text(sub, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                sub,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }
@@ -331,13 +374,32 @@ private fun BigStatCard(label: String, value: String, sub: String) {
 private fun SmallStatCard(label: String, value: String, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(12.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+        ),
+        shape = RoundedCornerShape(14.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Spacer(Modifier.height(2.dp))
-            Text(value, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+            Text(
+                label.uppercase(),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.2.sp
+                ),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                value,
+                style = MaterialTheme.typography.titleLarge.copy(
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 22.sp
+                )
+            )
         }
     }
 }
