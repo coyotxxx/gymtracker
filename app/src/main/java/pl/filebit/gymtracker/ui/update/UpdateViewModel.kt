@@ -34,7 +34,7 @@ class UpdateViewModel @Inject constructor(
     val currentVersion: String get() = repo.currentVersionName()
 
     fun checkForUpdate(silent: Boolean = false) {
-        if (!silent) _state.value = UpdateUiState.Checking
+        _state.value = UpdateUiState.Checking
         viewModelScope.launch {
             runCatching { repo.checkForUpdate() }
                 .onSuccess { info ->
@@ -42,8 +42,10 @@ class UpdateViewModel @Inject constructor(
                     else UpdateUiState.UpToDate
                 }
                 .onFailure { e ->
-                    _state.value = if (silent) UpdateUiState.Idle
-                    else UpdateUiState.Failed(e.message ?: "Błąd sieci")
+                    // ZAWSZE pokazuj Failed — nawet przy silent — żeby user wiedział
+                    // że sieć padła i mógł retry-ować ręcznie. Wcześniejsza logika
+                    // (silent → Idle) ukrywała problem.
+                    _state.value = UpdateUiState.Failed(e.message ?: "Błąd sieci")
                 }
         }
     }

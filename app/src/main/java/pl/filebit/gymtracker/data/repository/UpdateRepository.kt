@@ -52,27 +52,45 @@ class UpdateRepository @Inject constructor(
      * Pobiera listę ostatnich releasów z GitHub i wybiera najnowszy z assetem .apk.
      * Bierze pod uwagę prereleases (testujemy je też). Zwraca null gdy brak nowszej.
      */
+    /**
+     * Rzuca wyjątek przy network/API error. Zwraca null gdy brak nowszej wersji.
+     * Dzięki temu VM rozróżnia 'wszystko OK, jesteś na bieżąco' vs 'sieć padła'.
+     */
     suspend fun checkForUpdate(): UpdateInfo? = kotlinx.coroutines.withContext(Dispatchers.IO) {
         val req = Request.Builder()
             .url("https://api.github.com/repos/coyotxxx/gymtracker/releases?per_page=10")
             .header("Accept", "application/vnd.github+json")
+            .header("User-Agent", "GymTracker-Android")
             .build()
         val resp = http.newCall(req).execute()
-        if (!resp.isSuccessful) return@withContext null
+        if (!resp.isSuccessful) {
+            val code = resp.code
+            resp.close()
+            error("GitHub API HTTP $code")
+        }
         val body = resp.body?.string().orEmpty()
         resp.close()
-        val releases = runCatching { json.decodeFromString<List<GhRelease>>(body) }
-            .getOrElse { return@withContext null }
+        if (body.isBlank()) error("Pusta odpowiedź z GitHub API")
+
+        val releases = json.decodeFromString<List<GhRelease>>(body)
 
         val latest = releases
             .filter { !it.draft }
             .firstOrNull { rel -> rel.assets.any { it.name.endsWith(".apk") } }
-            ?: return@withContext null
+            ?: return@withContext null   // brak żadnego releasu z APK = legitnie 'brak update'
 
         val asset = latest.assets.first { it.name.endsWith(".apk") }
-        val cleanVersion = latest.tagName.removePrefix("v").substringBeforeLast("-redesign")
+        // Czyścimy tag z prefiksów: 'v' i sufiksów typu '-redesign'.
+        val cleanVersion = latest.tagName
+            .removePrefix("v")
+            .substringBeforeLast("-redesign")
+            .substringBeforeLast("-rc")
+            .substringBeforeLast("-beta")
 
-        val current = currentVersionName().substringBefore("-debug")
+        val current = currentVersionName()
+            .substringBefore("-debug")
+            .substringBefore("-")
+
         if (!isNewer(remote = cleanVersion, local = current)) return@withContext null
 
         UpdateInfo(

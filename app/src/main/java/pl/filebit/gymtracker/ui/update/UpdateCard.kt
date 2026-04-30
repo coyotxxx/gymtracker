@@ -52,16 +52,12 @@ fun UpdateCard(
     }
 
     when (val s = state) {
-        UpdateUiState.Idle -> {
-            if (showWhenUpToDate) IdleCheckCard(modifier, vm.currentVersion) {
-                vm.checkForUpdate(silent = false)
-            }
+        UpdateUiState.Idle -> IdleCheckCard(modifier, vm.currentVersion) {
+            vm.checkForUpdate(silent = false)
         }
         UpdateUiState.Checking -> CheckingCard(modifier, vm.currentVersion)
-        UpdateUiState.UpToDate -> {
-            if (showWhenUpToDate) UpToDateCard(modifier, vm.currentVersion) {
-                vm.checkForUpdate(silent = false)
-            }
+        UpdateUiState.UpToDate -> UpToDateCard(modifier, vm.currentVersion) {
+            vm.checkForUpdate(silent = false)
         }
         is UpdateUiState.Available -> AvailableCard(
             modifier, vm.currentVersion, s.info, onUpdate = { vm.downloadAndInstall(s.info) }
