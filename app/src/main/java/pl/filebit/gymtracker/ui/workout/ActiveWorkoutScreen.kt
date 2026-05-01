@@ -681,8 +681,9 @@ private fun SetRow(
         when (metricType) {
             pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
                 NumField(weightText, { v ->
-                    weightText = v
-                    v.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                    val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
+                    weightText = filtered
+                    filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
                 }, KeyboardType.Decimal, Modifier.weight(1f))
                 Spacer(Modifier.width(8.dp))
                 NumField(repsText, { v ->
@@ -716,8 +717,9 @@ private fun SetRow(
             }
             pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> {
                 NumField(weightText, { v ->
-                    weightText = v
-                    v.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                    val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
+                    weightText = filtered
+                    filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
                 }, KeyboardType.Decimal, Modifier.weight(1f))
                 Spacer(Modifier.width(8.dp))
                 NumField(durationText, { v ->

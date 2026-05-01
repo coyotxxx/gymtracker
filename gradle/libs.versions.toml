@@ -36,6 +36,9 @@ securityCrypto = "1.1.0-alpha06"
 # Lottie (splash animation)
 lottie = "6.6.0"
 
+# Testing
+junit = "4.13.2"
+
 [libraries]
 # Core
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -85,6 +88,9 @@ androidx-security-crypto = { group = "androidx.security", name = "security-crypt
 
 # Lottie
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

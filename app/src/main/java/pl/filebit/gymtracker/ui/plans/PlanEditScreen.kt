@@ -73,6 +73,8 @@ import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
+import pl.filebit.gymtracker.util.filterWeightInput
+import pl.filebit.gymtracker.util.summarizeSets
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -447,21 +449,6 @@ private fun DayPillChip(
     }
 }
 
-private fun summarizeSets(sets: List<pl.filebit.gymtracker.data.entity.PlanExerciseSet>): String {
-    if (sets.isEmpty()) return "—"
-    val n = sets.size
-    val seriesLabel = when {
-        n == 1 -> "1 seria"
-        n in 2..4 -> "$n serie"
-        else -> "$n serii"
-    }
-    val repsValues = sets.map { it.reps }.distinct().sorted()
-    val repsLabel = if (repsValues.size == 1) "${repsValues[0]} powt." else "${repsValues.first()}-${repsValues.last()} powt."
-    val rest = sets.firstNotNullOfOrNull { it.restSeconds }
-    val parts = mutableListOf(seriesLabel, repsLabel)
-    if (rest != null) parts.add("${rest}s odp.")
-    return parts.joinToString(" · ")
-}
 
 @Composable
 private fun PlanExerciseCard(
@@ -761,9 +748,10 @@ private fun SetEditRow(
             keyboardType = KeyboardType.Decimal,
             modifier = Modifier.weight(1f),
             onValueChange = {
-                weightText = it
-                if (it.isBlank()) onWeight(null)
-                else it.replace(',', '.').toDoubleOrNull()?.let(onWeight)
+                val filtered = filterWeightInput(it)
+                weightText = filtered
+                if (filtered.isBlank()) onWeight(null)
+                else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
             }
         )
         Spacer(Modifier.width(4.dp))

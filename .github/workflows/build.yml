@@ -52,6 +52,9 @@ jobs:
             echo "debug.keystore already exists, using it"
           fi
 
+      - name: Run unit tests (pure logic)
+        run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
+
       - name: Build debug APK
         run: ./gradlew :app:assembleDebug --no-daemon --stacktrace
 

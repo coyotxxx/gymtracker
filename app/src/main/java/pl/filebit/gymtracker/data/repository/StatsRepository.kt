@@ -614,28 +614,18 @@ class StatsRepository @Inject constructor(
             pl.filebit.gymtracker.data.entity.TrainingGoal.CARDIO_LIFTING -> 1.0
         }
 
-        val (newWeight, newReps, rationale) = when {
-            // brak RPE — patrz na liczbę zrealizowanych
-            avgRpe == null -> {
-                Triple(refWeight + delta, refReps, "Brak RPE — sugestia +$delta kg dla celu ${goal.name.lowercase()}")
-            }
-            avgRpe <= 7.0 -> {
-                Triple(refWeight + delta, refReps, "Ostatni RPE ${"%.1f".format(avgRpe)} (lekko) → +$delta kg")
-            }
-            avgRpe <= 9.0 -> {
-                Triple(refWeight, refReps + 1, "Ostatni RPE ${"%.1f".format(avgRpe)} → utrzymaj wagę, +1 powt.")
-            }
-            else -> {
-                Triple(refWeight, refReps, "Ostatni RPE ${"%.1f".format(avgRpe)} (max) → utrzymaj")
-            }
-        }
-
-        val rounded = ((newWeight * 4).roundToInt() / 4.0)  // 0.25 kg precision
-
+        // Logika autoregulacji wyciągnięta jako pure function w util/Autoregulation.kt
+        // — testowana w AutoregulationTest. Tu tylko mapujemy dane z poprzedniej sesji.
+        val r = pl.filebit.gymtracker.util.computeProgression(
+            refWeight = refWeight,
+            refReps = refReps,
+            avgRpe = avgRpe,
+            delta = delta
+        )
         return NextSetSuggestion(
-            suggestedWeightKg = rounded,
-            suggestedReps = newReps,
-            rationale = rationale,
+            suggestedWeightKg = r.weightKg,
+            suggestedReps = r.reps,
+            rationale = r.rationale,
             previousWeightKg = refWeight,
             previousReps = refReps
         )

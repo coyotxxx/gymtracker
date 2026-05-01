@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 105
-        versionName = "0.61.0"
+        versionCode = 106
+        versionName = "0.61.1"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -121,4 +121,7 @@ dependencies {
 
     // Lottie (splash animation)
     implementation(libs.lottie.compose)
+
+    // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
+    testImplementation(libs.junit)
 }
