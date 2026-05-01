@@ -62,6 +62,8 @@ class RestTimerService : Service() {
             }
             ACTION_ADD -> adjustTimer(15)
             ACTION_SUB -> adjustTimer(-15)
+            ACTION_PAUSE -> pauseTimer()
+            ACTION_RESUME -> resumeTimer()
             ACTION_STOP -> stopTimer()
         }
         return START_NOT_STICKY
@@ -69,7 +71,12 @@ class RestTimerService : Service() {
 
     private fun startTimer(totalSeconds: Int) {
         tickJob?.cancel()
-        _state.value = TimerState(remainingSec = totalSeconds, totalSec = totalSeconds, running = true)
+        _state.value = TimerState(
+            remainingSec = totalSeconds,
+            totalSec = totalSeconds,
+            running = true,
+            paused = false
+        )
         ServiceCompat.startForeground(
             this,
             NOTIF_ID,
@@ -79,13 +86,17 @@ class RestTimerService : Service() {
             } else 0
         )
 
+        // Tick czyta remainingSec ze _state.value zamiast lokalnej kopii,
+        // dzięki czemu adjustTimer/pause działają od razu, a tick nie nadpisuje
+        // wartości po 1 sekundzie.
         tickJob = scope.launch {
-            var remaining = totalSeconds
-            while (isActive && remaining > 0) {
+            while (isActive && _state.value.remainingSec > 0) {
                 delay(1000)
-                remaining -= 1
-                _state.value = _state.value.copy(remainingSec = remaining)
-                updateNotification(remaining)
+                val s = _state.value
+                if (!s.running || s.paused) continue
+                val newRemaining = (s.remainingSec - 1).coerceAtLeast(0)
+                _state.value = s.copy(remainingSec = newRemaining)
+                updateNotification(newRemaining)
             }
             if (isActive) {
                 _state.value = _state.value.copy(remainingSec = 0, running = false)
@@ -106,9 +117,28 @@ class RestTimerService : Service() {
         val s = _state.value
         if (!s.running) return
         val newRemaining = (s.remainingSec + delta).coerceAtLeast(1)
-        val newTotal = (s.totalSec + delta).coerceAtLeast(newRemaining)
-        _state.value = s.copy(remainingSec = newRemaining, totalSec = newTotal)
+        // Total rośnie przy +, nie maleje przy − — bo procent progressu byłby
+        // mylący ("dolałem do bieżącej przerwy" vs "przedłużyłem ją").
+        val newTotal = if (delta > 0) s.totalSec + delta else s.totalSec
+        _state.value = s.copy(
+            remainingSec = newRemaining,
+            totalSec = newTotal.coerceAtLeast(newRemaining)
+        )
         updateNotification(newRemaining)
+    }
+
+    private fun pauseTimer() {
+        val s = _state.value
+        if (!s.running || s.paused) return
+        _state.value = s.copy(paused = true)
+        updateNotification(s.remainingSec)
+    }
+
+    private fun resumeTimer() {
+        val s = _state.value
+        if (!s.running || !s.paused) return
+        _state.value = s.copy(paused = false)
+        updateNotification(s.remainingSec)
     }
 
     private fun stopTimer() {
@@ -231,7 +261,8 @@ class RestTimerService : Service() {
     data class TimerState(
         val remainingSec: Int = 0,
         val totalSec: Int = 0,
-        val running: Boolean = false
+        val running: Boolean = false,
+        val paused: Boolean = false
     )
 
     companion object {
@@ -242,6 +273,8 @@ class RestTimerService : Service() {
         const val ACTION_STOP = "pl.filebit.gymtracker.timer.STOP"
         const val ACTION_ADD = "pl.filebit.gymtracker.timer.ADD"
         const val ACTION_SUB = "pl.filebit.gymtracker.timer.SUB"
+        const val ACTION_PAUSE = "pl.filebit.gymtracker.timer.PAUSE"
+        const val ACTION_RESUME = "pl.filebit.gymtracker.timer.RESUME"
         const val EXTRA_SECONDS = "extra_seconds"
         const val EXTRA_FLASH = "extra_flash"
 
@@ -264,6 +297,12 @@ class RestTimerService : Service() {
         fun addSeconds(context: Context, delta: Int) {
             val i = Intent(context, RestTimerService::class.java)
                 .setAction(if (delta > 0) ACTION_ADD else ACTION_SUB)
+            context.startService(i)
+        }
+
+        fun togglePause(context: Context, paused: Boolean) {
+            val i = Intent(context, RestTimerService::class.java)
+                .setAction(if (paused) ACTION_RESUME else ACTION_PAUSE)
             context.startService(i)
         }
     }

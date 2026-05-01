@@ -165,8 +165,13 @@ fun CoachWorkoutScreen(
                 visible = timerState.running,
                 remainingSec = timerState.remainingSec,
                 totalSec = timerState.totalSec,
+                paused = timerState.paused,
+                exerciseName = state.currentExercise?.name,
                 onAdd = { safeCoachTimer { RestTimerService.addSeconds(context, 15) } },
                 onSub = { safeCoachTimer { RestTimerService.addSeconds(context, -15) } },
+                onTogglePause = {
+                    safeCoachTimer { RestTimerService.togglePause(context, timerState.paused) }
+                },
                 onSkip = { safeCoachTimer { RestTimerService.stop(context) } },
                 onDismiss = { safeCoachTimer { RestTimerService.stop(context) } }
             )

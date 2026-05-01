@@ -232,8 +232,12 @@ fun ActiveWorkoutScreen(
                 visible = timerState.running,
                 remainingSec = timerState.remainingSec,
                 totalSec = timerState.totalSec,
+                paused = timerState.paused,
                 onAdd = { safeTimer { RestTimerService.addSeconds(context, 15) } },
                 onSub = { safeTimer { RestTimerService.addSeconds(context, -15) } },
+                onTogglePause = {
+                    safeTimer { RestTimerService.togglePause(context, timerState.paused) }
+                },
                 onSkip = { safeTimer { RestTimerService.stop(context) } },
                 onDismiss = { safeTimer { RestTimerService.stop(context) } }
             )
