@@ -67,8 +67,15 @@ fun RestTimerSheet(
     if (!visible) return
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val progress = if (totalSec > 0) remainingSec.toFloat() / totalSec.toFloat() else 0f
-    // Kolor — czerwony w ostatnich 10s, żółty inaczej
-    val ringColor = if (remainingSec in 1..10) ErrorRed else AccentOrange
+    // Kolor stopniowo wzmaga ostrzeżenie:
+    // >30s: żółty (kanon) — spokojne odliczanie
+    // 11–30s: pomarańczowy — zaraz start serii
+    // 1–10s: czerwony — już-już
+    val ringColor = when {
+        remainingSec in 1..10 -> ErrorRed
+        remainingSec in 11..30 -> Color(0xFFFF8C42)
+        else -> AccentOrange
+    }
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -114,22 +121,22 @@ fun RestTimerSheet(
 
             Spacer(Modifier.height(8.dp))
 
-            // Circular timer
+            // Circular timer — zmniejszony promień + grubsza linia
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .aspectRatio(1.1f),
+                    .padding(vertical = 12.dp),
                 contentAlignment = Alignment.Center
             ) {
                 CircularProgressRing(
                     progress = progress,
                     color = ringColor,
-                    modifier = Modifier.fillMaxWidth().aspectRatio(1f)
+                    modifier = Modifier.size(220.dp)
                 )
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         formatTimerSeconds(remainingSec),
-                        fontSize = 64.sp,
+                        fontSize = 56.sp,
                         fontWeight = FontWeight.ExtraBold,
                         fontFamily = FontFamily.Monospace,
                         color = DarkOnSurface,
@@ -259,7 +266,7 @@ private fun CircularProgressRing(
 ) {
     val track = DarkSurfaceVariant
     Canvas(modifier = modifier) {
-        val stroke = 14f
+        val stroke = 28f
         val pad = stroke / 2 + 4f
         val side = minOf(size.width, size.height) - 2 * pad
         val topLeft = Offset(
