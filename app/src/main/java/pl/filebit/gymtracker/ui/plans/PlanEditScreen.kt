@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -49,9 +50,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -63,6 +67,8 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
@@ -211,6 +217,37 @@ fun PlanEditScreen(
                     text = stringResource(R.string.plan_add_exercise_to_day),
                     leadingIcon = Icons.Default.Add
                 )
+            }
+            if (visibleExercises.isNotEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                            .background(ErrorRed.copy(alpha = 0.10f), RoundedCornerShape(14.dp))
+                            .border(1.dp, ErrorRed.copy(alpha = 0.40f), RoundedCornerShape(14.dp))
+                            .clickable { vm.clearDay(state.selectedDay) },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.Delete,
+                                contentDescription = null,
+                                tint = ErrorRed,
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(Modifier.width(8.dp))
+                            Text(
+                                "Usuń ten dzień z planu",
+                                style = MaterialTheme.typography.titleMedium.copy(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 14.sp
+                                ),
+                                color = ErrorRed
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -454,33 +491,18 @@ private fun PlanExerciseCard(
             HorizontalDivider(color = DarkOutlineSoft)
             Spacer(Modifier.height(10.dp))
 
-            // Header
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    "Seria",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.width(40.dp)
-                )
-                Text(
-                    stringResource(R.string.plan_planned_reps),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.weight(1f)
-                )
-                Text(
-                    stringResource(R.string.plan_planned_weight),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.weight(1f)
-                )
-                Text(
-                    stringResource(R.string.plan_rest),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.weight(1f)
-                )
-                Spacer(Modifier.width(40.dp)) // place for delete icon
+            // Header kolumn — kompaktowy, wycentrowany pod inputami
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Spacer(Modifier.width(28.dp))
+                ColumnHeader("Powt.", Modifier.weight(1f))
+                Spacer(Modifier.width(4.dp))
+                ColumnHeader("Waga", Modifier.weight(1f))
+                Spacer(Modifier.width(4.dp))
+                ColumnHeader("Odp. (s)", Modifier.weight(1f))
+                Spacer(Modifier.width(36.dp))
             }
             Spacer(Modifier.height(4.dp))
 
@@ -539,6 +561,67 @@ private fun PlanExerciseCard(
 }
 
 @Composable
+private fun ColumnHeader(text: String, modifier: Modifier = Modifier) {
+    Text(
+        text.uppercase(),
+        modifier = modifier,
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 0.8.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        textAlign = TextAlign.Center
+    )
+}
+
+@Composable
+private fun MiniNumField(
+    value: String,
+    keyboardType: KeyboardType,
+    modifier: Modifier = Modifier,
+    placeholder: String = "—",
+    onValueChange: (String) -> Unit
+) {
+    BasicTextField(
+        value = value,
+        onValueChange = onValueChange,
+        textStyle = TextStyle(
+            color = DarkOnSurface,
+            fontSize = 15.sp,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center
+        ),
+        cursorBrush = SolidColor(AccentOrange),
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
+        modifier = modifier
+            .height(38.dp)
+            .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(8.dp))
+            .padding(horizontal = 4.dp),
+        decorationBox = { inner ->
+            Box(
+                modifier = Modifier.fillMaxWidth().height(38.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                if (value.isEmpty()) {
+                    Text(
+                        placeholder,
+                        style = TextStyle(
+                            color = DarkOnSurfaceVariant,
+                            fontSize = 14.sp,
+                            textAlign = TextAlign.Center
+                        )
+                    )
+                }
+                inner()
+            }
+        }
+    )
+}
+
+@Composable
 private fun SetEditRow(
     setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
     onReps: (Int?) -> Unit,
@@ -553,26 +636,30 @@ private fun SetEditRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 2.dp),
+            .padding(vertical = 3.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             "${setSpec.setNumber}",
-            style = MaterialTheme.typography.bodyMedium,
-            fontWeight = FontWeight.SemiBold,
-            modifier = Modifier.width(40.dp)
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp
+            ),
+            color = AccentOrange,
+            modifier = Modifier.width(28.dp),
+            textAlign = TextAlign.Center
         )
-        SetNumberField(
+        MiniNumField(
             value = repsText,
             keyboardType = KeyboardType.Number,
             modifier = Modifier.weight(1f),
             onValueChange = {
-                repsText = it
-                if (it.isBlank()) onReps(null) else it.toIntOrNull()?.let(onReps)
+                repsText = it.filter { c -> c.isDigit() }
+                if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
             }
         )
         Spacer(Modifier.width(4.dp))
-        SetNumberField(
+        MiniNumField(
             value = weightText,
             keyboardType = KeyboardType.Decimal,
             modifier = Modifier.weight(1f),
@@ -583,17 +670,25 @@ private fun SetEditRow(
             }
         )
         Spacer(Modifier.width(4.dp))
-        SetNumberField(
+        MiniNumField(
             value = restText,
             keyboardType = KeyboardType.Number,
             modifier = Modifier.weight(1f),
             onValueChange = {
-                restText = it
-                if (it.isBlank()) onRest(null) else it.toIntOrNull()?.let(onRest)
+                restText = it.filter { c -> c.isDigit() }
+                if (restText.isBlank()) onRest(null) else restText.toIntOrNull()?.let(onRest)
             }
         )
-        IconButton(onClick = onDelete, modifier = Modifier.size(40.dp)) {
-            Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(18.dp))
+        IconButton(
+            onClick = onDelete,
+            modifier = Modifier.size(36.dp)
+        ) {
+            Icon(
+                Icons.Default.Delete,
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+                tint = DarkOnSurfaceVariant
+            )
         }
     }
 }
@@ -624,78 +719,42 @@ private fun AdvancedSetRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 40.dp, top = 2.dp, end = 40.dp, bottom = 6.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+            .padding(start = 28.dp, end = 36.dp, top = 1.dp, bottom = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        OutlinedTextField(
+        MiniNumField(
             value = rpeText,
+            keyboardType = KeyboardType.Number,
+            modifier = Modifier.weight(1f),
+            placeholder = "RPE",
             onValueChange = {
                 rpeText = it.filter { c -> c.isDigit() }
                 if (rpeText.isBlank()) onRpe(null)
                 else rpeText.toIntOrNull()?.let(onRpe)
-            },
-            label = { Text("RPE", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.weight(1f)
+            }
         )
-        OutlinedTextField(
+        Spacer(Modifier.width(4.dp))
+        MiniNumField(
             value = rirText,
+            keyboardType = KeyboardType.Number,
+            modifier = Modifier.weight(1f),
+            placeholder = "RIR",
             onValueChange = {
                 rirText = it.filter { c -> c.isDigit() }
                 if (rirText.isBlank()) onRir(null)
                 else rirText.toIntOrNull()?.let(onRir)
-            },
-            label = { Text("RIR", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.weight(1f)
+            }
         )
-        OutlinedTextField(
+        Spacer(Modifier.width(4.dp))
+        MiniNumField(
             value = tempoText,
+            keyboardType = KeyboardType.Text,
+            modifier = Modifier.weight(1f),
+            placeholder = "Tempo",
             onValueChange = {
                 tempoText = it
                 if (tempoText.isBlank()) onTempo(null) else onTempo(tempoText)
-            },
-            label = { Text("Tempo", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            placeholder = { Text("3-1-1-0", style = MaterialTheme.typography.bodySmall) },
-            modifier = Modifier.weight(1.4f)
+            }
         )
     }
-}
-
-@Composable
-private fun SetNumberField(
-    value: String,
-    keyboardType: KeyboardType,
-    modifier: Modifier = Modifier,
-    onValueChange: (String) -> Unit
-) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        modifier = modifier,
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
-    )
-}
-
-@Composable
-private fun SmallNumberField(
-    value: String,
-    label: String,
-    keyboardType: KeyboardType,
-    modifier: Modifier = Modifier,
-    onValueChange: (String) -> Unit
-) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        label = { Text(label, style = MaterialTheme.typography.bodySmall) },
-        modifier = modifier,
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
-    )
 }

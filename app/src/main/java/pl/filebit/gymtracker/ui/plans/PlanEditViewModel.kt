@@ -253,6 +253,20 @@ class PlanEditViewModel @Inject constructor(
         st.copy(exercises = st.exercises.filter { it.planEx.id != id })
     }
 
+    /**
+     * Usuwa wszystkie ćwiczenia z danego dnia. Po wyczyszczeniu przeskakuje
+     * na pierwszy dzień który ma ćwiczenia (albo zostawia ten sam jeśli pusta lista).
+     */
+    fun clearDay(day: Int) = _state.update { st ->
+        val remaining = st.exercises.filter { it.planEx.dayOfWeek != day }
+        val daysWithEx = remaining.map { it.planEx.dayOfWeek }.toSet()
+        val newSelected = when {
+            daysWithEx.isEmpty() -> day
+            else -> daysWithEx.min()
+        }
+        st.copy(exercises = remaining, selectedDay = newSelected)
+    }
+
     fun toggleSupersetWithPrev(id: Long) = _state.update { st ->
         val day = st.selectedDay
         val sameDay = st.exercises
