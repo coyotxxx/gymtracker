@@ -603,7 +603,6 @@ private fun AdvancedFieldsRow(
     onUpdate: (WorkoutSet) -> Unit
 ) {
     var rpeText by remember(set.id) { mutableStateOf(set.rpe?.toString() ?: "") }
-    var rirText by remember(set.id) { mutableStateOf(set.rir?.toString() ?: "") }
     var tempoText by remember(set.id) { mutableStateOf(set.tempo ?: "") }
 
     Row(
@@ -620,17 +619,6 @@ private fun AdvancedFieldsRow(
                 onUpdate(set.copy(rpe = rpeText.toIntOrNull()))
             },
             label = { Text("RPE", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.weight(1f)
-        )
-        OutlinedTextField(
-            value = rirText,
-            onValueChange = {
-                rirText = it.filter { c -> c.isDigit() }
-                onUpdate(set.copy(rir = rirText.toIntOrNull()))
-            },
-            label = { Text("RIR", style = MaterialTheme.typography.bodySmall) },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier.weight(1f)

@@ -26,6 +26,7 @@ import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.material.icons.filled.LinkOff
 import androidx.compose.material.icons.filled.MoreVert
@@ -86,6 +87,7 @@ fun PlanEditScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     var showDeleteDialog by remember { mutableStateOf(false) }
+    var showRpeHelp by remember { mutableStateOf(false) }
 
     LaunchedEffect(pickedExerciseId) {
         pickedExerciseId?.let { id ->
@@ -151,7 +153,48 @@ fun PlanEditScreen(
             }
             item {
                 val dayName = stringResource(dayLongRes(state.selectedDay))
-                LabelUp("${stringResource(R.string.plan_exercises_header)} · $dayName")
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(modifier = Modifier.weight(1f)) {
+                        LabelUp("${stringResource(R.string.plan_exercises_header)} · $dayName")
+                    }
+                    if (state.showAdvancedFields) {
+                        Row(
+                            modifier = Modifier
+                                .background(
+                                    AccentOrange.copy(alpha = 0.10f),
+                                    RoundedCornerShape(999.dp)
+                                )
+                                .border(
+                                    1.dp,
+                                    AccentOrange.copy(alpha = 0.35f),
+                                    RoundedCornerShape(999.dp)
+                                )
+                                .clickable { showRpeHelp = true }
+                                .padding(horizontal = 10.dp, vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                Icons.AutoMirrored.Filled.HelpOutline,
+                                contentDescription = null,
+                                tint = AccentOrange,
+                                modifier = Modifier.size(14.dp)
+                            )
+                            Spacer(Modifier.width(4.dp))
+                            Text(
+                                "Co to RPE?",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 11.sp,
+                                    letterSpacing = 0.6.sp
+                                ),
+                                color = AccentOrange
+                            )
+                        }
+                    }
+                }
             }
 
             val visibleExercises = state.exercisesForSelectedDay
@@ -267,6 +310,61 @@ fun PlanEditScreen(
                     Text(stringResource(R.string.common_cancel))
                 }
             }
+        )
+    }
+
+    if (showRpeHelp) {
+        AlertDialog(
+            onDismissRequest = { showRpeHelp = false },
+            title = { Text("Skala RPE") },
+            text = {
+                Column {
+                    Text(
+                        "Subiektywna ocena ile siły dałeś z siebie po skończonej serii. Po wypełnieniu kilku serii system sugeruje wagę i powtórzenia na następny trening.",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Spacer(Modifier.height(12.dp))
+                    RpeRow("RPE 6", "Lekko — mogłem jeszcze 4+ powtórzeń")
+                    RpeRow("RPE 7", "Mogłem jeszcze 3 powt.")
+                    RpeRow("RPE 8", "Mogłem jeszcze 2 powt. (sweet spot)")
+                    RpeRow("RPE 9", "Mogłem jeszcze 1 powt.")
+                    RpeRow("RPE 10", "Do upadku — nie wycisnąłbym ani jednej więcej")
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        "Wypełnianie RPE jest opcjonalne. Bez RPE system progresuje na ślepo (+waga z każdym treningiem).",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showRpeHelp = false }) {
+                    Text("OK")
+                }
+            }
+        )
+    }
+}
+
+@Composable
+private fun RpeRow(label: String, description: String) {
+    Row(
+        modifier = Modifier.padding(vertical = 2.dp),
+        verticalAlignment = Alignment.Top
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 13.sp
+            ),
+            color = AccentOrange,
+            modifier = Modifier.width(60.dp)
+        )
+        Text(
+            description,
+            style = MaterialTheme.typography.bodySmall,
+            color = DarkOnSurface
         )
     }
 }
@@ -522,7 +620,6 @@ private fun PlanExerciseCard(
                     AdvancedSetRow(
                         setSpec = setSpec,
                         onRpe = { v -> onUpdateSetAdvanced(setSpec.id, v, null, null, v == null, false, false) },
-                        onRir = { v -> onUpdateSetAdvanced(setSpec.id, null, v, null, false, v == null, false) },
                         onTempo = { v -> onUpdateSetAdvanced(setSpec.id, null, null, v, false, false, v.isNullOrBlank()) }
                     )
                 }
@@ -709,11 +806,9 @@ private fun computeSupersetLabel(list: List<PlanExerciseWithDetail>, idx: Int): 
 private fun AdvancedSetRow(
     setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
     onRpe: (Int?) -> Unit,
-    onRir: (Int?) -> Unit,
     onTempo: (String?) -> Unit
 ) {
     var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
-    var rirText by remember(setSpec.id) { mutableStateOf(setSpec.rir?.toString() ?: "") }
     var tempoText by remember(setSpec.id) { mutableStateOf(setSpec.tempo ?: "") }
 
     Row(
@@ -726,31 +821,19 @@ private fun AdvancedSetRow(
             value = rpeText,
             keyboardType = KeyboardType.Number,
             modifier = Modifier.weight(1f),
-            placeholder = "RPE",
+            placeholder = "RPE 6–10",
             onValueChange = {
                 rpeText = it.filter { c -> c.isDigit() }
                 if (rpeText.isBlank()) onRpe(null)
                 else rpeText.toIntOrNull()?.let(onRpe)
             }
         )
-        Spacer(Modifier.width(4.dp))
-        MiniNumField(
-            value = rirText,
-            keyboardType = KeyboardType.Number,
-            modifier = Modifier.weight(1f),
-            placeholder = "RIR",
-            onValueChange = {
-                rirText = it.filter { c -> c.isDigit() }
-                if (rirText.isBlank()) onRir(null)
-                else rirText.toIntOrNull()?.let(onRir)
-            }
-        )
-        Spacer(Modifier.width(4.dp))
+        Spacer(Modifier.width(6.dp))
         MiniNumField(
             value = tempoText,
             keyboardType = KeyboardType.Text,
             modifier = Modifier.weight(1f),
-            placeholder = "Tempo",
+            placeholder = "Tempo (3-1-1-0)",
             onValueChange = {
                 tempoText = it
                 if (tempoText.isBlank()) onTempo(null) else onTempo(tempoText)
