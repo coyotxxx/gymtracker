@@ -32,7 +32,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.coroutineScope
@@ -101,29 +104,48 @@ fun SplashScreen(onFinished: () -> Unit) {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.padding(horizontal = 32.dp)
         ) {
-            // Logo G
+            // Logo G — duże, dominujące
             Image(
                 painter = painterResource(R.drawable.splash_logo),
                 contentDescription = "GymTracker logo",
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
-                    .size((220 * logoScale.value).dp.coerceAtLeast(0.dp))
+                    .size((340 * logoScale.value).dp.coerceAtLeast(0.dp))
                     .alpha(logoAlpha.value)
+            )
+
+            Spacer(Modifier.height(24.dp))
+
+            // Napis "GymTracker" — natywny Compose, biały, bold
+            Text(
+                text = "GymTracker",
+                color = androidx.compose.ui.graphics.Color.White.copy(alpha = textAlpha.value),
+                style = MaterialTheme.typography.headlineLarge.copy(
+                    fontSize = 40.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = (-0.5).sp
+                )
             )
 
             Spacer(Modifier.height(8.dp))
 
-            // Napis "GymTracker + Twój trening. Twój progres."
-            Image(
-                painter = painterResource(R.drawable.splash_text),
-                contentDescription = "GymTracker — Twój trening. Twój progres.",
-                contentScale = ContentScale.Fit,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .alpha(textAlpha.value)
+            // Hasło: "Twój trening. Twój progres." — "progres." na żółto
+            Text(
+                text = buildAnnotatedString {
+                    withStyle(SpanStyle(color = DarkOnSurfaceVariant.copy(alpha = textAlpha.value))) {
+                        append("Twój trening. Twój ")
+                    }
+                    withStyle(SpanStyle(color = AccentOrange.copy(alpha = textAlpha.value))) {
+                        append("progres.")
+                    }
+                },
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium
+                )
             )
 
-            Spacer(Modifier.height(48.dp))
+            Spacer(Modifier.height(56.dp))
 
             // Pasek ładowania
             Box(
