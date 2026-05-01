@@ -41,6 +41,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
+import java.io.File
+import java.util.zip.ZipEntry
+import java.util.zip.ZipInputStream
+import java.util.zip.ZipOutputStream
 import javax.inject.Inject
 
 @Serializable
@@ -169,14 +173,16 @@ data class ProgressPhotoDto(
 )
 
 /**
- * Ustawienia AI bez klucza API (świadoma decyzja — klucz nigdy nie ląduje
- * w pliku eksportu, użytkownik wpisuje go ponownie po reinstall).
+ * Ustawienia AI. Pole apiKey jest nullable — domyślnie NULL (eksport bez klucza).
+ * Eksport z włączonym togglem "Dołącz klucz API AI" wpisuje go w plain text.
+ * To ryzykowne (klucz w pliku JSON), więc default off.
  */
 @Serializable
 data class AiPrefsDto(
     val provider: String,
     val model: String,
-    val systemPrompt: String
+    val systemPrompt: String,
+    val apiKey: String? = null
 )
 
 @Serializable
@@ -207,7 +213,7 @@ class BackupViewModel @Inject constructor(
     private val _status = MutableStateFlow<String?>(null)
     val status: StateFlow<String?> = _status.asStateFlow()
 
-    fun export(uri: Uri) {
+    fun export(uri: Uri, includeApiKey: Boolean = false) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val allWorkouts = db.workoutDao().observeAll().first()
@@ -310,8 +316,8 @@ class BackupViewModel @Inject constructor(
                     aiPrefs = AiPrefsDto(
                         provider = aiCfg.provider.name,
                         model = aiCfg.model,
-                        systemPrompt = aiCfg.systemPrompt
-                        // klucz API celowo NIE jest w pliku — bezpieczeństwo
+                        systemPrompt = aiCfg.systemPrompt,
+                        apiKey = if (includeApiKey && aiCfg.apiKey.isNotBlank()) aiCfg.apiKey else null
                     ),
                     aiConversations = allConversations.map {
                         AiConversationDto(it.id, it.title, it.createdAt, it.updatedAt)
@@ -322,10 +328,28 @@ class BackupViewModel @Inject constructor(
                 )
 
                 val text = json.encodeToString(data)
-                context.contentResolver.openOutputStream(uri)?.use { os ->
-                    os.write(text.toByteArray(Charsets.UTF_8))
+                val photosDir = File(context.filesDir, "progress_photos")
+                val photoFiles = allPhotos.mapNotNull { p ->
+                    val f = File(photosDir, p.filename)
+                    if (f.exists()) f else null
                 }
-                _status.value = "Eksport: ${allWorkouts.size} treningów, ${allPlans.size} planów, ${allConversations.size} rozmów AI"
+
+                // ZIP: data.json + photos/{filename}
+                context.contentResolver.openOutputStream(uri)?.use { os ->
+                    ZipOutputStream(os).use { zip ->
+                        zip.putNextEntry(ZipEntry("data.json"))
+                        zip.write(text.toByteArray(Charsets.UTF_8))
+                        zip.closeEntry()
+                        for (f in photoFiles) {
+                            zip.putNextEntry(ZipEntry("photos/${f.name}"))
+                            f.inputStream().use { it.copyTo(zip) }
+                            zip.closeEntry()
+                        }
+                    }
+                }
+                _status.value = "Eksport: ${allWorkouts.size} treningów, " +
+                    "${allPlans.size} planów, ${allConversations.size} rozmów AI, " +
+                    "${photoFiles.size} zdjęć"
             }
         }
     }
@@ -367,9 +391,47 @@ class BackupViewModel @Inject constructor(
     fun import(uri: Uri) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val text = context.contentResolver.openInputStream(uri)?.use {
-                    it.bufferedReader().readText()
+                // Wykryj typ pliku: ZIP (PK\x03\x04) vs JSON. Czytamy bajty raz —
+                // contentResolver może nie pozwolić na drugie otwarcie, więc
+                // buforujemy całość w pamięci.
+                val rawBytes = context.contentResolver.openInputStream(uri)?.use {
+                    it.readBytes()
                 } ?: return@withContext
+
+                val isZip = rawBytes.size >= 4 &&
+                    rawBytes[0] == 0x50.toByte() && rawBytes[1] == 0x4B.toByte() &&
+                    rawBytes[2] == 0x03.toByte() && rawBytes[3] == 0x04.toByte()
+
+                val text = if (isZip) {
+                    var jsonText: String? = null
+                    val photosDir = File(context.filesDir, "progress_photos")
+                    if (!photosDir.exists()) photosDir.mkdirs()
+                    ZipInputStream(rawBytes.inputStream()).use { zip ->
+                        var entry = zip.nextEntry
+                        while (entry != null) {
+                            val name = entry.name
+                            when {
+                                name == "data.json" -> {
+                                    jsonText = zip.readBytes().toString(Charsets.UTF_8)
+                                }
+                                name.startsWith("photos/") && !entry.isDirectory -> {
+                                    val safe = name.removePrefix("photos/")
+                                        .substringAfterLast('/')
+                                    if (safe.isNotBlank()) {
+                                        File(photosDir, safe).outputStream().use { os ->
+                                            zip.copyTo(os)
+                                        }
+                                    }
+                                }
+                            }
+                            zip.closeEntry()
+                            entry = zip.nextEntry
+                        }
+                    }
+                    jsonText ?: return@withContext
+                } else {
+                    rawBytes.toString(Charsets.UTF_8)
+                }
 
                 val data = json.decodeFromString<BackupData>(text)
 
@@ -541,15 +603,15 @@ class BackupViewModel @Inject constructor(
                     )
                 }
 
-                // AI prefs (provider, model, system prompt — klucz API zostaje pusty,
-                // user musi go wpisać ponownie po reinstall)
+                // AI prefs. apiKey: jeśli backup zawiera klucz (toggle "Dołącz klucz")
+                // wgrywamy go; w przeciwnym razie zachowujemy obecny lokalny klucz.
                 data.aiPrefs?.let { ap ->
                     val current = aiPrefs.load()
                     aiPrefs.save(
                         AiConfig(
                             provider = runCatching { AiProvider.valueOf(ap.provider) }
                                 .getOrDefault(AiProvider.ANTHROPIC),
-                            apiKey = current.apiKey,  // zachowaj jeśli już był
+                            apiKey = ap.apiKey?.takeIf { it.isNotBlank() } ?: current.apiKey,
                             model = ap.model,
                             systemPrompt = ap.systemPrompt
                         )

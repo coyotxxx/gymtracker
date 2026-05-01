@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -163,6 +164,51 @@ fun GymPrimaryButton(
                 ),
                 color = if (enabled) Color.Black else DarkOnSurfaceVariant,
                 textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+
+/**
+ * Klikalny chip z ✓ ikoną przy wybranym stanie. Większy niż GymChip,
+ * lepiej pasuje do ustawień profilu (Cel treningowy, Doświadczenie itd.).
+ * - Selected: lekkie żółte tło + border AccentOrange + ✓ + tekst żółty
+ * - Unselected: DarkSurfaceVariant + tekst szary
+ */
+@Composable
+fun SelectableChip(
+    text: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val bg = if (selected) AccentOrange.copy(alpha = 0.10f) else DarkSurfaceVariant
+    val borderColor = if (selected) AccentOrange.copy(alpha = 0.55f) else Color.Transparent
+    val textColor = if (selected) AccentOrange else DarkOnSurface
+    Box(
+        modifier = modifier
+            .clickable(onClick = onClick)
+            .background(bg, RoundedCornerShape(12.dp))
+            .border(1.dp, borderColor, RoundedCornerShape(12.dp))
+            .padding(horizontal = 14.dp, vertical = 10.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            if (selected) {
+                Icon(
+                    androidx.compose.material.icons.Icons.Default.Check,
+                    contentDescription = null,
+                    tint = AccentOrange,
+                    modifier = Modifier.size(14.dp)
+                )
+                androidx.compose.foundation.layout.Spacer(Modifier.size(6.dp))
+            }
+            Text(
+                text,
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    fontWeight = FontWeight.SemiBold
+                ),
+                color = textColor
             )
         }
     }

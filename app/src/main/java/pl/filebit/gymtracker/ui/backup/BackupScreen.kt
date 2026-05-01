@@ -37,6 +37,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -90,9 +91,10 @@ fun BackupScreen(
         }
     }
 
+    var includeApiKey by remember { mutableStateOf(false) }
     val exportLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.CreateDocument("application/json")
-    ) { uri -> uri?.let { vm.export(it) } }
+        ActivityResultContracts.CreateDocument("application/zip")
+    ) { uri -> uri?.let { vm.export(it, includeApiKey) } }
     val importLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument()
     ) { uri -> uri?.let { vm.import(it) } }
@@ -116,16 +118,40 @@ fun BackupScreen(
             item {
                 SectionCard(
                     title = "Eksport danych",
-                    subtitle = "Pełny backup bazy + ustawień (bez klucza AI)."
+                    subtitle = "Pełny pakiet ZIP: dane + zdjęcia progresu."
                 ) {
+                    // Toggle: dołącz klucz API AI
+                    androidx.compose.foundation.layout.Row(
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    ) {
+                        Switch(
+                            checked = includeApiKey,
+                            onCheckedChange = { includeApiKey = it }
+                        )
+                        Spacer(Modifier.size(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                "Dołącz klucz API AI",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                            )
+                            Text(
+                                "Klucz w pliku jako plain text — uważaj komu udostępniasz backup.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = ErrorRed
+                            )
+                        }
+                    }
                     OutlinedActionButton(
-                        text = stringResource(R.string.backup_export),
+                        text = "Eksportuj kopię (ZIP)",
                         icon = Icons.Default.FileDownload,
                         onClick = {
                             val name = "gymtracker-backup-${
                                 formatDate(System.currentTimeMillis())
                                     .replace(" ", "_").replace(":", "-")
-                            }.json"
+                            }.zip"
                             exportLauncher.launch(name)
                         }
                     )
@@ -148,16 +174,17 @@ fun BackupScreen(
             item {
                 SectionCard(
                     title = "Import danych",
-                    subtitle = "Wczytaj wcześniej wyeksportowany plik JSON."
+                    subtitle = "Wczytaj plik backupu (ZIP od v0.58 lub starszy JSON)."
                 ) {
                     OutlinedActionButton(
                         text = stringResource(R.string.backup_import),
                         icon = Icons.Default.FileUpload,
                         onClick = {
-                            // Niektóre menedżery plików raportują JSON jako octet-stream
-                            // — bez tych pozycji plik bywa zaszarzony.
+                            // Akceptujemy ZIP (nowy) i JSON (starsze backupy).
+                            // Niektóre menedżery raportują nietypowe MIME — fallback */*.
                             importLauncher.launch(
                                 arrayOf(
+                                    "application/zip",
                                     "application/json",
                                     "application/octet-stream",
                                     "text/json",

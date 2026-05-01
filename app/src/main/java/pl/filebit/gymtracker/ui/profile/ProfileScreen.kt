@@ -246,16 +246,19 @@ fun ProfileScreen(
             item { ProfileSectionLabel("Ustawienia treningu") }
 
             item {
-                SectionCard(title = stringResource(R.string.profile_goal)) {
+                SectionCard(
+                    title = stringResource(R.string.profile_goal),
+                    subtitle = "Wpływa na sugestie planów, dobór obciążeń i intensywności w analizie AI."
+                ) {
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
                         items(TrainingGoal.entries.toList()) { g ->
-                            FilterChip(
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = g.label(),
                                 selected = draft.goal == g,
-                                onClick = { draft = draft.copy(goal = g) },
-                                label = { Text(g.label()) }
+                                onClick = { draft = draft.copy(goal = g) }
                             )
                         }
                     }
@@ -269,10 +272,10 @@ fun ProfileScreen(
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
                         items(ExperienceLevel.entries.toList()) { e ->
-                            FilterChip(
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = e.label(),
                                 selected = draft.experience == e,
-                                onClick = { draft = draft.copy(experience = e) },
-                                label = { Text(e.label()) }
+                                onClick = { draft = draft.copy(experience = e) }
                             )
                         }
                     }
@@ -286,10 +289,10 @@ fun ProfileScreen(
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
                         items(WeightUnit.entries.toList()) { u ->
-                            FilterChip(
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = u.name,
                                 selected = draft.preferredUnit == u,
-                                onClick = { draft = draft.copy(preferredUnit = u) },
-                                label = { Text(u.name) }
+                                onClick = { draft = draft.copy(preferredUnit = u) }
                             )
                         }
                     }
@@ -297,16 +300,19 @@ fun ProfileScreen(
             }
 
             item {
-                SectionCard(title = stringResource(R.string.profile_weight_goal)) {
+                SectionCard(
+                    title = stringResource(R.string.profile_weight_goal),
+                    subtitle = "Określa kierunek bilansu kalorycznego sugerowanego przez AI."
+                ) {
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
                         items(WeightGoalType.entries.toList()) { g ->
-                            FilterChip(
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = g.label(),
                                 selected = draft.weightGoalType == g,
-                                onClick = { draft = draft.copy(weightGoalType = g) },
-                                label = { Text(g.label()) }
+                                onClick = { draft = draft.copy(weightGoalType = g) }
                             )
                         }
                     }
@@ -682,7 +688,11 @@ private fun AppVersionFooter() {
 }
 
 @Composable
-private fun SectionCard(title: String, content: @Composable () -> Unit) {
+private fun SectionCard(
+    title: String,
+    subtitle: String? = null,
+    content: @Composable () -> Unit
+) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -696,7 +706,15 @@ private fun SectionCard(title: String, content: @Composable () -> Unit) {
                 fontWeight = FontWeight.ExtraBold,
                 color = DarkOnSurface
             )
-            Spacer(Modifier.height(8.dp))
+            if (subtitle != null) {
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    subtitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Spacer(Modifier.height(12.dp))
             content()
         }
     }
