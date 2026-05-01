@@ -104,17 +104,17 @@ fun SplashScreen(onFinished: () -> Unit) {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.padding(horizontal = 32.dp)
         ) {
-            // Logo G — duże, dominujące
+            // Logo G — bardzo duże, dominujące
             Image(
                 painter = painterResource(R.drawable.splash_logo),
                 contentDescription = "GymTracker logo",
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
-                    .size((340 * logoScale.value).dp.coerceAtLeast(0.dp))
+                    .size((440 * logoScale.value).dp.coerceAtLeast(0.dp))
                     .alpha(logoAlpha.value)
             )
 
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(4.dp))
 
             // Napis "GymTracker" — natywny Compose, biały, bold
             Text(
