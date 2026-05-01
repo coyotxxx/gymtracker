@@ -7,13 +7,19 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -26,27 +32,35 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 
 /**
- * Splash z gotową grafiką brand (logo G + GymTracker + hasło).
- * - 0–500ms: fade-in obrazu
- * - 500–2200ms: pasek ładowania wypełnia się
- * - 2200ms: onFinished
+ * Splash sekwencyjny:
+ * - 0–600ms: logo G fade-in + scale 0.7→1.0
+ * - 600–1200ms: napis "GymTracker + hasło" fade-in pod logo
+ * - 1200–2700ms: pasek ładowania wypełnia się
+ * - 2700ms+: "Gotowe!" 200ms → onFinished → AppNavigation
+ *
  * Tap → skip.
  */
 @Composable
 fun SplashScreen(onFinished: () -> Unit) {
-    val imageAlpha = remember { Animatable(0f) }
+    val logoAlpha = remember { Animatable(0f) }
+    val logoScale = remember { Animatable(0.7f) }
+    val textAlpha = remember { Animatable(0f) }
     val progressAlpha = remember { Animatable(0f) }
     val progressValue = remember { Animatable(0f) }
+    var doneLabel by remember { mutableStateOf(false) }
     var done by remember { mutableStateOf(false) }
 
     fun finishOnce() {
@@ -58,16 +72,20 @@ fun SplashScreen(onFinished: () -> Unit) {
 
     LaunchedEffect(Unit) {
         coroutineScope {
+            launch { logoAlpha.animateTo(1f, tween(600, easing = EaseOutCubic)) }
+            launch { logoScale.animateTo(1f, tween(700, easing = EaseOutCubic)) }
             launch {
-                imageAlpha.animateTo(1f, tween(500, easing = EaseOutCubic))
+                delay(600)
+                textAlpha.animateTo(1f, tween(500, easing = EaseOutCubic))
             }
             launch {
-                delay(500)
+                delay(1200)
                 progressAlpha.animateTo(1f, tween(300))
                 progressValue.animateTo(1f, tween(1500, easing = LinearEasing))
+                doneLabel = true
             }
         }
-        delay(200)
+        delay(300)
         finishOnce()
     }
 
@@ -78,25 +96,40 @@ fun SplashScreen(onFinished: () -> Unit) {
             .clickable { finishOnce() },
         contentAlignment = Alignment.Center
     ) {
-        Image(
-            painter = painterResource(R.drawable.splash_brand),
-            contentDescription = "GymTracker",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxSize()
-                .alpha(imageAlpha.value)
-        )
-
-        // Pasek ładowania — na dole, nad bottom edge
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(bottom = 80.dp)
-                .alpha(progressAlpha.value),
-            contentAlignment = Alignment.BottomCenter
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.padding(horizontal = 32.dp)
         ) {
+            // Logo G
+            Image(
+                painter = painterResource(R.drawable.splash_logo),
+                contentDescription = "GymTracker logo",
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .size((220 * logoScale.value).dp.coerceAtLeast(0.dp))
+                    .alpha(logoAlpha.value)
+            )
+
+            Spacer(Modifier.height(8.dp))
+
+            // Napis "GymTracker + Twój trening. Twój progres."
+            Image(
+                painter = painterResource(R.drawable.splash_text),
+                contentDescription = "GymTracker — Twój trening. Twój progres.",
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .alpha(textAlpha.value)
+            )
+
+            Spacer(Modifier.height(48.dp))
+
+            // Pasek ładowania
             Box(
-                modifier = Modifier.width(180.dp)
+                modifier = Modifier
+                    .width(180.dp)
+                    .alpha(progressAlpha.value)
             ) {
                 LinearProgressIndicator(
                     progress = { progressValue.value },
@@ -110,6 +143,19 @@ fun SplashScreen(onFinished: () -> Unit) {
                     drawStopIndicator = {}
                 )
             }
+
+            Spacer(Modifier.height(12.dp))
+
+            Text(
+                if (doneLabel) "Gotowe!" else "Ładowanie",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = if (doneLabel) AccentOrange.copy(alpha = progressAlpha.value)
+                else DarkOnSurfaceVariant.copy(alpha = progressAlpha.value)
+            )
         }
     }
 }
