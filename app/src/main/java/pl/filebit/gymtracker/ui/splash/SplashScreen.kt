@@ -11,9 +11,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -29,6 +31,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -102,50 +105,54 @@ fun SplashScreen(onFinished: () -> Unit) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
-            modifier = Modifier.padding(horizontal = 32.dp)
+            modifier = Modifier.padding(horizontal = 8.dp)
         ) {
-            // Logo G — bardzo duże, dominujące
+            // Logo G — wypełnia szerokość ekranu (z padding kolumny)
             Image(
                 painter = painterResource(R.drawable.splash_logo),
                 contentDescription = "GymTracker logo",
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
-                    .size((440 * logoScale.value).dp.coerceAtLeast(0.dp))
+                    .fillMaxWidth()
+                    .aspectRatio(800f / 538f)
+                    .scale(logoScale.value)
                     .alpha(logoAlpha.value)
             )
 
-            Spacer(Modifier.height(4.dp))
-
-            // Napis "GymTracker" — natywny Compose, biały, bold
-            Text(
-                text = "GymTracker",
-                color = androidx.compose.ui.graphics.Color.White.copy(alpha = textAlpha.value),
-                style = MaterialTheme.typography.headlineLarge.copy(
-                    fontSize = 40.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    letterSpacing = (-0.5).sp
+            // Cały blok napisów przesunięty w górę żeby zniwelować pusty obszar pyłu wokół G
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.offset(y = (-48).dp)
+            ) {
+                Text(
+                    text = "GymTracker",
+                    color = androidx.compose.ui.graphics.Color.White.copy(alpha = textAlpha.value),
+                    style = MaterialTheme.typography.headlineLarge.copy(
+                        fontSize = 44.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        letterSpacing = (-0.5).sp
+                    )
                 )
-            )
 
-            Spacer(Modifier.height(8.dp))
+                Spacer(Modifier.height(8.dp))
 
-            // Hasło: "Twój trening. Twój progres." — "progres." na żółto
-            Text(
-                text = buildAnnotatedString {
-                    withStyle(SpanStyle(color = DarkOnSurfaceVariant.copy(alpha = textAlpha.value))) {
-                        append("Twój trening. Twój ")
-                    }
-                    withStyle(SpanStyle(color = AccentOrange.copy(alpha = textAlpha.value))) {
-                        append("progres.")
-                    }
-                },
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Medium
+                Text(
+                    text = buildAnnotatedString {
+                        withStyle(SpanStyle(color = DarkOnSurfaceVariant.copy(alpha = textAlpha.value))) {
+                            append("Twój trening. Twój ")
+                        }
+                        withStyle(SpanStyle(color = AccentOrange.copy(alpha = textAlpha.value))) {
+                            append("progres.")
+                        }
+                    },
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Medium
+                    )
                 )
-            )
+            }
 
-            Spacer(Modifier.height(56.dp))
+            Spacer(Modifier.height(24.dp))
 
             // Pasek ładowania
             Box(
