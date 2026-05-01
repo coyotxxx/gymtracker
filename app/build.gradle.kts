@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 92
-        versionName = "0.58.0"
+        versionCode = 93
+        versionName = "0.59.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -118,4 +118,7 @@ dependencies {
     // AI integration
     implementation(libs.okhttp)
     implementation(libs.androidx.security.crypto)
+
+    // Lottie (splash animation)
+    implementation(libs.lottie.compose)
 }

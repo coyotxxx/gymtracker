@@ -7,8 +7,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import dagger.hilt.android.AndroidEntryPoint
 import pl.filebit.gymtracker.ui.navigation.AppNavigation
+import pl.filebit.gymtracker.ui.splash.SplashScreen
 import pl.filebit.gymtracker.ui.theme.GymTrackerTheme
 
 @AndroidEntryPoint
@@ -26,7 +32,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             GymTrackerTheme {
-                AppNavigation()
+                // Splash pokazuje się raz na proces — rememberSaveable
+                // przeżyje rotacje, ale nie kill processu (co jest OK).
+                var showSplash by rememberSaveable { mutableStateOf(true) }
+                if (showSplash) {
+                    SplashScreen(onFinished = { showSplash = false })
+                } else {
+                    AppNavigation()
+                }
             }
         }
     }

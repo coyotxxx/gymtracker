@@ -33,6 +33,9 @@ hiltWork = "1.2.0"
 okhttp = "4.12.0"
 securityCrypto = "1.1.0-alpha06"
 
+# Lottie (splash animation)
+lottie = "6.6.0"
+
 [libraries]
 # Core
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -79,6 +82,9 @@ hilt-compiler-androidx = { group = "androidx.hilt", name = "hilt-compiler", vers
 # AI
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
+
+# Lottie
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
