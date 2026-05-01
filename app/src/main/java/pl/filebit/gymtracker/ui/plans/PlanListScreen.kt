@@ -238,6 +238,16 @@ private fun PlanCard(
                         onDismissRequest = { menuOpen = false }
                     ) {
                         DropdownMenuItem(
+                            text = { Text("Edytuj plan") },
+                            leadingIcon = {
+                                Icon(
+                                    androidx.compose.material.icons.Icons.Default.Edit,
+                                    contentDescription = null
+                                )
+                            },
+                            onClick = { menuOpen = false; onEdit() }
+                        )
+                        DropdownMenuItem(
                             text = { Text(stringResource(R.string.plans_duplicate)) },
                             leadingIcon = { Icon(Icons.Default.ContentCopy, contentDescription = null) },
                             onClick = { menuOpen = false; onDuplicate() }
