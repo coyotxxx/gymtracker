@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.history
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -38,18 +39,28 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
-import pl.filebit.gymtracker.util.formatDate
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
+import pl.filebit.gymtracker.util.formatDateLongPl
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -71,180 +82,184 @@ fun WorkoutDetailScreen(
         val workout = state.workout
         if (state.loading || workout == null) {
             Column(modifier = Modifier.fillMaxSize()) {
-                ScreenHeader(
-                    title = workout?.startedAt?.let { formatDate(it) } ?: "Trening",
-                    onBack = onBack
-                )
+                ScreenHeader(title = "Trening", onBack = onBack)
             }
         } else {
-        Column(modifier = Modifier.fillMaxSize()) {
-            ScreenHeader(
-                title = formatDate(workout.startedAt),
-                onBack = onBack,
-                actions = {
-                    Box {
-                        IconButton(onClick = { menuOpen = true }) {
-                            Icon(
-                                Icons.Default.MoreVert,
-                                contentDescription = null,
-                                tint = DarkOnSurface
-                            )
-                        }
-                        DropdownMenu(
-                            expanded = menuOpen,
-                            onDismissRequest = { menuOpen = false }
-                        ) {
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.detail_repeat_workout)) },
-                                leadingIcon = {
-                                    Icon(Icons.Default.Replay, contentDescription = null)
-                                },
-                                onClick = {
-                                    menuOpen = false
-                                    vm.repeatWorkout(onRepeated)
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.detail_save_as_plan)) },
-                                leadingIcon = {
-                                    Icon(Icons.Default.EventNote, contentDescription = null)
-                                },
-                                onClick = {
-                                    menuOpen = false
-                                    vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
-                                }
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.detail_delete_workout)) },
-                                leadingIcon = {
-                                    Icon(Icons.Default.Delete, contentDescription = null)
-                                },
-                                onClick = {
-                                    menuOpen = false
-                                    showDelete = true
-                                }
-                            )
-                        }
-                    }
-                }
-            )
-            // Origin label: from plan (with day) or ad-hoc
-            val planName = state.planName
-            val dayLabel = state.planDayOfWeek?.let { dayLongLabel(it) }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
-            ) {
-                Card(
-                    colors = CardDefaults.cardColors(
-                        containerColor = if (planName != null)
-                            MaterialTheme.colorScheme.primaryContainer
-                        else MaterialTheme.colorScheme.surfaceVariant,
-                        contentColor = if (planName != null)
-                            MaterialTheme.colorScheme.onPrimaryContainer
-                        else MaterialTheme.colorScheme.onSurfaceVariant
-                    ),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    val labelText = when {
-                        planName != null && dayLabel != null ->
-                            stringResource(R.string.detail_from_plan_day, planName, dayLabel)
-                        planName != null ->
-                            stringResource(R.string.detail_from_plan, planName)
-                        else -> stringResource(R.string.detail_adhoc)
-                    }
-                    Text(
-                        text = labelText,
-                        style = MaterialTheme.typography.labelMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
-                    )
-                }
-            }
-
-            // Summary header
             val totalSets = state.groups.sumOf { it.sets.size }
             val totalVolume = state.groups.sumOf { g ->
                 g.sets.sumOf { it.reps * it.weightKg }
             }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                StatBox("Czas", formatDuration(workout.durationMillis))
-                StatBox("Ćwiczenia", "${state.groups.size}")
-                StatBox("Serie", "$totalSets")
-                StatBox("Volume", "${formatWeight(totalVolume)}kg")
-            }
-            workout.aiSummary?.takeIf { it.isNotBlank() }?.let { summary ->
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 4.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.tertiaryContainer
-                    ),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Column(modifier = Modifier.padding(12.dp)) {
-                        Text(
-                            "✨ Podsumowanie trenera AI",
-                            style = MaterialTheme.typography.labelMedium,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.onTertiaryContainer
-                        )
-                        Spacer(Modifier.height(4.dp))
-                        Text(
-                            summary,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onTertiaryContainer
-                        )
-                    }
-                }
-            }
-            HorizontalDivider()
+            val planName = state.planName
+            val dayLabel = state.planDayOfWeek?.let { dayLongLabel(it) }
 
             LazyColumn(
-                contentPadding = PaddingValues(16.dp),
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(state.groups, key = { it.exercise.id }) { group ->
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surface
-                        ),
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text(
-                                group.exercise.name,
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                            Spacer(Modifier.height(8.dp))
-                            group.sets.forEach { s ->
-                                Row(modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp)) {
-                                    Text(
-                                        "${s.setNumber}",
-                                        style = MaterialTheme.typography.bodyMedium,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        modifier = Modifier.width(32.dp)
+                item {
+                    ScreenHeader(
+                        title = "Trening",
+                        onBack = onBack,
+                        actions = {
+                            Box {
+                                IconButton(onClick = { menuOpen = true }) {
+                                    Icon(
+                                        Icons.Default.MoreVert,
+                                        contentDescription = null,
+                                        tint = DarkOnSurface
                                     )
-                                    Text(
-                                        "${formatWeight(s.weightKg)} kg × ${s.reps}",
-                                        style = MaterialTheme.typography.bodyLarge
+                                }
+                                DropdownMenu(
+                                    expanded = menuOpen,
+                                    onDismissRequest = { menuOpen = false }
+                                ) {
+                                    DropdownMenuItem(
+                                        text = { Text(stringResource(R.string.detail_repeat_workout)) },
+                                        leadingIcon = {
+                                            Icon(Icons.Default.Replay, contentDescription = null)
+                                        },
+                                        onClick = {
+                                            menuOpen = false
+                                            vm.repeatWorkout(onRepeated)
+                                        }
+                                    )
+                                    DropdownMenuItem(
+                                        text = { Text(stringResource(R.string.detail_save_as_plan)) },
+                                        leadingIcon = {
+                                            Icon(Icons.Default.EventNote, contentDescription = null)
+                                        },
+                                        onClick = {
+                                            menuOpen = false
+                                            vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
+                                        }
+                                    )
+                                    DropdownMenuItem(
+                                        text = { Text(stringResource(R.string.detail_delete_workout)) },
+                                        leadingIcon = {
+                                            Icon(Icons.Default.Delete, contentDescription = null)
+                                        },
+                                        onClick = {
+                                            menuOpen = false
+                                            showDelete = true
+                                        }
                                     )
                                 }
                             }
                         }
+                    )
+                }
+
+                // Origin label "Z PLANU: …" — żółty UPPERCASE bez karty
+                if (planName != null) {
+                    item {
+                        val labelText = buildString {
+                            append("Z PLANU: ")
+                            append(planName.uppercase())
+                            if (dayLabel != null) {
+                                append(" · ")
+                                append(dayLabel.uppercase())
+                            }
+                        }
+                        Text(
+                            labelText,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 1.4.sp
+                            ),
+                            color = AccentOrange,
+                            modifier = Modifier.padding(start = 4.dp, top = 0.dp, bottom = 0.dp),
+                            maxLines = 1
+                        )
                     }
                 }
+
+                // Tytuł: data + godzina
+                item {
+                    Text(
+                        formatDateLongPl(workout.startedAt),
+                        style = MaterialTheme.typography.headlineSmall.copy(
+                            fontWeight = FontWeight.ExtraBold,
+                            fontSize = 22.sp
+                        ),
+                        color = DarkOnSurface,
+                        modifier = Modifier.padding(start = 4.dp, top = 4.dp)
+                    )
+                }
+
+                // Subtitle: "Trwał X · zakończony / w toku"
+                item {
+                    val statusLabel = if (workout.finishedAt != null) "zakończony" else "w toku"
+                    Text(
+                        "Trwał ${formatDuration(workout.durationMillis)} · $statusLabel",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = DarkOnSurfaceVariant,
+                        modifier = Modifier.padding(start = 4.dp, bottom = 6.dp)
+                    )
+                }
+
+                // Divider cienki
+                item {
+                    HorizontalDivider(color = DarkOutlineSoft)
+                }
+
+                // 4 kafelki bez border, w jednej linii
+                item {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        StatCol("Czas", formatDuration(workout.durationMillis), null)
+                        StatCol("Ćwicz.", "${state.groups.size}", null)
+                        StatCol("Serie", "$totalSets", null)
+                        StatCol("Vol.", formatVolumeDisplay(totalVolume), "kg")
+                    }
+                }
+
+                // AI summary (jeśli jest)
+                workout.aiSummary?.takeIf { it.isNotBlank() }?.let { summary ->
+                    item {
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = AccentOrange.copy(alpha = 0.08f)
+                            ),
+                            border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.30f)),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Column(modifier = Modifier.padding(12.dp)) {
+                                Text(
+                                    "✨ PODSUMOWANIE TRENERA AI",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 10.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                                Spacer(Modifier.height(4.dp))
+                                Text(
+                                    summary,
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = DarkOnSurface
+                                )
+                            }
+                        }
+                    }
+                }
+
+                items(state.groups, key = { it.exercise.id }) { group ->
+                    ExerciseDetailCard(
+                        name = group.exercise.name,
+                        sets = group.sets
+                    )
+                }
             }
-        }
         }
 
         if (showDelete) {
@@ -269,44 +284,133 @@ fun WorkoutDetailScreen(
 }
 
 @Composable
-private fun dayLongLabel(day: Int): String? = when (day) {
-    1 -> stringResource(R.string.day_mon_long)
-    2 -> stringResource(R.string.day_tue_long)
-    3 -> stringResource(R.string.day_wed_long)
-    4 -> stringResource(R.string.day_thu_long)
-    5 -> stringResource(R.string.day_fri_long)
-    6 -> stringResource(R.string.day_sat_long)
-    7 -> stringResource(R.string.day_sun_long)
-    else -> null
+private fun ExerciseDetailCard(
+    name: String,
+    sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    name,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = DarkOnSurface,
+                    modifier = Modifier.weight(1f)
+                )
+                // Chip "X SERIE"
+                Box(
+                    modifier = Modifier
+                        .background(DarkSurfaceVariant, RoundedCornerShape(999.dp))
+                        .padding(horizontal = 10.dp, vertical = 4.dp)
+                ) {
+                    Text(
+                        "${sets.size} SERIE",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 0.8.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            sets.forEachIndexed { idx, s ->
+                SetRow(setNumber = s.setNumber, weightKg = s.weightKg, reps = s.reps, rpe = s.rpe)
+                if (idx < sets.size - 1) {
+                    Spacer(Modifier.height(2.dp))
+                    HorizontalDivider(color = DarkOutlineSoft)
+                    Spacer(Modifier.height(2.dp))
+                }
+            }
+        }
+    }
 }
 
 @Composable
-private fun StatBox(label: String, value: String) {
-    // Wartość mono ExtraBold biała, etykieta UPPERCASE szara z trackingiem
-    val mainText = value.removeSuffix("kg").trim()
-    val hasKg = value != mainText
-    Column(horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
-        androidx.compose.foundation.layout.Row(
-            verticalAlignment = androidx.compose.ui.Alignment.Bottom
-        ) {
+private fun SetRow(setNumber: Int, weightKg: Double, reps: Int, rpe: Int?) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            "Seria $setNumber",
+            style = MaterialTheme.typography.bodyMedium,
+            color = DarkOnSurfaceVariant,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            "${formatWeight(weightKg)}×$reps",
+            style = MaterialTheme.typography.bodyLarge.copy(
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = FontFamily.Monospace
+            ),
+            color = DarkOnSurface
+        )
+        if (rpe != null && rpe in 1..10) {
+            Spacer(Modifier.width(8.dp))
             Text(
-                mainText,
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                "RPE$rpe",
+                style = MaterialTheme.typography.labelMedium.copy(
                     fontWeight = FontWeight.ExtraBold,
-                    fontSize = 18.sp
+                    fontFamily = FontFamily.Monospace,
+                    fontSize = 12.sp
                 ),
-                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                color = rpeColor(rpe)
             )
-            if (hasKg) {
+        }
+    }
+}
+
+/**
+ * Kolor RPE wg konwencji w sportach siłowych:
+ * - 1-5: szary — zbyt lekko (nie buduje siły/masy)
+ * - 6-7: zielony — efektywne, kontrolowane (rozgrzewka cięższa, top set lekki)
+ * - 8: żółty — sweet spot dla hipertrofii (2-3 reps in reserve)
+ * - 9: pomarańczowy — bardzo ciężko (1 RIR), górna granica progresji
+ * - 10: czerwony — failure / max effort
+ */
+private fun rpeColor(rpe: Int): Color = when (rpe) {
+    in 1..5 -> DarkOnSurfaceVariant
+    6, 7 -> SuccessGreen
+    8 -> AccentOrange
+    9 -> Color(0xFFFF8C42)
+    10 -> ErrorRed
+    else -> DarkOnSurfaceVariant
+}
+
+@Composable
+private fun StatCol(label: String, value: String, suffix: String?) {
+    Column(horizontalAlignment = Alignment.Start) {
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text(
+                value,
+                style = MaterialTheme.typography.titleLarge.copy(
+                    fontFamily = FontFamily.Monospace,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 20.sp,
+                    letterSpacing = (-0.5).sp
+                ),
+                color = DarkOnSurface
+            )
+            if (suffix != null) {
                 Text(
-                    "kg",
+                    suffix,
                     style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 11.sp,
+                        fontSize = 10.sp,
                         fontWeight = FontWeight.SemiBold
                     ),
-                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
-                    modifier = Modifier.padding(start = 2.dp, bottom = 2.dp)
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.padding(start = 2.dp, bottom = 3.dp)
                 )
             }
         }
@@ -318,7 +422,25 @@ private fun StatBox(label: String, value: String) {
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 1.2.sp
             ),
-            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            color = DarkOnSurfaceVariant
         )
     }
+}
+
+private fun formatVolumeDisplay(kg: Double): String = when {
+    kg >= 10_000 -> "${"%.0f".format(kg)}"
+    kg >= 1000 -> "${"%.0f".format(kg)}"
+    else -> formatWeight(kg)
+}
+
+@Composable
+private fun dayLongLabel(day: Int): String? = when (day) {
+    1 -> stringResource(R.string.day_mon_long)
+    2 -> stringResource(R.string.day_tue_long)
+    3 -> stringResource(R.string.day_wed_long)
+    4 -> stringResource(R.string.day_thu_long)
+    5 -> stringResource(R.string.day_fri_long)
+    6 -> stringResource(R.string.day_sat_long)
+    7 -> stringResource(R.string.day_sun_long)
+    else -> null
 }

@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.util
 
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.toLocalDateTime
 import java.util.Locale
 
@@ -47,4 +48,23 @@ fun formatDateShort(epochMillis: Long): String {
     val day = dt.dayOfMonth.toString().padStart(2, '0')
     val month = dt.monthNumber.toString().padStart(2, '0')
     return "$day.$month"
+}
+
+private val PL_DAY_LONG = arrayOf(
+    "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"
+)
+private val PL_MONTH_SHORT = arrayOf(
+    "sty", "lut", "mar", "kwi", "maj", "cze",
+    "lip", "sie", "wrz", "paź", "lis", "gru"
+)
+
+/** "Wtorek, 29 kwi · 18:42" — dla nagłówka szczegółów treningu. */
+fun formatDateLongPl(epochMillis: Long): String {
+    val dt = Instant.fromEpochMilliseconds(epochMillis)
+        .toLocalDateTime(TimeZone.currentSystemDefault())
+    val dayName = PL_DAY_LONG[dt.dayOfWeek.isoDayNumber - 1]
+    val monthShort = PL_MONTH_SHORT[dt.monthNumber - 1]
+    val hour = dt.hour.toString().padStart(2, '0')
+    val minute = dt.minute.toString().padStart(2, '0')
+    return "$dayName, ${dt.dayOfMonth} $monthShort · $hour:$minute"
 }
