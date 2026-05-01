@@ -85,7 +85,9 @@ data class ProfileDto(
 data class ExerciseDto(
     val id: Long, val name: String,
     val primaryMuscle: String, val equipment: String,
-    val isCustom: Boolean, val notes: String
+    val isCustom: Boolean, val notes: String,
+    val description: String = "",
+    val metricType: String = "WEIGHT_REPS"
 )
 
 @Serializable
@@ -106,7 +108,11 @@ data class SetDto(
     val isCompleted: Boolean,
     val setType: String = "NORMAL",
     val isWarmup: Boolean = false,
-    val rpe: Int?, val createdAt: Long
+    val rpe: Int?, val createdAt: Long,
+    val rir: Int? = null,
+    val tempo: String? = null,
+    val durationSec: Int? = null,
+    val distanceM: Double? = null
 )
 
 @Serializable
@@ -249,8 +255,14 @@ class BackupViewModel @Inject constructor(
                         displayName = profile.displayName
                     ),
                     exercises = allExercises.map {
-                        ExerciseDto(it.id, it.name, it.primaryMuscle.name, it.equipment.name,
-                            it.isCustom, it.notes)
+                        ExerciseDto(
+                            id = it.id, name = it.name,
+                            primaryMuscle = it.primaryMuscle.name,
+                            equipment = it.equipment.name,
+                            isCustom = it.isCustom, notes = it.notes,
+                            description = it.description,
+                            metricType = it.metricType.name
+                        )
                     },
                     workouts = allWorkouts.map {
                         WorkoutDto(it.id, it.startedAt, it.finishedAt, it.notes,
@@ -258,11 +270,17 @@ class BackupViewModel @Inject constructor(
                             it.aiSummary, it.aiSummaryGeneratedAt)
                     },
                     sets = allSets.map {
-                        SetDto(it.id, it.workoutId, it.exerciseId, it.setNumber, it.orderIndex,
-                            it.reps, it.weightKg, it.isCompleted,
+                        SetDto(
+                            id = it.id, workoutId = it.workoutId, exerciseId = it.exerciseId,
+                            setNumber = it.setNumber, orderIndex = it.orderIndex,
+                            reps = it.reps, weightKg = it.weightKg,
+                            isCompleted = it.isCompleted,
                             setType = it.setType.name,
                             isWarmup = it.setType == SetType.WARMUP,
-                            it.rpe, it.createdAt)
+                            rpe = it.rpe, createdAt = it.createdAt,
+                            rir = it.rir, tempo = it.tempo,
+                            durationSec = it.durationSec, distanceM = it.distanceM
+                        )
                     },
                     plans = allPlans.map {
                         PlanDto(it.id, it.name, it.daysOfWeek, it.notes, it.createdAt, it.createdByAi)
@@ -407,7 +425,12 @@ class BackupViewModel @Inject constructor(
                                 .getOrDefault(MuscleGroup.OTHER),
                             equipment = runCatching { Equipment.valueOf(ex.equipment) }
                                 .getOrDefault(Equipment.OTHER),
-                            isCustom = true, notes = ex.notes
+                            isCustom = true,
+                            notes = ex.notes,
+                            description = ex.description,
+                            metricType = runCatching {
+                                pl.filebit.gymtracker.data.entity.MetricType.valueOf(ex.metricType)
+                            }.getOrDefault(pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS)
                         )
                     )
                 }
@@ -432,7 +455,11 @@ class BackupViewModel @Inject constructor(
                             reps = s.reps, weightKg = s.weightKg, isCompleted = s.isCompleted,
                             setType = if (s.setType.isNotBlank()) SetType.safeValueOf(s.setType)
                                 else if (s.isWarmup) SetType.WARMUP else SetType.NORMAL,
-                            rpe = s.rpe, createdAt = s.createdAt
+                            rpe = s.rpe, createdAt = s.createdAt,
+                            rir = s.rir,
+                            tempo = s.tempo,
+                            durationSec = s.durationSec,
+                            distanceM = s.distanceM
                         )
                     )
                 }
