@@ -28,15 +28,17 @@ import androidx.compose.ui.unit.sp
  */
 @Composable
 fun SplashScreen(onFinished: () -> Unit) {
-    val composition by rememberLottieComposition(
+    val compositionResult = rememberLottieComposition(
         LottieCompositionSpec.RawRes(R.raw.splash_animation)
     )
-    val progress by animateLottieCompositionAsState(
+    val composition = compositionResult.value
+    val animationState = animateLottieCompositionAsState(
         composition = composition,
         iterations = 1,
         speed = 1f,
         restartOnPlay = false
     )
+    val progress = animationState.value
 
     // Gdy animacja dojdzie do końca → wywołaj onFinished. Plus failsafe 4s.
     LaunchedEffect(progress) {
