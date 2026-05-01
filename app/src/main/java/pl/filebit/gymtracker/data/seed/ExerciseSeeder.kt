@@ -13,7 +13,8 @@ import pl.filebit.gymtracker.data.entity.MuscleGroup
 private data class SeedExercise(
     val name: String,
     val primaryMuscle: String,
-    val equipment: String
+    val equipment: String,
+    val description: String = ""
 )
 
 class ExerciseSeeder(
@@ -34,7 +35,8 @@ class ExerciseSeeder(
                 equipment = runCatching { Equipment.valueOf(s.equipment) }
                     .getOrDefault(Equipment.OTHER),
                 isCustom = false,
-                metricType = inferMetricType(s.name, s.primaryMuscle)
+                metricType = inferMetricType(s.name, s.primaryMuscle),
+                description = s.description
             )
         }
         dao.insertAll(entities)

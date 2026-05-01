@@ -32,5 +32,7 @@ data class Exercise(
     val equipment: Equipment,
     val isCustom: Boolean = false,
     val notes: String = "",
-    val metricType: MetricType = MetricType.WEIGHT_REPS
+    val metricType: MetricType = MetricType.WEIGHT_REPS,
+    /** Edukacyjny opis ćwiczenia: czym jest, jak wykonać, na co uważać. */
+    val description: String = ""
 )

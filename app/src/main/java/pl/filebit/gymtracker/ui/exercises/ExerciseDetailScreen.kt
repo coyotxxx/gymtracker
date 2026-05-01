@@ -90,6 +90,42 @@ fun ExerciseDetailScreen(
                     onBack = onBack
                 )
             }
+            // Opis ćwiczenia (jeśli wbudowany)
+            if (ex.description.isNotBlank()) {
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+                        ),
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp, DarkOutlineSoft
+                        ),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                "OPIS",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    letterSpacing = 1.4.sp
+                                ),
+                                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                            )
+                            Spacer(Modifier.height(8.dp))
+                            Text(
+                                ex.description,
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    lineHeight = 22.sp
+                                ),
+                                color = DarkOnSurface
+                            )
+                        }
+                    }
+                }
+            }
+
             // PR
             item {
                 Card(
