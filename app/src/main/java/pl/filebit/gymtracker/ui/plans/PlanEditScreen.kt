@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.ui.plans
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +16,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -26,16 +27,17 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.material.icons.filled.LinkOff
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -51,11 +53,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.GymChip
+import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
+import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -126,7 +136,7 @@ fun PlanEditScreen(
                     shape = RoundedCornerShape(12.dp)
                 )
             }
-            item { SectionHeader(stringResource(R.string.plan_day_tab_header)) }
+            item { LabelUp(stringResource(R.string.plan_day_tab_header)) }
             item {
                 DayTabRow(
                     selected = state.selectedDay,
@@ -134,7 +144,10 @@ fun PlanEditScreen(
                     onSelect = vm::setSelectedDay
                 )
             }
-            item { SectionHeader(stringResource(R.string.plan_exercises_header)) }
+            item {
+                val dayName = stringResource(dayLongRes(state.selectedDay))
+                LabelUp("${stringResource(R.string.plan_exercises_header)} · $dayName")
+            }
 
             val visibleExercises = state.exercisesForSelectedDay
             if (visibleExercises.isEmpty()) {
@@ -150,11 +163,11 @@ fun PlanEditScreen(
             itemsIndexed(visibleExercises, key = { _, it -> it.planEx.id }) { idx, item ->
                 // Oblicz label A1/A2 dla superserii
                 val supersetLabel = computeSupersetLabel(visibleExercises, idx)
-                val isInSuperset = item.planEx.supersetGroup != null
                 val isLinkedToPrev = idx > 0 &&
                     visibleExercises[idx - 1].planEx.supersetGroup == item.planEx.supersetGroup &&
                     item.planEx.supersetGroup != null
                 PlanExerciseCard(
+                    position = idx + 1,
                     item = item,
                     showAdvanced = state.showAdvancedFields,
                     canMoveUp = idx > 0,
@@ -194,17 +207,11 @@ fun PlanEditScreen(
                 )
             }
             item {
-                OutlinedButton(
+                GymPrimaryButton(
                     onClick = onAddExercise,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Add, contentDescription = null)
-                    Spacer(Modifier.width(8.dp))
-                    Text(stringResource(R.string.plan_add_exercise_to_day))
-                }
+                    text = stringResource(R.string.plan_add_exercise_to_day),
+                    leadingIcon = Icons.Default.Add
+                )
             }
         }
     }
@@ -228,14 +235,14 @@ fun PlanEditScreen(
     }
 }
 
-@Composable
-private fun SectionHeader(text: String) {
-    Text(
-        text,
-        style = MaterialTheme.typography.titleSmall,
-        color = MaterialTheme.colorScheme.primary,
-        fontWeight = FontWeight.SemiBold
-    )
+private fun dayLongRes(day: Int): Int = when (day) {
+    1 -> R.string.day_mon_long
+    2 -> R.string.day_tue_long
+    3 -> R.string.day_wed_long
+    4 -> R.string.day_thu_long
+    5 -> R.string.day_fri_long
+    6 -> R.string.day_sat_long
+    else -> R.string.day_sun_long
 }
 
 @Composable
@@ -246,7 +253,7 @@ private fun DayTabRow(
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+        horizontalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         listOf(
             1 to R.string.day_mon_short,
@@ -258,22 +265,36 @@ private fun DayTabRow(
             7 to R.string.day_sun_short
         ).forEach { (day, labelRes) ->
             val hasExercises = daysWithExercises.contains(day)
-            FilterChip(
+            val label = stringResource(labelRes)
+            GymChip(
+                text = if (hasExercises) "•$label" else label,
                 selected = day == selected,
                 onClick = { onSelect(day) },
-                label = {
-                    Text(
-                        if (hasExercises) "● " + stringResource(labelRes)
-                        else stringResource(labelRes)
-                    )
-                }
+                modifier = Modifier.weight(1f)
             )
         }
     }
 }
 
+private fun summarizeSets(sets: List<pl.filebit.gymtracker.data.entity.PlanExerciseSet>): String {
+    if (sets.isEmpty()) return "—"
+    val n = sets.size
+    val seriesLabel = when {
+        n == 1 -> "1 seria"
+        n in 2..4 -> "$n serie"
+        else -> "$n serii"
+    }
+    val repsValues = sets.map { it.reps }.distinct().sorted()
+    val repsLabel = if (repsValues.size == 1) "${repsValues[0]} powt." else "${repsValues.first()}-${repsValues.last()} powt."
+    val rest = sets.firstNotNullOfOrNull { it.restSeconds }
+    val parts = mutableListOf(seriesLabel, repsLabel)
+    if (rest != null) parts.add("${rest}s odp.")
+    return parts.joinToString(" · ")
+}
+
 @Composable
 private fun PlanExerciseCard(
+    position: Int,
     item: PlanExerciseWithDetail,
     showAdvanced: Boolean,
     canMoveUp: Boolean,
@@ -290,83 +311,112 @@ private fun PlanExerciseCard(
     onRemoveSet: (Long) -> Unit,
     onRemoveExercise: () -> Unit
 ) {
+    var menuExpanded by remember { mutableStateOf(false) }
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = if (supersetLabel != null)
-                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)
-            else pl.filebit.gymtracker.ui.theme.DarkSurface
+            containerColor = if (supersetLabel != null) AccentOrange.copy(alpha = 0.10f)
+            else DarkSurface
         ),
         border = androidx.compose.foundation.BorderStroke(
             1.dp,
-            if (supersetLabel != null) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.40f)
-            else pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+            if (supersetLabel != null) AccentOrange.copy(alpha = 0.40f) else DarkOutlineSoft
         ),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(18.dp)
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
+        Column(modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                if (supersetLabel != null) {
-                    Box(
-                        modifier = Modifier
-                            .padding(end = 8.dp)
-                            .background(
-                                pl.filebit.gymtracker.ui.theme.AccentOrange,
-                                RoundedCornerShape(6.dp)
-                            )
-                            .padding(horizontal = 6.dp, vertical = 2.dp)
+                // Numer pozycji ćwiczenia (lub label A1/A2 dla superserii)
+                Text(
+                    text = supersetLabel ?: "$position.",
+                    style = MaterialTheme.typography.headlineSmall.copy(
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 22.sp
+                    ),
+                    color = AccentOrange,
+                    modifier = Modifier.width(40.dp)
+                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        item.exercise?.name ?: "(?)",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 16.sp
+                        ),
+                        color = DarkOnSurface
+                    )
+                    Spacer(Modifier.height(2.dp))
+                    Text(
+                        summarizeSets(item.sets),
+                        style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+                Box {
+                    IconButton(
+                        onClick = { menuExpanded = true },
+                        modifier = Modifier.size(36.dp)
                     ) {
-                        Text(
-                            supersetLabel,
-                            style = MaterialTheme.typography.labelSmall,
-                            fontWeight = FontWeight.Bold,
-                            color = androidx.compose.ui.graphics.Color.Black
+                        Icon(
+                            Icons.Default.MoreVert,
+                            contentDescription = null,
+                            tint = DarkOnSurfaceVariant,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                    DropdownMenu(
+                        expanded = menuExpanded,
+                        onDismissRequest = { menuExpanded = false }
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text(if (isLinkedToPrev) "Rozłącz superserię" else "Połącz superserię") },
+                            leadingIcon = {
+                                Icon(
+                                    if (isLinkedToPrev) Icons.Default.LinkOff else Icons.Default.Link,
+                                    contentDescription = null
+                                )
+                            },
+                            enabled = canSuperset,
+                            onClick = {
+                                menuExpanded = false
+                                onToggleSuperset()
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Przenieś w górę") },
+                            leadingIcon = { Icon(Icons.Default.ArrowUpward, contentDescription = null) },
+                            enabled = canMoveUp,
+                            onClick = {
+                                menuExpanded = false
+                                onMoveUp()
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Przenieś w dół") },
+                            leadingIcon = { Icon(Icons.Default.ArrowDownward, contentDescription = null) },
+                            enabled = canMoveDown,
+                            onClick = {
+                                menuExpanded = false
+                                onMoveDown()
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("Usuń ćwiczenie") },
+                            leadingIcon = { Icon(Icons.Default.Delete, contentDescription = null) },
+                            onClick = {
+                                menuExpanded = false
+                                onRemoveExercise()
+                            }
                         )
                     }
                 }
-                Text(
-                    item.exercise?.name ?: "(?)",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Medium,
-                    modifier = Modifier.weight(1f)
-                )
-                IconButton(
-                    onClick = onToggleSuperset,
-                    enabled = canSuperset,
-                    modifier = Modifier.size(36.dp)
-                ) {
-                    Icon(
-                        if (isLinkedToPrev) Icons.Default.LinkOff else Icons.Default.Link,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp),
-                        tint = if (isLinkedToPrev) MaterialTheme.colorScheme.tertiary
-                        else MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                IconButton(
-                    onClick = onMoveUp,
-                    enabled = canMoveUp,
-                    modifier = Modifier.size(36.dp)
-                ) {
-                    Icon(Icons.Default.ArrowUpward, contentDescription = null, modifier = Modifier.size(18.dp))
-                }
-                IconButton(
-                    onClick = onMoveDown,
-                    enabled = canMoveDown,
-                    modifier = Modifier.size(36.dp)
-                ) {
-                    Icon(Icons.Default.ArrowDownward, contentDescription = null, modifier = Modifier.size(18.dp))
-                }
-                IconButton(onClick = onRemoveExercise) {
-                    Icon(Icons.Default.Delete, contentDescription = null)
-                }
             }
-            Spacer(Modifier.height(4.dp))
-            HorizontalDivider()
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
+            HorizontalDivider(color = DarkOutlineSoft)
+            Spacer(Modifier.height(10.dp))
 
             // Header
             Row(modifier = Modifier.fillMaxWidth()) {
@@ -420,15 +470,33 @@ private fun PlanExerciseCard(
                 }
             }
 
-            Spacer(Modifier.height(8.dp))
-            OutlinedButton(
-                onClick = onAddSet,
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(10.dp)
+            Spacer(Modifier.height(10.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(40.dp)
+                    .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
+                    .border(1.dp, AccentOrange.copy(alpha = 0.35f), RoundedCornerShape(10.dp))
+                    .clickable(onClick = onAddSet),
+                contentAlignment = Alignment.Center
             ) {
-                Icon(Icons.Default.Add, contentDescription = null)
-                Spacer(Modifier.width(6.dp))
-                Text(stringResource(R.string.plan_add_set))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        Icons.Default.Add,
+                        contentDescription = null,
+                        tint = AccentOrange,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text(
+                        stringResource(R.string.plan_add_set),
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 13.sp
+                        ),
+                        color = AccentOrange
+                    )
+                }
             }
         }
     }
