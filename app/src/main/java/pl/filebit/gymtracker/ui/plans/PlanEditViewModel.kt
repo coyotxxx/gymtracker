@@ -125,13 +125,20 @@ class PlanEditViewModel @Inject constructor(
                 val sets = planRepo.getSetsForPlanExercise(pe.id)
                 PlanExerciseWithDetail(pe, ex, sets)
             }
+            val daysWithExercises = withDetails.map { it.planEx.dayOfWeek }.toSet()
             _state.update {
+                val newSelected = when {
+                    daysWithExercises.isEmpty() -> it.selectedDay
+                    it.selectedDay in daysWithExercises -> it.selectedDay
+                    else -> daysWithExercises.min()
+                }
                 it.copy(
                     isNew = false,
                     name = plan.name,
                     daysOfWeek = plan.daysOfWeek.toSet(),
                     notes = plan.notes,
                     exercises = withDetails,
+                    selectedDay = newSelected,
                     isLoading = false
                 )
             }

@@ -63,7 +63,6 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
-import pl.filebit.gymtracker.ui.theme.GymChip
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
@@ -264,15 +263,52 @@ private fun DayTabRow(
             6 to R.string.day_sat_short,
             7 to R.string.day_sun_short
         ).forEach { (day, labelRes) ->
-            val hasExercises = daysWithExercises.contains(day)
-            val label = stringResource(labelRes)
-            GymChip(
-                text = if (hasExercises) "•$label" else label,
-                selected = day == selected,
+            DayPillChip(
+                label = stringResource(labelRes),
+                isActive = day == selected,
+                hasExercises = day in daysWithExercises,
                 onClick = { onSelect(day) },
                 modifier = Modifier.weight(1f)
             )
         }
+    }
+}
+
+@Composable
+private fun DayPillChip(
+    label: String,
+    isActive: Boolean,
+    hasExercises: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    // 3 stany:
+    // - Active: ciemne tło, żółta obwódka, żółty tekst (aktualnie przeglądany dzień)
+    // - Has exercises: ciemnożółte wypełnienie, żółty tekst
+    // - Empty: ciemne tło bez obwódki, szary tekst
+    val bg = when {
+        isActive -> AccentOrange.copy(alpha = 0.10f)
+        hasExercises -> AccentOrange.copy(alpha = 0.22f)
+        else -> DarkSurface
+    }
+    val borderColor = if (isActive) AccentOrange else androidx.compose.ui.graphics.Color.Transparent
+    val textColor = if (isActive || hasExercises) AccentOrange else DarkOnSurfaceVariant
+    Box(
+        modifier = modifier
+            .height(48.dp)
+            .background(bg, RoundedCornerShape(12.dp))
+            .border(if (isActive) 2.dp else 0.dp, borderColor, RoundedCornerShape(12.dp))
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 14.sp
+            ),
+            color = textColor
+        )
     }
 }
 
