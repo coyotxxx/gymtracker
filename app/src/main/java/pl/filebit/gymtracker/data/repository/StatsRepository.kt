@@ -262,6 +262,39 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Suma volume (kg × reps, bez warm-upów) per ISO tydzień, ostatnie [weeks] tygodni
+     * w kolejności chronologicznej (najstarszy → najnowszy). Index ostatniego tygodnia
+     * = bieżący tydzień (może być częściowy).
+     */
+    suspend fun volumePerWeek(weeks: Int): List<Double> {
+        val all = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+        if (all.isEmpty()) return List(weeks) { 0.0 }
+
+        // Mapa weekKey → volume
+        val byWeek = mutableMapOf<String, Double>()
+        for (w in all) {
+            val sets = setDao.getForWorkout(w.id)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP }
+            val vol = sets.sumOf { it.reps * it.weightKg }
+            val key = weekKey(w.startedAt)
+            byWeek[key] = (byWeek[key] ?: 0.0) + vol
+        }
+
+        // Ostatnie N tygodni licząc wstecz od dzisiaj — kolejność old → new
+        val nowMs = System.currentTimeMillis()
+        val result = ArrayList<Double>(weeks)
+        for (i in (weeks - 1) downTo 0) {
+            val key = weekKey(nowMs - i * 7L * 24L * 60L * 60L * 1000L)
+            result.add(byWeek[key] ?: 0.0)
+        }
+        return result
+    }
+
+    /** Najlepszy ciężar dla przysiadu (do hero karty PR PRZYSIADU). */
+    suspend fun bestSquatWeight(): Double = bestWeightForExerciseLike("przysiad")
+
+    /**
      * Najlepszy ciężar dla pierwszego ćwiczenia którego nazwa zawiera podany prefix.
      */
     private suspend fun bestWeightForExerciseLike(namePrefix: String): Double {

@@ -20,7 +20,12 @@ data class StatsUiState(
     val overview: OverviewStats? = null,
     val streak: StreakInfo? = null,
     val weekProgress: WeekProgress? = null,
-    val achievements: List<Achievement> = emptyList()
+    val achievements: List<Achievement> = emptyList(),
+    val bestSquatKg: Double = 0.0,
+    val volumeWeek: Double = 0.0,
+    val avgWorkoutDurationMillis: Long = 0L,
+    val volumePerWeek8: List<Double> = emptyList(),
+    val volumePerWeek26: List<Double> = emptyList()
 )
 
 @HiltViewModel
@@ -43,12 +48,24 @@ class StatsViewModel @Inject constructor(
             val target = profile.daysPerWeek.coerceAtLeast(1)
             val week = statsRepo.weekProgress(target)
             val achievements = statsRepo.unlockedAchievements(target)
+            val bestSquat = runCatching { statsRepo.bestSquatWeight() }.getOrDefault(0.0)
+            val vol26 = runCatching { statsRepo.volumePerWeek(26) }.getOrDefault(emptyList())
+            val vol8 = vol26.takeLast(8)
+            val volWeek = vol26.lastOrNull() ?: 0.0
+            val avgDuration = if (o.totalWorkouts > 0)
+                o.totalDurationMillis / o.totalWorkouts
+            else 0L
             _state.value = StatsUiState(
                 loading = false,
                 overview = o,
                 streak = streak,
                 weekProgress = week,
-                achievements = achievements
+                achievements = achievements,
+                bestSquatKg = bestSquat,
+                volumeWeek = volWeek,
+                avgWorkoutDurationMillis = avgDuration,
+                volumePerWeek8 = vol8,
+                volumePerWeek26 = vol26
             )
         }
     }
