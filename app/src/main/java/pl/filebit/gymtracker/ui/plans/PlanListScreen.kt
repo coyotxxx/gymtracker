@@ -24,6 +24,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.AlertDialog
@@ -240,10 +241,7 @@ private fun PlanCard(
                         DropdownMenuItem(
                             text = { Text("Edytuj plan") },
                             leadingIcon = {
-                                Icon(
-                                    androidx.compose.material.icons.Icons.Default.Edit,
-                                    contentDescription = null
-                                )
+                                Icon(Icons.Default.Edit, contentDescription = null)
                             },
                             onClick = { menuOpen = false; onEdit() }
                         )
