@@ -2,6 +2,9 @@ package pl.filebit.gymtracker.ui.workout
 
 import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -83,6 +86,7 @@ fun CoachWorkoutScreen(
     val pendingPRs by vm.pendingPRs.collectAsStateWithLifecycle()
     val pendingTips by vm.pendingTips.collectAsStateWithLifecycle()
     val pendingStagnation by vm.pendingStagnation.collectAsStateWithLifecycle()
+    val aiOpinion by vm.aiOpinion.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     var showConfirmDialog by remember { mutableStateOf(false) }
@@ -356,6 +360,56 @@ fun CoachWorkoutScreen(
             }
         )
     }
+
+    // Dialog z opinią AI o aktualnej sugestii
+    val opinion = aiOpinion
+    if (opinion !is AiOpinionState.Idle) {
+        AlertDialog(
+            onDismissRequest = { vm.dismissAiOpinion() },
+            title = {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        Icons.Default.AutoAwesome,
+                        contentDescription = null,
+                        tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text("Drugie zdanie trenera AI")
+                }
+            },
+            text = {
+                when (opinion) {
+                    is AiOpinionState.Loading -> {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            androidx.compose.material3.CircularProgressIndicator(
+                                modifier = Modifier.size(20.dp),
+                                strokeWidth = 2.dp,
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                            )
+                            Spacer(Modifier.width(12.dp))
+                            Text("AI analizuje historię ćwiczenia…")
+                        }
+                    }
+                    is AiOpinionState.Result -> Text(
+                        opinion.text,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    is AiOpinionState.Error -> Text(
+                        opinion.message,
+                        color = pl.filebit.gymtracker.ui.theme.ErrorRed,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    AiOpinionState.Idle -> {}
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { vm.dismissAiOpinion() }) {
+                    Text("OK")
+                }
+            }
+        )
+    }
 }
 
 @Composable
@@ -437,7 +491,7 @@ private fun CoachActiveContent(
                 modifier = Modifier.weight(1f)
             )
 
-            // CEL / SUGESTIA
+            // CEL / SUGESTIA + ikona AI "drugie zdanie"
             val sug = state.suggestionForCurrent
             if (sug != null) {
                 val arrow = when {
@@ -445,12 +499,34 @@ private fun CoachActiveContent(
                     sug.suggestedReps > sug.previousReps -> "↑"
                     else -> "→"
                 }
-                SuggestionCard(
-                    arrow = arrow,
-                    weightText = formatWeight(sug.suggestedWeightKg),
-                    repsText = "${sug.suggestedReps}",
-                    modifier = Modifier.weight(1f)
-                )
+                Box(modifier = Modifier.weight(1f)) {
+                    SuggestionCard(
+                        arrow = arrow,
+                        weightText = formatWeight(sug.suggestedWeightKg),
+                        repsText = "${sug.suggestedReps}",
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    // Ikona AI w prawym górnym rogu karty — pyta o drugie zdanie
+                    Box(
+                        modifier = Modifier
+                            .align(Alignment.TopEnd)
+                            .padding(6.dp)
+                            .size(28.dp)
+                            .background(
+                                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.20f),
+                                CircleShape
+                            )
+                            .clickable { vm.askAiOpinion() },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            Icons.Default.AutoAwesome,
+                            contentDescription = "Zapytaj AI",
+                            tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
             } else {
                 ContextCard(
                     icon = "💡",

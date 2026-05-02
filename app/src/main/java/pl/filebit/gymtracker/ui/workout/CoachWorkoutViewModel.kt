@@ -28,6 +28,13 @@ data class CoachExerciseGroup(
     val sets: List<WorkoutSet>
 )
 
+sealed class AiOpinionState {
+    object Idle : AiOpinionState()
+    object Loading : AiOpinionState()
+    data class Result(val text: String) : AiOpinionState()
+    data class Error(val message: String) : AiOpinionState()
+}
+
 data class CoachUiState(
     val workout: Workout? = null,
     val planName: String = "",
@@ -55,7 +62,8 @@ class CoachWorkoutViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository,
-    private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService
+    private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService,
+    private val rpeOpinionService: pl.filebit.gymtracker.ai.RpeOpinionService
 ) : ViewModel() {
 
     private val _pendingPRs = MutableStateFlow<List<NewPrWithName>>(emptyList())
@@ -67,9 +75,33 @@ class CoachWorkoutViewModel @Inject constructor(
     private val _pendingStagnation = MutableStateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>>(emptyList())
     val pendingStagnation: StateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>> = _pendingStagnation.asStateFlow()
 
+    // AI opinion (per-set drugie zdanie) — odpalane na żądanie ikonką w UI
+    private val _aiOpinion = MutableStateFlow<AiOpinionState>(AiOpinionState.Idle)
+    val aiOpinion: StateFlow<AiOpinionState> = _aiOpinion.asStateFlow()
+
     fun consumePendingPRs() { _pendingPRs.value = emptyList() }
     fun consumePendingTips() { _pendingTips.value = emptyList() }
     fun consumePendingStagnation() { _pendingStagnation.value = emptyList() }
+    fun dismissAiOpinion() { _aiOpinion.value = AiOpinionState.Idle }
+
+    fun askAiOpinion() {
+        val st = state.value
+        val sug = st.suggestionForCurrent ?: return
+        val ex = st.currentExercise ?: return
+        val workoutId = st.workout?.id
+        _aiOpinion.value = AiOpinionState.Loading
+        viewModelScope.launch {
+            val result = rpeOpinionService.ask(
+                exerciseId = ex.id,
+                suggestion = sug,
+                excludeWorkoutId = workoutId
+            )
+            result.fold(
+                onSuccess = { _aiOpinion.value = AiOpinionState.Result(it) },
+                onFailure = { _aiOpinion.value = AiOpinionState.Error(it.message ?: "Błąd AI") }
+            )
+        }
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<CoachUiState> = workoutRepo.observeActive()
