@@ -130,7 +130,8 @@ fun AppNavigation() {
         Screen.AiWeeklyReport.route,
         Screen.Measurements.route,
         Screen.MeasurementAdd.route,
-        Screen.BodyMap.route
+        Screen.BodyMap.route,
+        Screen.TrainingSettings.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
@@ -270,6 +271,7 @@ fun AppNavigation() {
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
                     onOpenAiWeeklyReport = { navController.navigate(Screen.AiWeeklyReport.route) },
+                    onOpenTrainingSettings = { navController.navigate(Screen.TrainingSettings.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
@@ -320,6 +322,11 @@ fun AppNavigation() {
                     },
                     onOpenHistory = { /* TODO v0.71 */ },
                     onOpenBodyMap = { navController.navigate(Screen.BodyMap.route) }
+                )
+            }
+            composable(Screen.TrainingSettings.route) {
+                pl.filebit.gymtracker.ui.profile.TrainingSettingsScreen(
+                    onBack = { navController.popBackStack() }
                 )
             }
             composable(Screen.BodyMap.route) {

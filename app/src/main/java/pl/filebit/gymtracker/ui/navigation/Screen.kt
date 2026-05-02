@@ -29,6 +29,7 @@ sealed class Screen(val route: String) {
         fun create(id: Long? = null) = "measurements/add?id=${id ?: 0L}"
     }
     object BodyMap : Screen("body-map")
+    object TrainingSettings : Screen("settings/training")
     object Goals : Screen("goals")
     object Glossary : Screen("glossary")
 

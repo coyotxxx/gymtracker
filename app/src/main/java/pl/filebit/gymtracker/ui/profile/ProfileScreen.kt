@@ -102,6 +102,7 @@ fun ProfileScreen(
     onOpenAiTrainer: () -> Unit,
     onOpenAiSettings: () -> Unit,
     onOpenAiWeeklyReport: () -> Unit,
+    onOpenTrainingSettings: () -> Unit,
     onOpenGoals: () -> Unit,
     onOpenGlossary: () -> Unit,
     onOpenAchievements: () -> Unit = {},
@@ -311,113 +312,15 @@ fun ProfileScreen(
                 }
             }
 
+            // Pozostałe parametry (cel wagowy, dni/tydz, czas sesji, rest,
+            // advanced fields, powiadomienia, flash, AI overlay) — w osobnym
+            // ekranie TrainingSettingsScreen (przycisk poniżej).
             item {
-                SectionCard(
-                    title = stringResource(R.string.profile_weight_goal),
-                    subtitle = "Określa kierunek bilansu kalorycznego sugerowanego przez AI."
-                ) {
-                    LazyRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        contentPadding = PaddingValues(vertical = 4.dp)
-                    ) {
-                        items(WeightGoalType.entries.toList()) { g ->
-                            pl.filebit.gymtracker.ui.theme.SelectableChip(
-                                text = g.label(),
-                                selected = draft.weightGoalType == g,
-                                onClick = { draft = draft.copy(weightGoalType = g) }
-                            )
-                        }
-                    }
-                    if (draft.weightGoalType != WeightGoalType.NONE) {
-                        Spacer(Modifier.height(12.dp))
-                        TargetWeightField(
-                            value = draft.targetWeightKg,
-                            onChange = { draft = draft.copy(targetWeightKg = it) }
-                        )
-                    }
-                }
-            }
-
-            item {
-                NumberFieldCard(
-                    label = stringResource(R.string.profile_days_per_week),
-                    value = draft.daysPerWeek,
-                    range = 1..7,
-                    onChange = { draft = draft.copy(daysPerWeek = it) }
-                )
-            }
-
-            item {
-                NumberFieldCard(
-                    label = stringResource(R.string.profile_session_minutes),
-                    value = draft.sessionMinutes,
-                    range = 15..240,
-                    onChange = { draft = draft.copy(sessionMinutes = it) }
-                )
-            }
-
-            item {
-                NumberFieldCard(
-                    label = stringResource(R.string.profile_default_rest),
-                    value = draft.defaultRestSeconds,
-                    range = 15..600,
-                    onChange = { draft = draft.copy(defaultRestSeconds = it) }
-                )
-            }
-
-            item {
-                ToggleSection(
-                    title = stringResource(R.string.profile_advanced_section),
-                    label = stringResource(R.string.profile_advanced_toggle),
-                    explain = stringResource(R.string.profile_advanced_explain),
-                    checked = draft.showAdvancedSetFields,
-                    onChange = { draft = draft.copy(showAdvancedSetFields = it) }
-                )
-            }
-
-            item {
-                ToggleSection(
-                    title = stringResource(R.string.profile_unfinished_section),
-                    label = stringResource(R.string.profile_unfinished_toggle),
-                    explain = stringResource(R.string.profile_unfinished_explain),
-                    checked = draft.unfinishedWorkoutNotifyEnabled,
-                    onChange = { draft = draft.copy(unfinishedWorkoutNotifyEnabled = it) }
-                ) {
-                    if (draft.unfinishedWorkoutNotifyEnabled) {
-                        Spacer(Modifier.height(12.dp))
-                        OutlinedTextField(
-                            value = draft.unfinishedWorkoutNotifyHours.toString(),
-                            onValueChange = { v ->
-                                v.filter { it.isDigit() }.toIntOrNull()?.let { n ->
-                                    if (n in 1..12) draft = draft.copy(unfinishedWorkoutNotifyHours = n)
-                                }
-                            },
-                            label = { Text(stringResource(R.string.profile_unfinished_hours)) },
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                            modifier = Modifier.fillMaxWidth()
-                        )
-                    }
-                }
-            }
-
-            item {
-                ToggleSection(
-                    title = stringResource(R.string.profile_flash_section),
-                    label = stringResource(R.string.profile_flash_toggle),
-                    explain = stringResource(R.string.profile_flash_explain),
-                    checked = draft.flashOnTimerEnd,
-                    onChange = { draft = draft.copy(flashOnTimerEnd = it) }
-                )
-            }
-
-            item {
-                ToggleSection(
-                    title = stringResource(R.string.profile_ai_overlay_section),
-                    label = stringResource(R.string.profile_ai_overlay_toggle),
-                    explain = stringResource(R.string.profile_ai_overlay_explain),
-                    checked = draft.aiOverlayEnabled,
-                    onChange = { draft = draft.copy(aiOverlayEnabled = it) }
+                ProfileNavRow(
+                    icon = Icons.Default.FitnessCenter,
+                    title = "Więcej ustawień treningu",
+                    subtitle = "Cel wagowy, dni/tydz, czas sesji, rest, powiadomienia, AI overlay",
+                    onClick = onOpenTrainingSettings
                 )
             }
 
