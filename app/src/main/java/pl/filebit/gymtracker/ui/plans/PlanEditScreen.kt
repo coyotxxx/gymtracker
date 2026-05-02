@@ -29,6 +29,7 @@ import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.automirrored.filled.HelpOutline
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.material.icons.filled.LinkOff
 import androidx.compose.material.icons.filled.MoreVert
@@ -283,7 +284,7 @@ fun PlanEditScreen(
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
-                                androidx.compose.material.icons.Icons.Default.AutoAwesome,
+                                Icons.Default.AutoAwesome,
                                 contentDescription = null,
                                 tint = AccentOrange,
                                 modifier = Modifier.size(18.dp)
@@ -394,7 +395,7 @@ fun PlanEditScreen(
             title = {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(
-                        androidx.compose.material.icons.Icons.Default.AutoAwesome,
+                        Icons.Default.AutoAwesome,
                         contentDescription = null,
                         tint = AccentOrange,
                         modifier = Modifier.size(20.dp)
