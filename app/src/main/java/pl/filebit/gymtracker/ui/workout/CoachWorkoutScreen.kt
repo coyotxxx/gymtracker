@@ -161,7 +161,8 @@ fun CoachWorkoutScreen(
                 state.currentSet != null && state.currentExercise != null -> CoachActiveContent(
                     state = state,
                     onConfirmTap = { showConfirmDialog = true },
-                    onSkip = { vm.skipCurrentSet() }
+                    onSkip = { vm.skipCurrentSet() },
+                    onAskAiOpinion = { vm.askAiOpinion() }
                 )
             }
 
@@ -417,7 +418,8 @@ fun CoachWorkoutScreen(
 private fun CoachActiveContent(
     state: CoachUiState,
     onConfirmTap: () -> Unit,
-    onSkip: () -> Unit
+    onSkip: () -> Unit,
+    onAskAiOpinion: () -> Unit
 ) {
     val current = state.currentSet ?: return
     val exercise = state.currentExercise ?: return
@@ -517,7 +519,7 @@ private fun CoachActiveContent(
                                 pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.20f),
                                 CircleShape
                             )
-                            .clickable { vm.askAiOpinion() },
+                            .clickable { onAskAiOpinion() },
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
