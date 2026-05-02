@@ -97,7 +97,6 @@ fun ProfileScreen(
     onOpenBody: () -> Unit,
     onOpenMeasurements: () -> Unit,
     onOpenMuscles: () -> Unit,
-    onOpenMusclesV2: () -> Unit,
     onOpenPhotos: () -> Unit,
     onOpenStrength: () -> Unit,
     onOpenAiTrainer: () -> Unit,
@@ -216,16 +215,7 @@ fun ProfileScreen(
             item {
                 ProfileNavRow(
                     icon = Icons.Default.AccessibilityNew,
-                    title = "Mapa mięśni",
-                    subtitle = "Nowy styl — zaangażowanie partii w czasie",
-                    onClick = onOpenMusclesV2
-                )
-            }
-            item {
-                ProfileNavRow(
-                    icon = Icons.Default.AccessibilityNew,
-                    title = "Mapa mięśni (klasyczna)",
-                    subtitle = "Stary styl — backup",
+                    title = stringResource(R.string.muscles_title),
                     onClick = onOpenMuscles
                 )
             }
