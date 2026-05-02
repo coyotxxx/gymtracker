@@ -90,7 +90,7 @@ fun StatsScreen(
                 )
             }
 
-            // === 4 karty 2×2 ===
+            // === 4 kafelki TOP — czyste analityczne metryki ===
             item {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     StatTile(
@@ -101,11 +101,10 @@ fun StatsScreen(
                         modifier = Modifier.weight(1f)
                     )
                     StatTile(
-                        value = if (state.bestSquatKg > 0) formatWeight(state.bestSquatKg) else "—",
-                        suffix = if (state.bestSquatKg > 0) "kg" else null,
-                        label = "PR przysiadu",
+                        value = "${state.personalRecords.size}",
+                        suffix = null,
+                        label = "Personal Records",
                         valueColor = AccentOrange,
-                        suffixColor = AccentOrange.copy(alpha = 0.85f),
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -115,7 +114,9 @@ fun StatsScreen(
                     StatTile(
                         value = formatVolumeShort(state.volumeWeek),
                         suffix = "kg",
-                        label = "Vol. tygodnia",
+                        label = if (state.volumeWeekDelta != 0.0)
+                            "Vol. tygodnia ${if (state.volumeWeekDelta >= 0) "+" else ""}${"%.0f".format(state.volumeWeekDelta)}%"
+                        else "Vol. tygodnia",
                         valueColor = DarkOnSurface,
                         modifier = Modifier.weight(1f)
                     )
@@ -129,12 +130,19 @@ fun StatsScreen(
                 }
             }
 
-            // === Bar chart "OBJĘTOŚĆ TYGODNIOWO" z toggle 8/26 ===
+            // === WYKRES VOLUME 8/26 tyg ===
             item {
                 WeeklyVolumeCard(
                     weeks8 = state.volumePerWeek8,
                     weeks26 = state.volumePerWeek26
                 )
+            }
+
+            // === CALENDAR HEATMAP — ostatnie 12 tygodni (84 dni) ===
+            if (state.calendarHeatmap.isNotEmpty()) {
+                item {
+                    CalendarHeatmapCard(heatmap = state.calendarHeatmap)
+                }
             }
 
             // === VOLUME PER PARTIA — bieżący tydzień ===
@@ -144,22 +152,40 @@ fun StatsScreen(
                 }
             }
 
-            // === Top odznaki ===
-            if (state.achievements.isNotEmpty()) {
+            // === RECOVERY — ostatni trening per partia ===
+            if (state.recovery.isNotEmpty()) {
                 item {
-                    TopAchievementsCard(
-                        achievements = state.achievements,
-                        onOpenAll = onOpenAchievements
-                    )
+                    RecoveryCard(recovery = state.recovery)
                 }
             }
 
-            // === Streak + cel tygodnia (zostawione jako bonus) ===
-            state.streak?.let { s ->
-                item { StreakCard(current = s.current, best = s.best) }
+            // === STAGNACJE — jeśli są ===
+            if (state.stagnations.isNotEmpty()) {
+                item {
+                    StagnationsCard(stagnations = state.stagnations)
+                }
             }
-            state.weekProgress?.let { w ->
-                item { WeekTargetCard(current = w.current, target = w.target, percent = w.percent) }
+
+            // === PERSONAL RECORDS — pełna lista ===
+            if (state.personalRecords.isNotEmpty()) {
+                item {
+                    PersonalRecordsHeader(count = state.personalRecords.size)
+                }
+                state.personalRecords.take(15).forEach { pr ->
+                    item(key = pr.exerciseId) {
+                        PrRow(pr = pr)
+                    }
+                }
+                if (state.personalRecords.size > 15) {
+                    item {
+                        Text(
+                            "+ ${state.personalRecords.size - 15} kolejnych ćwiczeń",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant,
+                            modifier = Modifier.padding(start = 8.dp, top = 4.dp)
+                        )
+                    }
+                }
             }
         }
     }
@@ -343,197 +369,9 @@ private fun formatVolumeShort(kg: Double): String = when {
 // Top odznaki — 3×2 grid kafelków
 // ============================================================
 
-@Composable
-private fun TopAchievementsCard(
-    achievements: List<Achievement>,
-    onOpenAll: () -> Unit
-) {
-    val unlocked = achievements.count { it.unlocked }
-    val total = achievements.size
-    // Ostatnio odblokowane najpierw, potem najbliższe ukończenia
-    val top6 = achievements
-        .sortedWith(compareByDescending<Achievement> { it.unlocked }
-            .thenByDescending { it.unlockedAt ?: 0L }
-            .thenByDescending { it.progress })
-        .take(6)
-
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    "TOP ODZNAKI",
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.Bold,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = DarkOnSurfaceVariant,
-                    modifier = Modifier.weight(1f)
-                )
-                Text(
-                    "$unlocked / $total →",
-                    style = MaterialTheme.typography.bodySmall.copy(
-                        fontWeight = FontWeight.SemiBold
-                    ),
-                    color = AccentOrange,
-                    modifier = Modifier.clickable(onClick = onOpenAll)
-                )
-            }
-            Spacer(Modifier.height(12.dp))
-            // 2 wiersze po 3
-            top6.chunked(3).forEach { row ->
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    row.forEach { a ->
-                        AchievementTile(
-                            emoji = a.emoji,
-                            unlocked = a.unlocked,
-                            modifier = Modifier.weight(1f)
-                        )
-                    }
-                    // Wypełnij brakujące miejsca placeholdersem
-                    repeat(3 - row.size) {
-                        Spacer(Modifier.weight(1f))
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun AchievementTile(emoji: String, unlocked: Boolean, modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .aspectRatio(1f)
-            .background(
-                if (unlocked) AccentOrange.copy(alpha = 0.15f) else DarkSurfaceVariant,
-                RoundedCornerShape(12.dp)
-            )
-            .border(
-                1.dp,
-                if (unlocked) AccentOrange.copy(alpha = 0.30f) else DarkOutlineSoft,
-                RoundedCornerShape(12.dp)
-            ),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            emoji,
-            style = MaterialTheme.typography.headlineMedium.copy(fontSize = 28.sp)
-        )
-    }
-}
-
-// ============================================================
-// Streak + Week Target — zachowane (bonus pod głównymi sekcjami)
-// ============================================================
-
-@Composable
-private fun StreakCard(current: Int, best: Int) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                "🔥",
-                style = MaterialTheme.typography.headlineMedium.copy(fontSize = 32.sp)
-            )
-            Spacer(Modifier.size(12.dp))
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    "$current ${if (current == 1) "tydz." else "tyg."} z rzędu",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = DarkOnSurface
-                )
-                Text(
-                    "Najlepszy streak: $best ${if (best == 1) "tydz." else "tyg."}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun WeekTargetCard(current: Int, target: Int, percent: Int) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        "TYGODNIOWY CEL",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Bold,
-                            letterSpacing = 1.4.sp
-                        ),
-                        color = DarkOnSurfaceVariant
-                    )
-                    Spacer(Modifier.height(4.dp))
-                    Row(verticalAlignment = Alignment.Bottom) {
-                        Text(
-                            "$current",
-                            style = MaterialTheme.typography.headlineMedium.copy(
-                                fontWeight = FontWeight.ExtraBold,
-                                fontFamily = FontFamily.Monospace,
-                                fontSize = 32.sp
-                            ),
-                            color = AccentOrange
-                        )
-                        Text(
-                            " / $target",
-                            style = MaterialTheme.typography.titleMedium.copy(
-                                fontWeight = FontWeight.SemiBold,
-                                fontFamily = FontFamily.Monospace
-                            ),
-                            color = DarkOnSurfaceVariant,
-                            modifier = Modifier.padding(bottom = 4.dp)
-                        )
-                    }
-                }
-                Text(
-                    "${percent.coerceAtMost(999)}%",
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        fontWeight = FontWeight.Bold
-                    ),
-                    color = if (percent >= 100) AccentOrange else DarkOnSurfaceVariant
-                )
-            }
-            Spacer(Modifier.height(8.dp))
-            androidx.compose.material3.LinearProgressIndicator(
-                progress = { (percent / 100f).coerceIn(0f, 1f) },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(6.dp),
-                color = AccentOrange,
-                trackColor = DarkSurfaceVariant,
-                strokeCap = androidx.compose.ui.graphics.StrokeCap.Round,
-                gapSize = 0.dp,
-                drawStopIndicator = {}
-            )
-        }
-    }
-}
+// (Usunięte v0.73.0: TopAchievementsCard, AchievementTile, StreakCard,
+// WeekTargetCard — duplikaty Home/Achievements; zastąpione PR/Recovery/
+// Stagnations/CalendarHeatmap z realną wartością analityczną.)
 
 @Composable
 private fun MuscleVolumeCard(reports: List<pl.filebit.gymtracker.util.MuscleVolumeReport>) {
@@ -615,4 +453,278 @@ private fun MuscleVolumeRow(r: pl.filebit.gymtracker.util.MuscleVolumeReport) {
             )
         }
     }
+}
+
+// ============================================================
+// CALENDAR HEATMAP — 12 tyg (84 dni)
+// ============================================================
+
+@Composable
+private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
+    pl.filebit.gymtracker.ui.theme.GymCard {
+        Column(modifier = Modifier.padding(16.dp)) {
+            pl.filebit.gymtracker.ui.theme.LabelUp("Aktywność — 12 tygodni", accent = true)
+            Spacer(Modifier.height(2.dp))
+            Text(
+                "Każdy kwadrat = jeden dzień. Intensywność = objętość.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(12.dp))
+
+            val today = System.currentTimeMillis() / 86_400_000L
+            val maxVol = heatmap.values.maxOrNull()?.takeIf { it > 0 } ?: 1.0
+            // 12 kolumn (tygodnie) × 7 wierszy (dni)
+            val daysToShow = 84
+            val startDay = today - daysToShow + 1
+            Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                for (week in 0 until 12) {
+                    Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                        for (dayOfWeek in 0..6) {
+                            val day = startDay + week * 7 + dayOfWeek
+                            val vol = heatmap[day] ?: 0.0
+                            val intensity = if (vol > 0) (vol / maxVol).coerceIn(0.15, 1.0).toFloat() else 0f
+                            val color = if (intensity > 0)
+                                AccentOrange.copy(alpha = intensity * 0.95f)
+                            else DarkSurfaceVariant
+                            Box(
+                                modifier = Modifier
+                                    .size(width = 16.dp, height = 16.dp)
+                                    .background(color, RoundedCornerShape(3.dp))
+                            )
+                        }
+                    }
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            // Legenda
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    "mniej",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.width(6.dp))
+                listOf(0.15f, 0.35f, 0.6f, 0.85f).forEach { a ->
+                    Box(
+                        modifier = Modifier
+                            .size(12.dp)
+                            .background(AccentOrange.copy(alpha = a), RoundedCornerShape(2.dp))
+                    )
+                    Spacer(Modifier.width(3.dp))
+                }
+                Text(
+                    "więcej",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+// ============================================================
+// RECOVERY — ostatni trening per partia
+// ============================================================
+
+@Composable
+private fun RecoveryCard(recovery: List<pl.filebit.gymtracker.data.repository.MuscleRecovery>) {
+    pl.filebit.gymtracker.ui.theme.GymCard {
+        Column(modifier = Modifier.padding(16.dp)) {
+            pl.filebit.gymtracker.ui.theme.LabelUp("Recovery", accent = true)
+            Spacer(Modifier.height(2.dp))
+            Text(
+                "Ostatni trening per partia. ⚠ = czas najwyżej.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(10.dp))
+            recovery.forEach { rec ->
+                RecoveryRow(rec)
+            }
+        }
+    }
+}
+
+@Composable
+private fun RecoveryRow(rec: pl.filebit.gymtracker.data.repository.MuscleRecovery) {
+    val (status, color) = when {
+        rec.daysAgo >= 14 -> "⚠ ZA DAWNO" to pl.filebit.gymtracker.ui.theme.ErrorRed
+        rec.daysAgo >= 7 -> "WARTO" to AccentOrange
+        rec.daysAgo >= 2 -> "OK" to pl.filebit.gymtracker.ui.theme.SuccessGreen
+        else -> "RECOVERY" to DarkOnSurfaceVariant
+    }
+    val muscleName = muscleLabelPl(rec.muscle)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 5.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            muscleName,
+            style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            when (rec.daysAgo) {
+                0 -> "dziś"
+                1 -> "wczoraj"
+                in 2..6 -> "${rec.daysAgo} dni"
+                else -> "${rec.daysAgo} dni"
+            },
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                fontSize = 13.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            color = DarkOnSurface,
+            modifier = Modifier.padding(end = 10.dp)
+        )
+        Box(
+            modifier = Modifier
+                .background(color.copy(alpha = 0.18f), RoundedCornerShape(6.dp))
+                .padding(horizontal = 8.dp, vertical = 3.dp)
+        ) {
+            Text(
+                status,
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 10.sp,
+                    letterSpacing = 0.5.sp
+                ),
+                color = color
+            )
+        }
+    }
+}
+
+// ============================================================
+// STAGNACJE
+// ============================================================
+
+@Composable
+private fun StagnationsCard(stagnations: List<pl.filebit.gymtracker.data.repository.StagnationAlert>) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(pl.filebit.gymtracker.ui.theme.ErrorRed.copy(alpha = 0.10f), RoundedCornerShape(16.dp))
+            .border(1.dp, pl.filebit.gymtracker.ui.theme.ErrorRed.copy(alpha = 0.40f), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            pl.filebit.gymtracker.ui.theme.LabelUp("Stagnacje (${stagnations.size})")
+            Spacer(Modifier.height(8.dp))
+            stagnations.forEach { s ->
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        s.exerciseName,
+                        style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                        color = DarkOnSurface,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Text(
+                        "${formatWeight(s.stuckAtKg)} kg × ${s.workoutsAtSameWeight} treningów",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        color = pl.filebit.gymtracker.ui.theme.ErrorRed
+                    )
+                }
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Sugestia: deload (-10%) lub wymiana wariantu ćwiczenia.",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+// ============================================================
+// PERSONAL RECORDS
+// ============================================================
+
+@Composable
+private fun PersonalRecordsHeader(count: Int) {
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        pl.filebit.gymtracker.ui.theme.LabelUp("Personal Records ($count)", accent = true)
+    }
+}
+
+@Composable
+private fun PrRow(pr: pl.filebit.gymtracker.data.repository.PersonalRecordRow) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(DarkSurface, RoundedCornerShape(12.dp))
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(12.dp))
+            .padding(horizontal = 14.dp, vertical = 10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                pr.exerciseName,
+                style = MaterialTheme.typography.titleSmall.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 13.sp
+                ),
+                color = DarkOnSurface,
+                maxLines = 1
+            )
+            Text(
+                muscleLabelPl(pr.muscle),
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                color = DarkOnSurfaceVariant
+            )
+        }
+        Column(horizontalAlignment = Alignment.End) {
+            Row(verticalAlignment = Alignment.Bottom) {
+                Text(
+                    formatWeight(pr.pr.maxWeightKg),
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 16.sp
+                    ),
+                    color = AccentOrange
+                )
+                Text(
+                    " kg × ${pr.pr.repsAtMaxWeight}",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Text(
+                "1RM ~${formatWeight(pr.pr.estimated1RM)} kg",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+private fun muscleLabelPl(muscle: pl.filebit.gymtracker.data.entity.MuscleGroup): String = when (muscle) {
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST -> "Klatka"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BACK -> "Plecy"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS -> "Barki"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS -> "Biceps"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS -> "Triceps"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS -> "Czworogłowe"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS -> "Dwugłowe (uda)"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES -> "Pośladki"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES -> "Łydki"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CORE -> "Brzuch"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO -> "Cardio"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.OTHER -> "Inne"
 }

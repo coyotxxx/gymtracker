@@ -4,6 +4,7 @@ import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.WorkoutSet
+import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.math.roundToInt
@@ -718,6 +719,82 @@ class StatsRepository @Inject constructor(
         }
         return results
     }
+
+    /**
+     * Lista wszystkich PR-ów (per ćwiczenie) — używa istniejącej prForExercise().
+     * Sortowane wg estimated 1RM malejąco.
+     */
+    suspend fun allPersonalRecords(): List<PersonalRecordRow> {
+        val allExercises = exerciseDao.observeAll().first()
+        return allExercises.mapNotNull { ex ->
+            val pr = prForExercise(ex.id) ?: return@mapNotNull null
+            PersonalRecordRow(
+                exerciseId = ex.id,
+                exerciseName = ex.name,
+                muscle = ex.primaryMuscle,
+                pr = pr
+            )
+        }.sortedByDescending { it.pr.estimated1RM }
+    }
+
+    /**
+     * Heatmap kalendarzowa — ostatnich N dni, sumaryczna objętość kg per dzień.
+     * Mapa epochDay → totalVolume.
+     */
+    suspend fun calendarHeatmap(days: Int = 84): Map<Long, Double> {
+        val now = System.currentTimeMillis()
+        val cutoff = now - days * 86_400_000L
+        val workouts = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && it.startedAt >= cutoff }
+        if (workouts.isEmpty()) return emptyMap()
+        val sets = workouts.flatMap { w ->
+            setDao.getForWorkout(w.id)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        }
+        return sets.groupBy { (it.createdAt / 86_400_000L) }
+            .mapValues { (_, list) -> list.sumOf { it.reps * it.weightKg } }
+    }
+
+    /**
+     * Recovery: ostatni trening per partia mięśniowa (dni temu).
+     */
+    suspend fun recoveryByMuscle(): List<MuscleRecovery> {
+        val now = System.currentTimeMillis()
+        val workouts = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .associateBy { it.id }
+        val allSets = workouts.keys.flatMap { wid ->
+            setDao.getForWorkout(wid)
+                .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        }
+        if (allSets.isEmpty()) return emptyList()
+        val exMap = allSets.map { it.exerciseId }.distinct()
+            .associateWith { exerciseDao.getById(it) }
+
+        val byMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Long>()
+        allSets.forEach { s ->
+            val muscle = exMap[s.exerciseId]?.primaryMuscle ?: return@forEach
+            val workout = workouts[s.workoutId] ?: return@forEach
+            val day = workout.startedAt
+            val current = byMuscle[muscle]
+            if (current == null || day > current) byMuscle[muscle] = day
+        }
+        return byMuscle.map { (muscle, lastTraining) ->
+            val daysAgo = ((now - lastTraining) / 86_400_000L).toInt()
+            MuscleRecovery(muscle = muscle, lastTrainingMillis = lastTraining, daysAgo = daysAgo)
+        }.sortedByDescending { it.daysAgo }
+    }
+
+    /**
+     * Wszystkie wykryte stagnacje — agreguje detectStagnation dla
+     * ostatnich treningów (wystarczy ostatni żeby zobaczyć aktualne).
+     */
+    suspend fun allStagnations(): List<StagnationAlert> {
+        val lastFinished = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .maxByOrNull { it.startedAt } ?: return emptyList()
+        return detectStagnation(lastFinished.id, threshold = 3)
+    }
 }
 
 data class NewPr(
@@ -883,3 +960,16 @@ data class PreviousSession(
     val sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>
 )
 
+
+data class PersonalRecordRow(
+    val exerciseId: Long,
+    val exerciseName: String,
+    val muscle: pl.filebit.gymtracker.data.entity.MuscleGroup,
+    val pr: ExercisePr
+)
+
+data class MuscleRecovery(
+    val muscle: pl.filebit.gymtracker.data.entity.MuscleGroup,
+    val lastTrainingMillis: Long,
+    val daysAgo: Int
+)
