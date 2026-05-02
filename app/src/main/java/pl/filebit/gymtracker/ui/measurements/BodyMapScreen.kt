@@ -21,7 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Female
-import androidx.compose.material.icons.filled.InfoOutline
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Male
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Straighten
@@ -135,7 +135,7 @@ fun BodyMapScreen(
                     Column(modifier = Modifier.padding(16.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
-                                Icons.Default.InfoOutline,
+                                Icons.Default.Info,
                                 contentDescription = null,
                                 tint = AccentOrange,
                                 modifier = Modifier.size(18.dp)
