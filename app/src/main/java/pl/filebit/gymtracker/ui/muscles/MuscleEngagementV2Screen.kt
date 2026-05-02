@@ -227,10 +227,10 @@ private fun LegendCard() {
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            LegendDot(StatusColorV2.NEGLECTED, "Zaniedb.")
-            LegendDot(StatusColorV2.UNDER, "Mało")
-            LegendDot(StatusColorV2.BALANCED, "Balans")
-            LegendDot(StatusColorV2.OVER, "Dużo")
+            LegendDot(StatusColor.NEGLECTED, "Zaniedb.")
+            LegendDot(StatusColor.UNDER, "Mało")
+            LegendDot(StatusColor.BALANCED, "Balans")
+            LegendDot(StatusColor.OVER, "Dużo")
         }
     }
 }
@@ -370,7 +370,7 @@ private fun statusHint(a: MuscleAnalysis): String? = when (a.status) {
  * Stałe kolory statusów — celowo NIE z theme, bo czerwony/zielony powinien
  * być rozpoznawalny niezależnie od trybu jasny/ciemny.
  */
-private object StatusColorV2 {
+private object StatusColor {
     val NEGLECTED = Color(0xFFE74C3C)  // czerwony
     val UNDER = Color(0xFFF39C12)      // pomarańczowy
     val BALANCED = Color(0xFF2ECC71)   // zielony
@@ -378,10 +378,10 @@ private object StatusColorV2 {
 }
 
 private fun MuscleStatus.tint(): Color = when (this) {
-    MuscleStatus.NEGLECTED -> StatusColorV2.NEGLECTED
-    MuscleStatus.UNDER -> StatusColorV2.UNDER
-    MuscleStatus.BALANCED -> StatusColorV2.BALANCED
-    MuscleStatus.OVER -> StatusColorV2.OVER
+    MuscleStatus.NEGLECTED -> StatusColor.NEGLECTED
+    MuscleStatus.UNDER -> StatusColor.UNDER
+    MuscleStatus.BALANCED -> StatusColor.BALANCED
+    MuscleStatus.OVER -> StatusColor.OVER
 }
 
 private fun MuscleGroup.displayName(): String = when (this) {
