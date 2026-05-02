@@ -137,6 +137,13 @@ fun StatsScreen(
                 )
             }
 
+            // === VOLUME PER PARTIA — bieżący tydzień ===
+            if (state.muscleVolumeReport.any { it.sets > 0 }) {
+                item {
+                    MuscleVolumeCard(reports = state.muscleVolumeReport)
+                }
+            }
+
             // === Top odznaki ===
             if (state.achievements.isNotEmpty()) {
                 item {
@@ -523,6 +530,88 @@ private fun WeekTargetCard(current: Int, target: Int, percent: Int) {
                 strokeCap = androidx.compose.ui.graphics.StrokeCap.Round,
                 gapSize = 0.dp,
                 drawStopIndicator = {}
+            )
+        }
+    }
+}
+
+@Composable
+private fun MuscleVolumeCard(reports: List<pl.filebit.gymtracker.util.MuscleVolumeReport>) {
+    pl.filebit.gymtracker.ui.theme.GymCard {
+        androidx.compose.foundation.layout.Column(
+            modifier = androidx.compose.ui.Modifier.padding(16.dp)
+        ) {
+            pl.filebit.gymtracker.ui.theme.LabelUp("VOLUME / PARTIA — TEN TYDZIEŃ")
+            androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.height(4.dp))
+            androidx.compose.material3.Text(
+                "Optymalnie 10-20 setów na partię tygodniowo (hipertrofia).",
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
+            androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.height(12.dp))
+            reports.filter { it.sets > 0 || it.status == pl.filebit.gymtracker.util.VolumeStatus.UNDER }
+                .take(10)
+                .forEach { r ->
+                    MuscleVolumeRow(r)
+                }
+        }
+    }
+}
+
+@Composable
+private fun MuscleVolumeRow(r: pl.filebit.gymtracker.util.MuscleVolumeReport) {
+    val (label, color) = when (r.status) {
+        pl.filebit.gymtracker.util.VolumeStatus.UNDER -> "ZA MAŁO" to pl.filebit.gymtracker.ui.theme.AccentOrange
+        pl.filebit.gymtracker.util.VolumeStatus.OK -> "OK" to pl.filebit.gymtracker.ui.theme.SuccessGreen
+        pl.filebit.gymtracker.util.VolumeStatus.OVER -> "ZA DUŻO" to pl.filebit.gymtracker.ui.theme.ErrorRed
+    }
+    val muscleName = when (r.muscle) {
+        pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST -> "Klatka"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.BACK -> "Plecy"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS -> "Barki"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS -> "Biceps"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS -> "Triceps"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS -> "Czworogłowe"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS -> "Dwugłowe (uda)"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES -> "Pośladki"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES -> "Łydki"
+        pl.filebit.gymtracker.data.entity.MuscleGroup.CORE -> "Brzuch"
+        else -> r.muscle.name
+    }
+    androidx.compose.foundation.layout.Row(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+    ) {
+        androidx.compose.material3.Text(
+            muscleName,
+            style = androidx.compose.material3.MaterialTheme.typography.bodyMedium,
+            color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+            modifier = androidx.compose.ui.Modifier.weight(1f)
+        )
+        androidx.compose.material3.Text(
+            "${r.sets}/${r.range.low}-${r.range.high}",
+            style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold,
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace
+            ),
+            color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+            modifier = androidx.compose.ui.Modifier.padding(end = 12.dp)
+        )
+        androidx.compose.foundation.layout.Box(
+            modifier = androidx.compose.ui.Modifier
+                .background(color.copy(alpha = 0.18f), androidx.compose.foundation.shape.RoundedCornerShape(6.dp))
+                .padding(horizontal = 8.dp, vertical = 3.dp)
+        ) {
+            androidx.compose.material3.Text(
+                label,
+                style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                    fontSize = 10.sp,
+                    letterSpacing = 0.6.sp
+                ),
+                color = color
             )
         }
     }

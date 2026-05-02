@@ -25,13 +25,15 @@ data class StatsUiState(
     val volumeWeek: Double = 0.0,
     val avgWorkoutDurationMillis: Long = 0L,
     val volumePerWeek8: List<Double> = emptyList(),
-    val volumePerWeek26: List<Double> = emptyList()
+    val volumePerWeek26: List<Double> = emptyList(),
+    val muscleVolumeReport: List<pl.filebit.gymtracker.util.MuscleVolumeReport> = emptyList()
 )
 
 @HiltViewModel
 class StatsViewModel @Inject constructor(
     private val statsRepo: StatsRepository,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val volumeService: pl.filebit.gymtracker.data.repository.VolumeService
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(StatsUiState())
@@ -55,6 +57,7 @@ class StatsViewModel @Inject constructor(
             val avgDuration = if (o.totalWorkouts > 0)
                 o.totalDurationMillis / o.totalWorkouts
             else 0L
+            val muscleReport = runCatching { volumeService.currentWeekReport() }.getOrDefault(emptyList())
             _state.value = StatsUiState(
                 loading = false,
                 overview = o,
@@ -65,7 +68,8 @@ class StatsViewModel @Inject constructor(
                 volumeWeek = volWeek,
                 avgWorkoutDurationMillis = avgDuration,
                 volumePerWeek8 = vol8,
-                volumePerWeek26 = vol26
+                volumePerWeek26 = vol26,
+                muscleVolumeReport = muscleReport
             )
         }
     }
