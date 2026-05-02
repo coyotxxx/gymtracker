@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.Bolt
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -811,7 +812,7 @@ private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendati
         Column {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
-                    androidx.compose.material.icons.Icons.Default.Warning,
+                    Icons.Default.Warning,
                     contentDescription = null,
                     tint = color,
                     modifier = Modifier.size(20.dp)
