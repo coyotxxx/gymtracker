@@ -586,7 +586,7 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
             val monthLabels = listOf("sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru")
 
             Row {
-                // Kolumna z dniami tygodnia
+                // Kolumna z dniami tygodnia — wyrównana wysokością do kwadratów heatmap
                 Column(
                     verticalArrangement = Arrangement.spacedBy(3.dp),
                     modifier = Modifier.padding(end = 6.dp)
@@ -594,15 +594,16 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
                     Spacer(Modifier.height(14.dp))  // miejsce na nagłówek miesięcy
                     for (i in 0..6) {
                         Box(
-                            modifier = Modifier.size(width = 18.dp, height = 16.dp),
+                            modifier = Modifier
+                                .height(20.dp)
+                                .width(20.dp),
                             contentAlignment = Alignment.CenterStart
                         ) {
-                            // Pokazuj tylko parzyste żeby się nie tłoczyły
                             if (i % 2 == 0) {
                                 Text(
                                     dayLabels[i],
                                     style = MaterialTheme.typography.labelSmall.copy(
-                                        fontSize = 9.sp,
+                                        fontSize = 10.sp,
                                         fontWeight = FontWeight.SemiBold
                                     ),
                                     color = DarkOnSurfaceVariant
@@ -612,9 +613,12 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
                     }
                 }
 
-                Column {
-                    // Etykiety miesięcy nad kolumnami (tylko gdy nowy miesiąc)
-                    Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                Column(modifier = Modifier.weight(1f)) {
+                    // Etykiety miesięcy — proporcjonalna siatka jak w heatmap
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(3.dp)
+                    ) {
                         var prevMonth = -1
                         for (week in 0 until 12) {
                             val firstDayOfWeek = startDay + week * 7
@@ -624,7 +628,9 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
                             val show = month != prevMonth
                             prevMonth = month
                             Box(
-                                modifier = Modifier.size(width = 16.dp, height = 12.dp),
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(12.dp),
                                 contentAlignment = Alignment.CenterStart
                             ) {
                                 if (show) {
@@ -642,10 +648,16 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
                     }
                     Spacer(Modifier.height(2.dp))
 
-                    // Siatka 12 × 7 (kolumny = tygodnie, wiersze = dni od Pon do Nd)
-                    Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                    // Siatka 12 × 7 — kolumny rozciągnięte na pełną szerokość
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(3.dp)
+                    ) {
                         for (week in 0 until 12) {
-                            Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                            Column(
+                                modifier = Modifier.weight(1f),
+                                verticalArrangement = Arrangement.spacedBy(3.dp)
+                            ) {
                                 for (dayOfWeek in 0..6) {
                                     val day = startDay + week * 7 + dayOfWeek
                                     val vol = heatmap[day] ?: 0.0
@@ -659,7 +671,8 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
                                     }
                                     Box(
                                         modifier = Modifier
-                                            .size(width = 16.dp, height = 16.dp)
+                                            .fillMaxWidth()
+                                            .aspectRatio(1f)
                                             .background(color, RoundedCornerShape(3.dp))
                                     )
                                 }
