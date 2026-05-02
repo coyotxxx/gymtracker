@@ -100,6 +100,7 @@ fun ProfileScreen(
     onOpenStrength: () -> Unit,
     onOpenAiTrainer: () -> Unit,
     onOpenAiSettings: () -> Unit,
+    onOpenAiWeeklyReport: () -> Unit,
     onOpenGoals: () -> Unit,
     onOpenGlossary: () -> Unit,
     onOpenAchievements: () -> Unit = {},
@@ -231,6 +232,14 @@ fun ProfileScreen(
                     title = "Trener AI",
                     subtitle = "Plany, analizy i sugestie",
                     onClick = onOpenAiTrainer
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.AutoAwesome,
+                    title = "Raport tygodniowy",
+                    subtitle = "AI analizuje 7 dni i daje rekomendacje na następny tydzień",
+                    onClick = onOpenAiWeeklyReport
                 )
             }
             item {

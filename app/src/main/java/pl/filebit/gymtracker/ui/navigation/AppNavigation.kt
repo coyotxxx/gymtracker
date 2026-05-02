@@ -126,7 +126,8 @@ fun AppNavigation() {
         Screen.CoachWorkout.route,
         Screen.AiTrainer.route,
         Screen.AiConversations.route,
-        Screen.AiSettings.route
+        Screen.AiSettings.route,
+        Screen.AiWeeklyReport.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
@@ -264,6 +265,7 @@ fun AppNavigation() {
                     onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
+                    onOpenAiWeeklyReport = { navController.navigate(Screen.AiWeeklyReport.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
@@ -297,6 +299,11 @@ fun AppNavigation() {
             }
             composable(Screen.StrengthStandards.route) {
                 StrengthStandardsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.AiWeeklyReport.route) {
+                pl.filebit.gymtracker.ui.ai.WeeklyReportScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.AiConversations.route) {
                 AiConversationsScreen(

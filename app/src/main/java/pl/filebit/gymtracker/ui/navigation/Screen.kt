@@ -23,6 +23,7 @@ sealed class Screen(val route: String) {
     object AiTrainer : Screen("ai/trainer/{conversationId}") {
         fun create(conversationId: Long) = "ai/trainer/$conversationId"
     }
+    object AiWeeklyReport : Screen("ai/weekly-report")
     object Goals : Screen("goals")
     object Glossary : Screen("glossary")
 
