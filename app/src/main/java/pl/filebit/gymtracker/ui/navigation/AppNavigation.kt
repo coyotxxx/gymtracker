@@ -73,7 +73,6 @@ import pl.filebit.gymtracker.ui.plans.TemplatesScreen
 import pl.filebit.gymtracker.ui.onerm.OneRmCalculatorScreen
 import pl.filebit.gymtracker.ui.profile.ProfileScreen
 import pl.filebit.gymtracker.ui.stats.StatsScreen
-import pl.filebit.gymtracker.ui.body.BodyMeasurementsScreen
 import pl.filebit.gymtracker.ui.muscles.MuscleEngagementScreen
 import pl.filebit.gymtracker.ui.photos.ProgressPhotosScreen
 import pl.filebit.gymtracker.ui.strength.StrengthStandardsScreen
@@ -263,7 +262,6 @@ fun AppNavigation() {
                     onOpenStats = { navController.navigate(Screen.Stats.route) },
                     onOpenOneRm = { navController.navigate(Screen.OneRm.route) },
                     onOpenPlateCalc = { navController.navigate(Screen.PlateCalc.route) },
-                    onOpenBody = { navController.navigate(Screen.BodyMeasurements.route) },
                     onOpenMeasurements = { navController.navigate(Screen.Measurements.route) },
                     onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
@@ -293,9 +291,6 @@ fun AppNavigation() {
             }
             composable(Screen.PlateCalc.route) {
                 PlateCalculatorScreen(onBack = { navController.popBackStack() })
-            }
-            composable(Screen.BodyMeasurements.route) {
-                BodyMeasurementsScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.MuscleEngagement.route) {
                 MuscleEngagementScreen(onBack = { navController.popBackStack() })

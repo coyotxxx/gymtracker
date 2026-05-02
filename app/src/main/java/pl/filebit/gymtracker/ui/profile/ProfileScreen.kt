@@ -94,7 +94,6 @@ fun ProfileScreen(
     onOpenStats: () -> Unit,
     onOpenOneRm: () -> Unit,
     onOpenPlateCalc: () -> Unit,
-    onOpenBody: () -> Unit,
     onOpenMeasurements: () -> Unit,
     onOpenMuscles: () -> Unit,
     onOpenPhotos: () -> Unit,
