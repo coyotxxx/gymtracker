@@ -146,11 +146,14 @@ fun StatsScreen(
                 }
             }
 
-            // === VOLUME PER PARTIA — bieżący tydzień ===
-            if (state.muscleVolumeReport.any { it.sets > 0 }) {
-                item {
-                    MuscleVolumeCard(reports = state.muscleVolumeReport)
-                }
+            // === VOLUME PER PARTIA — toggle 1/2/4 tyg ===
+            item {
+                MuscleVolumeCard(
+                    reports = state.muscleVolumeReport,
+                    period = state.muscleVolumePeriod,
+                    daysToWeekEnd = state.daysToWeekEnd,
+                    onPeriodChange = vm::setVolumePeriod
+                )
             }
 
             // === RECOVERY — ostatni trening per partia ===
@@ -375,25 +378,87 @@ private fun formatVolumeShort(kg: Double): String = when {
 // Stagnations/CalendarHeatmap z realną wartością analityczną.)
 
 @Composable
-private fun MuscleVolumeCard(reports: List<pl.filebit.gymtracker.util.MuscleVolumeReport>) {
+private fun MuscleVolumeCard(
+    reports: List<pl.filebit.gymtracker.util.MuscleVolumeReport>,
+    period: VolumePeriod,
+    daysToWeekEnd: Int,
+    onPeriodChange: (VolumePeriod) -> Unit
+) {
     pl.filebit.gymtracker.ui.theme.GymCard {
-        androidx.compose.foundation.layout.Column(
-            modifier = androidx.compose.ui.Modifier.padding(16.dp)
-        ) {
-            pl.filebit.gymtracker.ui.theme.LabelUp("VOLUME / PARTIA — TEN TYDZIEŃ")
-            androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.height(4.dp))
-            androidx.compose.material3.Text(
-                "Optymalnie 10-20 setów na partię tygodniowo (hipertrofia).",
-                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
-                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+        Column(modifier = Modifier.padding(16.dp)) {
+            pl.filebit.gymtracker.ui.theme.LabelUp("Volume / partia", accent = true)
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Optymalnie 10-20 setów / partia / tydzień (hipertrofia).",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
             )
-            androidx.compose.foundation.layout.Spacer(androidx.compose.ui.Modifier.height(12.dp))
-            reports.filter { it.sets > 0 || it.status == pl.filebit.gymtracker.util.VolumeStatus.UNDER }
-                .take(10)
-                .forEach { r ->
-                    MuscleVolumeRow(r)
+            // Hint o trwającym tygodniu (tylko dla 1 tyg, jeśli jest <7 dni do końca)
+            if (period == VolumePeriod.WEEK_1 && daysToWeekEnd > 0) {
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    "Tydzień trwa: ${daysToWeekEnd} ${if (daysToWeekEnd == 1) "dzień" else "dni"} do niedzieli — wartości jeszcze rosną.",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                    color = AccentOrange.copy(alpha = 0.85f)
+                )
+            }
+            Spacer(Modifier.height(10.dp))
+
+            // Toggle 1/2/4 tyg
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                VolumePeriod.entries.forEach { p ->
+                    PeriodChip(
+                        label = p.label,
+                        selected = p == period,
+                        onClick = { onPeriodChange(p) },
+                        modifier = Modifier.weight(1f)
+                    )
                 }
+            }
+            Spacer(Modifier.height(12.dp))
+
+            val visible = reports.filter { it.sets > 0 || it.status == pl.filebit.gymtracker.util.VolumeStatus.UNDER }
+                .take(10)
+            if (visible.isEmpty()) {
+                Text(
+                    "Brak danych w tym oknie. Zacznij trening — zobaczysz tu wzór.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            } else {
+                visible.forEach { r -> MuscleVolumeRow(r) }
+            }
         }
+    }
+}
+
+@Composable
+private fun PeriodChip(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val bg = if (selected) AccentOrange.copy(alpha = 0.10f) else DarkSurfaceVariant
+    val borderColor = if (selected) AccentOrange else androidx.compose.ui.graphics.Color.Transparent
+    val fg = if (selected) AccentOrange else DarkOnSurfaceVariant
+    Box(
+        modifier = modifier
+            .height(32.dp)
+            .background(bg, RoundedCornerShape(8.dp))
+            .border(if (selected) 1.5.dp else 0.dp, borderColor, RoundedCornerShape(8.dp))
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 10.sp,
+                letterSpacing = 0.4.sp
+            ),
+            color = fg
+        )
     }
 }
 
@@ -430,12 +495,21 @@ private fun MuscleVolumeRow(r: pl.filebit.gymtracker.util.MuscleVolumeReport) {
             modifier = androidx.compose.ui.Modifier.weight(1f)
         )
         androidx.compose.material3.Text(
-            "${r.sets}/${r.range.low}-${r.range.high}",
+            "${r.sets} setów",
             style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
                 fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold,
-                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                fontSize = 13.sp
             ),
             color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+        )
+        androidx.compose.material3.Text(
+            " / ${r.range.low}-${r.range.high}",
+            style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
+                fontSize = 11.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
             modifier = androidx.compose.ui.Modifier.padding(end = 12.dp)
         )
         androidx.compose.foundation.layout.Box(
@@ -467,46 +541,152 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
             pl.filebit.gymtracker.ui.theme.LabelUp("Aktywność — 12 tygodni", accent = true)
             Spacer(Modifier.height(2.dp))
             Text(
-                "Każdy kwadrat = jeden dzień. Intensywność = objętość.",
+                "Każdy kwadrat = 1 dzień. Wiersze = dni tygodnia. Im jaśniej, tym większa objętość.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
             Spacer(Modifier.height(12.dp))
 
+            // Edge case: brak danych w okresie → komunikat
+            val totalDaysWithData = heatmap.count { it.value > 0 }
+            if (totalDaysWithData == 0) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(96.dp)
+                        .background(DarkSurfaceVariant.copy(alpha = 0.5f), RoundedCornerShape(8.dp)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Trenuj 2 tygodnie — tu zobaczysz wzór",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+                return@Column
+            }
+
             val today = System.currentTimeMillis() / 86_400_000L
             val maxVol = heatmap.values.maxOrNull()?.takeIf { it > 0 } ?: 1.0
-            // 12 kolumn (tygodnie) × 7 wierszy (dni)
-            val daysToShow = 84
-            val startDay = today - daysToShow + 1
-            Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
-                for (week in 0 until 12) {
-                    Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                        for (dayOfWeek in 0..6) {
-                            val day = startDay + week * 7 + dayOfWeek
-                            val vol = heatmap[day] ?: 0.0
-                            val intensity = if (vol > 0) (vol / maxVol).coerceIn(0.15, 1.0).toFloat() else 0f
-                            val color = if (intensity > 0)
-                                AccentOrange.copy(alpha = intensity * 0.95f)
-                            else DarkSurfaceVariant
+            // Wyrównanie do poniedziałku — najwcześniejsza kolumna zaczyna się w pn.
+            // dayOfWeek (Calendar): 1=Niedz, 2=Pn, ..., 7=Sb. Dla today obliczamy dni
+            // od ostatniego niedzieli (koniec tygodnia).
+            val cal = java.util.Calendar.getInstance().apply {
+                firstDayOfWeek = java.util.Calendar.MONDAY
+                timeInMillis = System.currentTimeMillis()
+            }
+            val isoDay = ((cal.get(java.util.Calendar.DAY_OF_WEEK) + 5) % 7) + 1  // 1=Pn..7=Nd
+            val daysToSundayInclusive = 8 - isoDay  // ile dni do końca aktualnego tygodnia
+            val endDayInclusive = today + (daysToSundayInclusive - 1)
+            val startDay = endDayInclusive - 12 * 7 + 1
+
+            val dayLabels = listOf("Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd")
+            val monthLabels = listOf("sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru")
+
+            Row {
+                // Kolumna z dniami tygodnia
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(3.dp),
+                    modifier = Modifier.padding(end = 6.dp)
+                ) {
+                    Spacer(Modifier.height(14.dp))  // miejsce na nagłówek miesięcy
+                    for (i in 0..6) {
+                        Box(
+                            modifier = Modifier.size(width = 18.dp, height = 16.dp),
+                            contentAlignment = Alignment.CenterStart
+                        ) {
+                            // Pokazuj tylko parzyste żeby się nie tłoczyły
+                            if (i % 2 == 0) {
+                                Text(
+                                    dayLabels[i],
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 9.sp,
+                                        fontWeight = FontWeight.SemiBold
+                                    ),
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+
+                Column {
+                    // Etykiety miesięcy nad kolumnami (tylko gdy nowy miesiąc)
+                    Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                        var prevMonth = -1
+                        for (week in 0 until 12) {
+                            val firstDayOfWeek = startDay + week * 7
+                            val ms = firstDayOfWeek * 86_400_000L
+                            val tmpCal = java.util.Calendar.getInstance().apply { timeInMillis = ms }
+                            val month = tmpCal.get(java.util.Calendar.MONTH)
+                            val show = month != prevMonth
+                            prevMonth = month
                             Box(
-                                modifier = Modifier
-                                    .size(width = 16.dp, height = 16.dp)
-                                    .background(color, RoundedCornerShape(3.dp))
-                            )
+                                modifier = Modifier.size(width = 16.dp, height = 12.dp),
+                                contentAlignment = Alignment.CenterStart
+                            ) {
+                                if (show) {
+                                    Text(
+                                        monthLabels[month],
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            fontSize = 9.sp,
+                                            fontWeight = FontWeight.SemiBold
+                                        ),
+                                        color = DarkOnSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    Spacer(Modifier.height(2.dp))
+
+                    // Siatka 12 × 7 (kolumny = tygodnie, wiersze = dni od Pon do Nd)
+                    Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                        for (week in 0 until 12) {
+                            Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                                for (dayOfWeek in 0..6) {
+                                    val day = startDay + week * 7 + dayOfWeek
+                                    val vol = heatmap[day] ?: 0.0
+                                    val intensity = if (vol > 0)
+                                        (vol / maxVol).coerceIn(0.20, 1.0).toFloat() else 0f
+                                    val isFuture = day > today
+                                    val color = when {
+                                        isFuture -> DarkSurfaceVariant.copy(alpha = 0.3f)
+                                        intensity > 0 -> AccentOrange.copy(alpha = intensity * 0.95f)
+                                        else -> DarkSurfaceVariant
+                                    }
+                                    Box(
+                                        modifier = Modifier
+                                            .size(width = 16.dp, height = 16.dp)
+                                            .background(color, RoundedCornerShape(3.dp))
+                                    )
+                                }
+                            }
                         }
                     }
                 }
             }
-            Spacer(Modifier.height(8.dp))
-            // Legenda
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Spacer(Modifier.height(10.dp))
+            // Legenda + statystyki
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    "$totalDaysWithData ${if (totalDaysWithData == 1) "dzień" else "dni"} z treningiem",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.SemiBold),
+                    color = DarkOnSurface,
+                    modifier = Modifier.weight(1f)
+                )
                 Text(
                     "mniej",
                     style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
                     color = DarkOnSurfaceVariant
                 )
                 Spacer(Modifier.width(6.dp))
-                listOf(0.15f, 0.35f, 0.6f, 0.85f).forEach { a ->
+                listOf(0.20f, 0.45f, 0.70f, 0.95f).forEach { a ->
                     Box(
                         modifier = Modifier
                             .size(12.dp)

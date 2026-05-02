@@ -25,12 +25,20 @@ data class StatsUiState(
     val volumePerWeek8: List<Double> = emptyList(),
     val volumePerWeek26: List<Double> = emptyList(),
     val muscleVolumeReport: List<pl.filebit.gymtracker.util.MuscleVolumeReport> = emptyList(),
+    val muscleVolumePeriod: VolumePeriod = VolumePeriod.WEEK_1,
+    val daysToWeekEnd: Int = 0,
     val personalRecords: List<PersonalRecordRow> = emptyList(),
     val recovery: List<MuscleRecovery> = emptyList(),
     val stagnations: List<StagnationAlert> = emptyList(),
     val calendarHeatmap: Map<Long, Double> = emptyMap(),  // epochDay → volume
     val achievements: List<Achievement> = emptyList()    // dla osobnego ekranu Odznaki
 )
+
+enum class VolumePeriod(val weeks: Int, val label: String) {
+    WEEK_1(1, "Ten tydzień"),
+    WEEK_2(2, "Ostatnie 2 tyg"),
+    WEEK_4(4, "Ostatnie 4 tyg")
+}
 
 @HiltViewModel
 class StatsViewModel @Inject constructor(
@@ -44,6 +52,17 @@ class StatsViewModel @Inject constructor(
 
     init { reload() }
 
+    fun setVolumePeriod(p: VolumePeriod) {
+        if (_state.value.muscleVolumePeriod == p) return
+        viewModelScope.launch {
+            val report = runCatching { volumeService.reportForWeeks(p.weeks) }.getOrDefault(emptyList())
+            _state.value = _state.value.copy(
+                muscleVolumePeriod = p,
+                muscleVolumeReport = report
+            )
+        }
+    }
+
     fun reload() {
         viewModelScope.launch {
             _state.value = StatsUiState(loading = true)
@@ -56,7 +75,12 @@ class StatsViewModel @Inject constructor(
 
             val avgDuration = if (o.totalWorkouts > 0) o.totalDurationMillis / o.totalWorkouts else 0L
 
-            val muscleReport = runCatching { volumeService.currentWeekReport() }.getOrDefault(emptyList())
+            val period = _state.value.muscleVolumePeriod
+            val muscleReport = runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList())
+            // Dni do końca tygodnia (Pon-Nd)
+            val cal = java.util.Calendar.getInstance().apply { firstDayOfWeek = java.util.Calendar.MONDAY }
+            val isoDay = (cal.get(java.util.Calendar.DAY_OF_WEEK) - java.util.Calendar.MONDAY + 7) % 7 + 1
+            val daysLeft = (7 - isoDay).coerceAtLeast(0)
             val prs = runCatching { statsRepo.allPersonalRecords() }.getOrDefault(emptyList())
             val recovery = runCatching { statsRepo.recoveryByMuscle() }.getOrDefault(emptyList())
             val stagnations = runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList())
@@ -74,6 +98,8 @@ class StatsViewModel @Inject constructor(
                 volumePerWeek8 = vol8,
                 volumePerWeek26 = vol26,
                 muscleVolumeReport = muscleReport,
+                muscleVolumePeriod = period,
+                daysToWeekEnd = daysLeft,
                 personalRecords = prs,
                 recovery = recovery,
                 stagnations = stagnations,

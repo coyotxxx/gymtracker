@@ -30,33 +30,41 @@ class VolumeService @Inject constructor(
     private val exerciseDao: ExerciseDao,
     private val profileRepo: UserProfileRepository
 ) {
-    suspend fun currentWeekReport(): List<MuscleVolumeReport> {
+    suspend fun currentWeekReport(): List<MuscleVolumeReport> = reportForWeeks(weeks = 1)
+
+    /**
+     * Volume per partia w wybranym oknie czasowym (1, 2 lub 4 tyg).
+     * Dla 1 tyg = bieżący tydzień (Pon-Nd).
+     * Dla 2-4 tyg = okno cofa się N tyg wstecz od dziś, znormalizowane na "tydzień
+     * średnio" (wynik dzielony przez weeks żeby pokazywać porównywalne setów/tydz).
+     */
+    suspend fun reportForWeeks(weeks: Int): List<MuscleVolumeReport> {
         val tz = TimeZone.currentSystemDefault()
         val today = Clock.System.now().toLocalDateTime(tz).date
         val daysFromMonday = today.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber
         val mondayDate = today.minus(daysFromMonday, DateTimeUnit.DAY)
         val weekStart = mondayDate.atStartOfDayIn(tz).toEpochMilliseconds()
         val weekEnd = weekStart + 7.days.inWholeMilliseconds
+        val periodStart = weekStart - (weeks - 1) * 7.days.inWholeMilliseconds
 
         val workouts = workoutDao.observeAllOnce()
-            .filter { it.finishedAt != null && it.startedAt in weekStart until weekEnd }
+            .filter { it.finishedAt != null && it.startedAt in periodStart until weekEnd }
 
         val sets = workouts.flatMap { w ->
             setDao.getForWorkout(w.id)
                 .filter { it.isCompleted && it.setType != SetType.WARMUP }
         }
 
-        // Cache: exerciseId → muscle
         val muscleCache = sets.map { it.exerciseId }.distinct()
             .associateWith { exerciseDao.getById(it)?.primaryMuscle }
 
-        // Mapa: muscle → liczba setów
-        val byMuscle: Map<MuscleGroup, Int> = sets
+        val byMuscleAvg: Map<MuscleGroup, Int> = sets
             .mapNotNull { muscleCache[it.exerciseId] }
             .groupingBy { it }
             .eachCount()
+            .mapValues { (_, count) -> count / weeks }   // średnia tygodniowa
 
         val goal = profileRepo.get().goal
-        return reportWeeklyVolume(byMuscle, goal)
+        return reportWeeklyVolume(byMuscleAvg, goal)
     }
 }
