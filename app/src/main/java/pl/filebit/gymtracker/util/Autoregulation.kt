@@ -13,9 +13,10 @@ data class ProgressionResult(
  * referencyjnej serii (najcięższa z poprzedniej sesji) + średniego RPE.
  *
  * Heurystyka (zgodna z literaturą — RP, MASS Research Review):
- *  - RPE ≤ 7 (lub brak RPE) → +delta kg, te same powtórzenia
- *  - RPE 7..9               → utrzymaj wagę, +1 powt.
- *  - RPE > 9                → utrzymaj (nie progresuj)
+ *  - RPE ≤ 7 (lub brak RPE)    → +delta kg, te same powtórzenia
+ *  - RPE 7..9                  → utrzymaj wagę, +1 powt.
+ *  - RPE 9.0..9.5              → utrzymaj (rep cap, brak progresji)
+ *  - RPE > 9.5 (≥10 average)   → −5% wagi (mini-deload, regeneracja)
  *
  * Waga zaokrąglana do 0.25 kg (najmniejszy krok obciążnika).
  *
@@ -44,9 +45,13 @@ fun computeProgression(
             refWeight, refReps + 1,
             "Ostatni RPE ${"%.1f".format(avgRpe)} → utrzymaj wagę, +1 powt."
         )
-        else -> Triple(
+        avgRpe <= 9.5 -> Triple(
             refWeight, refReps,
             "Ostatni RPE ${"%.1f".format(avgRpe)} (max) → utrzymaj"
+        )
+        else -> Triple(
+            refWeight * 0.95, refReps,
+            "Ostatni RPE ${"%.1f".format(avgRpe)} → −5% wagi (mini-deload, regeneracja)"
         )
     }
     val rounded = (newWeight * 4).roundToInt() / 4.0

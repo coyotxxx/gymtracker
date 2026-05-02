@@ -250,7 +250,10 @@ class PlanEditViewModel @Inject constructor(
     }
 
     fun removeExercise(id: Long) = _state.update { st ->
-        st.copy(exercises = st.exercises.filter { it.planEx.id != id })
+        val filtered = st.exercises.filter { it.planEx.id != id }
+        // Po usunięciu partnera supersetu, drugi członek grupy może zostać sam —
+        // czyścimy osierocony supersetGroup (testowane w SupersetCleanerTest).
+        st.copy(exercises = pl.filebit.gymtracker.util.cleanOrphanedSupersets(filtered))
     }
 
     /**
