@@ -129,7 +129,8 @@ fun AppNavigation() {
         Screen.AiSettings.route,
         Screen.AiWeeklyReport.route,
         Screen.Measurements.route,
-        Screen.MeasurementAdd.route
+        Screen.MeasurementAdd.route,
+        Screen.BodyMap.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
@@ -317,8 +318,20 @@ fun AppNavigation() {
                     onEditMeasurement = { id ->
                         navController.navigate(Screen.MeasurementAdd.create(id))
                     },
-                    onOpenHistory = { /* TODO v0.70 */ },
-                    onOpenBodyMap = { /* TODO v0.70 */ }
+                    onOpenHistory = { /* TODO v0.71 */ },
+                    onOpenBodyMap = { navController.navigate(Screen.BodyMap.route) }
+                )
+            }
+            composable(Screen.BodyMap.route) {
+                val profileVm: pl.filebit.gymtracker.ui.profile.ProfileViewModel = hiltViewModel()
+                val profile by profileVm.profile.collectAsStateWithLifecycle()
+                pl.filebit.gymtracker.ui.measurements.BodyMapScreen(
+                    initialGender = profile.gender,
+                    onBack = { navController.popBackStack() },
+                    onGoToMeasure = {
+                        navController.popBackStack()
+                        navController.navigate(Screen.MeasurementAdd.create(null))
+                    }
                 )
             }
             composable(
