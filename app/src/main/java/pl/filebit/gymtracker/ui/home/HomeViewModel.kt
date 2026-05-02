@@ -30,7 +30,8 @@ data class HomeUiState(
     val streakWeeks: Int = 0,
     val streakBest: Int = 0,
     val workoutsThisWeek: Int = 0,
-    val weeklyTarget: Int = 3
+    val weeklyTarget: Int = 3,
+    val deloadAlert: pl.filebit.gymtracker.util.DeloadRecommendation? = null
 )
 
 data class RecentWorkoutItem(
@@ -45,7 +46,8 @@ class HomeViewModel @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val planRepo: PlanRepository,
     private val statsRepo: StatsRepository,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService
 ) : ViewModel() {
 
     val state: StateFlow<HomeUiState> = combine(
@@ -83,6 +85,8 @@ class HomeViewModel @Inject constructor(
             plans.firstOrNull { it.id == planId }?.name.orEmpty()
         }.orEmpty()
 
+        val deloadAlert = runCatching { deloadService.check() }.getOrNull()
+
         HomeUiState(
             displayName = profile?.displayName.orEmpty(),
             activeWorkout = active,
@@ -93,7 +97,8 @@ class HomeViewModel @Inject constructor(
             streakWeeks = streak?.current ?: 0,
             streakBest = streak?.best ?: 0,
             workoutsThisWeek = weekProgress?.current ?: 0,
-            weeklyTarget = weeklyTarget
+            weeklyTarget = weeklyTarget,
+            deloadAlert = deloadAlert
         )
     }.stateIn(
         scope = viewModelScope,

@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.ui.home
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -90,6 +91,13 @@ fun HomeScreen(
                     isActive = state.activeWorkout != null,
                     activePlanName = state.activePlanName.ifBlank { "Aktywny trening" }
                 )
+            }
+
+            // Deload alert — jeśli detekcja zwróciła rekomendację
+            state.deloadAlert?.let { alert ->
+                item {
+                    DeloadAlertCard(alert)
+                }
             }
 
             // Hero card — Plan na dziś LUB Trening w toku LUB CTA "Wybierz plan"
@@ -768,5 +776,63 @@ private fun MiniStat(
             ),
             color = DarkOnSurfaceVariant
         )
+    }
+}
+
+@Composable
+private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendation) {
+    val color = when (alert.severity) {
+        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> pl.filebit.gymtracker.ui.theme.ErrorRed
+        pl.filebit.gymtracker.util.DeloadSeverity.MED -> pl.filebit.gymtracker.ui.theme.AccentOrange
+        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> pl.filebit.gymtracker.ui.theme.AccentOrange
+    }
+    val bgAlpha = when (alert.severity) {
+        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.18f
+        pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.14f
+        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.10f
+    }
+    val borderAlpha = when (alert.severity) {
+        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.55f
+        pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.40f
+        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.30f
+    }
+    val severityLabel = when (alert.severity) {
+        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
+        pl.filebit.gymtracker.util.DeloadSeverity.MED -> "DELOAD ZALECANY"
+        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> "ROZWAŻ DELOAD"
+    }
+    androidx.compose.foundation.layout.Box(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = bgAlpha), RoundedCornerShape(16.dp))
+            .border(1.dp, color.copy(alpha = borderAlpha), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    androidx.compose.material.icons.Icons.Default.Warning,
+                    contentDescription = null,
+                    tint = color,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    severityLabel,
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                alert.reason,
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface
+            )
+        }
     }
 }
