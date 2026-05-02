@@ -101,7 +101,7 @@ fun HomeScreen(
                 }
             }
 
-            // Hero card — Plan na dziś LUB Trening w toku LUB CTA "Wybierz plan"
+            // Hero card — odpowiada na pytanie "Co dziś?"
             item {
                 when {
                     state.activeWorkout != null -> ActiveTrainingHeroCard(
@@ -125,7 +125,18 @@ fun HomeScreen(
                             )
                         }
                     )
+                    state.nextPlannedDay != null -> DayOffHeroCard(
+                        next = state.nextPlannedDay!!,
+                        onPickPlan = onSelectPlanTab
+                    )
                     else -> NoPlanHeroCard(onPickPlan = onSelectPlanTab)
+                }
+            }
+
+            // Mini-pasek 7 dni tygodnia
+            if (state.weekDays.isNotEmpty()) {
+                item {
+                    WeekStripCard(weekDays = state.weekDays)
                 }
             }
 
@@ -207,7 +218,8 @@ fun HomeScreen(
                     }
                 }
             } else {
-                items(state.recentWorkouts, key = { it.workout.id }) { item ->
+                // Pokaż max 2 najnowsze (skrót dla Home, reszta w zakładce Historia)
+                items(state.recentWorkouts.take(2), key = { it.workout.id }) { item ->
                     RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
                 }
             }
@@ -834,6 +846,165 @@ private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendati
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface
             )
+        }
+    }
+}
+
+@Composable
+private fun DayOffHeroCard(
+    next: NextPlannedDay,
+    onPickPlan: () -> Unit
+) {
+    val dayName = when (next.dayOfWeek) {
+        1 -> "Poniedziałek"
+        2 -> "Wtorek"
+        3 -> "Środa"
+        4 -> "Czwartek"
+        5 -> "Piątek"
+        6 -> "Sobota"
+        else -> "Niedziela"
+    }
+    val whenText = when (next.daysFromToday) {
+        1 -> "jutro · $dayName"
+        2 -> "pojutrze · $dayName"
+        else -> "za ${next.daysFromToday} dni · $dayName"
+    }
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(DarkSurface, RoundedCornerShape(20.dp))
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(20.dp))
+            .padding(20.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    modifier = Modifier
+                        .size(40.dp)
+                        .background(AccentOrange.copy(alpha = 0.15f), CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("💤", style = MaterialTheme.typography.headlineSmall.copy(fontSize = 22.sp))
+                }
+                Spacer(Modifier.width(12.dp))
+                Column {
+                    Text(
+                        "DZIŚ DZIEŃ WOLNY",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    Text(
+                        "Następny trening: $whenText",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 14.sp
+                        ),
+                        color = DarkOnSurface
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            Text(
+                "${next.planName} · ${next.exerciseCount} ćwiczeń",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+@Composable
+private fun WeekStripCard(weekDays: List<DayMarker>) {
+    val labels = listOf("Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd")
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(DarkSurface, RoundedCornerShape(16.dp))
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(16.dp))
+            .padding(horizontal = 12.dp, vertical = 10.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            weekDays.forEach { d ->
+                DayPill(
+                    label = labels[d.dayOfWeek - 1],
+                    isToday = d.isToday,
+                    isPlanned = d.isPlanned,
+                    isCompleted = d.isCompleted
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun DayPill(
+    label: String,
+    isToday: Boolean,
+    isPlanned: Boolean,
+    isCompleted: Boolean
+) {
+    val (bg, fg, dotColor) = when {
+        isCompleted -> Triple(
+            pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.15f),
+            pl.filebit.gymtracker.ui.theme.SuccessGreen,
+            pl.filebit.gymtracker.ui.theme.SuccessGreen
+        )
+        isToday && isPlanned -> Triple(
+            AccentOrange.copy(alpha = 0.18f),
+            AccentOrange,
+            AccentOrange
+        )
+        isToday -> Triple(
+            DarkSurfaceVariant,
+            AccentOrange,
+            null
+        )
+        isPlanned -> Triple(
+            DarkSurfaceVariant,
+            DarkOnSurface,
+            AccentOrange.copy(alpha = 0.55f)
+        )
+        else -> Triple(
+            DarkSurfaceVariant,
+            DarkOnSurfaceVariant,
+            null
+        )
+    }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .background(bg, RoundedCornerShape(10.dp))
+            .border(
+                if (isToday) 1.5.dp else 0.dp,
+                if (isToday) AccentOrange else androidx.compose.ui.graphics.Color.Transparent,
+                RoundedCornerShape(10.dp)
+            )
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 11.sp
+            ),
+            color = fg
+        )
+        Spacer(Modifier.height(4.dp))
+        Box(modifier = Modifier.size(6.dp)) {
+            if (dotColor != null) {
+                Box(
+                    modifier = Modifier
+                        .size(6.dp)
+                        .background(dotColor, CircleShape)
+                )
+            }
         }
     }
 }
