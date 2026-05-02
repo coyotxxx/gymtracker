@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.data.repository.MuscleRecovery
 import pl.filebit.gymtracker.data.repository.OverviewStats
 import pl.filebit.gymtracker.data.repository.PersonalRecordRow
@@ -27,7 +28,8 @@ data class StatsUiState(
     val personalRecords: List<PersonalRecordRow> = emptyList(),
     val recovery: List<MuscleRecovery> = emptyList(),
     val stagnations: List<StagnationAlert> = emptyList(),
-    val calendarHeatmap: Map<Long, Double> = emptyMap()  // epochDay → volume
+    val calendarHeatmap: Map<Long, Double> = emptyMap(),  // epochDay → volume
+    val achievements: List<Achievement> = emptyList()    // dla osobnego ekranu Odznaki
 )
 
 @HiltViewModel
@@ -59,6 +61,9 @@ class StatsViewModel @Inject constructor(
             val recovery = runCatching { statsRepo.recoveryByMuscle() }.getOrDefault(emptyList())
             val stagnations = runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList())
             val heatmap = runCatching { statsRepo.calendarHeatmap(84) }.getOrDefault(emptyMap())
+            val profile = profileRepo.get()
+            val target = profile.daysPerWeek.coerceAtLeast(1)
+            val achievements = runCatching { statsRepo.unlockedAchievements(target) }.getOrDefault(emptyList())
 
             _state.value = StatsUiState(
                 loading = false,
@@ -72,7 +77,8 @@ class StatsViewModel @Inject constructor(
                 personalRecords = prs,
                 recovery = recovery,
                 stagnations = stagnations,
-                calendarHeatmap = heatmap
+                calendarHeatmap = heatmap,
+                achievements = achievements
             )
         }
     }
