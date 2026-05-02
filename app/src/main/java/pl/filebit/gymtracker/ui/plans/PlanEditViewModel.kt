@@ -42,13 +42,41 @@ data class PlanEditUiState(
         get() = exercises.filter { it.planEx.dayOfWeek == selectedDay }
 }
 
+sealed class PlanAuditState {
+    object Idle : PlanAuditState()
+    object Loading : PlanAuditState()
+    data class Result(val text: String) : PlanAuditState()
+    data class Error(val message: String) : PlanAuditState()
+}
+
 @HiltViewModel
 class PlanEditViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
+    private val planAuditService: pl.filebit.gymtracker.ai.PlanAuditService,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
+
+    private val _auditState = MutableStateFlow<PlanAuditState>(PlanAuditState.Idle)
+    val auditState: StateFlow<PlanAuditState> = _auditState.asStateFlow()
+
+    fun runPlanAudit() {
+        if (planId == 0L) {
+            _auditState.value = PlanAuditState.Error("Najpierw zapisz plan, potem zrób audyt.")
+            return
+        }
+        _auditState.value = PlanAuditState.Loading
+        viewModelScope.launch {
+            val result = planAuditService.audit(planId)
+            result.fold(
+                onSuccess = { _auditState.value = PlanAuditState.Result(it) },
+                onFailure = { _auditState.value = PlanAuditState.Error(it.message ?: "Błąd AI") }
+            )
+        }
+    }
+
+    fun dismissAudit() { _auditState.value = PlanAuditState.Idle }
 
     private val planId: Long = savedStateHandle.get<Long>("planId") ?: 0L
     private val createdAt: Long

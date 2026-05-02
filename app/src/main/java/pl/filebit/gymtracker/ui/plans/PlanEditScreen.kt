@@ -3,6 +3,8 @@ package pl.filebit.gymtracker.ui.plans
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -88,6 +90,7 @@ fun PlanEditScreen(
     vm: PlanEditViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
+    val auditState by vm.auditState.collectAsStateWithLifecycle()
     var showDeleteDialog by remember { mutableStateOf(false) }
     var showRpeHelp by remember { mutableStateOf(false) }
 
@@ -263,6 +266,42 @@ fun PlanEditScreen(
                     leadingIcon = Icons.Default.Add
                 )
             }
+
+            // === AI audyt planu (Opcja C) ===
+            if (!state.isNew && state.exercises.isNotEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                            .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(14.dp))
+                            .border(1.dp, AccentOrange.copy(alpha = 0.40f), RoundedCornerShape(14.dp))
+                            .clickable(enabled = auditState !is PlanAuditState.Loading) {
+                                vm.runPlanAudit()
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                androidx.compose.material.icons.Icons.Default.AutoAwesome,
+                                contentDescription = null,
+                                tint = AccentOrange,
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(Modifier.width(8.dp))
+                            Text(
+                                if (auditState is PlanAuditState.Loading) "AI analizuje plan…"
+                                else "🤖 Audyt planu AI",
+                                style = MaterialTheme.typography.titleMedium.copy(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 14.sp
+                                ),
+                                color = AccentOrange
+                            )
+                        }
+                    }
+                }
+            }
             if (visibleExercises.isNotEmpty()) {
                 item {
                     Box(
@@ -345,6 +384,107 @@ fun PlanEditScreen(
                 }
             }
         )
+    }
+
+    // Dialog z wynikiem audytu AI
+    val audit = auditState
+    if (audit !is PlanAuditState.Idle) {
+        AlertDialog(
+            onDismissRequest = { vm.dismissAudit() },
+            title = {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        androidx.compose.material.icons.Icons.Default.AutoAwesome,
+                        contentDescription = null,
+                        tint = AccentOrange,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text("Audyt planu AI")
+                }
+            },
+            text = {
+                when (audit) {
+                    is PlanAuditState.Loading -> {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            androidx.compose.material3.CircularProgressIndicator(
+                                modifier = Modifier.size(20.dp),
+                                strokeWidth = 2.dp,
+                                color = AccentOrange
+                            )
+                            Spacer(Modifier.width(12.dp))
+                            Text("AI analizuje plan…")
+                        }
+                    }
+                    is PlanAuditState.Result -> {
+                        val scroll = rememberScrollState()
+                        Column(modifier = Modifier.verticalScroll(scroll)) {
+                            audit.text.split("\n").forEach { line ->
+                                AuditMarkdownLine(line)
+                            }
+                        }
+                    }
+                    is PlanAuditState.Error -> Text(
+                        audit.message,
+                        color = ErrorRed,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    PlanAuditState.Idle -> {}
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { vm.dismissAudit() }) {
+                    Text("OK")
+                }
+            }
+        )
+    }
+}
+
+@Composable
+private fun AuditMarkdownLine(line: String) {
+    when {
+        line.startsWith("## ") -> {
+            Spacer(Modifier.height(8.dp))
+            Text(
+                line.removePrefix("## "),
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
+                ),
+                color = AccentOrange
+            )
+        }
+        line.startsWith("### ") -> {
+            Text(
+                line.removePrefix("### "),
+                style = MaterialTheme.typography.titleSmall.copy(
+                    fontWeight = FontWeight.SemiBold
+                ),
+                color = DarkOnSurface,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+        }
+        line.startsWith("- ") || line.startsWith("• ") -> {
+            Text(
+                "• " + line.removePrefix("- ").removePrefix("• "),
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface,
+                modifier = Modifier.padding(start = 6.dp)
+            )
+        }
+        line.isBlank() -> Spacer(Modifier.height(4.dp))
+        else -> {
+            val cleaned = line.replace(Regex("\\*\\*([^*]+)\\*\\*"), "$1")
+            Text(
+                cleaned,
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    fontSize = 13.sp,
+                    fontWeight = if (line.contains("**")) FontWeight.SemiBold else FontWeight.Normal
+                ),
+                color = DarkOnSurface
+            )
+        }
     }
 }
 
