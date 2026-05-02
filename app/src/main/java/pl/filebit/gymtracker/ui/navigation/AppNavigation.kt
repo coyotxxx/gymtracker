@@ -127,7 +127,9 @@ fun AppNavigation() {
         Screen.AiTrainer.route,
         Screen.AiConversations.route,
         Screen.AiSettings.route,
-        Screen.AiWeeklyReport.route
+        Screen.AiWeeklyReport.route,
+        Screen.Measurements.route,
+        Screen.MeasurementAdd.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
@@ -260,6 +262,7 @@ fun AppNavigation() {
                     onOpenOneRm = { navController.navigate(Screen.OneRm.route) },
                     onOpenPlateCalc = { navController.navigate(Screen.PlateCalc.route) },
                     onOpenBody = { navController.navigate(Screen.BodyMeasurements.route) },
+                    onOpenMeasurements = { navController.navigate(Screen.Measurements.route) },
                     onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
                     onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
@@ -302,6 +305,32 @@ fun AppNavigation() {
             }
             composable(Screen.AiWeeklyReport.route) {
                 pl.filebit.gymtracker.ui.ai.WeeklyReportScreen(
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.Measurements.route) {
+                pl.filebit.gymtracker.ui.measurements.MeasurementsScreen(
+                    onBack = { navController.popBackStack() },
+                    onAddMeasurement = {
+                        navController.navigate(Screen.MeasurementAdd.create(null))
+                    },
+                    onEditMeasurement = { id ->
+                        navController.navigate(Screen.MeasurementAdd.create(id))
+                    },
+                    onOpenHistory = { /* TODO v0.70 */ },
+                    onOpenBodyMap = { /* TODO v0.70 */ }
+                )
+            }
+            composable(
+                route = Screen.MeasurementAdd.route,
+                arguments = listOf(navArgument("id") {
+                    type = NavType.LongType
+                    defaultValue = 0L
+                })
+            ) { backStackEntry ->
+                val id = backStackEntry.arguments?.getLong("id") ?: 0L
+                pl.filebit.gymtracker.ui.measurements.MeasurementAddScreen(
+                    measurementId = if (id == 0L) null else id,
                     onBack = { navController.popBackStack() }
                 )
             }

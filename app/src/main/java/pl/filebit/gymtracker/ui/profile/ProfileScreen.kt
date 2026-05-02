@@ -95,6 +95,7 @@ fun ProfileScreen(
     onOpenOneRm: () -> Unit,
     onOpenPlateCalc: () -> Unit,
     onOpenBody: () -> Unit,
+    onOpenMeasurements: () -> Unit,
     onOpenMuscles: () -> Unit,
     onOpenPhotos: () -> Unit,
     onOpenStrength: () -> Unit,
@@ -198,14 +199,16 @@ fun ProfileScreen(
             item {
                 ProfileNavRow(
                     icon = Icons.Default.MonitorWeight,
-                    title = stringResource(R.string.body_title),
-                    onClick = onOpenBody
+                    title = "Pomiary",
+                    subtitle = "Waga, wymiary ciała, tkanka tłuszczowa, wykresy",
+                    onClick = onOpenMeasurements
                 )
             }
             item {
                 ProfileNavRow(
                     icon = Icons.Default.PhotoLibrary,
                     title = "Zdjęcia progresu",
+                    subtitle = "Galeria + porównanie",
                     onClick = onOpenPhotos
                 )
             }

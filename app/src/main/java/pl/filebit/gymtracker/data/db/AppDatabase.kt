@@ -49,7 +49,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         AiWeeklyReport::class,
         UnlockedAchievement::class
     ],
-    version = 24,
+    version = 25,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
