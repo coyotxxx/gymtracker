@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Card
@@ -80,11 +82,11 @@ fun TrainingSettingsScreen(
                     title = stringResource(R.string.profile_weight_goal),
                     subtitle = "Określa kierunek bilansu kalorycznego sugerowanego przez AI."
                 ) {
-                    androidx.compose.foundation.lazy.LazyRow(
+                    LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
-                        androidx.compose.foundation.lazy.items(WeightGoalType.entries.toList()) { g ->
+                        items(WeightGoalType.entries.toList()) { g ->
                             pl.filebit.gymtracker.ui.theme.SelectableChip(
                                 text = weightGoalLabel(g),
                                 selected = draft.weightGoalType == g,
