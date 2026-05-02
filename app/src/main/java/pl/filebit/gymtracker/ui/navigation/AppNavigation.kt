@@ -265,6 +265,7 @@ fun AppNavigation() {
                     onOpenBody = { navController.navigate(Screen.BodyMeasurements.route) },
                     onOpenMeasurements = { navController.navigate(Screen.Measurements.route) },
                     onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
+                    onOpenMusclesV2 = { navController.navigate(Screen.MuscleEngagementV2.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
                     onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
@@ -294,6 +295,11 @@ fun AppNavigation() {
             }
             composable(Screen.BodyMeasurements.route) {
                 BodyMeasurementsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.MuscleEngagementV2.route) {
+                pl.filebit.gymtracker.ui.muscles.MuscleEngagementV2Screen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.MuscleEngagement.route) {
                 MuscleEngagementScreen(onBack = { navController.popBackStack() })
