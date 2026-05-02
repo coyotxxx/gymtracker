@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import pl.filebit.gymtracker.data.db.dao.AiChatMessageDao
 import pl.filebit.gymtracker.data.db.dao.AiConversationDao
+import pl.filebit.gymtracker.data.db.dao.AiWeeklyReportDao
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
@@ -18,6 +19,7 @@ import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.AiChatMessageEntity
 import pl.filebit.gymtracker.data.entity.AiConversation
+import pl.filebit.gymtracker.data.entity.AiWeeklyReport
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.UnlockedAchievement
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
@@ -44,9 +46,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         Goal::class,
         AiConversation::class,
         AiChatMessageEntity::class,
+        AiWeeklyReport::class,
         UnlockedAchievement::class
     ],
-    version = 23,
+    version = 24,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -63,6 +66,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun goalDao(): GoalDao
     abstract fun aiConversationDao(): AiConversationDao
     abstract fun aiChatMessageDao(): AiChatMessageDao
+    abstract fun aiWeeklyReportDao(): AiWeeklyReportDao
     abstract fun unlockedAchievementDao(): UnlockedAchievementDao
 
     companion object {

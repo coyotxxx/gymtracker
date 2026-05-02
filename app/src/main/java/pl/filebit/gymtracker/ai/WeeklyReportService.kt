@@ -9,9 +9,11 @@ import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.minus
 import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
+import pl.filebit.gymtracker.data.db.dao.AiWeeklyReportDao
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
+import pl.filebit.gymtracker.data.entity.AiWeeklyReport
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
@@ -35,6 +37,7 @@ class WeeklyReportService @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
+    private val reportDao: AiWeeklyReportDao,
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository
 ) {
@@ -161,10 +164,23 @@ class WeeklyReportService @Inject constructor(
             append("konkretu — bądź pomocny, nie laudator.")
         }
 
-        return client.chat(
+        val result = client.chat(
             cfg,
             listOf(AiMessage(AiRole.USER, prompt))
         )
+        // Po sukcesie — zapisz do bazy żeby user miał historię
+        return result.onSuccess { content ->
+            reportDao.insert(
+                AiWeeklyReport(
+                    weekStartMillis = weekStartMillis,
+                    weekEndMillis = weekEndMillis,
+                    generatedAtMillis = System.currentTimeMillis(),
+                    content = content,
+                    aiProvider = cfg.provider.name,
+                    aiModel = cfg.model
+                )
+            )
+        }
     }
 
     private fun formatKg(kg: Double): String {
