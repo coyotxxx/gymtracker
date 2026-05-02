@@ -59,6 +59,7 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 import java.text.SimpleDateFormat
