@@ -32,4 +32,13 @@ class ProfileViewModel @Inject constructor(
             onDone()
         }
     }
+
+    /** Resetuje onboardingCompleted = false, by user mógł przejść kreator od nowa. */
+    fun restartOnboarding(onDone: () -> Unit) {
+        viewModelScope.launch {
+            val current = repo.get()
+            repo.save(current.copy(onboardingCompleted = false))
+            onDone()
+        }
+    }
 }

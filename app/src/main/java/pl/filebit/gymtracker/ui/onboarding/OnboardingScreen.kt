@@ -41,6 +41,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -49,11 +50,13 @@ import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 
-private const val TOTAL_PAGES = 4
+private const val TOTAL_PAGES = 5
 
 @Composable
 fun OnboardingScreen(
     onCompleted: () -> Unit,
+    onGenerateAiPlan: () -> Unit = {},
+    onOpenAiSettings: () -> Unit = {},
     vm: OnboardingViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -114,7 +117,8 @@ fun OnboardingScreen(
                 0 -> WelcomePage(state, vm::setName)
                 1 -> GoalExperiencePage(state, vm::setGoal, vm::setExperience, vm::setGender)
                 2 -> DaysSessionWeightPage(state, vm::setDaysPerWeek, vm::setSessionMinutes, vm::setBodyweight)
-                3 -> FinishPage(state)
+                3 -> WeightGoalPage(state, vm::setWeightGoalType, vm::setTargetWeight)
+                4 -> FinishPage(state)
             }
 
             Spacer(Modifier.height(32.dp))
@@ -127,12 +131,42 @@ fun OnboardingScreen(
                         text = "Dalej"
                     )
                 } else {
-                    GymPrimaryButton(
-                        onClick = { vm.complete(onCompleted) },
-                        text = if (state.isSaving) "Zapisuję…" else "Zaczynamy!",
-                        leadingIcon = Icons.Default.AutoAwesome,
-                        enabled = !state.isSaving
-                    )
+                    // Ostatnia strona — różne akcje zależnie od klucza AI
+                    if (state.aiKeyConfigured) {
+                        GymPrimaryButton(
+                            onClick = {
+                                vm.complete {
+                                    onGenerateAiPlan()
+                                }
+                            },
+                            text = if (state.isSaving) "Zapisuję…" else "🪄 Stwórz pierwszy plan AI",
+                            leadingIcon = Icons.Default.AutoAwesome,
+                            enabled = !state.isSaving
+                        )
+                        TextButton(
+                            onClick = { vm.complete(onCompleted) },
+                            modifier = Modifier.fillMaxWidth(),
+                            enabled = !state.isSaving
+                        ) {
+                            Text("Pomiń — sam dodam plan", color = DarkOnSurfaceVariant)
+                        }
+                    } else {
+                        GymPrimaryButton(
+                            onClick = { vm.complete(onCompleted) },
+                            text = if (state.isSaving) "Zapisuję…" else "Zaczynamy!",
+                            leadingIcon = Icons.Default.AutoAwesome,
+                            enabled = !state.isSaving
+                        )
+                        TextButton(
+                            onClick = {
+                                vm.complete { onOpenAiSettings() }
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            enabled = !state.isSaving
+                        ) {
+                            Text("Wpisz klucz AI by trener Cię wsparł", color = AccentOrange)
+                        }
+                    }
                 }
 
                 Row(
@@ -197,11 +231,11 @@ private fun GoalExperiencePage(
         SectionLabel("Twój cel treningowy")
         Spacer(Modifier.height(8.dp))
         Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            ChoicePill("Hipertrofia (masa mięśniowa)", state.goal == TrainingGoal.HYPERTROPHY) { onGoal(TrainingGoal.HYPERTROPHY) }
+            ChoicePill("Masa mięśniowa (hipertrofia)", state.goal == TrainingGoal.HYPERTROPHY) { onGoal(TrainingGoal.HYPERTROPHY) }
             ChoicePill("Siła", state.goal == TrainingGoal.STRENGTH) { onGoal(TrainingGoal.STRENGTH) }
-            ChoicePill("Siła + masa (mix)", state.goal == TrainingGoal.MIX) { onGoal(TrainingGoal.MIX) }
+            ChoicePill("Siła + masa", state.goal == TrainingGoal.MIX) { onGoal(TrainingGoal.MIX) }
             ChoicePill("Cardio + siłownia", state.goal == TrainingGoal.CARDIO_LIFTING) { onGoal(TrainingGoal.CARDIO_LIFTING) }
-            ChoicePill("Ogólna sprawność", state.goal == TrainingGoal.GENERAL_FITNESS) { onGoal(TrainingGoal.GENERAL_FITNESS) }
+            ChoicePill("Sprawność ogólna", state.goal == TrainingGoal.GENERAL_FITNESS) { onGoal(TrainingGoal.GENERAL_FITNESS) }
         }
         Spacer(Modifier.height(20.dp))
         SectionLabel("Twoje doświadczenie")
@@ -282,6 +316,51 @@ private fun DaysSessionWeightPage(
 }
 
 @Composable
+private fun WeightGoalPage(
+    state: OnboardingUiState,
+    onWeightGoalType: (WeightGoalType) -> Unit,
+    onTargetWeight: (Double?) -> Unit
+) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        SectionLabel("Co chcesz osiągnąć z wagą ciała?")
+        Spacer(Modifier.height(4.dp))
+        Text(
+            "To inny cel niż treningowy — tu chodzi o redukcję / przyrost masy ciała.",
+            style = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp),
+            color = DarkOnSurfaceVariant
+        )
+        Spacer(Modifier.height(12.dp))
+        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            ChoicePill("Bez konkretnego celu", state.weightGoalType == WeightGoalType.NONE) { onWeightGoalType(WeightGoalType.NONE) }
+            ChoicePill("Redukcja (chcę schudnąć)", state.weightGoalType == WeightGoalType.CUT) { onWeightGoalType(WeightGoalType.CUT) }
+            ChoicePill("Masa (chcę przybrać)", state.weightGoalType == WeightGoalType.BULK) { onWeightGoalType(WeightGoalType.BULK) }
+            ChoicePill("Utrzymanie", state.weightGoalType == WeightGoalType.MAINTAIN) { onWeightGoalType(WeightGoalType.MAINTAIN) }
+        }
+
+        if (state.weightGoalType == WeightGoalType.CUT || state.weightGoalType == WeightGoalType.BULK) {
+            Spacer(Modifier.height(20.dp))
+            SectionLabel("Docelowa waga (kg)")
+            Spacer(Modifier.height(8.dp))
+            var targetText by remember(state.weightGoalType) {
+                mutableStateOf(state.targetWeightKg?.toString() ?: "")
+            }
+            OutlinedTextField(
+                value = targetText,
+                onValueChange = { v ->
+                    targetText = v.filter { it.isDigit() || it == '.' || it == ',' }
+                    onTargetWeight(targetText.replace(',', '.').toDoubleOrNull())
+                },
+                label = { Text("np. ${if (state.weightGoalType == WeightGoalType.CUT) "75" else "85"}", color = DarkOnSurfaceVariant) },
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(12.dp),
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
+            )
+        }
+    }
+}
+
+@Composable
 private fun FinishPage(state: OnboardingUiState) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
@@ -298,21 +377,34 @@ private fun FinishPage(state: OnboardingUiState) {
                 .padding(16.dp)
         ) {
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                SummaryRow("Cel", goalLabel(state.goal))
+                SummaryRow("Cel treningu", goalLabel(state.goal))
                 SummaryRow("Doświadczenie", experienceLabel(state.experience))
                 SummaryRow("Płeć", if (state.gender == Gender.MALE) "Mężczyzna" else "Kobieta")
                 SummaryRow("Dni / tydzień", state.daysPerWeek.toString())
                 SummaryRow("Czas sesji", "${state.sessionMinutes} min")
                 state.bodyweightKg?.let { SummaryRow("Waga", "$it kg") }
+                if (state.weightGoalType != WeightGoalType.NONE) {
+                    val target = state.targetWeightKg?.let { " → $it kg" } ?: ""
+                    SummaryRow("Cel wagi", weightGoalLabel(state.weightGoalType) + target)
+                }
             }
         }
         Spacer(Modifier.height(16.dp))
-        Text(
-            "Po starcie znajdziesz w Profilu Asystenta AI — jeśli wpiszesz klucz API (OpenAI / Anthropic), trener AI " +
-                "pomoże Ci ułożyć plan, analizować progres i sugerować zmiany.",
-            style = MaterialTheme.typography.bodySmall,
-            color = DarkOnSurfaceVariant
-        )
+        if (state.aiKeyConfigured) {
+            Text(
+                "Masz wpisany klucz AI. Klik 'Stwórz pierwszy plan AI' i trener przygotuje plan pasujący do " +
+                    "Twojej konfiguracji + utworzy pierwszy pomiar wagi.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
+            )
+        } else {
+            Text(
+                "Po starcie znajdziesz w Profilu Asystenta AI — wpisz klucz API (OpenAI / Anthropic) " +
+                    "by trener AI ułożył pierwszy plan dla Ciebie.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+        }
     }
 }
 
@@ -409,15 +501,22 @@ private fun SummaryRow(label: String, value: String) {
 }
 
 private fun goalLabel(g: TrainingGoal): String = when (g) {
-    TrainingGoal.HYPERTROPHY -> "Hipertrofia"
+    TrainingGoal.HYPERTROPHY -> "Masa mięśniowa"
     TrainingGoal.STRENGTH -> "Siła"
     TrainingGoal.MIX -> "Siła + masa"
     TrainingGoal.CARDIO_LIFTING -> "Cardio + siłownia"
-    TrainingGoal.GENERAL_FITNESS -> "Ogólna sprawność"
+    TrainingGoal.GENERAL_FITNESS -> "Sprawność ogólna"
 }
 
 private fun experienceLabel(e: ExperienceLevel): String = when (e) {
     ExperienceLevel.BEGINNER -> "Początkujący"
     ExperienceLevel.INTERMEDIATE -> "Średniozaawansowany"
     ExperienceLevel.ADVANCED -> "Zaawansowany"
+}
+
+private fun weightGoalLabel(g: WeightGoalType): String = when (g) {
+    WeightGoalType.NONE -> "Bez celu"
+    WeightGoalType.CUT -> "Redukcja"
+    WeightGoalType.BULK -> "Masa"
+    WeightGoalType.MAINTAIN -> "Utrzymanie"
 }

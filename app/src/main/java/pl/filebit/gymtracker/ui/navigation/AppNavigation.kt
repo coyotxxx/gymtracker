@@ -207,6 +207,21 @@ fun AppNavigation() {
                         navController.navigate(Screen.Home.route) {
                             popUpTo(Screen.Onboarding.route) { inclusive = true }
                         }
+                    },
+                    onGenerateAiPlan = {
+                        workoutShellVm.markOnboardingDone()
+                        // Po finish wizard z kluczem AI — Trainer auto-uruchomi PROPOSE_PLAN
+                        navController.navigate(
+                            Screen.AiTrainer.create(0L, autoAction = "PROPOSE_PLAN")
+                        ) {
+                            popUpTo(Screen.Onboarding.route) { inclusive = true }
+                        }
+                    },
+                    onOpenAiSettings = {
+                        workoutShellVm.markOnboardingDone()
+                        navController.navigate(Screen.AiSettings.route) {
+                            popUpTo(Screen.Onboarding.route) { inclusive = true }
+                        }
                     }
                 )
             }
@@ -296,7 +311,17 @@ fun AppNavigation() {
                     onOpenTrainingSettings = { navController.navigate(Screen.TrainingSettings.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
-                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
+                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
+                    onRestartOnboarding = {
+                        // Reset onboarding flag w ShellVM + navigate do Onboarding.
+                        // launchSingleTop zapobiega duplikatom, popUpTo do Profile
+                        // żeby user nie wracał strzałką do "podstrony", tylko Home
+                        // po zakończeniu wizardu.
+                        workoutShellVm.markOnboardingNeeded()
+                        navController.navigate(Screen.Onboarding.route) {
+                            launchSingleTop = true
+                        }
+                    }
                 )
             }
             composable(Screen.Stats.route) {
@@ -387,10 +412,17 @@ fun AppNavigation() {
             }
             composable(
                 route = Screen.AiTrainer.route,
-                arguments = listOf(navArgument("conversationId") {
-                    type = NavType.StringType
-                    defaultValue = "0"
-                })
+                arguments = listOf(
+                    navArgument("conversationId") {
+                        type = NavType.StringType
+                        defaultValue = "0"
+                    },
+                    navArgument("auto") {
+                        type = NavType.StringType
+                        defaultValue = ""
+                        nullable = true
+                    }
+                )
             ) {
                 AiTrainerScreen(
                     onBack = { navController.popBackStack() },

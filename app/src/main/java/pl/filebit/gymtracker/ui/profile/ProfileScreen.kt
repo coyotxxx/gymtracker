@@ -105,6 +105,7 @@ fun ProfileScreen(
     onOpenGoals: () -> Unit,
     onOpenGlossary: () -> Unit,
     onOpenAchievements: () -> Unit = {},
+    onRestartOnboarding: () -> Unit = {},
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
@@ -339,6 +340,14 @@ fun ProfileScreen(
                     title = stringResource(R.string.backup_section),
                     subtitle = "Eksport / Import / Wyczyść",
                     onClick = onOpenBackup
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.AutoAwesome,
+                    title = "Uruchom kreator ponownie",
+                    subtitle = "Przejdź wizard od nowa — zmień cel, dni, wagę",
+                    onClick = onRestartOnboarding
                 )
             }
 
@@ -688,10 +697,10 @@ private fun WeightGoalType.label(): String = when (this) {
 
 private fun TrainingGoal.label(): String = when (this) {
     TrainingGoal.STRENGTH -> "Siła"
-    TrainingGoal.HYPERTROPHY -> "Masa"
+    TrainingGoal.HYPERTROPHY -> "Masa mięśniowa"
     TrainingGoal.MIX -> "Siła + masa"
-    TrainingGoal.GENERAL_FITNESS -> "Sprawność"
-    TrainingGoal.CARDIO_LIFTING -> "Cardio + siłka"
+    TrainingGoal.GENERAL_FITNESS -> "Sprawność ogólna"
+    TrainingGoal.CARDIO_LIFTING -> "Cardio + siłownia"
 }
 
 private fun ExperienceLevel.label(): String = when (this) {

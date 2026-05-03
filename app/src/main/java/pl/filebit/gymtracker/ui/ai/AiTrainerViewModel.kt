@@ -135,12 +135,32 @@ class AiTrainerViewModel @Inject constructor(
     private val _state = MutableStateFlow(AiTrainerUiState(conversationId = initialConversationId))
     val state: StateFlow<AiTrainerUiState> = _state.asStateFlow()
 
+    private val autoActionParam: String? =
+        savedStateHandle.get<String>("auto")?.takeIf { it.isNotBlank() }
+
+    private var autoActionFired = false
+
     init {
         refreshConnection()
         if (initialConversationId > 0L) loadConversation(initialConversationId)
         viewModelScope.launch {
             planRepo.observeAllPlans().collect { plans ->
                 _state.value = _state.value.copy(availablePlans = plans)
+            }
+        }
+        // Auto-trigger quick action po nawigacji z deep link / wizard.
+        // Czekamy aż state pokaże isConnected = true (refreshConnection async).
+        autoActionParam?.let { actionName ->
+            val action = runCatching { QuickAction.valueOf(actionName) }.getOrNull()
+            if (action != null) {
+                viewModelScope.launch {
+                    state.collect { s ->
+                        if (!autoActionFired && s.isConnected && !s.isLoading) {
+                            autoActionFired = true
+                            runQuickAction(action)
+                        }
+                    }
+                }
             }
         }
     }

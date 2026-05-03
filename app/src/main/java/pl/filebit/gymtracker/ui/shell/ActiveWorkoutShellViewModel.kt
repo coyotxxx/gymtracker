@@ -64,6 +64,15 @@ class ActiveWorkoutShellViewModel @Inject constructor(
         _onboardingState.value = OnboardingNavState.NotNeeded
     }
 
+    /** Reset flagi onboardingu w DB + state — user wraca do wizardu. */
+    fun markOnboardingNeeded() {
+        viewModelScope.launch {
+            val current = profileRepo.get()
+            profileRepo.save(current.copy(onboardingCompleted = false))
+            _onboardingState.value = OnboardingNavState.Needed
+        }
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<ActiveWorkoutShellState> = workoutRepo.observeActive()
         .flatMapLatest { workout ->

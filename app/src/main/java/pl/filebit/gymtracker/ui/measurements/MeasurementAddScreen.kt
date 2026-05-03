@@ -88,7 +88,12 @@ fun MeasurementAddScreen(
 
     var mode by remember { mutableStateOf(FormMode.Full) }
     var date by remember(initial) { mutableStateOf(initial?.date ?: System.currentTimeMillis()) }
-    var weight by remember(initial) { mutableStateOf(initial?.weightKg?.let { formatWeight(it) } ?: "") }
+    // Nowy pomiar — prefill wagi z ostatniego pomiaru (lub UserProfile.bodyweightKg
+    // przez state.latestWeight) żeby user nie musiał wpisywać tej samej liczby.
+    var weight by remember(initial, state.latestWeight) {
+        val src = initial?.weightKg ?: if (initial == null) state.latestWeight else null
+        mutableStateOf(src?.let { formatWeight(it) } ?: "")
+    }
     var bodyFat by remember(initial) { mutableStateOf(initial?.bodyFatPercent?.let { formatWeight(it) } ?: "") }
     var muscleMass by remember(initial) { mutableStateOf(initial?.muscleMassKg?.let { formatWeight(it) } ?: "") }
     var chest by remember(initial) { mutableStateOf(initial?.chestCm?.let { formatWeight(it) } ?: "") }

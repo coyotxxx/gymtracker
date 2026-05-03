@@ -20,8 +20,12 @@ sealed class Screen(val route: String) {
     object StrengthStandards : Screen("tools/strength")
     object AiConversations : Screen("ai/conversations")
     object AiSettings : Screen("ai/settings")
-    object AiTrainer : Screen("ai/trainer/{conversationId}") {
-        fun create(conversationId: Long) = "ai/trainer/$conversationId"
+    object AiTrainer : Screen("ai/trainer/{conversationId}?auto={auto}") {
+        fun create(conversationId: Long, autoAction: String? = null): String {
+            // Zawsze dołączamy ?auto=… żeby Compose Navigation rejestrował query
+            // poprawnie (defaultValue = "" obsłuży brak akcji)
+            return "ai/trainer/$conversationId?auto=${autoAction ?: ""}"
+        }
     }
     object AiWeeklyReport : Screen("ai/weekly-report")
     object Measurements : Screen("measurements")
