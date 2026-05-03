@@ -90,9 +90,6 @@ class WorkoutRepository @Inject constructor(
         )
     }
 
-    suspend fun getWorkout(id: Long): pl.filebit.gymtracker.data.entity.Workout? =
-        workoutDao.getById(id)
-
     /**
      * Dodaje nową serię. Auto-numeracja setNumber w obrębie ćwiczenia,
      * orderIndex liczony tak, że ćwiczenie zachowuje swoją grupę.
