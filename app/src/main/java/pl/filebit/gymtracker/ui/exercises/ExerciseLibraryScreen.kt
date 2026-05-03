@@ -155,6 +155,7 @@ fun ExerciseLibraryScreen(
                 val pr = prs[ex.id]
                 ExerciseRow(
                     name = ex.name,
+                    summary = shortSummary(ex.description),
                     muscle = ex.primaryMuscle.displayName(),
                     equipment = ex.equipment.displayName(),
                     prMaxWeight = pr?.maxWeightKg,
@@ -190,9 +191,25 @@ private fun MuscleChip(text: String, selected: Boolean, onClick: () -> Unit) {
     }
 }
 
+/**
+ * Wyciąga krótki tagline z pełnego opisu — pierwsze "zdanie semantyczne"
+ * (do przecinka/myślnika/kropki), max 80 znaków. Pomaga amatorowi zrozumieć
+ * od razu do czego służy ćwiczenie, bez wchodzenia w szczegóły.
+ */
+private fun shortSummary(desc: String, max: Int = 80): String? {
+    if (desc.isBlank()) return null
+    val text = desc.trim()
+    // Dziel po pierwszym z: . ! ? , — :
+    val cutIdx = text.indexOfAny(charArrayOf('.', '!', '?', ',', '—', ':'))
+    val first = if (cutIdx > 0) text.substring(0, cutIdx).trim() else text
+    return if (first.length <= max) first
+    else first.take(max - 1).trimEnd() + "…"
+}
+
 @Composable
 private fun ExerciseRow(
     name: String,
+    summary: String?,
     muscle: String,
     equipment: String,
     prMaxWeight: Double?,
@@ -239,6 +256,16 @@ private fun ExerciseRow(
                     color = DarkOnSurface,
                     maxLines = 2
                 )
+                if (summary != null) {
+                    Spacer(Modifier.height(2.dp))
+                    Text(
+                        summary,
+                        style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                        color = DarkOnSurface.copy(alpha = 0.72f),
+                        maxLines = 1,
+                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                    )
+                }
                 Spacer(Modifier.height(2.dp))
                 Text(
                     "$muscle · $equipment",
