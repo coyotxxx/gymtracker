@@ -38,11 +38,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -100,63 +97,45 @@ fun AiTrainerScreen(
 
     LaunchedEffect(Unit) { vm.refreshConnection() }
 
-    Scaffold(
-        containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = {
-                    Column {
-                        Text(
-                            "PLAN NA TYDZIEŃ",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                letterSpacing = 1.4.sp
-                            ),
-                            color = AccentOrange
-                        )
-                        Text(
-                            stringResource(R.string.ai_trainer_title),
-                            style = MaterialTheme.typography.titleLarge.copy(
-                                fontWeight = FontWeight.Bold
-                            ),
-                            color = DarkOnSurface
-                        )
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                actions = {
-                    IconButton(onClick = vm::clearChat) {
-                        Icon(
-                            Icons.Default.DeleteSweep,
-                            contentDescription = null,
-                            tint = DarkOnSurfaceVariant
-                        )
-                    }
-                    IconButton(onClick = onOpenSettings) {
-                        Icon(
-                            Icons.Default.Settings,
-                            contentDescription = null,
-                            tint = DarkOnSurfaceVariant
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface,
-                    navigationIconContentColor = DarkOnSurface
-                )
-            )
-        }
-    ) { padding ->
+    // Box+Column zamiast Scaffold — uniknięcie nested padding pod globalnym TopBar
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(DarkBg)
+    ) {
+        pl.filebit.gymtracker.ui.theme.ScreenHeader(
+            title = stringResource(R.string.ai_trainer_title),
+            onBack = onBack,
+            actions = {
+                IconButton(onClick = vm::clearChat) {
+                    Icon(
+                        Icons.Default.DeleteSweep,
+                        contentDescription = null,
+                        tint = DarkOnSurfaceVariant
+                    )
+                }
+                IconButton(onClick = onOpenSettings) {
+                    Icon(
+                        Icons.Default.Settings,
+                        contentDescription = null,
+                        tint = DarkOnSurfaceVariant
+                    )
+                }
+            }
+        )
+        // Subtitle 'PLAN NA TYDZIEŃ' — pod headerem (zachowany z poprzedniego TopAppBar)
+        Text(
+            "PLAN NA TYDZIEŃ",
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.4.sp
+            ),
+            color = AccentOrange,
+            modifier = Modifier.padding(start = 16.dp, top = 0.dp, bottom = 4.dp)
+        )
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
+            modifier = Modifier.fillMaxSize()
         ) {
             if (!state.isConnected) {
                 NotConnectedBanner(onOpenSettings = onOpenSettings)
