@@ -153,9 +153,9 @@ fun WeeklyReportScreen(
             // Sekcja akcji od AI dla NAJNOWSZEGO raportu
             val latestReport = reports.firstOrNull()
             if (latestReport != null) {
-                val actions = remember(latestReport.id) { vm.parseActions(latestReport.content) }
-                if (actions.isNotEmpty()) {
-                    item(key = "actions-card") {
+                item(key = "actions-card") {
+                    val actions = remember(latestReport.id) { vm.parseActions(latestReport.content) }
+                    if (actions.isNotEmpty()) {
                         WeeklyActionsCard(
                             actions = actions,
                             selectedActionIds = state.selectedActions,
