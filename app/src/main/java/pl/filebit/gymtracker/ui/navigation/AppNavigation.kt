@@ -144,11 +144,21 @@ fun AppNavigation() {
     val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
+    // Tytuł i back-state wynikają z aktualnej route. Na 5 głównych tabach
+    // showBack=false + tytuł 'GymTracker' (default), na podstronach showBack=true
+    // + tytuł z mapy screenTitle(). Tab routes są w tabRoutes.
+    val isOnTab = currentRoute in tabRoutes
+    val computedTitle = if (isOnTab) "GymTracker" else screenTitle(currentRoute)
+    val computedShowBack = !isOnTab && currentRoute != null
+
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
         topBar = {
             if (showTopBar) {
                 AppTopBar(
+                    title = computedTitle,
+                    showBack = computedShowBack,
+                    onBack = { navController.popBackStack() },
                     onOpenAiAssistant = { aiChoiceVisible = true }
                 )
             }
