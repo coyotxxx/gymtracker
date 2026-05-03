@@ -45,6 +45,22 @@ data class AiPlanSet(
     val restSec: Int? = null
 )
 
+/**
+ * Wynik walidacji proposal — zanim zaaplikujemy, sprawdzamy czy każde ćwiczenie
+ * AI pokrywa się z biblioteką. Jeśli AI wymyśliło nazwę spoza listy, user dostaje
+ * ostrzeżenie zamiast cichego pominięcia.
+ */
+data class ProposalValidation(
+    val totalExercises: Int,
+    val matchedCount: Int,
+    val unmatchedNames: List<String>,
+    val totalDays: Int
+) {
+    val isFullyValid: Boolean get() = unmatchedNames.isEmpty() && totalExercises > 0
+    val matchRatio: Float get() = if (totalExercises == 0) 0f
+        else matchedCount.toFloat() / totalExercises
+}
+
 @Singleton
 class AiPlanApplier @Inject constructor(
     private val planRepo: PlanRepository,
@@ -142,6 +158,37 @@ class AiPlanApplier @Inject constructor(
         } ?: emptyList()
         val sg = o["supersetGroup"]?.jsonPrimitive?.content
         return AiPlanExercise(name, sets, sg)
+    }
+
+    /**
+     * Sprawdza ile ćwiczeń z proposal pokrywa się z biblioteką (case-insensitive
+     * equals → startsWith → contains). Każde nieznalezione cytuje na liście —
+     * user widzi co AI zmyśliło i decyduje: cofnij apply / akceptuj częściowy.
+     */
+    suspend fun validateProposal(proposal: AiPlanProposal): ProposalValidation {
+        val library = exerciseDao.getAll()
+        val total = proposal.totalExercises
+        val unmatched = mutableListOf<String>()
+        var matched = 0
+        proposal.days.forEach { day ->
+            day.exercises.forEach { aiEx ->
+                val match = library.firstOrNull {
+                    it.name.equals(aiEx.exerciseName, ignoreCase = true)
+                } ?: library.firstOrNull {
+                    it.name.startsWith(aiEx.exerciseName, ignoreCase = true)
+                } ?: library.firstOrNull {
+                    it.name.contains(aiEx.exerciseName, ignoreCase = true)
+                }
+                if (match != null) matched++
+                else unmatched += aiEx.exerciseName
+            }
+        }
+        return ProposalValidation(
+            totalExercises = total,
+            matchedCount = matched,
+            unmatchedNames = unmatched.distinct(),
+            totalDays = proposal.days.size
+        )
     }
 
     /**

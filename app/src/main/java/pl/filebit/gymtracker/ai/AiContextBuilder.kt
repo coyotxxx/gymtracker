@@ -268,6 +268,10 @@ class AiContextBuilder @Inject constructor(
                             ((wwe.workout.finishedAt ?: wwe.workout.startedAt) - wwe.workout.startedAt) / 60_000
                         )
                         if (wwe.workout.notes.isNotBlank()) put("notes", wwe.workout.notes)
+                        // Post-workout feedback (v0.82.0+): wellbeing 1-5, ból
+                        wwe.workout.wellbeingRating?.let { put("wellbeing", it) }
+                        wwe.workout.painArea?.let { put("painArea", it) }
+                        wwe.workout.painNotes?.let { put("painNotes", it) }
                         put("exercises", buildJsonArray {
                             wwe.byExercise.forEach { (ex, list) ->
                                 add(buildJsonObject {

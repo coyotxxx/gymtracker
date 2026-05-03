@@ -31,6 +31,11 @@ data class ChatMessage(
     val applied: Boolean = false
 )
 
+data class PendingValidation(
+    val messageId: Long,
+    val validation: pl.filebit.gymtracker.ai.ProposalValidation
+)
+
 data class AiTrainerUiState(
     val conversationId: Long = 0L,
     val messages: List<ChatMessage> = emptyList(),
@@ -40,7 +45,8 @@ data class AiTrainerUiState(
     val isConnected: Boolean = false,
     val providerName: String = "",
     val modelName: String = "",
-    val planAppliedId: Long? = null
+    val planAppliedId: Long? = null,
+    val pendingValidation: PendingValidation? = null
 ) {
     /** Ostatnia wiadomość ASSISTANT z planem, której jeszcze nie zastosowano. */
     val pendingProposalMessage: ChatMessage?
@@ -79,6 +85,14 @@ enum class QuickAction(val labelKey: String, val prompt: String) {
     GOAL_PROGRESS(
         "ai_action_goal",
         "Zanalizuj mój postęp do aktywnych celów (active_goals). Dla każdego celu: czy idę zgodnie z planem, czy dotrę na czas, co konkretnie zmienić w treningu/diecie/cardio żeby przyspieszyć. Cytuj liczby i daty."
+    ),
+    PAIN_RECOVERY(
+        "ai_action_pain_recovery",
+        "Sprawdź pola painArea/painNotes/wellbeing w moich ostatnich treningach (recent_workouts). " +
+            "Jeśli zgłosiłem ból (painArea) lub niskie samopoczucie (wellbeing 1-2) — zaproponuj " +
+            "konkretne zmiany w planie / sesji najbliższego dnia: które ćwiczenia pominąć, czym " +
+            "zastąpić, czy potrzebny deload. Bądź konkretny — cytuj nazwy ćwiczeń. " +
+            "Jeśli chcesz wygenerować poprawiony plan — odpowiedz blokiem JSON jak w PROPOSE_PLAN."
     )
 }
 
@@ -243,9 +257,8 @@ class AiTrainerViewModel @Inject constructor(
         return chatRepo.createConversation(title = titleHint?.take(60).orEmpty())
     }
 
-    fun applyProposal(message: ChatMessage) {
-        Log.d("AiTrainerVM", "applyProposal click: msg.id=${message.id} hasProposal=${message.proposal != null} applied=${message.applied}")
-        toast("Zapisuję plan…")
+    fun applyProposal(message: ChatMessage, force: Boolean = false) {
+        Log.d("AiTrainerVM", "applyProposal click: msg.id=${message.id} hasProposal=${message.proposal != null} applied=${message.applied} force=$force")
         val proposal = message.proposal
         if (proposal == null) {
             Log.w("AiTrainerVM", "applyProposal: proposal is null")
@@ -259,8 +272,25 @@ class AiTrainerViewModel @Inject constructor(
         val targetIndex = _state.value.messages.indexOfFirst { it.id != 0L && it.id == message.id }
             .takeIf { it >= 0 }
             ?: _state.value.messages.indexOfLast { it.proposal != null && !it.applied }
-        _state.value = _state.value.copy(isApplying = true, error = null)
+
+        // Walidacja przed zastosowaniem — jeśli AI wymyśliło ćwiczenia spoza biblioteki,
+        // pokaż user'owi ostrzeżenie i pozwól mu zdecydować (force = true → mimo to apply)
         viewModelScope.launch {
+            if (!force) {
+                val validation = planApplier.validateProposal(proposal)
+                if (validation.unmatchedNames.isNotEmpty()) {
+                    Log.w("AiTrainerVM", "validation found ${validation.unmatchedNames.size} unmatched: ${validation.unmatchedNames}")
+                    _state.value = _state.value.copy(
+                        pendingValidation = PendingValidation(
+                            messageId = message.id,
+                            validation = validation
+                        )
+                    )
+                    return@launch
+                }
+            }
+            toast("Zapisuję plan…")
+            _state.value = _state.value.copy(isApplying = true, error = null, pendingValidation = null)
             planApplier.applyProposal(proposal).fold(
                 onSuccess = { planId ->
                     Log.d("AiTrainerVM", "applyProposal SUCCESS planId=$planId")
@@ -285,6 +315,20 @@ class AiTrainerViewModel @Inject constructor(
                 }
             )
         }
+    }
+
+    /** User zaakceptował zastosowanie mimo niedopasowanych ćwiczeń. */
+    fun confirmApplyDespiteValidation() {
+        val pv = _state.value.pendingValidation ?: return
+        val msg = _state.value.messages.firstOrNull {
+            (it.id != 0L && it.id == pv.messageId) || (it.id == 0L && it.proposal != null && !it.applied)
+        } ?: return
+        _state.value = _state.value.copy(pendingValidation = null)
+        applyProposal(msg, force = true)
+    }
+
+    fun cancelApplyValidation() {
+        _state.value = _state.value.copy(pendingValidation = null)
     }
 
     /**

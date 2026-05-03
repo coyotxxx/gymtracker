@@ -360,6 +360,65 @@ fun AiTrainerScreen(
             }
         }
     }
+
+    // Dialog walidacji — gdy AI wymyśliło ćwiczenia spoza biblioteki
+    state.pendingValidation?.let { pv ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.cancelApplyValidation() },
+            title = { Text("Sprawdź propozycję AI") },
+            text = {
+                Column {
+                    Text(
+                        "AI dopasowało ${pv.validation.matchedCount} z ${pv.validation.totalExercises} ćwiczeń. " +
+                            "Reszta nie istnieje w Twojej bibliotece i zostanie pominięta.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = DarkOnSurface
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        "Niedopasowane (${pv.validation.unmatchedNames.size}):",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 0.6.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    pv.validation.unmatchedNames.take(10).forEach { name ->
+                        Text(
+                            "• $name",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = pl.filebit.gymtracker.ui.theme.ErrorRed
+                        )
+                    }
+                    if (pv.validation.unmatchedNames.size > 10) {
+                        Text(
+                            "...i ${pv.validation.unmatchedNames.size - 10} więcej",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        "Zastosować mimo to (z pominięciem niedopasowanych)?",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { vm.confirmApplyDespiteValidation() }) {
+                    Text("Zastosuj mimo to", color = AccentOrange)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { vm.cancelApplyValidation() }) {
+                    Text("Anuluj", color = DarkOnSurfaceVariant)
+                }
+            },
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        )
+    }
 }
 
 @Composable
@@ -400,6 +459,7 @@ private fun QuickActionChip(
         QuickAction.FULL_STATS -> stringResource(R.string.ai_action_stats)
         QuickAction.WEEKLY_SUMMARY -> stringResource(R.string.ai_action_weekly)
         QuickAction.GOAL_PROGRESS -> stringResource(R.string.ai_action_goal)
+        QuickAction.PAIN_RECOVERY -> stringResource(R.string.ai_action_pain_recovery)
     }
     val borderColor = if (enabled) AccentOrange.copy(alpha = 0.45f) else DarkSurfaceVariant
     val textColor = if (enabled) AccentOrange else DarkOnSurfaceVariant
