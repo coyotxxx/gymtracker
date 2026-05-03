@@ -35,7 +35,6 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -123,47 +122,10 @@ fun ProgressPhotosScreen(
         )
     }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        floatingActionButton = {
-            Box {
-                FloatingActionButton(
-                    onClick = { sourceMenuOpen = true },
-                    containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                    contentColor = androidx.compose.ui.graphics.Color.Black,
-                    shape = RoundedCornerShape(16.dp)
-                ) {
-                    Icon(Icons.Default.Add, contentDescription = null)
-                }
-                DropdownMenu(
-                    expanded = sourceMenuOpen,
-                    onDismissRequest = { sourceMenuOpen = false }
-                ) {
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.photos_source_camera)) },
-                        leadingIcon = { Icon(Icons.Default.PhotoCamera, contentDescription = null) },
-                        onClick = {
-                            sourceMenuOpen = false
-                            launchCamera()
-                        }
-                    )
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.photos_source_gallery)) },
-                        leadingIcon = { Icon(Icons.Default.PhotoLibrary, contentDescription = null) },
-                        onClick = {
-                            sourceMenuOpen = false
-                            launchGallery()
-                        }
-                    )
-                }
-            }
-        }
-    ) { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-        ) {
+    // Box zamiast Scaffold — globalny Scaffold (AppNavigation) już daje padding
+    // pod TopBar, własny Scaffold dawałby podwójny offset (jak Goals w v0.89.3).
+    Box(modifier = Modifier.fillMaxSize().background(pl.filebit.gymtracker.ui.theme.DarkBg)) {
+        Column(modifier = Modifier.fillMaxSize()) {
             ScreenHeader(
                 title = stringResource(R.string.photos_title),
                 onBack = onBack
@@ -185,7 +147,7 @@ fun ProgressPhotosScreen(
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(3),
                     modifier = Modifier.fillMaxSize(),
-                    contentPadding = PaddingValues(8.dp),
+                    contentPadding = PaddingValues(start = 8.dp, end = 8.dp, top = 8.dp, bottom = 96.dp),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
@@ -197,6 +159,41 @@ fun ProgressPhotosScreen(
                         )
                     }
                 }
+            }
+        }
+        // FAB pływa nad treścią — pozycja BottomEnd, pod nim DropdownMenu
+        Box(modifier = Modifier
+            .align(Alignment.BottomEnd)
+            .padding(16.dp)
+        ) {
+            FloatingActionButton(
+                onClick = { sourceMenuOpen = true },
+                containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                contentColor = androidx.compose.ui.graphics.Color.Black,
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Icon(Icons.Default.Add, contentDescription = null)
+            }
+            DropdownMenu(
+                expanded = sourceMenuOpen,
+                onDismissRequest = { sourceMenuOpen = false }
+            ) {
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.photos_source_camera)) },
+                    leadingIcon = { Icon(Icons.Default.PhotoCamera, contentDescription = null) },
+                    onClick = {
+                        sourceMenuOpen = false
+                        launchCamera()
+                    }
+                )
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.photos_source_gallery)) },
+                    leadingIcon = { Icon(Icons.Default.PhotoLibrary, contentDescription = null) },
+                    onClick = {
+                        sourceMenuOpen = false
+                        launchGallery()
+                    }
+                )
             }
         }
     }
