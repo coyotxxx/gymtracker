@@ -49,6 +49,7 @@ import pl.filebit.gymtracker.ai.AiRole
 fun AiQuickAskSheet(
     screenLabel: String,
     onDismiss: () -> Unit,
+    initialPrompt: String? = null,
     vm: AiQuickAskViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -56,8 +57,11 @@ fun AiQuickAskSheet(
     var input by remember { mutableStateOf("") }
     val listState = rememberLazyListState()
 
-    LaunchedEffect(screenLabel) {
+    LaunchedEffect(screenLabel, initialPrompt) {
         vm.setScreen(screenLabel)
+        if (!initialPrompt.isNullOrBlank()) {
+            vm.ask(initialPrompt)
+        }
     }
     LaunchedEffect(state.messages.size) {
         if (state.messages.isNotEmpty()) {

@@ -294,10 +294,27 @@ class WeeklyReportService @Inject constructor(
         val goal = profile.goal.name
 
         // Build prompt
+        val withFeedback = workouts.filter { it.wellbeingRating != null || it.painArea != null }
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Przeanalizuj poniższy tydzień treningowy ")
             append("użytkownika i daj rekomendacje na następny tydzień. Bądź konkretny — ")
             append("cytuj liczby z danych. Bazuj na zasadach RP, MASS i Israetela. Polski język.\n\n")
+            if (withFeedback.isNotEmpty()) {
+                append("# FEEDBACK Z TRENINGÓW (samopoczucie 1-5 + ból)\n")
+                val df = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+                withFeedback.forEach { w ->
+                    append("- ${df.format(java.util.Date(w.startedAt))}: ")
+                    w.wellbeingRating?.let { append("wellbeing $it/5") }
+                    w.painArea?.let {
+                        if (w.wellbeingRating != null) append(", ")
+                        append("ból: $it")
+                        w.painNotes?.takeIf { n -> n.isNotBlank() }?.let { n -> append(" ($n)") }
+                    }
+                    append("\n")
+                }
+                append("UWZGLĘDNIJ to we wnioskach — niski wellbeing lub powtarzający się ból ")
+                append("to silny sygnał na dostosowanie planu/deloadu.\n\n")
+            }
 
             append("# DANE TYGODNIA: $mondayDate – ${mondayDate.plus(6, DateTimeUnit.DAY)}\n")
             append("- Sesji: ${workouts.size}, łącznie ${totalDurationMin} min\n")

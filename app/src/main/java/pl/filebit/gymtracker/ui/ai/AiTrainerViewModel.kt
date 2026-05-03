@@ -57,21 +57,28 @@ enum class QuickAction(val labelKey: String, val prompt: String) {
     PROPOSE_PLAN(
         "ai_action_plan",
         "Na podstawie moich celów, doświadczenia, dostępnego sprzętu i historii treningów zaproponuj kompletny plan treningowy. " +
+            "SPRAWDŹ pole `painArea` i `wellbeing` w `recent_workouts` — jeśli zgłaszałem ból konkretnej partii, UNIKAJ ćwiczeń ją mocno obciążających lub zaproponuj alternatywy. " +
             "Zwróć go jako blok JSON wewnątrz ```json ... ``` z polami: name, description, daysOfWeek, days [{dayOfWeek, exercises [{exerciseName, sets[{reps, weightKg, restSec}]}]}]. " +
             "Używaj DOKŁADNIE nazw ćwiczeń z mojej biblioteki (lista w 'available_exercises'). " +
             "Po JSON dodaj krótki opis dlaczego ten plan."
     ),
     TODAY(
         "ai_action_today",
-        "Zaproponuj konkretną sesję treningową na dziś biorąc pod uwagę kiedy ostatnio trenowałem każdą partię, mój cel, mój poziom siły i ewentualne stagnacje. Podaj konkretne ćwiczenia, sety, powtórzenia i ciężary."
+        "Zaproponuj konkretną sesję treningową na dziś biorąc pod uwagę kiedy ostatnio trenowałem każdą partię, mój cel, mój poziom siły i ewentualne stagnacje. " +
+            "SPRAWDŹ wellbeing/painArea w ostatnich `recent_workouts` — jeśli niski wellbeing (1-2) lub świeży ból, zaproponuj LŻEJSZĄ sesję lub pomiń bolące partie. " +
+            "Podaj konkretne ćwiczenia, sety, powtórzenia i ciężary."
     ),
     ANALYZE_PROGRESS(
         "ai_action_progress",
-        "Zrób szczegółową analizę mojego progresu z ostatnich tygodni: które ćwiczenia rosną, które stoją, czy są dysbalanse mięśniowe, jak wygląda moja objętość treningowa, czy progresja jest zdrowa. Konkretnie cytuj liczby i daty."
+        "Zrób szczegółową analizę mojego progresu z ostatnich tygodni: które ćwiczenia rosną, które stoją, czy są dysbalanse mięśniowe, jak wygląda moja objętość treningowa, czy progresja jest zdrowa. " +
+            "Uwzględnij wellbeing/painArea — częsty ból lub niski wellbeing wpływa na jakość progresu. " +
+            "Konkretnie cytuj liczby i daty."
     ),
     DELOAD(
         "ai_action_deload",
-        "Oceń czy potrzebuję deloadu lub zmiany strategii. Patrz na: stagnacje, częstotliwość treningów, poziom RPE, jakość snu jeśli ma w notatkach, łączną objętość. Daj konkretną rekomendację."
+        "Oceń czy potrzebuję deloadu lub zmiany strategii. Patrz na: stagnacje, częstotliwość treningów, poziom RPE, jakość snu jeśli ma w notatkach, łączną objętość, " +
+            "ORAZ wellbeing/painArea z `recent_workouts` — powtarzający się ból lub seria niskiego wellbeing to silny sygnał na deload. " +
+            "Daj konkretną rekomendację."
     ),
     FULL_STATS(
         "ai_action_stats",

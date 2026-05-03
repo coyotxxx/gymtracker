@@ -2,6 +2,8 @@ package pl.filebit.gymtracker.ui.exercises
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,9 +14,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -57,6 +61,7 @@ import pl.filebit.gymtracker.util.formatWeight
 @Composable
 fun ExerciseDetailScreen(
     onBack: () -> Unit,
+    onAskAi: (String) -> Unit = {},
     vm: ExerciseDetailViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -88,6 +93,13 @@ fun ExerciseDetailScreen(
                 ScreenHeader(
                     title = ex.name,
                     onBack = onBack
+                )
+            }
+            // Przycisk "Zapytaj AI o to ćwiczenie"
+            item {
+                AskAiAboutExerciseRow(
+                    exerciseName = ex.name,
+                    onAskAi = onAskAi
                 )
             }
             // Opis ćwiczenia (jeśli wbudowany)
@@ -377,6 +389,55 @@ private fun ProgressionLineChart(
             val ratio = if (range > 0) ((p.maxWeightKg - minW) / range).toFloat() else 0.5f
             val y = padding + plotH * (1 - ratio)
             drawCircle(color = pointColor, radius = 5f, center = Offset(x, y))
+        }
+    }
+}
+
+
+@Composable
+private fun AskAiAboutExerciseRow(
+    exerciseName: String,
+    onAskAi: (String) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f),
+                RoundedCornerShape(12.dp)
+            )
+            .border(
+                1.dp,
+                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.40f),
+                RoundedCornerShape(12.dp)
+            )
+            .clickable {
+                onAskAi(
+                    "Mam pytanie o ćwiczenie '$exerciseName'. Jak idzie mój progres? " +
+                        "Czy są jakieś sygnały stagnacji lub bólu? Co zrobić żeby rosnąć?"
+                )
+            }
+            .padding(horizontal = 14.dp, vertical = 12.dp),
+        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+    ) {
+        androidx.compose.material3.Icon(
+            Icons.Default.AutoAwesome,
+            contentDescription = null,
+            tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+            modifier = Modifier.size(18.dp)
+        )
+        Spacer(Modifier.size(10.dp))
+        Column(modifier = Modifier.weight(1f)) {
+            androidx.compose.material3.Text(
+                "Zapytaj AI o to ćwiczenie",
+                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange
+            )
+            androidx.compose.material3.Text(
+                "Analiza progresu, sugestie, pytania",
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
         }
     }
 }

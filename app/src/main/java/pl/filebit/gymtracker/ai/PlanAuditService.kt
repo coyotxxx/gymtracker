@@ -24,7 +24,8 @@ class PlanAuditService @Inject constructor(
     private val planSetDao: PlanExerciseSetDao,
     private val exerciseDao: ExerciseDao,
     private val profileRepo: UserProfileRepository,
-    private val applier: AiPlanApplier
+    private val applier: AiPlanApplier,
+    private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao
 ) {
     /**
      * Po audycie — wywołuje AI ponownie z prośbą o WYGENEROWANIE poprawionej
@@ -52,11 +53,18 @@ class PlanAuditService @Inject constructor(
         val profile = profileRepo.get()
 
         val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
+        val recentFeedback = collectRecentFeedback()
 
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Otrzymałeś plan treningowy oraz audyt z poprzedniej tury. ")
             append("Wygeneruj POPRAWIONĄ wersję planu uwzględniając wszystkie problemy z audytu. ")
             append("Trzymaj styl/cel użytkownika. Używaj WYŁĄCZNIE ćwiczeń z biblioteki poniżej (cytuj nazwy 1:1).\n\n")
+            if (recentFeedback.isNotBlank()) {
+                append("# OSTATNIE FEEDBACK Z TRENINGÓW\n")
+                append(recentFeedback)
+                append("Jeśli widać ból w danej partii — zaproponuj LŻEJSZĄ alternatywę dla ćwiczeń ją obciążających. ")
+                append("Jeśli wellbeing 1-2 przez >2 sesje — rozważ deload (-10% volume).\n\n")
+            }
 
             append("# OBECNY PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -136,6 +144,35 @@ class PlanAuditService @Inject constructor(
         else -> "Dzień $day"
     }
 
+    /**
+     * Krótkie podsumowanie ostatnich 5 treningów: ich data + wellbeing + painArea
+     * (jeśli zgłoszono). Pusty string jeśli brak feedbacku — wtedy AI nie dostaje
+     * tej sekcji w prompt.
+     */
+    private suspend fun collectRecentFeedback(): String {
+        val recent = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null }
+            .sortedByDescending { it.startedAt }
+            .take(5)
+        val withFeedback = recent.filter {
+            it.wellbeingRating != null || it.painArea != null
+        }
+        if (withFeedback.isEmpty()) return ""
+        val df = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+        return buildString {
+            withFeedback.forEach { w ->
+                append("- ${df.format(java.util.Date(w.startedAt))}: ")
+                w.wellbeingRating?.let { append("wellbeing $it/5") }
+                w.painArea?.let {
+                    if (w.wellbeingRating != null) append(", ")
+                    append("ból: $it")
+                    w.painNotes?.takeIf { n -> n.isNotBlank() }?.let { n -> append(" ($n)") }
+                }
+                append("\n")
+            }
+        }
+    }
+
     suspend fun audit(planId: Long): Result<String> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
@@ -158,11 +195,18 @@ class PlanAuditService @Inject constructor(
         val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
         val profile = profileRepo.get()
 
+        val recentFeedback = collectRecentFeedback()
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Przeanalizuj plan treningowy użytkownika ")
             append("i wskaż mocne strony oraz problemy. Bądź konkretny — cytuj nazwy ćwiczeń ")
             append("i liczby. Bazuj na zasadach: balans push/pull, antagonista wzgl. agonisty, ")
             append("volume 10-20 setów/partia/tydzień (hipertrofia), nie więcej niż 6 ćwiczeń/dzień.\n\n")
+            if (recentFeedback.isNotBlank()) {
+                append("# OSTATNIE FEEDBACK Z TRENINGÓW (wellbeing 1-5 + ból)\n")
+                append(recentFeedback)
+                append("Jeśli widać ból lub niski wellbeing — UWZGLĘDNIJ to w ocenie planu ")
+                append("(czy plan nie nadmiernie obciąża bolącej partii, czy nie wymaga deloadu).\n\n")
+            }
 
             append("# PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")

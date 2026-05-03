@@ -117,6 +117,7 @@ fun AppNavigation() {
 
     var aiChoiceVisible by remember { mutableStateOf(false) }
     var aiQuickAskVisible by remember { mutableStateOf(false) }
+    var aiQuickAskInitialPrompt by remember { mutableStateOf<String?>(null) }
     // TopBar widoczny WSZĘDZIE poza ekranami workout (mają własny tytuł +
     // skomplikowane akcje) i ekranami AI (Trener AI ma własny topBar z labelem
     // "PLAN NA TYDZIEŃ" — duplikacja byłaby brzydka).
@@ -254,7 +255,13 @@ fun AppNavigation() {
                 route = Screen.ExerciseDetail.route,
                 arguments = listOf(navArgument("exerciseId") { type = NavType.LongType })
             ) {
-                ExerciseDetailScreen(onBack = { navController.popBackStack() })
+                ExerciseDetailScreen(
+                    onBack = { navController.popBackStack() },
+                    onAskAi = { prompt ->
+                        aiQuickAskInitialPrompt = prompt
+                        aiQuickAskVisible = true
+                    }
+                )
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
@@ -497,7 +504,11 @@ fun AppNavigation() {
         if (aiQuickAskVisible) {
             pl.filebit.gymtracker.ui.ai.AiQuickAskSheet(
                 screenLabel = currentRoute.screenLabel(),
-                onDismiss = { aiQuickAskVisible = false }
+                initialPrompt = aiQuickAskInitialPrompt,
+                onDismiss = {
+                    aiQuickAskVisible = false
+                    aiQuickAskInitialPrompt = null
+                }
             )
         }
     }
