@@ -234,16 +234,30 @@ fun HomeScreen(
     }
 
     if (showPostponeDialog) {
-        PostponeDialogContent(
-            todayPlanName = state.todaysPlan?.name ?: "—",
-            onDismiss = { showPostponeDialog = false }
-        )
+        // Otwórz bottom-sheet zamiast prostego dialogu — user widzi cały tydzień + akcje
+        showWeekPlanDialog = true
+        showPostponeDialog = false
     }
     if (showWeekPlanDialog) {
-        WeekPlanDialogContent(
-            weeklyTarget = state.weeklyTarget,
-            workoutsThisWeek = state.workoutsThisWeek,
-            onDismiss = { showWeekPlanDialog = false }
+        WeekPlanSheet(
+            weekSlots = state.weekSlots,
+            plansById = state.plansById,
+            completedDays = state.completedDaysThisWeek,
+            todayDayOfWeek = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber,
+            onDismiss = { showWeekPlanDialog = false },
+            onTrainNow = { planId, sourceDay ->
+                showWeekPlanDialog = false
+                vm.startSlotNow(planId, sourceDay, onStartCoachWorkout)
+            },
+            onPostpone = { planId, originalDay, targetDay ->
+                vm.postponeTraining(planId, originalDay, targetDay)
+            },
+            onSkip = { planId, originalDay ->
+                vm.skipTraining(planId, originalDay)
+            },
+            onClearOverride = { planId, originalDay ->
+                vm.clearOverride(planId, originalDay)
+            }
         )
     }
 }
@@ -992,72 +1006,5 @@ private fun DayOffHeroCard(
     }
 }
 
-/** Dialog "Przesuń trening" — placeholder, v0.76.0 wprowadzi pełny override. */
-@Composable
-private fun PostponeDialogContent(
-    todayPlanName: String,
-    onDismiss: () -> Unit
-) {
-    androidx.compose.material3.AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("Przesuń trening") },
-        text = {
-            Column {
-                Text(
-                    "Dzisiejszy trening: $todayPlanName",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = DarkOnSurface
-                )
-                Spacer(Modifier.height(8.dp))
-                Text(
-                    "Aktualnie aplikacja nie pamięta przesunięć między dniami. " +
-                        "Po prostu pomiń dziś — trening pojawi się w następnym " +
-                        "planowanym dniu (Stan B).",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-                Spacer(Modifier.height(8.dp))
-                Text(
-                    "Pełny widok 7 dni z przesuwaniem między dniami pojawi się w v0.76.0.",
-                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
-                    color = AccentOrange
-                )
-            }
-        },
-        confirmButton = {
-            androidx.compose.material3.TextButton(onClick = onDismiss) { Text("OK") }
-        }
-    )
-}
-
-/** Dialog "Plan tygodnia" — placeholder do v0.76.0. */
-@Composable
-private fun WeekPlanDialogContent(
-    weeklyTarget: Int,
-    workoutsThisWeek: Int,
-    onDismiss: () -> Unit
-) {
-    androidx.compose.material3.AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("Plan tygodnia") },
-        text = {
-            Column {
-                Text(
-                    "Ten tydzień: $workoutsThisWeek z $weeklyTarget treningów",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = DarkOnSurface
-                )
-                Spacer(Modifier.height(8.dp))
-                Text(
-                    "Pełny widok 7 dni Pn-Nd z możliwością przesuwania " +
-                        "treningów między dniami pojawi się w v0.76.0.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-            }
-        },
-        confirmButton = {
-            androidx.compose.material3.TextButton(onClick = onDismiss) { Text("OK") }
-        }
-    )
-}
+// (Dialogi PostponeDialogContent + WeekPlanDialogContent z v0.75.0 zastąpione
+//  pełnym WeekPlanSheet w v0.76.0 — patrz ui/home/WeekPlanSheet.kt)

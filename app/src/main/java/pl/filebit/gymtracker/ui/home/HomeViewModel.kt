@@ -35,7 +35,10 @@ data class HomeUiState(
     val nextPlannedDay: NextPlannedDay? = null,
     val activeWorkoutDurationMin: Int = 0,
     val activeWorkoutProgressPct: Int = 0,            // % ukończonych setów (Stan C)
-    val activeWorkoutCurrentSetLabel: String = ""     // "Seria 8 z 19"
+    val activeWorkoutCurrentSetLabel: String = "",    // "Seria 8 z 19"
+    val weekSlots: Map<Int, List<pl.filebit.gymtracker.util.ScheduleSlot>> = emptyMap(),
+    val plansById: Map<Long, pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyMap(),
+    val completedDaysThisWeek: Set<Int> = emptySet()  // dni Pn-Nd z ukończonym treningiem
 )
 
 data class NextPlannedDay(
@@ -68,15 +71,20 @@ class HomeViewModel @Inject constructor(
         planRepo.observeAllPlans()
     ) { active, recent, plans ->
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
-        // pierwszy plan który ma JAKIEKOLWIEK ćwiczenia na dzisiejszy dzień
+        // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
+        val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
         var todaysPlan: pl.filebit.gymtracker.data.entity.TrainingPlan? = null
         var todaysCount = 0
-        for (plan in plans) {
-            val exesForToday = planRepo.getPlanExercisesForDay(plan.id, isoDay)
-            if (exesForToday.isNotEmpty()) {
-                todaysPlan = plan
-                todaysCount = exesForToday.size
-                break
+        var todaysSourceDay = isoDay
+        schedule[isoDay]?.firstOrNull()?.let { slot ->
+            val plan = plans.firstOrNull { it.id == slot.planId }
+            if (plan != null) {
+                val exes = planRepo.getPlanExercisesForDay(plan.id, slot.sourceDayOfWeek)
+                if (exes.isNotEmpty()) {
+                    todaysPlan = plan
+                    todaysCount = exes.size
+                    todaysSourceDay = slot.sourceDayOfWeek
+                }
             }
         }
         val items = recent.map { w ->
@@ -99,28 +107,41 @@ class HomeViewModel @Inject constructor(
 
         val deloadAlert = runCatching { deloadService.check() }.getOrNull()
 
-        // Stan B: Next planned day — gdy dziś brak treningu, znajdź najbliższy w tygodniu
+        // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {
             var found: NextPlannedDay? = null
             for (offset in 1..7) {
                 val targetDay = ((isoDay - 1 + offset) % 7) + 1
-                for (plan in plans) {
-                    val exes = planRepo.getPlanExercisesForDay(plan.id, targetDay)
-                    if (exes.isNotEmpty()) {
-                        found = NextPlannedDay(
-                            planId = plan.id,
-                            planName = plan.name,
-                            dayOfWeek = targetDay,
-                            daysFromToday = offset,
-                            exerciseCount = exes.size
-                        )
-                        break
+                val slot = schedule[targetDay]?.firstOrNull()
+                if (slot != null) {
+                    val plan = plans.firstOrNull { it.id == slot.planId }
+                    if (plan != null) {
+                        val exes = planRepo.getPlanExercisesForDay(plan.id, slot.sourceDayOfWeek)
+                        if (exes.isNotEmpty()) {
+                            found = NextPlannedDay(
+                                planId = plan.id,
+                                planName = plan.name,
+                                dayOfWeek = targetDay,
+                                daysFromToday = offset,
+                                exerciseCount = exes.size
+                            )
+                            break
+                        }
                     }
                 }
-                if (found != null) break
             }
             found
         } else null
+
+        // Dni w tym tygodniu z ukończonym treningiem
+        val weekStart = pl.filebit.gymtracker.util.currentWeekStartMillis()
+        val weekEnd = weekStart + 7L * 86_400_000L
+        val completedDays: Set<Int> = recent
+            .filter { it.finishedAt != null && it.startedAt in weekStart until weekEnd }
+            .map { w ->
+                val c = java.util.Calendar.getInstance().apply { timeInMillis = w.startedAt }
+                ((c.get(java.util.Calendar.DAY_OF_WEEK) + 5) % 7) + 1
+            }.toSet()
 
         // Stan C: dla aktywnego treningu — czas trwania + progress setów
         val durationMin: Int
@@ -157,7 +178,10 @@ class HomeViewModel @Inject constructor(
             nextPlannedDay = nextPlannedDay,
             activeWorkoutDurationMin = durationMin,
             activeWorkoutProgressPct = progressPct,
-            activeWorkoutCurrentSetLabel = currentSetLabel
+            activeWorkoutCurrentSetLabel = currentSetLabel,
+            weekSlots = schedule,
+            plansById = plans.associateBy { it.id },
+            completedDaysThisWeek = completedDays
         )
     }.stateIn(
         scope = viewModelScope,
@@ -176,6 +200,54 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val w = workoutRepo.startOrResume()
             if (w.fromPlanId != null) onCoach() else onAdhoc()
+        }
+    }
+
+    /**
+     * Bottom-sheet: przesuń trening na konkretny dzień bieżącego tygodnia.
+     */
+    fun postponeTraining(planId: Long, originalDay: Int, targetDay: Int) {
+        viewModelScope.launch {
+            planRepo.postponeTraining(planId, originalDay, targetDay)
+        }
+    }
+
+    fun skipTraining(planId: Long, originalDay: Int) {
+        viewModelScope.launch {
+            planRepo.postponeTraining(planId, originalDay, pl.filebit.gymtracker.data.entity.WeeklyPlanOverride.SKIPPED)
+        }
+    }
+
+    fun clearOverride(planId: Long, originalDay: Int) {
+        viewModelScope.launch {
+            planRepo.clearTrainingOverride(planId, originalDay)
+        }
+    }
+
+    /**
+     * Bottom-sheet: 'Trenuj teraz' z konkretnego slotu (Pn-Nd) bieżącego tygodnia.
+     * Najpierw przesuwa override żeby bazowy dzień przeszedł na dziś, potem startuje.
+     */
+    fun startSlotNow(planId: Long, sourceDay: Int, onCoach: () -> Unit) {
+        val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
+        viewModelScope.launch {
+            if (sourceDay != isoDay) {
+                planRepo.postponeTraining(planId, sourceDay, isoDay)
+            }
+            val active = workoutRepo.startOrResume(fromPlanId = planId, fromDayOfWeek = sourceDay)
+            val planExercises = planRepo.getPlanExercisesForDay(planId, sourceDay)
+            planExercises.forEach { pe ->
+                val setSpecs = planRepo.getSetsForPlanExercise(pe.id)
+                setSpecs.forEach { spec ->
+                    workoutRepo.addPlannedSet(
+                        workoutId = active.id,
+                        exerciseId = pe.exerciseId,
+                        reps = spec.reps,
+                        weightKg = spec.weightKg ?: 0.0
+                    )
+                }
+            }
+            onCoach()
         }
     }
 

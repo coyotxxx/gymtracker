@@ -15,8 +15,55 @@ import javax.inject.Singleton
 class PlanRepository @Inject constructor(
     private val planDao: TrainingPlanDao,
     private val planExerciseDao: PlanExerciseDao,
-    private val planExerciseSetDao: PlanExerciseSetDao
+    private val planExerciseSetDao: PlanExerciseSetDao,
+    private val weeklyOverrideDao: pl.filebit.gymtracker.data.db.dao.WeeklyPlanOverrideDao
 ) {
+
+    /**
+     * Efektywny harmonogram dla bieżącego tygodnia (z uwzględnieniem overrides).
+     * Zwraca: dayOfWeek (1-7) → lista ScheduleSlot
+     */
+    suspend fun getEffectiveScheduleForCurrentWeek(): Map<Int, List<pl.filebit.gymtracker.util.ScheduleSlot>> {
+        val plans = planDao.getAll()
+        val baseSlots = plans.associate { plan ->
+            val days = (1..7).filter { d ->
+                planExerciseDao.getForPlanAndDay(plan.id, d).isNotEmpty()
+            }.toSet()
+            plan.id to days
+        }
+        val weekStart = pl.filebit.gymtracker.util.currentWeekStartMillis()
+        val overrides = weeklyOverrideDao.getForWeek(weekStart)
+        return pl.filebit.gymtracker.util.resolveWeekSchedule(baseSlots, overrides)
+    }
+
+    /**
+     * Zapisuje przesunięcie treningu w bieżącym tygodniu.
+     * @param targetDay 1-7 lub WeeklyPlanOverride.SKIPPED (-1) gdy pomijamy
+     */
+    suspend fun postponeTraining(planId: Long, originalDay: Int, targetDay: Int) {
+        val weekStart = pl.filebit.gymtracker.util.currentWeekStartMillis()
+        weeklyOverrideDao.deleteForOrigin(weekStart, planId, originalDay)
+        if (targetDay != originalDay) {
+            weeklyOverrideDao.insert(
+                pl.filebit.gymtracker.data.entity.WeeklyPlanOverride(
+                    weekStartMillis = weekStart,
+                    planId = planId,
+                    originalDayOfWeek = originalDay,
+                    targetDayOfWeek = targetDay
+                )
+            )
+        }
+        // Sprzątaj overrides starsze niż 6 tygodni
+        weeklyOverrideDao.deleteOldOverrides(weekStart - 6L * 7 * 24 * 60 * 60 * 1000)
+    }
+
+    /**
+     * Cofa override (przywraca oryginalną pozycję z planu).
+     */
+    suspend fun clearTrainingOverride(planId: Long, originalDay: Int) {
+        val weekStart = pl.filebit.gymtracker.util.currentWeekStartMillis()
+        weeklyOverrideDao.deleteForOrigin(weekStart, planId, originalDay)
+    }
 
     fun observeAllPlans(): Flow<List<TrainingPlan>> = planDao.observeAll()
 
