@@ -2,8 +2,11 @@ package pl.filebit.gymtracker.ui.workout
 
 import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.foundation.layout.Arrangement
@@ -365,9 +368,15 @@ fun CoachWorkoutScreen(
 
     // Dialog z opinią AI o aktualnej sugestii
     val opinion = aiOpinion
+    var aiFollowUp by remember { mutableStateOf("") }
     if (opinion !is AiOpinionState.Idle) {
         AlertDialog(
-            onDismissRequest = { vm.dismissAiOpinion() },
+            onDismissRequest = {
+                if (opinion !is AiOpinionState.Loading) {
+                    aiFollowUp = ""
+                    vm.dismissAiOpinion()
+                }
+            },
             title = {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(
@@ -393,10 +402,75 @@ fun CoachWorkoutScreen(
                             Text("AI analizuje historię ćwiczenia…")
                         }
                     }
-                    is AiOpinionState.Result -> Text(
-                        opinion.text,
-                        style = MaterialTheme.typography.bodyMedium
-                    )
+                    is AiOpinionState.Result -> {
+                        val scroll = rememberScrollState()
+                        Column(modifier = Modifier.verticalScroll(scroll)) {
+                            Text(
+                                opinion.opinion.text,
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                            if (opinion.opinion.hasActionableSuggestion) {
+                                Spacer(Modifier.height(12.dp))
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .background(
+                                            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.15f),
+                                            RoundedCornerShape(12.dp)
+                                        )
+                                        .border(
+                                            1.dp,
+                                            pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.45f),
+                                            RoundedCornerShape(12.dp)
+                                        )
+                                        .clickable {
+                                            vm.applyAiSuggestion(
+                                                weightKg = opinion.opinion.parsedKg!!,
+                                                reps = opinion.opinion.parsedReps!!
+                                            )
+                                            aiFollowUp = ""
+                                        }
+                                        .padding(horizontal = 12.dp, vertical = 10.dp),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    val kgFmt = opinion.opinion.parsedKg!!.let {
+                                        if (it == it.toLong().toDouble()) it.toInt().toString()
+                                        else "%.1f".format(it)
+                                    }
+                                    Text(
+                                        "✨ Zastosuj sugestię: $kgFmt kg × ${opinion.opinion.parsedReps}",
+                                        style = MaterialTheme.typography.bodyMedium.copy(
+                                            fontWeight = FontWeight.Bold
+                                        ),
+                                        color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                                    )
+                                }
+                            }
+                            Spacer(Modifier.height(12.dp))
+                            HorizontalDivider(color = pl.filebit.gymtracker.ui.theme.DarkOutlineSoft)
+                            Spacer(Modifier.height(8.dp))
+                            OutlinedTextField(
+                                value = aiFollowUp,
+                                onValueChange = { aiFollowUp = it },
+                                label = {
+                                    Text(
+                                        "Drążę dalej (opcjonalnie)",
+                                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                                    )
+                                },
+                                placeholder = {
+                                    Text(
+                                        "np. źle dziś śpię / boli mnie bark",
+                                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant.copy(alpha = 0.6f),
+                                        style = MaterialTheme.typography.bodySmall
+                                    )
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                shape = RoundedCornerShape(10.dp),
+                                maxLines = 2
+                            )
+                        }
+                    }
                     is AiOpinionState.Error -> Text(
                         opinion.message,
                         color = pl.filebit.gymtracker.ui.theme.ErrorRed,
@@ -406,10 +480,36 @@ fun CoachWorkoutScreen(
                 }
             },
             confirmButton = {
-                TextButton(onClick = { vm.dismissAiOpinion() }) {
-                    Text("OK")
+                if (opinion is AiOpinionState.Result && aiFollowUp.isNotBlank()) {
+                    TextButton(onClick = {
+                        val msg = aiFollowUp
+                        aiFollowUp = ""
+                        vm.askAiOpinion(followUpMessage = msg)
+                    }) {
+                        Icon(
+                            Icons.Default.AutoAwesome,
+                            contentDescription = null,
+                            tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text("Zapytaj ponownie", color = pl.filebit.gymtracker.ui.theme.AccentOrange)
+                    }
+                } else {
+                    TextButton(onClick = {
+                        aiFollowUp = ""
+                        vm.dismissAiOpinion()
+                    }) { Text("OK") }
                 }
-            }
+            },
+            dismissButton = if (opinion is AiOpinionState.Result && aiFollowUp.isNotBlank()) {
+                {
+                    TextButton(onClick = {
+                        aiFollowUp = ""
+                        vm.dismissAiOpinion()
+                    }) { Text("Zamknij", color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant) }
+                }
+            } else null
         )
     }
 }

@@ -31,7 +31,7 @@ data class CoachExerciseGroup(
 sealed class AiOpinionState {
     object Idle : AiOpinionState()
     object Loading : AiOpinionState()
-    data class Result(val text: String) : AiOpinionState()
+    data class Result(val opinion: pl.filebit.gymtracker.ai.RpeOpinion) : AiOpinionState()
     data class Error(val message: String) : AiOpinionState()
 }
 
@@ -84,7 +84,7 @@ class CoachWorkoutViewModel @Inject constructor(
     fun consumePendingStagnation() { _pendingStagnation.value = emptyList() }
     fun dismissAiOpinion() { _aiOpinion.value = AiOpinionState.Idle }
 
-    fun askAiOpinion() {
+    fun askAiOpinion(followUpMessage: String? = null) {
         val st = state.value
         val sug = st.suggestionForCurrent ?: return
         val ex = st.currentExercise ?: return
@@ -94,12 +94,26 @@ class CoachWorkoutViewModel @Inject constructor(
             val result = rpeOpinionService.ask(
                 exerciseId = ex.id,
                 suggestion = sug,
-                excludeWorkoutId = workoutId
+                excludeWorkoutId = workoutId,
+                followUpMessage = followUpMessage
             )
             result.fold(
                 onSuccess = { _aiOpinion.value = AiOpinionState.Result(it) },
                 onFailure = { _aiOpinion.value = AiOpinionState.Error(it.message ?: "Błąd AI") }
             )
+        }
+    }
+
+    /**
+     * Aplikuje sugestię AI (waga + reps) na aktualną serię w coach mode.
+     * Po zastosowaniu zamyka dialog opinii.
+     */
+    fun applyAiSuggestion(weightKg: Double, reps: Int) {
+        val st = state.value
+        val current = st.currentSet ?: return
+        viewModelScope.launch {
+            workoutRepo.updateSet(current.copy(weightKg = weightKg, reps = reps))
+            _aiOpinion.value = AiOpinionState.Idle
         }
     }
 

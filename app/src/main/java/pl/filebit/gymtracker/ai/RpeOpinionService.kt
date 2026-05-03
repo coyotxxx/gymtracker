@@ -9,6 +9,19 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
+ * Wynik "drugiej opinii" AI. Jeśli AI sugeruje konkretne zmiany (waga/reps),
+ * wyciągamy je z tekstu i pozwalamy userowi zastosować jednym tapem.
+ */
+data class RpeOpinion(
+    val text: String,
+    val parsedKg: Double? = null,
+    val parsedReps: Int? = null
+) {
+    val hasActionableSuggestion: Boolean
+        get() = parsedKg != null && parsedReps != null
+}
+
+/**
  * "Drugie zdanie" trenera AI — kwestionuje algorytmiczną sugestię na podstawie
  * pełnej historii ostatnich sesji ćwiczenia. Zwraca krótką opinię (max ~100 słów).
  *
@@ -32,12 +45,15 @@ class RpeOpinionService @Inject constructor(
      * @param exerciseId ID ćwiczenia
      * @param suggestion sugestia z algorytmu (computeProgression)
      * @param excludeWorkoutId aktualny trening (żeby nie mieszał się w "historii")
+     * @param followUpMessage opcjonalna doprecyzowana wiadomość usera
+     *   (np. "źle dziś śpię" / "boli mnie bark" / "chcę iść ciężej")
      */
     suspend fun ask(
         exerciseId: Long,
         suggestion: NextSetSuggestion,
-        excludeWorkoutId: Long?
-    ): Result<String> {
+        excludeWorkoutId: Long?,
+        followUpMessage: String? = null
+    ): Result<RpeOpinion> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             return Result.failure(IllegalStateException("AI nie skonfigurowane — wpisz klucz API w Profilu"))
@@ -93,10 +109,16 @@ class RpeOpinionService @Inject constructor(
                 append("${idx + 1}. $date — ${sets.size} setów, top ${topSet.reps}×${formatKg(topSet.weightKg)}kg, $rpeStr\n")
             }
 
+            if (!followUpMessage.isNullOrBlank()) {
+                append("\n# DODATKOWA WIADOMOŚĆ UŻYTKOWNIKA\n")
+                append(followUpMessage.take(300))
+                append("\nUwzględnij ją w ocenie i ewentualnej kontr-sugestii.\n")
+            }
+
             append("\n# OCZEKIWANY FORMAT ODPOWIEDZI\n")
             append("Krótka opinia (max 80 słów, polski język). Zacznij od jednego z:\n")
             append("- '✓ Zgadzam się' (jeśli sugestia ma sens)\n")
-            append("- '⚠ Sugeruję inaczej: <waga>kg × <reps>' (jeśli zmieniłbyś)\n")
+            append("- '⚠ Sugeruję inaczej: <waga>kg × <reps>' (jeśli zmieniłbyś — ZAWSZE w tym formacie z liczbami)\n")
             append("Potem 1-2 zdania uzasadnienia bazującego na konkretnych liczbach z historii. ")
             append("Bez markdownu, bez list, czysty tekst.")
         }
@@ -104,11 +126,33 @@ class RpeOpinionService @Inject constructor(
         return client.chat(
             cfg,
             listOf(AiMessage(AiRole.USER, prompt))
-        ).map { raw -> raw.trim() }
+        ).map { raw ->
+            val text = raw.trim()
+            val (kg, reps) = RpeOpinionService.parseSuggestion(text)
+            RpeOpinion(text = text, parsedKg = kg, parsedReps = reps)
+        }
     }
 
     private fun formatKg(kg: Double): String {
         return if (kg == kg.toLong().toDouble()) kg.toInt().toString()
         else String.format("%.1f", kg)
+    }
+
+    companion object {
+        private val SUGGESTION_REGEX = Regex(
+            """([0-9]+(?:[.,][0-9]+)?)\s*kg\s*[x×]\s*([0-9]+)""",
+            RegexOption.IGNORE_CASE
+        )
+
+        /**
+         * Wyciąga `<waga>kg × <reps>` z tekstu odpowiedzi AI. Akceptuje warianty
+         * '4 kg × 8', '4kg x 8', '4.5kg×8', '82,5 kg × 5'.
+         */
+        fun parseSuggestion(text: String): Pair<Double?, Int?> {
+            val match = SUGGESTION_REGEX.find(text) ?: return null to null
+            val kg = match.groupValues[1].replace(',', '.').toDoubleOrNull()
+            val reps = match.groupValues[2].toIntOrNull()
+            return kg to reps
+        }
     }
 }
