@@ -23,8 +23,119 @@ class PlanAuditService @Inject constructor(
     private val planExerciseDao: PlanExerciseDao,
     private val planSetDao: PlanExerciseSetDao,
     private val exerciseDao: ExerciseDao,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val applier: AiPlanApplier
 ) {
+    /**
+     * Po audycie — wywołuje AI ponownie z prośbą o WYGENEROWANIE poprawionej
+     * wersji planu. AI dostaje stary plan, wcześniejszą analizę i listę ćwiczeń
+     * z biblioteki — zwraca JSON nowego planu (parsowany przez AiPlanApplier).
+     *
+     * @param userMessage opcjonalne doprecyzowanie ("nie chcę dipów", "dodaj dzień nóg")
+     */
+    suspend fun improvePlan(
+        planId: Long,
+        auditMarkdown: String,
+        userMessage: String? = null
+    ): Result<AiPlanProposal> {
+        val cfg = prefs.load()
+        if (!cfg.isConnected) {
+            return Result.failure(IllegalStateException("AI nie skonfigurowane — wpisz klucz API w Profilu"))
+        }
+        val plan = planDao.getById(planId)
+            ?: return Result.failure(NoSuchElementException("Plan nie istnieje"))
+
+        val exercises = planExerciseDao.getForPlan(planId)
+        val exMap = exercises.map { it.exerciseId }.distinct()
+            .associateWith { exerciseDao.getById(it) }
+        val library = exerciseDao.getAll()
+        val profile = profileRepo.get()
+
+        val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
+
+        val prompt = buildString {
+            append("Jesteś trenerem personalnym. Otrzymałeś plan treningowy oraz audyt z poprzedniej tury. ")
+            append("Wygeneruj POPRAWIONĄ wersję planu uwzględniając wszystkie problemy z audytu. ")
+            append("Trzymaj styl/cel użytkownika. Używaj WYŁĄCZNIE ćwiczeń z biblioteki poniżej (cytuj nazwy 1:1).\n\n")
+
+            append("# OBECNY PLAN: ${plan.name}\n")
+            append("- Cel użytkownika: ${profile.goal.name}\n")
+            append("- Częstotliwość: ${plan.daysOfWeek.size} dni / tydzień\n")
+            if (plan.notes.isNotBlank()) append("- Notatki: ${plan.notes}\n")
+            append("\n")
+            byDay.forEach { (day, dayExes) ->
+                val dayName = dayName(day)
+                append("## $dayName\n")
+                dayExes.sortedBy { it.orderIndex }.forEach { pe ->
+                    val ex = exMap[pe.exerciseId]
+                    val sets = planSetDao.getForPlanExercise(pe.id)
+                    val repsRange = if (sets.isNotEmpty()) {
+                        val unique = sets.map { it.reps }.distinct().sorted()
+                        if (unique.size == 1) "${unique[0]} powt." else "${unique.first()}-${unique.last()} powt."
+                    } else "?"
+                    append("- ${ex?.name ?: "(?)"}: ${sets.size} setów, $repsRange")
+                    if (pe.supersetGroup != null) append(" [superseria ${pe.supersetGroup}]")
+                    append("\n")
+                }
+                append("\n")
+            }
+
+            append("# AUDYT (poprzednia analiza AI)\n")
+            append(auditMarkdown.take(2000))
+            append("\n\n")
+
+            if (!userMessage.isNullOrBlank()) {
+                append("# DODATKOWE WYMAGANIE UŻYTKOWNIKA\n")
+                append(userMessage.take(500))
+                append("\n\n")
+            }
+
+            append("# BIBLIOTEKA ĆWICZEŃ DOSTĘPNA (cytuj nazwy 1:1, ${library.size} pozycji)\n")
+            library.take(220).forEach { ex ->
+                append("- ${ex.name} (${ex.primaryMuscle.name})\n")
+            }
+            append("\n")
+
+            append("# WYMAGANY FORMAT ODPOWIEDZI\n")
+            append("Odpowiedz blokiem ```json zawierającym TYLKO obiekt o strukturze:\n")
+            append("```json\n")
+            append("{\n")
+            append("  \"name\": \"<nazwa planu>\",\n")
+            append("  \"description\": \"<krótki opis 1-2 zdania uzasadniający zmiany>\",\n")
+            append("  \"daysOfWeek\": [1,3,5],\n")
+            append("  \"days\": [\n")
+            append("    {\"dayOfWeek\": 1, \"exercises\": [\n")
+            append("      {\"exerciseName\": \"<nazwa 1:1 z biblioteki>\", \"sets\": [{\"reps\": 8, \"restSec\": 90}, ...], \"supersetGroup\": null},\n")
+            append("      ...\n")
+            append("    ]},\n")
+            append("    ...\n")
+            append("  ]\n")
+            append("}\n")
+            append("```\n")
+            append("Zachowaj logikę progresji: 4-12 powt. dla hipertrofii, 3-6 dla siły. ")
+            append("RestSec: 60-90s izolacje, 120-180s compound. ")
+            append("supersetGroup tej samej litery dla ćwiczeń w supersersji (A,B,...) lub null. ")
+            append("Nie dodawaj komentarzy poza blokiem JSON.")
+        }
+
+        val response = client.chat(
+            cfg,
+            listOf(AiMessage(AiRole.USER, prompt))
+        ).getOrElse { return Result.failure(it) }
+
+        val proposal = applier.extractProposal(response)
+            ?: return Result.failure(IllegalStateException(
+                "AI nie zwrócił poprawnego JSON. Spróbuj ponownie lub zmień model."
+            ))
+        return Result.success(proposal)
+    }
+
+    private fun dayName(day: Int) = when (day) {
+        1 -> "Poniedziałek"; 2 -> "Wtorek"; 3 -> "Środa"; 4 -> "Czwartek"
+        5 -> "Piątek"; 6 -> "Sobota"; 7 -> "Niedziela"
+        else -> "Dzień $day"
+    }
+
     suspend fun audit(planId: Long): Result<String> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {

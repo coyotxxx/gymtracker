@@ -49,17 +49,90 @@ sealed class PlanAuditState {
     data class Error(val message: String) : PlanAuditState()
 }
 
+/**
+ * Stan generowania poprawionego planu (po audycie). Idle → Loading → Preview/Error.
+ * Z preview user może: zastąp / kopia / anuluj / zapytaj jeszcze.
+ */
+sealed class PlanImprovementState {
+    object Idle : PlanImprovementState()
+    object Loading : PlanImprovementState()
+    data class Preview(
+        val proposal: pl.filebit.gymtracker.ai.AiPlanProposal,
+        val basedOnAuditText: String
+    ) : PlanImprovementState()
+    object Applying : PlanImprovementState()
+    data class Error(val message: String) : PlanImprovementState()
+}
+
 @HiltViewModel
 class PlanEditViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
     private val planAuditService: pl.filebit.gymtracker.ai.PlanAuditService,
+    private val planApplier: pl.filebit.gymtracker.ai.AiPlanApplier,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _auditState = MutableStateFlow<PlanAuditState>(PlanAuditState.Idle)
     val auditState: StateFlow<PlanAuditState> = _auditState.asStateFlow()
+
+    private val _improvementState = MutableStateFlow<PlanImprovementState>(PlanImprovementState.Idle)
+    val improvementState: StateFlow<PlanImprovementState> = _improvementState.asStateFlow()
+
+    /** Wywołuje AI z prośbą o wygenerowanie poprawionej wersji planu na podstawie audytu. */
+    fun requestImprovement(userMessage: String? = null) {
+        if (planId == 0L) {
+            _improvementState.value = PlanImprovementState.Error("Najpierw zapisz plan, potem audyt + popraw.")
+            return
+        }
+        val auditText = (auditState.value as? PlanAuditState.Result)?.text
+            ?: run {
+                _improvementState.value = PlanImprovementState.Error("Brak audytu — najpierw uruchom 'Audyt planu AI'.")
+                return
+            }
+        _improvementState.value = PlanImprovementState.Loading
+        viewModelScope.launch {
+            val result = planAuditService.improvePlan(planId, auditText, userMessage)
+            result.fold(
+                onSuccess = { proposal ->
+                    _improvementState.value = PlanImprovementState.Preview(proposal, auditText)
+                },
+                onFailure = {
+                    _improvementState.value = PlanImprovementState.Error(it.message ?: "Błąd AI")
+                }
+            )
+        }
+    }
+
+    /** Zatwierdza poprawiony plan — nadpisuje istniejący lub tworzy kopię. */
+    fun applyImprovement(asCopy: Boolean, onDone: (newPlanId: Long?) -> Unit = {}) {
+        val state = _improvementState.value
+        if (state !is PlanImprovementState.Preview) return
+        _improvementState.value = PlanImprovementState.Applying
+        viewModelScope.launch {
+            val outcome = if (asCopy) {
+                planApplier.applyAsCopy(planId, state.proposal).map { it as Long? }
+            } else {
+                planApplier.replaceExistingPlan(planId, state.proposal).map { null as Long? }
+            }
+            outcome.fold(
+                onSuccess = { newId ->
+                    _improvementState.value = PlanImprovementState.Idle
+                    _auditState.value = PlanAuditState.Idle
+                    if (!asCopy) load() // odśwież widok edytowanego planu
+                    onDone(newId)
+                },
+                onFailure = {
+                    _improvementState.value = PlanImprovementState.Error(it.message ?: "Błąd zapisu")
+                }
+            )
+        }
+    }
+
+    fun dismissImprovement() {
+        _improvementState.value = PlanImprovementState.Idle
+    }
 
     fun runPlanAudit() {
         if (planId == 0L) {

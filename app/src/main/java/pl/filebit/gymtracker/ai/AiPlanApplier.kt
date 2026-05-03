@@ -145,6 +145,85 @@ class AiPlanApplier @Inject constructor(
     }
 
     /**
+     * Nadpisuje istniejący plan zachowując jego id (kasuje wszystkie PlanExercise+sety,
+     * potem wstawia nowe na podstawie proposal). Nazwa, opis i daysOfWeek są aktualizowane.
+     */
+    suspend fun replaceExistingPlan(planId: Long, proposal: AiPlanProposal): Result<Unit> = runCatching {
+        val current = planRepo.getPlan(planId)
+            ?: throw NoSuchElementException("Plan $planId nie istnieje")
+        planRepo.updatePlan(
+            current.copy(
+                name = proposal.name.ifBlank { current.name },
+                daysOfWeek = if (proposal.daysOfWeek.isNotEmpty()) proposal.daysOfWeek
+                else proposal.days.map { it.dayOfWeek }.distinct(),
+                notes = proposal.description.ifBlank { current.notes }
+            )
+        )
+        planRepo.deleteAllPlanExercises(planId)
+        insertExercises(planId, proposal)
+    }
+
+    /**
+     * Tworzy nowy plan jako kopię proposal (z nazwą '<oryginalny> (poprawiony)').
+     * Oryginalny plan pozostaje nietknięty.
+     */
+    suspend fun applyAsCopy(originalPlanId: Long, proposal: AiPlanProposal): Result<Long> = runCatching {
+        val original = planRepo.getPlan(originalPlanId)
+        val baseName = proposal.name.ifBlank { original?.name ?: "Plan AI" }
+        val finalName = if (baseName.contains("poprawiony")) baseName else "$baseName (poprawiony)"
+        val newPlanId = planRepo.upsertPlan(
+            TrainingPlan(
+                name = finalName,
+                daysOfWeek = if (proposal.daysOfWeek.isNotEmpty()) proposal.daysOfWeek
+                else proposal.days.map { it.dayOfWeek }.distinct(),
+                notes = proposal.description,
+                createdByAi = true
+            )
+        )
+        insertExercises(newPlanId, proposal)
+        newPlanId
+    }
+
+    /** Helper — wspólny dla applyProposal/replaceExistingPlan/applyAsCopy. */
+    private suspend fun insertExercises(planId: Long, proposal: AiPlanProposal) {
+        val library = exerciseDao.getAll()
+        proposal.days.forEach { day ->
+            day.exercises.forEachIndexed { idx, aiEx ->
+                val match = library.firstOrNull {
+                    it.name.equals(aiEx.exerciseName, ignoreCase = true)
+                } ?: library.firstOrNull {
+                    it.name.startsWith(aiEx.exerciseName, ignoreCase = true)
+                } ?: library.firstOrNull {
+                    it.name.contains(aiEx.exerciseName, ignoreCase = true)
+                } ?: run {
+                    Log.w("AiPlanApplier", "no match for exercise '${aiEx.exerciseName}'")
+                    return@forEachIndexed
+                }
+                val peId = planRepo.upsertPlanExercise(
+                    PlanExercise(
+                        planId = planId,
+                        exerciseId = match.id,
+                        dayOfWeek = day.dayOfWeek,
+                        orderIndex = idx,
+                        supersetGroup = aiEx.supersetGroup
+                    )
+                )
+                aiEx.sets.forEachIndexed { sIdx, set ->
+                    planRepo.upsertPlanSet(
+                        PlanExerciseSet(
+                            planExerciseId = peId,
+                            setNumber = sIdx + 1,
+                            reps = set.reps,
+                            weightKg = set.weightKg,
+                            restSeconds = set.restSec
+                        )
+                    )
+                }
+            }
+        }
+    }
+
+    /**
      * Mapuje exerciseName na Exercise.id (case-insensitive prefix matching) i tworzy plan.
      * Zwraca id utworzonego TrainingPlan lub error.
      */

@@ -92,9 +92,11 @@ fun PlanEditScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val auditState by vm.auditState.collectAsStateWithLifecycle()
+    val improvementState by vm.improvementState.collectAsStateWithLifecycle()
     var showDeleteDialog by remember { mutableStateOf(false) }
     var showRpeHelp by remember { mutableStateOf(false) }
     var dayActionFor by remember { mutableStateOf<Int?>(null) }
+    var followUpQuestion by remember { mutableStateOf("") }
 
     LaunchedEffect(pickedExerciseId) {
         pickedExerciseId?.let { id ->
@@ -390,9 +392,11 @@ fun PlanEditScreen(
 
     // Dialog z wynikiem audytu AI
     val audit = auditState
-    if (audit !is PlanAuditState.Idle) {
+    if (audit !is PlanAuditState.Idle && improvementState !is PlanImprovementState.Preview) {
         AlertDialog(
-            onDismissRequest = { vm.dismissAudit() },
+            onDismissRequest = {
+                if (improvementState !is PlanImprovementState.Loading) vm.dismissAudit()
+            },
             title = {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(
@@ -424,6 +428,50 @@ fun PlanEditScreen(
                             audit.text.split("\n").forEach { line ->
                                 AuditMarkdownLine(line)
                             }
+                            Spacer(Modifier.height(16.dp))
+                            HorizontalDivider(color = DarkOutlineSoft)
+                            Spacer(Modifier.height(12.dp))
+                            // Pole follow-up — opcjonalne doprecyzowanie
+                            OutlinedTextField(
+                                value = followUpQuestion,
+                                onValueChange = { followUpQuestion = it },
+                                label = { Text("Doprecyzuj (opcjonalnie)", color = DarkOnSurfaceVariant) },
+                                placeholder = {
+                                    Text(
+                                        "np. nie chcę dipów / dodaj dzień nóg",
+                                        color = DarkOnSurfaceVariant.copy(alpha = 0.6f),
+                                        style = MaterialTheme.typography.bodySmall
+                                    )
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                shape = RoundedCornerShape(10.dp),
+                                maxLines = 3,
+                                enabled = improvementState !is PlanImprovementState.Loading
+                            )
+                            if (improvementState is PlanImprovementState.Error) {
+                                Spacer(Modifier.height(8.dp))
+                                Text(
+                                    (improvementState as PlanImprovementState.Error).message,
+                                    color = ErrorRed,
+                                    style = MaterialTheme.typography.bodySmall
+                                )
+                            }
+                            if (improvementState is PlanImprovementState.Loading) {
+                                Spacer(Modifier.height(8.dp))
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    androidx.compose.material3.CircularProgressIndicator(
+                                        modifier = Modifier.size(16.dp),
+                                        strokeWidth = 2.dp,
+                                        color = AccentOrange
+                                    )
+                                    Spacer(Modifier.width(10.dp))
+                                    Text(
+                                        "AI generuje poprawiony plan…",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = DarkOnSurfaceVariant
+                                    )
+                                }
+                            }
                         }
                     }
                     is PlanAuditState.Error -> Text(
@@ -435,10 +483,76 @@ fun PlanEditScreen(
                 }
             },
             confirmButton = {
-                TextButton(onClick = { vm.dismissAudit() }) {
-                    Text("OK")
+                if (audit is PlanAuditState.Result) {
+                    TextButton(
+                        onClick = {
+                            vm.requestImprovement(followUpQuestion.takeIf { it.isNotBlank() })
+                        },
+                        enabled = improvementState !is PlanImprovementState.Loading
+                    ) {
+                        Icon(
+                            Icons.Default.AutoAwesome,
+                            contentDescription = null,
+                            tint = AccentOrange,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text("Wygeneruj poprawiony plan", color = AccentOrange)
+                    }
+                } else {
+                    TextButton(onClick = { vm.dismissAudit() }) { Text("OK") }
+                }
+            },
+            dismissButton = if (audit is PlanAuditState.Result) {
+                {
+                    TextButton(onClick = {
+                        followUpQuestion = ""
+                        vm.dismissAudit()
+                    }) { Text("Zamknij", color = DarkOnSurfaceVariant) }
+                }
+            } else null
+        )
+    }
+
+    // Preview poprawionego planu
+    val improvement = improvementState
+    if (improvement is PlanImprovementState.Preview) {
+        PlanImprovementSheet(
+            proposal = improvement.proposal,
+            currentExercises = state.exercises,
+            isApplying = false,
+            onDismiss = {
+                vm.dismissImprovement()
+                followUpQuestion = ""
+            },
+            onReplace = {
+                vm.applyImprovement(asCopy = false) {
+                    followUpQuestion = ""
+                }
+            },
+            onSaveAsCopy = {
+                vm.applyImprovement(asCopy = true) { newId ->
+                    followUpQuestion = ""
+                    if (newId != null) onSaved()
                 }
             }
+        )
+    } else if (improvement is PlanImprovementState.Applying) {
+        AlertDialog(
+            onDismissRequest = {},
+            title = { Text("Zapisuję…") },
+            text = {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    androidx.compose.material3.CircularProgressIndicator(
+                        modifier = Modifier.size(20.dp),
+                        strokeWidth = 2.dp,
+                        color = AccentOrange
+                    )
+                    Spacer(Modifier.width(12.dp))
+                    Text("Stosuję zmiany w planie…")
+                }
+            },
+            confirmButton = {}
         )
     }
 
