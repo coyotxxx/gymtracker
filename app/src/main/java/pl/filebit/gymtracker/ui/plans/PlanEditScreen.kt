@@ -94,6 +94,7 @@ fun PlanEditScreen(
     val auditState by vm.auditState.collectAsStateWithLifecycle()
     var showDeleteDialog by remember { mutableStateOf(false) }
     var showRpeHelp by remember { mutableStateOf(false) }
+    var dayActionFor by remember { mutableStateOf<Int?>(null) }
 
     LaunchedEffect(pickedExerciseId) {
         pickedExerciseId?.let { id ->
@@ -154,7 +155,7 @@ fun PlanEditScreen(
                 DayTabRow(
                     selected = state.selectedDay,
                     daysWithExercises = state.exercises.map { it.planEx.dayOfWeek }.toSet(),
-                    onSelect = vm::setSelectedDay
+                    onSelect = { day -> dayActionFor = day }
                 )
             }
             item {
@@ -438,6 +439,22 @@ fun PlanEditScreen(
                     Text("OK")
                 }
             }
+        )
+    }
+
+    dayActionFor?.let { dayPicked ->
+        val daysWithEx = state.exercises.map { it.planEx.dayOfWeek }.toSet()
+        val countInDay = state.exercises.count { it.planEx.dayOfWeek == dayPicked }
+        PlanDayActionsSheet(
+            day = dayPicked,
+            exercisesCount = countInDay,
+            daysWithExercises = daysWithEx,
+            onDismiss = { dayActionFor = null },
+            onEditDay = { d -> vm.setSelectedDay(d) },
+            onMoveDay = { from, to -> vm.moveDayExercises(from, to) },
+            onSwapDays = { a, b -> vm.swapDays(a, b) },
+            onCopyDay = { from, to -> vm.copyDayExercises(from, to) },
+            onClearDay = { d -> vm.clearDay(d) }
         )
     }
 }

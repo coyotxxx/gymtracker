@@ -298,6 +298,106 @@ class PlanEditViewModel @Inject constructor(
         st.copy(exercises = remaining, selectedDay = newSelected)
     }
 
+    /**
+     * Przenosi wszystkie ćwiczenia z `from` na `to`. Jeśli `to` ma już ćwiczenia —
+     * scala (dopisuje na końcu z kontynuacją orderIndex).
+     */
+    fun moveDayExercises(from: Int, to: Int) {
+        if (from == to) return
+        _state.update { st ->
+            val maxOrderInTarget = st.exercises
+                .filter { it.planEx.dayOfWeek == to }
+                .maxOfOrNull { it.planEx.orderIndex } ?: -1
+            val moved = st.exercises
+                .filter { it.planEx.dayOfWeek == from }
+                .sortedBy { it.planEx.orderIndex }
+                .mapIndexed { idx, ped ->
+                    ped.copy(
+                        planEx = ped.planEx.copy(
+                            dayOfWeek = to,
+                            orderIndex = maxOrderInTarget + 1 + idx
+                        )
+                    )
+                }
+            val rest = st.exercises.filter { it.planEx.dayOfWeek != from }
+            val newList = (rest + moved).sortedWith(
+                compareBy({ it.planEx.dayOfWeek }, { it.planEx.orderIndex })
+            )
+            st.copy(
+                exercises = pl.filebit.gymtracker.util.cleanOrphanedSupersets(newList),
+                selectedDay = to
+            )
+        }
+    }
+
+    /**
+     * Zamienia ćwiczenia między dwoma dniami (a ↔ b).
+     */
+    fun swapDays(a: Int, b: Int) {
+        if (a == b) return
+        _state.update { st ->
+            val newList = st.exercises.map { ped ->
+                when (ped.planEx.dayOfWeek) {
+                    a -> ped.copy(planEx = ped.planEx.copy(dayOfWeek = b))
+                    b -> ped.copy(planEx = ped.planEx.copy(dayOfWeek = a))
+                    else -> ped
+                }
+            }.sortedWith(compareBy({ it.planEx.dayOfWeek }, { it.planEx.orderIndex }))
+            st.copy(exercises = newList, selectedDay = b)
+        }
+    }
+
+    /**
+     * Duplikuje ćwiczenia (z setami) z dnia `from` do dnia `to`. Scala z istniejącymi.
+     * Każda kopia dostaje nowe ujemne id (niezapisana) — przy save() trafi do DB jako nowa.
+     */
+    fun copyDayExercises(from: Int, to: Int) {
+        if (from == to) return
+        _state.update { st ->
+            val maxOrderInTarget = st.exercises
+                .filter { it.planEx.dayOfWeek == to }
+                .maxOfOrNull { it.planEx.orderIndex } ?: -1
+            val source = st.exercises
+                .filter { it.planEx.dayOfWeek == from }
+                .sortedBy { it.planEx.orderIndex }
+            // Mapowanie supersetGroup ze źródła na nową literę unikalną w dniu docelowym
+            val existingGroupsInTarget = st.exercises
+                .filter { it.planEx.dayOfWeek == to }
+                .mapNotNull { it.planEx.supersetGroup }
+                .toSet()
+            val sourceGroups = source.mapNotNull { it.planEx.supersetGroup }.toSet()
+            val groupRemap: Map<String, String> = sourceGroups.mapNotNull { src ->
+                val freeLetter = ('A'..'Z')
+                    .map { it.toString() }
+                    .firstOrNull { it !in existingGroupsInTarget && it != src }
+                if (freeLetter != null) src to freeLetter else null
+            }.toMap()
+
+            val copies = source.mapIndexed { idx, ped ->
+                val newPeId = nextLocalId--
+                val newSets = ped.sets.map { s ->
+                    s.copy(
+                        id = nextLocalSetId--,
+                        planExerciseId = newPeId
+                    )
+                }
+                ped.copy(
+                    planEx = ped.planEx.copy(
+                        id = newPeId,
+                        dayOfWeek = to,
+                        orderIndex = maxOrderInTarget + 1 + idx,
+                        supersetGroup = ped.planEx.supersetGroup?.let { groupRemap[it] ?: it }
+                    ),
+                    sets = newSets
+                )
+            }
+            val newList = (st.exercises + copies).sortedWith(
+                compareBy({ it.planEx.dayOfWeek }, { it.planEx.orderIndex })
+            )
+            st.copy(exercises = newList, selectedDay = to)
+        }
+    }
+
     fun toggleSupersetWithPrev(id: Long) = _state.update { st ->
         val day = st.selectedDay
         val sameDay = st.exercises
