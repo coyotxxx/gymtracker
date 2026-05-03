@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.navigation
 
 sealed class Screen(val route: String) {
+    object Onboarding : Screen("onboarding")
     object Home : Screen("home")
     object History : Screen("history")
     object Plans : Screen("plans")

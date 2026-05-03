@@ -122,6 +122,7 @@ fun AppNavigation() {
     // skomplikowane akcje) i ekranami AI (Trener AI ma własny topBar z labelem
     // "PLAN NA TYDZIEŃ" — duplikacja byłaby brzydka).
     val hideTopBarRoutes = setOf(
+        Screen.Onboarding.route,
         Screen.ActiveWorkout.route,
         Screen.CoachWorkout.route,
         Screen.AiTrainer.route,
@@ -137,6 +138,7 @@ fun AppNavigation() {
 
     val workoutShellVm: ActiveWorkoutShellViewModel = hiltViewModel()
     val workoutShellState by workoutShellVm.state.collectAsStateWithLifecycle()
+    val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -188,11 +190,26 @@ fun AppNavigation() {
             }
         }
     ) { padding ->
+        // Onboarding state — gdy Loading, czekamy; gdy Needed/NotNeeded — przełączamy startDestination
+        val startDestination = when (onboardingNavState) {
+            pl.filebit.gymtracker.ui.shell.OnboardingNavState.Needed -> Screen.Onboarding.route
+            else -> Screen.Home.route  // Loading też pokazuje Home (wybór startuje gdy Loading rezolwuje się)
+        }
         NavHost(
             navController = navController,
-            startDestination = Screen.Home.route,
+            startDestination = startDestination,
             modifier = Modifier.padding(padding)
         ) {
+            composable(Screen.Onboarding.route) {
+                pl.filebit.gymtracker.ui.onboarding.OnboardingScreen(
+                    onCompleted = {
+                        workoutShellVm.markOnboardingDone()
+                        navController.navigate(Screen.Home.route) {
+                            popUpTo(Screen.Onboarding.route) { inclusive = true }
+                        }
+                    }
+                )
+            }
             composable(Screen.Home.route) {
                 HomeScreen(
                     onStartCoachWorkout = { navController.navigate(Screen.CoachWorkout.route) },

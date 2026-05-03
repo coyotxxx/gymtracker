@@ -45,5 +45,6 @@ data class UserProfile(
     val gender: Gender = Gender.MALE,
     val bodyweightKg: Double? = null,   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
     val flashOnTimerEnd: Boolean = false,
-    val aiOverlayEnabled: Boolean = false   // pływający FAB Asystenta AI dostępny z każdego ekranu
+    val aiOverlayEnabled: Boolean = false,  // pływający FAB Asystenta AI dostępny z każdego ekranu
+    val onboardingCompleted: Boolean = false  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
 )

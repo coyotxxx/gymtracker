@@ -11,10 +11,20 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
+
+sealed class OnboardingNavState {
+    object Loading : OnboardingNavState()
+    object Needed : OnboardingNavState()
+    object NotNeeded : OnboardingNavState()
+}
 
 data class ActiveWorkoutShellState(
     val workout: Workout? = null,
@@ -32,8 +42,27 @@ data class ActiveWorkoutShellState(
 @HiltViewModel
 class ActiveWorkoutShellViewModel @Inject constructor(
     workoutRepo: WorkoutRepository,
-    private val planRepo: PlanRepository
+    private val planRepo: PlanRepository,
+    private val profileRepo: UserProfileRepository
 ) : ViewModel() {
+
+    private val _onboardingState = MutableStateFlow<OnboardingNavState>(OnboardingNavState.Loading)
+    val onboardingState: StateFlow<OnboardingNavState> = _onboardingState.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            val p = profileRepo.get()
+            _onboardingState.value = if (p.onboardingCompleted)
+                OnboardingNavState.NotNeeded
+            else
+                OnboardingNavState.Needed
+        }
+    }
+
+    /** Wywoływane po zakończeniu onboardingu — przełącza state żeby UI mogło nawigować. */
+    fun markOnboardingDone() {
+        _onboardingState.value = OnboardingNavState.NotNeeded
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val state: StateFlow<ActiveWorkoutShellState> = workoutRepo.observeActive()
