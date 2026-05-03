@@ -1,17 +1,12 @@
 package pl.filebit.gymtracker.ui.plans
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ContentCopy
@@ -21,7 +16,6 @@ import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
@@ -32,24 +26,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import pl.filebit.gymtracker.ui.common.ActionSheetRow
+import pl.filebit.gymtracker.ui.common.DAY_FULL_LABELS
+import pl.filebit.gymtracker.ui.common.DayPickerDialog
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurface
-import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
-
-private val DAY_FULL = listOf(
-    "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"
-)
-private val DAY_SHORT = listOf("Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd")
 
 private enum class PickerMode { MOVE, SWAP, COPY_TO, COPY_FROM }
 
@@ -80,10 +68,8 @@ fun PlanDayActionsSheet(
     ) {
         Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
             Text(
-                text = DAY_FULL[day - 1],
-                style = MaterialTheme.typography.headlineSmall.copy(
-                    fontWeight = FontWeight.SemiBold
-                ),
+                text = DAY_FULL_LABELS[day - 1],
+                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.SemiBold),
                 color = DarkOnSurface
             )
             Spacer(Modifier.height(4.dp))
@@ -97,7 +83,7 @@ fun PlanDayActionsSheet(
             )
             Spacer(Modifier.height(20.dp))
 
-            ActionRow(
+            ActionSheetRow(
                 icon = Icons.Filled.Edit,
                 label = if (hasExercises) "Edytuj ten dzień" else "Dodaj ćwiczenia tego dnia",
                 onClick = {
@@ -107,40 +93,38 @@ fun PlanDayActionsSheet(
             )
 
             if (hasExercises) {
-                ActionRow(
+                ActionSheetRow(
                     icon = Icons.Filled.SwapHoriz,
                     label = "Przenieś na inny dzień",
                     subtitle = "Wszystkie ćwiczenia dostaną nowy dzień tygodnia",
                     onClick = { picker = PickerMode.MOVE }
                 )
-                ActionRow(
+                ActionSheetRow(
                     icon = Icons.Filled.SwapVert,
                     label = "Zamień z innym dniem",
                     subtitle = "Wymienisz ćwiczenia między dniami",
                     onClick = { picker = PickerMode.SWAP }
                 )
-                ActionRow(
+                ActionSheetRow(
                     icon = Icons.Filled.ContentCopy,
                     label = "Skopiuj do innego dnia",
                     subtitle = "Duplikat ćwiczeń (oryginał zostaje)",
                     onClick = { picker = PickerMode.COPY_TO }
                 )
-                ActionRow(
+                ActionSheetRow(
                     icon = Icons.Filled.DeleteOutline,
                     label = "Wyczyść ten dzień",
                     subtitle = "Usuwa wszystkie ćwiczenia z tego dnia",
                     danger = true,
                     onClick = { showClearConfirm = true }
                 )
-            } else {
-                if (daysWithExercises.isNotEmpty()) {
-                    ActionRow(
-                        icon = Icons.Filled.ContentCopy,
-                        label = "Skopiuj z innego dnia",
-                        subtitle = "Duplikat ćwiczeń z wybranego dnia",
-                        onClick = { picker = PickerMode.COPY_FROM }
-                    )
-                }
+            } else if (daysWithExercises.isNotEmpty()) {
+                ActionSheetRow(
+                    icon = Icons.Filled.ContentCopy,
+                    label = "Skopiuj z innego dnia",
+                    subtitle = "Duplikat ćwiczeń z wybranego dnia",
+                    onClick = { picker = PickerMode.COPY_FROM }
+                )
             }
 
             Spacer(Modifier.height(8.dp))
@@ -165,8 +149,6 @@ fun PlanDayActionsSheet(
                 PickerMode.COPY_FROM -> "Skopiuj z…"
             },
             sourceDay = day,
-            daysWithExercises = daysWithExercises,
-            mode = mode,
             onDismiss = { picker = null },
             onPick = { targetDay ->
                 picker = null
@@ -177,6 +159,20 @@ fun PlanDayActionsSheet(
                     PickerMode.COPY_FROM -> onCopyDay(targetDay, day)
                 }
                 onDismiss()
+            },
+            hintFor = { d ->
+                val targetHasEx = d in daysWithExercises
+                when {
+                    mode == PickerMode.MOVE && targetHasEx -> "scali z istniejącymi"
+                    mode == PickerMode.COPY_TO && targetHasEx -> "doda na końcu"
+                    mode == PickerMode.SWAP && !targetHasEx -> "obecnie wolny"
+                    else -> ""
+                }
+            },
+            enabledFor = { d ->
+                if (d == day) false
+                else if (mode == PickerMode.COPY_FROM) d in daysWithExercises
+                else true
             }
         )
     }
@@ -188,7 +184,7 @@ fun PlanDayActionsSheet(
             text = {
                 Text(
                     "Usunie się $exercisesCount ${plExercises(exercisesCount)} z dnia " +
-                        "${DAY_FULL[day - 1]}. Tej akcji nie cofniesz.",
+                        "${DAY_FULL_LABELS[day - 1]}. Tej akcji nie cofniesz.",
                     color = DarkOnSurfaceVariant
                 )
             },
@@ -209,134 +205,6 @@ fun PlanDayActionsSheet(
             containerColor = DarkSurface
         )
     }
-}
-
-@Composable
-private fun ActionRow(
-    icon: ImageVector,
-    label: String,
-    subtitle: String? = null,
-    danger: Boolean = false,
-    onClick: () -> Unit
-) {
-    val tint = if (danger) Color(0xFFFF6B6B) else AccentOrange
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(vertical = 12.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Icon(icon, contentDescription = null, tint = tint, modifier = Modifier.size(22.dp))
-        Spacer(Modifier.size(16.dp))
-        Column(modifier = Modifier.fillMaxWidth()) {
-            Text(
-                label,
-                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium),
-                color = if (danger) Color(0xFFFF6B6B) else DarkOnSurface
-            )
-            if (subtitle != null) {
-                Text(
-                    subtitle,
-                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
-                    color = DarkOnSurfaceVariant
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun DayPickerDialog(
-    title: String,
-    sourceDay: Int,
-    daysWithExercises: Set<Int>,
-    mode: PickerMode,
-    onDismiss: () -> Unit,
-    onPick: (Int) -> Unit
-) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text(title) },
-        text = {
-            Column {
-                (1..7).forEach { d ->
-                    val isSource = d == sourceDay
-                    // Reguły dostępności:
-                    // MOVE: każdy dzień != source
-                    // SWAP: każdy dzień != source (zamieni nawet z pustym)
-                    // COPY_TO: każdy dzień != source
-                    // COPY_FROM: tylko dni z ćwiczeniami i != source
-                    val enabled = when {
-                        isSource -> false
-                        mode == PickerMode.COPY_FROM -> d in daysWithExercises
-                        else -> true
-                    }
-                    val targetHasEx = d in daysWithExercises
-                    val hint = when {
-                        isSource -> "(ten dzień)"
-                        mode == PickerMode.MOVE && targetHasEx -> "scali z istniejącymi"
-                        mode == PickerMode.COPY_TO && targetHasEx -> "doda na końcu"
-                        mode == PickerMode.COPY_FROM && !targetHasEx -> ""
-                        mode == PickerMode.SWAP && !targetHasEx -> "obecnie wolny"
-                        else -> ""
-                    }
-                    DayRow(day = d, hint = hint, enabled = enabled, onClick = { onPick(d) })
-                }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Anuluj", color = DarkOnSurfaceVariant)
-            }
-        },
-        containerColor = DarkSurface
-    )
-}
-
-@Composable
-private fun DayRow(day: Int, hint: String, enabled: Boolean, onClick: () -> Unit) {
-    val alpha = if (enabled) 1f else 0.35f
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(46.dp)
-            .background(DarkSurfaceVariant.copy(alpha = if (enabled) 0.4f else 0.15f), RoundedCornerShape(10.dp))
-            .border(1.dp, AccentOrange.copy(alpha = if (enabled) 0.25f else 0.0f), RoundedCornerShape(10.dp))
-            .padding(horizontal = 12.dp)
-            .let { if (enabled) it.clickable(onClick = onClick) else it },
-        contentAlignment = Alignment.CenterStart
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-            Box(
-                modifier = Modifier
-                    .size(34.dp)
-                    .background(AccentOrange.copy(alpha = 0.18f * alpha), RoundedCornerShape(8.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    DAY_SHORT[day - 1],
-                    color = AccentOrange.copy(alpha = alpha),
-                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold)
-                )
-            }
-            Spacer(Modifier.size(12.dp))
-            Text(
-                DAY_FULL[day - 1],
-                color = DarkOnSurface.copy(alpha = alpha),
-                style = MaterialTheme.typography.bodyMedium
-            )
-            if (hint.isNotEmpty()) {
-                Spacer(Modifier.size(8.dp))
-                Text(
-                    hint,
-                    color = DarkOnSurfaceVariant.copy(alpha = alpha),
-                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp)
-                )
-            }
-        }
-    }
-    Spacer(Modifier.height(6.dp))
 }
 
 private fun plExercises(count: Int): String = when {

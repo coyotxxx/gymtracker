@@ -17,11 +17,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Block
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Replay
 import androidx.compose.material.icons.filled.SwapHoriz
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -46,7 +44,6 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
-import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.LabelUp
 import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.ScheduleSlot
@@ -113,7 +110,7 @@ fun WeekPlanSheet(
     }
 
     pickerForSlot?.let { slot ->
-        SlotActionsDialog(
+        SlotActionsSheet(
             slot = slot,
             planName = plansById[slot.planId]?.name ?: "—",
             occupiedDays = weekSlots.keys,
@@ -289,8 +286,9 @@ private fun StatusPill(label: String, color: androidx.compose.ui.graphics.Color)
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun SlotActionsDialog(
+private fun SlotActionsSheet(
     slot: ScheduleSlot,
     planName: String,
     occupiedDays: Set<Int>,
@@ -300,88 +298,88 @@ private fun SlotActionsDialog(
     onSkip: () -> Unit,
     onResetToOriginal: (() -> Unit)?
 ) {
-    var pickDayMode by remember { mutableStateOf(false) }
-    AlertDialog(
+    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    var showPicker by remember { mutableStateOf(false) }
+
+    val targetDay = slot.targetDayOfWeek
+    val sublabel = if (slot.isMoved)
+        "Slot: ${DAY_FULL[targetDay - 1]} (oryginalnie ${DAY_FULL[slot.sourceDayOfWeek - 1]})"
+    else
+        "Slot: ${DAY_FULL[targetDay - 1]}"
+
+    ModalBottomSheet(
         onDismissRequest = onDismiss,
-        title = { Text(planName) },
-        text = {
-            if (pickDayMode) {
-                Column {
-                    Text(
-                        "Przesuń na:",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = DarkOnSurface
-                    )
-                    Spacer(Modifier.height(8.dp))
-                    for (day in 1..7) {
-                        val taken = day != slot.targetDayOfWeek && day in occupiedDays
-                        val current = day == slot.targetDayOfWeek
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 2.dp)
-                                .background(
-                                    if (current) AccentOrange.copy(alpha = 0.10f) else DarkSurfaceVariant,
-                                    RoundedCornerShape(8.dp)
-                                )
-                                .clickable(enabled = !current) { onMoveTo(day) }
-                                .padding(horizontal = 12.dp, vertical = 10.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                DAY_FULL[day - 1],
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = if (current) AccentOrange else DarkOnSurface,
-                                modifier = Modifier.weight(1f)
-                            )
-                            if (current) Text(
-                                "(obecny)",
-                                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                color = AccentOrange
-                            ) else if (taken) Text(
-                                "zajęty",
-                                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                color = DarkOnSurfaceVariant
-                            )
-                        }
-                    }
-                }
-            } else {
-                Column {
-                    ActionRow(Icons.Default.PlayArrow, "Trenuj teraz", onClick = onTrainNow)
-                    ActionRow(Icons.Default.SwapHoriz, "Przesuń na inny dzień", onClick = { pickDayMode = true })
-                    ActionRow(Icons.Default.Block, "Pomiń ten trening", onClick = onSkip)
-                    if (onResetToOriginal != null) {
-                        ActionRow(
-                            Icons.Default.Replay,
-                            "Cofnij przesunięcie (oryginalny dzień: ${DAY_FULL[slot.sourceDayOfWeek - 1]})",
-                            onClick = onResetToOriginal
-                        )
-                    }
+        sheetState = sheetState,
+        containerColor = DarkBg,
+        shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp)
+    ) {
+        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
+            Text(
+                text = planName,
+                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.SemiBold),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                text = sublabel,
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 13.sp),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(20.dp))
+
+            pl.filebit.gymtracker.ui.common.ActionSheetRow(
+                icon = Icons.Default.PlayArrow,
+                label = "Trenuj teraz",
+                subtitle = "Uruchom coach mode dla tego treningu",
+                onClick = onTrainNow
+            )
+            pl.filebit.gymtracker.ui.common.ActionSheetRow(
+                icon = Icons.Default.SwapHoriz,
+                label = "Przesuń na inny dzień",
+                subtitle = "Tylko w tym tygodniu — nie modyfikuje planu",
+                onClick = { showPicker = true }
+            )
+            pl.filebit.gymtracker.ui.common.ActionSheetRow(
+                icon = Icons.Default.Block,
+                label = "Pomiń ten trening",
+                subtitle = "W tym tygodniu zniknie z planu",
+                danger = true,
+                onClick = onSkip
+            )
+            if (onResetToOriginal != null) {
+                pl.filebit.gymtracker.ui.common.ActionSheetRow(
+                    icon = Icons.Default.Replay,
+                    label = "Cofnij przesunięcie",
+                    subtitle = "Wraca na ${DAY_FULL[slot.sourceDayOfWeek - 1]}",
+                    onClick = onResetToOriginal
+                )
+            }
+
+            Spacer(Modifier.height(8.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                TextButton(onClick = onDismiss) {
+                    Text("Zamknij", color = AccentOrange)
                 }
             }
-        },
-        confirmButton = {
-            TextButton(onClick = onDismiss) { Text("Zamknij") }
+            Spacer(Modifier.height(8.dp))
         }
-    )
-}
+    }
 
-@Composable
-private fun ActionRow(
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
-    label: String,
-    onClick: () -> Unit
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(vertical = 12.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Icon(icon, contentDescription = null, tint = AccentOrange, modifier = Modifier.size(18.dp))
-        Spacer(Modifier.width(12.dp))
-        Text(label, style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+    if (showPicker) {
+        pl.filebit.gymtracker.ui.common.DayPickerDialog(
+            title = "Przesuń na…",
+            sourceDay = targetDay,
+            onDismiss = { showPicker = false },
+            onPick = { picked ->
+                showPicker = false
+                onMoveTo(picked)
+            },
+            hintFor = { d ->
+                if (d != targetDay && d in occupiedDays) "zajęty innym treningiem" else ""
+            }
+        )
     }
 }
