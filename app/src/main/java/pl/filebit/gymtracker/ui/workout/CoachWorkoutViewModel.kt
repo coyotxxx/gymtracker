@@ -79,10 +79,46 @@ class CoachWorkoutViewModel @Inject constructor(
     private val _aiOpinion = MutableStateFlow<AiOpinionState>(AiOpinionState.Idle)
     val aiOpinion: StateFlow<AiOpinionState> = _aiOpinion.asStateFlow()
 
-    fun consumePendingPRs() { _pendingPRs.value = emptyList() }
-    fun consumePendingTips() { _pendingTips.value = emptyList() }
-    fun consumePendingStagnation() { _pendingStagnation.value = emptyList() }
+    private val _pendingFeedbackId = MutableStateFlow<Long?>(null)
+    val pendingFeedbackId: StateFlow<Long?> = _pendingFeedbackId.asStateFlow()
+
+    private var pendingOnDoneCallback: (() -> Unit)? = null
+
+    fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
+    fun consumePendingTips() { _pendingTips.value = emptyList(); tryFinishCallback() }
+    fun consumePendingStagnation() { _pendingStagnation.value = emptyList(); tryFinishCallback() }
     fun dismissAiOpinion() { _aiOpinion.value = AiOpinionState.Idle }
+
+    /**
+     * Zapisuje post-workout feedback i (jeśli wszystko inne consumed) wywołuje
+     * onDone z finishWorkout. Wywoływane z PostWorkoutFeedbackSheet.
+     */
+    fun consumePendingFeedback(
+        save: Boolean,
+        wellbeingRating: Int? = null,
+        painArea: String? = null,
+        painNotes: String? = null
+    ) {
+        val id = _pendingFeedbackId.value
+        viewModelScope.launch {
+            if (save && id != null) {
+                workoutRepo.setPostWorkoutFeedback(id, wellbeingRating, painArea, painNotes)
+            }
+            _pendingFeedbackId.value = null
+            tryFinishCallback()
+        }
+    }
+
+    private fun tryFinishCallback() {
+        if (_pendingPRs.value.isEmpty() &&
+            _pendingTips.value.isEmpty() &&
+            _pendingStagnation.value.isEmpty() &&
+            _pendingFeedbackId.value == null
+        ) {
+            pendingOnDoneCallback?.invoke()
+            pendingOnDoneCallback = null
+        }
+    }
 
     fun askAiOpinion(followUpMessage: String? = null) {
         val st = state.value
@@ -241,6 +277,7 @@ class CoachWorkoutViewModel @Inject constructor(
 
     fun finishWorkout(onDone: () -> Unit) {
         val id = state.value.workout?.id ?: run { onDone(); return }
+        pendingOnDoneCallback = onDone
         viewModelScope.launch {
             val prs = statsRepo.detectNewPRs(id)
             val withNames = prs.map { p ->
@@ -251,13 +288,15 @@ class CoachWorkoutViewModel @Inject constructor(
             workoutRepo.finish(id)
             // AI summary w tle — nie blokuje wyjścia z ekranu
             generateAiSummaryInBackground(id)
-            if (withNames.isNotEmpty() || tips.isNotEmpty() || stagnation.isNotEmpty()) {
-                _pendingPRs.value = withNames
-                _pendingTips.value = tips
-                _pendingStagnation.value = stagnation
-            } else {
-                onDone()
+            // Workout istnieje (miał sety) → pokaż feedback sheet
+            val stillExists = workoutRepo.getWorkout(id)?.finishedAt != null
+            if (stillExists) {
+                _pendingFeedbackId.value = id
             }
+            _pendingPRs.value = withNames
+            _pendingTips.value = tips
+            _pendingStagnation.value = stagnation
+            tryFinishCallback()
         }
     }
 

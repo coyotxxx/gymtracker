@@ -71,6 +71,29 @@ class WorkoutRepository @Inject constructor(
     }
 
     /**
+     * Zapisuje post-workout feedback usera: jak się czuł (1-5) + ewentualny ból
+     * (partia mięśniowa + opis). Wywoływane po kliknięciu Save w PostWorkoutFeedbackSheet.
+     */
+    suspend fun setPostWorkoutFeedback(
+        workoutId: Long,
+        wellbeingRating: Int?,
+        painArea: String?,
+        painNotes: String?
+    ) {
+        val w = workoutDao.getById(workoutId) ?: return
+        workoutDao.update(
+            w.copy(
+                wellbeingRating = wellbeingRating,
+                painArea = painArea,
+                painNotes = painNotes
+            )
+        )
+    }
+
+    suspend fun getWorkout(id: Long): pl.filebit.gymtracker.data.entity.Workout? =
+        workoutDao.getById(id)
+
+    /**
      * Dodaje nową serię. Auto-numeracja setNumber w obrębie ćwiczenia,
      * orderIndex liczony tak, że ćwiczenie zachowuje swoją grupę.
      */

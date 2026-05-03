@@ -253,7 +253,19 @@ fun ActiveWorkoutScreen(
                 vm.consumePendingPRs()
                 vm.consumePendingTips()
                 vm.consumePendingStagnation()
-                onWorkoutFinished()
+            }
+        )
+    }
+
+    // Post-workout feedback sheet (po PR/Tips/Stagnation lub od razu jeśli ich nie było)
+    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
+    val showFeedback = pendingFeedbackId != null &&
+        pendingPRs.isEmpty() && pendingTips.isEmpty() && pendingStagnation.isEmpty()
+    if (showFeedback) {
+        PostWorkoutFeedbackSheet(
+            onSkip = { vm.consumePendingFeedback(save = false) },
+            onSave = { rating, area, notes ->
+                vm.consumePendingFeedback(save = true, rating, area, notes)
             }
         )
     }

@@ -52,7 +52,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         WeeklyPlanOverride::class,
         UnlockedAchievement::class
     ],
-    version = 26,
+    version = 27,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

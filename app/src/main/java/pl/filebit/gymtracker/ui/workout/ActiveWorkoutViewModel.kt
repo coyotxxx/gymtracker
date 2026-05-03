@@ -65,9 +65,41 @@ class ActiveWorkoutViewModel @Inject constructor(
     private val _pendingStagnation = MutableStateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>>(emptyList())
     val pendingStagnation: StateFlow<List<pl.filebit.gymtracker.data.repository.StagnationAlert>> = _pendingStagnation.asStateFlow()
 
-    fun consumePendingPRs() { _pendingPRs.value = emptyList() }
-    fun consumePendingTips() { _pendingTips.value = emptyList() }
-    fun consumePendingStagnation() { _pendingStagnation.value = emptyList() }
+    private val _pendingFeedbackId = MutableStateFlow<Long?>(null)
+    val pendingFeedbackId: StateFlow<Long?> = _pendingFeedbackId.asStateFlow()
+
+    private var pendingOnDoneCallback: (() -> Unit)? = null
+
+    fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
+    fun consumePendingTips() { _pendingTips.value = emptyList(); tryFinishCallback() }
+    fun consumePendingStagnation() { _pendingStagnation.value = emptyList(); tryFinishCallback() }
+
+    fun consumePendingFeedback(
+        save: Boolean,
+        wellbeingRating: Int? = null,
+        painArea: String? = null,
+        painNotes: String? = null
+    ) {
+        val id = _pendingFeedbackId.value
+        viewModelScope.launch {
+            if (save && id != null) {
+                workoutRepo.setPostWorkoutFeedback(id, wellbeingRating, painArea, painNotes)
+            }
+            _pendingFeedbackId.value = null
+            tryFinishCallback()
+        }
+    }
+
+    private fun tryFinishCallback() {
+        if (_pendingPRs.value.isEmpty() &&
+            _pendingTips.value.isEmpty() &&
+            _pendingStagnation.value.isEmpty() &&
+            _pendingFeedbackId.value == null
+        ) {
+            pendingOnDoneCallback?.invoke()
+            pendingOnDoneCallback = null
+        }
+    }
 
     @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
     val state: StateFlow<ActiveWorkoutUiState> = combine(
@@ -196,6 +228,7 @@ class ActiveWorkoutViewModel @Inject constructor(
     fun finishWorkout(onDone: () -> Unit) {
         val id = state.value.workout?.id ?: return
         _isFinishing.value = true
+        pendingOnDoneCallback = onDone
         viewModelScope.launch {
             val prs = statsRepo.detectNewPRs(id)
             val withNames = prs.map { p ->
@@ -211,14 +244,15 @@ class ActiveWorkoutViewModel @Inject constructor(
                 }
             }
             _isFinishing.value = false
-            if (withNames.isNotEmpty() || tips.isNotEmpty() || stagnation.isNotEmpty()) {
-                _pendingPRs.value = withNames
-                _pendingTips.value = tips
-                _pendingStagnation.value = stagnation
-                // UI obserwuje pendingPRs/Tips/Stagnation — pokaże dialog, po zamknięciu wywoła onDone
-            } else {
-                onDone()
+            // Workout istnieje (miał sety) → pokaż feedback sheet
+            val stillExists = workoutRepo.getWorkout(id)?.finishedAt != null
+            if (stillExists) {
+                _pendingFeedbackId.value = id
             }
+            _pendingPRs.value = withNames
+            _pendingTips.value = tips
+            _pendingStagnation.value = stagnation
+            tryFinishCallback()
         }
     }
 

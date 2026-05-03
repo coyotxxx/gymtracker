@@ -222,7 +222,6 @@ fun CoachWorkoutScreen(
                 vm.consumePendingPRs()
                 vm.consumePendingTips()
                 vm.consumePendingStagnation()
-                onWorkoutFinished()
             },
             title = { Text(title, fontWeight = FontWeight.Bold) },
             text = {
@@ -312,8 +311,20 @@ fun CoachWorkoutScreen(
                     vm.consumePendingPRs()
                     vm.consumePendingTips()
                     vm.consumePendingStagnation()
-                    onWorkoutFinished()
                 }) { Text(stringResource(R.string.pr_dialog_ok)) }
+            }
+        )
+    }
+
+    // Post-workout feedback sheet — pojawia się po PR/Tips/Stagnation dialogach
+    val pendingFeedbackId by vm.pendingFeedbackId.collectAsStateWithLifecycle()
+    val showFeedback = pendingFeedbackId != null &&
+        pendingPRs.isEmpty() && pendingTips.isEmpty() && pendingStagnation.isEmpty()
+    if (showFeedback) {
+        PostWorkoutFeedbackSheet(
+            onSkip = { vm.consumePendingFeedback(save = false) },
+            onSave = { rating, area, notes ->
+                vm.consumePendingFeedback(save = true, rating, area, notes)
             }
         )
     }
