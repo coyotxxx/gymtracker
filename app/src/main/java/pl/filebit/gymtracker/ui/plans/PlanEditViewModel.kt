@@ -224,7 +224,12 @@ class PlanEditViewModel @Inject constructor(
             val withDetails = exes.map { pe ->
                 val ex = exerciseRepo.get(pe.exerciseId)
                 val sets = planRepo.getSetsForPlanExercise(pe.id)
-                PlanExerciseWithDetail(pe, ex, sets)
+                // Sanityzacja string "null" w supersetGroup (legacy bug AI parser)
+                val cleanedPe = pe.copy(
+                    supersetGroup = pe.supersetGroup
+                        ?.takeIf { it.isNotBlank() && !it.equals("null", ignoreCase = true) }
+                )
+                PlanExerciseWithDetail(cleanedPe, ex, sets)
             }
             val daysWithExercises = withDetails.map { it.planEx.dayOfWeek }.toSet()
             _state.update {

@@ -1061,8 +1061,14 @@ private fun SetEditRow(
  */
 private fun computeSupersetLabel(list: List<PlanExerciseWithDetail>, idx: Int): String? {
     val current = list[idx]
-    val group = current.planEx.supersetGroup ?: return null
-    val groupMembers = list.filter { it.planEx.supersetGroup == group }
+    // Filtruj string "null" (legacy bug — AI parser zwracał "null" zamiast null)
+    val group = current.planEx.supersetGroup
+        ?.takeIf { it.isNotBlank() && !it.equals("null", ignoreCase = true) }
+        ?: return null
+    val groupMembers = list.filter {
+        it.planEx.supersetGroup
+            ?.takeIf { v -> v.isNotBlank() && !v.equals("null", ignoreCase = true) } == group
+    }
     if (groupMembers.size < 2) return null
     val positionInGroup = groupMembers.indexOfFirst { it.planEx.id == current.planEx.id } + 1
     return "$group$positionInGroup"

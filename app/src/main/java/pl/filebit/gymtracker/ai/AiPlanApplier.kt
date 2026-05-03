@@ -156,7 +156,9 @@ class AiPlanApplier @Inject constructor(
                 restSec = s["restSec"]?.jsonPrimitive?.intOrNull
             )
         } ?: emptyList()
+        // jsonPrimitive.content na JsonNull zwraca string "null" — trzeba odfiltrować
         val sg = o["supersetGroup"]?.jsonPrimitive?.content
+            ?.takeIf { it.isNotBlank() && !it.equals("null", ignoreCase = true) }
         return AiPlanExercise(name, sets, sg)
     }
 
