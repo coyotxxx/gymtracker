@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ui.ai
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -91,31 +92,21 @@ fun AiSettingsScreen(
     var showKey by remember { mutableStateOf(false) }
     var showResetConfirm by remember { mutableStateOf(false) }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.ai_settings_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
-                colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
-                    containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-                    titleContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                    navigationIconContentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                )
+    // Box+Column zamiast Scaffold (uniknięcie nested padding pod globalnym TopBar)
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(pl.filebit.gymtracker.ui.theme.DarkBg)
+    ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            pl.filebit.gymtracker.ui.theme.ScreenHeader(
+                title = stringResource(R.string.ai_settings_title),
+                onBack = onBack
             )
-        }
-    ) { padding ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
             // Krok 1 — provider
             item {
                 StepCard(stepNumber = 1, title = stringResource(R.string.ai_step1_title)) {
@@ -330,8 +321,9 @@ fun AiSettingsScreen(
                     }
                 }
             }
-        }
-    }
+            } // close LazyColumn
+        } // close Column
+    } // close Box
 
     if (showInstructions) {
         InstructionsDialog(

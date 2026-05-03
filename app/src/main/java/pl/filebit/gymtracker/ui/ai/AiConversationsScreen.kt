@@ -36,11 +36,8 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -80,37 +77,15 @@ fun AiConversationsScreen(
     var showDeleteAll by remember { mutableStateOf(false) }
     var pendingDelete by remember { mutableStateOf<Long?>(null) }
 
-    Scaffold(
-        containerColor = DarkBg,
-        topBar = {
-            TopAppBar(
-                title = {
-                    Column {
-                        Text(
-                            "${vm.modelLabel.uppercase()} · ${items.size} ${
-                                if (items.size == 1) "ROZMOWA" else if (items.size in 2..4) "ROZMOWY" else "ROZMÓW"
-                            }",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                letterSpacing = 1.4.sp
-                            ),
-                            color = AccentOrange
-                        )
-                        Text(
-                            stringResource(R.string.ai_conversations_title),
-                            style = MaterialTheme.typography.titleLarge.copy(
-                                fontWeight = FontWeight.Bold
-                            ),
-                            color = DarkOnSurface
-                        )
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
-                    }
-                },
+    // Box+Column zamiast Scaffold — uniknięcie nested padding pod globalnym TopBar
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(DarkBg)
+    ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            pl.filebit.gymtracker.ui.theme.ScreenHeader(
+                title = stringResource(R.string.ai_conversations_title),
+                onBack = onBack,
                 actions = {
                     if (items.isNotEmpty()) {
                         IconButton(onClick = { showDeleteAll = true }) {
@@ -128,30 +103,25 @@ fun AiConversationsScreen(
                             tint = DarkOnSurfaceVariant
                         )
                     }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DarkBg,
-                    titleContentColor = DarkOnSurface,
-                    navigationIconContentColor = DarkOnSurface
-                )
+                }
             )
-        },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = onNewConversation,
-                containerColor = AccentOrange,
-                contentColor = Color.Black,
-                shape = RoundedCornerShape(16.dp)
-            ) {
-                Icon(Icons.Default.Add, contentDescription = null)
-            }
-        }
-    ) { padding ->
+            // Subtitle z modelem i liczbą rozmów (zostawiony — był w starym TopAppBar)
+            Text(
+                "${vm.modelLabel.uppercase()} · ${items.size} ${
+                    if (items.size == 1) "ROZMOWA" else if (items.size in 2..4) "ROZMOWY" else "ROZMÓW"
+                }",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = AccentOrange,
+                modifier = Modifier.padding(start = 16.dp, top = 4.dp, bottom = 8.dp)
+            )
         if (items.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding)
                     .padding(32.dp),
                 contentAlignment = Alignment.Center
             ) {
@@ -178,11 +148,9 @@ fun AiConversationsScreen(
             }
         } else {
             LazyColumn(
-                contentPadding = PaddingValues(16.dp),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 96.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
+                modifier = Modifier.fillMaxSize()
             ) {
                 items(items, key = { it.conversation.id }) { item ->
                     ConversationRow(
@@ -193,7 +161,20 @@ fun AiConversationsScreen(
                 }
             }
         }
-    }
+        } // close Column
+        // FAB pływa nad treścią
+        FloatingActionButton(
+            onClick = onNewConversation,
+            containerColor = AccentOrange,
+            contentColor = Color.Black,
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp)
+        ) {
+            Icon(Icons.Default.Add, contentDescription = null)
+        }
+    } // close Box
 
     pendingDelete?.let { id ->
         AlertDialog(
