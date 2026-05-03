@@ -78,11 +78,68 @@ fun WorkoutDetailScreen(
     var showDelete by remember { mutableStateOf(false) }
     var menuOpen by remember { mutableStateOf(false) }
 
-    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+    Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         val workout = state.workout
+        // Jeden ScreenHeader na zewnątrz — actions widoczne tylko gdy workout
+        // załadowany (dropdown wymaga state.workout)
+        ScreenHeader(
+            title = "Trening",
+            onBack = onBack,
+            actions = {
+                if (workout != null) {
+                    Box {
+                        IconButton(onClick = { menuOpen = true }) {
+                            Icon(
+                                Icons.Default.MoreVert,
+                                contentDescription = null,
+                                tint = DarkOnSurface
+                            )
+                        }
+                        DropdownMenu(
+                            expanded = menuOpen,
+                            onDismissRequest = { menuOpen = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_repeat_workout)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.Replay, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    vm.repeatWorkout(onRepeated)
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_save_as_plan)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.EventNote, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.detail_delete_workout)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.Delete, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuOpen = false
+                                    showDelete = true
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+        )
         if (state.loading || workout == null) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                ScreenHeader(title = "Trening", onBack = onBack)
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(stringResource(R.string.stats_loading))
             }
         } else {
             val totalSets = state.groups.sumOf { it.sets.size }
@@ -97,58 +154,6 @@ fun WorkoutDetailScreen(
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                item {
-                    ScreenHeader(
-                        title = "Trening",
-                        onBack = onBack,
-                        actions = {
-                            Box {
-                                IconButton(onClick = { menuOpen = true }) {
-                                    Icon(
-                                        Icons.Default.MoreVert,
-                                        contentDescription = null,
-                                        tint = DarkOnSurface
-                                    )
-                                }
-                                DropdownMenu(
-                                    expanded = menuOpen,
-                                    onDismissRequest = { menuOpen = false }
-                                ) {
-                                    DropdownMenuItem(
-                                        text = { Text(stringResource(R.string.detail_repeat_workout)) },
-                                        leadingIcon = {
-                                            Icon(Icons.Default.Replay, contentDescription = null)
-                                        },
-                                        onClick = {
-                                            menuOpen = false
-                                            vm.repeatWorkout(onRepeated)
-                                        }
-                                    )
-                                    DropdownMenuItem(
-                                        text = { Text(stringResource(R.string.detail_save_as_plan)) },
-                                        leadingIcon = {
-                                            Icon(Icons.Default.EventNote, contentDescription = null)
-                                        },
-                                        onClick = {
-                                            menuOpen = false
-                                            vm.saveAsPlan { newPlanId -> onSavedAsPlan(newPlanId) }
-                                        }
-                                    )
-                                    DropdownMenuItem(
-                                        text = { Text(stringResource(R.string.detail_delete_workout)) },
-                                        leadingIcon = {
-                                            Icon(Icons.Default.Delete, contentDescription = null)
-                                        },
-                                        onClick = {
-                                            menuOpen = false
-                                            showDelete = true
-                                        }
-                                    )
-                                }
-                            }
-                        }
-                    )
-                }
 
                 // Origin label "Z PLANU: …" — żółty UPPERCASE bez karty
                 if (planName != null) {

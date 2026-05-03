@@ -68,20 +68,20 @@ fun ExerciseDetailScreen(
     var editingNotes by remember { mutableStateOf(false) }
     var notesText by remember { mutableStateOf("") }
 
-    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+    Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         val ex = state.exercise
+        // Jeden ScreenHeader na zewnątrz — pozycja stała, tytuł aktualizuje się
+        // gdy dane się załadują (z fallback 'Ćwiczenie' na nazwę ex)
+        ScreenHeader(
+            title = ex?.name ?: stringResource(R.string.exercise_detail_title),
+            onBack = onBack
+        )
         if (state.loading || ex == null) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                ScreenHeader(
-                    title = ex?.name ?: stringResource(R.string.exercise_detail_title),
-                    onBack = onBack
-                )
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(stringResource(R.string.stats_loading))
-                }
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(stringResource(R.string.stats_loading))
             }
         } else {
         LazyColumn(
@@ -89,12 +89,6 @@ fun ExerciseDetailScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item {
-                ScreenHeader(
-                    title = ex.name,
-                    onBack = onBack
-                )
-            }
             // Przycisk "Zapytaj AI o to ćwiczenie"
             item {
                 AskAiAboutExerciseRow(
