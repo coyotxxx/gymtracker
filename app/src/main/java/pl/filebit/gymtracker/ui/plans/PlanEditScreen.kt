@@ -517,9 +517,15 @@ fun PlanEditScreen(
     // Preview poprawionego planu
     val improvement = improvementState
     if (improvement is PlanImprovementState.Preview) {
+        val currentByDay = state.exercises
+            .groupBy { it.planEx.dayOfWeek }
+            .mapValues { (_, list) ->
+                list.sortedBy { it.planEx.orderIndex }
+                    .mapNotNull { it.exercise?.name }
+            }
         PlanImprovementSheet(
             proposal = improvement.proposal,
-            currentExercises = state.exercises,
+            currentExercisesByDay = currentByDay,
             isApplying = false,
             onDismiss = {
                 vm.dismissImprovement()

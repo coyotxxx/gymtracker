@@ -67,15 +67,16 @@ private data class DiffLine(
 @Composable
 fun PlanImprovementSheet(
     proposal: AiPlanProposal,
-    currentExercises: List<PlanExerciseWithDetail>,
+    currentExercisesByDay: Map<Int, List<String>>,
     isApplying: Boolean,
     onDismiss: () -> Unit,
     onReplace: () -> Unit,
-    onSaveAsCopy: () -> Unit
+    onSaveAsCopy: () -> Unit,
+    headline: String = "Poprawiona wersja planu"
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     var showReplaceConfirm by remember { mutableStateOf(false) }
-    val diff = remember(proposal, currentExercises) { buildDiff(proposal, currentExercises) }
+    val diff = remember(proposal, currentExercisesByDay) { buildDiff(proposal, currentExercisesByDay) }
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -88,7 +89,7 @@ fun PlanImprovementSheet(
                 Icon(Icons.Default.AutoAwesome, contentDescription = null, tint = AccentOrange, modifier = Modifier.size(20.dp))
                 Spacer(Modifier.size(8.dp))
                 Text(
-                    "Poprawiona wersja planu",
+                    headline,
                     style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.SemiBold),
                     color = DarkOnSurface
                 )
@@ -264,17 +265,15 @@ private fun DiffRow(line: DiffLine) {
 
 private fun buildDiff(
     proposal: AiPlanProposal,
-    current: List<PlanExerciseWithDetail>
+    currentByDay: Map<Int, List<String>>
 ): List<DiffLine> {
     val out = mutableListOf<DiffLine>()
     val newByDay: Map<Int, List<String>> = proposal.days.associate { d ->
         d.dayOfWeek to d.exercises.map { it.exerciseName.trim() }
     }
-    val oldByDay: Map<Int, List<String>> = current.groupBy { it.planEx.dayOfWeek }
-        .mapValues { (_, list) ->
-            list.sortedBy { it.planEx.orderIndex }
-                .mapNotNull { it.exercise?.name?.trim() }
-        }
+    val oldByDay: Map<Int, List<String>> = currentByDay.mapValues { (_, list) ->
+        list.map { it.trim() }
+    }
     val allDays = (newByDay.keys + oldByDay.keys).sorted()
     allDays.forEach { day ->
         out += DiffLine(DiffMark.KEPT, day, "##")  // header marker

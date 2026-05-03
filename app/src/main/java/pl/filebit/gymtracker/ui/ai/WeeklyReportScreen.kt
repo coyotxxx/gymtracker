@@ -63,6 +63,8 @@ fun WeeklyReportScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val reports by vm.reports.collectAsStateWithLifecycle()
+    val plans by vm.plans.collectAsStateWithLifecycle()
+    val improvement by vm.improvement.collectAsStateWithLifecycle()
 
     Box(
         modifier = Modifier
@@ -148,6 +150,28 @@ fun WeeklyReportScreen(
                 }
             }
 
+            // Sekcja akcji od AI dla NAJNOWSZEGO raportu
+            val latestReport = reports.firstOrNull()
+            if (latestReport != null) {
+                val actions = remember(latestReport.id) { vm.parseActions(latestReport.content) }
+                if (actions.isNotEmpty()) {
+                    item(key = "actions-card") {
+                        WeeklyActionsCard(
+                            actions = actions,
+                            selectedActionIds = state.selectedActions,
+                            plans = plans,
+                            selectedPlanId = state.targetPlanId ?: plans.firstOrNull()?.id,
+                            followUpMessage = state.followUpMessage,
+                            improvement = improvement,
+                            onToggleAction = { vm.toggleAction(it) },
+                            onSelectPlan = { vm.setTargetPlan(it) },
+                            onChangeFollowUp = { vm.setFollowUpMessage(it) },
+                            onGenerate = { vm.requestImprovement(latestReport) }
+                        )
+                    }
+                }
+            }
+
             // Lista raportów (najnowsze pierwsze)
             if (reports.isNotEmpty()) {
                 item {
@@ -169,6 +193,232 @@ fun WeeklyReportScreen(
                         modifier = Modifier.padding(top = 8.dp)
                     )
                 }
+            }
+        }
+    }
+
+    // Preview poprawionego planu (po requestImprovement)
+    val imp = improvement
+    if (imp is WeeklyImprovementState.Preview) {
+        val targetPlanId = state.targetPlanId ?: plans.firstOrNull()?.id
+        // Zachowane stare ćwiczenia target planu — pobieramy synchronicznie
+        var currentByDay by remember(imp.proposal, targetPlanId) {
+            mutableStateOf<Map<Int, List<String>>>(emptyMap())
+        }
+        androidx.compose.runtime.LaunchedEffect(imp.proposal, targetPlanId) {
+            if (targetPlanId != null) {
+                val exes = vm.loadPlanExerciseNamesByDay(targetPlanId)
+                currentByDay = exes
+            }
+        }
+        pl.filebit.gymtracker.ui.plans.PlanImprovementSheet(
+            proposal = imp.proposal,
+            currentExercisesByDay = currentByDay,
+            isApplying = false,
+            onDismiss = { vm.dismissImprovement() },
+            onReplace = { vm.applyImprovement(asCopy = false) },
+            onSaveAsCopy = { vm.applyImprovement(asCopy = true) },
+            headline = "Poprawiony plan z raportu"
+        )
+    } else if (imp is WeeklyImprovementState.Applying) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = {},
+            title = { Text("Zapisuję…") },
+            text = {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(20.dp),
+                        strokeWidth = 2.dp,
+                        color = AccentOrange
+                    )
+                    Spacer(Modifier.size(12.dp))
+                    Text("Stosuję zmiany w planie…")
+                }
+            },
+            confirmButton = {}
+        )
+    }
+}
+
+@Composable
+private fun WeeklyActionsCard(
+    actions: List<pl.filebit.gymtracker.ai.ReportAction>,
+    selectedActionIds: Set<Int>,
+    plans: List<pl.filebit.gymtracker.data.entity.TrainingPlan>,
+    selectedPlanId: Long?,
+    followUpMessage: String,
+    improvement: WeeklyImprovementState,
+    onToggleAction: (Int) -> Unit,
+    onSelectPlan: (Long?) -> Unit,
+    onChangeFollowUp: (String) -> Unit,
+    onGenerate: () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(AccentOrange.copy(alpha = 0.06f), RoundedCornerShape(16.dp))
+            .border(1.dp, AccentOrange.copy(alpha = 0.30f), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.Default.AutoAwesome,
+                    contentDescription = null,
+                    tint = AccentOrange,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.size(8.dp))
+                Text(
+                    "Sugerowane akcje",
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 15.sp
+                    ),
+                    color = DarkOnSurface
+                )
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Zaznacz akcje, które chcesz zastosować do planu. AI przygotuje poprawioną wersję.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(12.dp))
+
+            actions.forEach { action ->
+                ActionCheckRow(
+                    action = action,
+                    selected = action.id in selectedActionIds,
+                    onToggle = { onToggleAction(action.id) }
+                )
+            }
+
+            // Plan picker (jeśli > 1 plan)
+            if (plans.size > 1) {
+                Spacer(Modifier.height(12.dp))
+                LabelUp("Plan do modyfikacji")
+                Spacer(Modifier.height(6.dp))
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    plans.forEach { plan ->
+                        val sel = plan.id == (selectedPlanId ?: plans.first().id)
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(
+                                    if (sel) AccentOrange.copy(alpha = 0.15f) else DarkSurface,
+                                    RoundedCornerShape(10.dp)
+                                )
+                                .border(
+                                    1.dp,
+                                    if (sel) AccentOrange.copy(alpha = 0.45f) else DarkOutlineSoft,
+                                    RoundedCornerShape(10.dp)
+                                )
+                                .clickable { onSelectPlan(plan.id) }
+                                .padding(horizontal = 12.dp, vertical = 10.dp)
+                        ) {
+                            Text(
+                                plan.name,
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = if (sel) AccentOrange else DarkOnSurface,
+                                fontWeight = if (sel) FontWeight.SemiBold else FontWeight.Normal
+                            )
+                        }
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(12.dp))
+            androidx.compose.material3.OutlinedTextField(
+                value = followUpMessage,
+                onValueChange = onChangeFollowUp,
+                label = { Text("Doprecyzuj (opcjonalnie)", color = DarkOnSurfaceVariant) },
+                placeholder = {
+                    Text(
+                        "np. zostaw poniedziałek bez zmian",
+                        color = DarkOnSurfaceVariant.copy(alpha = 0.6f),
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                },
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(10.dp),
+                maxLines = 3
+            )
+
+            if (improvement is WeeklyImprovementState.Error) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    improvement.message,
+                    color = ErrorRed,
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
+
+            Spacer(Modifier.height(12.dp))
+            val canGenerate = (selectedActionIds.isNotEmpty() || followUpMessage.isNotBlank()) &&
+                plans.isNotEmpty() &&
+                improvement !is WeeklyImprovementState.Loading
+            GymPrimaryButton(
+                onClick = { if (canGenerate) onGenerate() },
+                text = if (improvement is WeeklyImprovementState.Loading)
+                    "AI generuje plan…"
+                else
+                    "🪄 Wygeneruj poprawiony plan",
+                leadingIcon = Icons.Default.AutoAwesome,
+                enabled = canGenerate
+            )
+        }
+    }
+}
+
+@Composable
+private fun ActionCheckRow(
+    action: pl.filebit.gymtracker.ai.ReportAction,
+    selected: Boolean,
+    onToggle: () -> Unit
+) {
+    val severityColor = when (action.severity) {
+        pl.filebit.gymtracker.ai.ReportActionSeverity.WARNING -> ErrorRed
+        pl.filebit.gymtracker.ai.ReportActionSeverity.IMPORTANT -> AccentOrange
+        pl.filebit.gymtracker.ai.ReportActionSeverity.NORMAL -> DarkOnSurfaceVariant
+    }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onToggle)
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.Top
+    ) {
+        androidx.compose.material3.Checkbox(
+            checked = selected,
+            onCheckedChange = { onToggle() },
+            colors = androidx.compose.material3.CheckboxDefaults.colors(
+                checkedColor = AccentOrange,
+                uncheckedColor = DarkOnSurfaceVariant
+            )
+        )
+        Spacer(Modifier.size(4.dp))
+        Column(modifier = Modifier.weight(1f).padding(top = 12.dp)) {
+            Text(
+                action.label,
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface
+            )
+            if (action.severity != pl.filebit.gymtracker.ai.ReportActionSeverity.NORMAL) {
+                val sevLabel = when (action.severity) {
+                    pl.filebit.gymtracker.ai.ReportActionSeverity.WARNING -> "PILNE"
+                    pl.filebit.gymtracker.ai.ReportActionSeverity.IMPORTANT -> "PRIORYTET"
+                    else -> ""
+                }
+                Text(
+                    sevLabel,
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 9.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 0.6.sp
+                    ),
+                    color = severityColor
+                )
             }
         }
     }
@@ -232,7 +482,7 @@ private fun ReportCard(
                 )
             }
 
-            // Treść raportu
+            // Treść raportu (bez bloku akcji JSON, który wyświetla osobna karta)
             if (expanded) {
                 Box(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)) {
                     Box(modifier = Modifier
@@ -240,14 +490,35 @@ private fun ReportCard(
                         .height(1.dp)
                         .background(DarkOutlineSoft))
                 }
+                val cleaned = remember(report.id, report.content) {
+                    stripActionsJsonBlock(report.content)
+                }
                 Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)) {
-                    report.content.split("\n").forEach { line ->
+                    cleaned.split("\n").forEach { line ->
                         RenderMarkdownLine(line)
                     }
                 }
             }
         }
     }
+}
+
+/**
+ * Usuwa z raportu sekcję akcji JSON ('## AKCJE...' + blok ```json) — UI
+ * wyświetla je osobną kartą jako klikalną checklistę, a nie jako surowy tekst.
+ */
+private fun stripActionsJsonBlock(content: String): String {
+    // Usuń blok ```json ... ``` z tablicą [...] — najpewniejsze
+    val withoutJson = content.replace(
+        Regex("```json\\s*\\[[\\s\\S]+?\\]\\s*```", RegexOption.MULTILINE),
+        ""
+    )
+    // Usuń też nagłówek '## AKCJE DO ZASTOSOWANIA (JSON)' i jego krótki opis
+    val withoutHeader = withoutJson.replace(
+        Regex("##\\s*AKCJE\\s+DO\\s+ZASTOSOWANIA[^\\n]*\\n+", RegexOption.IGNORE_CASE),
+        ""
+    )
+    return withoutHeader.trim()
 }
 
 @Composable

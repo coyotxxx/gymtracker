@@ -20,6 +20,25 @@ import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.time.Duration.Companion.days
+import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
+import pl.filebit.gymtracker.data.db.dao.PlanExerciseSetDao
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+
+/**
+ * Pojedyncza zalecona akcja po analizie tygodnia. AI generuje listę 3-7
+ * konkretnych akcji do zaznaczenia przez użytkownika.
+ */
+data class ReportAction(
+    val id: Int,
+    val label: String,
+    val severity: ReportActionSeverity = ReportActionSeverity.NORMAL
+)
+
+enum class ReportActionSeverity { NORMAL, IMPORTANT, WARNING }
 
 /**
  * Generuje pełny raport tygodniowy treningu — analizę per partia mięśniowa,
@@ -39,8 +58,164 @@ class WeeklyReportService @Inject constructor(
     private val exerciseDao: ExerciseDao,
     private val reportDao: AiWeeklyReportDao,
     private val statsRepo: StatsRepository,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val planRepo: PlanRepository,
+    private val planExerciseDao: PlanExerciseDao,
+    private val planSetDao: PlanExerciseSetDao,
+    private val applier: AiPlanApplier
 ) {
+    private val jsonCfg = Json { ignoreUnknownKeys = true; isLenient = true }
+
+    /**
+     * Wyciąga listę akcji z raportu — szuka bloku ```json ... ``` zawierającego
+     * tablicę obiektów `[{"id": 1, "label": "...", "severity": "..."}]`.
+     */
+    fun parseActions(reportContent: String): List<ReportAction> {
+        val fenced = Regex(
+            "```json\\s*(\\[[\\s\\S]+?\\])\\s*```",
+            RegexOption.MULTILINE
+        ).find(reportContent)?.groupValues?.get(1)
+            ?: extractFirstJsonArray(reportContent)
+            ?: return emptyList()
+
+        return runCatching {
+            val arr = jsonCfg.parseToJsonElement(fenced).jsonArray
+            arr.mapIndexed { idx, el ->
+                val obj = el.jsonObject
+                val id = obj["id"]?.jsonPrimitive?.content?.toIntOrNull() ?: (idx + 1)
+                val label = obj["label"]?.jsonPrimitive?.content ?: return@mapIndexed null
+                val sev = obj["severity"]?.jsonPrimitive?.content?.uppercase()
+                val severity = when (sev) {
+                    "IMPORTANT" -> ReportActionSeverity.IMPORTANT
+                    "WARNING" -> ReportActionSeverity.WARNING
+                    else -> ReportActionSeverity.NORMAL
+                }
+                ReportAction(id, label, severity)
+            }.filterNotNull()
+        }.getOrDefault(emptyList())
+    }
+
+    private fun extractFirstJsonArray(text: String): String? {
+        val start = text.indexOf('[')
+        if (start < 0) return null
+        var depth = 0
+        var inStr = false
+        var esc = false
+        for (i in start until text.length) {
+            val c = text[i]
+            if (inStr) {
+                if (esc) esc = false
+                else if (c == '\\') esc = true
+                else if (c == '"') inStr = false
+                continue
+            }
+            when (c) {
+                '"' -> inStr = true
+                '[' -> depth++
+                ']' -> {
+                    depth--
+                    if (depth == 0) return text.substring(start, i + 1)
+                }
+            }
+        }
+        return null
+    }
+
+    /**
+     * Po raporcie — wywołuje AI z wybranymi akcjami i istniejącym planem,
+     * dostaje JSON poprawionej wersji planu (parsowany przez AiPlanApplier).
+     */
+    suspend fun improvePlanFromReport(
+        planId: Long,
+        reportContent: String,
+        selectedActions: List<ReportAction>,
+        userMessage: String? = null
+    ): Result<AiPlanProposal> {
+        val cfg = prefs.load()
+        if (!cfg.isConnected) {
+            return Result.failure(IllegalStateException("AI nie skonfigurowane"))
+        }
+        if (selectedActions.isEmpty() && userMessage.isNullOrBlank()) {
+            return Result.failure(IllegalStateException("Zaznacz przynajmniej jedną akcję lub doprecyzuj prośbą"))
+        }
+        val plan = planRepo.getPlan(planId)
+            ?: return Result.failure(NoSuchElementException("Plan nie istnieje"))
+        val exercises = planExerciseDao.getForPlan(planId)
+        val exMap = exercises.map { it.exerciseId }.distinct()
+            .associateWith { exerciseDao.getById(it) }
+        val library = exerciseDao.getAll()
+
+        val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
+
+        val prompt = buildString {
+            append("Jesteś trenerem personalnym. Po analizie tygodnia użytkownik wybrał ")
+            append("konkretne akcje do zastosowania w planie. Wygeneruj poprawioną wersję planu ")
+            append("uwzględniając WSZYSTKIE wybrane akcje. Używaj WYŁĄCZNIE ćwiczeń z biblioteki (nazwy 1:1).\n\n")
+
+            append("# OBECNY PLAN: ${plan.name}\n")
+            byDay.forEach { (day, dayExes) ->
+                val dayName = dayName(day)
+                append("## $dayName\n")
+                dayExes.sortedBy { it.orderIndex }.forEach { pe ->
+                    val ex = exMap[pe.exerciseId]
+                    val sets = planSetDao.getForPlanExercise(pe.id)
+                    val repsRange = if (sets.isNotEmpty()) {
+                        val unique = sets.map { it.reps }.distinct().sorted()
+                        if (unique.size == 1) "${unique[0]} powt." else "${unique.first()}-${unique.last()} powt."
+                    } else "?"
+                    append("- ${ex?.name ?: "(?)"}: ${sets.size} setów, $repsRange\n")
+                }
+            }
+            append("\n")
+
+            append("# RAPORT TYGODNIA (kontekst)\n")
+            append(reportContent.take(2500))
+            append("\n\n")
+
+            append("# WYBRANE AKCJE DO ZASTOSOWANIA\n")
+            selectedActions.forEachIndexed { i, a -> append("${i + 1}. ${a.label}\n") }
+            append("\n")
+
+            if (!userMessage.isNullOrBlank()) {
+                append("# DODATKOWA INSTRUKCJA UŻYTKOWNIKA\n")
+                append(userMessage.take(500))
+                append("\n\n")
+            }
+
+            append("# BIBLIOTEKA ĆWICZEŃ (cytuj nazwy 1:1, ${library.size} pozycji)\n")
+            library.take(220).forEach { ex ->
+                append("- ${ex.name} (${ex.primaryMuscle.name})\n")
+            }
+            append("\n")
+
+            append("# WYMAGANY FORMAT ODPOWIEDZI\n")
+            append("Odpowiedz blokiem ```json zawierającym TYLKO obiekt:\n")
+            append("```json\n")
+            append("{\n")
+            append("  \"name\": \"<nazwa planu>\",\n")
+            append("  \"description\": \"<krótki opis 1-2 zdania uzasadniający zmiany>\",\n")
+            append("  \"daysOfWeek\": [1,3,5],\n")
+            append("  \"days\": [\n")
+            append("    {\"dayOfWeek\": 1, \"exercises\": [\n")
+            append("      {\"exerciseName\": \"<nazwa 1:1>\", \"sets\": [{\"reps\": 8, \"restSec\": 90}], \"supersetGroup\": null}\n")
+            append("    ]}\n")
+            append("  ]\n")
+            append("}\n```\n")
+            append("Bez komentarzy poza blokiem JSON.")
+        }
+
+        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)))
+            .getOrElse { return Result.failure(it) }
+        val proposal = applier.extractProposal(response)
+            ?: return Result.failure(IllegalStateException("AI nie zwrócił poprawnego JSON. Spróbuj ponownie."))
+        return Result.success(proposal)
+    }
+
+    private fun dayName(day: Int) = when (day) {
+        1 -> "Poniedziałek"; 2 -> "Wtorek"; 3 -> "Środa"; 4 -> "Czwartek"
+        5 -> "Piątek"; 6 -> "Sobota"; 7 -> "Niedziela"
+        else -> "Dzień $day"
+    }
     suspend fun generate(): Result<String> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
@@ -157,6 +332,18 @@ class WeeklyReportService @Inject constructor(
             append("1. (akcja z liczbami)\n2. ...\n\n")
             append("## Ostrzeżenia\n")
             append("(jeśli są — np. volume za niski/wysoki, brak partii, stagnacje wymagają deloadu)\n\n")
+
+            append("## AKCJE DO ZASTOSOWANIA (JSON)\n")
+            append("Na końcu raportu dodaj blok ```json z listą 3-7 konkretnych akcji do zaznaczenia ")
+            append("przez użytkownika. Każda akcja ma być zwięzła (max 100 znaków), JEDNOZNACZNA i ")
+            append("wykonalna w planie treningowym (zwiększ/zmniejsz X, dodaj/usuń ćwiczenie, zmień zakres reps, ")
+            append("zaproponuj deload). Severity: 'NORMAL' (zalecenie), 'IMPORTANT' (priorytetowe), 'WARNING' (pilne).\n")
+            append("```json\n")
+            append("[\n")
+            append("  {\"id\": 1, \"label\": \"Zwiększ objętość pleców z 10 do 14 setów/tydz\", \"severity\": \"IMPORTANT\"},\n")
+            append("  {\"id\": 2, \"label\": \"Wymień martwy ciąg klasyczny na rumuński (deload stagnacji)\", \"severity\": \"WARNING\"}\n")
+            append("]\n")
+            append("```\n\n")
             append("---\n\n")
             append("Reguły volume na tydzień (wg literatury): 10–20 setów / partia / tydzień (hipertrofia), ")
             append("8–14 (siła). Jeśli stagnacja 3+ treningów → sugeruj −10% deload na ten tydzień ")
