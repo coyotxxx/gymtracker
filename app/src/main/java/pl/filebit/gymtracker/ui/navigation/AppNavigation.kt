@@ -190,38 +190,55 @@ fun AppNavigation() {
             }
         }
     ) { padding ->
-        // Onboarding state — gdy Loading, czekamy; gdy Needed/NotNeeded — przełączamy startDestination
-        val startDestination = when (onboardingNavState) {
-            pl.filebit.gymtracker.ui.shell.OnboardingNavState.Needed -> Screen.Onboarding.route
-            else -> Screen.Home.route  // Loading też pokazuje Home (wybór startuje gdy Loading rezolwuje się)
+        // NavHost zawsze startuje od Home — to stabilny graf. Onboarding nawigujemy
+        // ręcznie przez LaunchedEffect po wczytaniu onboardingNavState. Dzięki temu
+        // markOnboardingDone()/markOnboardingNeeded() NIE rebuilduje NavHost (nie
+        // psuje navigate() wywołanych w callbackach z wizardu).
+        var initialOnboardingNavApplied by remember { mutableStateOf(false) }
+        LaunchedEffect(onboardingNavState) {
+            if (initialOnboardingNavApplied) return@LaunchedEffect
+            when (onboardingNavState) {
+                pl.filebit.gymtracker.ui.shell.OnboardingNavState.Needed -> {
+                    initialOnboardingNavApplied = true
+                    navController.navigate(Screen.Onboarding.route) {
+                        popUpTo(Screen.Home.route) { inclusive = true }
+                    }
+                }
+                pl.filebit.gymtracker.ui.shell.OnboardingNavState.NotNeeded -> {
+                    initialOnboardingNavApplied = true
+                }
+                else -> { /* Loading — czekamy */ }
+            }
         }
         NavHost(
             navController = navController,
-            startDestination = startDestination,
+            startDestination = Screen.Home.route,
             modifier = Modifier.padding(padding)
         ) {
             composable(Screen.Onboarding.route) {
                 pl.filebit.gymtracker.ui.onboarding.OnboardingScreen(
                     onCompleted = {
-                        workoutShellVm.markOnboardingDone()
+                        // KOLEJNOŚĆ: navigate najpierw, potem mark — żeby zmiana state
+                        // w ShellVM nie wywołała przedwczesnego LaunchedEffect.
                         navController.navigate(Screen.Home.route) {
                             popUpTo(Screen.Onboarding.route) { inclusive = true }
                         }
+                        workoutShellVm.markOnboardingDone()
                     },
                     onGenerateAiPlan = {
-                        workoutShellVm.markOnboardingDone()
                         // Po finish wizard z kluczem AI — Trainer auto-uruchomi PROPOSE_PLAN
                         navController.navigate(
                             Screen.AiTrainer.create(0L, autoAction = "PROPOSE_PLAN")
                         ) {
                             popUpTo(Screen.Onboarding.route) { inclusive = true }
                         }
+                        workoutShellVm.markOnboardingDone()
                     },
                     onOpenAiSettings = {
-                        workoutShellVm.markOnboardingDone()
                         navController.navigate(Screen.AiSettings.route) {
                             popUpTo(Screen.Onboarding.route) { inclusive = true }
                         }
+                        workoutShellVm.markOnboardingDone()
                     }
                 )
             }
@@ -313,14 +330,14 @@ fun AppNavigation() {
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
                     onRestartOnboarding = {
-                        // Reset onboarding flag w ShellVM + navigate do Onboarding.
-                        // launchSingleTop zapobiega duplikatom, popUpTo do Profile
-                        // żeby user nie wracał strzałką do "podstrony", tylko Home
-                        // po zakończeniu wizardu.
-                        workoutShellVm.markOnboardingNeeded()
+                        // KOLEJNOŚĆ: navigate najpierw, potem mark — analogicznie
+                        // do callbacków z wizardu. Zmiana state w ShellVM po
+                        // navigate nie wpływa już na NavHost (initialOnboarding-
+                        // NavApplied jest już true).
                         navController.navigate(Screen.Onboarding.route) {
                             launchSingleTop = true
                         }
+                        workoutShellVm.markOnboardingNeeded()
                     }
                 )
             }
