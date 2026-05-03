@@ -30,7 +30,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -66,55 +65,55 @@ fun GoalsScreen(
     var showAddDialog by remember { mutableStateOf(false) }
     var pendingDelete by remember { mutableStateOf<Goal?>(null) }
 
-    Scaffold(
-        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { showAddDialog = true },
-                containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                contentColor = Color.Black,
-                shape = RoundedCornerShape(16.dp)
+    // Box zamiast Scaffold — globalny Scaffold (AppNavigation) już daje padding
+    // pod TopBar, własny Scaffold dawałby podwójny offset.
+    Box(modifier = Modifier.fillMaxSize().background(pl.filebit.gymtracker.ui.theme.DarkBg)) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            ScreenHeader(
+                title = stringResource(R.string.goals_title),
+                onBack = onBack
+            )
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 96.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Icon(Icons.Default.Add, contentDescription = null)
-            }
-        }
-    ) { padding ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            item {
-                ScreenHeader(
-                    title = stringResource(R.string.goals_title),
-                    onBack = onBack
-                )
-            }
-            if (progresses.isEmpty()) {
-                item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(32.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            stringResource(R.string.goals_empty),
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                if (progresses.isEmpty()) {
+                    item {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(32.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                stringResource(R.string.goals_empty),
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                } else {
+                    items(progresses, key = { it.goal.id }) { gp ->
+                        GoalCard(
+                            gp = gp,
+                            onDelete = { pendingDelete = gp.goal }
                         )
                     }
                 }
-            } else {
-                items(progresses, key = { it.goal.id }) { gp ->
-                    GoalCard(
-                        gp = gp,
-                        onDelete = { pendingDelete = gp.goal }
-                    )
-                }
             }
+        }
+        // FAB (żółty kwadrat z plusem) — pływa nad treścią
+        FloatingActionButton(
+            onClick = { showAddDialog = true },
+            containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+            contentColor = Color.Black,
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp)
+        ) {
+            Icon(Icons.Default.Add, contentDescription = null)
         }
     }
 

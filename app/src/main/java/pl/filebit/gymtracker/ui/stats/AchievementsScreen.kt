@@ -47,22 +47,21 @@ fun AchievementsScreen(
     val achievements = state.achievements
     val unlockedCount = achievements.count { it.unlocked }
 
-    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+    Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+        // Jeden ScreenHeader na zewnątrz — bez skoku przy ładowaniu
+        ScreenHeader(
+            title = "Odznaki ($unlockedCount/${achievements.size})",
+            onBack = onBack
+        )
         if (achievements.isEmpty()) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                ScreenHeader(
-                    title = "Odznaki ($unlockedCount/${achievements.size})",
-                    onBack = onBack
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "Brak odznak — zacznij trening żeby je zdobywać!",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        "Brak odznak — zacznij trening żeby je zdobywać!",
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
             }
             return
         }
@@ -72,12 +71,6 @@ fun AchievementsScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            item {
-                ScreenHeader(
-                    title = "Odznaki ($unlockedCount/${achievements.size})",
-                    onBack = onBack
-                )
-            }
             // Hero header: X / Y ZDOBYTYCH
             item {
                 AchievementsHero(unlocked = unlockedCount, total = achievements.size)

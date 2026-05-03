@@ -64,16 +64,16 @@ fun StatsScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
 
-    Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+    Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
+        // Jeden ScreenHeader na zewnątrz — pozycja stała niezależnie od loading/loaded
+        // (poprzednio header skakał między Column(loading) a LazyColumn item)
+        ScreenHeader(
+            title = stringResource(R.string.stats_title),
+            onBack = onBack
+        )
         if (state.loading || state.overview == null) {
-            Column(modifier = Modifier.fillMaxSize()) {
-                ScreenHeader(
-                    title = stringResource(R.string.stats_title),
-                    onBack = onBack
-                )
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(stringResource(R.string.stats_loading))
-                }
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text(stringResource(R.string.stats_loading))
             }
             return
         }
@@ -84,13 +84,6 @@ fun StatsScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item {
-                ScreenHeader(
-                    title = stringResource(R.string.stats_title),
-                    onBack = onBack
-                )
-            }
-
             // === 4 kafelki TOP — czyste analityczne metryki ===
             item {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
