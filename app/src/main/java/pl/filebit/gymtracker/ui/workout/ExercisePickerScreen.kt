@@ -49,11 +49,8 @@ fun ExercisePickerScreen(
     val exercises by vm.exercises.collectAsStateWithLifecycle()
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 16.dp)
-        ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            // ScreenHeader bez horizontal padding (spójność z innymi ekranami)
             ScreenHeader(
                 title = stringResource(R.string.workout_add_exercise),
                 onBack = onClose
@@ -61,7 +58,9 @@ fun ExercisePickerScreen(
             OutlinedTextField(
                 value = query,
                 onValueChange = vm::setQuery,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
                 placeholder = { Text(stringResource(R.string.picker_search)) },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 singleLine = true,
@@ -73,7 +72,7 @@ fun ExercisePickerScreen(
             // Muscle filter chips
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
-                contentPadding = PaddingValues(vertical = 4.dp)
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp)
             ) {
                 item {
                     FilterChip(
@@ -94,7 +93,7 @@ fun ExercisePickerScreen(
             Spacer(Modifier.height(8.dp))
 
             LazyColumn(
-                contentPadding = PaddingValues(vertical = 8.dp),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 items(exercises, key = { it.id }) { ex ->

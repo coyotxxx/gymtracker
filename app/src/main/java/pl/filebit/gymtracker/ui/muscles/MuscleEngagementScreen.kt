@@ -54,18 +54,15 @@ fun MuscleEngagementScreen(
     val state by vm.state.collectAsStateWithLifecycle()
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 16.dp)
-        ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            // ScreenHeader bez horizontal padding (spójność z innymi ekranami)
             ScreenHeader(
                 title = stringResource(R.string.muscles_title),
                 onBack = onBack
             )
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
-                contentPadding = PaddingValues(vertical = 4.dp)
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp)
             ) {
                 items(EngagementPeriod.entries.size) { idx ->
                     val p = EngagementPeriod.entries[idx]
@@ -107,6 +104,7 @@ fun MuscleEngagementScreen(
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 item { BodyHeatmapCard(analyses) }
