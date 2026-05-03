@@ -77,6 +77,8 @@ fun HomeScreen(
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
+    var showPostponeDialog by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var showWeekPlanDialog by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     // Bez wewnętrznego Scaffold — outer Scaffold w AppNavigation ma już bottomBar.
     // Tylko statusBarsPadding na góra żeby content nie chował się pod statusbar.
@@ -101,10 +103,15 @@ fun HomeScreen(
                 }
             }
 
-            // Hero card — Plan na dziś LUB Trening w toku LUB CTA "Wybierz plan"
+            // Hero card — 4 stany (A/B/C/D)
             item {
                 when {
+                    // Stan C: aktywny trening pauzowany
                     state.activeWorkout != null -> ActiveTrainingHeroCard(
+                        durationMin = state.activeWorkoutDurationMin,
+                        progressPct = state.activeWorkoutProgressPct,
+                        currentSetLabel = state.activeWorkoutCurrentSetLabel,
+                        planName = state.activePlanName.ifBlank { "Aktywny trening" },
                         onResume = {
                             vm.continueActiveWorkout(
                                 onCoach = onStartCoachWorkout,
@@ -112,6 +119,7 @@ fun HomeScreen(
                             )
                         }
                     )
+                    // Stan A: dziś trening z planu
                     state.todaysPlan != null -> TodaysPlanHeroCard(
                         planName = state.todaysPlan!!.name,
                         exerciseCount = state.todaysPlanExerciseCount,
@@ -123,8 +131,18 @@ fun HomeScreen(
                             vm.startWorkoutFromPlanForDay(
                                 state.todaysPlan!!.id, isoDay, onStartCoachWorkout
                             )
-                        }
+                        },
+                        onPostpone = { showPostponeDialog = true }
                     )
+                    // Stan B: dziś rest, ale plan istnieje
+                    state.nextPlannedDay != null -> DayOffHeroCard(
+                        next = state.nextPlannedDay!!,
+                        onTrainNow = {
+                            vm.startNextPlannedToday(onStartCoachWorkout)
+                        },
+                        onWeekPlan = { showWeekPlanDialog = true }
+                    )
+                    // Stan D: brak planu wcale
                     else -> NoPlanHeroCard(onPickPlan = onSelectPlanTab)
                 }
             }
@@ -207,10 +225,24 @@ fun HomeScreen(
                     }
                 }
             } else {
-                items(state.recentWorkouts, key = { it.workout.id }) { item ->
+                items(state.recentWorkouts.take(2), key = { it.workout.id }) { item ->
                     RecentWorkoutCard(item = item, onClick = { onOpenWorkout(item.workout.id) })
                 }
             }
+    }
+
+    if (showPostponeDialog) {
+        PostponeDialogContent(
+            todayPlanName = state.todaysPlan?.name ?: "—",
+            onDismiss = { showPostponeDialog = false }
+        )
+    }
+    if (showWeekPlanDialog) {
+        WeekPlanDialogContent(
+            weeklyTarget = state.weeklyTarget,
+            workoutsThisWeek = state.workoutsThisWeek,
+            onDismiss = { showWeekPlanDialog = false }
+        )
     }
 }
 
@@ -293,13 +325,14 @@ private fun GreetingHeader(
     }
 }
 
-/** Hero glow card — Plan na dziś. Gradient żółty + glow. */
+/** Stan A: Plan na dziś — gradient żółty + glow + przyciski Rozpocznij + Przesuń. */
 @Composable
 private fun TodaysPlanHeroCard(
     planName: String,
     exerciseCount: Int,
     daysPerWeek: Int,
-    onStart: () -> Unit
+    onStart: () -> Unit,
+    onPostpone: () -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -317,18 +350,18 @@ private fun TodaysPlanHeroCard(
                 )
                 .padding(16.dp)
         ) {
-            // Label z pulsującą kropką
             Row(verticalAlignment = Alignment.CenterVertically) {
                 PulsingDot()
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    "PLAN NA DZIŚ",
+                    "DZIŚ TRENING · ${planName.uppercase()}",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         letterSpacing = 1.4.sp
                     ),
-                    color = AccentOrange
+                    color = AccentOrange,
+                    maxLines = 1
                 )
             }
             Spacer(Modifier.height(10.dp))
@@ -343,37 +376,52 @@ private fun TodaysPlanHeroCard(
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                "${exerciseCount} ćwiczeń · ${daysPerWeek}× / tydz.",
+                "${exerciseCount} ćwiczeń · ~${exerciseCount * 10} min",
                 style = MaterialTheme.typography.bodyMedium,
                 color = DarkOnSurfaceVariant
             )
-            // Separator
             Spacer(Modifier.height(14.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(1.dp)
-                    .background(Color.White.copy(alpha = 0.06f))
-            )
-            Spacer(Modifier.height(14.dp))
-            // Meta row
-            Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-                MetaItem("$exerciseCount", "Ćwiczenia")
-                MetaItem("$daysPerWeek", "Dni / tydz.")
-                MetaItem("~${exerciseCount * 10}", "Czas", smallSuffix = "min")
+            // Row z 2 przyciskami: Rozpocznij (primary, weight 2f) + Przesuń (secondary)
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Box(modifier = Modifier.weight(2f)) {
+                    HeroPrimaryButton(
+                        text = "Rozpocznij",
+                        icon = Icons.Default.PlayArrow,
+                        onClick = onStart
+                    )
+                }
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(56.dp)
+                        .background(DarkSurface, RoundedCornerShape(14.dp))
+                        .border(1.dp, AccentOrange.copy(alpha = 0.45f), RoundedCornerShape(14.dp))
+                        .clickable(onClick = onPostpone),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Przesuń",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 14.sp
+                        ),
+                        color = AccentOrange
+                    )
+                }
             }
-            Spacer(Modifier.height(14.dp))
-            HeroPrimaryButton(
-                text = "Rozpocznij trening",
-                icon = Icons.Default.PlayArrow,
-                onClick = onStart
-            )
         }
     }
 }
 
+/** Stan C: aktywny trening pauzowany (user wyszedł z apki). */
 @Composable
-private fun ActiveTrainingHeroCard(onResume: () -> Unit) {
+private fun ActiveTrainingHeroCard(
+    durationMin: Int,
+    progressPct: Int,
+    currentSetLabel: String,
+    planName: String,
+    onResume: () -> Unit
+) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = Color.Transparent),
@@ -394,22 +442,32 @@ private fun ActiveTrainingHeroCard(onResume: () -> Unit) {
                 PulsingDot()
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    "TRENING W TOKU",
+                    "TRENING W TRAKCIE · ${durationMin} MIN",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         letterSpacing = 1.4.sp
                     ),
-                    color = AccentOrange
+                    color = AccentOrange,
+                    maxLines = 1
                 )
             }
             Spacer(Modifier.height(10.dp))
             Text(
-                "Aktywny trening",
+                planName,
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontSize = 26.sp,
-                    fontWeight = FontWeight.ExtraBold
-                )
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = (-0.4).sp
+                ),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                if (currentSetLabel.isNotBlank()) "$currentSetLabel · $progressPct% ukończone"
+                else "Trening rozpoczęty",
+                style = MaterialTheme.typography.bodyMedium,
+                color = DarkOnSurfaceVariant
             )
             Spacer(Modifier.height(14.dp))
             HeroPrimaryButton(
@@ -836,4 +894,168 @@ private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendati
             )
         }
     }
+}
+
+/** Stan B: dziś rest, ale plan istnieje — przyciski Trenuj dziś + Plan tyg. */
+@Composable
+private fun DayOffHeroCard(
+    next: NextPlannedDay,
+    onTrainNow: () -> Unit,
+    onWeekPlan: () -> Unit
+) {
+    val dayName = when (next.dayOfWeek) {
+        1 -> "Poniedziałek"
+        2 -> "Wtorek"
+        3 -> "Środa"
+        4 -> "Czwartek"
+        5 -> "Piątek"
+        6 -> "Sobota"
+        else -> "Niedziela"
+    }
+    val whenText = when (next.daysFromToday) {
+        1 -> "Jutro · $dayName"
+        2 -> "Pojutrze · $dayName"
+        else -> "Za ${next.daysFromToday} dni · $dayName"
+    }
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+        border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.30f)),
+        shape = RoundedCornerShape(20.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .background(
+                    Brush.linearGradient(
+                        0f to AccentOrange.copy(alpha = 0.10f),
+                        1f to DarkSurface
+                    )
+                )
+                .padding(16.dp)
+        ) {
+            Text(
+                "NASTĘPNY TRENING",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(10.dp))
+            Text(
+                whenText,
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontSize = 26.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = (-0.4).sp
+                ),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "${next.planName} · ${next.exerciseCount} ćwiczeń · ~${next.exerciseCount * 10} min",
+                style = MaterialTheme.typography.bodyMedium,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(14.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Box(modifier = Modifier.weight(2f)) {
+                    HeroPrimaryButton(
+                        text = "Trenuj dziś",
+                        icon = Icons.Default.PlayArrow,
+                        onClick = onTrainNow
+                    )
+                }
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(56.dp)
+                        .background(DarkSurface, RoundedCornerShape(14.dp))
+                        .border(1.dp, AccentOrange.copy(alpha = 0.45f), RoundedCornerShape(14.dp))
+                        .clickable(onClick = onWeekPlan),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Plan tyg.",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 14.sp
+                        ),
+                        color = AccentOrange
+                    )
+                }
+            }
+        }
+    }
+}
+
+/** Dialog "Przesuń trening" — placeholder, v0.76.0 wprowadzi pełny override. */
+@Composable
+private fun PostponeDialogContent(
+    todayPlanName: String,
+    onDismiss: () -> Unit
+) {
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Przesuń trening") },
+        text = {
+            Column {
+                Text(
+                    "Dzisiejszy trening: $todayPlanName",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Aktualnie aplikacja nie pamięta przesunięć między dniami. " +
+                        "Po prostu pomiń dziś — trening pojawi się w następnym " +
+                        "planowanym dniu (Stan B).",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Pełny widok 7 dni z przesuwaniem między dniami pojawi się w v0.76.0.",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                    color = AccentOrange
+                )
+            }
+        },
+        confirmButton = {
+            androidx.compose.material3.TextButton(onClick = onDismiss) { Text("OK") }
+        }
+    )
+}
+
+/** Dialog "Plan tygodnia" — placeholder do v0.76.0. */
+@Composable
+private fun WeekPlanDialogContent(
+    weeklyTarget: Int,
+    workoutsThisWeek: Int,
+    onDismiss: () -> Unit
+) {
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Plan tygodnia") },
+        text = {
+            Column {
+                Text(
+                    "Ten tydzień: $workoutsThisWeek z $weeklyTarget treningów",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Pełny widok 7 dni Pn-Nd z możliwością przesuwania " +
+                        "treningów między dniami pojawi się w v0.76.0.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        },
+        confirmButton = {
+            androidx.compose.material3.TextButton(onClick = onDismiss) { Text("OK") }
+        }
+    )
 }
