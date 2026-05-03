@@ -104,7 +104,7 @@ fun StatsScreen(
                     StatTile(
                         value = "${state.personalRecords.size}",
                         suffix = null,
-                        label = "Personal Records",
+                        label = "Rekordy osobiste",
                         valueColor = AccentOrange,
                         modifier = Modifier.weight(1f)
                     )
@@ -386,7 +386,11 @@ private fun MuscleVolumeCard(
 ) {
     pl.filebit.gymtracker.ui.theme.GymCard {
         Column(modifier = Modifier.padding(16.dp)) {
-            pl.filebit.gymtracker.ui.theme.LabelUp("Volume / partia", accent = true)
+            pl.filebit.gymtracker.ui.theme.LabelUpWithInfo(
+                "Objętość / partia",
+                glossaryKey = "VOLUME",
+                accent = true
+            )
             Spacer(Modifier.height(4.dp))
             Text(
                 "Optymalnie 10-20 setów / partia / tydzień (hipertrofia).",
@@ -725,7 +729,11 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
 private fun RecoveryCard(recovery: List<pl.filebit.gymtracker.data.repository.MuscleRecovery>) {
     pl.filebit.gymtracker.ui.theme.GymCard {
         Column(modifier = Modifier.padding(16.dp)) {
-            pl.filebit.gymtracker.ui.theme.LabelUp("Regeneracja", accent = true)
+            pl.filebit.gymtracker.ui.theme.LabelUpWithInfo(
+                "Regeneracja",
+                glossaryKey = "RECOVERY",
+                accent = true
+            )
             Spacer(Modifier.height(2.dp))
             Text(
                 "Ile dni minęło od ostatniego treningu każdej partii mięśniowej.",
@@ -807,7 +815,10 @@ private fun StagnationsCard(stagnations: List<pl.filebit.gymtracker.data.reposit
             .padding(16.dp)
     ) {
         Column {
-            pl.filebit.gymtracker.ui.theme.LabelUp("Stagnacje (${stagnations.size})")
+            pl.filebit.gymtracker.ui.theme.LabelUpWithInfo(
+                "Stagnacje (${stagnations.size})",
+                glossaryKey = "STAGNATION"
+            )
             Spacer(Modifier.height(8.dp))
             stagnations.forEach { s ->
                 Row(
@@ -851,7 +862,11 @@ private fun PersonalRecordsHeader(count: Int) {
         modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        pl.filebit.gymtracker.ui.theme.LabelUp("Personal Records ($count)", accent = true)
+        pl.filebit.gymtracker.ui.theme.LabelUpWithInfo(
+            "Rekordy osobiste ($count)",
+            glossaryKey = "PR",
+            accent = true
+        )
     }
 }
 

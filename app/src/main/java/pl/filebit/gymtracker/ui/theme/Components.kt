@@ -119,6 +119,26 @@ fun LabelUp(
     )
 }
 
+/** LabelUp + ikonka ⓘ obok, klik → InfoDialog ze słownika. */
+@Composable
+fun LabelUpWithInfo(
+    text: String,
+    glossaryKey: String,
+    modifier: Modifier = Modifier,
+    accent: Boolean = false
+) {
+    androidx.compose.foundation.layout.Row(
+        modifier = modifier,
+        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+    ) {
+        LabelUp(text = text, accent = accent)
+        pl.filebit.gymtracker.ui.glossary.InfoIcon(
+            glossaryKey = glossaryKey,
+            modifier = androidx.compose.ui.Modifier
+        )
+    }
+}
+
 /** Główne CTA — żółty button z glow shadow, czarny bold tekst. */
 @Composable
 fun GymPrimaryButton(

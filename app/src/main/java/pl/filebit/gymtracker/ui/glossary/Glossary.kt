@@ -69,6 +69,18 @@ object Glossary {
             "• zmiana ćwiczenia/wariantu\n" +
             "• audyt techniki, snu, kalorii"),
 
+        "RECOVERY" to ("Regeneracja (recovery)" to
+            "Karta pokazuje, ile dni minęło od ostatniego treningu danej partii mięśniowej.\n\n" +
+            "Liczone na podstawie ukończonych serii (bez warm-upów). Dla każdej grupy bierze datę " +
+            "najnowszego treningu, który ją obciążył.\n\n" +
+            "Statusy:\n" +
+            "• ŚWIEŻO (0–1 dni) — mięsień świeżo trenowany, regeneruje się\n" +
+            "• GOTOWE (2–6 dni) — odpoczął, można trenować\n" +
+            "• POTRENUJ (7–13 dni) — czas wrócić\n" +
+            "• ⚠ ZANIEDBANA (14+ dni) — pilnie potrenować\n\n" +
+            "Praktyczna heurystyka: większe partie (klatka, plecy, nogi) lubią 48-72h przerwy, " +
+            "mniejsze (biceps, biceps uda) regenerują się szybciej."),
+
         "STREAK" to ("Streak (passa)" to
             "Liczba tygodni z rzędu z minimum 1 ukończonym treningiem.\n\n" +
             "Aplikacja używa kalendarza ISO (tydzień Pon-Nd). Bieżący streak resetuje się jeśli " +
