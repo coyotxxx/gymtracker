@@ -71,7 +71,10 @@ class AiContextBuilder @Inject constructor(
         val byExercise: List<Pair<Exercise?, List<WorkoutSet>>>
     )
 
-    suspend fun buildContextJson(recentWorkoutsLimit: Int = 30): String {
+    suspend fun buildContextJson(
+        recentWorkoutsLimit: Int = 30,
+        targetPlanId: Long? = null
+    ): String {
         val profile = profileRepo.get()
         val measurements = bodyRepo.getAllAsc().takeLast(15)
         val overview = statsRepo.overview()
@@ -115,6 +118,20 @@ class AiContextBuilder @Inject constructor(
 
         val obj = buildJsonObject {
             put("now", dfTime.format(Date()))
+            // Gdy user kliknął 'modyfikuj plan X' — AI ma instrukcję żeby
+            // generować JSON jako MODYFIKACJĘ tego planu (zamiast nowego)
+            targetPlanId?.let { tid ->
+                val targetPlan = plansData.firstOrNull { it.plan.id == tid }
+                if (targetPlan != null) {
+                    putJsonObject("target_plan_to_modify") {
+                        put("id", targetPlan.plan.id)
+                        put("name", targetPlan.plan.name)
+                        put("hint", "Użytkownik prosi o MODYFIKACJĘ tego planu. " +
+                            "Jeśli generujesz JSON propozycji, zachowaj nazwę '${targetPlan.plan.name}' " +
+                            "lub jej wariant — tworzymy poprawioną wersję, nie nowy plan.")
+                    }
+                }
+            }
 
             putJsonObject("profile") {
                 put("goal", profile.goal.name)

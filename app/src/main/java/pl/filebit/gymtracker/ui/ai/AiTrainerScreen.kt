@@ -162,6 +162,13 @@ fun AiTrainerScreen(
                 NotConnectedBanner(onOpenSettings = onOpenSettings)
             }
 
+            // Plan selector — domyślnie 'Nowy plan', user może wybrać istniejący do modyfikacji
+            TargetPlanSelector(
+                plans = state.availablePlans,
+                selectedPlanId = state.targetPlanId,
+                onSelect = { vm.setTargetPlan(it) }
+            )
+
             // Quick actions
             LazyRow(
                 contentPadding = PaddingValues(8.dp),
@@ -360,6 +367,23 @@ fun AiTrainerScreen(
                 }
             }
         }
+    }
+
+    // v0.85: Preview poprawionego planu (gdy targetPlanId != null + propozycja od AI)
+    state.improvementPreview?.let { proposal ->
+        var snapshot by remember(proposal) { mutableStateOf<Map<Int, List<String>>>(emptyMap()) }
+        LaunchedEffect(proposal) {
+            snapshot = vm.loadTargetPlanSnapshot()
+        }
+        pl.filebit.gymtracker.ui.plans.PlanImprovementSheet(
+            proposal = proposal,
+            currentExercisesByDay = snapshot,
+            isApplying = state.isApplying,
+            onDismiss = { vm.dismissImprovementPreview() },
+            onReplace = { vm.applyImprovementPreview(asCopy = false) },
+            onSaveAsCopy = { vm.applyImprovementPreview(asCopy = true) },
+            headline = "Modyfikacja planu '${state.targetPlan?.name ?: "?"}'"
+        )
     }
 
     // Dialog walidacji — gdy AI wymyśliło ćwiczenia spoza biblioteki
@@ -597,5 +621,72 @@ private fun MessageBubble(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun TargetPlanSelector(
+    plans: List<pl.filebit.gymtracker.data.entity.TrainingPlan>,
+    selectedPlanId: Long?,
+    onSelect: (Long?) -> Unit
+) {
+    if (plans.isEmpty()) return
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp, vertical = 4.dp)
+    ) {
+        Text(
+            "Modyfikuj plan",
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.0.sp
+            ),
+            color = DarkOnSurfaceVariant
+        )
+        Spacer(Modifier.height(4.dp))
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            item {
+                PlanChip(
+                    label = "Nowy plan",
+                    selected = selectedPlanId == null,
+                    onClick = { onSelect(null) }
+                )
+            }
+            items(plans) { plan ->
+                PlanChip(
+                    label = plan.name,
+                    selected = plan.id == selectedPlanId,
+                    onClick = { onSelect(plan.id) }
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PlanChip(label: String, selected: Boolean, onClick: () -> Unit) {
+    val bg = if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant.copy(alpha = 0.4f)
+    val border = if (selected) AccentOrange.copy(alpha = 0.5f) else DarkOutlineSoft
+    val fg = if (selected) AccentOrange else DarkOnSurfaceVariant
+    Box(
+        modifier = Modifier
+            .background(bg, RoundedCornerShape(50))
+            .border(1.dp, border, RoundedCornerShape(50))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 6.dp)
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 11.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            color = fg,
+            maxLines = 1
+        )
     }
 }

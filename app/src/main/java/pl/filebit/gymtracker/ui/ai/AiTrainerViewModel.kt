@@ -46,11 +46,19 @@ data class AiTrainerUiState(
     val providerName: String = "",
     val modelName: String = "",
     val planAppliedId: Long? = null,
-    val pendingValidation: PendingValidation? = null
+    val pendingValidation: PendingValidation? = null,
+    // v0.85: tryb modyfikacji istniejącego planu — gdy != null, propozycje
+    // od AI traktujemy jako modyfikacje danego planu (Replace/Copy zamiast nowy)
+    val targetPlanId: Long? = null,
+    val availablePlans: List<pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyList(),
+    val improvementPreview: pl.filebit.gymtracker.ai.AiPlanProposal? = null
 ) {
     /** Ostatnia wiadomość ASSISTANT z planem, której jeszcze nie zastosowano. */
     val pendingProposalMessage: ChatMessage?
         get() = messages.lastOrNull { it.proposal != null && !it.applied }
+
+    val targetPlan: pl.filebit.gymtracker.data.entity.TrainingPlan?
+        get() = availablePlans.firstOrNull { it.id == targetPlanId }
 }
 
 enum class QuickAction(val labelKey: String, val prompt: String) {
@@ -111,7 +119,9 @@ class AiTrainerViewModel @Inject constructor(
     private val prefs: AiPreferences,
     private val contextBuilder: AiContextBuilder,
     private val planApplier: AiPlanApplier,
-    private val chatRepo: AiChatRepository
+    private val chatRepo: AiChatRepository,
+    private val planRepo: pl.filebit.gymtracker.data.repository.PlanRepository,
+    private val exerciseRepo: pl.filebit.gymtracker.data.repository.ExerciseRepository
 ) : ViewModel() {
 
     private fun toast(text: String) {
@@ -128,6 +138,15 @@ class AiTrainerViewModel @Inject constructor(
     init {
         refreshConnection()
         if (initialConversationId > 0L) loadConversation(initialConversationId)
+        viewModelScope.launch {
+            planRepo.observeAllPlans().collect { plans ->
+                _state.value = _state.value.copy(availablePlans = plans)
+            }
+        }
+    }
+
+    fun setTargetPlan(planId: Long?) {
+        _state.value = _state.value.copy(targetPlanId = planId)
     }
 
     private fun loadConversation(id: Long) {
@@ -205,8 +224,12 @@ class AiTrainerViewModel @Inject constructor(
                 }
             )
 
-            val ctx = runCatching { contextBuilder.buildContextJson(recentWorkoutsLimit = 30) }
-                .getOrElse { "{}" }
+            val ctx = runCatching {
+                contextBuilder.buildContextJson(
+                    recentWorkoutsLimit = 30,
+                    targetPlanId = _state.value.targetPlanId
+                )
+            }.getOrElse { "{}" }
 
             val combined = if (isFirstMessage) {
                 "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\nPytanie/prośba:\n$prompt"
@@ -276,6 +299,13 @@ class AiTrainerViewModel @Inject constructor(
             Log.d("AiTrainerVM", "applyProposal: already applying, ignored")
             return
         }
+        // v0.85: tryb modyfikacji planu — zamiast tworzyć nowy, pokazujemy
+        // preview diff (PlanImprovementSheet) i pozwalamy Replace/Copy
+        val targetPlanId = _state.value.targetPlanId
+        if (targetPlanId != null) {
+            _state.value = _state.value.copy(improvementPreview = proposal)
+            return
+        }
         val targetIndex = _state.value.messages.indexOfFirst { it.id != 0L && it.id == message.id }
             .takeIf { it >= 0 }
             ?: _state.value.messages.indexOfLast { it.proposal != null && !it.applied }
@@ -322,6 +352,58 @@ class AiTrainerViewModel @Inject constructor(
                 }
             )
         }
+    }
+
+    /** Snapshot ćwiczeń target planu (per dzień → lista nazw) — do diff w preview. */
+    suspend fun loadTargetPlanSnapshot(): Map<Int, List<String>> {
+        val planId = _state.value.targetPlanId ?: return emptyMap()
+        val exes = planRepo.getPlanExercises(planId)
+        return exes.groupBy { it.dayOfWeek }
+            .mapValues { (_, list) ->
+                list.sortedBy { it.orderIndex }
+                    .mapNotNull { exerciseRepo.get(it.exerciseId)?.name }
+            }
+    }
+
+    fun applyImprovementPreview(asCopy: Boolean) {
+        val proposal = _state.value.improvementPreview ?: return
+        val planId = _state.value.targetPlanId ?: return
+        val msg = _state.value.messages.lastOrNull { it.proposal != null && !it.applied }
+        _state.value = _state.value.copy(isApplying = true, improvementPreview = null)
+        viewModelScope.launch {
+            val result = if (asCopy) {
+                planApplier.applyAsCopy(planId, proposal).map { it as Long? }
+            } else {
+                planApplier.replaceExistingPlan(planId, proposal).map { null as Long? }
+            }
+            result.fold(
+                onSuccess = { newId ->
+                    val updated = _state.value.messages.toMutableList()
+                    if (msg != null) {
+                        val idx = updated.indexOfFirst { it === msg }
+                        if (idx >= 0) {
+                            updated[idx] = msg.copy(applied = true)
+                            if (msg.id != 0L) chatRepo.markMessageApplied(msg.id)
+                        }
+                    }
+                    _state.value = _state.value.copy(
+                        isApplying = false,
+                        planAppliedId = newId ?: planId,
+                        messages = updated
+                    )
+                },
+                onFailure = { err ->
+                    _state.value = _state.value.copy(
+                        isApplying = false,
+                        error = "Błąd zapisu: ${err.message ?: "?"}"
+                    )
+                }
+            )
+        }
+    }
+
+    fun dismissImprovementPreview() {
+        _state.value = _state.value.copy(improvementPreview = null)
     }
 
     /** User zaakceptował zastosowanie mimo niedopasowanych ćwiczeń. */
