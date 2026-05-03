@@ -725,10 +725,10 @@ private fun CalendarHeatmapCard(heatmap: Map<Long, Double>) {
 private fun RecoveryCard(recovery: List<pl.filebit.gymtracker.data.repository.MuscleRecovery>) {
     pl.filebit.gymtracker.ui.theme.GymCard {
         Column(modifier = Modifier.padding(16.dp)) {
-            pl.filebit.gymtracker.ui.theme.LabelUp("Recovery", accent = true)
+            pl.filebit.gymtracker.ui.theme.LabelUp("Regeneracja", accent = true)
             Spacer(Modifier.height(2.dp))
             Text(
-                "Ostatni trening per partia. ⚠ = czas najwyżej.",
+                "Ile dni minęło od ostatniego treningu każdej partii mięśniowej.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -743,10 +743,10 @@ private fun RecoveryCard(recovery: List<pl.filebit.gymtracker.data.repository.Mu
 @Composable
 private fun RecoveryRow(rec: pl.filebit.gymtracker.data.repository.MuscleRecovery) {
     val (status, color) = when {
-        rec.daysAgo >= 14 -> "⚠ ZA DAWNO" to pl.filebit.gymtracker.ui.theme.ErrorRed
-        rec.daysAgo >= 7 -> "WARTO" to AccentOrange
-        rec.daysAgo >= 2 -> "OK" to pl.filebit.gymtracker.ui.theme.SuccessGreen
-        else -> "RECOVERY" to DarkOnSurfaceVariant
+        rec.daysAgo >= 14 -> "⚠ ZANIEDBANA" to pl.filebit.gymtracker.ui.theme.ErrorRed
+        rec.daysAgo >= 7 -> "POTRENUJ" to AccentOrange
+        rec.daysAgo >= 2 -> "GOTOWE" to pl.filebit.gymtracker.ui.theme.SuccessGreen
+        else -> "ŚWIEŻO" to DarkOnSurfaceVariant
     }
     val muscleName = muscleLabelPl(rec.muscle)
     Row(
@@ -765,8 +765,7 @@ private fun RecoveryRow(rec: pl.filebit.gymtracker.data.repository.MuscleRecover
             when (rec.daysAgo) {
                 0 -> "dziś"
                 1 -> "wczoraj"
-                in 2..6 -> "${rec.daysAgo} dni"
-                else -> "${rec.daysAgo} dni"
+                else -> "${rec.daysAgo} dni temu"
             },
             style = MaterialTheme.typography.bodyMedium.copy(
                 fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace,
