@@ -172,6 +172,19 @@ fun TrainingSettingsScreen(
                 }
             }
 
+            // Codzienny check AI (v0.87)
+            item {
+                TsToggleSection(
+                    title = "Codzienny check AI",
+                    label = "Włącz powiadomienia",
+                    explain = "AI raz dziennie sprawdza Twoje treningi i wysyła pojedyncze powiadomienie " +
+                        "gdy wykryje sygnał: powtarzający się ból, stagnacja, partia >7 dni bez treningu. " +
+                        "Tap otwiera AI Trener z preselected akcją.",
+                    checked = draft.aiProactiveChecksEnabled,
+                    onChange = { draft = draft.copy(aiProactiveChecksEnabled = it) }
+                )
+            }
+
             // Flash przy końcu timera
             item {
                 TsToggleSection(

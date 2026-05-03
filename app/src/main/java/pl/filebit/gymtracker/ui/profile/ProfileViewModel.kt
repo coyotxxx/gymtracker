@@ -13,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    private val repo: UserProfileRepository
+    private val repo: UserProfileRepository,
+    private val proactiveScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
 ) : ViewModel() {
 
     val profile: StateFlow<UserProfile> = repo.observe()
@@ -21,7 +22,13 @@ class ProfileViewModel @Inject constructor(
 
     fun save(profile: UserProfile, onDone: () -> Unit) {
         viewModelScope.launch {
+            val before = repo.get()
             repo.save(profile)
+            // Sync proactive AI check scheduler z toggle
+            if (before.aiProactiveChecksEnabled != profile.aiProactiveChecksEnabled) {
+                if (profile.aiProactiveChecksEnabled) proactiveScheduler.schedulePeriodic()
+                else proactiveScheduler.cancel()
+            }
             onDone()
         }
     }

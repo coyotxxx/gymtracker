@@ -46,5 +46,6 @@ data class UserProfile(
     val bodyweightKg: Double? = null,   // jeśli null → fallback na ostatni BodyMeasurement.weightKg
     val flashOnTimerEnd: Boolean = false,
     val aiOverlayEnabled: Boolean = false,  // pływający FAB Asystenta AI dostępny z każdego ekranu
-    val onboardingCompleted: Boolean = false  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
+    val onboardingCompleted: Boolean = false,  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
+    val aiProactiveChecksEnabled: Boolean = false  // codzienna notyfikacja od AI o regeneracji/stagnacji/bólu (v0.87)
 )

@@ -35,6 +35,7 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var workoutRepo: WorkoutRepository
     @Inject lateinit var profileRepo: UserProfileRepository
     @Inject lateinit var unfinishedScheduler: UnfinishedWorkoutScheduler
+    @Inject lateinit var proactiveAiScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -49,6 +50,11 @@ class GymTrackerApp : Application(), Configuration.Provider {
         createNotificationChannels()
         appScope.launch {
             exerciseSeeder.seedIfEmpty()
+            // Reschedule proactive AI check przy starcie aplikacji (np. po update)
+            val profile = profileRepo.get()
+            if (profile.aiProactiveChecksEnabled) {
+                proactiveAiScheduler.schedulePeriodic()
+            }
         }
         observeActiveWorkoutForReminder()
     }
@@ -122,6 +128,16 @@ class GymTrackerApp : Application(), Configuration.Provider {
                     NotificationManager.IMPORTANCE_DEFAULT
                 ).apply {
                     description = getString(R.string.notif_channel_unfinished_desc)
+                    setShowBadge(true)
+                }
+            )
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.ProactiveAiCheckWorker.CHANNEL_ID,
+                    "Codzienny check AI",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Codzienne przypomnienia od AI o regeneracji, stagnacjach i bólu"
                     setShowBadge(true)
                 }
             )
