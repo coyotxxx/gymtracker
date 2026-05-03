@@ -51,6 +51,7 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -65,8 +66,14 @@ fun StatsScreen(
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         if (state.loading || state.overview == null) {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text(stringResource(R.string.stats_loading))
+            Column(modifier = Modifier.fillMaxSize()) {
+                ScreenHeader(
+                    title = stringResource(R.string.stats_title),
+                    onBack = onBack
+                )
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text(stringResource(R.string.stats_loading))
+                }
             }
             return
         }
@@ -77,8 +84,12 @@ fun StatsScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // ScreenHeader usunięty — globalny TopBar pokazuje tytuł 'Statystyki'
-            // i strzałkę wstecz (v0.89 Etap 2)
+            item {
+                ScreenHeader(
+                    title = stringResource(R.string.stats_title),
+                    onBack = onBack
+                )
+            }
 
             // === 4 kafelki TOP — czyste analityczne metryki ===
             item {

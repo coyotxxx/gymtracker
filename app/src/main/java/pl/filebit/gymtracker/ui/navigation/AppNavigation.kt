@@ -124,18 +124,15 @@ fun AppNavigation() {
     // TopBar widoczny WSZĘDZIE poza ekranami workout (mają własny tytuł +
     // skomplikowane akcje) i ekranami AI (Trener AI ma własny topBar z labelem
     // "PLAN NA TYDZIEŃ" — duplikacja byłaby brzydka).
+    // Globalny TopBar (GymTracker + dzwonek + AI) widoczny wszędzie POZA:
+    // - Onboarding (full-screen wizard, własny styl)
+    // - ActiveWorkout / CoachWorkout (mają własny TopAppBar z licznikami serii)
+    // Pozostałe ekrany — także te z własnym ScreenHeader/TopAppBar — pokazują
+    // globalny TopBar PONAD ich własnym headerem (2 paski wertykalnie).
     val hideTopBarRoutes = setOf(
         Screen.Onboarding.route,
         Screen.ActiveWorkout.route,
-        Screen.CoachWorkout.route,
-        Screen.AiTrainer.route,
-        Screen.AiConversations.route,
-        Screen.AiSettings.route,
-        Screen.AiWeeklyReport.route,
-        Screen.Measurements.route,
-        Screen.MeasurementAdd.route,
-        Screen.BodyMap.route,
-        Screen.TrainingSettings.route
+        Screen.CoachWorkout.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
@@ -144,21 +141,13 @@ fun AppNavigation() {
     val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
-    // Tytuł i back-state wynikają z aktualnej route. Na 5 głównych tabach
-    // showBack=false + tytuł 'GymTracker' (default), na podstronach showBack=true
-    // + tytuł z mapy screenTitle(). Tab routes są w tabRoutes.
-    val isOnTab = currentRoute in tabRoutes
-    val computedTitle = if (isOnTab) "GymTracker" else screenTitle(currentRoute)
-    val computedShowBack = !isOnTab && currentRoute != null
-
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
         topBar = {
             if (showTopBar) {
+                // Globalny TopBar zawsze 'GymTracker' + dzwonek + AI (jak na 5 tabs).
+                // Każda podstrona zachowuje własny ScreenHeader z back+tytułem PONIŻEJ.
                 AppTopBar(
-                    title = computedTitle,
-                    showBack = computedShowBack,
-                    onBack = { navController.popBackStack() },
                     onOpenAiAssistant = { aiChoiceVisible = true }
                 )
             }
