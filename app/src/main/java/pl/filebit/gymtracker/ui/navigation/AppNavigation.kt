@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.FitnessCenter
@@ -27,6 +29,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -581,36 +584,69 @@ fun AppNavigation() {
 }
 
 /**
- * Globalny TopBar — widoczny na 5 zakładkach (Home/Historia/Plany/Ćwiczenia/Profil).
- * Logo "● GymTracker" po lewej, dzwonek + AI button po prawej.
+ * Globalny TopBar — element nawigacji wyższego poziomu.
+ *
+ * Stany:
+ * - **Główne taby** (Home/Historia/Plany/Ćwiczenia/Profil): showBack=false,
+ *   title="GymTracker" + logo dot, brak custom actions
+ * - **Podstrony** (Stats, Goals, Pomiary, AI Trener…): showBack=true,
+ *   title=nazwa ekranu, opcjonalne custom actions przed dzwonkiem+AI
+ *
+ * Niezmiennie pokazuje się dzwonek + ikona AI (żółte kółko) po prawej.
+ *
+ * @param title tekst tytułu (default "GymTracker")
+ * @param showBack pokazuje strzałkę "wstecz" zamiast logo dot
+ * @param onBack akcja po klik strzałki wstecz
+ * @param actions opcjonalne dodatkowe ikony PRZED dzwonkiem (np. delete, share)
+ * @param onOpenAiAssistant akcja po klik ikony AI
  */
 @Composable
-private fun AppTopBar(onOpenAiAssistant: () -> Unit) {
+private fun AppTopBar(
+    title: String = "GymTracker",
+    showBack: Boolean = false,
+    onBack: () -> Unit = {},
+    actions: @Composable RowScope.() -> Unit = {},
+    onOpenAiAssistant: () -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .background(DarkBg)
             .statusBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .padding(horizontal = 8.dp, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Logo "● GymTracker"
-        Box(
-            modifier = Modifier
-                .size(8.dp)
-                .background(AccentOrange, RoundedCornerShape(2.dp))
-        )
-        Spacer(Modifier.width(10.dp))
+        if (showBack) {
+            IconButton(onClick = onBack) {
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Wstecz",
+                    tint = DarkOnSurface
+                )
+            }
+        } else {
+            Spacer(Modifier.width(8.dp))
+            // Logo dot — tylko na 5 głównych zakładkach
+            Box(
+                modifier = Modifier
+                    .size(8.dp)
+                    .background(AccentOrange, RoundedCornerShape(2.dp))
+            )
+            Spacer(Modifier.width(10.dp))
+        }
         Text(
-            "GymTracker",
+            text = title,
             style = MaterialTheme.typography.titleMedium.copy(
                 fontWeight = FontWeight.ExtraBold,
                 fontSize = 18.sp,
                 letterSpacing = (-0.2).sp
             ),
-            color = DarkOnSurface
+            color = DarkOnSurface,
+            maxLines = 1
         )
         Spacer(Modifier.weight(1f))
+        // Custom actions slot (np. delete, share) — przed dzwonkiem
+        actions()
         // Dzwonek (placeholder bez akcji)
         Box(
             modifier = Modifier
@@ -643,5 +679,38 @@ private fun AppTopBar(onOpenAiAssistant: () -> Unit) {
                 modifier = Modifier.size(20.dp)
             )
         }
+        Spacer(Modifier.width(8.dp))
     }
+}
+
+/**
+ * Mapuje route na czytelny tytuł PL — używane w globalnym TopBar gdy showBack=true.
+ * Domyślnie zwraca "GymTracker" jeśli route nieznane (5 głównych tabs).
+ */
+private fun screenTitle(route: String?): String = when (route) {
+    Screen.Home.route, Screen.History.route, Screen.Plans.route,
+    Screen.ExerciseLibrary.route, Screen.Profile.route -> "GymTracker"
+    Screen.Stats.route -> "Statystyki"
+    Screen.Achievements.route -> "Odznaki"
+    Screen.OneRm.route -> "Kalkulator 1RM"
+    Screen.PlateCalc.route -> "Kalkulator obciążeń"
+    Screen.PlanTemplates.route -> "Szablony planów"
+    Screen.MuscleEngagement.route -> "Mapa mięśni"
+    Screen.ProgressPhotos.route -> "Zdjęcia progresu"
+    Screen.StrengthStandards.route -> "Standardy siłowe"
+    Screen.AiConversations.route -> "Asystent AI"
+    Screen.AiSettings.route -> "Ustawienia AI"
+    Screen.AiTrainer.route -> "Trener AI"
+    Screen.AiWeeklyReport.route -> "Raport tygodnia"
+    Screen.Measurements.route -> "Pomiary"
+    Screen.MeasurementAdd.route -> "Dodaj pomiar"
+    Screen.BodyMap.route -> "Mapa pomiarów"
+    Screen.TrainingSettings.route -> "Ustawienia treningu"
+    Screen.Goals.route -> "Cele"
+    Screen.Glossary.route -> "Słowniczek"
+    Screen.Backup.route -> "Kopia zapasowa"
+    Screen.ExerciseDetail.route -> "Ćwiczenie"
+    Screen.PlanEdit.route -> "Edycja planu"
+    Screen.WorkoutDetail.route -> "Trening"
+    else -> "GymTracker"
 }
