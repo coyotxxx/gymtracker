@@ -199,7 +199,6 @@ fun ActiveWorkoutScreen(
                             ExerciseGroupCard(
                                 group = group,
                                 defaultRestSec = state.profile.defaultRestSeconds,
-                                showAdvanced = state.profile.showAdvancedSetFields,
                                 onAddSet = { reps, weight ->
                                     vm.addSet(group.exercise.id, reps, weight)
                                     safeTimer { RestTimerService.start(context, state.profile.defaultRestSeconds, state.profile.flashOnTimerEnd) }
@@ -450,7 +449,6 @@ private fun WorkoutNotesDialog(
 private fun ExerciseGroupCard(
     group: ExerciseGroup,
     defaultRestSec: Int,
-    showAdvanced: Boolean,
     onAddSet: (reps: Int, weight: Double) -> Unit,
     onUpdateSet: (WorkoutSet) -> Unit,
     onDeleteSet: (WorkoutSet) -> Unit,
@@ -534,6 +532,7 @@ private fun ExerciseGroupCard(
                     pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
                         HeaderCell("kg", weight = 1f)
                         HeaderCell(stringResource(R.string.workout_reps), weight = 1f)
+                        HeaderCell("RPE", weight = 0.6f)
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
                         HeaderCell(stringResource(R.string.workout_reps), weight = 2f)
@@ -562,12 +561,6 @@ private fun ExerciseGroupCard(
                     onUpdate = onUpdateSet,
                     onDelete = onDeleteSet
                 )
-                if (showAdvanced) {
-                    AdvancedFieldsRow(
-                        set = set,
-                        onUpdate = onUpdateSet
-                    )
-                }
             }
 
             Spacer(Modifier.height(8.dp))
@@ -611,46 +604,6 @@ private fun androidx.compose.foundation.layout.RowScope.HeaderCell(text: String,
 }
 
 @Composable
-private fun AdvancedFieldsRow(
-    set: WorkoutSet,
-    onUpdate: (WorkoutSet) -> Unit
-) {
-    var rpeText by remember(set.id) { mutableStateOf(set.rpe?.toString() ?: "") }
-    var tempoText by remember(set.id) { mutableStateOf(set.tempo ?: "") }
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 40.dp, end = 48.dp, top = 2.dp, bottom = 6.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
-    ) {
-        OutlinedTextField(
-            value = rpeText,
-            onValueChange = {
-                rpeText = it.filter { c -> c.isDigit() }
-                onUpdate(set.copy(rpe = rpeText.toIntOrNull()))
-            },
-            label = { Text("RPE", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.weight(1f)
-        )
-        OutlinedTextField(
-            value = tempoText,
-            onValueChange = {
-                tempoText = it
-                onUpdate(set.copy(tempo = if (tempoText.isBlank()) null else tempoText))
-            },
-            label = { Text("Tempo", style = MaterialTheme.typography.bodySmall) },
-            placeholder = { Text("3-1-1-0", style = MaterialTheme.typography.bodySmall) },
-            singleLine = true,
-            modifier = Modifier.weight(1.4f)
-        )
-    }
-}
-
-@Composable
 private fun SetRow(
     set: WorkoutSet,
     metricType: pl.filebit.gymtracker.data.entity.MetricType,
@@ -659,6 +612,7 @@ private fun SetRow(
 ) {
     var weightText by remember(set.id) { mutableStateOf(formatWeight(set.weightKg)) }
     var repsText by remember(set.id) { mutableStateOf(set.reps.toString()) }
+    var rpeText by remember(set.id) { mutableStateOf(set.rpe?.toString() ?: "") }
     var durationText by remember(set.id) { mutableStateOf(set.durationSec?.toString() ?: "") }
     var distanceKmText by remember(set.id) {
         mutableStateOf(set.distanceM?.let { (it / 1000.0).let { km -> "%.2f".format(km).replace(',', '.') } } ?: "")
@@ -703,6 +657,13 @@ private fun SetRow(
                     repsText = v
                     v.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
                 }, KeyboardType.Number, Modifier.weight(1f))
+                Spacer(Modifier.width(8.dp))
+                NumField(rpeText, { v ->
+                    val filtered = v.filter { it.isDigit() }
+                    rpeText = filtered
+                    if (filtered.isBlank()) onUpdate(set.copy(rpe = null))
+                    else filtered.toIntOrNull()?.takeIf { it in 1..10 }?.let { onUpdate(set.copy(rpe = it)) }
+                }, KeyboardType.Number, Modifier.weight(0.6f))
             }
             pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
                 NumField(repsText, { v ->
