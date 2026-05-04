@@ -787,20 +787,29 @@ private fun PlanExerciseCard(
                         color = DarkOnSurface
                     )
                     Spacer(Modifier.height(2.dp))
+                    Text(
+                        summarizeSets(item.sets),
+                        style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                        color = DarkOnSurfaceVariant,
+                        maxLines = 1
+                    )
                     val previousText = previousSession?.let { ps ->
                         val topSet = ps.sets.maxByOrNull { it.weightKg }
                             ?: return@let null
                         val rpePart = topSet.rpe?.takeIf { it > 0 }?.let { " · RPE $it" } ?: ""
                         "${pl.filebit.gymtracker.util.formatWeight(topSet.weightKg)} kg × ${topSet.reps}$rpePart"
                     }
-                    Text(
-                        text = if (previousText != null)
-                            "${summarizeSets(item.sets)}  •  🕐 ${previousText}"
-                        else summarizeSets(item.sets),
-                        style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
-                        color = DarkOnSurfaceVariant,
-                        maxLines = 2
-                    )
+                    if (previousText != null) {
+                        Text(
+                            "Ostatnio: $previousText",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.SemiBold
+                            ),
+                            color = AccentOrange.copy(alpha = 0.85f),
+                            maxLines = 1
+                        )
+                    }
                 }
                 Box {
                     IconButton(
