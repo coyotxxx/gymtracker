@@ -525,31 +525,44 @@ private fun ExerciseGroupCard(
             HorizontalDivider()
             Spacer(Modifier.height(8.dp))
 
-            // Header row — różne dla różnych metricType
-            Row(modifier = Modifier.fillMaxWidth()) {
-                HeaderCell("Set", weight = 0.6f)
+            // Header — kompaktowy w stylu PlanEdit (28dp dla numeru, weighted columns)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Spacer(Modifier.width(28.dp))
                 when (group.exercise.metricType) {
                     pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
-                        HeaderCell("kg", weight = 1f)
-                        HeaderCell(stringResource(R.string.workout_reps), weight = 1f)
-                        HeaderCell("RPE", weight = 0.6f)
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader(
+                            stringResource(R.string.workout_reps),
+                            Modifier.weight(1f)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("kg", Modifier.weight(1f))
+                        Spacer(Modifier.width(4.dp))
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("RPE", Modifier.weight(0.7f))
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
-                        HeaderCell(stringResource(R.string.workout_reps), weight = 2f)
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader(
+                            stringResource(R.string.workout_reps),
+                            Modifier.weight(2f)
+                        )
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
-                        HeaderCell("Czas (s)", weight = 2f)
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("Czas (s)", Modifier.weight(2f))
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
-                        HeaderCell("km", weight = 1f)
-                        HeaderCell("min", weight = 1f)
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("km", Modifier.weight(1f))
+                        Spacer(Modifier.width(4.dp))
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("min", Modifier.weight(1f))
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> {
-                        HeaderCell("kg", weight = 1f)
-                        HeaderCell("s", weight = 1f)
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("kg", Modifier.weight(1f))
+                        Spacer(Modifier.width(4.dp))
+                        pl.filebit.gymtracker.ui.theme.SetColumnHeader("s", Modifier.weight(1f))
                     }
                 }
-                Spacer(Modifier.width(48.dp)) // for ✓ button
+                Spacer(Modifier.width(40.dp)) // for ✓ button
             }
 
             Spacer(Modifier.height(4.dp))
@@ -585,25 +598,6 @@ private fun ExerciseGroupCard(
 }
 
 @Composable
-private fun androidx.compose.foundation.layout.RowScope.HeaderCell(text: String, weight: Float) {
-    if (weight == 0f) {
-        Text(
-            text,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-    } else {
-        Box(modifier = Modifier.weight(weight)) {
-            Text(
-                text,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
-    }
-}
-
-@Composable
 private fun SetRow(
     set: WorkoutSet,
     metricType: pl.filebit.gymtracker.data.entity.MetricType,
@@ -622,125 +616,150 @@ private fun SetRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
+            .padding(vertical = 3.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Set number
-        Box(
-            modifier = Modifier
-                .size(32.dp)
-                .background(
-                    color = if (completed) MaterialTheme.colorScheme.primary.copy(alpha = 0.15f)
-                            else MaterialTheme.colorScheme.surfaceVariant,
-                    shape = CircleShape
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                "${set.setNumber}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.SemiBold
-            )
-        }
-
-        Spacer(Modifier.width(8.dp))
-
+        // Numer serii — accent color w stylu PlanEdit
+        Text(
+            "${set.setNumber}",
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+            modifier = Modifier.width(28.dp),
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
         when (metricType) {
             pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS -> {
-                NumField(weightText, { v ->
-                    val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
-                    weightText = filtered
-                    filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
-                }, KeyboardType.Decimal, Modifier.weight(1f))
-                Spacer(Modifier.width(8.dp))
-                NumField(repsText, { v ->
-                    repsText = v
-                    v.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
-                }, KeyboardType.Number, Modifier.weight(1f))
-                Spacer(Modifier.width(8.dp))
-                NumField(rpeText, { v ->
-                    val filtered = v.filter { it.isDigit() }
-                    rpeText = filtered
-                    if (filtered.isBlank()) onUpdate(set.copy(rpe = null))
-                    else filtered.toIntOrNull()?.takeIf { it in 1..10 }?.let { onUpdate(set.copy(rpe = it)) }
-                }, KeyboardType.Number, Modifier.weight(0.6f))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = repsText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        repsText = filtered
+                        filtered.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
+                    }
+                )
+                Spacer(Modifier.width(4.dp))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = weightText,
+                    keyboardType = KeyboardType.Decimal,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
+                        weightText = filtered
+                        filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                    }
+                )
+                Spacer(Modifier.width(4.dp))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = rpeText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(0.7f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        rpeText = filtered
+                        if (filtered.isBlank()) onUpdate(set.copy(rpe = null))
+                        else filtered.toIntOrNull()?.takeIf { it in 1..10 }?.let { onUpdate(set.copy(rpe = it)) }
+                    }
+                )
             }
             pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
-                NumField(repsText, { v ->
-                    repsText = v
-                    v.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
-                }, KeyboardType.Number, Modifier.weight(2f))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = repsText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(2f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        repsText = filtered
+                        filtered.toIntOrNull()?.let { onUpdate(set.copy(reps = it)) }
+                    }
+                )
             }
             pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
-                NumField(durationText, { v ->
-                    durationText = v
-                    onUpdate(set.copy(durationSec = v.toIntOrNull()))
-                }, KeyboardType.Number, Modifier.weight(2f))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = durationText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(2f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        durationText = filtered
+                        onUpdate(set.copy(durationSec = filtered.toIntOrNull()))
+                    }
+                )
             }
             pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
-                NumField(distanceKmText, { v ->
-                    distanceKmText = v
-                    val km = v.replace(',', '.').toDoubleOrNull()
-                    onUpdate(set.copy(distanceM = km?.let { it * 1000.0 }))
-                }, KeyboardType.Decimal, Modifier.weight(1f))
-                Spacer(Modifier.width(8.dp))
-                NumField(durationText, { v ->
-                    durationText = v
-                    onUpdate(set.copy(durationSec = v.toIntOrNull()?.let { it * 60 }))
-                }, KeyboardType.Number, Modifier.weight(1f))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = distanceKmText,
+                    keyboardType = KeyboardType.Decimal,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        distanceKmText = v
+                        val km = v.replace(',', '.').toDoubleOrNull()
+                        onUpdate(set.copy(distanceM = km?.let { it * 1000.0 }))
+                    }
+                )
+                Spacer(Modifier.width(4.dp))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = durationText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        durationText = filtered
+                        onUpdate(set.copy(durationSec = filtered.toIntOrNull()?.let { it * 60 }))
+                    }
+                )
             }
             pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> {
-                NumField(weightText, { v ->
-                    val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
-                    weightText = filtered
-                    filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
-                }, KeyboardType.Decimal, Modifier.weight(1f))
-                Spacer(Modifier.width(8.dp))
-                NumField(durationText, { v ->
-                    durationText = v
-                    onUpdate(set.copy(durationSec = v.toIntOrNull()))
-                }, KeyboardType.Number, Modifier.weight(1f))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = weightText,
+                    keyboardType = KeyboardType.Decimal,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        val filtered = pl.filebit.gymtracker.util.filterWeightInput(v)
+                        weightText = filtered
+                        filtered.replace(',', '.').toDoubleOrNull()?.let { onUpdate(set.copy(weightKg = it)) }
+                    }
+                )
+                Spacer(Modifier.width(4.dp))
+                pl.filebit.gymtracker.ui.theme.MiniNumField(
+                    value = durationText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.weight(1f),
+                    onValueChange = { v ->
+                        val filtered = v.filter { it.isDigit() }
+                        durationText = filtered
+                        onUpdate(set.copy(durationSec = filtered.toIntOrNull()))
+                    }
+                )
             }
         }
 
-        Spacer(Modifier.width(8.dp))
-
-        // Done check button
+        // ✓ button — completed marker (kompaktowy 36dp jak delete w PlanEdit)
         IconButton(
             onClick = {
                 completed = !completed
                 onUpdate(set.copy(isCompleted = completed))
             },
             modifier = Modifier
-                .size(40.dp)
+                .size(36.dp)
                 .background(
                     color = if (completed) MaterialTheme.colorScheme.primary
-                            else Color.Transparent,
+                    else androidx.compose.ui.graphics.Color.Transparent,
                     shape = CircleShape
                 )
         ) {
             Icon(
                 Icons.Default.Check,
                 contentDescription = null,
+                modifier = Modifier.size(18.dp),
                 tint = if (completed) MaterialTheme.colorScheme.onPrimary
-                       else MaterialTheme.colorScheme.onSurfaceVariant
+                else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
         }
     }
 }
 
-@Composable
-private fun NumField(
-    value: String,
-    onChange: (String) -> Unit,
-    keyboardType: KeyboardType,
-    modifier: Modifier
-) {
-    OutlinedTextField(
-        value = value,
-        onValueChange = onChange,
-        modifier = modifier,
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
-    )
-}

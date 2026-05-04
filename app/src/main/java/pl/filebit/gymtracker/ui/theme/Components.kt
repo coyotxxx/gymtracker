@@ -17,6 +17,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
@@ -32,8 +34,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -442,4 +447,73 @@ fun SectionHeader(
             }
         }
     }
+}
+
+/**
+ * Kompaktowe pole numeryczne 38dp dla edycji setów (PlanEdit, ActiveWorkout).
+ * Wycentrowany tekst, dark surface tło, akcentowy cursor.
+ */
+@Composable
+fun MiniNumField(
+    value: String,
+    keyboardType: KeyboardType,
+    modifier: Modifier = Modifier,
+    placeholder: String = "—",
+    onValueChange: (String) -> Unit
+) {
+    BasicTextField(
+        value = value,
+        onValueChange = onValueChange,
+        textStyle = TextStyle(
+            color = DarkOnSurface,
+            fontSize = 15.sp,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center
+        ),
+        cursorBrush = SolidColor(AccentOrange),
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
+        modifier = modifier
+            .height(38.dp)
+            .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
+            .border(1.dp, DarkOutlineSoft, RoundedCornerShape(8.dp))
+            .padding(horizontal = 4.dp),
+        decorationBox = { inner ->
+            Box(
+                modifier = Modifier.fillMaxWidth().height(38.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                if (value.isEmpty()) {
+                    Text(
+                        placeholder,
+                        style = TextStyle(
+                            color = DarkOnSurfaceVariant,
+                            fontSize = 14.sp,
+                            textAlign = TextAlign.Center
+                        )
+                    )
+                }
+                inner()
+            }
+        }
+    )
+}
+
+/**
+ * Nagłówek kolumny tabeli setów (POWT./WAGA/RPE itd.).
+ * Mała wielkimi literami z letterspacing, kolor onSurfaceVariant.
+ */
+@Composable
+fun SetColumnHeader(text: String, modifier: Modifier = Modifier) {
+    Text(
+        text.uppercase(),
+        modifier = modifier,
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 0.8.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        textAlign = TextAlign.Center
+    )
 }
