@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.ui.workout
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -562,7 +563,7 @@ private fun ExerciseGroupCard(
                         pl.filebit.gymtracker.ui.theme.SetColumnHeader("s", Modifier.weight(1f))
                     }
                 }
-                Spacer(Modifier.width(40.dp)) // for ✓ button
+                Spacer(Modifier.width(32.dp)) // for ✓ marker (28dp + 4dp gap)
             }
 
             Spacer(Modifier.height(4.dp))
@@ -738,24 +739,26 @@ private fun SetRow(
             }
         }
 
-        // ✓ button — completed marker (kompaktowy 36dp jak delete w PlanEdit)
-        IconButton(
-            onClick = {
-                completed = !completed
-                onUpdate(set.copy(isCompleted = completed))
-            },
+        Spacer(Modifier.width(4.dp))
+        // ✓ marker completed — kompaktowy 28dp z czystym tłem, dyskretny
+        Box(
             modifier = Modifier
-                .size(36.dp)
+                .size(28.dp)
                 .background(
                     color = if (completed) MaterialTheme.colorScheme.primary
                     else androidx.compose.ui.graphics.Color.Transparent,
                     shape = CircleShape
                 )
+                .clickable {
+                    completed = !completed
+                    onUpdate(set.copy(isCompleted = completed))
+                },
+            contentAlignment = Alignment.Center
         ) {
             Icon(
                 Icons.Default.Check,
                 contentDescription = null,
-                modifier = Modifier.size(18.dp),
+                modifier = Modifier.size(14.dp),
                 tint = if (completed) MaterialTheme.colorScheme.onPrimary
                 else pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
