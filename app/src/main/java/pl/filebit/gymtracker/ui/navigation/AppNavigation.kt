@@ -126,13 +126,12 @@ fun AppNavigation() {
     // "PLAN NA TYDZIEŃ" — duplikacja byłaby brzydka).
     // Globalny TopBar (GymTracker + dzwonek + AI) widoczny wszędzie POZA:
     // - Onboarding (full-screen wizard, własny styl)
-    // - ActiveWorkout / CoachWorkout (mają własny TopAppBar z licznikami serii)
-    // Pozostałe ekrany — także te z własnym ScreenHeader/TopAppBar — pokazują
-    // globalny TopBar PONAD ich własnym headerem (2 paski wertykalnie).
+    // Pozostałe ekrany — także workout (ActiveWorkout/CoachWorkout) z własnym
+    // ScreenHeader/TopAppBar — pokazują globalny TopBar PONAD ich własnym
+    // headerem (2 paski wertykalnie). Spójność wymaga "GymTracker" na każdym
+    // ekranie poza wizardem.
     val hideTopBarRoutes = setOf(
-        Screen.Onboarding.route,
-        Screen.ActiveWorkout.route,
-        Screen.CoachWorkout.route
+        Screen.Onboarding.route
     )
     val showTopBar = currentRoute != null && currentRoute !in hideTopBarRoutes
 
