@@ -508,46 +508,124 @@ class StatsRepository @Inject constructor(
     }
 
     /**
-     * Sugestie progresji: jeśli wszystkie working sety wykonane (isCompleted, nie warmup)
-     * z reps >= prog ostatniego treningu i tą samą lub większą wagą — sugeruj +2.5kg
-     * w następnym treningu.
+     * RPE-aware progression. Patrzy na faktyczny wysiłek (RPE) + czy reps planowane się powiodły:
+     *
+     * - RPE średnie ≤ 7 + wszystkie reps zrobione → +2.5 kg (INCREASE_WEIGHT)
+     * - RPE średnie 7.5-8.5 + wszystkie reps zrobione → +1 powt. (INCREASE_REPS)
+     * - RPE średnie ≥ 9 → bez zmian (NO_CHANGE)
+     * - Reps niedokończone w 2 sesjach pod rząd → -2.5 kg (DELOAD)
+     * - Brak RPE → fallback do "all reps done → +2.5 kg" (legacy)
      */
     suspend fun progressionTipsForWorkout(currentWorkoutId: Long): List<ProgressionTip> {
         val curSets = setDao.getForWorkout(currentWorkoutId)
-            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+            .filter { it.setType != SetType.WARMUP }
         if (curSets.isEmpty()) return emptyList()
         val byExercise = curSets.groupBy { it.exerciseId }
         val tips = mutableListOf<ProgressionTip>()
+
         for ((exId, list) in byExercise) {
-            val curMaxWeight = list.maxOf { it.weightKg }
-            val curMinRepsAtMax = list.filter { it.weightKg == curMaxWeight }.minOf { it.reps }
-            // wszystkie working sety dziś wykonane?
-            val allDone = list.all { it.isCompleted }
-            if (!allDone) continue
-            // poprzedni trening dla tego ćwiczenia
+            val name = exerciseDao.getById(exId)?.name ?: "?"
+            val workingSets = list.filter { it.isCompleted }
+            if (workingSets.isEmpty()) continue
+
+            val curMaxWeight = workingSets.maxOf { it.weightKg }
+            val setsAtMax = workingSets.filter { it.weightKg == curMaxWeight }
+            val curMinRepsAtMax = setsAtMax.minOf { it.reps }
+
+            // poprzedni ten sam set (z planu) — dla porównania faktycznych vs zaplanowanych reps
+            val plannedReps = setsAtMax.maxOf { it.reps }  // dziś użyte = planowane
+            val avgRpe = setsAtMax.mapNotNull { it.rpe?.takeIf { r -> r > 0 } }
+                .takeIf { it.isNotEmpty() }
+                ?.average()
+
+            // historia ostatnich 2 sesji dla tego ćwiczenia (bez bieżącej)
             val previousAll = setDao.getAllForExercise(exId)
                 .filter { it.workoutId != currentWorkoutId && it.isCompleted && it.setType != SetType.WARMUP }
-            if (previousAll.isEmpty()) continue
             val previousByWorkout = previousAll.groupBy { it.workoutId }
-            // weź ostatni trening (po max createdAt)
-            val lastWorkoutId = previousByWorkout.keys.maxByOrNull { wid ->
+            val sortedWorkoutIds = previousByWorkout.keys.sortedByDescending { wid ->
                 previousByWorkout[wid]!!.maxOf { it.createdAt }
-            } ?: continue
-            val prevSets = previousByWorkout[lastWorkoutId]!!
-            val prevMaxWeight = prevSets.maxOf { it.weightKg }
-            val prevMinRepsAtMax = prevSets.filter { it.weightKg == prevMaxWeight }.minOf { it.reps }
-            // warunek: dziś waga == lub > poprzednio AND dziś min reps >= poprzednie min reps
-            if (curMaxWeight >= prevMaxWeight && curMinRepsAtMax >= prevMinRepsAtMax && curMinRepsAtMax >= 8) {
-                val suggested = curMaxWeight + 2.5
-                val name = exerciseDao.getById(exId)?.name ?: "?"
-                tips.add(
-                    ProgressionTip(
+            }
+
+            // === DELOAD branch: niedokończone reps w 2 sesjach pod rząd ===
+            val curAllDone = list.all { it.isCompleted }
+            if (!curAllDone && sortedWorkoutIds.isNotEmpty()) {
+                val prevSets = previousByWorkout[sortedWorkoutIds[0]]!!
+                val prevAllDone = prevSets.all { it.isCompleted }
+                if (!prevAllDone) {
+                    val suggested = (curMaxWeight - 2.5).coerceAtLeast(0.0)
+                    tips += ProgressionTip(
                         exerciseId = exId,
                         exerciseName = name,
                         currentWeightKg = curMaxWeight,
                         suggestedWeightKg = suggested,
-                        reason = "wszystkie serie ✓"
+                        reason = "2 sesje pod rząd niedokończone — deload",
+                        kind = ProgressionKind.DELOAD,
+                        currentReps = plannedReps,
+                        suggestedReps = plannedReps
                     )
+                    continue
+                }
+            }
+            if (!curAllDone) continue  // niedokończone w 1 sesji — bez sugestii
+
+            // === RPE-aware branche (gdy mamy RPE) ===
+            if (avgRpe != null) {
+                when {
+                    avgRpe <= 7.0 -> {
+                        tips += ProgressionTip(
+                            exerciseId = exId,
+                            exerciseName = name,
+                            currentWeightKg = curMaxWeight,
+                            suggestedWeightKg = curMaxWeight + 2.5,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (lekko) — czas na +2.5 kg",
+                            kind = ProgressionKind.INCREASE_WEIGHT,
+                            currentReps = plannedReps,
+                            suggestedReps = plannedReps
+                        )
+                    }
+                    avgRpe <= 8.5 -> {
+                        tips += ProgressionTip(
+                            exerciseId = exId,
+                            exerciseName = name,
+                            currentWeightKg = curMaxWeight,
+                            suggestedWeightKg = curMaxWeight,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (dobrze) — dorzuć 1 powt.",
+                            kind = ProgressionKind.INCREASE_REPS,
+                            currentReps = plannedReps,
+                            suggestedReps = plannedReps + 1
+                        )
+                    }
+                    else -> {
+                        tips += ProgressionTip(
+                            exerciseId = exId,
+                            exerciseName = name,
+                            currentWeightKg = curMaxWeight,
+                            suggestedWeightKg = curMaxWeight,
+                            reason = "RPE ${"%.1f".format(avgRpe)} (max) — utrzymaj plan",
+                            kind = ProgressionKind.NO_CHANGE,
+                            currentReps = plannedReps,
+                            suggestedReps = plannedReps
+                        )
+                    }
+                }
+                continue
+            }
+
+            // === Fallback: brak RPE — legacy logika porównania z poprzednim treningiem ===
+            if (sortedWorkoutIds.isEmpty()) continue
+            val prevSets = previousByWorkout[sortedWorkoutIds[0]]!!
+            val prevMaxWeight = prevSets.maxOf { it.weightKg }
+            val prevMinRepsAtMax = prevSets.filter { it.weightKg == prevMaxWeight }.minOf { it.reps }
+            if (curMaxWeight >= prevMaxWeight && curMinRepsAtMax >= prevMinRepsAtMax && curMinRepsAtMax >= 8) {
+                tips += ProgressionTip(
+                    exerciseId = exId,
+                    exerciseName = name,
+                    currentWeightKg = curMaxWeight,
+                    suggestedWeightKg = curMaxWeight + 2.5,
+                    reason = "wszystkie serie ✓ — +2.5 kg",
+                    kind = ProgressionKind.INCREASE_WEIGHT,
+                    currentReps = plannedReps,
+                    suggestedReps = plannedReps
                 )
             }
         }
@@ -817,15 +895,27 @@ data class ExerciseProgressionPoint(
     val estimated1RM: Double
 )
 
+enum class ProgressionKind {
+    INCREASE_WEIGHT,   // RPE niskie + reps wykonane → +waga
+    INCREASE_REPS,     // RPE średnie + reps wykonane → +1 powt.
+    NO_CHANGE,         // RPE wysokie albo niedokończone reps → ten sam plan
+    DELOAD             // niedokończone reps × 2 sesje → -waga
+}
+
 /**
- * Sugestia: w danym ćwiczeniu spróbuj zwiększyć ciężar.
+ * Sugestia progresji: w jakim kierunku zmienić plan w danym ćwiczeniu.
+ * - currentWeightKg/Reps to wartości z **planu** (aktualne)
+ * - suggestedWeightKg/Reps to docelowe wartości po zastosowaniu sugestii
  */
 data class ProgressionTip(
     val exerciseId: Long,
     val exerciseName: String,
     val currentWeightKg: Double,
     val suggestedWeightKg: Double,
-    val reason: String
+    val reason: String,
+    val kind: ProgressionKind = ProgressionKind.INCREASE_WEIGHT,
+    val currentReps: Int = 0,
+    val suggestedReps: Int = 0
 )
 
 data class StreakInfo(

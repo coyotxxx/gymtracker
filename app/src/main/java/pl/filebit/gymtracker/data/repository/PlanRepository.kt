@@ -115,6 +115,32 @@ class PlanRepository @Inject constructor(
         planExerciseDao.getMaxOrderIndex(planId)
 
     /**
+     * Aplikuje sugestię progresji do wszystkich serii danego ćwiczenia w planie.
+     * Wywoływane po treningu z dialogu post-workout (auto-update planu).
+     * Zwraca liczbę zaktualizowanych setów.
+     */
+    suspend fun applyProgressionToPlan(
+        planId: Long,
+        exerciseId: Long,
+        newWeightKg: Double,
+        newReps: Int
+    ): Int {
+        val planExercises = planExerciseDao.getForPlan(planId)
+            .filter { it.exerciseId == exerciseId }
+        var updated = 0
+        for (pe in planExercises) {
+            val sets = planExerciseSetDao.getForPlanExercise(pe.id)
+            for (set in sets) {
+                planExerciseSetDao.update(
+                    set.copy(weightKg = newWeightKg, reps = newReps)
+                )
+                updated++
+            }
+        }
+        return updated
+    }
+
+    /**
      * Pobiera wszystkie plany i filtruje te które mają w daysOfWeek wskazany dzień.
      */
     suspend fun getPlansForDay(day: Int): List<TrainingPlan> =

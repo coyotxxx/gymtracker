@@ -259,20 +259,52 @@ fun CoachWorkoutScreen(
                             Spacer(Modifier.height(4.dp))
                         }
                         pendingTips.forEach { t ->
+                            val tipKind = t.kind
+                            val tipText = when (tipKind) {
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.INCREASE_WEIGHT ->
+                                    "${pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)} → ${pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg)} kg"
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.INCREASE_REPS ->
+                                    "${t.currentReps} → ${t.suggestedReps} powt. (${pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg)} kg)"
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.DELOAD ->
+                                    "${pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)} → ${pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg)} kg (deload)"
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.NO_CHANGE ->
+                                    "utrzymaj plan (${pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)} kg × ${t.currentReps})"
+                            }
+                            val tipIcon = when (tipKind) {
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.DELOAD -> "🔻"
+                                pl.filebit.gymtracker.data.repository.ProgressionKind.NO_CHANGE -> "⏸"
+                                else -> "💡"
+                            }
                             Text(
-                                "💡 ${t.exerciseName}",
+                                "$tipIcon ${t.exerciseName}",
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.SemiBold
                             )
                             Text(
-                                stringResource(
-                                    R.string.tip_dialog_line,
-                                    pl.filebit.gymtracker.util.formatWeight(t.suggestedWeightKg),
-                                    pl.filebit.gymtracker.util.formatWeight(t.currentWeightKg)
-                                ),
+                                tipText,
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.tertiary
                             )
+                            Text(
+                                t.reason,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            if (tipKind != pl.filebit.gymtracker.data.repository.ProgressionKind.NO_CHANGE) {
+                                Spacer(Modifier.height(2.dp))
+                                TextButton(
+                                    onClick = { vm.applyTip(t) },
+                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                                        horizontal = 8.dp, vertical = 0.dp
+                                    )
+                                ) {
+                                    Text(
+                                        "✓ Zastosuj do planu",
+                                        style = MaterialTheme.typography.labelMedium,
+                                        color = MaterialTheme.colorScheme.primary
+                                    )
+                                }
+                            }
                             Spacer(Modifier.height(8.dp))
                         }
                     }
@@ -308,11 +340,25 @@ fun CoachWorkoutScreen(
                 }
             },
             confirmButton = {
-                TextButton(onClick = {
-                    vm.consumePendingPRs()
-                    vm.consumePendingTips()
-                    vm.consumePendingStagnation()
-                }) { Text(stringResource(R.string.pr_dialog_ok)) }
+                Row {
+                    val applicable = pendingTips.filter {
+                        it.kind != pl.filebit.gymtracker.data.repository.ProgressionKind.NO_CHANGE
+                    }
+                    if (applicable.size >= 2) {
+                        TextButton(onClick = { vm.applyAllTips() }) {
+                            Text(
+                                "✓ Zastosuj wszystkie",
+                                color = MaterialTheme.colorScheme.primary,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                    }
+                    TextButton(onClick = {
+                        vm.consumePendingPRs()
+                        vm.consumePendingTips()
+                        vm.consumePendingStagnation()
+                    }) { Text(stringResource(R.string.pr_dialog_ok)) }
+                }
             }
         )
     }
@@ -543,114 +589,130 @@ private fun CoachActiveContent(
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Header — nazwa ćwiczenia + numer serii (kompaktowo)
+        // ──── Postęp treningu — na samej górze (najważniejszy kontekst) ────
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "ĆWICZENIE ${state.currentExerciseIndex + 1} / ${state.totalExercises}",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                "${state.completedSets} / ${state.totalSets} setów · ${(progress * 100).roundToInt()}%",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+        LinearProgressIndicator(
+            progress = { progress },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(4.dp)
+                .clip(RoundedCornerShape(2.dp)),
+            color = MaterialTheme.colorScheme.primary,
+            trackColor = MaterialTheme.colorScheme.surfaceVariant
+        )
+
+        Spacer(Modifier.height(8.dp))
+
+        // ──── Nazwa ćwiczenia ────
         Text(
             exercise.name,
             style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            maxLines = 2
         )
+
+        // ──── Etykieta serii ────
         Text(
-            stringResource(
-                R.string.coach_set_n_of_m,
-                state.currentSetIndexInExercise + 1,
-                state.totalSetsInCurrentExercise
-            ) + " · " + stringResource(
-                R.string.coach_exercise_n_of_m,
-                state.currentExerciseIndex + 1,
-                state.totalExercises
+            "SERIA ${state.currentSetIndexInExercise + 1} / ${state.totalSetsInCurrentExercise}",
+            style = MaterialTheme.typography.labelMedium.copy(
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.4.sp
             ),
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            color = MaterialTheme.colorScheme.primary
         )
 
-        Spacer(Modifier.height(4.dp))
+        Spacer(Modifier.weight(1f))
 
-        // ──── Górny rząd: WAGA / POWT. ────
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        // ──── Wielki blok: waga × powt. ────
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f),
+                    RoundedCornerShape(20.dp)
+                )
+                .padding(vertical = 28.dp),
+            contentAlignment = Alignment.Center
         ) {
-            BigMetricCard(
-                label = stringResource(R.string.coach_weight_label),
-                value = if (current.weightKg > 0) formatWeight(current.weightKg) else "—",
-                unit = "kg",
-                modifier = Modifier.weight(1f)
-            )
-            BigMetricCard(
-                label = stringResource(R.string.coach_reps_label),
-                value = "${current.reps}",
-                unit = "powt.",
-                modifier = Modifier.weight(1f)
-            )
-        }
-
-        // ──── Dolny rząd: OSTATNIO / CEL ────
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            // OSTATNIO
-            val lastSummary = state.previousSessionSummaryForCurrent
-            val lastFallback = state.lastSetForCurrent?.let { ls ->
-                "${formatWeight(ls.weightKg)} kg × ${ls.reps}"
-            }
-            ContextCard(
-                icon = "🕐",
-                label = "OSTATNIO",
-                primaryText = lastSummary?.substringBefore(" (")
-                    ?: lastFallback
-                    ?: "—",
-                secondaryText = lastSummary?.substringAfter(" (", missingDelimiterValue = "")
-                    ?.trimEnd(')')
-                    ?.takeIf { it.isNotBlank() },
-                modifier = Modifier.weight(1f)
-            )
-
-            // CEL / SUGESTIA + ikona AI "drugie zdanie"
-            val sug = state.suggestionForCurrent
-            if (sug != null) {
-                val arrow = when {
-                    sug.suggestedWeightKg > sug.previousWeightKg -> "↑"
-                    sug.suggestedReps > sug.previousReps -> "↑"
-                    else -> "→"
-                }
-                Box(modifier = Modifier.weight(1f)) {
-                    SuggestionCard(
-                        arrow = arrow,
-                        weightText = formatWeight(sug.suggestedWeightKg),
-                        repsText = "${sug.suggestedReps}",
-                        modifier = Modifier.fillMaxWidth()
+            // Ikona AI w rogu (drugie zdanie)
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(10.dp)
+                    .size(36.dp)
+                    .background(
+                        pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.20f),
+                        CircleShape
                     )
-                    // Ikona AI w prawym górnym rogu karty — pyta o drugie zdanie
-                    Box(
-                        modifier = Modifier
-                            .align(Alignment.TopEnd)
-                            .padding(6.dp)
-                            .size(28.dp)
-                            .background(
-                                pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.20f),
-                                CircleShape
-                            )
-                            .clickable { onAskAiOpinion() },
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            Icons.Default.AutoAwesome,
-                            contentDescription = "Zapytaj AI",
-                            tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                            modifier = Modifier.size(16.dp)
-                        )
-                    }
-                }
-            } else {
-                ContextCard(
-                    icon = "💡",
-                    label = "CEL",
-                    primaryText = "—",
-                    secondaryText = "brak sugestii",
-                    modifier = Modifier.weight(1f)
+                    .clickable { onAskAiOpinion() },
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    Icons.Default.AutoAwesome,
+                    contentDescription = "Zapytaj AI",
+                    tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                    modifier = Modifier.size(20.dp)
                 )
             }
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Row(verticalAlignment = Alignment.Bottom) {
+                    Text(
+                        if (current.weightKg > 0) formatWeight(current.weightKg) else "—",
+                        fontSize = 64.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                        letterSpacing = (-2).sp
+                    )
+                    Text(
+                        " kg",
+                        fontSize = 22.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.7f),
+                        modifier = Modifier.padding(bottom = 12.dp)
+                    )
+                }
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "× ${current.reps} powt.",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+        }
+
+        // ──── Subtitle: ostatnio (mały, szary) ────
+        val lastSummary = state.previousSessionSummaryForCurrent
+        val lastFallback = state.lastSetForCurrent?.let { ls ->
+            "${formatWeight(ls.weightKg)} kg × ${ls.reps}"
+        }
+        val lastText = lastSummary ?: lastFallback
+        if (lastText != null) {
+            Text(
+                "🕐 Ostatnio: $lastText",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
         }
 
         Spacer(Modifier.weight(1f))
@@ -685,38 +747,6 @@ private fun CoachActiveContent(
                 stringResource(R.string.coach_skip_button),
                 style = MaterialTheme.typography.bodyMedium,
                 textDecoration = androidx.compose.ui.text.style.TextDecoration.Underline
-            )
-        }
-
-        Spacer(Modifier.height(4.dp))
-
-        // ──── Postęp treningu ────
-        Column {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    "POSTĘP TRENINGU",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    "${state.completedSets} / ${state.totalSets} · ${(progress * 100).roundToInt()}%",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-            Spacer(Modifier.height(4.dp))
-            LinearProgressIndicator(
-                progress = { progress },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(6.dp)
-                    .clip(RoundedCornerShape(3.dp)),
-                color = MaterialTheme.colorScheme.primary,
-                trackColor = MaterialTheme.colorScheme.surfaceVariant
             )
         }
     }

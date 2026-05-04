@@ -86,6 +86,41 @@ class CoachWorkoutViewModel @Inject constructor(
 
     fun consumePendingPRs() { _pendingPRs.value = emptyList(); tryFinishCallback() }
     fun consumePendingTips() { _pendingTips.value = emptyList(); tryFinishCallback() }
+
+    /**
+     * Aplikuje pojedynczą sugestię progresji do planu z którego startował trening.
+     * Po wywołaniu tip znika z listy pendingTips. Gdy lista pusta — zamykamy dialog.
+     */
+    fun applyTip(tip: pl.filebit.gymtracker.data.repository.ProgressionTip) {
+        val planId = state.value.workout?.fromPlanId ?: return
+        viewModelScope.launch {
+            planRepo.applyProgressionToPlan(
+                planId = planId,
+                exerciseId = tip.exerciseId,
+                newWeightKg = tip.suggestedWeightKg,
+                newReps = tip.suggestedReps.takeIf { it > 0 } ?: tip.currentReps
+            )
+            _pendingTips.value = _pendingTips.value.filterNot { it.exerciseId == tip.exerciseId }
+            tryFinishCallback()
+        }
+    }
+
+    fun applyAllTips() {
+        val planId = state.value.workout?.fromPlanId ?: return
+        val tips = _pendingTips.value
+        viewModelScope.launch {
+            for (tip in tips) {
+                planRepo.applyProgressionToPlan(
+                    planId = planId,
+                    exerciseId = tip.exerciseId,
+                    newWeightKg = tip.suggestedWeightKg,
+                    newReps = tip.suggestedReps.takeIf { it > 0 } ?: tip.currentReps
+                )
+            }
+            _pendingTips.value = emptyList()
+            tryFinishCallback()
+        }
+    }
     fun consumePendingStagnation() { _pendingStagnation.value = emptyList(); tryFinishCallback() }
     fun dismissAiOpinion() { _aiOpinion.value = AiOpinionState.Idle }
 
