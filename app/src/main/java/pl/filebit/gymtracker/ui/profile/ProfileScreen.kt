@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.MonitorWeight
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.QueryStats
+import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -86,6 +87,7 @@ fun ProfileScreen(
     onOpenAiWeeklyReport: () -> Unit,
     onOpenTrainingSettings: () -> Unit,
     onOpenGoals: () -> Unit,
+    onOpenDiet: () -> Unit,
     onOpenGlossary: () -> Unit,
     onOpenAchievements: () -> Unit = {},
     onRestartOnboarding: () -> Unit = {},
@@ -153,6 +155,14 @@ fun ProfileScreen(
                     title = "Pomiary ciała",
                     subtitle = "Waga, wymiary, tkanka tłuszczowa",
                     onClick = onOpenMeasurements
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Restaurant,
+                    title = "Dieta",
+                    subtitle = "Posiłki, kalorie, makro, okno żywieniowe",
+                    onClick = onOpenDiet
                 )
             }
             item {

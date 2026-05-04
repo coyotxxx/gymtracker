@@ -325,6 +325,7 @@ fun AppNavigation() {
                     onOpenAiWeeklyReport = { navController.navigate(Screen.AiWeeklyReport.route) },
                     onOpenTrainingSettings = { navController.navigate(Screen.TrainingSettings.route) },
                     onOpenGoals = { navController.navigate(Screen.Goals.route) },
+                    onOpenDiet = { navController.navigate(Screen.Diet.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
                     onRestartOnboarding = {
@@ -470,6 +471,9 @@ fun AppNavigation() {
             }
             composable(Screen.Glossary.route) {
                 GlossaryScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.Diet.route) {
+                pl.filebit.gymtracker.ui.diet.DietScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(
