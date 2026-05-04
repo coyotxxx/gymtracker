@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -35,7 +34,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -51,6 +49,7 @@ import pl.filebit.gymtracker.ui.theme.DarkOutline
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.SelectableChip
 import pl.filebit.gymtracker.util.formatWeight
 
 @Composable
@@ -60,6 +59,7 @@ fun ExerciseLibraryScreen(
 ) {
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
+    val equipmentFilter by vm.equipmentFilter.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
     val prs by vm.prs.collectAsStateWithLifecycle()
 
@@ -110,23 +110,48 @@ fun ExerciseLibraryScreen(
 
         Spacer(Modifier.height(12.dp))
 
-        // Chips per partia
+        // Filtr po partii mięśniowej
+        FilterSectionLabel("Partia")
         LazyRow(
             contentPadding = PaddingValues(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             item {
-                MuscleChip(
+                SelectableChip(
                     text = "Wszystkie",
                     selected = muscleFilter == null,
                     onClick = { vm.setMuscleFilter(null) }
                 )
             }
             items(MuscleGroup.entries.filter { it != MuscleGroup.OTHER }) { m ->
-                MuscleChip(
+                SelectableChip(
                     text = m.displayName(),
                     selected = muscleFilter == m,
                     onClick = { vm.setMuscleFilter(m) }
+                )
+            }
+        }
+
+        Spacer(Modifier.height(10.dp))
+
+        // Filtr po sprzęcie
+        FilterSectionLabel("Sprzęt")
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            item {
+                SelectableChip(
+                    text = "Wszystkie",
+                    selected = equipmentFilter == null,
+                    onClick = { vm.setEquipmentFilter(null) }
+                )
+            }
+            items(Equipment.entries.filter { it != Equipment.OTHER }) { eq ->
+                SelectableChip(
+                    text = eq.displayName(),
+                    selected = equipmentFilter == eq,
+                    onClick = { vm.setEquipmentFilter(eq) }
                 )
             }
         }
@@ -168,27 +193,17 @@ fun ExerciseLibraryScreen(
 }
 
 @Composable
-private fun MuscleChip(text: String, selected: Boolean, onClick: () -> Unit) {
-    val bg = if (selected) AccentOrange.copy(alpha = 0.12f) else DarkSurfaceVariant
-    val fg = if (selected) AccentOrange else DarkOnSurfaceVariant
-    val borderColor = if (selected) AccentOrange.copy(alpha = 0.50f) else Color.Transparent
-    Box(
-        modifier = Modifier
-            .background(bg, RoundedCornerShape(50))
-            .border(1.dp, borderColor, RoundedCornerShape(50))
-            .clickable(onClick = onClick)
-            .padding(horizontal = 12.dp, vertical = 6.dp)
-    ) {
-        Text(
-            text.uppercase(),
-            style = MaterialTheme.typography.labelSmall.copy(
-                fontSize = 11.sp,
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 0.7.sp
-            ),
-            color = fg
-        )
-    }
+private fun FilterSectionLabel(text: String) {
+    Text(
+        text.uppercase(),
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.4.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        modifier = Modifier.padding(start = 20.dp, bottom = 6.dp, top = 0.dp)
+    )
 }
 
 /**
