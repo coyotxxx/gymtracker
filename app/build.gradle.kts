@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 158
-        versionName = "0.89.10"
+        versionCode = 159
+        versionName = "0.89.11"
         vectorDrawables { useSupportLibrary = true }
     }
 

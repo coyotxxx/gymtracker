@@ -8,18 +8,20 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import pl.filebit.gymtracker.R
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
-import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -74,26 +76,22 @@ fun OnboardingScreen(
                 .padding(horizontal = 24.dp, vertical = 32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Header
-            Box(
+            // Header — to samo logo co na splash startowym
+            androidx.compose.foundation.Image(
+                painter = androidx.compose.ui.res.painterResource(R.drawable.splash_logo),
+                contentDescription = "GymTracker",
+                contentScale = androidx.compose.ui.layout.ContentScale.Fit,
                 modifier = Modifier
-                    .size(72.dp)
-                    .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(20.dp))
-                    .border(1.dp, AccentOrange.copy(alpha = 0.4f), RoundedCornerShape(20.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                androidx.compose.material3.Icon(
-                    Icons.Default.FitnessCenter,
-                    contentDescription = null,
-                    tint = AccentOrange,
-                    modifier = Modifier.size(36.dp)
-                )
-            }
-            Spacer(Modifier.height(16.dp))
+                    .fillMaxWidth(0.55f)
+                    .aspectRatio(800f / 538f)
+            )
+            // Kompensata pustego pola pyłu wokół G — tytuł "siada" pod literą
+            Spacer(Modifier.height(0.dp))
             Text(
                 "GymTracker",
                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.ExtraBold),
-                color = DarkOnSurface
+                color = DarkOnSurface,
+                modifier = Modifier.offset(y = (-20).dp)
             )
             Spacer(Modifier.height(4.dp))
             // Progress dots
