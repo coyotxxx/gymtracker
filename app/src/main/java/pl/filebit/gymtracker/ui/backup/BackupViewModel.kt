@@ -455,7 +455,7 @@ class BackupViewModel @Inject constructor(
                             entry = zip.nextEntry
                         }
                     }
-                    jsonText ?: return@withContext
+                    jsonText ?: return
                 } else {
                     rawBytes.toString(Charsets.UTF_8)
                 }
