@@ -12,6 +12,7 @@ sealed class Screen(val route: String) {
     object Backup : Screen("backup")
     object Stats : Screen("stats")
     object Achievements : Screen("stats/achievements")
+    object Calculators : Screen("tools/calculators")
     object OneRm : Screen("tools/1rm")
     object PlateCalc : Screen("tools/plate")
     object PlanTemplates : Screen("plans/templates")

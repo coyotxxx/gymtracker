@@ -318,12 +318,9 @@ fun AppNavigation() {
                 ProfileScreen(
                     onOpenBackup = { navController.navigate(Screen.Backup.route) },
                     onOpenStats = { navController.navigate(Screen.Stats.route) },
-                    onOpenOneRm = { navController.navigate(Screen.OneRm.route) },
-                    onOpenPlateCalc = { navController.navigate(Screen.PlateCalc.route) },
+                    onOpenCalculators = { navController.navigate(Screen.Calculators.route) },
                     onOpenMeasurements = { navController.navigate(Screen.Measurements.route) },
-                    onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
-                    onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) },
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
                     onOpenAiSettings = { navController.navigate(Screen.AiSettings.route) },
                     onOpenAiWeeklyReport = { navController.navigate(Screen.AiWeeklyReport.route) },
@@ -346,12 +343,21 @@ fun AppNavigation() {
             composable(Screen.Stats.route) {
                 StatsScreen(
                     onBack = { navController.popBackStack() },
-                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) }
+                    onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
+                    onOpenMuscles = { navController.navigate(Screen.MuscleEngagement.route) },
+                    onOpenStrength = { navController.navigate(Screen.StrengthStandards.route) }
                 )
             }
             composable(Screen.Achievements.route) {
                 pl.filebit.gymtracker.ui.stats.AchievementsScreen(
                     onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.Calculators.route) {
+                pl.filebit.gymtracker.ui.tools.CalculatorsScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenOneRm = { navController.navigate(Screen.OneRm.route) },
+                    onOpenPlateCalc = { navController.navigate(Screen.PlateCalc.route) }
                 )
             }
             composable(Screen.OneRm.route) {

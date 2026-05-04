@@ -16,15 +16,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.filled.MenuBook
-import androidx.compose.material.icons.filled.AccessibilityNew
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
@@ -36,23 +32,17 @@ import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.MonitorWeight
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.QueryStats
-import androidx.compose.material.icons.filled.Scale
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -67,7 +57,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -75,10 +64,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
-import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.UserProfile
-import pl.filebit.gymtracker.data.entity.WeightGoalType
-import pl.filebit.gymtracker.data.entity.WeightUnit
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -92,12 +78,9 @@ import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 fun ProfileScreen(
     onOpenBackup: () -> Unit,
     onOpenStats: () -> Unit,
-    onOpenOneRm: () -> Unit,
-    onOpenPlateCalc: () -> Unit,
+    onOpenCalculators: () -> Unit,
     onOpenMeasurements: () -> Unit,
-    onOpenMuscles: () -> Unit,
     onOpenPhotos: () -> Unit,
-    onOpenStrength: () -> Unit,
     onOpenAiTrainer: () -> Unit,
     onOpenAiSettings: () -> Unit,
     onOpenAiWeeklyReport: () -> Unit,
@@ -141,9 +124,6 @@ fun ProfileScreen(
                     modifier = Modifier.padding(start = 4.dp, top = 4.dp, bottom = 8.dp)
                 )
             }
-            item {
-                pl.filebit.gymtracker.ui.update.UpdateCard(showWhenUpToDate = true)
-            }
 
             // === HERO: avatar + imię + level + dni + ołówek ===
             item {
@@ -153,55 +133,25 @@ fun ProfileScreen(
                 )
             }
 
-            item { Spacer(Modifier.height(4.dp)) }
+            item {
+                pl.filebit.gymtracker.ui.update.UpdateCard(showWhenUpToDate = true)
+            }
 
             // === POSTĘP ===
+            item { ProfileSectionLabel("Postęp") }
             item {
                 ProfileNavRow(
                     icon = Icons.Default.QueryStats,
                     title = stringResource(R.string.stats_title),
-                    subtitle = "Twój postęp w czasie",
+                    subtitle = "Wykresy, mapa mięśni, standardy siłowe, PR",
                     onClick = onOpenStats
                 )
             }
             item {
                 ProfileNavRow(
-                    icon = Icons.Default.EmojiEvents,
-                    title = "Odznaki",
-                    subtitle = "Wszystkie zdobyte odznaki",
-                    onClick = onOpenAchievements
-                )
-            }
-            item {
-                ProfileNavRow(
-                    icon = Icons.Default.Flag,
-                    title = "Cele",
-                    subtitle = "Cele długoterminowe",
-                    onClick = onOpenGoals
-                )
-            }
-
-            // === NARZĘDZIA ===
-            item { ProfileSectionLabel("Narzędzia") }
-            item {
-                ProfileNavRow(
-                    icon = Icons.Default.Calculate,
-                    title = stringResource(R.string.onerm_title),
-                    onClick = onOpenOneRm
-                )
-            }
-            item {
-                ProfileNavRow(
-                    icon = Icons.Default.Scale,
-                    title = "Kalkulator obciążeń",
-                    onClick = onOpenPlateCalc
-                )
-            }
-            item {
-                ProfileNavRow(
                     icon = Icons.Default.MonitorWeight,
-                    title = "Pomiary",
-                    subtitle = "Waga, wymiary ciała, tkanka tłuszczowa, wykresy",
+                    title = "Pomiary ciała",
+                    subtitle = "Waga, wymiary, tkanka tłuszczowa",
                     onClick = onOpenMeasurements
                 )
             }
@@ -215,20 +165,22 @@ fun ProfileScreen(
             }
             item {
                 ProfileNavRow(
-                    icon = Icons.Default.AccessibilityNew,
-                    title = stringResource(R.string.muscles_title),
-                    onClick = onOpenMuscles
+                    icon = Icons.Default.Flag,
+                    title = "Cele",
+                    subtitle = "Cele długoterminowe",
+                    onClick = onOpenGoals
                 )
             }
             item {
                 ProfileNavRow(
-                    icon = Icons.Default.FitnessCenter,
-                    title = "Standardy siłowe",
-                    onClick = onOpenStrength
+                    icon = Icons.Default.EmojiEvents,
+                    title = "Odznaki",
+                    subtitle = "Wszystkie zdobyte odznaki",
+                    onClick = onOpenAchievements
                 )
             }
 
-            // === AI ===
+            // === ASYSTENT AI ===
             item { ProfileSectionLabel("Asystent AI") }
             item {
                 ProfileNavRow(
@@ -242,8 +194,30 @@ fun ProfileScreen(
                 ProfileNavRow(
                     icon = Icons.Default.AutoAwesome,
                     title = "Raport tygodniowy",
-                    subtitle = "AI analizuje 7 dni i daje rekomendacje na następny tydzień",
+                    subtitle = "AI analizuje 7 dni i daje rekomendacje",
                     onClick = onOpenAiWeeklyReport
+                )
+            }
+
+            // === NARZĘDZIA ===
+            item { ProfileSectionLabel("Narzędzia") }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Calculate,
+                    title = "Kalkulatory",
+                    subtitle = "1RM, obciążenia (talerze)",
+                    onClick = onOpenCalculators
+                )
+            }
+
+            // === USTAWIENIA ===
+            item { ProfileSectionLabel("Ustawienia") }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.FitnessCenter,
+                    title = "Ustawienia treningu",
+                    subtitle = "Cel, doświadczenie, jednostka, dni, czas, rest, powiadomienia",
+                    onClick = onOpenTrainingSettings
                 )
             }
             item {
@@ -254,78 +228,17 @@ fun ProfileScreen(
                     onClick = onOpenAiSettings
                 )
             }
-
-            // === USTAWIENIA TRENINGU ===
-            item { ProfileSectionLabel("Ustawienia treningu") }
-
-            item {
-                SectionCard(
-                    title = stringResource(R.string.profile_goal),
-                    subtitle = "Wpływa na sugestie planów, dobór obciążeń i intensywności w analizie AI."
-                ) {
-                    LazyRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        contentPadding = PaddingValues(vertical = 4.dp)
-                    ) {
-                        items(TrainingGoal.entries.toList()) { g ->
-                            pl.filebit.gymtracker.ui.theme.SelectableChip(
-                                text = g.label(),
-                                selected = draft.goal == g,
-                                onClick = { draft = draft.copy(goal = g) }
-                            )
-                        }
-                    }
-                }
-            }
-
-            item {
-                SectionCard(title = stringResource(R.string.profile_experience)) {
-                    LazyRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        contentPadding = PaddingValues(vertical = 4.dp)
-                    ) {
-                        items(ExperienceLevel.entries.toList()) { e ->
-                            pl.filebit.gymtracker.ui.theme.SelectableChip(
-                                text = e.label(),
-                                selected = draft.experience == e,
-                                onClick = { draft = draft.copy(experience = e) }
-                            )
-                        }
-                    }
-                }
-            }
-
-            item {
-                SectionCard(title = stringResource(R.string.profile_unit)) {
-                    LazyRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        contentPadding = PaddingValues(vertical = 4.dp)
-                    ) {
-                        items(WeightUnit.entries.toList()) { u ->
-                            pl.filebit.gymtracker.ui.theme.SelectableChip(
-                                text = u.name,
-                                selected = draft.preferredUnit == u,
-                                onClick = { draft = draft.copy(preferredUnit = u) }
-                            )
-                        }
-                    }
-                }
-            }
-
-            // Pozostałe parametry (cel wagowy, dni/tydz, czas sesji, rest,
-            // advanced fields, powiadomienia, flash, AI overlay) — w osobnym
-            // ekranie TrainingSettingsScreen (przycisk poniżej).
             item {
                 ProfileNavRow(
-                    icon = Icons.Default.FitnessCenter,
-                    title = "Więcej ustawień treningu",
-                    subtitle = "Cel wagowy, dni/tydz, czas sesji, rest, powiadomienia, AI overlay",
-                    onClick = onOpenTrainingSettings
+                    icon = Icons.Default.AutoAwesome,
+                    title = "Uruchom kreator ponownie",
+                    subtitle = "Przejdź wizard od nowa",
+                    onClick = onRestartOnboarding
                 )
             }
 
-            // === DANE ===
-            item { ProfileSectionLabel("Dane i pomoc") }
+            // === POMOC ===
+            item { ProfileSectionLabel("Pomoc") }
             item {
                 ProfileNavRow(
                     icon = Icons.AutoMirrored.Filled.MenuBook,
@@ -340,14 +253,6 @@ fun ProfileScreen(
                     title = stringResource(R.string.backup_section),
                     subtitle = "Eksport / Import / Wyczyść",
                     onClick = onOpenBackup
-                )
-            }
-            item {
-                ProfileNavRow(
-                    icon = Icons.Default.AutoAwesome,
-                    title = "Uruchom kreator ponownie",
-                    subtitle = "Przejdź wizard od nowa — zmień cel, dni, wagę",
-                    onClick = onRestartOnboarding
                 )
             }
 
@@ -562,37 +467,6 @@ private fun EditNameDialog(
 }
 
 @Composable
-private fun ToggleSection(
-    title: String,
-    label: String,
-    explain: String,
-    checked: Boolean,
-    onChange: (Boolean) -> Unit,
-    extra: @Composable () -> Unit = {}
-) {
-    SectionCard(title = title) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Switch(checked = checked, onCheckedChange = onChange)
-            Spacer(Modifier.width(12.dp))
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    label,
-                    style = MaterialTheme.typography.bodyLarge,
-                    fontWeight = FontWeight.Medium,
-                    color = DarkOnSurface
-                )
-                Text(
-                    explain,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-            }
-        }
-        extra()
-    }
-}
-
-@Composable
 private fun AppVersionFooter() {
     val context = androidx.compose.ui.platform.LocalContext.current
     val version = remember {
@@ -608,99 +482,6 @@ private fun AppVersionFooter() {
         color = DarkOnSurfaceVariant,
         textAlign = androidx.compose.ui.text.style.TextAlign.Center
     )
-}
-
-@Composable
-private fun SectionCard(
-    title: String,
-    subtitle: String? = null,
-    content: @Composable () -> Unit
-) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                title,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.ExtraBold,
-                color = DarkOnSurface
-            )
-            if (subtitle != null) {
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    subtitle,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-            }
-            Spacer(Modifier.height(12.dp))
-            content()
-        }
-    }
-}
-
-@Composable
-private fun NumberFieldCard(
-    label: String,
-    value: Int,
-    range: IntRange,
-    onChange: (Int) -> Unit
-) {
-    var text by remember(value) { mutableStateOf(value.toString()) }
-    SectionCard(title = label) {
-        OutlinedTextField(
-            value = text,
-            onValueChange = { v ->
-                text = v.filter { it.isDigit() }
-                text.toIntOrNull()?.let { n ->
-                    if (n in range) onChange(n)
-                }
-            },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.fillMaxWidth()
-        )
-    }
-}
-
-@Composable
-private fun TargetWeightField(
-    value: Double?,
-    onChange: (Double?) -> Unit
-) {
-    var text by remember(value) { mutableStateOf(value?.let { "%.1f".format(it).replace(',', '.') } ?: "") }
-    OutlinedTextField(
-        value = text,
-        onValueChange = { v ->
-            text = v
-            val parsed = v.replace(',', '.').toDoubleOrNull()
-            onChange(parsed)
-        },
-        label = { Text(stringResource(R.string.profile_target_weight)) },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-        modifier = Modifier.fillMaxWidth()
-    )
-}
-
-@Composable
-private fun WeightGoalType.label(): String = when (this) {
-    WeightGoalType.NONE -> stringResource(R.string.weight_goal_none)
-    WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut)
-    WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk)
-    WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain)
-}
-
-private fun TrainingGoal.label(): String = when (this) {
-    TrainingGoal.STRENGTH -> "Siła"
-    TrainingGoal.HYPERTROPHY -> "Masa mięśniowa"
-    TrainingGoal.MIX -> "Siła + masa"
-    TrainingGoal.GENERAL_FITNESS -> "Sprawność ogólna"
-    TrainingGoal.CARDIO_LIFTING -> "Cardio + siłownia"
 }
 
 private fun ExperienceLevel.label(): String = when (this) {

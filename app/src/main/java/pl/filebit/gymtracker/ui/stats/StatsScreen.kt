@@ -20,11 +20,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.AccessibilityNew
+import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -60,6 +66,8 @@ import pl.filebit.gymtracker.util.formatWeight
 fun StatsScreen(
     onBack: () -> Unit,
     onOpenAchievements: () -> Unit = {},
+    onOpenMuscles: () -> Unit = {},
+    onOpenStrength: () -> Unit = {},
     vm: StatsViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -184,6 +192,93 @@ fun StatsScreen(
                     }
                 }
             }
+
+            // === DEEP DIVE: Mapa mięśni + Standardy siłowe ===
+            item {
+                Text(
+                    "Analizy".uppercase(),
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.padding(start = 4.dp, top = 16.dp, bottom = 4.dp)
+                )
+            }
+            item {
+                StatsAnalysisRow(
+                    icon = Icons.Default.AccessibilityNew,
+                    title = stringResource(R.string.muscles_title),
+                    subtitle = "Co trenujesz najczęściej, gdzie luki",
+                    onClick = onOpenMuscles
+                )
+            }
+            item {
+                StatsAnalysisRow(
+                    icon = Icons.Default.FitnessCenter,
+                    title = "Standardy siłowe",
+                    subtitle = "Twój poziom vs benchmark społeczności",
+                    onClick = onOpenStrength
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun StatsAnalysisRow(
+    icon: ImageVector,
+    title: String,
+    subtitle: String,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .background(DarkSurfaceVariant, RoundedCornerShape(10.dp)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    icon,
+                    contentDescription = null,
+                    tint = DarkOnSurface,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+            Spacer(Modifier.width(14.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    title,
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = DarkOnSurface
+                )
+                Text(
+                    subtitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant,
+                    maxLines = 1
+                )
+            }
+            Icon(
+                Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                contentDescription = null,
+                tint = DarkOnSurfaceVariant
+            )
         }
     }
 }

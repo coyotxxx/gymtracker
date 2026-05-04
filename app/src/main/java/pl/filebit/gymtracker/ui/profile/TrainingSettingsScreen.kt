@@ -39,7 +39,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.data.entity.ExperienceLevel
+import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightGoalType
+import pl.filebit.gymtracker.data.entity.WeightUnit
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -75,6 +78,63 @@ fun TrainingSettingsScreen(
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             item { ScreenHeader(title = "Ustawienia treningu", onBack = onBack) }
+
+            // Cel treningu
+            item {
+                TsSectionCard(
+                    title = stringResource(R.string.profile_goal),
+                    subtitle = "Wpływa na sugestie planów, dobór obciążeń i intensywności w analizie AI."
+                ) {
+                    LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(vertical = 4.dp)
+                    ) {
+                        items(TrainingGoal.entries.toList()) { g ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = trainingGoalLabel(g),
+                                selected = draft.goal == g,
+                                onClick = { draft = draft.copy(goal = g) }
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Doświadczenie
+            item {
+                TsSectionCard(title = stringResource(R.string.profile_experience)) {
+                    LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(vertical = 4.dp)
+                    ) {
+                        items(ExperienceLevel.entries.toList()) { e ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = experienceLabel(e),
+                                selected = draft.experience == e,
+                                onClick = { draft = draft.copy(experience = e) }
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Jednostka wagi
+            item {
+                TsSectionCard(title = stringResource(R.string.profile_unit)) {
+                    LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(vertical = 4.dp)
+                    ) {
+                        items(WeightUnit.entries.toList()) { u ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = u.name,
+                                selected = draft.preferredUnit == u,
+                                onClick = { draft = draft.copy(preferredUnit = u) }
+                            )
+                        }
+                    }
+                }
+            }
 
             // Cel wagowy + waga docelowa
             item {
@@ -324,4 +384,18 @@ private fun weightGoalLabel(g: WeightGoalType): String = when (g) {
     WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut)
     WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk)
     WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain)
+}
+
+private fun trainingGoalLabel(g: TrainingGoal): String = when (g) {
+    TrainingGoal.STRENGTH -> "Siła"
+    TrainingGoal.HYPERTROPHY -> "Masa mięśniowa"
+    TrainingGoal.MIX -> "Siła + masa"
+    TrainingGoal.GENERAL_FITNESS -> "Sprawność ogólna"
+    TrainingGoal.CARDIO_LIFTING -> "Cardio + siłownia"
+}
+
+private fun experienceLabel(e: ExperienceLevel): String = when (e) {
+    ExperienceLevel.BEGINNER -> "Początkujący"
+    ExperienceLevel.INTERMEDIATE -> "Średnio zaawansowany"
+    ExperienceLevel.ADVANCED -> "Zaawansowany"
 }
