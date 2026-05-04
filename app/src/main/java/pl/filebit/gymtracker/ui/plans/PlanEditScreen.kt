@@ -792,10 +792,24 @@ private fun PlanExerciseCard(
                         maxLines = 1
                     )
                     val previousText = previousSession?.let { ps ->
-                        val topSet = ps.sets.maxByOrNull { it.weightKg }
-                            ?: return@let null
-                        val rpePart = topSet.rpe?.takeIf { it > 0 }?.let { " · RPE $it" } ?: ""
-                        "${pl.filebit.gymtracker.util.formatWeight(topSet.weightKg)} kg × ${topSet.reps}$rpePart"
+                        // Working sety (bez warmup), posortowane po setNumber
+                        val working = ps.sets
+                            .filter { it.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP }
+                            .sortedBy { it.setNumber }
+                        if (working.isEmpty()) return@let null
+
+                        // Format setów: "85×8 · 85×8 · 87.5×6"
+                        val setList = working.joinToString(" · ") { s ->
+                            "${pl.filebit.gymtracker.util.formatWeight(s.weightKg)}×${s.reps}"
+                        }
+                        // Zakres RPE: "RPE 7-10" lub "RPE 8" gdy stałe; pomijamy gdy brak
+                        val rpes = working.mapNotNull { it.rpe?.takeIf { r -> r > 0 } }
+                        val rpePart = when {
+                            rpes.isEmpty() -> ""
+                            rpes.min() == rpes.max() -> " · RPE ${rpes.first()}"
+                            else -> " · RPE ${rpes.min()}-${rpes.max()}"
+                        }
+                        "$setList$rpePart"
                     }
                     if (previousText != null) {
                         Text(
@@ -805,7 +819,7 @@ private fun PlanExerciseCard(
                                 fontWeight = FontWeight.SemiBold
                             ),
                             color = AccentOrange.copy(alpha = 0.85f),
-                            maxLines = 1
+                            maxLines = 2
                         )
                     }
                 }
