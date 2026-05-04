@@ -54,6 +54,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -1005,35 +1006,48 @@ private fun SetEditRow(
     var restText by remember(setSpec.id) { mutableStateOf(setSpec.restSeconds?.toString() ?: "") }
     var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
 
-    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp)) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 3.dp),
+        verticalAlignment = Alignment.Top
+    ) {
+        // Numer serii — wycentrowany pionowo na poziomie pól (~38dp)
+        Text(
+            "${setSpec.setNumber}",
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp
+            ),
+            color = AccentOrange,
+            modifier = Modifier.width(28.dp).padding(top = 10.dp),
+            textAlign = TextAlign.Center
+        )
+        FieldWithHistory(
+            modifier = Modifier.weight(1f),
+            historyValue = previousWorkingSet?.reps?.toString(),
+            historyColorHint = compareIntForColor(setSpec.reps, previousWorkingSet?.reps)
         ) {
-            Text(
-                "${setSpec.setNumber}",
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 14.sp
-                ),
-                color = AccentOrange,
-                modifier = Modifier.width(28.dp),
-                textAlign = TextAlign.Center
-            )
             MiniNumField(
                 value = repsText,
                 keyboardType = KeyboardType.Number,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.fillMaxWidth(),
                 onValueChange = {
                     repsText = it.filter { c -> c.isDigit() }
                     if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
                 }
             )
-            Spacer(Modifier.width(4.dp))
+        }
+        Spacer(Modifier.width(4.dp))
+        FieldWithHistory(
+            modifier = Modifier.weight(1f),
+            historyValue = previousWorkingSet?.weightKg?.let { pl.filebit.gymtracker.util.formatWeight(it) },
+            historyColorHint = compareDoubleForColor(setSpec.weightKg, previousWorkingSet?.weightKg)
+        ) {
             MiniNumField(
                 value = weightText,
                 keyboardType = KeyboardType.Decimal,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.fillMaxWidth(),
                 onValueChange = {
                     val filtered = filterWeightInput(it)
                     weightText = filtered
@@ -1041,21 +1055,35 @@ private fun SetEditRow(
                     else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
                 }
             )
-            Spacer(Modifier.width(4.dp))
+        }
+        Spacer(Modifier.width(4.dp))
+        // ODP — bez historii (rest nie jest progresowany)
+        FieldWithHistory(
+            modifier = Modifier.weight(1f),
+            historyValue = null,
+            historyColorHint = HistoryColor.NEUTRAL
+        ) {
             MiniNumField(
                 value = restText,
                 keyboardType = KeyboardType.Number,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.fillMaxWidth(),
                 onValueChange = {
                     restText = it.filter { c -> c.isDigit() }
                     if (restText.isBlank()) onRest(null) else restText.toIntOrNull()?.let(onRest)
                 }
             )
-            Spacer(Modifier.width(4.dp))
+        }
+        Spacer(Modifier.width(4.dp))
+        // RPE — historia w neutralnym szarym (RPE nie jest "progresowane" liniowo)
+        FieldWithHistory(
+            modifier = Modifier.weight(0.7f),
+            historyValue = previousWorkingSet?.rpe?.takeIf { it > 0 }?.toString(),
+            historyColorHint = HistoryColor.NEUTRAL
+        ) {
             MiniNumField(
                 value = rpeText,
                 keyboardType = KeyboardType.Number,
-                modifier = Modifier.weight(0.7f),
+                modifier = Modifier.fillMaxWidth(),
                 placeholder = "—",
                 onValueChange = {
                     rpeText = it.filter { c -> c.isDigit() }
@@ -1063,40 +1091,69 @@ private fun SetEditRow(
                     else rpeText.toIntOrNull()?.takeIf { v -> v in 1..10 }?.let(onRpe)
                 }
             )
-            IconButton(
-                onClick = onDelete,
-                modifier = Modifier.size(36.dp)
-            ) {
-                Icon(
-                    Icons.Default.Delete,
-                    contentDescription = null,
-                    modifier = Modifier.size(16.dp),
-                    tint = DarkOnSurfaceVariant
-                )
-            }
         }
-        // Per-row referencja: co user dał na tej serii w ostatnim treningu.
-        // Dzięki temu obok każdej WAGI w planie widać konkret z historii — łatwo
-        // porównać czy aktualna wartość to progres / regres / stałe.
-        previousWorkingSet?.let { prev ->
-            val rpePart = prev.rpe?.takeIf { it > 0 }?.let { " · RPE $it" } ?: ""
-            val arrow = setSpec.weightKg?.let { planW ->
-                when {
-                    planW > prev.weightKg -> "↑"
-                    planW < prev.weightKg -> "↓"
-                    else -> "="
-                }
-            } ?: " "
+        IconButton(
+            onClick = onDelete,
+            modifier = Modifier.size(36.dp).padding(top = 4.dp)
+        ) {
+            Icon(
+                Icons.Default.Delete,
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+                tint = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+private enum class HistoryColor { PROGRESS, REGRESS, EQUAL, NEUTRAL }
+
+private fun compareIntForColor(plan: Int?, prev: Int?): HistoryColor = when {
+    plan == null || prev == null -> HistoryColor.NEUTRAL
+    plan > prev -> HistoryColor.PROGRESS
+    plan < prev -> HistoryColor.REGRESS
+    else -> HistoryColor.EQUAL
+}
+
+private fun compareDoubleForColor(plan: Double?, prev: Double?): HistoryColor = when {
+    plan == null || prev == null -> HistoryColor.NEUTRAL
+    plan > prev -> HistoryColor.PROGRESS
+    plan < prev -> HistoryColor.REGRESS
+    else -> HistoryColor.EQUAL
+}
+
+@Composable
+private fun FieldWithHistory(
+    modifier: Modifier = Modifier,
+    historyValue: String?,
+    historyColorHint: HistoryColor,
+    content: @Composable () -> Unit
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        content()
+        if (historyValue != null) {
+            val color = when (historyColorHint) {
+                HistoryColor.PROGRESS -> Color(0xFF22C55E) // zielony — plan > ostatnio
+                HistoryColor.REGRESS -> pl.filebit.gymtracker.ui.theme.ErrorRed
+                HistoryColor.EQUAL -> AccentOrange.copy(alpha = 0.7f)
+                HistoryColor.NEUTRAL -> DarkOnSurfaceVariant
+            }
             Text(
-                text = "    $arrow Ostatnio: ${pl.filebit.gymtracker.util.formatWeight(prev.weightKg)} kg × ${prev.reps}$rpePart",
+                text = historyValue,
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontSize = 10.sp,
-                    fontWeight = FontWeight.Medium,
-                    letterSpacing = 0.2.sp
+                    fontWeight = FontWeight.SemiBold
                 ),
-                color = AccentOrange.copy(alpha = 0.65f),
-                modifier = Modifier.padding(start = 28.dp, top = 1.dp)
+                color = color,
+                modifier = Modifier.padding(top = 1.dp)
             )
+        } else {
+            // Pusty placeholder — utrzymuje wyrównanie wszystkich pól nawet gdy
+            // niektóre nie mają historii (np. ODP)
+            Spacer(Modifier.height(13.dp))
         }
     }
 }
