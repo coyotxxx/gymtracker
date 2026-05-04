@@ -3,7 +3,9 @@ package pl.filebit.gymtracker.data.db
 import androidx.room.TypeConverter
 import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
+import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.GoalType
 import pl.filebit.gymtracker.data.entity.GoalUnit
 import pl.filebit.gymtracker.data.entity.MetricType
@@ -66,4 +68,12 @@ class Converters {
     @TypeConverter fun stringToIntList(s: String): List<Int> =
         if (s.isBlank()) emptyList()
         else s.split(",").mapNotNull { it.trim().toIntOrNull() }
+
+    @TypeConverter fun foodCategoryToString(c: FoodCategory): String = c.name
+    @TypeConverter fun stringToFoodCategory(s: String): FoodCategory =
+        runCatching { FoodCategory.valueOf(s) }.getOrDefault(FoodCategory.OTHER)
+
+    @TypeConverter fun mealTypeToString(m: MealType): String = m.name
+    @TypeConverter fun stringToMealType(s: String): MealType =
+        runCatching { MealType.valueOf(s) }.getOrDefault(MealType.LUNCH)
 }

@@ -31,6 +31,7 @@ import javax.inject.Inject
 class GymTrackerApp : Application(), Configuration.Provider {
 
     @Inject lateinit var exerciseSeeder: ExerciseSeeder
+    @Inject lateinit var foodProductSeeder: pl.filebit.gymtracker.data.seed.FoodProductSeeder
     @Inject lateinit var workerFactory: HiltWorkerFactory
     @Inject lateinit var workoutRepo: WorkoutRepository
     @Inject lateinit var profileRepo: UserProfileRepository
@@ -50,6 +51,7 @@ class GymTrackerApp : Application(), Configuration.Provider {
         createNotificationChannels()
         appScope.launch {
             exerciseSeeder.seedIfEmpty()
+            foodProductSeeder.seedIfEmpty()
             // Reschedule proactive AI check przy starcie aplikacji (np. po update)
             val profile = profileRepo.get()
             if (profile.aiProactiveChecksEnabled) {

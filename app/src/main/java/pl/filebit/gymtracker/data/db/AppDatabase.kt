@@ -8,6 +8,10 @@ import pl.filebit.gymtracker.data.db.dao.AiConversationDao
 import pl.filebit.gymtracker.data.db.dao.AiWeeklyReportDao
 import pl.filebit.gymtracker.data.db.dao.WeeklyPlanOverrideDao
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
+import pl.filebit.gymtracker.data.db.dao.FastingWindowDao
+import pl.filebit.gymtracker.data.db.dao.FoodProductDao
+import pl.filebit.gymtracker.data.db.dao.MealEntryDao
+import pl.filebit.gymtracker.data.db.dao.RecipeDao
 import pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.GoalDao
@@ -23,6 +27,10 @@ import pl.filebit.gymtracker.data.entity.AiConversation
 import pl.filebit.gymtracker.data.entity.AiWeeklyReport
 import pl.filebit.gymtracker.data.entity.WeeklyPlanOverride
 import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.FastingWindow
+import pl.filebit.gymtracker.data.entity.FoodProduct
+import pl.filebit.gymtracker.data.entity.MealEntry
+import pl.filebit.gymtracker.data.entity.Recipe
 import pl.filebit.gymtracker.data.entity.UnlockedAchievement
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.Goal
@@ -50,9 +58,13 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         AiChatMessageEntity::class,
         AiWeeklyReport::class,
         WeeklyPlanOverride::class,
-        UnlockedAchievement::class
+        UnlockedAchievement::class,
+        FoodProduct::class,
+        MealEntry::class,
+        FastingWindow::class,
+        Recipe::class
     ],
-    version = 29,
+    version = 30,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -72,6 +84,10 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun aiWeeklyReportDao(): AiWeeklyReportDao
     abstract fun weeklyPlanOverrideDao(): WeeklyPlanOverrideDao
     abstract fun unlockedAchievementDao(): UnlockedAchievementDao
+    abstract fun foodProductDao(): FoodProductDao
+    abstract fun mealEntryDao(): MealEntryDao
+    abstract fun fastingWindowDao(): FastingWindowDao
+    abstract fun recipeDao(): RecipeDao
 
     companion object {
         const val NAME = "gymtracker.db"

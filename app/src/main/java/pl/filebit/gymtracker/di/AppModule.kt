@@ -54,6 +54,10 @@ object AppModule {
     @Provides fun provideAiWeeklyReportDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.AiWeeklyReportDao = db.aiWeeklyReportDao()
     @Provides fun provideWeeklyPlanOverrideDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.WeeklyPlanOverrideDao = db.weeklyPlanOverrideDao()
     @Provides fun provideUnlockedAchievementDao(db: AppDatabase): UnlockedAchievementDao = db.unlockedAchievementDao()
+    @Provides fun provideFoodProductDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.FoodProductDao = db.foodProductDao()
+    @Provides fun provideMealEntryDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealEntryDao = db.mealEntryDao()
+    @Provides fun provideFastingWindowDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.FastingWindowDao = db.fastingWindowDao()
+    @Provides fun provideRecipeDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.RecipeDao = db.recipeDao()
 
     @Provides
     @Singleton
@@ -61,6 +65,14 @@ object AppModule {
         @ApplicationContext context: Context,
         dao: ExerciseDao
     ): ExerciseSeeder = ExerciseSeeder(context, dao)
+
+    @Provides
+    @Singleton
+    fun provideFoodProductSeeder(
+        @ApplicationContext context: Context,
+        dao: pl.filebit.gymtracker.data.db.dao.FoodProductDao
+    ): pl.filebit.gymtracker.data.seed.FoodProductSeeder =
+        pl.filebit.gymtracker.data.seed.FoodProductSeeder(context, dao)
 
     @Provides
     @Singleton
