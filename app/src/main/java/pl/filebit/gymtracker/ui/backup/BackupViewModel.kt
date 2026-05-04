@@ -505,23 +505,55 @@ class BackupViewModel @Inject constructor(
                     )
                 }
 
-                // Exercises - tylko niestandardowe (seed jest auto)
-                for (ex in data.exercises.filter { it.isCustom }) {
-                    exDao.upsert(
-                        Exercise(
-                            id = ex.id, name = ex.name,
-                            primaryMuscle = runCatching { MuscleGroup.valueOf(ex.primaryMuscle) }
-                                .getOrDefault(MuscleGroup.OTHER),
-                            equipment = runCatching { Equipment.valueOf(ex.equipment) }
-                                .getOrDefault(Equipment.OTHER),
-                            isCustom = true,
-                            notes = ex.notes,
-                            description = ex.description,
-                            metricType = runCatching {
-                                pl.filebit.gymtracker.data.entity.MetricType.valueOf(ex.metricType)
-                            }.getOrDefault(pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS)
+                // === REMAPPING ID ćwiczeń: plik → baza (FIX v0.89.10) ===
+                // Plik backupu ma exerciseId zaprojektowane pod oryginalny seed (1..184).
+                // Po wipe/re-seed/dodaniu custom ćwiczeń autoincrement counter się przesuwa
+                // i ID z pliku mogą nie pasować do ID w bazie. Mapujemy oldId → newId
+                // po nazwie, żeby FK constraint nigdy nie padał.
+                val existingByName: Map<String, Long> = exDao.getAll()
+                    .associate { it.name.lowercase() to it.id }
+                val exerciseIdMap: MutableMap<Long, Long> = mutableMapOf()
+
+                // Krok 1: ćwiczenia obecne w pliku → mapuj po nazwie albo wstaw nowe
+                for (ex in data.exercises) {
+                    val muscle = runCatching { MuscleGroup.valueOf(ex.primaryMuscle) }
+                        .getOrDefault(MuscleGroup.OTHER)
+                    val equip = runCatching { Equipment.valueOf(ex.equipment) }
+                        .getOrDefault(Equipment.OTHER)
+                    val metric = runCatching {
+                        pl.filebit.gymtracker.data.entity.MetricType.valueOf(ex.metricType)
+                    }.getOrDefault(pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS)
+
+                    val existingId = existingByName[ex.name.lowercase()]
+                    if (existingId != null) {
+                        exerciseIdMap[ex.id] = existingId
+                    } else {
+                        val newId = exDao.upsert(
+                            Exercise(
+                                id = 0L,
+                                name = ex.name,
+                                primaryMuscle = muscle,
+                                equipment = equip,
+                                isCustom = ex.isCustom,
+                                notes = ex.notes,
+                                description = ex.description,
+                                metricType = metric
+                            )
                         )
-                    )
+                        exerciseIdMap[ex.id] = newId
+                    }
+                }
+
+                // Krok 2: ID użyte w setach/planExercises których nie ma w pliku
+                // (np. plik z exercises:[]). Sprawdzamy czy istnieją w bazie pod tym ID;
+                // jeśli tak — mapujemy 1:1; jeśli nie — set zostanie pominięty.
+                val missingIds = (
+                    data.sets.map { it.exerciseId } +
+                    data.planExercises.map { it.exerciseId }
+                ).toSet() - exerciseIdMap.keys
+                for (oldId in missingIds) {
+                    val existing = exDao.getById(oldId)
+                    if (existing != null) exerciseIdMap[oldId] = oldId
                 }
 
                 // Workouts + sets
@@ -536,10 +568,16 @@ class BackupViewModel @Inject constructor(
                         )
                     )
                 }
+                var skippedSets = 0
                 for (s in data.sets) {
+                    val mappedExId = exerciseIdMap[s.exerciseId]
+                    if (mappedExId == null) {
+                        skippedSets++
+                        continue
+                    }
                     sDao.insert(
                         WorkoutSet(
-                            id = s.id, workoutId = s.workoutId, exerciseId = s.exerciseId,
+                            id = s.id, workoutId = s.workoutId, exerciseId = mappedExId,
                             setNumber = s.setNumber, orderIndex = s.orderIndex,
                             reps = s.reps, weightKg = s.weightKg, isCompleted = s.isCompleted,
                             setType = if (s.setType.isNotBlank()) SetType.safeValueOf(s.setType)
@@ -562,16 +600,23 @@ class BackupViewModel @Inject constructor(
                         )
                     )
                 }
+                val skippedPlanExIds = mutableSetOf<Long>()
                 for (pe in data.planExercises) {
+                    val mappedExId = exerciseIdMap[pe.exerciseId]
+                    if (mappedExId == null) {
+                        skippedPlanExIds += pe.id
+                        continue
+                    }
                     peDao.upsert(
                         PlanExercise(
-                            id = pe.id, planId = pe.planId, exerciseId = pe.exerciseId,
+                            id = pe.id, planId = pe.planId, exerciseId = mappedExId,
                             dayOfWeek = pe.dayOfWeek, orderIndex = pe.orderIndex,
                             supersetGroup = pe.supersetGroup
                         )
                     )
                 }
                 for (ps in data.planSets) {
+                    if (ps.planExerciseId in skippedPlanExIds) continue
                     pesDao.upsert(
                         PlanExerciseSet(
                             id = ps.id, planExerciseId = ps.planExerciseId,
@@ -662,8 +707,11 @@ class BackupViewModel @Inject constructor(
                     )
                 }
 
-        _status.value = "Import: ${data.workouts.size} treningów, " +
+        val baseMsg = "Import: ${data.workouts.size} treningów, " +
             "${data.plans.size} planów, ${data.aiConversations.size} rozmów AI"
+        _status.value = if (skippedSets > 0) {
+            "$baseMsg ($skippedSets serii pominiętych — brak ćwiczenia w bazie)"
+        } else baseMsg
     }
 
     fun clearStatus() { _status.value = null }
