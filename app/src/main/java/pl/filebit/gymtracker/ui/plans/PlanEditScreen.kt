@@ -227,7 +227,6 @@ fun PlanEditScreen(
                     position = idx + 1,
                     item = item,
                     previousSession = item.exercise?.id?.let { state.previousSessions[it] },
-                    showAdvanced = state.showAdvancedFields,
                     canMoveUp = idx > 0,
                     canMoveDown = idx < visibleExercises.size - 1,
                     canSuperset = idx > 0,
@@ -734,7 +733,6 @@ private fun PlanExerciseCard(
     position: Int,
     item: PlanExerciseWithDetail,
     previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?,
-    showAdvanced: Boolean,
     canMoveUp: Boolean,
     canMoveDown: Boolean,
     canSuperset: Boolean,
@@ -884,7 +882,9 @@ private fun PlanExerciseCard(
                 Spacer(Modifier.width(4.dp))
                 ColumnHeader("Waga", Modifier.weight(1f))
                 Spacer(Modifier.width(4.dp))
-                ColumnHeader("Odp. (s)", Modifier.weight(1f))
+                ColumnHeader("Odp.", Modifier.weight(1f))
+                Spacer(Modifier.width(4.dp))
+                ColumnHeader("RPE", Modifier.weight(0.7f))
                 Spacer(Modifier.width(36.dp))
             }
             Spacer(Modifier.height(4.dp))
@@ -899,15 +899,11 @@ private fun PlanExerciseCard(
                     onRest = { v ->
                         onUpdateSet(setSpec.id, null, null, v, false, v == null)
                     },
+                    onRpe = { v ->
+                        onUpdateSetAdvanced(setSpec.id, v, null, null, v == null, false, false)
+                    },
                     onDelete = { onRemoveSet(setSpec.id) }
                 )
-                if (showAdvanced) {
-                    AdvancedSetRow(
-                        setSpec = setSpec,
-                        onRpe = { v -> onUpdateSetAdvanced(setSpec.id, v, null, null, v == null, false, false) },
-                        onTempo = { v -> onUpdateSetAdvanced(setSpec.id, null, null, v, false, false, v.isNullOrBlank()) }
-                    )
-                }
             }
 
             Spacer(Modifier.height(10.dp))
@@ -1009,11 +1005,13 @@ private fun SetEditRow(
     onReps: (Int?) -> Unit,
     onWeight: (Double?) -> Unit,
     onRest: (Int?) -> Unit,
+    onRpe: (Int?) -> Unit,
     onDelete: () -> Unit
 ) {
     var repsText by remember(setSpec.id) { mutableStateOf(setSpec.reps.toString()) }
     var weightText by remember(setSpec.id) { mutableStateOf(setSpec.weightKg?.toString() ?: "") }
     var restText by remember(setSpec.id) { mutableStateOf(setSpec.restSeconds?.toString() ?: "") }
+    var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
 
     Row(
         modifier = Modifier
@@ -1062,6 +1060,18 @@ private fun SetEditRow(
                 if (restText.isBlank()) onRest(null) else restText.toIntOrNull()?.let(onRest)
             }
         )
+        Spacer(Modifier.width(4.dp))
+        MiniNumField(
+            value = rpeText,
+            keyboardType = KeyboardType.Number,
+            modifier = Modifier.weight(0.7f),
+            placeholder = "—",
+            onValueChange = {
+                rpeText = it.filter { c -> c.isDigit() }
+                if (rpeText.isBlank()) onRpe(null)
+                else rpeText.toIntOrNull()?.takeIf { v -> v in 1..10 }?.let(onRpe)
+            }
+        )
         IconButton(
             onClick = onDelete,
             modifier = Modifier.size(36.dp)
@@ -1094,42 +1104,3 @@ private fun computeSupersetLabel(list: List<PlanExerciseWithDetail>, idx: Int): 
     return "$group$positionInGroup"
 }
 
-@Composable
-private fun AdvancedSetRow(
-    setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
-    onRpe: (Int?) -> Unit,
-    onTempo: (String?) -> Unit
-) {
-    var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
-    var tempoText by remember(setSpec.id) { mutableStateOf(setSpec.tempo ?: "") }
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 28.dp, end = 36.dp, top = 1.dp, bottom = 4.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        MiniNumField(
-            value = rpeText,
-            keyboardType = KeyboardType.Number,
-            modifier = Modifier.weight(1f),
-            placeholder = "RPE 6–10",
-            onValueChange = {
-                rpeText = it.filter { c -> c.isDigit() }
-                if (rpeText.isBlank()) onRpe(null)
-                else rpeText.toIntOrNull()?.let(onRpe)
-            }
-        )
-        Spacer(Modifier.width(6.dp))
-        MiniNumField(
-            value = tempoText,
-            keyboardType = KeyboardType.Text,
-            modifier = Modifier.weight(1f),
-            placeholder = "Tempo (3-1-1-0)",
-            onValueChange = {
-                tempoText = it
-                if (tempoText.isBlank()) onTempo(null) else onTempo(tempoText)
-            }
-        )
-    }
-}
