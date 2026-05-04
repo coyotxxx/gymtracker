@@ -13,11 +13,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,7 +36,10 @@ import pl.filebit.gymtracker.data.template.PlanGoalCategory
 import pl.filebit.gymtracker.data.template.PlanTemplate
 import pl.filebit.gymtracker.data.template.PlanTemplates
 import pl.filebit.gymtracker.ui.theme.DarkBg
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
+import pl.filebit.gymtracker.ui.theme.SelectableChip
+import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,9 +49,12 @@ fun TemplatesScreen(
     vm: PlanListViewModel = hiltViewModel()
 ) {
     var freqFilter by remember { mutableStateOf<Int?>(null) }  // null = wszystkie
-    val filtered = remember(freqFilter) {
-        if (freqFilter == null) PlanTemplates.all
-        else PlanTemplates.all.filter { it.daysPerWeek == freqFilter }
+    var goalFilter by remember { mutableStateOf<PlanGoalCategory?>(null) }  // null = wszystkie
+    val filtered = remember(freqFilter, goalFilter) {
+        PlanTemplates.all.filter { tmpl ->
+            (freqFilter == null || tmpl.daysPerWeek == freqFilter) &&
+                (goalFilter == null || tmpl.category == goalFilter)
+        }
     }
     val grouped = filtered.groupBy { it.category }
 
@@ -58,27 +64,53 @@ fun TemplatesScreen(
                 title = stringResource(R.string.templates_title),
                 onBack = onBack
             )
-            // Filtr częstotliwości
+            // Filtr po celu
+            FilterSectionLabel("Cel")
             LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+                contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 item {
-                    FilterChip(
-                        selected = freqFilter == null,
-                        onClick = { freqFilter = null },
-                        label = { Text("Wszystkie") }
+                    SelectableChip(
+                        text = "Wszystkie",
+                        selected = goalFilter == null,
+                        onClick = { goalFilter = null }
                     )
                 }
-                items(listOf(2, 3, 4, 5, 6).size) { idx ->
-                    val days = listOf(2, 3, 4, 5, 6)[idx]
-                    FilterChip(
-                        selected = freqFilter == days,
-                        onClick = { freqFilter = days },
-                        label = { Text("${days}× / tydzień") }
+                items(PlanGoalCategory.entries.toList()) { cat ->
+                    SelectableChip(
+                        text = "${cat.emoji} ${cat.labelPl}",
+                        selected = goalFilter == cat,
+                        onClick = { goalFilter = cat }
                     )
                 }
             }
+
+            Spacer(Modifier.height(10.dp))
+
+            // Filtr częstotliwości
+            FilterSectionLabel("Częstotliwość")
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                item {
+                    SelectableChip(
+                        text = "Wszystkie",
+                        selected = freqFilter == null,
+                        onClick = { freqFilter = null }
+                    )
+                }
+                items(listOf(2, 3, 4, 5, 6)) { days ->
+                    SelectableChip(
+                        text = "${days}× / tydz",
+                        selected = freqFilter == days,
+                        onClick = { freqFilter = days }
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(8.dp))
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
@@ -88,7 +120,7 @@ fun TemplatesScreen(
                 if (filtered.isEmpty()) {
                     item {
                         Text(
-                            "Brak planów dla tej częstotliwości — wybierz inną z chipów powyżej.",
+                            "Brak planów dla wybranych filtrów — zmień cel lub częstotliwość.",
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(16.dp)
                         )
@@ -119,6 +151,20 @@ fun TemplatesScreen(
             }
         }
     }
+}
+
+@Composable
+private fun FilterSectionLabel(text: String) {
+    Text(
+        text.uppercase(),
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = 1.4.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        modifier = Modifier.padding(start = 20.dp, top = 4.dp, bottom = 6.dp)
+    )
 }
 
 @Composable
