@@ -791,37 +791,6 @@ private fun PlanExerciseCard(
                         color = DarkOnSurfaceVariant,
                         maxLines = 1
                     )
-                    val previousText = previousSession?.let { ps ->
-                        // Working sety (bez warmup), posortowane po setNumber
-                        val working = ps.sets
-                            .filter { it.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP }
-                            .sortedBy { it.setNumber }
-                        if (working.isEmpty()) return@let null
-
-                        // Format setów: "85×8 · 85×8 · 87.5×6"
-                        val setList = working.joinToString(" · ") { s ->
-                            "${pl.filebit.gymtracker.util.formatWeight(s.weightKg)}×${s.reps}"
-                        }
-                        // Zakres RPE: "RPE 7-10" lub "RPE 8" gdy stałe; pomijamy gdy brak
-                        val rpes = working.mapNotNull { it.rpe?.takeIf { r -> r > 0 } }
-                        val rpePart = when {
-                            rpes.isEmpty() -> ""
-                            rpes.min() == rpes.max() -> " · RPE ${rpes.first()}"
-                            else -> " · RPE ${rpes.min()}-${rpes.max()}"
-                        }
-                        "$setList$rpePart"
-                    }
-                    if (previousText != null) {
-                        Text(
-                            "Ostatnio: $previousText",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.SemiBold
-                            ),
-                            color = AccentOrange.copy(alpha = 0.85f),
-                            maxLines = 2
-                        )
-                    }
                 }
                 Box {
                     IconButton(
@@ -903,9 +872,17 @@ private fun PlanExerciseCard(
             }
             Spacer(Modifier.height(4.dp))
 
-            item.sets.forEach { setSpec ->
+            // Mapa setNumber → previous WorkoutSet (working only, bez warmup).
+            // Pomijamy warmup, więc setNumber 2,3,4,5 → renumerujemy na 1,2,3,4.
+            val previousWorking = previousSession?.sets
+                ?.filter { it.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP }
+                ?.sortedBy { it.setNumber }
+                .orEmpty()
+
+            item.sets.forEachIndexed { rowIdx, setSpec ->
                 SetEditRow(
                     setSpec = setSpec,
+                    previousWorkingSet = previousWorking.getOrNull(rowIdx),
                     onReps = { v -> onUpdateSet(setSpec.id, v, null, null, false, false) },
                     onWeight = { v ->
                         onUpdateSet(setSpec.id, null, v, null, v == null, false)
@@ -1016,6 +993,7 @@ private fun MiniNumField(
 @Composable
 private fun SetEditRow(
     setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
+    previousWorkingSet: pl.filebit.gymtracker.data.entity.WorkoutSet?,
     onReps: (Int?) -> Unit,
     onWeight: (Double?) -> Unit,
     onRest: (Int?) -> Unit,
@@ -1027,74 +1005,97 @@ private fun SetEditRow(
     var restText by remember(setSpec.id) { mutableStateOf(setSpec.restSeconds?.toString() ?: "") }
     var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 3.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text(
-            "${setSpec.setNumber}",
-            style = MaterialTheme.typography.bodyMedium.copy(
-                fontWeight = FontWeight.Bold,
-                fontSize = 14.sp
-            ),
-            color = AccentOrange,
-            modifier = Modifier.width(28.dp),
-            textAlign = TextAlign.Center
-        )
-        MiniNumField(
-            value = repsText,
-            keyboardType = KeyboardType.Number,
-            modifier = Modifier.weight(1f),
-            onValueChange = {
-                repsText = it.filter { c -> c.isDigit() }
-                if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
-            }
-        )
-        Spacer(Modifier.width(4.dp))
-        MiniNumField(
-            value = weightText,
-            keyboardType = KeyboardType.Decimal,
-            modifier = Modifier.weight(1f),
-            onValueChange = {
-                val filtered = filterWeightInput(it)
-                weightText = filtered
-                if (filtered.isBlank()) onWeight(null)
-                else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
-            }
-        )
-        Spacer(Modifier.width(4.dp))
-        MiniNumField(
-            value = restText,
-            keyboardType = KeyboardType.Number,
-            modifier = Modifier.weight(1f),
-            onValueChange = {
-                restText = it.filter { c -> c.isDigit() }
-                if (restText.isBlank()) onRest(null) else restText.toIntOrNull()?.let(onRest)
-            }
-        )
-        Spacer(Modifier.width(4.dp))
-        MiniNumField(
-            value = rpeText,
-            keyboardType = KeyboardType.Number,
-            modifier = Modifier.weight(0.7f),
-            placeholder = "—",
-            onValueChange = {
-                rpeText = it.filter { c -> c.isDigit() }
-                if (rpeText.isBlank()) onRpe(null)
-                else rpeText.toIntOrNull()?.takeIf { v -> v in 1..10 }?.let(onRpe)
-            }
-        )
-        IconButton(
-            onClick = onDelete,
-            modifier = Modifier.size(36.dp)
+    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                Icons.Default.Delete,
-                contentDescription = null,
-                modifier = Modifier.size(16.dp),
-                tint = DarkOnSurfaceVariant
+            Text(
+                "${setSpec.setNumber}",
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
+                ),
+                color = AccentOrange,
+                modifier = Modifier.width(28.dp),
+                textAlign = TextAlign.Center
+            )
+            MiniNumField(
+                value = repsText,
+                keyboardType = KeyboardType.Number,
+                modifier = Modifier.weight(1f),
+                onValueChange = {
+                    repsText = it.filter { c -> c.isDigit() }
+                    if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
+                }
+            )
+            Spacer(Modifier.width(4.dp))
+            MiniNumField(
+                value = weightText,
+                keyboardType = KeyboardType.Decimal,
+                modifier = Modifier.weight(1f),
+                onValueChange = {
+                    val filtered = filterWeightInput(it)
+                    weightText = filtered
+                    if (filtered.isBlank()) onWeight(null)
+                    else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
+                }
+            )
+            Spacer(Modifier.width(4.dp))
+            MiniNumField(
+                value = restText,
+                keyboardType = KeyboardType.Number,
+                modifier = Modifier.weight(1f),
+                onValueChange = {
+                    restText = it.filter { c -> c.isDigit() }
+                    if (restText.isBlank()) onRest(null) else restText.toIntOrNull()?.let(onRest)
+                }
+            )
+            Spacer(Modifier.width(4.dp))
+            MiniNumField(
+                value = rpeText,
+                keyboardType = KeyboardType.Number,
+                modifier = Modifier.weight(0.7f),
+                placeholder = "—",
+                onValueChange = {
+                    rpeText = it.filter { c -> c.isDigit() }
+                    if (rpeText.isBlank()) onRpe(null)
+                    else rpeText.toIntOrNull()?.takeIf { v -> v in 1..10 }?.let(onRpe)
+                }
+            )
+            IconButton(
+                onClick = onDelete,
+                modifier = Modifier.size(36.dp)
+            ) {
+                Icon(
+                    Icons.Default.Delete,
+                    contentDescription = null,
+                    modifier = Modifier.size(16.dp),
+                    tint = DarkOnSurfaceVariant
+                )
+            }
+        }
+        // Per-row referencja: co user dał na tej serii w ostatnim treningu.
+        // Dzięki temu obok każdej WAGI w planie widać konkret z historii — łatwo
+        // porównać czy aktualna wartość to progres / regres / stałe.
+        previousWorkingSet?.let { prev ->
+            val rpePart = prev.rpe?.takeIf { it > 0 }?.let { " · RPE $it" } ?: ""
+            val arrow = setSpec.weightKg?.let { planW ->
+                when {
+                    planW > prev.weightKg -> "↑"
+                    planW < prev.weightKg -> "↓"
+                    else -> "="
+                }
+            } ?: " "
+            Text(
+                text = "    $arrow Ostatnio: ${pl.filebit.gymtracker.util.formatWeight(prev.weightKg)} kg × ${prev.reps}$rpePart",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Medium,
+                    letterSpacing = 0.2.sp
+                ),
+                color = AccentOrange.copy(alpha = 0.65f),
+                modifier = Modifier.padding(start = 28.dp, top = 1.dp)
             )
         }
     }
