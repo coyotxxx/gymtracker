@@ -205,7 +205,8 @@ class BackupViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
     private val aiPrefs: AiPreferences,
-    private val db: AppDatabase
+    private val db: AppDatabase,
+    private val exerciseSeeder: pl.filebit.gymtracker.data.seed.ExerciseSeeder
 ) : ViewModel() {
 
     private val json = Json { prettyPrint = true; ignoreUnknownKeys = true }
@@ -391,12 +392,38 @@ class BackupViewModel @Inject constructor(
     fun import(uri: Uri) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                // Wykryj typ pliku: ZIP (PK\x03\x04) vs JSON. Czytamy bajty raz —
-                // contentResolver może nie pozwolić na drugie otwarcie, więc
-                // buforujemy całość w pamięci.
-                val rawBytes = context.contentResolver.openInputStream(uri)?.use {
-                    it.readBytes()
-                } ?: return@withContext
+                try {
+                    runImport(uri)
+                } catch (e: Exception) {
+                    android.util.Log.e("BackupVM", "Import failed", e)
+                    val msg = when {
+                        e.message?.contains("FOREIGN KEY") == true ->
+                            "Błąd importu: brak ćwiczeń w bazie. Zrestartuj aplikację i spróbuj ponownie."
+                        e.message?.contains("kotlinx.serialization") == true ||
+                            e.message?.contains("decodeFromString") == true ||
+                            e is kotlinx.serialization.SerializationException ->
+                            "Błąd importu: niepoprawny format pliku JSON."
+                        else ->
+                            "Błąd importu: ${e.message ?: e::class.simpleName ?: "nieznany"}"
+                    }
+                    _status.value = msg
+                }
+            }
+        }
+    }
+
+    private suspend fun runImport(uri: Uri) {
+        // FIX v0.89.9: wymusza wykonanie ExerciseSeeder przed importem.
+        // Bez tego po świeżej instalacji / wipe baza może być pusta — wstawianie
+        // WorkoutSet z exerciseId pada na FK constraint (Exercise(id) nie istnieje).
+        exerciseSeeder.seedIfEmpty()
+
+        // Wykryj typ pliku: ZIP (PK\x03\x04) vs JSON. Czytamy bajty raz —
+        // contentResolver może nie pozwolić na drugie otwarcie, więc
+        // buforujemy całość w pamięci.
+        val rawBytes = context.contentResolver.openInputStream(uri)?.use {
+            it.readBytes()
+        } ?: return
 
                 val isZip = rawBytes.size >= 4 &&
                     rawBytes[0] == 0x50.toByte() && rawBytes[1] == 0x4B.toByte() &&
@@ -635,9 +662,8 @@ class BackupViewModel @Inject constructor(
                     )
                 }
 
-                _status.value = "Import: ${data.workouts.size} treningów, ${data.plans.size} planów, ${data.aiConversations.size} rozmów AI"
-            }
-        }
+        _status.value = "Import: ${data.workouts.size} treningów, " +
+            "${data.plans.size} planów, ${data.aiConversations.size} rozmów AI"
     }
 
     fun clearStatus() { _status.value = null }
@@ -651,6 +677,10 @@ class BackupViewModel @Inject constructor(
             withContext(Dispatchers.IO) {
                 db.clearAllTables()
                 aiPrefs.clear()
+                // FIX v0.89.9: po wyczyszczeniu DB seed nie uruchamia się sam
+                // (działa tylko na fresh install). Wymuszamy by baza nie była
+                // pusta — bez tego import po wipe pada na FK constraint.
+                exerciseSeeder.seedIfEmpty()
                 _status.value = "Wyczyszczono wszystkie dane"
             }
             onDone()
