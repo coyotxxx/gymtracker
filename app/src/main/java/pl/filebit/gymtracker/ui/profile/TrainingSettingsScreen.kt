@@ -256,16 +256,6 @@ fun TrainingSettingsScreen(
                 )
             }
 
-            // AI overlay (pływający asystent)
-            item {
-                TsToggleSection(
-                    title = stringResource(R.string.profile_ai_overlay_section),
-                    label = stringResource(R.string.profile_ai_overlay_toggle),
-                    explain = stringResource(R.string.profile_ai_overlay_explain),
-                    checked = draft.aiOverlayEnabled,
-                    onChange = { draft = draft.copy(aiOverlayEnabled = it) }
-                )
-            }
         }
     }
 }
