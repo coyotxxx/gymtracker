@@ -24,6 +24,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Bolt
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.PlayArrow
@@ -63,6 +64,8 @@ import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -81,6 +84,11 @@ fun HomeScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     var showPostponeDialog by remember { mutableStateOf(false) }
     var showWeekPlanDialog by remember { mutableStateOf(false) }
+    var showDeloadExplain by remember {
+        mutableStateOf<pl.filebit.gymtracker.util.DeloadRecommendation?>(null)
+    }
+    val snackbar = remember { androidx.compose.material3.SnackbarHostState() }
+    val scope = rememberCoroutineScope()
 
     // Bez wewnętrznego Scaffold — outer Scaffold w AppNavigation ma już bottomBar.
     // Tylko statusBarsPadding na góra żeby content nie chował się pod statusbar.
@@ -98,11 +106,46 @@ fun HomeScreen(
                 )
             }
 
-            // Deload alert — jeśli detekcja zwróciła rekomendację
-            state.deloadAlert?.let { alert ->
-                item {
-                    DeloadAlertCard(alert)
+            // Deload card — 3 stany: Suggestion (Zastosuj/Wyjaśnij/Anuluj),
+            // Active (trwa X dni), Active+isFinished (czas wrócić do oryginalnych wag).
+            when (val card = state.deloadCard) {
+                is pl.filebit.gymtracker.data.repository.DeloadCardState.Suggestion -> {
+                    item {
+                        DeloadSuggestionCard(
+                            recommendation = card.recommendation,
+                            canApply = vm.activePlanIdForDeload() != null,
+                            onApply = {
+                                vm.applyDeload(card.recommendation.severity) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
+                                }
+                            },
+                            onExplain = { showDeloadExplain = card.recommendation },
+                            onDismiss = { vm.dismissDeload() }
+                        )
+                    }
                 }
+                is pl.filebit.gymtracker.data.repository.DeloadCardState.Active -> {
+                    item {
+                        DeloadActiveCard(
+                            active = card,
+                            onRestore = {
+                                vm.restoreDeload { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}' wrócił do oryginalnych wag (${result.restoredSets} setów)"
+                                        )
+                                    }
+                                }
+                            },
+                            onCancel = { vm.cancelDeloadWithoutRestore() }
+                        )
+                    }
+                }
+                pl.filebit.gymtracker.data.repository.DeloadCardState.None -> Unit
             }
 
             // Hero card — 4 stany (A/B/C/D)
@@ -260,6 +303,84 @@ fun HomeScreen(
             }
         )
     }
+
+    showDeloadExplain?.let { rec ->
+        DeloadExplainDialog(
+            recommendation = rec,
+            onDismiss = { showDeloadExplain = null }
+        )
+    }
+
+    androidx.compose.material3.SnackbarHost(
+        hostState = snackbar,
+        modifier = Modifier
+    )
+}
+
+@Composable
+private fun DeloadExplainDialog(
+    recommendation: pl.filebit.gymtracker.util.DeloadRecommendation,
+    onDismiss: () -> Unit
+) {
+    val pctOff = when (recommendation.severity) {
+        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 20
+        else -> 10
+    }
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text("Co to jest deload?", fontWeight = FontWeight.Bold)
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(
+                    "Deload to lżejszy tydzień regeneracyjny — zmniejszasz wagi o $pctOff% " +
+                        "ale zachowujesz ten sam plan. Pozwala mięśniom i CNS odpocząć po cyklu " +
+                        "intensywnego treningu, żeby wrócić silniejszym.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text(
+                    "Dlaczego to sugeruję teraz",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                )
+                Text(
+                    recommendation.reason,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text(
+                    "Co zrobi 'Zastosuj'",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                )
+                Text(
+                    "Wszystkie wagi w aktywnym planie zmniejszą się o $pctOff% (np. 75 kg → " +
+                        "${"%.1f".format(75.0 * (1 - pctOff / 100.0))} kg). " +
+                        "Po 7 dniach apka przypomni żeby wrócić do oryginalnych wag — " +
+                        "snapshot zachowa je dokładnie.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text(
+                    "Alternatywa",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                )
+                Text(
+                    "Możesz też zrobić tydzień całkowitej przerwy bez treningu — efekt podobny. " +
+                        "Albo zignorować — wrócę z sugestią za tydzień jeśli warunki nadal aktualne.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+        },
+        confirmButton = {
+            androidx.compose.material3.TextButton(onClick = onDismiss) {
+                Text("Rozumiem")
+            }
+        }
+    )
 }
 
 @Composable
@@ -855,23 +976,29 @@ private fun MiniStat(
 }
 
 @Composable
-private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendation) {
-    val color = when (alert.severity) {
+private fun DeloadSuggestionCard(
+    recommendation: pl.filebit.gymtracker.util.DeloadRecommendation,
+    canApply: Boolean,
+    onApply: () -> Unit,
+    onExplain: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    val color = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> pl.filebit.gymtracker.ui.theme.ErrorRed
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> pl.filebit.gymtracker.ui.theme.AccentOrange
         pl.filebit.gymtracker.util.DeloadSeverity.LOW -> pl.filebit.gymtracker.ui.theme.AccentOrange
     }
-    val bgAlpha = when (alert.severity) {
+    val bgAlpha = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.18f
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.14f
         pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.10f
     }
-    val borderAlpha = when (alert.severity) {
+    val borderAlpha = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 0.55f
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.40f
         pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.30f
     }
-    val severityLabel = when (alert.severity) {
+    val severityLabel = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> "DELOAD ZALECANY"
         pl.filebit.gymtracker.util.DeloadSeverity.LOW -> "ROZWAŻ DELOAD"
@@ -904,10 +1031,134 @@ private fun DeloadAlertCard(alert: pl.filebit.gymtracker.util.DeloadRecommendati
             }
             Spacer(Modifier.height(8.dp))
             Text(
-                alert.reason,
+                recommendation.reason,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface
             )
+            Spacer(Modifier.height(12.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                androidx.compose.material3.Button(
+                    onClick = onApply,
+                    enabled = canApply,
+                    modifier = Modifier.weight(1f),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = color,
+                        contentColor = Color.Black
+                    ),
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text("✓ Zastosuj", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                }
+                androidx.compose.material3.OutlinedButton(
+                    onClick = onExplain,
+                    modifier = Modifier.weight(1f),
+                    colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                        contentColor = color
+                    ),
+                    border = BorderStroke(1.dp, color.copy(alpha = 0.5f)),
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text("Wyjaśnij", fontSize = 13.sp)
+                }
+                androidx.compose.material3.TextButton(
+                    onClick = onDismiss,
+                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
+                        contentColor = DarkOnSurfaceVariant
+                    )
+                ) {
+                    Text("Anuluj", fontSize = 13.sp)
+                }
+            }
+            if (!canApply) {
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "Brak aktywnego planu — Zastosuj wymaga planu z wagami.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun DeloadActiveCard(
+    active: pl.filebit.gymtracker.data.repository.DeloadCardState.Active,
+    onRestore: () -> Unit,
+    onCancel: () -> Unit
+) {
+    val color = pl.filebit.gymtracker.ui.theme.AccentOrange
+    val pctOff = ((1.0 - active.state.factor) * 100).toInt()
+    androidx.compose.foundation.layout.Box(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.10f), RoundedCornerShape(16.dp))
+            .border(1.dp, color.copy(alpha = 0.40f), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    if (active.isFinished) Icons.Default.CheckCircle else Icons.Default.Warning,
+                    contentDescription = null,
+                    tint = color,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    if (active.isFinished) "DELOAD ZAKOŃCZONY" else "DELOAD TRWA",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                if (active.isFinished) {
+                    "Cykl deload (-$pctOff%) trwał ${active.daysElapsed} dni. " +
+                        "Czas wrócić do oryginalnych wag w planie '${active.state.planName}'."
+                } else {
+                    "Plan '${active.state.planName}' z wagami −$pctOff% — pozostało ${active.daysRemaining} " +
+                        "${if (active.daysRemaining == 1) "dzień" else "dni"} lżejszego treningu."
+                },
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(12.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                androidx.compose.material3.Button(
+                    onClick = onRestore,
+                    modifier = Modifier.weight(1f),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = color,
+                        contentColor = Color.Black
+                    ),
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text(
+                        if (active.isFinished) "✓ Przywróć plan" else "↩ Wróć teraz",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 13.sp
+                    )
+                }
+                androidx.compose.material3.TextButton(
+                    onClick = onCancel,
+                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
+                        contentColor = DarkOnSurfaceVariant
+                    )
+                ) {
+                    Text("Zamknij bez zmian", fontSize = 13.sp)
+                }
+            }
         }
     }
 }

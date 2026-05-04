@@ -31,7 +31,8 @@ data class HomeUiState(
     val streakBest: Int = 0,
     val workoutsThisWeek: Int = 0,
     val weeklyTarget: Int = 3,
-    val deloadAlert: pl.filebit.gymtracker.util.DeloadRecommendation? = null,
+    val deloadCard: pl.filebit.gymtracker.data.repository.DeloadCardState =
+        pl.filebit.gymtracker.data.repository.DeloadCardState.None,
     val nextPlannedDay: NextPlannedDay? = null,
     val activeWorkoutDurationMin: Int = 0,
     val activeWorkoutProgressPct: Int = 0,            // % ukończonych setów (Stan C)
@@ -105,7 +106,8 @@ class HomeViewModel @Inject constructor(
             plans.firstOrNull { it.id == planId }?.name.orEmpty()
         }.orEmpty()
 
-        val deloadAlert = runCatching { deloadService.check() }.getOrNull()
+        val deloadCard = runCatching { deloadService.cardState() }
+            .getOrNull() ?: pl.filebit.gymtracker.data.repository.DeloadCardState.None
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {
@@ -174,7 +176,7 @@ class HomeViewModel @Inject constructor(
             streakBest = streak?.best ?: 0,
             workoutsThisWeek = weekProgress?.current ?: 0,
             weeklyTarget = weeklyTarget,
-            deloadAlert = deloadAlert,
+            deloadCard = deloadCard,
             nextPlannedDay = nextPlannedDay,
             activeWorkoutDurationMin = durationMin,
             activeWorkoutProgressPct = progressPct,
@@ -188,6 +190,41 @@ class HomeViewModel @Inject constructor(
         started = SharingStarted.WhileSubscribed(5_000),
         initialValue = HomeUiState()
     )
+
+    // ===== DELOAD HANDLERS =====
+
+    /** Aplikuje deload do aktywnego planu (todaysPlan lub nextPlannedDay). Zwraca info dla UI. */
+    fun applyDeload(
+        severity: pl.filebit.gymtracker.util.DeloadSeverity,
+        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
+    ) {
+        val planId = state.value.todaysPlan?.id
+            ?: state.value.nextPlannedDay?.planId
+            ?: return
+        viewModelScope.launch {
+            val result = deloadService.apply(planId, severity)
+            onApplied(result)
+        }
+    }
+
+    fun dismissDeload() {
+        viewModelScope.launch { deloadService.dismiss() }
+    }
+
+    fun restoreDeload(onRestored: (pl.filebit.gymtracker.data.repository.DeloadService.RestoreResult) -> Unit) {
+        viewModelScope.launch {
+            val result = deloadService.restore()
+            onRestored(result)
+        }
+    }
+
+    fun cancelDeloadWithoutRestore() {
+        viewModelScope.launch { deloadService.cancelWithoutRestore() }
+    }
+
+    /** Plan id do podglądu wag w dialogu confirm Apply. */
+    fun activePlanIdForDeload(): Long? =
+        state.value.todaysPlan?.id ?: state.value.nextPlannedDay?.planId
 
     fun startWorkoutAdhoc(onReady: () -> Unit) {
         viewModelScope.launch {
