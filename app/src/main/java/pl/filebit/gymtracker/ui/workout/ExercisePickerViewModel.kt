@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.flowOf
+import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
@@ -35,8 +37,11 @@ class ExercisePickerViewModel @Inject constructor(
     private val _muscleFilter = MutableStateFlow<MuscleGroup?>(null)
     val muscleFilter: StateFlow<MuscleGroup?> = _muscleFilter.asStateFlow()
 
+    private val _equipmentFilter = MutableStateFlow<Equipment?>(null)
+    val equipmentFilter: StateFlow<Equipment?> = _equipmentFilter.asStateFlow()
+
     @OptIn(ExperimentalCoroutinesApi::class)
-    val exercises: StateFlow<List<Exercise>> = _query.flatMapLatest { q ->
+    private val baseExercises: kotlinx.coroutines.flow.Flow<List<Exercise>> = _query.flatMapLatest { q ->
         if (q.isBlank()) {
             _muscleFilter.flatMapLatest { muscle ->
                 if (muscle == null) exerciseRepo.observeAll()
@@ -45,10 +50,18 @@ class ExercisePickerViewModel @Inject constructor(
         } else {
             exerciseRepo.search(q)
         }
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val exercises: StateFlow<List<Exercise>> = _equipmentFilter.flatMapLatest { eq ->
+        baseExercises.flatMapLatest { list ->
+            flowOf(if (eq == null) list else list.filter { it.equipment == eq })
+        }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     fun setQuery(q: String) { _query.value = q }
     fun setMuscleFilter(m: MuscleGroup?) { _muscleFilter.value = m }
+    fun setEquipmentFilter(e: Equipment?) { _equipmentFilter.value = e }
 
     /**
      * Tryb WORKOUT: dodaje pierwszą serię z auto-fill z ostatniej sesji
