@@ -226,6 +226,7 @@ fun PlanEditScreen(
                 PlanExerciseCard(
                     position = idx + 1,
                     item = item,
+                    previousSession = item.exercise?.id?.let { state.previousSessions[it] },
                     showAdvanced = state.showAdvancedFields,
                     canMoveUp = idx > 0,
                     canMoveDown = idx < visibleExercises.size - 1,
@@ -732,6 +733,7 @@ private fun DayPillChip(
 private fun PlanExerciseCard(
     position: Int,
     item: PlanExerciseWithDetail,
+    previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?,
     showAdvanced: Boolean,
     canMoveUp: Boolean,
     canMoveDown: Boolean,
@@ -785,10 +787,19 @@ private fun PlanExerciseCard(
                         color = DarkOnSurface
                     )
                     Spacer(Modifier.height(2.dp))
+                    val previousText = previousSession?.let { ps ->
+                        val topSet = ps.sets.maxByOrNull { it.weightKg }
+                            ?: return@let null
+                        val rpePart = topSet.rpe?.takeIf { it > 0 }?.let { " · RPE $it" } ?: ""
+                        "${pl.filebit.gymtracker.util.formatWeight(topSet.weightKg)} kg × ${topSet.reps}$rpePart"
+                    }
                     Text(
-                        summarizeSets(item.sets),
+                        text = if (previousText != null)
+                            "${summarizeSets(item.sets)}  •  🕐 ${previousText}"
+                        else summarizeSets(item.sets),
                         style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
-                        color = DarkOnSurfaceVariant
+                        color = DarkOnSurfaceVariant,
+                        maxLines = 2
                     )
                 }
                 Box {

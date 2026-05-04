@@ -19,6 +19,8 @@ import pl.filebit.gymtracker.data.entity.PlanExerciseSet
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.PreviousSession
+import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 
@@ -36,7 +38,14 @@ data class PlanEditUiState(
     val exercises: List<PlanExerciseWithDetail> = emptyList(),
     val selectedDay: Int = 1, // 1=Pon..7=Nd, currently active tab
     val showAdvancedFields: Boolean = false,
-    val isLoading: Boolean = true
+    val isLoading: Boolean = true,
+    /**
+     * Mapa exerciseId → ostatnia ukończona sesja z tym ćwiczeniem.
+     * Zasilana w `load()` po wczytaniu planu — pomocnicza dla UI:
+     * pod każdym ćwiczeniem w planie pokazujemy "Ostatnio: 87.5×6 RPE 8.5".
+     * Decyduje to jaką wagę wpisać w plan bez zerkania w historię.
+     */
+    val previousSessions: Map<Long, PreviousSession?> = emptyMap()
 ) {
     val exercisesForSelectedDay: List<PlanExerciseWithDetail>
         get() = exercises.filter { it.planEx.dayOfWeek == selectedDay }
@@ -69,6 +78,7 @@ class PlanEditViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
+    private val statsRepo: StatsRepository,
     private val planAuditService: pl.filebit.gymtracker.ai.PlanAuditService,
     private val planApplier: pl.filebit.gymtracker.ai.AiPlanApplier,
     savedStateHandle: SavedStateHandle
@@ -232,6 +242,12 @@ class PlanEditViewModel @Inject constructor(
                 PlanExerciseWithDetail(cleanedPe, ex, sets)
             }
             val daysWithExercises = withDetails.map { it.planEx.dayOfWeek }.toSet()
+            // Pobierz ostatnią sesję dla każdego unikalnego ćwiczenia w planie —
+            // pomocna referencja przy edycji wagi (user widzi co faktycznie ostatnio dał)
+            val uniqueExerciseIds = withDetails.mapNotNull { it.exercise?.id }.toSet()
+            val previousMap = uniqueExerciseIds.associateWith { exId ->
+                statsRepo.getPreviousSessionForExercise(exId)
+            }
             _state.update {
                 val newSelected = when {
                     daysWithExercises.isEmpty() -> it.selectedDay
@@ -245,7 +261,8 @@ class PlanEditViewModel @Inject constructor(
                     notes = plan.notes,
                     exercises = withDetails,
                     selectedDay = newSelected,
-                    isLoading = false
+                    isLoading = false,
+                    previousSessions = previousMap
                 )
             }
         }
