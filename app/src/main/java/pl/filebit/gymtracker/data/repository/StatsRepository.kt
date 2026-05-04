@@ -633,6 +633,37 @@ class StatsRepository @Inject constructor(
     }
 
     /**
+     * Pobiera sety z najnowszej sesji ukończonej PRZED danym workoutem (chronologicznie).
+     * Używane w WorkoutDetail — gdy patrzysz na trening z 10 marca, "ostatnio" musi
+     * być treningiem z 5 marca, nie z 20 marca (nawet jeśli ten 20-go już istnieje w bazie).
+     */
+    suspend fun getSessionBefore(
+        exerciseId: Long,
+        beforeStartedAtMs: Long
+    ): PreviousSession? {
+        val finished = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && it.startedAt < beforeStartedAtMs }
+        if (finished.isEmpty()) return null
+        val byId = finished.associateBy { it.id }
+        val all = setDao.getAllForExercise(exerciseId)
+            .filter { it.workoutId in byId }
+            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        if (all.isEmpty()) return null
+
+        val grouped = all.groupBy { it.workoutId }
+            .toList()
+            .sortedByDescending { (wid, _) -> byId[wid]!!.startedAt }
+
+        val (wid, sets) = grouped.firstOrNull() ?: return null
+        val w = byId[wid]!!
+        return PreviousSession(
+            workoutId = wid,
+            workoutDate = w.startedAt,
+            sets = sets.sortedBy { it.setNumber }
+        )
+    }
+
+    /**
      * Pobiera sety z OSTATNIEGO ukończonego treningu zawierającego dane ćwiczenie,
      * z wykluczeniem currentWorkoutId. Zwraca null gdy brak.
      */

@@ -13,6 +13,8 @@ import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.PreviousSession
+import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
 
@@ -26,13 +28,19 @@ data class WorkoutDetailUiState(
     val groups: List<DetailGroup> = emptyList(),
     val planName: String? = null, // null = ad-hoc lub plan usunięty
     val planDayOfWeek: Int? = null, // 1=Pon..7=Nd
-    val loading: Boolean = true
+    val loading: Boolean = true,
+    /**
+     * Mapa exerciseId → poprzednia sesja (przed startedAt aktualnego treningu).
+     * Używana do pokazania "ostatnio" pod każdym setem w detalu.
+     */
+    val previousByExercise: Map<Long, PreviousSession?> = emptyMap()
 )
 
 @HiltViewModel
 class WorkoutDetailViewModel @Inject constructor(
     private val repo: WorkoutRepository,
-    private val planRepo: PlanRepository
+    private val planRepo: PlanRepository,
+    private val statsRepo: StatsRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(WorkoutDetailUiState())
@@ -50,12 +58,20 @@ class WorkoutDetailViewModel @Inject constructor(
                     DetailGroup(exercise = ex, sets = list.sortedBy { it.setNumber })
                 }
             val planName = workout?.fromPlanId?.let { planRepo.getPlan(it)?.name }
+            // Poprzednie sesje per ćwiczenie — klucz: exerciseId. Pobierane chronologicznie
+            // PRZED tym workoutem (nie najnowszy w bazie).
+            val previousMap = if (workout != null) {
+                groups.associate { g ->
+                    g.exercise.id to statsRepo.getSessionBefore(g.exercise.id, workout.startedAt)
+                }
+            } else emptyMap()
             _state.value = WorkoutDetailUiState(
                 workout = workout,
                 groups = groups,
                 planName = planName,
                 planDayOfWeek = workout?.fromDayOfWeek,
-                loading = false
+                loading = false,
+                previousByExercise = previousMap
             )
         }
     }

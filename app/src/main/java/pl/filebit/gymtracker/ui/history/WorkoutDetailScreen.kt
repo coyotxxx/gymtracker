@@ -261,7 +261,8 @@ fun WorkoutDetailScreen(
                 items(state.groups, key = { it.exercise.id }) { group ->
                     ExerciseDetailCard(
                         name = group.exercise.name,
-                        sets = group.sets
+                        sets = group.sets,
+                        previousSession = state.previousByExercise[group.exercise.id]
                     )
                 }
             }
@@ -291,7 +292,8 @@ fun WorkoutDetailScreen(
 @Composable
 private fun ExerciseDetailCard(
     name: String,
-    sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>
+    sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>,
+    previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -327,8 +329,25 @@ private fun ExerciseDetailCard(
                 }
             }
             Spacer(Modifier.height(10.dp))
+            // Mapa working setów z poprzedniego treningu (bez warmup), po setNumber
+            val prevWorking = previousSession?.sets
+                ?.filter { it.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP }
+                ?.sortedBy { it.setNumber }
+                .orEmpty()
+            // Indeksowanie: i-ty working set sets[] vs i-ty z prev
+            val currentWorkingIdx = sets.mapIndexedNotNull { idx, s ->
+                if (s.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP) idx to s else null
+            }.mapIndexed { workingIdx, (origIdx, _) -> origIdx to workingIdx }.toMap()
+
             sets.forEachIndexed { idx, s ->
-                SetRow(setNumber = s.setNumber, weightKg = s.weightKg, reps = s.reps, rpe = s.rpe)
+                val previousForRow = currentWorkingIdx[idx]?.let { wIdx -> prevWorking.getOrNull(wIdx) }
+                SetRow(
+                    setNumber = s.setNumber,
+                    weightKg = s.weightKg,
+                    reps = s.reps,
+                    rpe = s.rpe,
+                    previousSet = previousForRow
+                )
                 if (idx < sets.size - 1) {
                     Spacer(Modifier.height(2.dp))
                     HorizontalDivider(color = DarkOutlineSoft)
@@ -340,7 +359,13 @@ private fun ExerciseDetailCard(
 }
 
 @Composable
-private fun SetRow(setNumber: Int, weightKg: Double, reps: Int, rpe: Int?) {
+private fun SetRow(
+    setNumber: Int,
+    weightKg: Double,
+    reps: Int,
+    rpe: Int?,
+    previousSet: pl.filebit.gymtracker.data.entity.WorkoutSet?
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -353,14 +378,38 @@ private fun SetRow(setNumber: Int, weightKg: Double, reps: Int, rpe: Int?) {
             color = DarkOnSurfaceVariant,
             modifier = Modifier.weight(1f)
         )
-        Text(
-            "${formatWeight(weightKg)}×$reps",
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontWeight = FontWeight.SemiBold,
-                fontFamily = FontFamily.Monospace
-            ),
-            color = DarkOnSurface
-        )
+        Column(horizontalAlignment = Alignment.End) {
+            Text(
+                "${formatWeight(weightKg)}×$reps",
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontFamily = FontFamily.Monospace
+                ),
+                color = DarkOnSurface
+            )
+            // Subtitle z poprzedniego treningu — tylko WAGA z kolorem porównania
+            previousSet?.let { prev ->
+                val color = when {
+                    weightKg > prev.weightKg -> SuccessGreen          // progres
+                    weightKg < prev.weightKg -> ErrorRed                // regres
+                    else -> AccentOrange.copy(alpha = 0.7f)             // równe
+                }
+                val arrow = when {
+                    weightKg > prev.weightKg -> "↑"
+                    weightKg < prev.weightKg -> "↓"
+                    else -> "="
+                }
+                Text(
+                    "$arrow ${formatWeight(prev.weightKg)}×${prev.reps}",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 10.sp,
+                        fontFamily = FontFamily.Monospace,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = color
+                )
+            }
+        }
         if (rpe != null && rpe in 1..10) {
             Spacer(Modifier.width(8.dp))
             Text(
