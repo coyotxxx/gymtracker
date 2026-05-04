@@ -66,11 +66,16 @@ class HomeViewModel @Inject constructor(
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService
 ) : ViewModel() {
 
+    // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
+    // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
+    private val deloadRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
+
     val state: StateFlow<HomeUiState> = combine(
         workoutRepo.observeActive(),
         workoutRepo.observeRecent(4),
-        planRepo.observeAllPlans()
-    ) { active, recent, plans ->
+        planRepo.observeAllPlans(),
+        deloadRefresh
+    ) { active, recent, plans, _ ->
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
@@ -203,23 +208,31 @@ class HomeViewModel @Inject constructor(
             ?: return
         viewModelScope.launch {
             val result = deloadService.apply(planId, severity)
+            deloadRefresh.value = System.currentTimeMillis()
             onApplied(result)
         }
     }
 
     fun dismissDeload() {
-        viewModelScope.launch { deloadService.dismiss() }
+        viewModelScope.launch {
+            deloadService.dismiss()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
     }
 
     fun restoreDeload(onRestored: (pl.filebit.gymtracker.data.repository.DeloadService.RestoreResult) -> Unit) {
         viewModelScope.launch {
             val result = deloadService.restore()
+            deloadRefresh.value = System.currentTimeMillis()
             onRestored(result)
         }
     }
 
     fun cancelDeloadWithoutRestore() {
-        viewModelScope.launch { deloadService.cancelWithoutRestore() }
+        viewModelScope.launch {
+            deloadService.cancelWithoutRestore()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
     }
 
     /** Plan id do podglądu wag w dialogu confirm Apply. */
