@@ -143,6 +143,16 @@ class GymTrackerApp : Application(), Configuration.Provider {
                     setShowBadge(true)
                 }
             )
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.MealReminderWorker.CHANNEL_ID,
+                    "Pora posiłku",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Przypomnienia o porach posiłków w oknie żywieniowym."
+                    setShowBadge(true)
+                }
+            )
         }
     }
 }

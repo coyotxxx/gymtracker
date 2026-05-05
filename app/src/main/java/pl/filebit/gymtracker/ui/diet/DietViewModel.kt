@@ -16,10 +16,13 @@ import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealType
+import pl.filebit.gymtracker.data.repository.DietConfig
+import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.DietRepository
 import pl.filebit.gymtracker.data.repository.MealEntryWithMacros
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.macrosFor
+import pl.filebit.gymtracker.service.DietReminderScheduler
 import pl.filebit.gymtracker.util.DailyMacroGoal
 import pl.filebit.gymtracker.util.computeDailyGoal
 import javax.inject.Inject
@@ -39,7 +42,10 @@ data class DayTotals(
 data class MealGroup(
     val type: MealType,
     val entries: List<MealEntryWithMacros>,
-    val totals: DayTotals
+    val totals: DayTotals,
+    /** Godzina posiłku z DietConfig (np. "12:00"). Pusty gdy slot nieaktywny. */
+    val timeLabel: String = "",
+    val customLabel: String = ""    // np. "Drugie śniadanie" gdy 4 posiłki
 )
 
 data class DietUiState(
@@ -51,13 +57,17 @@ data class DietUiState(
     val productsAll: List<FoodProduct> = emptyList(),
     val searchQuery: String = "",
     val categoryFilter: FoodCategory? = null,
-    val filteredProducts: List<FoodProduct> = emptyList()
+    val filteredProducts: List<FoodProduct> = emptyList(),
+    val config: DietConfig = DietConfig(),
+    val perMealKcal: Int = 0          // cel kcal podzielony przez liczbę posiłków
 )
 
 @HiltViewModel
 class DietViewModel @Inject constructor(
     private val repo: DietRepository,
-    private val profileRepo: UserProfileRepository
+    private val profileRepo: UserProfileRepository,
+    private val dietPrefs: DietPreferences,
+    private val reminderScheduler: DietReminderScheduler
 ) : ViewModel() {
 
     private val _searchQuery = MutableStateFlow("")
@@ -67,13 +77,16 @@ class DietViewModel @Inject constructor(
     val state: StateFlow<DietUiState> = combine(
         _selectedDateMs,
         _searchQuery,
-        _categoryFilter
-    ) { dateMs, query, cat -> Triple(dateMs, query, cat) }
-        .let { triple ->
+        _categoryFilter,
+        dietPrefs.state
+    ) { dateMs, query, cat, config ->
+        listOf(dateMs, query, cat, config)
+    }
+        .let { quad ->
             @OptIn(ExperimentalCoroutinesApi::class)
-            triple.flatMapLatest { (dateMs, query, cat) ->
+            quad.flatMapLatest { (dateMs, query, cat, config) ->
                 combine(
-                    repo.observeMealsForDate(dateMs),
+                    repo.observeMealsForDate(dateMs as Long),
                     repo.observeAllProducts()
                 ) { meals, allProducts ->
                     val productMap = allProducts.associateBy { it.id }
@@ -81,15 +94,29 @@ class DietViewModel @Inject constructor(
                         productMap[e.productId]?.let { p -> e.macrosFor(p) }
                     }
                     val byType = withMacros.groupBy { it.entry.mealType }
-                    val groups = listOf(
-                        MealType.BREAKFAST,
-                        MealType.LUNCH,
-                        MealType.DINNER,
-                        MealType.SNACK
-                    ).map { type ->
+                    val cfg = config as DietConfig
+                    val mealHours = cfg.mealHoursDecimal()
+                    // Mapowanie slot index → MealType (max 4 — bo enum ma 4 wartości).
+                    // Dla 5-6 posiłków SNACK się powtarza wizualnie ale w bazie wszystkie
+                    // dodatkowe są SNACK.
+                    val typesForSlots: List<MealType> = when (cfg.mealsPerDay) {
+                        2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
+                        3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+                        4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
+                        5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
+                        6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
+                        else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+                    }
+                    val groups = typesForSlots.mapIndexed { idx, type ->
                         val entries = byType[type].orEmpty()
                         val tot = entries.fold(DayTotals()) { acc, m -> acc + m }
-                        MealGroup(type, entries, tot)
+                        MealGroup(
+                            type = type,
+                            entries = entries,
+                            totals = tot,
+                            timeLabel = mealHours.getOrNull(idx)?.let { cfg.formatTime(it) } ?: "",
+                            customLabel = labelForSlot(idx + 1, cfg.mealsPerDay)
+                        )
                     }
                     val totals = groups.fold(DayTotals()) { acc, g ->
                         DayTotals(
@@ -105,8 +132,8 @@ class DietViewModel @Inject constructor(
                     else DailyMacroGoal(2200, 150, 250, 70)
 
                     val filtered = allProducts.let { list ->
-                        val byCat = if (cat == null) list else list.filter { it.category == cat }
-                        if (query.isBlank()) byCat
+                        val byCat = if (cat == null) list else list.filter { it.category == cat as FoodCategory }
+                        if ((query as String).isBlank()) byCat
                         else byCat.filter { it.name.contains(query, ignoreCase = true) }
                     }
 
@@ -118,8 +145,10 @@ class DietViewModel @Inject constructor(
                         groups = groups,
                         productsAll = allProducts,
                         searchQuery = query,
-                        categoryFilter = cat,
-                        filteredProducts = filtered
+                        categoryFilter = cat as FoodCategory?,
+                        filteredProducts = filtered,
+                        config = cfg,
+                        perMealKcal = if (cfg.mealsPerDay > 0) goal.kcal / cfg.mealsPerDay else 0
                     )
                 }
             }
@@ -144,6 +173,35 @@ class DietViewModel @Inject constructor(
 
     fun deleteMeal(id: Long) {
         viewModelScope.launch { repo.deleteMeal(id) }
+    }
+
+    fun saveConfig(config: DietConfig) {
+        dietPrefs.save(config)
+        viewModelScope.launch { reminderScheduler.rescheduleAll(config) }
+    }
+
+    fun rescheduleReminders() {
+        viewModelScope.launch { reminderScheduler.rescheduleAll(dietPrefs.load()) }
+    }
+
+    private fun labelForSlot(slot: Int, total: Int): String = when {
+        total == 2 && slot == 1 -> "Śniadanie"
+        total == 2 -> "Kolacja"
+        total == 3 && slot == 1 -> "Śniadanie"
+        total == 3 && slot == 2 -> "Obiad"
+        total == 3 -> "Kolacja"
+        total == 4 && slot == 1 -> "Śniadanie"
+        total == 4 && slot == 2 -> "Drugie śniadanie"
+        total == 4 && slot == 3 -> "Obiad"
+        total == 4 -> "Kolacja"
+        total == 5 && slot == 1 -> "Śniadanie"
+        total == 5 && slot == 2 -> "Drugie śniadanie"
+        total == 5 && slot == 3 -> "Obiad"
+        total == 5 && slot == 4 -> "Podwieczorek"
+        total == 5 -> "Kolacja"
+        total >= 6 && slot == 1 -> "Śniadanie"
+        total >= 6 && slot == total -> "Kolacja"
+        else -> "Posiłek $slot"
     }
 
     private fun todayStartMs(): Long {

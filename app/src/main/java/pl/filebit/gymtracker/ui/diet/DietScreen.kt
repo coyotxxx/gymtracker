@@ -22,7 +22,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -66,6 +68,11 @@ fun DietScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
+    var showSettings by remember { mutableStateOf(false) }
+    androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
+        // Reschedule notyfikacji przy każdej zmianie config-u (oraz przy pierwszym wejściu)
+        vm.rescheduleReminders()
+    }
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(modifier = Modifier.fillMaxSize()) {
@@ -76,13 +83,21 @@ fun DietScreen(
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                // Hero — kcal goal + makro pierścienie
-                item { DayHeroCard(state) }
+                // Hero — kcal goal + makro pierścienie + settings + AI generator
+                item {
+                    DayHeroCard(
+                        state = state,
+                        onSettings = { showSettings = true },
+                        onGenerateAi = { /* TODO v0.89.35: AI plan dnia */ }
+                    )
+                }
 
-                // 3 sekcje posiłków + przekąski
-                items(state.groups, key = { it.type.name }) { group ->
+                // Sekcje posiłków (zgodnie z liczbą z DietConfig)
+                items(state.groups.size) { idx ->
+                    val group = state.groups[idx]
                     MealGroupCard(
                         group = group,
+                        targetKcalPerMeal = state.perMealKcal,
                         onAdd = { addMealForType = group.type },
                         onDelete = { id -> vm.deleteMeal(id) }
                     )
@@ -91,6 +106,14 @@ fun DietScreen(
                 item { Spacer(Modifier.height(8.dp)) }
             }
         }
+    }
+
+    if (showSettings) {
+        DietSettingsDialog(
+            initial = state.config,
+            onSave = { vm.saveConfig(it) },
+            onDismiss = { showSettings = false }
+        )
     }
 
     // Dialog dodawania posiłku
@@ -113,7 +136,11 @@ fun DietScreen(
 }
 
 @Composable
-private fun DayHeroCard(state: DietUiState) {
+private fun DayHeroCard(
+    state: DietUiState,
+    onSettings: () -> Unit,
+    onGenerateAi: () -> Unit
+) {
     val kcalNow = state.totals.kcal.roundToInt()
     val kcalGoal = state.goal.kcal
     val progress = if (kcalGoal > 0) (kcalNow.toFloat() / kcalGoal).coerceIn(0f, 1f) else 0f
@@ -125,15 +152,32 @@ private fun DayHeroCard(state: DietUiState) {
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
-            Text(
-                "DZIŚ",
-                style = MaterialTheme.typography.labelSmall.copy(
-                    fontSize = 11.sp,
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 1.4.sp
-                ),
-                color = DarkOnSurfaceVariant
-            )
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    "DZIŚ",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Box(
+                    modifier = Modifier
+                        .size(32.dp)
+                        .background(DarkSurfaceVariant, androidx.compose.foundation.shape.CircleShape)
+                        .clickable(onClick = onSettings),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Default.Settings,
+                        contentDescription = "Ustawienia diety",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(16.dp)
+                    )
+                }
+            }
             Spacer(Modifier.height(6.dp))
             Row(verticalAlignment = Alignment.Bottom) {
                 Text(
@@ -151,6 +195,17 @@ private fun DayHeroCard(state: DietUiState) {
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
             }
+            // Konfig wiersz: "${meals} posiłki w oknie 12:00 - 20:00 · ${perMealKcal} kcal/posiłek"
+            Spacer(Modifier.height(2.dp))
+            Text(
+                "${state.config.mealsPerDay} posiłki · okno %02d:00-%02d:00 · %d kcal/posiłek".format(
+                    state.config.windowStartHour,
+                    state.config.windowEndHour(),
+                    state.perMealKcal
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
             Spacer(Modifier.height(8.dp))
             LinearProgressIndicator(
                 progress = { progress },
@@ -183,6 +238,35 @@ private fun DayHeroCard(state: DietUiState) {
                     goal = state.goal.fatG.toDouble(),
                     color = Color(0xFFFFB74D)
                 )
+            }
+
+            Spacer(Modifier.height(14.dp))
+
+            // Button "Wygeneruj plan AI" — placeholder do v0.89.35
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(44.dp)
+                    .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
+                    .clickable(onClick = onGenerateAi),
+                contentAlignment = Alignment.Center
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        Icons.Default.AutoAwesome,
+                        contentDescription = null,
+                        tint = AccentOrange,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        "Wygeneruj plan dnia AI",
+                        style = MaterialTheme.typography.bodyMedium.copy(
+                            fontWeight = FontWeight.Bold
+                        ),
+                        color = AccentOrange
+                    )
+                }
             }
         }
     }
@@ -246,6 +330,7 @@ private fun MacroRing(label: String, current: Double, goal: Double, color: Color
 @Composable
 private fun MealGroupCard(
     group: MealGroup,
+    targetKcalPerMeal: Int,
     onAdd: () -> Unit,
     onDelete: (Long) -> Unit
 ) {
@@ -260,22 +345,52 @@ private fun MealGroupCard(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    mealTypeLabel(group.type),
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        fontWeight = FontWeight.Bold
-                    ),
-                    color = DarkOnSurface,
-                    modifier = Modifier.weight(1f)
-                )
-                Text(
-                    "${group.totals.kcal.roundToInt()} kcal",
-                    style = MaterialTheme.typography.bodyMedium.copy(
-                        fontWeight = FontWeight.SemiBold,
-                        fontFamily = FontFamily.Monospace
-                    ),
-                    color = AccentOrange
-                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            group.customLabel.ifBlank { mealTypeLabel(group.type) },
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                fontWeight = FontWeight.Bold
+                            ),
+                            color = DarkOnSurface
+                        )
+                        if (group.timeLabel.isNotBlank()) {
+                            Spacer(Modifier.width(8.dp))
+                            Box(
+                                modifier = Modifier
+                                    .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(8.dp))
+                                    .padding(horizontal = 8.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    group.timeLabel,
+                                    style = MaterialTheme.typography.labelMedium.copy(
+                                        fontFamily = FontFamily.Monospace,
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                            }
+                        }
+                    }
+                }
+                Column(horizontalAlignment = Alignment.End) {
+                    Text(
+                        "${group.totals.kcal.roundToInt()} kcal",
+                        style = MaterialTheme.typography.bodyMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            fontFamily = FontFamily.Monospace
+                        ),
+                        color = AccentOrange
+                    )
+                    if (targetKcalPerMeal > 0) {
+                        Text(
+                            "cel: $targetKcalPerMeal",
+                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                }
             }
             if (group.entries.isNotEmpty()) {
                 Spacer(Modifier.height(8.dp))
