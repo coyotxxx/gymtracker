@@ -69,6 +69,7 @@ fun DietScreen(
     onOpenAdherenceReport: () -> Unit = {},
     onOpenAdjustmentHistory: () -> Unit = {},
     onOpenMealPreferences: () -> Unit = {},
+    onOpenShoppingList: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -168,6 +169,20 @@ fun DietScreen(
                         ) {
                             Text(
                                 "⭐ Preferencje",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenShoppingList),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "🛒 Zakupy",
                                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                                 color = DarkOnSurface
                             )
