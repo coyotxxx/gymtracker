@@ -88,6 +88,9 @@ fun DietScreen(
     val showStepsDialog by vm.showStepsDialog.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
+    val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
+    val showDamageControlDialog by vm.showDamageControlDialog.collectAsStateWithLifecycle()
+    val damageControlResult by vm.damageControlResult.collectAsStateWithLifecycle()
     val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
@@ -378,6 +381,24 @@ fun DietScreen(
                     }
                 }
 
+                // 🚨 Awaryjne — przycisk pełnej szerokości
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(40.dp)
+                            .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(10.dp))
+                            .clickable { vm.openEmergencyDialog() },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "🚨 Awaryjny posiłek / nieplanowane jedzenie",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = AccentOrange
+                        )
+                    }
+                }
+
                 // Sekcje posiłków (zgodnie z liczbą z DietConfig)
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
@@ -478,6 +499,29 @@ fun DietScreen(
             suggestion = s,
             onAccept = { vm.acceptPhaseSuggestion() },
             onDismiss = { vm.dismissPhaseSuggestion() }
+        )
+    }
+
+    if (showEmergencyDialog) {
+        EmergencyMealDialog(
+            onSelectMode = { /* TODO v0.93.1: wywołaj generator */ },
+            onOpenDamageControl = { vm.openDamageControlDialog() },
+            onDismiss = { vm.dismissEmergencyDialog() }
+        )
+    }
+
+    if (showDamageControlDialog) {
+        DamageControlDialog(
+            onPickEstimate = { est -> vm.applyDamageControl(est.kcal) },
+            onCustomKcal = { kcal -> vm.applyDamageControl(kcal) },
+            onDismiss = { vm.dismissDamageControlDialog() }
+        )
+    }
+
+    damageControlResult?.let { res ->
+        DamageControlResultDialog(
+            result = res,
+            onDismiss = { vm.dismissDamageControlResult() }
         )
     }
 

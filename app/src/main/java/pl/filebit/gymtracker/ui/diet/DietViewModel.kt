@@ -111,8 +111,51 @@ class DietViewModel @Inject constructor(
     private val activityRepo: pl.filebit.gymtracker.data.repository.ActivityRepository,
     private val phaseRepo: pl.filebit.gymtracker.data.repository.DietPhaseRepository,
     private val phaseManager: pl.filebit.gymtracker.data.repository.PhaseManager,
-    private val recoveryAnalyzer: pl.filebit.gymtracker.data.repository.RecoveryAnalyzer
+    private val recoveryAnalyzer: pl.filebit.gymtracker.data.repository.RecoveryAnalyzer,
+    private val emergencyMealGen: pl.filebit.gymtracker.ai.EmergencyMealGenerator,
+    private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl
 ) : ViewModel() {
+
+    // === EMERGENCY ===
+    private val _showEmergencyDialog = MutableStateFlow(false)
+    val showEmergencyDialog: StateFlow<Boolean> = _showEmergencyDialog.asStateFlow()
+
+    private val _showDamageControlDialog = MutableStateFlow(false)
+    val showDamageControlDialog: StateFlow<Boolean> = _showDamageControlDialog.asStateFlow()
+
+    private val _damageControlResult = MutableStateFlow<pl.filebit.gymtracker.data.repository.DamageControlResult?>(null)
+    val damageControlResult: StateFlow<pl.filebit.gymtracker.data.repository.DamageControlResult?> = _damageControlResult.asStateFlow()
+
+    fun openEmergencyDialog() { _showEmergencyDialog.value = true }
+    fun dismissEmergencyDialog() { _showEmergencyDialog.value = false }
+
+    fun openDamageControlDialog() { _showDamageControlDialog.value = true }
+    fun dismissDamageControlDialog() { _showDamageControlDialog.value = false }
+    fun dismissDamageControlResult() { _damageControlResult.value = null }
+
+    /**
+     * User wybrał z listy popularnych dań / wpisał kcal ręcznie.
+     * Liczymy DamageControl dla pozostałego dnia.
+     */
+    fun applyDamageControl(unplannedKcal: Int) {
+        viewModelScope.launch {
+            val s = state.value
+            val nowSum = s.totals.kcal.toInt()
+            val totalAfter = nowSum + unplannedKcal
+            // Pozostałe sloty = liczba slotów per config minus już logged groups
+            val groupsWithEntries = s.groups.count { it.entries.isNotEmpty() }
+            val totalSlots = s.config.mealsPerDay
+            val remaining = (totalSlots - groupsWithEntries).coerceAtLeast(0)
+
+            val res = damageControl.recommend(
+                unplannedKcal = unplannedKcal,
+                dailyGoalKcal = s.goal.kcal,
+                alreadyConsumedKcalIncludingUnplanned = totalAfter,
+                remainingSlots = remaining
+            )
+            _damageControlResult.value = res
+        }
+    }
 
     // === DIET PHASE ===
     private val _currentPhase = MutableStateFlow<pl.filebit.gymtracker.data.entity.DietPhase?>(null)
