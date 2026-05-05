@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.util
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.AdherenceSummary
+import pl.filebit.gymtracker.data.repository.RecoverySnapshot
 
 enum class AdjustmentAction {
     HOLD,                   // zostaw jak jest — plan działa
@@ -10,6 +11,7 @@ enum class AdjustmentAction {
     INCREASE_KCAL,          // dodaj kcal (np. waga nie rośnie w BULK)
     DELOAD,                 // tydzień regeneracji
     SIMPLIFY_PLAN,          // niska adherence — uprość plan zamiast zmieniać kcal
+    REFEED_DAY,             // 1 dzień +200-400 kcal głównie z węgli (regeneracja)
     NEEDS_MORE_DATA         // za mało wagi/dni do decyzji
 }
 
@@ -53,7 +55,9 @@ object CalorieAdjustmentEngine {
         currentKcal: Int,
         weightTrend: WeightTrend,
         adherence14d: AdherenceSummary,
-        adherence7d: AdherenceSummary
+        adherence7d: AdherenceSummary,
+        recovery: RecoverySnapshot = RecoverySnapshot.EMPTY,
+        hydrationAdherencePct: Int = 100
     ): AdjustmentDecision {
 
         // === Brak danych → poczekaj ===
@@ -68,6 +72,71 @@ object CalorieAdjustmentEngine {
                     "Loguj dalej — silnik włączy się automatycznie.",
                 confidence = Confidence.LOW
             )
+        }
+
+        // === Recovery override — przed cięciem kcal sprawdzamy regenerację ===
+        if (recovery.hasEnoughData && profile.weightGoalType == WeightGoalType.CUT) {
+            // Bardzo zła regeneracja przy cut → zatrzymaj cięcia
+            if (recovery.badSleep && recovery.highStress) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.HOLD,
+                    kcalDeltaProposed = 0,
+                    newKcal = currentKcal,
+                    reason = "cut_recovery_poor_sleep_stress",
+                    explanation = "Średnia z 7 dni: sen %.1fh + stres %.1f/5 — regeneracja zła. NIE tnę kcal. Najpierw popraw sen i obniż stres.".format(
+                        recovery.avgSleepHours ?: 0.0, recovery.avgStress ?: 0.0
+                    ),
+                    confidence = Confidence.HIGH,
+                    warnings = listOf("Zła regeneracja blokuje korekty diety. Sen/stres są fundamentem.")
+                )
+            }
+            // Wysoki głód + waga stoi → REFEED zamiast DECREASE
+            if (recovery.highHunger && weightTrend.isStagnationLikely) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.REFEED_DAY,
+                    kcalDeltaProposed = +300,
+                    newKcal = currentKcal + 300,
+                    reason = "cut_high_hunger_refeed",
+                    explanation = "Średnia 7d: głód %.1f/5. Waga stoi — refeed day +300 kcal (głównie węgle) odbuduje leptynę. Następne dni: wracamy do bazowych kcal.".format(recovery.avgHunger ?: 0.0),
+                    confidence = Confidence.HIGH
+                )
+            }
+            // Soreness wysoki + niska energia → DELOAD
+            if (recovery.highSoreness && recovery.lowEnergy) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.DELOAD,
+                    kcalDeltaProposed = 0,
+                    newKcal = currentKcal,
+                    reason = "cut_recovery_deload",
+                    explanation = "Średnia 7d: soreness %.1f/5 + energia %.1f/5 — sygnał DELOAD. Tydzień lżejszy/odpoczynek.".format(
+                        recovery.avgSoreness ?: 0.0, recovery.avgEnergy ?: 0.0
+                    ),
+                    confidence = Confidence.HIGH
+                )
+            }
+            // Wysoka trudność trzymania planu → SIMPLIFY (zamiast cięcia)
+            if (recovery.highDifficulty) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.SIMPLIFY_PLAN,
+                    kcalDeltaProposed = 0,
+                    newKcal = currentKcal,
+                    reason = "cut_high_difficulty",
+                    explanation = "Średnia 7d: trudność trzymania planu %.1f/5. NIE tnę kcal — uprośćmy plan: prostsze posiłki, mniej składników, krótsze gotowanie.".format(recovery.avgDifficulty ?: 0.0),
+                    confidence = Confidence.HIGH
+                )
+            }
+            // Hydration adherence niski + waga stoi → blokada cięć (zatrzymanie wody maskuje progres)
+            if (hydrationAdherencePct < 60 && weightTrend.isStagnationLikely) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.HOLD,
+                    kcalDeltaProposed = 0,
+                    newKcal = currentKcal,
+                    reason = "cut_low_hydration",
+                    explanation = "Adherence wody w 14d: ${hydrationAdherencePct}%. Niskie nawodnienie zatrzymuje wodę i maskuje spadek tłuszczu. NIE tnę — popraw nawodnienie.",
+                    confidence = Confidence.MEDIUM,
+                    warnings = listOf("Niskie nawodnienie może mieć większy wpływ na pomiary niż dieta.")
+                )
+            }
         }
 
         val highAdherence = adherence14d.avgKcalPct in 85..115 && adherence14d.avgProteinPct >= 80

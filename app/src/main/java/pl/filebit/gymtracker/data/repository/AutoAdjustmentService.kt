@@ -28,7 +28,11 @@ class AutoAdjustmentService @Inject constructor(
     private val bodyDao: BodyMeasurementDao,
     private val adherenceCalc: AdherenceCalculator,
     private val adjustmentDao: DietAdjustmentDao,
-    private val aiExplainer: AiDecisionExplainer
+    private val aiExplainer: AiDecisionExplainer,
+    private val recoveryRepo: RecoveryRepository,
+    private val recoveryAnalyzer: RecoveryAnalyzer,
+    private val hydrationRepo: HydrationRepository,
+    private val hydrationCalc: HydrationCalculator
 ) {
     suspend fun analyzeNow(): AdjustmentDecision {
         val profile = profileRepo.get()
@@ -49,18 +53,27 @@ class AutoAdjustmentService @Inject constructor(
         val adherence14 = adherenceCalc.avgAdherenceLastDays(14)
         val adherence7 = adherenceCalc.avgAdherenceLastDays(7)
 
-        // Silnik regułowy
+        // Recovery snapshot z 7 dni RecoveryLog
+        val recoveryLogs = recoveryRepo.getLast7Days()
+        val recovery = recoveryAnalyzer.analyze(recoveryLogs)
+
+        // Hydration adherence z 14 dni
+        val weight = profile.bodyweightKg ?: 75.0
+        val hydrationAdherence = hydrationRepo.avgAdherenceLastNDays(weight, 14, hydrationCalc)
+
+        // Silnik regułowy z pełnym kontekstem
         val raw = CalorieAdjustmentEngine.analyze(
             profile = profile,
             currentKcal = currentGoal.kcal,
             weightTrend = trend,
             adherence14d = adherence14,
-            adherence7d = adherence7
+            adherence7d = adherence7,
+            recovery = recovery,
+            hydrationAdherencePct = hydrationAdherence
         )
 
         // SafetyGuard cap
         if (raw.action == AdjustmentAction.DECREASE_KCAL || raw.action == AdjustmentAction.INCREASE_KCAL) {
-            val weight = profile.bodyweightKg ?: 75.0
             val safetyResult = SafetyGuard.validateKcal(raw.newKcal, profile, weight)
             if (safetyResult is SafetyResult.Block) {
                 return raw.copy(

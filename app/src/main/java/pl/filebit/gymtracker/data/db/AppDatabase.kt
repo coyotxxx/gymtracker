@@ -11,6 +11,7 @@ import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.db.dao.FastingWindowDao
 import pl.filebit.gymtracker.data.db.dao.FoodProductDao
 import pl.filebit.gymtracker.data.db.dao.HydrationLogDao
+import pl.filebit.gymtracker.data.db.dao.RecoveryLogDao
 import pl.filebit.gymtracker.data.db.dao.MealEntryDao
 import pl.filebit.gymtracker.data.db.dao.MealFeedbackDao
 import pl.filebit.gymtracker.data.db.dao.ShoppingListDao
@@ -37,6 +38,7 @@ import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.FastingWindow
 import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.HydrationLog
+import pl.filebit.gymtracker.data.entity.RecoveryLog
 import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealFeedback
 import pl.filebit.gymtracker.data.entity.ShoppingList
@@ -85,9 +87,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         MealFeedback::class,
         ShoppingList::class,
         ShoppingListItem::class,
-        HydrationLog::class
+        HydrationLog::class,
+        RecoveryLog::class
     ],
-    version = 38,
+    version = 39,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -118,6 +121,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun mealFeedbackDao(): MealFeedbackDao
     abstract fun shoppingListDao(): ShoppingListDao
     abstract fun hydrationLogDao(): HydrationLogDao
+    abstract fun recoveryLogDao(): RecoveryLogDao
 
     companion object {
         const val NAME = "gymtracker.db"
