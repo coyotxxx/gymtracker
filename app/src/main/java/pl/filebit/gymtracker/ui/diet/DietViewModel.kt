@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -121,7 +122,48 @@ class DietViewModel @Inject constructor(
             val date = _selectedDateMs.value
             hydrationRepo.add(date, ml)
             refreshHydration()
+            refreshHydrationLogs()
         }
+    }
+
+    fun deleteHydration(id: Long) {
+        viewModelScope.launch {
+            hydrationRepo.delete(id)
+            refreshHydration()
+            refreshHydrationLogs()
+        }
+    }
+
+    private val _hydrationLogs = MutableStateFlow<List<pl.filebit.gymtracker.data.entity.HydrationLog>>(emptyList())
+    val hydrationLogs: StateFlow<List<pl.filebit.gymtracker.data.entity.HydrationLog>> = _hydrationLogs.asStateFlow()
+
+    private val _showHydrationDialog = MutableStateFlow(false)
+    val showHydrationDialog: StateFlow<Boolean> = _showHydrationDialog.asStateFlow()
+
+    fun openHydrationLogDialog() {
+        _showHydrationDialog.value = true
+        viewModelScope.launch { refreshHydrationLogs() }
+    }
+
+    fun dismissHydrationDialog() { _showHydrationDialog.value = false }
+
+    private suspend fun refreshHydrationLogs() {
+        val date = _selectedDateMs.value
+        val (start, end) = run {
+            val cal = java.util.Calendar.getInstance().apply {
+                timeInMillis = date
+                set(java.util.Calendar.HOUR_OF_DAY, 0)
+                set(java.util.Calendar.MINUTE, 0)
+                set(java.util.Calendar.SECOND, 0)
+                set(java.util.Calendar.MILLISECOND, 0)
+            }
+            val s = cal.timeInMillis
+            cal.add(java.util.Calendar.DAY_OF_YEAR, 1)
+            s to cal.timeInMillis
+        }
+        // Pobranie z DAO bezpośrednio (przez repository nie ma) — używamy publicznego API
+        val logs = hydrationRepo.observeForDate(date).first()
+        _hydrationLogs.value = logs.sortedByDescending { it.createdAt }
     }
 
     private suspend fun refreshHydration() {
@@ -238,6 +280,20 @@ class DietViewModel @Inject constructor(
     private val _aiPlanRatingPrompt = MutableStateFlow<List<Pair<MealType, String>>>(emptyList())
     val aiPlanRatingPrompt: StateFlow<List<Pair<MealType, String>>> = _aiPlanRatingPrompt.asStateFlow()
 
+    /**
+     * Pełne recipe per slot z ostatniego planu AI (z instrukcjami).
+     * Używane do "Pokaż przepis" w MealGroupCard. Transient — żyje od generacji do
+     * wygenerowania nowego planu lub zamknięcia VM.
+     */
+    private val _slotRecipes = MutableStateFlow<Map<MealType, pl.filebit.gymtracker.ai.AiMealRecipe>>(emptyMap())
+    val slotRecipes: StateFlow<Map<MealType, pl.filebit.gymtracker.ai.AiMealRecipe>> = _slotRecipes.asStateFlow()
+
+    private val _shownRecipeFor = MutableStateFlow<MealType?>(null)
+    val shownRecipeFor: StateFlow<MealType?> = _shownRecipeFor.asStateFlow()
+
+    fun showRecipeFor(type: MealType) { _shownRecipeFor.value = type }
+    fun dismissRecipe() { _shownRecipeFor.value = null }
+
     fun rateMeal(displayName: String, rating: Int, tags: String = "", notes: String = "") {
         viewModelScope.launch {
             runCatching { mealFeedbackRepo.rate(displayName, rating, tags, notes) }
@@ -289,6 +345,10 @@ class DietViewModel @Inject constructor(
                 }
             }
             runCatching { adherenceCalc.computeForDate(dateMs) }
+            // Zastąp recipe w slotRecipes wybraną alternatywą (z toRecipe — zachowuje instructions jeśli były)
+            _slotRecipes.value = _slotRecipes.value.toMutableMap().apply {
+                put(mealType, alternative.toRecipe())
+            }
         }
     }
 
@@ -532,6 +592,8 @@ class DietViewModel @Inject constructor(
                     _slotAlternatives.value = plan.mealsForSlots
                         .associate { (type, recipe) -> type to recipe.alternatives }
                         .filterValues { it.isNotEmpty() }
+                    // Recipe per slot — do wyświetlenia "Pokaż przepis"
+                    _slotRecipes.value = plan.mealsForSlots.associate { (type, recipe) -> type to recipe }
                     // Zaproponuj userowi ocenę wygenerowanych potraw (MealFeedback)
                     _aiPlanRatingPrompt.value = plan.mealsForSlots
                         .map { (type, recipe) -> type to recipe.name }

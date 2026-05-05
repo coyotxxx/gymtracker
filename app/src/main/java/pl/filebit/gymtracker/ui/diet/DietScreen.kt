@@ -81,7 +81,11 @@ fun DietScreen(
     val slotAlternatives by vm.slotAlternatives.collectAsStateWithLifecycle()
     val hydrationToday by vm.hydrationToday.collectAsStateWithLifecycle()
     val hydrationGoal by vm.hydrationGoal.collectAsStateWithLifecycle()
+    val hydrationLogs by vm.hydrationLogs.collectAsStateWithLifecycle()
+    val showHydrationDialog by vm.showHydrationDialog.collectAsStateWithLifecycle()
     val showRecoveryDialog by vm.showRecoveryDialog.collectAsStateWithLifecycle()
+    val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
+    val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
@@ -151,11 +155,12 @@ fun DietScreen(
                 // 💧 Woda + 🛌 Regeneracja (v0.90)
                 item {
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        // Hydration
+                        // Hydration (tap = otwórz dialog z listą wpisów)
                         Box(
                             modifier = Modifier
                                 .weight(1f)
                                 .background(DarkSurface, RoundedCornerShape(12.dp))
+                                .clickable { vm.openHydrationLogDialog() }
                                 .padding(10.dp)
                         ) {
                             Column {
@@ -290,7 +295,9 @@ fun DietScreen(
                         onDelete = { id -> vm.deleteMeal(id) },
                         onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
                         alternativesCount = slotAlternatives[group.type]?.size ?: 0,
-                        onShowAlternatives = { showAlternativesFor = group.type }
+                        onShowAlternatives = { showAlternativesFor = group.type },
+                        hasRecipe = slotRecipes.containsKey(group.type),
+                        onShowRecipe = { vm.showRecipeFor(group.type) }
                     )
                 }
 
@@ -353,6 +360,25 @@ fun DietScreen(
             },
             onDismiss = { vm.dismissRecoveryDialog() }
         )
+    }
+
+    if (showHydrationDialog) {
+        HydrationLogDialog(
+            logs = hydrationLogs,
+            consumedToday = hydrationToday,
+            goal = hydrationGoal,
+            onDelete = { id -> vm.deleteHydration(id) },
+            onDismiss = { vm.dismissHydrationDialog() }
+        )
+    }
+
+    shownRecipeFor?.let { type ->
+        slotRecipes[type]?.let { recipe ->
+            RecipeDialog(
+                recipe = recipe,
+                onDismiss = { vm.dismissRecipe() }
+            )
+        }
     }
 
     adjustmentPreview?.let { preview ->
@@ -725,7 +751,9 @@ private fun MealGroupCard(
     onDelete: (Long) -> Unit,
     onSwap: (MealEntryWithMacros) -> Unit,
     alternativesCount: Int = 0,
-    onShowAlternatives: () -> Unit = {}
+    onShowAlternatives: () -> Unit = {},
+    hasRecipe: Boolean = false,
+    onShowRecipe: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -874,6 +902,25 @@ private fun MealGroupCard(
                     ) {
                         Text(
                             "🔁 Inna opcja ($alternativesCount)",
+                            style = MaterialTheme.typography.labelMedium.copy(
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 13.sp
+                            ),
+                            color = DarkOnSurface
+                        )
+                    }
+                }
+                if (hasRecipe) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(40.dp)
+                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                            .clickable(onClick = onShowRecipe),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "📝 Przepis",
                             style = MaterialTheme.typography.labelMedium.copy(
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 13.sp

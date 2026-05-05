@@ -126,6 +126,15 @@ private fun AlternativeCard(alt: AiAlternative, onClick: (AiAlternative) -> Unit
                     maxLines = 3
                 )
             }
+            if (alt.instructions.isNotBlank()) {
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    alt.instructions,
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                    color = DarkOnSurfaceVariant,
+                    maxLines = 4
+                )
+            }
             Spacer(Modifier.height(6.dp))
             Box(
                 modifier = Modifier
