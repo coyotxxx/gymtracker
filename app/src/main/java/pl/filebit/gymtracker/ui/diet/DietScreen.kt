@@ -71,6 +71,7 @@ fun DietScreen(
     onOpenMealPreferences: () -> Unit = {},
     onOpenShoppingList: () -> Unit = {},
     onEditDietProfile: () -> Unit = {},
+    onOpenMealPrep: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -378,6 +379,24 @@ fun DietScreen(
                                 color = DarkOnSurface
                             )
                         }
+                    }
+                }
+
+                // 🍱 Meal prep — pełna szerokość
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(40.dp)
+                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                            .clickable(onClick = onOpenMealPrep),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "🍱 Meal prep — gotowanie na 2-3 dni",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
                     }
                 }
 

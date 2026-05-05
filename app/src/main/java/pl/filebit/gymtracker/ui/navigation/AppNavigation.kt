@@ -484,7 +484,8 @@ fun AppNavigation() {
                     onOpenAdjustmentHistory = { navController.navigate(Screen.DietAdjustmentHistory.route) },
                     onOpenMealPreferences = { navController.navigate(Screen.MealPreferences.route) },
                     onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) },
-                    onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) }
+                    onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) },
+                    onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
@@ -514,6 +515,11 @@ fun AppNavigation() {
             }
             composable(Screen.ShoppingList.route) {
                 pl.filebit.gymtracker.ui.diet.ShoppingListScreen(
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.MealPrep.route) {
+                pl.filebit.gymtracker.ui.diet.MealPrepScreen(
                     onBack = { navController.popBackStack() }
                 )
             }

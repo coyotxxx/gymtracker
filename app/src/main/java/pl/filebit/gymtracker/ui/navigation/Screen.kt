@@ -43,6 +43,7 @@ sealed class Screen(val route: String) {
     object DietAdjustmentHistory : Screen("diet/adjustments")
     object MealPreferences : Screen("diet/preferences")
     object ShoppingList : Screen("diet/shopping")
+    object MealPrep : Screen("diet/mealprep")
 
     object ExerciseDetail : Screen("exercises/{exerciseId}") {
         fun create(exerciseId: Long) = "exercises/$exerciseId"
