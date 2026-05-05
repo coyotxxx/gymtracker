@@ -645,7 +645,7 @@ class DietAiService @Inject constructor(
         var lastRaw: String? = null
         var currentPrompt = prompt
 
-        while (attempt <= 2) {
+        while (attempt <= 3) {
             val callResult = client.chat(cfg, listOf(AiMessage(AiRole.USER, currentPrompt)))
             if (callResult.isFailure) return callResult.map { GeneratedDayPlan(emptyList()) }
 
@@ -656,6 +656,11 @@ class DietAiService @Inject constructor(
             if (parsed == null || parsed.meals.isEmpty()) {
                 return Result.failure(IllegalStateException("AI zwróciło niepoprawny lub pusty JSON (attempt=$attempt)"))
             }
+
+            // === AUTO-SCALE GRAMATUR ===
+            // AI generuje plan blisko celu — my deterministycznie skalujemy gramatury
+            // żeby trafić w target kcal per slot. Walidacja po skalowaniu powinna przejść.
+            parsed = autoScaleSlotKcal(parsed, perSlotKcalTargets, productsByName)
 
             validation = validator.validate(parsed, validationCtx)
             Log.d("DietAiService", "validation isValid=${validation.isValid} errors=${validation.errors.size} warnings=${validation.warnings.size}")
@@ -669,9 +674,9 @@ class DietAiService @Inject constructor(
 
         if (parsed == null) return Result.failure(IllegalStateException("AI nie zwróciło planu"))
         if (validation != null && !validation.isValid) {
-            // Po 2 próbach nadal HARD violations — zwróć błąd informujący
+            // Po 3 próbach nadal HARD violations — zwróć błąd informujący
             val errorMsgs = validation.errors.joinToString("\n") { "• ${it.message}" }
-            return Result.failure(IllegalStateException("Po 2 próbach AI nadal generuje plan z naruszeniami HARD constraints:\n$errorMsgs"))
+            return Result.failure(IllegalStateException("Po 3 próbach AI nadal generuje plan z naruszeniami HARD constraints:\n$errorMsgs"))
         }
 
         // Mapowanie sloty → MealType
@@ -784,6 +789,50 @@ class DietAiService @Inject constructor(
             6 -> listOf(0.20, 0.10, 0.30, 0.13, 0.12, 0.15)
             else -> List(mealsCount) { 1.0 / mealsCount }
         }.map { (totalF * it).toInt() }
+
+    /**
+     * Skaluje gramatury w każdym posiłku tak, żeby trafić w target kcal per slot.
+     * AI często generuje "blisko" celu — auto-scale dopasowuje idealnie deterministycznie.
+     *
+     * Strategia:
+     *  1. Liczymy real kcal slotu z bazy produktów
+     *  2. factor = target / real
+     *  3. Cap factor ∈ [0.6, 1.5] żeby nie tworzyć absurdalnych porcji (1500g ryżu)
+     *  4. Mnożymy KAŻDĄ gramaturę przez factor (zachowując proporcje składników)
+     *  5. Sanity: minimum 5g, max 1000g per ingredient
+     */
+    private fun autoScaleSlotKcal(
+        plan: AiDayPlan,
+        perSlotKcalTargets: List<Int>,
+        productsByName: Map<String, FoodProduct>
+    ): AiDayPlan {
+        if (perSlotKcalTargets.isEmpty()) return plan
+
+        val scaledMeals = plan.meals.mapIndexed { idx, meal ->
+            val target = perSlotKcalTargets.getOrNull(idx) ?: return@mapIndexed meal
+
+            // Real kcal slotu z bazy
+            val realKcal = meal.ingredients.sumOf { ing ->
+                val key = ing.productName.trim().lowercase()
+                val product = productsByName[key]
+                    ?: productsByName.entries.firstOrNull { (k, _) -> k.contains(key) || key.contains(k) }?.value
+                if (product != null) product.kcalPer100g * ing.grams / 100.0 else 0.0
+            }
+
+            if (realKcal < 50) return@mapIndexed meal // Zbyt mało żeby skalować — fallback na walidator
+
+            val rawFactor = target / realKcal
+            val factor = rawFactor.coerceIn(0.6, 1.5)
+            Log.d("DietAiService", "autoScale slot=$idx real=${realKcal.toInt()} target=$target factor=$factor")
+
+            val scaled = meal.ingredients.map { ing ->
+                val newGrams = (ing.grams * factor).toInt().coerceIn(5, 1000)
+                ing.copy(grams = newGrams)
+            }
+            meal.copy(ingredients = scaled)
+        }
+        return plan.copy(meals = scaledMeals)
+    }
 
     private fun dietPreferenceLabel(pref: pl.filebit.gymtracker.data.entity.DietPreference): String = when (pref) {
         pl.filebit.gymtracker.data.entity.DietPreference.STANDARD -> ""

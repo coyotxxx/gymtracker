@@ -188,8 +188,10 @@ class AiMealJsonValidator @Inject constructor(
                     }
                 }
 
-            // === PER-SLOT KCAL TARGET — TWARDY WYMÓG ===
-            // AI musi rozłożyć kcal proporcjonalnie do typu posiłku, nie wrzucać wszystkiego w jeden slot.
+            // === PER-SLOT KCAL TARGET ===
+            // Po auto-skalowaniu gramatur w AutoScaler slot powinien być idealny.
+            // ERROR tylko przy drastycznych odchyleniach których auto-scale nie naprawił
+            // (np. brak składników, factor poza zakresem 0.5-1.5).
             ctx.perSlotKcalTargets.getOrNull(mIdx)?.let { target ->
                 val tolerance = ctx.perSlotKcalTolerance
                 val minK = target * (1.0 - tolerance)
@@ -198,7 +200,7 @@ class AiMealJsonValidator @Inject constructor(
                     errors += ValidationIssue(
                         ValidationSeverity.ERROR, mIdx, "slot_kcal_off_target",
                         "Slot $mIdx ('${meal.name}'): ${mealKcalReal.toInt()} kcal, target $target kcal " +
-                            "(zakres ${minK.toInt()}–${maxK.toInt()}). Dostosuj gramatury żeby zmieścić się w celu tego slotu."
+                            "(zakres ${minK.toInt()}–${maxK.toInt()})."
                     )
                 }
             }
