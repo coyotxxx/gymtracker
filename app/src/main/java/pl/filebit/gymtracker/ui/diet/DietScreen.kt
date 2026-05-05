@@ -90,6 +90,8 @@ fun DietScreen(
     val showStepsDialog by vm.showStepsDialog.collectAsStateWithLifecycle()
     val hcAvailability by vm.hcAvailability.collectAsStateWithLifecycle()
     val hcHasPermission by vm.hcHasPermission.collectAsStateWithLifecycle()
+    val hcPermissionRequest by vm.hcPermissionRequest.collectAsStateWithLifecycle()
+    val hcInstallNeeded by vm.hcInstallNeeded.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
@@ -108,6 +110,43 @@ fun DietScreen(
     androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
         // Reschedule notyfikacji przy każdej zmianie config-u (oraz przy pierwszym wejściu)
         vm.rescheduleReminders()
+    }
+
+    // Health Connect permission launcher
+    val hcPermissionLauncher = androidx.activity.compose.rememberLauncherForActivityResult(
+        contract = vm.healthConnectPermissionContract()
+    ) { _: Set<String> ->
+        vm.onHealthConnectPermissionResult(true)
+    }
+    androidx.compose.runtime.LaunchedEffect(hcPermissionRequest) {
+        if (hcPermissionRequest) {
+            hcPermissionLauncher.launch(vm.healthConnectPermissions())
+            vm.consumeHcPermissionRequest()
+        }
+    }
+    val ctx = androidx.compose.ui.platform.LocalContext.current
+    if (hcInstallNeeded) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.consumeHcInstallNeeded() },
+            title = { Text("Health Connect niezainstalowany", fontWeight = FontWeight.Bold) },
+            text = {
+                Text(
+                    "Aby auto-sync kroków zadziałał, potrzebna jest aplikacja Google Health Connect z Play Store. " +
+                        "Po instalacji wróć do GymTracker i włącz toggle ponownie.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { vm.openHealthConnectInstall(ctx) }) {
+                    Text("Otwórz Play Store", color = AccentOrange, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { vm.consumeHcInstallNeeded() }) {
+                    Text("Anuluj", color = DarkOnSurfaceVariant)
+                }
+            }
+        )
     }
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
@@ -481,6 +520,8 @@ fun DietScreen(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
             onEditProfile = onEditDietProfile,
+            onHealthConnectEnableRequest = { vm.startHealthConnectEnableFlow() },
+            onHealthConnectDisable = { vm.toggleHealthConnectSync(false) },
             onDismiss = { showSettings = false }
         )
     }

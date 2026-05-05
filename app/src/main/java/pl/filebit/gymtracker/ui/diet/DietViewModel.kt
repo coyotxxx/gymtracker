@@ -155,6 +155,69 @@ class DietViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Compose triggery dla permission flow + install Health Connect app.
+     */
+    private val _hcPermissionRequest = MutableStateFlow(false)
+    val hcPermissionRequest: StateFlow<Boolean> = _hcPermissionRequest.asStateFlow()
+
+    private val _hcInstallNeeded = MutableStateFlow(false)
+    val hcInstallNeeded: StateFlow<Boolean> = _hcInstallNeeded.asStateFlow()
+
+    /**
+     * User kliknął "Włącz HC" — sprawdź dostępność, jeśli OK uruchom permission flow.
+     */
+    fun startHealthConnectEnableFlow() {
+        viewModelScope.launch {
+            val avail = healthConnect.checkAvailability()
+            when (avail) {
+                pl.filebit.gymtracker.data.health.HealthConnectAvailability.NOT_INSTALLED -> {
+                    _hcInstallNeeded.value = true
+                }
+                pl.filebit.gymtracker.data.health.HealthConnectAvailability.NOT_SUPPORTED -> {
+                    _hcInstallNeeded.value = true // pokażemy dialog z info
+                }
+                pl.filebit.gymtracker.data.health.HealthConnectAvailability.INSTALLED -> {
+                    if (healthConnect.hasAllPermissions()) {
+                        // Już mamy permission — od razu zapis + sync
+                        toggleHealthConnectSync(true)
+                        syncHealthConnectNow()
+                    } else {
+                        _hcPermissionRequest.value = true
+                    }
+                }
+            }
+        }
+    }
+
+    fun consumeHcPermissionRequest() { _hcPermissionRequest.value = false }
+    fun consumeHcInstallNeeded() { _hcInstallNeeded.value = false }
+
+    /** Po zwrocie z permission launcher — sprawdź wynik i zapisz/sync. */
+    fun onHealthConnectPermissionResult(granted: Boolean) {
+        viewModelScope.launch {
+            val hasIt = healthConnect.hasAllPermissions()
+            if (hasIt) {
+                toggleHealthConnectSync(true)
+                syncHealthConnectNow()
+            } else {
+                // User odmówił — wyłącz toggle
+                toggleHealthConnectSync(false)
+            }
+        }
+    }
+
+    fun openHealthConnectInstall(context: android.content.Context) {
+        try {
+            context.startActivity(healthConnect.providerInstallIntent())
+        } catch (_: Exception) { /* brak Play Store — ignore */ }
+        consumeHcInstallNeeded()
+    }
+
+    /** Permission contract dla Compose launcher. */
+    fun healthConnectPermissionContract() = healthConnect.permissionContract()
+    fun healthConnectPermissions() = healthConnect.permissionsToRequest()
+
     suspend fun syncHealthConnectNow(): Int {
         val steps = healthConnect.readStepsForDate(_selectedDateMs.value)
         if (steps > 0) {

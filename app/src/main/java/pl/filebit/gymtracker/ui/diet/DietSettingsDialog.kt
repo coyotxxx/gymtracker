@@ -44,6 +44,8 @@ fun DietSettingsDialog(
     initial: DietConfig,
     onSave: (DietConfig) -> Unit,
     onEditProfile: () -> Unit = {},
+    onHealthConnectEnableRequest: () -> Unit = {},
+    onHealthConnectDisable: () -> Unit = {},
     onDismiss: () -> Unit
 ) {
     var meals by remember { mutableStateOf(initial.mealsPerDay) }
@@ -161,7 +163,17 @@ fun DietSettingsDialog(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Switch(
                         checked = hcSync,
-                        onCheckedChange = { hcSync = it },
+                        onCheckedChange = { newValue ->
+                            hcSync = newValue
+                            // Kluczowa rzecz: gdy user WŁĄCZA → trigger permission flow w VM
+                            // (ten dialog tylko aktualizuje lokalną zmienną, faktyczny zapis
+                            // dzieje się przy "Zapisz" po wywołaniu onSave)
+                            if (newValue) {
+                                onHealthConnectEnableRequest()
+                            } else {
+                                onHealthConnectDisable()
+                            }
+                        },
                         colors = SwitchDefaults.colors(
                             checkedThumbColor = AccentOrange,
                             checkedTrackColor = AccentOrange.copy(alpha = 0.5f)
