@@ -108,8 +108,75 @@ class DietViewModel @Inject constructor(
     private val recoveryRepo: pl.filebit.gymtracker.data.repository.RecoveryRepository,
     private val qualityScorer: pl.filebit.gymtracker.data.repository.DailyQualityScorer,
     private val weeklyBudgetCalc: pl.filebit.gymtracker.data.repository.WeeklyBudgetCalculator,
-    private val activityRepo: pl.filebit.gymtracker.data.repository.ActivityRepository
+    private val activityRepo: pl.filebit.gymtracker.data.repository.ActivityRepository,
+    private val phaseRepo: pl.filebit.gymtracker.data.repository.DietPhaseRepository,
+    private val phaseManager: pl.filebit.gymtracker.data.repository.PhaseManager,
+    private val recoveryAnalyzer: pl.filebit.gymtracker.data.repository.RecoveryAnalyzer
 ) : ViewModel() {
+
+    // === DIET PHASE ===
+    private val _currentPhase = MutableStateFlow<pl.filebit.gymtracker.data.entity.DietPhase?>(null)
+    val currentPhase: StateFlow<pl.filebit.gymtracker.data.entity.DietPhase?> = _currentPhase.asStateFlow()
+
+    private val _phaseSuggestion = MutableStateFlow<pl.filebit.gymtracker.data.repository.PhaseSuggestion?>(null)
+    val phaseSuggestion: StateFlow<pl.filebit.gymtracker.data.repository.PhaseSuggestion?> = _phaseSuggestion.asStateFlow()
+
+    fun checkPhaseSuggestion() {
+        viewModelScope.launch {
+            val profile = profileRepo.get()
+            val current = phaseRepo.getCurrent()
+            // Waga przy starcie cut — uproszczenie: jeśli mamy DietPhase typu CUT, jego startDate
+            // to moment rozpoczęcia. Bierzemy aktualną wagę profile (precyzja: 1 punkt zamiast 2).
+            // Pełniejsza implementacja wymagałaby BodyMeasurement w startDate.
+            val cutStartWeight = profile.bodyweightKg
+            val recoveryLogs = recoveryRepo.getLast7Days()
+            val recovery = recoveryAnalyzer.analyze(recoveryLogs)
+            val adherence = adherenceCalc.avgAdherenceLastDays(14).avgKcalPct
+            val trend = pl.filebit.gymtracker.util.WeightTrend.NO_DATA
+
+            val suggestion = phaseManager.suggest(
+                currentPhase = current,
+                weightGoalType = profile.weightGoalType,
+                weightAtCutStartKg = cutStartWeight,
+                currentWeightKg = profile.bodyweightKg,
+                weightTrend = trend,
+                adherenceKcalPct = adherence,
+                recovery = recovery,
+                isTodayHeavyTraining = false
+            )
+            if (suggestion.proposedType != null) {
+                _phaseSuggestion.value = suggestion
+            }
+        }
+    }
+
+    fun acceptPhaseSuggestion() {
+        val s = _phaseSuggestion.value ?: return
+        val type = s.proposedType ?: return
+        viewModelScope.launch {
+            val now = System.currentTimeMillis()
+            val end = if (s.durationDays > 0) {
+                now + s.durationDays * 24L * 3600 * 1000
+            } else null
+            phaseRepo.startPhase(pl.filebit.gymtracker.data.entity.DietPhase(
+                type = type,
+                startDateMs = now,
+                endDateMs = end,
+                kcalAdjustment = s.kcalAdjustment,
+                reason = s.reason,
+                createdBySystem = true,
+                accepted = true
+            ))
+            _currentPhase.value = phaseRepo.getCurrent()
+            _phaseSuggestion.value = null
+        }
+    }
+
+    fun dismissPhaseSuggestion() { _phaseSuggestion.value = null }
+
+    private suspend fun refreshCurrentPhase() {
+        _currentPhase.value = phaseRepo.getCurrent()
+    }
 
     // === DAILY ACTIVITY (steps) ===
     private val _stepsToday = MutableStateFlow(0)
@@ -429,6 +496,8 @@ class DietViewModel @Inject constructor(
             runCatching { refreshHydration() }
             // Refresh steps today
             runCatching { refreshSteps() }
+            // Refresh diet phase
+            runCatching { refreshCurrentPhase() }
         }
     }
 

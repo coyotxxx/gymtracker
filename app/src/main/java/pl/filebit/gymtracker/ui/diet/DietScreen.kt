@@ -86,6 +86,8 @@ fun DietScreen(
     val showRecoveryDialog by vm.showRecoveryDialog.collectAsStateWithLifecycle()
     val stepsToday by vm.stepsToday.collectAsStateWithLifecycle()
     val showStepsDialog by vm.showStepsDialog.collectAsStateWithLifecycle()
+    val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
+    val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
     val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
@@ -275,6 +277,59 @@ fun DietScreen(
                     }
                 }
 
+                // 🎯 Faza diety (CUT/MAINTENANCE/BULK/REFEED/DIET_BREAK)
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(DarkSurface, RoundedCornerShape(12.dp))
+                            .clickable { vm.checkPhaseSuggestion() }
+                            .padding(10.dp)
+                    ) {
+                        Column {
+                            Text(
+                                "🎯 FAZA DIETY",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                    letterSpacing = 1.4.sp
+                                ),
+                                color = AccentOrange
+                            )
+                            val phase = currentPhase
+                            if (phase != null) {
+                                val emoji = when (phase.type) {
+                                    pl.filebit.gymtracker.data.entity.DietPhaseType.CUT -> "↘️"
+                                    pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE -> "⏸"
+                                    pl.filebit.gymtracker.data.entity.DietPhaseType.BULK -> "↗️"
+                                    pl.filebit.gymtracker.data.entity.DietPhaseType.REFEED_DAY -> "🍝"
+                                    pl.filebit.gymtracker.data.entity.DietPhaseType.DIET_BREAK -> "🛑"
+                                }
+                                Text(
+                                    "$emoji ${phase.type.name} · ${phase.durationDays()} dni",
+                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                                    color = DarkOnSurface
+                                )
+                                Text(
+                                    "Dotknij by sprawdzić sugestię silnika",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                    color = DarkOnSurfaceVariant
+                                )
+                            } else {
+                                Text(
+                                    "Brak aktywnej fazy",
+                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                    color = DarkOnSurface
+                                )
+                                Text(
+                                    "Dotknij by sprawdzić czy silnik nie sugeruje fazy (cut/maintenance/refeed)",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+
                 // Historia + preferencje smakowe
                 item {
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -415,6 +470,14 @@ fun DietScreen(
             currentSteps = stepsToday,
             onSave = { steps -> vm.setSteps(steps) },
             onDismiss = { vm.dismissStepsDialog() }
+        )
+    }
+
+    phaseSuggestion?.let { s ->
+        DietPhaseDialog(
+            suggestion = s,
+            onAccept = { vm.acceptPhaseSuggestion() },
+            onDismiss = { vm.dismissPhaseSuggestion() }
         )
     }
 
