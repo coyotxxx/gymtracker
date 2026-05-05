@@ -646,10 +646,96 @@ fun DietScreen(
 
     if (showEmergencyDialog) {
         EmergencyMealDialog(
-            onSelectMode = { /* TODO v0.93.1: wywołaj generator */ },
+            onSelectMode = { mode -> vm.generateEmergencyMeal(mode) },
             onOpenDamageControl = { vm.openDamageControlDialog() },
             onDismiss = { vm.dismissEmergencyDialog() }
         )
+    }
+
+    // Emergency meal — loading / success / error / saved
+    val emergencyMealState by vm.emergencyMealState.collectAsStateWithLifecycle()
+    when (val s = emergencyMealState) {
+        is DietViewModel.EmergencyMealState.Idle -> { /* nothing */ }
+        is DietViewModel.EmergencyMealState.Loading -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { /* nie pozwalamy zamknąć */ },
+                title = { Text("⏳ AI generuje posiłek...", fontWeight = FontWeight.Bold) },
+                text = { Text("To może potrwać 5-10 sek.") },
+                confirmButton = {}
+            )
+        }
+        is DietViewModel.EmergencyMealState.Error -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { vm.dismissEmergencyMeal() },
+                title = { Text("❌ Błąd AI", fontWeight = FontWeight.Bold) },
+                text = { Text(s.message) },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissEmergencyMeal() }) {
+                        Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                }
+            )
+        }
+        is DietViewModel.EmergencyMealState.Success -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { vm.dismissEmergencyMeal() },
+                title = { Text("${s.modeLabel}: ${s.recipe.name}", fontWeight = FontWeight.Bold) },
+                text = {
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(8.dp))
+                                .padding(10.dp)
+                        ) {
+                            Text(
+                                "${s.recipe.kcal} kcal · B${s.recipe.proteinG} W${s.recipe.carbsG} T${s.recipe.fatG} · ⏱ ${s.recipe.prepMinutes} min",
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                                ),
+                                color = AccentOrange
+                            )
+                        }
+                        Text("SKŁADNIKI", style = MaterialTheme.typography.labelSmall.copy(
+                            fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
+                        ), color = DarkOnSurfaceVariant)
+                        s.recipe.ingredients.forEach { ing ->
+                            Text("• ${ing.productName} — ${ing.grams} g",
+                                style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                        }
+                        if (s.recipe.instructions.isNotBlank()) {
+                            Text("PRZEPIS", style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
+                            ), color = DarkOnSurfaceVariant)
+                            Text(s.recipe.instructions,
+                                style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                        }
+                    }
+                },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.acceptEmergencyMeal() }) {
+                        Text("Dodaj do diety", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                },
+                dismissButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissEmergencyMeal() }) {
+                        Text("Anuluj", color = DarkOnSurfaceVariant)
+                    }
+                }
+            )
+        }
+        is DietViewModel.EmergencyMealState.Saved -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { vm.dismissEmergencyMeal() },
+                title = { Text("✓ Dodano", fontWeight = FontWeight.Bold) },
+                text = { Text("Posiłek '${s.mealName}' został dodany do dziennika dnia.") },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissEmergencyMeal() }) {
+                        Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                }
+            )
+        }
     }
 
     if (showDamageControlDialog) {

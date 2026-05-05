@@ -282,6 +282,77 @@ class DietViewModel @Inject constructor(
     fun openEmergencyDialog() { _showEmergencyDialog.value = true }
     fun dismissEmergencyDialog() { _showEmergencyDialog.value = false }
 
+    // === EMERGENCY MEAL GENERATION (AI) ===
+    sealed class EmergencyMealState {
+        object Idle : EmergencyMealState()
+        object Loading : EmergencyMealState()
+        data class Success(
+            val recipe: pl.filebit.gymtracker.ai.AiMealRecipe,
+            val mealType: MealType,
+            val modeLabel: String
+        ) : EmergencyMealState()
+        data class Error(val message: String) : EmergencyMealState()
+        data class Saved(val mealName: String) : EmergencyMealState()
+    }
+
+    private val _emergencyMealState = MutableStateFlow<EmergencyMealState>(EmergencyMealState.Idle)
+    val emergencyMealState: StateFlow<EmergencyMealState> = _emergencyMealState.asStateFlow()
+
+    fun generateEmergencyMeal(mode: pl.filebit.gymtracker.ai.EmergencyMode) {
+        if (_emergencyMealState.value is EmergencyMealState.Loading) return
+        val mealType = when (mode) {
+            pl.filebit.gymtracker.ai.EmergencyMode.QUICK_5MIN,
+            pl.filebit.gymtracker.ai.EmergencyMode.NO_COOKING,
+            pl.filebit.gymtracker.ai.EmergencyMode.STORE_SHOP -> MealType.SNACK
+            pl.filebit.gymtracker.ai.EmergencyMode.AT_WORK -> MealType.LUNCH
+            pl.filebit.gymtracker.ai.EmergencyMode.LATE_NIGHT -> MealType.DINNER
+        }
+        val modeLabel = when (mode) {
+            pl.filebit.gymtracker.ai.EmergencyMode.QUICK_5MIN -> "⏱ 5 min"
+            pl.filebit.gymtracker.ai.EmergencyMode.NO_COOKING -> "🥗 Bez gotowania"
+            pl.filebit.gymtracker.ai.EmergencyMode.AT_WORK -> "🏢 W pracy"
+            pl.filebit.gymtracker.ai.EmergencyMode.STORE_SHOP -> "🛒 Ze sklepu"
+            pl.filebit.gymtracker.ai.EmergencyMode.LATE_NIGHT -> "🌙 Późna kolacja"
+        }
+        val targetKcal = state.value.perMealKcal.takeIf { it > 0 } ?: 400
+
+        viewModelScope.launch {
+            _emergencyMealState.value = EmergencyMealState.Loading
+            val result = emergencyMealGen.generate(mode, targetKcal, mealType)
+            _emergencyMealState.value = result.fold(
+                onSuccess = { recipe -> EmergencyMealState.Success(recipe, mealType, modeLabel) },
+                onFailure = { err -> EmergencyMealState.Error(err.message ?: "Nieznany błąd AI") }
+            )
+        }
+    }
+
+    fun acceptEmergencyMeal() {
+        val s = _emergencyMealState.value as? EmergencyMealState.Success ?: return
+        viewModelScope.launch {
+            val products = state.value.productsAll
+            val byName = products.associateBy { it.name.lowercase() }
+            var added = 0
+            for (ing in s.recipe.ingredients) {
+                val key = ing.productName.lowercase()
+                val product = byName[key]
+                    ?: byName.entries.firstOrNull { (k, _) -> k.contains(key) || key.contains(k) }?.value
+                    ?: continue
+                repo.addMeal(pl.filebit.gymtracker.data.entity.MealEntry(
+                    dateMs = _selectedDateMs.value,
+                    mealType = s.mealType,
+                    productId = product.id,
+                    grams = ing.grams.toDouble(),
+                    notes = s.recipe.name
+                ))
+                added++
+            }
+            runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
+            _emergencyMealState.value = EmergencyMealState.Saved(s.recipe.name)
+        }
+    }
+
+    fun dismissEmergencyMeal() { _emergencyMealState.value = EmergencyMealState.Idle }
+
     fun openDamageControlDialog() { _showDamageControlDialog.value = true }
     fun dismissDamageControlDialog() { _showDamageControlDialog.value = false }
     fun dismissDamageControlResult() { _damageControlResult.value = null }
