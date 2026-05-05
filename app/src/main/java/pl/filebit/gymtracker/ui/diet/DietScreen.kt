@@ -28,12 +28,14 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -109,6 +111,9 @@ fun DietScreen(
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }
+    // Stan rozwinięcia sekcji
+    val expandedSlots = remember { mutableStateMapOf<MealType, Boolean>() }
+    var toolsExpanded by remember { mutableStateOf(false) }
     androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
         // Reschedule notyfikacji przy każdej zmianie config-u (oraz przy pierwszym wejściu)
         vm.rescheduleReminders()
@@ -173,7 +178,7 @@ fun DietScreen(
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                // Hero — kcal goal + makro pierścienie + settings + AI generator
+                // 1. Hero — kcal goal + makro pierścienie + settings + AI generator
                 item {
                     DayHeroCard(
                         state = state,
@@ -183,368 +188,52 @@ fun DietScreen(
                         onGenerateAi = { vm.generateAiDayPlan() }
                     )
                 }
-                // Button "Raport zgodności" + "Sprawdź korektę"
+
+                // 2. 3 mini kafelki: WODA / KROKI / REGEN (compact, jeden wiersz)
                 item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenAdherenceReport),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "📊 Raport",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = DarkOnSurface
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
-                                .clickable(onClick = { vm.checkForAdjustment() }),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "🔍 Sprawdź korektę",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = AccentOrange
-                            )
-                        }
-                    }
+                    MiniTilesRow(
+                        hydrationToday = hydrationToday,
+                        hydrationGoal = hydrationGoal,
+                        onAddHydration = { ml -> vm.addHydration(ml) },
+                        onOpenHydration = { vm.openHydrationLogDialog() },
+                        stepsToday = stepsToday,
+                        hcConnected = hcHasPermission && state.config.healthConnectSyncEnabled,
+                        onOpenSteps = { vm.openStepsDialog() },
+                        onOpenRecovery = { vm.openRecoveryDialog() }
+                    )
                 }
 
-                // 💧 Woda + 🛌 Regeneracja (v0.90)
+                // 3. Faza diety — kompaktowy ribbon
                 item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        // Hydration (tap = otwórz dialog z listą wpisów)
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .background(DarkSurface, RoundedCornerShape(12.dp))
-                                .clickable { vm.openHydrationLogDialog() }
-                                .padding(10.dp)
-                        ) {
-                            Column {
-                                Text(
-                                    "💧 WODA",
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
-                                        letterSpacing = 1.4.sp
-                                    ),
-                                    color = AccentOrange
-                                )
-                                Text(
-                                    "${hydrationToday} / ${hydrationGoal} ml",
-                                    style = MaterialTheme.typography.bodyMedium.copy(
-                                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
-                                    ),
-                                    color = DarkOnSurface
-                                )
-                                Spacer(Modifier.height(6.dp))
-                                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                                    listOf(250, 500, 750).forEach { ml ->
-                                        Box(
-                                            modifier = Modifier
-                                                .weight(1f)
-                                                .height(28.dp)
-                                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(6.dp))
-                                                .clickable { vm.addHydration(ml) },
-                                            contentAlignment = Alignment.Center
-                                        ) {
-                                            Text(
-                                                "+${ml}",
-                                                style = MaterialTheme.typography.labelSmall.copy(
-                                                    fontSize = 11.sp, fontWeight = FontWeight.SemiBold
-                                                ),
-                                                color = AccentOrange
-                                            )
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        // Recovery
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .background(DarkSurface, RoundedCornerShape(12.dp))
-                                .clickable { vm.openRecoveryDialog() }
-                                .padding(10.dp)
-                        ) {
-                            Column {
-                                Text(
-                                    "🛌 REGENERACJA",
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
-                                        letterSpacing = 1.4.sp
-                                    ),
-                                    color = AccentOrange
-                                )
-                                Text(
-                                    "Oceń dzisiaj",
-                                    style = MaterialTheme.typography.bodyMedium.copy(
-                                        fontWeight = FontWeight.SemiBold
-                                    ),
-                                    color = DarkOnSurface
-                                )
-                                Spacer(Modifier.height(2.dp))
-                                Text(
-                                    "Sen, stres, energia, głód",
-                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                    color = DarkOnSurfaceVariant
-                                )
-                            }
-                        }
-                    }
+                    PhaseRibbon(
+                        currentPhase = currentPhase,
+                        onCheck = { vm.checkPhaseSuggestion() }
+                    )
                 }
 
-                // 🚶 Kroki (NEAT) — szerokość pełna
+                // 4. Header "Posiłki" + 3 ikony akcji w prawym rogu
                 item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(DarkSurface, RoundedCornerShape(12.dp))
-                            .clickable { vm.openStepsDialog() }
-                            .padding(10.dp)
-                    ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        "🚶 KROKI DZIŚ",
-                                        style = MaterialTheme.typography.labelSmall.copy(
-                                            fontSize = 10.sp, fontWeight = FontWeight.Bold,
-                                            letterSpacing = 1.4.sp
-                                        ),
-                                        color = AccentOrange
-                                    )
-                                    if (hcHasPermission && state.config.healthConnectSyncEnabled) {
-                                        Spacer(Modifier.width(6.dp))
-                                        Box(
-                                            modifier = Modifier
-                                                .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(4.dp))
-                                                .padding(horizontal = 4.dp, vertical = 1.dp)
-                                        ) {
-                                            Text(
-                                                "🔗 HC",
-                                                style = MaterialTheme.typography.labelSmall.copy(
-                                                    fontSize = 9.sp, fontWeight = FontWeight.Bold
-                                                ),
-                                                color = AccentOrange
-                                            )
-                                        }
-                                        Spacer(Modifier.width(8.dp))
-                                        // Przycisk Sync teraz
-                                        Box(
-                                            modifier = Modifier
-                                                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(4.dp))
-                                                .clickable { vm.manualHealthConnectSync() }
-                                                .padding(horizontal = 6.dp, vertical = 2.dp)
-                                        ) {
-                                            Text(
-                                                "🔄 Sync",
-                                                style = MaterialTheme.typography.labelSmall.copy(
-                                                    fontSize = 9.sp, fontWeight = FontWeight.Bold
-                                                ),
-                                                color = AccentOrange
-                                            )
-                                        }
-                                    }
-                                }
-                                Text(
-                                    if (stepsToday > 0) "$stepsToday kroków" else "Brak — dotknij by wpisać",
-                                    style = MaterialTheme.typography.bodyMedium.copy(
-                                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
-                                    ),
-                                    color = DarkOnSurface
-                                )
-                                Text(
-                                    "NEAT — silnik korekt blokuje cięcie kcal gdy kroki spadną",
-                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                    color = DarkOnSurfaceVariant
-                                )
-                            }
-                        }
-                    }
+                    PosilkiHeader(
+                        onEmergency = { vm.openEmergencyDialog() },
+                        onScanner = onOpenBarcodeScanner,
+                        onFotoAi = onOpenFoodImageAnalyzer
+                    )
                 }
 
-                // 🎯 Faza diety (CUT/MAINTENANCE/BULK/REFEED/DIET_BREAK)
-                item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(DarkSurface, RoundedCornerShape(12.dp))
-                            .clickable { vm.checkPhaseSuggestion() }
-                            .padding(10.dp)
-                    ) {
-                        Column {
-                            Text(
-                                "🎯 FAZA DIETY",
-                                style = MaterialTheme.typography.labelSmall.copy(
-                                    fontSize = 10.sp, fontWeight = FontWeight.Bold,
-                                    letterSpacing = 1.4.sp
-                                ),
-                                color = AccentOrange
-                            )
-                            val phase = currentPhase
-                            if (phase != null) {
-                                val emoji = when (phase.type) {
-                                    pl.filebit.gymtracker.data.entity.DietPhaseType.CUT -> "↘️"
-                                    pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE -> "⏸"
-                                    pl.filebit.gymtracker.data.entity.DietPhaseType.BULK -> "↗️"
-                                    pl.filebit.gymtracker.data.entity.DietPhaseType.REFEED_DAY -> "🍝"
-                                    pl.filebit.gymtracker.data.entity.DietPhaseType.DIET_BREAK -> "🛑"
-                                }
-                                Text(
-                                    "$emoji ${phase.type.name} · ${phase.durationDays()} dni",
-                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                                    color = DarkOnSurface
-                                )
-                                Text(
-                                    "Dotknij by sprawdzić sugestię silnika",
-                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                    color = DarkOnSurfaceVariant
-                                )
-                            } else {
-                                Text(
-                                    "Brak aktywnej fazy",
-                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                    color = DarkOnSurface
-                                )
-                                Text(
-                                    "Dotknij by sprawdzić czy silnik nie sugeruje fazy (cut/maintenance/refeed)",
-                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                                    color = DarkOnSurfaceVariant
-                                )
-                            }
-                        }
-                    }
-                }
-
-                // Historia + preferencje smakowe
-                item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenAdjustmentHistory),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "📋 Historia zmian",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = DarkOnSurface
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenMealPreferences),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "⭐ Preferencje",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = DarkOnSurface
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenShoppingList),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "🛒 Zakupy",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = DarkOnSurface
-                            )
-                        }
-                    }
-                }
-
-                // 🍱 Meal prep + 🔍 Skaner + 📷 Foto AI — trzy ikony
-                item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenMealPrep),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "🍱 Prep",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
-                                color = DarkOnSurface
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenBarcodeScanner),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "🔍 Skaner",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
-                                color = DarkOnSurface
-                            )
-                        }
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
-                                .clickable(onClick = onOpenFoodImageAnalyzer),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "📷 Foto AI",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
-                                color = AccentOrange
-                            )
-                        }
-                    }
-                }
-
-                // 🚨 Awaryjne — przycisk pełnej szerokości
-                item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(40.dp)
-                            .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(10.dp))
-                            .clickable { vm.openEmergencyDialog() },
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            "🚨 Awaryjny posiłek / nieplanowane jedzenie",
-                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                            color = AccentOrange
-                        )
-                    }
-                }
-
-                // Sekcje posiłków (zgodnie z liczbą z DietConfig)
+                // 5. Sekcje posiłków — z expandable + checkmark zjedzonego
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
+                    val expanded = expandedSlots[group.type] ?: isCurrentSlot(group.timeLabel)
+                    val targetKcal = state.perMealKcal
                     MealGroupCard(
                         group = group,
-                        targetKcalPerMeal = state.perMealKcal,
+                        targetKcalPerMeal = targetKcal,
+                        expanded = expanded,
+                        onToggleExpanded = { expandedSlots[group.type] = !expanded },
+                        isConsumed = group.entries.isNotEmpty() &&
+                            targetKcal > 0 && group.totals.kcal >= targetKcal * 0.8,
+                        isCurrent = isCurrentSlot(group.timeLabel) &&
+                            !(targetKcal > 0 && group.totals.kcal >= targetKcal * 0.8),
                         onAdd = { addMealForType = group.type },
                         onDelete = { id -> vm.deleteMeal(id) },
                         onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
@@ -555,7 +244,21 @@ fun DietScreen(
                     )
                 }
 
-                item { Spacer(Modifier.height(8.dp)) }
+                // 6. Collapsible "🛠 Narzędzia (6)"
+                item {
+                    NarzedziaSection(
+                        expanded = toolsExpanded,
+                        onToggle = { toolsExpanded = !toolsExpanded },
+                        onRaport = onOpenAdherenceReport,
+                        onSprawdzKorekte = { vm.checkForAdjustment() },
+                        onHistoria = onOpenAdjustmentHistory,
+                        onPreferencje = onOpenMealPreferences,
+                        onZakupy = onOpenShoppingList,
+                        onMealPrep = onOpenMealPrep
+                    )
+                }
+
+                item { Spacer(Modifier.height(16.dp)) }
             }
         }
     }
@@ -1128,6 +831,10 @@ private fun MacroRing(label: String, current: Double, goal: Double, color: Color
 private fun MealGroupCard(
     group: MealGroup,
     targetKcalPerMeal: Int,
+    expanded: Boolean = true,
+    onToggleExpanded: () -> Unit = {},
+    isConsumed: Boolean = false,
+    isCurrent: Boolean = false,
     onAdd: () -> Unit,
     onDelete: (Long) -> Unit,
     onSwap: (MealEntryWithMacros) -> Unit,
@@ -1139,14 +846,28 @@ private fun MealGroupCard(
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
+        border = BorderStroke(
+            1.dp,
+            if (isCurrent) AccentOrange.copy(alpha = 0.4f) else DarkOutlineSoft
+        ),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
+            // Header — klikalny dla toggle
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onToggleExpanded),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                if (isConsumed) {
+                    Text(
+                        "✓",
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                        color = SuccessGreen
+                    )
+                    Spacer(Modifier.width(6.dp))
+                }
                 Column(modifier = Modifier.weight(1f)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
@@ -1174,65 +895,89 @@ private fun MealGroupCard(
                                 )
                             }
                         }
+                        if (isCurrent) {
+                            Spacer(Modifier.width(6.dp))
+                            Text(
+                                "● TERAZ",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.2.sp
+                                ),
+                                color = AccentOrange
+                            )
+                        }
                     }
                 }
                 Column(horizontalAlignment = Alignment.End) {
-                    Text(
-                        "${group.totals.kcal.roundToInt()} kcal",
-                        style = MaterialTheme.typography.bodyMedium.copy(
-                            fontWeight = FontWeight.SemiBold,
-                            fontFamily = FontFamily.Monospace
-                        ),
-                        color = AccentOrange
-                    )
-                    if (targetKcalPerMeal > 0) {
+                    val kcal = group.totals.kcal.roundToInt()
+                    val target = targetKcalPerMeal
+                    Row(verticalAlignment = Alignment.Bottom) {
                         Text(
-                            "cel: $targetKcalPerMeal",
-                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                            color = DarkOnSurfaceVariant
+                            "$kcal",
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = FontFamily.Monospace
+                            ),
+                            color = AccentOrange
                         )
+                        if (target > 0) {
+                            Text(
+                                " / $target kcal",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontSize = 11.sp, fontFamily = FontFamily.Monospace
+                                ),
+                                color = DarkOnSurfaceVariant
+                            )
+                        }
                     }
+                    Text(
+                        if (expanded) "ᐱ" else "ᐯ",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = DarkOnSurfaceVariant
+                    )
                 }
             }
-            // Makro per posiłek — pasek z B/W/T summary
+            // Mini-summary ZAWSZE widoczne: "X produktów · B58 · W67 · T12"
             if (group.entries.isNotEmpty()) {
                 Spacer(Modifier.height(6.dp))
+                HorizontalDivider(color = DarkOutlineSoft.copy(alpha = 0.3f), thickness = 1.dp)
+                Spacer(Modifier.height(6.dp))
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(DarkSurfaceVariant.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
-                        .padding(horizontal = 10.dp, vertical = 4.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Text(
-                        "B ${group.totals.protein.roundToInt()}g",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontFamily = FontFamily.Monospace,
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.SemiBold
+                        "${group.entries.size} ${if (group.entries.size == 1) "produkt" else "produktów"}",
+                        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
+                        color = DarkOnSurface
+                    )
+                    Text(
+                        "B ${group.totals.protein.roundToInt()}",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
                         ),
                         color = AccentOrange
                     )
+                    Text("·", color = DarkOnSurfaceVariant)
                     Text(
-                        "W ${group.totals.carbs.roundToInt()}g",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontFamily = FontFamily.Monospace,
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.SemiBold
+                        "W ${group.totals.carbs.roundToInt()}",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
                         ),
                         color = SuccessGreen
                     )
+                    Text("·", color = DarkOnSurfaceVariant)
                     Text(
-                        "T ${group.totals.fat.roundToInt()}g",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontFamily = FontFamily.Monospace,
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.SemiBold
+                        "T ${group.totals.fat.roundToInt()}",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
                         ),
                         color = Color(0xFFFFB74D)
                     )
                 }
             }
+            // === EXPANDED: szczegóły + akcje ===
+            if (expanded) {
             if (group.entries.isNotEmpty()) {
                 Spacer(Modifier.height(8.dp))
                 group.entries.forEach { e ->
@@ -1311,6 +1056,7 @@ private fun MealGroupCard(
                     }
                 }
             }
+            } // end if (expanded)
         }
     }
 }
@@ -1386,4 +1132,367 @@ internal fun mealTypeLabel(t: MealType): String = when (t) {
     MealType.LUNCH -> "Obiad"
     MealType.DINNER -> "Kolacja"
     MealType.SNACK -> "Przekąska"
+}
+
+// === NOWE KOMPONENTY (v0.99 reorganizacja) ===
+
+/**
+ * 3 mini kafelki w jednym wierszu: Woda / Kroki / Regeneracja.
+ * Compact format — minimum miejsca, max info.
+ */
+@Composable
+private fun MiniTilesRow(
+    hydrationToday: Int,
+    hydrationGoal: Int,
+    onAddHydration: (Int) -> Unit,
+    onOpenHydration: () -> Unit,
+    stepsToday: Int,
+    hcConnected: Boolean,
+    onOpenSteps: () -> Unit,
+    onOpenRecovery: () -> Unit
+) {
+    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+        // Woda
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .background(DarkSurface, RoundedCornerShape(10.dp))
+                .clickable(onClick = onOpenHydration)
+                .padding(8.dp)
+        ) {
+            Column {
+                Text(
+                    "💧 WODA",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
+                    ),
+                    color = AccentOrange
+                )
+                Text(
+                    "$hydrationToday / $hydrationGoal ml",
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 11.sp
+                    ),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(4.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+                    listOf(250, 500).forEach { ml ->
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(22.dp)
+                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(5.dp))
+                                .clickable { onAddHydration(ml) },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "+$ml",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontSize = 9.sp, fontWeight = FontWeight.SemiBold
+                                ),
+                                color = AccentOrange
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        // Kroki
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .background(DarkSurface, RoundedCornerShape(10.dp))
+                .clickable(onClick = onOpenSteps)
+                .padding(8.dp)
+        ) {
+            Column {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "🚶 KROKI",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
+                        ),
+                        color = AccentOrange
+                    )
+                    if (hcConnected) {
+                        Spacer(Modifier.width(4.dp))
+                        Text(
+                            "🔗",
+                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
+                            color = AccentOrange
+                        )
+                    }
+                }
+                Text(
+                    if (stepsToday > 0) "$stepsToday" else "— brak",
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 11.sp
+                    ),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(4.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(22.dp)
+                        .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(5.dp))
+                        .clickable(onClick = onOpenSteps),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Wpisz",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp, fontWeight = FontWeight.SemiBold
+                        ),
+                        color = AccentOrange
+                    )
+                }
+            }
+        }
+        // Regeneracja
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .background(DarkSurface, RoundedCornerShape(10.dp))
+                .clickable(onClick = onOpenRecovery)
+                .padding(8.dp)
+        ) {
+            Column {
+                Text(
+                    "🩺 REGEN.",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
+                    ),
+                    color = AccentOrange
+                )
+                Text(
+                    "Oceń dziś",
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontWeight = FontWeight.Bold, fontSize = 11.sp
+                    ),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "Sen-Stres",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+/**
+ * Kompaktowy ribbon "Faza diety" — single row "Brak fazy → SPRAWDŹ" lub "↘️ CUT · 35 dni → SPRAWDŹ".
+ */
+@Composable
+private fun PhaseRibbon(
+    currentPhase: pl.filebit.gymtracker.data.entity.DietPhase?,
+    onCheck: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onCheck)
+            .padding(vertical = 6.dp, horizontal = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        if (currentPhase == null) {
+            Text(
+                "🎯 Brak aktywnej fazy",
+                style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                color = DarkOnSurfaceVariant,
+                modifier = Modifier.weight(1f)
+            )
+        } else {
+            val emoji = when (currentPhase.type) {
+                pl.filebit.gymtracker.data.entity.DietPhaseType.CUT -> "↘️"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE -> "⏸"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.BULK -> "↗️"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.REFEED_DAY -> "🍝"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.DIET_BREAK -> "🛑"
+            }
+            Text(
+                "$emoji ${currentPhase.type.name} · ${currentPhase.durationDays()} dni",
+                style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                color = DarkOnSurface,
+                modifier = Modifier.weight(1f)
+            )
+        }
+        Text(
+            "SPRAWDŹ",
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
+            ),
+            color = AccentOrange
+        )
+    }
+}
+
+/**
+ * Header sekcji "Posiłki" z 3 ikonami akcji po prawej (Awaryjny / Skaner / Foto AI).
+ */
+@Composable
+private fun PosilkiHeader(
+    onEmergency: () -> Unit,
+    onScanner: () -> Unit,
+    onFotoAi: () -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            "Posiłki",
+            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+        // Awaryjny
+        Box(
+            modifier = Modifier
+                .size(36.dp)
+                .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(8.dp))
+                .clickable(onClick = onEmergency),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("🚨", style = MaterialTheme.typography.titleMedium)
+        }
+        Spacer(Modifier.width(6.dp))
+        // Skaner
+        Box(
+            modifier = Modifier
+                .size(36.dp)
+                .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
+                .clickable(onClick = onScanner),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("🔍", style = MaterialTheme.typography.titleMedium)
+        }
+        Spacer(Modifier.width(6.dp))
+        // Foto AI
+        Box(
+            modifier = Modifier
+                .size(36.dp)
+                .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
+                .clickable(onClick = onFotoAi),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("📷", style = MaterialTheme.typography.titleMedium)
+        }
+    }
+}
+
+/**
+ * Collapsible sekcja "Narzędzia (6)" z grid 2x3 — Raport / Sprawdź / Historia / Preferencje / Zakupy / Meal prep.
+ */
+@Composable
+private fun NarzedziaSection(
+    expanded: Boolean,
+    onToggle: () -> Unit,
+    onRaport: () -> Unit,
+    onSprawdzKorekte: () -> Unit,
+    onHistoria: () -> Unit,
+    onPreferencje: () -> Unit,
+    onZakupy: () -> Unit,
+    onMealPrep: () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onToggle)
+                    .padding(14.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    "⚙ Narzędzia",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.width(8.dp))
+                Box(
+                    modifier = Modifier
+                        .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(12.dp))
+                        .padding(horizontal = 8.dp, vertical = 2.dp)
+                ) {
+                    Text(
+                        "6",
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace
+                        ),
+                        color = AccentOrange
+                    )
+                }
+                Spacer(Modifier.weight(1f))
+                Text(
+                    if (expanded) "ᐱ" else "ᐯ",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            if (expanded) {
+                Column(modifier = Modifier.padding(start = 14.dp, end = 14.dp, bottom = 14.dp)) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        ToolButton("📊", "Raport", Modifier.weight(1f), onRaport)
+                        ToolButton("🔍", "Sprawdź korektę", Modifier.weight(1f), onSprawdzKorekte)
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        ToolButton("📋", "Historia zmian", Modifier.weight(1f), onHistoria)
+                        ToolButton("⭐", "Preferencje", Modifier.weight(1f), onPreferencje)
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        ToolButton("🛒", "Zakupy", Modifier.weight(1f), onZakupy)
+                        ToolButton("🍱", "Meal prep", Modifier.weight(1f), onMealPrep)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ToolButton(emoji: String, label: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    Box(
+        modifier = modifier
+            .height(52.dp)
+            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(emoji, style = MaterialTheme.typography.titleMedium)
+            Spacer(Modifier.width(6.dp))
+            Text(
+                label,
+                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                color = DarkOnSurface
+            )
+        }
+    }
+}
+
+/** Sprawdza czy dany slot (godzina HH:MM) jest "TERAZ" — w oknie [-30min, +90min] od aktualnej godziny. */
+internal fun isCurrentSlot(timeLabel: String): Boolean {
+    if (timeLabel.isBlank()) return false
+    val parts = timeLabel.split(":")
+    val slotHour = parts.getOrNull(0)?.toIntOrNull() ?: return false
+    val slotMinute = parts.getOrNull(1)?.toIntOrNull() ?: 0
+    val cal = java.util.Calendar.getInstance()
+    val nowHour = cal.get(java.util.Calendar.HOUR_OF_DAY)
+    val nowMinute = cal.get(java.util.Calendar.MINUTE)
+    val slotMinutes = slotHour * 60 + slotMinute
+    val nowMinutes = nowHour * 60 + nowMinute
+    val diff = nowMinutes - slotMinutes
+    return diff in -30..90
 }
