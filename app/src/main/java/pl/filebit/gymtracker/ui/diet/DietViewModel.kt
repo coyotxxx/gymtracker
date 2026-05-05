@@ -97,8 +97,30 @@ class DietViewModel @Inject constructor(
     private val reminderScheduler: DietReminderScheduler,
     private val dietAi: DietAiService,
     private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge,
-    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator
+    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
+    private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService
 ) : ViewModel() {
+
+    private val _adjustmentPreview = MutableStateFlow<pl.filebit.gymtracker.util.AdjustmentDecision?>(null)
+    val adjustmentPreview: StateFlow<pl.filebit.gymtracker.util.AdjustmentDecision?> = _adjustmentPreview.asStateFlow()
+
+    fun checkForAdjustment() {
+        viewModelScope.launch {
+            val decision = autoAdjust.analyzeNow()
+            _adjustmentPreview.value = decision
+        }
+    }
+
+    fun applyAdjustment(decision: pl.filebit.gymtracker.util.AdjustmentDecision) {
+        viewModelScope.launch {
+            autoAdjust.applyDecision(decision)
+            _adjustmentPreview.value = null
+        }
+    }
+
+    fun dismissAdjustmentPreview() {
+        _adjustmentPreview.value = null
+    }
 
     private val _onboardingChecked = MutableStateFlow(false)
     private val _needsOnboarding = MutableStateFlow(false)

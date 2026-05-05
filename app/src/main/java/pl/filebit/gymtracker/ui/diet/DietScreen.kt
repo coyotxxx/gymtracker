@@ -70,6 +70,7 @@ fun DietScreen(
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
+    val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
         if (needsOnboarding) onNeedsOnboarding()
@@ -101,21 +102,37 @@ fun DietScreen(
                         onGenerateAi = { vm.generateAiDayPlan() }
                     )
                 }
-                // Button "Raport zgodności"
+                // Button "Raport zgodności" + "Sprawdź korektę"
                 item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(40.dp)
-                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                            .clickable(onClick = onOpenAdherenceReport),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            "📊 Raport zgodności (7 / 14 dni)",
-                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                            color = DarkOnSurface
-                        )
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenAdherenceReport),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "📊 Raport",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
+                                .clickable(onClick = { vm.checkForAdjustment() }),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "🔍 Sprawdź korektę",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = AccentOrange
+                            )
+                        }
                     }
                 }
 
@@ -149,6 +166,71 @@ fun DietScreen(
             config = state.config,
             onSave = { vm.saveConfig(it) },
             onDismiss = { showGoalBreakdown = false }
+        )
+    }
+
+    adjustmentPreview?.let { decision ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.dismissAdjustmentPreview() },
+            title = {
+                Text(
+                    when (decision.action) {
+                        pl.filebit.gymtracker.util.AdjustmentAction.HOLD -> "✓ Trzymaj plan"
+                        pl.filebit.gymtracker.util.AdjustmentAction.DECREASE_KCAL -> "↓ Sugestia: obniż kcal"
+                        pl.filebit.gymtracker.util.AdjustmentAction.INCREASE_KCAL -> "↑ Sugestia: dodaj kcal"
+                        pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: deload"
+                        pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan"
+                        pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA -> "📊 Brak danych"
+                    },
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    if (decision.kcalDeltaProposed != 0) {
+                        Text(
+                            "${if (decision.kcalDeltaProposed > 0) "+" else ""}${decision.kcalDeltaProposed} kcal → ${decision.newKcal} kcal/dziennie",
+                            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
+                            color = AccentOrange
+                        )
+                    }
+                    Text(decision.explanation, style = MaterialTheme.typography.bodyMedium)
+                    if (decision.warnings.isNotEmpty()) {
+                        decision.warnings.forEach { w ->
+                            Text(
+                                "⚠ $w",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = AccentOrange
+                            )
+                        }
+                    }
+                    Text(
+                        "Pewność: ${decision.confidence}",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+            },
+            confirmButton = {
+                if (decision.kcalDeltaProposed != 0) {
+                    androidx.compose.material3.TextButton(
+                        onClick = { vm.applyAdjustment(decision) }
+                    ) {
+                        Text("✓ Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                } else {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
+                        Text("Rozumiem", color = AccentOrange)
+                    }
+                }
+            },
+            dismissButton = {
+                if (decision.kcalDeltaProposed != 0) {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
+                        Text("Anuluj", color = DarkOnSurfaceVariant)
+                    }
+                }
+            }
         )
     }
 
