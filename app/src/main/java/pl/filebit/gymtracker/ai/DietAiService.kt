@@ -357,8 +357,10 @@ class DietAiService @Inject constructor(
                 append("- → Dieta: MNIEJ węgli (-10% vs trening), WIĘCEJ tłuszczu i białka. Niski deficyt OK.\n")
             }
 
-            append("\n=== CEL DZIENNY ===\n")
-            append("- ${goal.kcal} kcal\n")
+            append("\n=== CEL DZIENNY ⚠ MUSI BYĆ TRAFIONY ⚠ ===\n")
+            append("- **${goal.kcal} kcal** ⚠ Suma posiłków MUSI być ${(goal.kcal*0.93).toInt()}–${(goal.kcal*1.07).toInt()} kcal\n")
+            append("- Deficyt/nadwyżka jest JUŻ WLICZONA w ten cel — NIE odejmuj dodatkowych kalorii!\n")
+            append("- Generowanie planu z 1500-1800 kcal gdy cel to ${goal.kcal} kcal = NIEBEZPIECZNE i zostanie odrzucone\n")
             append("- Białko: ${goal.proteinG} g (priorytet — chroni masę mięśniową)\n")
             append("- Węglowodany: ${goal.carbsG} g\n")
             append("- Tłuszcz: ${goal.fatG} g (zdrowe — oliwa/orzechy/awokado/mleko kokosowe)\n")
@@ -384,7 +386,9 @@ class DietAiService @Inject constructor(
             }
             append("\nZAKAZ: wrzucania całych ${goal.kcal} kcal w jeden posiłek.\n")
             append("ZAKAZ: pomijania któregokolwiek slotu (każdy slot MUSI mieć posiłek z >${(perMealKcal*0.5).toInt()} kcal).\n")
-            append("Suma wszystkich posiłków = ${goal.kcal} kcal ±5% (czyli ${(goal.kcal*0.95).toInt()}–${(goal.kcal*1.05).toInt()}).\n")
+            append("ZAKAZ: generowania mniej kcal niż target — jeśli wyjdzie ${(goal.kcal*0.85).toInt()} kcal zamiast ${goal.kcal}, ZWIĘKSZ gramatury!\n")
+            append("**Suma wszystkich posiłków MUSI być ${goal.kcal} kcal ±7% (czyli ${(goal.kcal*0.93).toInt()}–${(goal.kcal*1.07).toInt()}).**\n")
+            append("Strategia gdy nie wychodzi: zwiększ porcje białka (kurczak 200→250g), dodaj zdrowy tłuszcz (orzechy 20→30g, oliwa 10→15g), dorzuć węgiel (ryż 100→150g).\n")
 
             // PRE/POST workout — szczegółowe instrukcje
             val hasPreOrPost = slotContexts.any {
@@ -631,7 +635,7 @@ class DietAiService @Inject constructor(
             productsByName = productsByName,
             constraints = constraints,
             perSlotKcalTargets = perSlotKcalTargets,
-            perSlotKcalTolerance = 0.25
+            perSlotKcalTolerance = 0.15
         )
 
         // Próba 1: oryginalny prompt

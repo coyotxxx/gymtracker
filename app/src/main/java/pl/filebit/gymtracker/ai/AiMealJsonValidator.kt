@@ -207,12 +207,23 @@ class AiMealJsonValidator @Inject constructor(
             totalFatReal += mealFatReal.toInt()
         }
 
-        // === Walidacja sumy dnia ===
+        // === Walidacja sumy dnia — TWARDY WYMÓG (±7% albo retry) ===
+        // Powyżej 7% odchylenia = niebezpieczny dodatkowy deficyt/nadwyżka.
+        // User ma już zakładany deficyt z TDEE, więc -15% kcal nad target = niebezpieczne -1000 kcal.
         if (totalKcalReal > 0) {
             val kcalDeviation = abs(totalKcalReal - ctx.targetKcal).toDouble() / ctx.targetKcal
-            if (kcalDeviation > 0.10) {
+            val minDaily = (ctx.targetKcal * 0.93).toInt()
+            val maxDaily = (ctx.targetKcal * 1.07).toInt()
+            if (kcalDeviation > 0.07) {
+                errors += ValidationIssue(
+                    ValidationSeverity.ERROR, null, "daily_kcal_off_target",
+                    "Suma dnia: ${totalKcalReal} kcal, cel ${ctx.targetKcal} kcal " +
+                        "(odchylenie ${(kcalDeviation * 100).toInt()}%, dopuszczalny zakres $minDaily–$maxDaily). " +
+                        "Zwiększ gramatury żeby trafić w cel — NIE rób dodatkowego deficytu, jest już wliczony w cel."
+                )
+            } else if (kcalDeviation > 0.03) {
                 warnings += ValidationIssue(
-                    ValidationSeverity.WARNING, null, "daily_kcal_off_target",
+                    ValidationSeverity.WARNING, null, "daily_kcal_minor_off",
                     "Suma dnia: ${totalKcalReal} kcal vs cel ${ctx.targetKcal} kcal (odchylenie ${(kcalDeviation * 100).toInt()}%)."
                 )
             }
