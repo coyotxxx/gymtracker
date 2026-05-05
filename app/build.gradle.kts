@@ -128,7 +128,6 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.4")
     implementation("androidx.camera:camera-view:1.3.4")
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
-    implementation("androidx.guava:listenablefuture:1.0")
 
     // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
     testImplementation(libs.junit)
