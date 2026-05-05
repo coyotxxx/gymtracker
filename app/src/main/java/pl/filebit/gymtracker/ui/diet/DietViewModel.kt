@@ -52,7 +52,24 @@ data class MealGroup(
 data class DietUiState(
     val loading: Boolean = true,
     val dateMs: Long = 0L,            // start dnia (00:00 lokalny)
-    val goal: DailyMacroGoal = DailyMacroGoal(0, 0, 0, 0),
+    val goal: DailyMacroGoal = DailyMacroGoal(
+        kcal = 0,
+        proteinG = 0,
+        carbsG = 0,
+        fatG = 0,
+        breakdown = pl.filebit.gymtracker.util.GoalBreakdown(
+            weightKg = 0.0,
+            genderLabel = "",
+            tdeeKcal = 0,
+            tdeeFormulaText = "",
+            deficitOrSurplus = 0,
+            deficitLabel = "",
+            isManualOverride = false,
+            proteinPerKg = 0.0,
+            fatPerKg = 0.0,
+            carbsCalculation = ""
+        )
+    ),
     val totals: DayTotals = DayTotals(),
     val groups: List<MealGroup> = emptyList(),
     val productsAll: List<FoodProduct> = emptyList(),
