@@ -85,7 +85,12 @@ class DietAiService @Inject constructor(
         }
 
         val profile = profileRepo.get()
-        val goal = computeDailyGoal(profile)
+        // Uwzględnij ewentualny override usera (manualKcal lub customDeficit)
+        val goal = computeDailyGoal(
+            profile,
+            manualKcalOverride = config.manualKcal,
+            customDeficit = config.customDeficit
+        )
         val products = dietRepo.observeAllProducts().first()
 
         // === KONTEKST Z CAŁEJ APLIKACJI ===

@@ -150,8 +150,17 @@ class DietViewModel @Inject constructor(
                     }
 
                     val profile = runCatching { profileRepo.get() }.getOrNull()
-                    val goal = if (profile != null) computeDailyGoal(profile)
-                    else DailyMacroGoal(2200, 150, 250, 70)
+                    val goal = if (profile != null) computeDailyGoal(
+                        profile,
+                        manualKcalOverride = cfg.manualKcal,
+                        customDeficit = cfg.customDeficit
+                    ) else DailyMacroGoal(
+                        2200, 150, 250, 70,
+                        pl.filebit.gymtracker.util.GoalBreakdown(
+                            75.0, "—", 2200, "fallback", 0, "fallback",
+                            false, 2.0, 1.0, "fallback"
+                        )
+                    )
 
                     val filtered = allProducts.let { list ->
                         val byCat = if (cat == null) list else list.filter { it.category == cat }

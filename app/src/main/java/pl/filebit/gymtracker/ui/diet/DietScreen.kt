@@ -70,6 +70,7 @@ fun DietScreen(
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
+    var showGoalBreakdown by remember { mutableStateOf(false) }
     androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
         // Reschedule notyfikacji przy każdej zmianie config-u (oraz przy pierwszym wejściu)
         vm.rescheduleReminders()
@@ -90,6 +91,7 @@ fun DietScreen(
                         state = state,
                         aiLoading = aiState is pl.filebit.gymtracker.ui.diet.AiPlanState.Loading,
                         onSettings = { showSettings = true },
+                        onShowBreakdown = { showGoalBreakdown = true },
                         onGenerateAi = { vm.generateAiDayPlan() }
                     )
                 }
@@ -115,6 +117,15 @@ fun DietScreen(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
             onDismiss = { showSettings = false }
+        )
+    }
+
+    if (showGoalBreakdown) {
+        GoalBreakdownDialog(
+            goal = state.goal,
+            config = state.config,
+            onSave = { vm.saveConfig(it) },
+            onDismiss = { showGoalBreakdown = false }
         )
     }
 
@@ -170,6 +181,7 @@ private fun DayHeroCard(
     state: DietUiState,
     aiLoading: Boolean,
     onSettings: () -> Unit,
+    onShowBreakdown: () -> Unit,
     onGenerateAi: () -> Unit
 ) {
     val kcalNow = state.totals.kcal.roundToInt()
@@ -210,7 +222,10 @@ private fun DayHeroCard(
                 }
             }
             Spacer(Modifier.height(6.dp))
-            Row(verticalAlignment = Alignment.Bottom) {
+            Row(
+                verticalAlignment = Alignment.Bottom,
+                modifier = Modifier.clickable(onClick = onShowBreakdown)
+            ) {
                 Text(
                     "$kcalNow",
                     fontSize = 44.sp,
@@ -224,6 +239,13 @@ private fun DayHeroCard(
                     fontWeight = FontWeight.SemiBold,
                     color = DarkOnSurfaceVariant,
                     modifier = Modifier.padding(bottom = 8.dp)
+                )
+                Spacer(Modifier.width(6.dp))
+                Text(
+                    "ⓘ",
+                    fontSize = 18.sp,
+                    color = AccentOrange,
+                    modifier = Modifier.padding(bottom = 12.dp)
                 )
             }
             // Konfig wiersz: "${meals} posiłki w oknie 12:00 - 20:00 · ${perMealKcal} kcal/posiłek"
