@@ -49,6 +49,7 @@ class ActiveWorkoutViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val planRepo: PlanRepository,
     private val statsRepo: StatsRepository,
+    private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge,
     private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService,
     profileRepo: UserProfileRepository
 ) : ViewModel() {
@@ -237,6 +238,7 @@ class ActiveWorkoutViewModel @Inject constructor(
             val tips = statsRepo.progressionTipsForWorkout(id)
             val stagnation = statsRepo.detectStagnation(id)
             workoutRepo.finish(id)
+            runCatching { trainingDietBridge.recomputeFromWorkout(id) }
             // AI summary w tle
             launch {
                 aiSummaryService.generate(id).onSuccess { text ->

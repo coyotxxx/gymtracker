@@ -95,7 +95,8 @@ class DietViewModel @Inject constructor(
     private val dietProfileRepo: UserDietProfileRepository,
     private val dietPrefs: DietPreferences,
     private val reminderScheduler: DietReminderScheduler,
-    private val dietAi: DietAiService
+    private val dietAi: DietAiService,
+    private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge
 ) : ViewModel() {
 
     private val _onboardingChecked = MutableStateFlow(false)
@@ -107,6 +108,8 @@ class DietViewModel @Inject constructor(
             val done = dietProfileRepo.isOnboardingDone()
             _needsOnboarding.value = !done
             _onboardingChecked.value = true
+            // Ensure today's TrainingDaySummary istnieje (lazy)
+            runCatching { trainingDietBridge.ensureForToday() }
         }
     }
 

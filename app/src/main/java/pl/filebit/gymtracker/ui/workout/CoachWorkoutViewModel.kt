@@ -19,6 +19,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
+import pl.filebit.gymtracker.data.repository.TrainingDietBridge
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import javax.inject.Inject
@@ -62,6 +63,7 @@ class CoachWorkoutViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository,
+    private val trainingDietBridge: TrainingDietBridge,
     private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService,
     private val rpeOpinionService: pl.filebit.gymtracker.ai.RpeOpinionService
 ) : ViewModel() {
@@ -321,6 +323,8 @@ class CoachWorkoutViewModel @Inject constructor(
             val tips = statsRepo.progressionTipsForWorkout(id)
             val stagnation = statsRepo.detectStagnation(id)
             workoutRepo.finish(id)
+            // Aktualizuj TrainingDaySummary — most do modułu DIETA
+            runCatching { trainingDietBridge.recomputeFromWorkout(id) }
             // AI summary w tle — nie blokuje wyjścia z ekranu
             generateAiSummaryInBackground(id)
             // Workout istnieje (miał sety) → pokaż feedback sheet

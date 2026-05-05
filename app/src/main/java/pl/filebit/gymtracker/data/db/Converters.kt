@@ -91,4 +91,19 @@ class Converters {
     @TypeConverter fun stringToDietGoalType(s: String): pl.filebit.gymtracker.data.entity.DietGoalType =
         runCatching { pl.filebit.gymtracker.data.entity.DietGoalType.valueOf(s) }
             .getOrDefault(pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN)
+
+    @TypeConverter fun trainingTypeToString(t: pl.filebit.gymtracker.data.entity.TrainingType): String = t.name
+    @TypeConverter fun stringToTrainingType(s: String): pl.filebit.gymtracker.data.entity.TrainingType =
+        runCatching { pl.filebit.gymtracker.data.entity.TrainingType.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.TrainingType.REST)
+
+    @TypeConverter fun intensityScoreToString(i: pl.filebit.gymtracker.data.entity.IntensityScore): String = i.name
+    @TypeConverter fun stringToIntensityScore(s: String): pl.filebit.gymtracker.data.entity.IntensityScore =
+        runCatching { pl.filebit.gymtracker.data.entity.IntensityScore.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.IntensityScore.LIGHT)
+
+    @TypeConverter fun perfTrendToString(p: pl.filebit.gymtracker.data.entity.PerformanceTrend): String = p.name
+    @TypeConverter fun stringToPerfTrend(s: String): pl.filebit.gymtracker.data.entity.PerformanceTrend =
+        runCatching { pl.filebit.gymtracker.data.entity.PerformanceTrend.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.PerformanceTrend.PROGRESS)
 }

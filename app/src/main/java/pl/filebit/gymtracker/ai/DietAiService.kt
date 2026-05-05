@@ -12,6 +12,7 @@ import pl.filebit.gymtracker.data.repository.DietConfig
 import pl.filebit.gymtracker.data.repository.DietRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
+import pl.filebit.gymtracker.data.repository.TrainingDietBridge
 import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
@@ -76,6 +77,7 @@ class DietAiService @Inject constructor(
     private val workoutRepo: WorkoutRepository,
     private val planRepo: PlanRepository,
     private val statsRepo: StatsRepository,
+    private val trainingDietBridge: TrainingDietBridge,
     private val bodyMeasurementDao: BodyMeasurementDao
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
@@ -118,19 +120,14 @@ class DietAiService @Inject constructor(
                 .mapNotNull { it.rpe }
         }.takeIf { it.isNotEmpty() }?.average()
 
-        // Dzień tygodnia + czy planowany trening dziś
-        val isoToday = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
-        val plansToday = runCatching { planRepo.getPlansForDay(isoToday) }.getOrNull().orEmpty()
-        val isTrainingDay = plansToday.isNotEmpty() || recentWorkouts.any { w ->
-            // Trening dziś już rozpoczęty/skończony?
-            val cal = java.util.Calendar.getInstance().apply {
-                set(java.util.Calendar.HOUR_OF_DAY, 0)
-                set(java.util.Calendar.MINUTE, 0)
-                set(java.util.Calendar.SECOND, 0)
-                set(java.util.Calendar.MILLISECOND, 0)
-            }
-            w.startedAt >= cal.timeInMillis
-        }
+        // Mostek do modułu trening — TrainingDaySummary dla dziś
+        runCatching { trainingDietBridge.ensureForToday() }
+        val todaySummary = runCatching { trainingDietBridge.getForDate(System.currentTimeMillis()) }
+            .getOrNull()
+        val isTrainingDay = todaySummary?.isTrainingDay == true
+        val intensity = todaySummary?.intensityScore
+        val trainingType = todaySummary?.trainingType
+        val muscleGroupsToday = todaySummary?.parsedMuscleGroups().orEmpty()
 
         val mealHours = config.mealHoursDecimal()
         val mealsCount = config.mealsPerDay
@@ -197,7 +194,26 @@ class DietAiService @Inject constructor(
             append("- Treningów: ${recentWorkouts.size}\n")
             if (recentVolume > 0) append("- Łączna objętość: ${recentVolume.toInt()} kg\n")
             recentRpeAvg?.let { append("- Średnie RPE: %.1f\n".format(it)) }
-            append("- Dziś jest dzień ${if (isTrainingDay) "TRENINGOWY (więcej węgli pre/post-workout)" else "REGENERACJI (mniej węgli, więcej tłuszczu i białka)"}\n")
+
+            append("\n=== DZIŚ (z TrainingDaySummary) ===\n")
+            if (isTrainingDay) {
+                append("- DZIEŃ TRENINGOWY (${trainingType?.name ?: "?"})\n")
+                intensity?.let { append("- Intensywność: ${it.name}\n") }
+                if (muscleGroupsToday.isNotEmpty()) {
+                    append("- Trenowane partie: ${muscleGroupsToday.joinToString(", ")}\n")
+                }
+                todaySummary?.fatigueScore?.let { append("- Zmęczenie po treningu: $it/10\n") }
+                append("- → Dieta: WIĘCEJ węgli pre/post-WO. Białko stałe. Wodę i elektrolity.\n")
+                if (intensity == pl.filebit.gymtracker.data.entity.IntensityScore.HEAVY) {
+                    append("- TRENING CIĘŻKI: zwiększ węgle o ~20% w obiad/post-WO. Twaróg na noc kazeina.\n")
+                }
+                if (muscleGroupsToday.contains("QUADS") || muscleGroupsToday.contains("HAMSTRINGS") || muscleGroupsToday.contains("GLUTES")) {
+                    append("- DZIEŃ NÓG: największe zapotrzebowanie na węgle. Daj 30% więcej w obiad.\n")
+                }
+            } else {
+                append("- DZIEŃ REGENERACJI (rest)\n")
+                append("- → Dieta: MNIEJ węgli (-10% vs trening), WIĘCEJ tłuszczu i białka. Niski deficyt OK.\n")
+            }
 
             append("\n=== CEL DZIENNY ===\n")
             append("- ${goal.kcal} kcal\n")
