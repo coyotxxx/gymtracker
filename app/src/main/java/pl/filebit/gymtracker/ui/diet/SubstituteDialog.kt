@@ -93,7 +93,7 @@ fun SubstituteDialog(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            "Brak pasujących zamienników w tej tolerancji.\nSpróbuj „Luźne" albo „Tylko kcal".",
+                            "Brak pasujących zamienników w tej tolerancji.\nSpróbuj 'Luźne' albo 'Tylko kcal'.",
                             style = MaterialTheme.typography.bodySmall,
                             color = DarkOnSurfaceVariant
                         )
