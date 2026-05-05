@@ -17,7 +17,6 @@ import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.ai.DietAiService
-import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.repository.DietConfig
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.DietRepository
