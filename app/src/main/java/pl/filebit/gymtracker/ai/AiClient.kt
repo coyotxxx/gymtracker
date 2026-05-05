@@ -30,6 +30,18 @@ interface AiClient {
         messages: List<AiMessage>
     ): Result<String>
 
+    /**
+     * Multimodal — dodaje obraz (base64 jpeg/png) do user message.
+     * Anthropic: image content block (base64).
+     * OpenAI: image_url z data URI.
+     */
+    suspend fun chatWithImage(
+        config: AiConfig,
+        imageBase64: String,
+        mimeType: String,           // np. "image/jpeg"
+        userPrompt: String
+    ): Result<String>
+
     suspend fun ping(config: AiConfig): Result<Unit>
 }
 
@@ -70,6 +82,117 @@ class AiClientImpl @Inject constructor() : AiClient {
                 listOf(AiMessage(AiRole.USER, "Odpowiedz jednym słowem: pong"))
             ).getOrThrow()
             Unit
+        }
+    }
+
+    override suspend fun chatWithImage(
+        config: AiConfig,
+        imageBase64: String,
+        mimeType: String,
+        userPrompt: String
+    ): Result<String> = withContext(Dispatchers.IO) {
+        runCatching {
+            when (config.provider) {
+                AiProvider.ANTHROPIC -> callAnthropicWithImage(config, imageBase64, mimeType, userPrompt)
+                AiProvider.OPENAI -> callOpenAiWithImage(config, imageBase64, mimeType, userPrompt)
+            }
+        }
+    }
+
+    private fun callAnthropicWithImage(
+        config: AiConfig,
+        imageBase64: String,
+        mimeType: String,
+        userPrompt: String
+    ): String {
+        // Anthropic format: messages → content array → mix text + image blocks
+        val body = buildJsonObject {
+            put("model", config.model)
+            put("max_tokens", 2048)
+            put("system", config.systemPrompt)
+            put("messages", buildJsonArray {
+                add(buildJsonObject {
+                    put("role", "user")
+                    put("content", buildJsonArray {
+                        add(buildJsonObject {
+                            put("type", "image")
+                            put("source", buildJsonObject {
+                                put("type", "base64")
+                                put("media_type", mimeType)
+                                put("data", imageBase64)
+                            })
+                        })
+                        add(buildJsonObject {
+                            put("type", "text")
+                            put("text", userPrompt)
+                        })
+                    })
+                })
+            })
+        }.toString()
+
+        val req = Request.Builder()
+            .url("https://api.anthropic.com/v1/messages")
+            .header("x-api-key", sanitizeKey(config.apiKey))
+            .header("anthropic-version", "2023-06-01")
+            .header("content-type", "application/json")
+            .post(body.toRequestBody("application/json".toMediaType()))
+            .build()
+
+        return execute(req) { obj ->
+            val content = obj["content"]?.jsonArray ?: error("Brak pola content")
+            val textBlock = content.firstOrNull {
+                it.jsonObject["type"]?.jsonPrimitive?.content == "text"
+            }?.jsonObject ?: error("Brak text block w odpowiedzi")
+            textBlock["text"]?.jsonPrimitive?.content ?: error("Brak text w odpowiedzi")
+        }
+    }
+
+    private fun callOpenAiWithImage(
+        config: AiConfig,
+        imageBase64: String,
+        mimeType: String,
+        userPrompt: String
+    ): String {
+        val dataUri = "data:$mimeType;base64,$imageBase64"
+        val body = buildJsonObject {
+            put("model", config.model)
+            put("max_tokens", 2048)
+            put("messages", buildJsonArray {
+                add(buildJsonObject {
+                    put("role", "system")
+                    put("content", config.systemPrompt)
+                })
+                add(buildJsonObject {
+                    put("role", "user")
+                    put("content", buildJsonArray {
+                        add(buildJsonObject {
+                            put("type", "text")
+                            put("text", userPrompt)
+                        })
+                        add(buildJsonObject {
+                            put("type", "image_url")
+                            put("image_url", buildJsonObject {
+                                put("url", dataUri)
+                            })
+                        })
+                    })
+                })
+            })
+        }.toString()
+
+        val req = Request.Builder()
+            .url("https://api.openai.com/v1/chat/completions")
+            .header("Authorization", "Bearer ${sanitizeKey(config.apiKey)}")
+            .header("content-type", "application/json")
+            .post(body.toRequestBody("application/json".toMediaType()))
+            .build()
+
+        return execute(req) { obj ->
+            val choices = obj["choices"]?.jsonArray ?: error("Brak pola choices")
+            val first = choices.firstOrNull()?.jsonObject ?: error("Pusta odpowiedź")
+            val msg = first["message"]?.jsonObject ?: error("Brak message")
+            msg["content"]?.jsonPrimitive?.content ?: error("Brak content w message")
         }
     }
 

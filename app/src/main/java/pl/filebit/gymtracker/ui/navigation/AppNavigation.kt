@@ -486,7 +486,8 @@ fun AppNavigation() {
                     onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) },
                     onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) },
                     onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) },
-                    onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) }
+                    onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) },
+                    onOpenFoodImageAnalyzer = { navController.navigate(Screen.FoodImageAnalyzer.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
@@ -532,6 +533,11 @@ fun AppNavigation() {
                         // user może go znaleźć w AddMealDialog przez wyszukiwanie po nazwie.
                         navController.popBackStack()
                     }
+                )
+            }
+            composable(Screen.FoodImageAnalyzer.route) {
+                pl.filebit.gymtracker.ui.diet.imageanalyzer.FoodImageAnalyzerScreen(
+                    onBack = { navController.popBackStack() }
                 )
             }
             composable(Screen.ActiveWorkout.route) {

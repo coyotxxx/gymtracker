@@ -73,6 +73,7 @@ fun DietScreen(
     onEditDietProfile: () -> Unit = {},
     onOpenMealPrep: () -> Unit = {},
     onOpenBarcodeScanner: () -> Unit = {},
+    onOpenFoodImageAnalyzer: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -472,9 +473,9 @@ fun DietScreen(
                     }
                 }
 
-                // 🍱 Meal prep + 🔍 Skaner — wiersz dwukolumnowy
+                // 🍱 Meal prep + 🔍 Skaner + 📷 Foto AI — trzy ikony
                 item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         Box(
                             modifier = Modifier
                                 .weight(1f)
@@ -484,8 +485,8 @@ fun DietScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                "🍱 Meal prep",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                "🍱 Prep",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
                                 color = DarkOnSurface
                             )
                         }
@@ -498,9 +499,23 @@ fun DietScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                "🔍 Skaner kodu",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                "🔍 Skaner",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
                                 color = DarkOnSurface
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenFoodImageAnalyzer),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "📷 Foto AI",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold, fontSize = 13.sp),
+                                color = AccentOrange
                             )
                         }
                     }
