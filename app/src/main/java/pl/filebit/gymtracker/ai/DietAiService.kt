@@ -36,8 +36,37 @@ data class AiMealRecipe(
     val kcal: Int,
     val proteinG: Int,
     val carbsG: Int,
-    val fatG: Int
+    val fatG: Int,
+    /** 0..2 alternatywne dania na ten sam slot (taka sama suma kcal/makro ±10%). */
+    val alternatives: List<AiAlternative> = emptyList()
 )
+
+/**
+ * Lekka alternatywa — bez instrukcji, tylko nazwa + składniki + makro.
+ * Gdy user wybierze, traktujemy ją jak pełną AiMealRecipe.
+ */
+@Serializable
+data class AiAlternative(
+    val name: String,
+    val ingredients: List<AiRecipeIngredient>,
+    val kcal: Int,
+    val proteinG: Int,
+    val carbsG: Int,
+    val fatG: Int,
+    val prepMinutes: Int = 15,
+    val instructions: String = ""
+) {
+    fun toRecipe(): AiMealRecipe = AiMealRecipe(
+        name = name,
+        ingredients = ingredients,
+        instructions = instructions.ifBlank { "Przygotuj jak standardowy posiłek z tych składników." },
+        prepMinutes = prepMinutes,
+        kcal = kcal,
+        proteinG = proteinG,
+        carbsG = carbsG,
+        fatG = fatG
+    )
+}
 
 @Serializable
 data class AiRecipeIngredient(
@@ -385,7 +414,17 @@ class DietAiService @Inject constructor(
             append("   - Czy posiłki nie powtarzają się? (różnorodność)\n")
             append("   - Czy każdy productName istnieje w liście?\n")
 
-            append("\n=== OUTPUT ===\n")
+            append("\n=== ALTERNATYWY PER SLOT ===\n")
+            append("Dla KAŻDEGO posiłku podaj 2 alternatywy (`alternatives` w JSON) — różnorodność:\n")
+            append("- alternatywa 1: bazujący na INNYM białku (np. mięso → ryba lub roślinne strączki)\n")
+            append("- alternatywa 2: INNE węgle / styl (np. owsianka → kanapka, ryż → kasza)\n")
+            append("- każda alternatywa MUSI mieć kcal/B/W/T w ±10% od głównego posiłku tego slotu\n")
+            append("- każda alternatywa MUSI używać productName z listy DOSTĘPNYCH PRODUKTÓW\n")
+            append("- alternatywy MUSZĄ honorować preferencje/alergie/budżet/medical (te same reguły)\n")
+            append("- jeśli któraś preferencja (vegan/keto/itd.) wyklucza alternatywę — pomiń ją (ALE postaraj się dać 2 jak się da)\n")
+            append("- alternatywy NIE potrzebują instrukcji (instructions=\"\") — user dostanie je przy wyborze\n\n")
+
+            append("=== OUTPUT ===\n")
             append("Zwróć TYLKO JSON (bez markdown, bez tekstu poza JSON). Format:\n")
             append("""
             {
@@ -402,7 +441,37 @@ class DietAiService @Inject constructor(
                   "kcal": 480,
                   "proteinG": 35,
                   "carbsG": 60,
-                  "fatG": 8
+                  "fatG": 8,
+                  "alternatives": [
+                    {
+                      "name": "Jajecznica na maśle z pieczywem razowym",
+                      "ingredients": [
+                        {"productName": "Jajka", "grams": 150},
+                        {"productName": "Masło", "grams": 10},
+                        {"productName": "Chleb razowy", "grams": 80}
+                      ],
+                      "kcal": 475,
+                      "proteinG": 32,
+                      "carbsG": 45,
+                      "fatG": 18,
+                      "prepMinutes": 6,
+                      "instructions": ""
+                    },
+                    {
+                      "name": "Skyr z miodem i orzechami",
+                      "ingredients": [
+                        {"productName": "Skyr naturalny", "grams": 250},
+                        {"productName": "Miód", "grams": 15},
+                        {"productName": "Orzechy włoskie", "grams": 25}
+                      ],
+                      "kcal": 470,
+                      "proteinG": 30,
+                      "carbsG": 38,
+                      "fatG": 18,
+                      "prepMinutes": 2,
+                      "instructions": ""
+                    }
+                  ]
                 }
               ]
             }

@@ -78,7 +78,9 @@ fun DietScreen(
     val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
     val ratingPrompt by vm.aiPlanRatingPrompt.collectAsStateWithLifecycle()
     val substitutePrompt by vm.substitutePrompt.collectAsStateWithLifecycle()
+    val slotAlternatives by vm.slotAlternatives.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
+    var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
         if (needsOnboarding) onNeedsOnboarding()
     }
@@ -199,7 +201,9 @@ fun DietScreen(
                         targetKcalPerMeal = state.perMealKcal,
                         onAdd = { addMealForType = group.type },
                         onDelete = { id -> vm.deleteMeal(id) },
-                        onSwap = { e -> vm.openSubstitutes(e.entry, e.product) }
+                        onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
+                        alternativesCount = slotAlternatives[group.type]?.size ?: 0,
+                        onShowAlternatives = { showAlternativesFor = group.type }
                     )
                 }
 
@@ -243,6 +247,15 @@ fun DietScreen(
             onToleranceChange = { vm.changeSubstituteTolerance(it) },
             onSelect = { product, grams -> vm.applySubstitute(product, grams) },
             onDismiss = { vm.dismissSubstitute() }
+        )
+    }
+
+    showAlternativesFor?.let { mt ->
+        AlternativesDialog(
+            mealType = mt,
+            alternatives = slotAlternatives[mt].orEmpty(),
+            onSelect = { alt -> vm.selectAlternative(mt, alt) },
+            onDismiss = { showAlternativesFor = null }
         )
     }
 
@@ -613,7 +626,9 @@ private fun MealGroupCard(
     targetKcalPerMeal: Int,
     onAdd: () -> Unit,
     onDelete: (Long) -> Unit,
-    onSwap: (MealEntryWithMacros) -> Unit
+    onSwap: (MealEntryWithMacros) -> Unit,
+    alternativesCount: Int = 0,
+    onShowAlternatives: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -723,31 +738,52 @@ private fun MealGroupCard(
                 }
             }
             Spacer(Modifier.height(8.dp))
-            // Przycisk + dodaj — taki sam styl jak "+ Dodaj serię" w PlanEdit
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(40.dp)
-                    .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
-                    .clickable(onClick = onAdd),
-                contentAlignment = Alignment.Center
-            ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        Icons.Default.Add,
-                        contentDescription = null,
-                        tint = AccentOrange,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(Modifier.width(6.dp))
-                    Text(
-                        "Dodaj produkt",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = 13.sp
-                        ),
-                        color = AccentOrange
-                    )
+            // Akcje w karcie: dodaj produkt + (opcjonalnie) inna opcja AI
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(40.dp)
+                        .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
+                        .clickable(onClick = onAdd),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            Icons.Default.Add,
+                            contentDescription = null,
+                            tint = AccentOrange,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(Modifier.width(6.dp))
+                        Text(
+                            "Dodaj produkt",
+                            style = MaterialTheme.typography.labelMedium.copy(
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 13.sp
+                            ),
+                            color = AccentOrange
+                        )
+                    }
+                }
+                if (alternativesCount > 0) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(40.dp)
+                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                            .clickable(onClick = onShowAlternatives),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "🔁 Inna opcja ($alternativesCount)",
+                            style = MaterialTheme.typography.labelMedium.copy(
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 13.sp
+                            ),
+                            color = DarkOnSurface
+                        )
+                    }
                 }
             }
         }

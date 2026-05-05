@@ -182,6 +182,50 @@ class DietViewModel @Inject constructor(
         _aiPlanRatingPrompt.value = emptyList()
     }
 
+    /**
+     * Alternatywy do każdego slotu z OSTATNIO wygenerowanego planu AI.
+     * Map<MealType, List<AiAlternative>>. Czyszczone przy nowej generacji.
+     */
+    private val _slotAlternatives =
+        MutableStateFlow<Map<MealType, List<pl.filebit.gymtracker.ai.AiAlternative>>>(emptyMap())
+    val slotAlternatives: StateFlow<Map<MealType, List<pl.filebit.gymtracker.ai.AiAlternative>>> =
+        _slotAlternatives.asStateFlow()
+
+    /**
+     * Wybór alternatywy dla danego slotu — zastępuje WSZYSTKIE entries tego slotu
+     * w bieżącym dniu zawartością alternatywy.
+     */
+    fun selectAlternative(mealType: MealType, alternative: pl.filebit.gymtracker.ai.AiAlternative) {
+        viewModelScope.launch {
+            val products = state.value.productsAll
+            val byNameLower = products.associateBy { it.name.lowercase() }
+            val dateMs = _selectedDateMs.value
+
+            // Usuń istniejące entries tego slotu w dniu
+            state.value.groups
+                .firstOrNull { it.type == mealType }
+                ?.entries
+                ?.forEach { e -> repo.deleteMeal(e.entry.id) }
+
+            // Wstaw nową kompozycję
+            alternative.ingredients.forEach { ing ->
+                val product = byNameLower[ing.productName.lowercase()]
+                if (product != null) {
+                    repo.addMeal(
+                        MealEntry(
+                            dateMs = dateMs,
+                            mealType = mealType,
+                            productId = product.id,
+                            grams = ing.grams.toDouble(),
+                            notes = alternative.name
+                        )
+                    )
+                }
+            }
+            runCatching { adherenceCalc.computeForDate(dateMs) }
+        }
+    }
+
     data class AdjustmentPreview(
         val id: Long,
         val decision: pl.filebit.gymtracker.util.AdjustmentDecision,
@@ -416,6 +460,10 @@ class DietViewModel @Inject constructor(
                     }
 
                     runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
+                    // Zachowaj alternatywy per slot (transient — do następnej generacji)
+                    _slotAlternatives.value = plan.mealsForSlots
+                        .associate { (type, recipe) -> type to recipe.alternatives }
+                        .filterValues { it.isNotEmpty() }
                     // Zaproponuj userowi ocenę wygenerowanych potraw (MealFeedback)
                     _aiPlanRatingPrompt.value = plan.mealsForSlots
                         .map { (type, recipe) -> type to recipe.name }
