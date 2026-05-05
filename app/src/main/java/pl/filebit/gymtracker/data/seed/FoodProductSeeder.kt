@@ -44,7 +44,8 @@ class FoodProductSeeder(
                 calciumMgPer100g = s.calciumMgPer100g,
                 potassiumMgPer100g = s.potassiumMgPer100g,
                 sodiumMgPer100g = s.sodiumMgPer100g,
-                isCustom = false
+                isCustom = false,
+                source = "seed"
             )
         }
         dao.insertAll(entities)

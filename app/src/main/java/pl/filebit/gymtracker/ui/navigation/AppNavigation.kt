@@ -485,7 +485,8 @@ fun AppNavigation() {
                     onOpenMealPreferences = { navController.navigate(Screen.MealPreferences.route) },
                     onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) },
                     onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) },
-                    onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) }
+                    onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) },
+                    onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
@@ -521,6 +522,16 @@ fun AppNavigation() {
             composable(Screen.MealPrep.route) {
                 pl.filebit.gymtracker.ui.diet.MealPrepScreen(
                     onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.BarcodeScanner.route) {
+                pl.filebit.gymtracker.ui.diet.scanner.BarcodeScannerScreen(
+                    onBack = { navController.popBackStack() },
+                    onProductSelected = { _ ->
+                        // Po wyborze wracamy do diety. ID produktu jest już w bazie,
+                        // user może go znaleźć w AddMealDialog przez wyszukiwanie po nazwie.
+                        navController.popBackStack()
+                    }
                 )
             }
             composable(Screen.ActiveWorkout.route) {

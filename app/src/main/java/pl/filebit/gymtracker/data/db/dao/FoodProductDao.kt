@@ -33,6 +33,9 @@ interface FoodProductDao {
     @Query("SELECT * FROM food_products WHERE id IN (:ids)")
     suspend fun getByIds(ids: List<Long>): List<FoodProduct>
 
+    @Query("SELECT * FROM food_products WHERE barcode = :barcode LIMIT 1")
+    suspend fun getByBarcode(barcode: String): FoodProduct?
+
     @Query("SELECT COUNT(*) FROM food_products")
     suspend fun count(): Int
 

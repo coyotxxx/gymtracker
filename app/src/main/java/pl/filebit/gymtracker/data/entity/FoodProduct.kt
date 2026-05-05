@@ -39,5 +39,11 @@ data class FoodProduct(
     val isCustom: Boolean = false,
     /** Notatka usera (np. "z bistro", "w Lidl"). */
     val notes: String = "",
+    /** Kod kreskowy EAN-13 lub inny — używany przy skanowaniu. */
+    val barcode: String? = null,
+    /** Marka/producent (np. "Biedronka", "Lidl"). */
+    val brand: String? = null,
+    /** Źródło danych: "seed" / "manual" / "openfoodfacts". */
+    val source: String = "manual",
     val createdAt: Long = System.currentTimeMillis()
 )

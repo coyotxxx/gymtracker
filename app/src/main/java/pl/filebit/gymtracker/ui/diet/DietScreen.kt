@@ -72,6 +72,7 @@ fun DietScreen(
     onOpenShoppingList: () -> Unit = {},
     onEditDietProfile: () -> Unit = {},
     onOpenMealPrep: () -> Unit = {},
+    onOpenBarcodeScanner: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -382,21 +383,37 @@ fun DietScreen(
                     }
                 }
 
-                // 🍱 Meal prep — pełna szerokość
+                // 🍱 Meal prep + 🔍 Skaner — wiersz dwukolumnowy
                 item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(40.dp)
-                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                            .clickable(onClick = onOpenMealPrep),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            "🍱 Meal prep — gotowanie na 2-3 dni",
-                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                            color = DarkOnSurface
-                        )
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenMealPrep),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "🍱 Meal prep",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenBarcodeScanner),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "🔍 Skaner kodu",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
                     }
                 }
 

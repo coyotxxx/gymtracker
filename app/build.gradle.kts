@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 205
-        versionName = "0.94.0"
+        versionCode = 206
+        versionName = "0.95.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -121,6 +121,14 @@ dependencies {
 
     // Lottie (splash animation)
     implementation(libs.lottie.compose)
+
+    // BarcodeScanner (v0.95) — CameraX + ML Kit barcode scanning
+    implementation("androidx.camera:camera-core:1.3.4")
+    implementation("androidx.camera:camera-camera2:1.3.4")
+    implementation("androidx.camera:camera-lifecycle:1.3.4")
+    implementation("androidx.camera:camera-view:1.3.4")
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    implementation("androidx.guava:listenablefuture:1.0")
 
     // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
     testImplementation(libs.junit)
