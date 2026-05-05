@@ -58,6 +58,8 @@ class DietAutoAdjustmentWorker @AssistedInject constructor(
                 "Adherence + objętość spadają. Sprawdź propozycję deloadu w diecie."
             AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan" to
                 "Niska adherence — silnik sugeruje uproszczenie planu zamiast zmiany kcal."
+            AdjustmentAction.REFEED_DAY -> "🍝 Refeed day" to
+                "Wysoki głód + waga stoi → +${decision.kcalDeltaProposed} kcal jutro (głównie węgle), potem powrót do bazy."
             else -> return Result.success()
         }
         notify(ctx = applicationContext, title = title, body = body, adjustmentId = adjId)

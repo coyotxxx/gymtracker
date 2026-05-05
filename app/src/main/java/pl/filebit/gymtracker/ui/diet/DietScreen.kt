@@ -271,6 +271,7 @@ fun DietScreen(
                         pl.filebit.gymtracker.util.AdjustmentAction.INCREASE_KCAL -> "↑ Sugestia: dodaj kcal"
                         pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: deload"
                         pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan"
+                        pl.filebit.gymtracker.util.AdjustmentAction.REFEED_DAY -> "🍝 Refeed day (+kcal)"
                         pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA -> "📊 Brak danych"
                     },
                     fontWeight = FontWeight.Bold
