@@ -79,6 +79,9 @@ fun DietScreen(
     val ratingPrompt by vm.aiPlanRatingPrompt.collectAsStateWithLifecycle()
     val substitutePrompt by vm.substitutePrompt.collectAsStateWithLifecycle()
     val slotAlternatives by vm.slotAlternatives.collectAsStateWithLifecycle()
+    val hydrationToday by vm.hydrationToday.collectAsStateWithLifecycle()
+    val hydrationGoal by vm.hydrationGoal.collectAsStateWithLifecycle()
+    val showRecoveryDialog by vm.showRecoveryDialog.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
@@ -141,6 +144,90 @@ fun DietScreen(
                                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                                 color = AccentOrange
                             )
+                        }
+                    }
+                }
+
+                // 💧 Woda + 🛌 Regeneracja (v0.90)
+                item {
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        // Hydration
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .background(DarkSurface, RoundedCornerShape(12.dp))
+                                .padding(10.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    "💧 WODA",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                                Text(
+                                    "${hydrationToday} / ${hydrationGoal} ml",
+                                    style = MaterialTheme.typography.bodyMedium.copy(
+                                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                                    ),
+                                    color = DarkOnSurface
+                                )
+                                Spacer(Modifier.height(6.dp))
+                                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                                    listOf(250, 500, 750).forEach { ml ->
+                                        Box(
+                                            modifier = Modifier
+                                                .weight(1f)
+                                                .height(28.dp)
+                                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(6.dp))
+                                                .clickable { vm.addHydration(ml) },
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            Text(
+                                                "+${ml}",
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    fontSize = 11.sp, fontWeight = FontWeight.SemiBold
+                                                ),
+                                                color = AccentOrange
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // Recovery
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .background(DarkSurface, RoundedCornerShape(12.dp))
+                                .clickable { vm.openRecoveryDialog() }
+                                .padding(10.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    "🛌 REGENERACJA",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                                Text(
+                                    "Oceń dzisiaj",
+                                    style = MaterialTheme.typography.bodyMedium.copy(
+                                        fontWeight = FontWeight.SemiBold
+                                    ),
+                                    color = DarkOnSurface
+                                )
+                                Spacer(Modifier.height(2.dp))
+                                Text(
+                                    "Sen, stres, energia, głód",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
                         }
                     }
                 }
@@ -256,6 +343,15 @@ fun DietScreen(
             alternatives = slotAlternatives[mt].orEmpty(),
             onSelect = { alt -> vm.selectAlternative(mt, alt) },
             onDismiss = { showAlternativesFor = null }
+        )
+    }
+
+    if (showRecoveryDialog) {
+        RecoveryDialog(
+            onSave = { sleep, sleepQ, stress, hunger, energy, soreness, difficulty ->
+                vm.saveRecoveryLog(sleep, sleepQ, stress, hunger, energy, soreness, difficulty)
+            },
+            onDismiss = { vm.dismissRecoveryDialog() }
         )
     }
 

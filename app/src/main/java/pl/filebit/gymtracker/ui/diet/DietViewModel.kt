@@ -101,8 +101,74 @@ class DietViewModel @Inject constructor(
     private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService,
     private val dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler,
     private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository,
-    private val substituteService: pl.filebit.gymtracker.data.repository.SubstituteService
+    private val substituteService: pl.filebit.gymtracker.data.repository.SubstituteService,
+    private val hydrationRepo: pl.filebit.gymtracker.data.repository.HydrationRepository,
+    private val hydrationCalc: pl.filebit.gymtracker.data.repository.HydrationCalculator,
+    private val recoveryRepo: pl.filebit.gymtracker.data.repository.RecoveryRepository,
+    private val qualityScorer: pl.filebit.gymtracker.data.repository.DailyQualityScorer,
+    private val weeklyBudgetCalc: pl.filebit.gymtracker.data.repository.WeeklyBudgetCalculator
 ) : ViewModel() {
+
+    // === HYDRATION ===
+    private val _hydrationToday = MutableStateFlow(0)
+    val hydrationToday: StateFlow<Int> = _hydrationToday.asStateFlow()
+
+    private val _hydrationGoal = MutableStateFlow(2400)
+    val hydrationGoal: StateFlow<Int> = _hydrationGoal.asStateFlow()
+
+    fun addHydration(ml: Int) {
+        viewModelScope.launch {
+            val date = _selectedDateMs.value
+            hydrationRepo.add(date, ml)
+            refreshHydration()
+        }
+    }
+
+    private suspend fun refreshHydration() {
+        val date = _selectedDateMs.value
+        val sum = hydrationRepo.sumForDate(date)
+        _hydrationToday.value = sum
+        // Cel z Calculator
+        val profile = profileRepo.get()
+        val weight = profile.bodyweightKg ?: 75.0
+        val goal = hydrationCalc.computeTarget(
+            weightKg = weight,
+            hadTrainingToday = false, // TODO: integracja z TrainingDietBridge
+            proteinGramsToday = 0.0,
+            usesCreatine = false
+        )
+        _hydrationGoal.value = goal.totalMl
+    }
+
+    // === RECOVERY ===
+    private val _showRecoveryDialog = MutableStateFlow(false)
+    val showRecoveryDialog: StateFlow<Boolean> = _showRecoveryDialog.asStateFlow()
+
+    fun openRecoveryDialog() { _showRecoveryDialog.value = true }
+    fun dismissRecoveryDialog() { _showRecoveryDialog.value = false }
+
+    fun saveRecoveryLog(
+        sleepHours: Double?,
+        sleepQuality: Int?,
+        stressLevel: Int?,
+        hungerLevel: Int?,
+        energyLevel: Int?,
+        sorenessLevel: Int?,
+        difficultyAdherence: Int?
+    ) {
+        viewModelScope.launch {
+            recoveryRepo.upsert(
+                dateMs = _selectedDateMs.value,
+                sleepHours = sleepHours,
+                sleepQuality = sleepQuality,
+                stressLevel = stressLevel,
+                hungerLevel = hungerLevel,
+                energyLevel = energyLevel,
+                sorenessLevel = sorenessLevel,
+                difficultyAdherence = difficultyAdherence
+            )
+        }
+    }
 
     data class SubstitutePrompt(
         val entry: pl.filebit.gymtracker.data.entity.MealEntry,
@@ -276,6 +342,8 @@ class DietViewModel @Inject constructor(
             _onboardingChecked.value = true
             // Ensure today's TrainingDaySummary istnieje (lazy)
             runCatching { trainingDietBridge.ensureForToday() }
+            // Refresh hydration today
+            runCatching { refreshHydration() }
         }
     }
 
