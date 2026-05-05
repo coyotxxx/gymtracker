@@ -45,5 +45,7 @@ data class FoodProduct(
     val brand: String? = null,
     /** Źródło danych: "seed" / "manual" / "openfoodfacts". */
     val source: String = "manual",
+    /** Ulubiony produkt — AI używa do priorytetyzacji w generowanym planie. */
+    val isFavorite: Boolean = false,
     val createdAt: Long = System.currentTimeMillis()
 )

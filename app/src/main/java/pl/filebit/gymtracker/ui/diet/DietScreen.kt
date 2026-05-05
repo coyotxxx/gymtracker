@@ -608,7 +608,8 @@ fun DietScreen(
             onCategoryFilterChange = vm::setCategoryFilter,
             searchQuery = state.searchQuery,
             categoryFilter = state.categoryFilter,
-            filteredProducts = state.filteredProducts
+            filteredProducts = state.filteredProducts,
+            onToggleFavorite = { p -> vm.toggleProductFavorite(p.id, !p.isFavorite) }
         )
     }
 }

@@ -177,8 +177,12 @@ class DietAiService @Inject constructor(
         val perMealFat = if (mealsCount > 0) goal.fatG / mealsCount else 0
 
         val productsListing = products.joinToString("\n") { p ->
-            "- ${p.name} (${p.kcalPer100g.toInt()} kcal/100g, B${p.proteinPer100g.toInt()}/W${p.carbsPer100g.toInt()}/T${p.fatPer100g.toInt()})"
+            val star = if (p.isFavorite) " ⭐" else ""
+            "- ${p.name}$star (${p.kcalPer100g.toInt()} kcal/100g, B${p.proteinPer100g.toInt()}/W${p.carbsPer100g.toInt()}/T${p.fatPer100g.toInt()})"
         }
+
+        // Ulubione produkty oznaczone przez usera (heart icon w AddMealDialog)
+        val favoriteProducts = runCatching { dietRepo.getFavoriteProducts() }.getOrNull().orEmpty()
 
         // Preferencje usera (rating ≥4 = preferuj, ≤2 = unikaj)
         val favorites = runCatching { mealFeedbackRepo.getTopFavorites(limit = 10) }.getOrNull().orEmpty()
@@ -199,6 +203,14 @@ class DietAiService @Inject constructor(
             trainingHour = if (isTrainingDay) trainingHourCandidate else null
         )
 
+        // Rozkład kcal per slot — różny dla każdej pory dnia, bo śniadanie/obiad/kolacja mają różny ciężar
+        // Standard dietetyczny: śniadanie 25-30%, obiad 35-40%, kolacja 25-30% (bez przekąsek)
+        // Z przekąskami: śniadanie 25%, II śniadanie 10%, obiad 35%, podwieczorek 10%, kolacja 20%
+        val perSlotKcalTargets = computePerSlotKcalDistribution(goal.kcal, mealsCount)
+        val perSlotProteinTargets = computePerSlotProteinDistribution(goal.proteinG, mealsCount)
+        val perSlotCarbsTargets = computePerSlotCarbsDistribution(goal.carbsG, mealsCount)
+        val perSlotFatTargets = computePerSlotFatDistribution(goal.fatG, mealsCount)
+
         val slotLabels = mealHours.indices.map { idx ->
             val time = config.formatTime(mealHours[idx])
             val label = labelForSlot(idx + 1, mealsCount)
@@ -208,7 +220,11 @@ class DietAiService @Inject constructor(
                 pl.filebit.gymtracker.data.entity.WorkoutContext.POST_WORKOUT -> " 🏋 POST-WORKOUT"
                 else -> ""
             }
-            "$label (godz. $time, ~$perMealKcal kcal, B${perMealProtein}g W${perMealCarbs}g T${perMealFat}g)$ctxTag"
+            val kcalSlot = perSlotKcalTargets.getOrElse(idx) { perMealKcal }
+            val pSlot = perSlotProteinTargets.getOrElse(idx) { perMealProtein }
+            val cSlot = perSlotCarbsTargets.getOrElse(idx) { perMealCarbs }
+            val fSlot = perSlotFatTargets.getOrElse(idx) { perMealFat }
+            "$label (godz. $time, **$kcalSlot kcal ±15%**, B${pSlot}g W${cSlot}g T${fSlot}g)$ctxTag"
         }
 
         val goalLabel = when (profile.weightGoalType) {
@@ -356,6 +372,20 @@ class DietAiService @Inject constructor(
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
             slotLabels.forEach { append("- $it\n") }
 
+            // === ⚠ TWARDE WYMAGANIE: ROZKŁAD KCAL PER SLOT ===
+            append("\n=== ⚠ ROZKŁAD KCAL PER POSIŁEK (TWARDY WYMÓG — INACZEJ PLAN ZOSTANIE ODRZUCONY) ===\n")
+            append("MUSISZ wygenerować DOKŁADNIE $mealsCount posiłków (nie mniej, nie więcej).\n")
+            append("Każdy posiłek MUSI mieć kcal w zakresie ±15% od targetu poniżej:\n")
+            perSlotKcalTargets.forEachIndexed { idx, kcalTarget ->
+                val label = labelForSlot(idx + 1, mealsCount)
+                val minK = (kcalTarget * 0.85).toInt()
+                val maxK = (kcalTarget * 1.15).toInt()
+                append("  $idx. $label = **$kcalTarget kcal** (zakres dopuszczalny: $minK–$maxK kcal)\n")
+            }
+            append("\nZAKAZ: wrzucania całych ${goal.kcal} kcal w jeden posiłek.\n")
+            append("ZAKAZ: pomijania któregokolwiek slotu (każdy slot MUSI mieć posiłek z >${(perMealKcal*0.5).toInt()} kcal).\n")
+            append("Suma wszystkich posiłków = ${goal.kcal} kcal ±5% (czyli ${(goal.kcal*0.95).toInt()}–${(goal.kcal*1.05).toInt()}).\n")
+
             // PRE/POST workout — szczegółowe instrukcje
             val hasPreOrPost = slotContexts.any {
                 it.workoutContext != pl.filebit.gymtracker.data.entity.WorkoutContext.NORMAL
@@ -439,7 +469,28 @@ class DietAiService @Inject constructor(
                 }
             }
 
+            // === ULUBIONE PRODUKTY USERA (oznaczone ❤ w aplikacji) ===
+            if (favoriteProducts.isNotEmpty()) {
+                append("\n=== ULUBIONE PRODUKTY USERA (oznaczone ❤ — UŻYWAJ ICH JAKO BAZY) ===\n")
+                append("User wybrał te produkty jako preferowane. Plan MUSI je wykorzystywać:\n")
+                favoriteProducts.forEach { fp ->
+                    append("- ⭐ ${fp.name} (${fp.kcalPer100g.toInt()} kcal/100g, B${fp.proteinPer100g.toInt()}/W${fp.carbsPer100g.toInt()}/T${fp.fatPer100g.toInt()})\n")
+                }
+                append("ZASADA: każdy posiłek MUSI zawierać ≥1 produkt z tej listy ulubionych.\n")
+                append("ZASADA: użyj co najmniej ${favoriteProducts.size.coerceAtMost(mealsCount)} różnych ulubionych produktów w całym planie dnia.\n\n")
+            }
+
+            // === RÓŻNORODNOŚĆ — wymuszamy żeby AI nie generowało zawsze tego samego ===
+            val seedRandom = (System.currentTimeMillis() / 1000).toString().takeLast(6)
+            append("\n=== RÓŻNORODNOŚĆ (KRYTYCZNE) ===\n")
+            append("- Seed dziennej zmienności: $seedRandom (użyj go żeby plan dnia BYŁ INNY niż wczoraj)\n")
+            append("- ZAKAZ powtarzania tego samego głównego białka >1× w planie dnia (śniadanie kurczak → obiad NIE kurczak)\n")
+            append("- ZAKAZ powtarzania tego samego węgla bazowego >1× (jeśli ryż w obiad → kolacja NIE ryż)\n")
+            append("- Każdy posiłek = INNY profil smakowy (jeden słodki/owsiankowy, drugi mięsny/wytrawny, trzeci lekki)\n")
+            append("- Jeśli generujesz po raz N-ty — wybieraj składniki dalsze od wcześniejszych iteracji\n\n")
+
             append("\n=== DOSTĘPNE PRODUKTY (używaj WYŁĄCZNIE z tej listy, nazwy DOKŁADNIE) ===\n")
+            append("⭐ = ulubiony produkt usera — preferuj go w planie\n")
             append(productsListing)
 
             append("\n\n=== ZASADY DIETETYKA SPORTOWEGO ===\n")
@@ -578,7 +629,9 @@ class DietAiService @Inject constructor(
             maxCookingMinutesPerMeal = dietProfile?.cookingTimePerMealMin ?: 20,
             ketoMaxCarbsG = if (dietProfile?.dietPreference == pl.filebit.gymtracker.data.entity.DietPreference.KETO) 30 else null,
             productsByName = productsByName,
-            constraints = constraints
+            constraints = constraints,
+            perSlotKcalTargets = perSlotKcalTargets,
+            perSlotKcalTolerance = 0.25
         )
 
         // Próba 1: oryginalny prompt
@@ -678,6 +731,55 @@ class DietAiService @Inject constructor(
         pl.filebit.gymtracker.data.entity.ActivityLevel.VERY_ACTIVE -> "bardzo aktywny"
         pl.filebit.gymtracker.data.entity.ActivityLevel.EXTREME -> "ekstremalnie aktywny"
     }
+
+    /**
+     * Standard dietetyczny rozkładu kcal na posiłki — różne proporcje w zależności od liczby posiłków.
+     * Suma = total ±2 (zaokrąglenia).
+     */
+    private fun computePerSlotKcalDistribution(totalKcal: Int, mealsCount: Int): List<Int> {
+        val ratios = when (mealsCount) {
+            2 -> listOf(0.45, 0.55)                              // Śniadanie 45%, Kolacja 55%
+            3 -> listOf(0.30, 0.40, 0.30)                        // Śniadanie/Obiad/Kolacja
+            4 -> listOf(0.25, 0.10, 0.40, 0.25)                  // Śniad/IIŚniad/Obiad/Kolacja
+            5 -> listOf(0.22, 0.10, 0.38, 0.10, 0.20)            // 5 posiłków klasyk
+            6 -> listOf(0.20, 0.10, 0.30, 0.10, 0.10, 0.20)      // 6 posiłków bodybuilding
+            else -> List(mealsCount) { 1.0 / mealsCount }
+        }
+        return ratios.map { (totalKcal * it).toInt() }
+    }
+
+    private fun computePerSlotProteinDistribution(totalP: Int, mealsCount: Int): List<Int> =
+        // Białko ~stale rozłożone: trochę więcej w obiad i kolację (regeneracja)
+        when (mealsCount) {
+            2 -> listOf(0.45, 0.55)
+            3 -> listOf(0.30, 0.35, 0.35)
+            4 -> listOf(0.27, 0.13, 0.32, 0.28)
+            5 -> listOf(0.23, 0.12, 0.30, 0.13, 0.22)
+            6 -> listOf(0.20, 0.12, 0.25, 0.13, 0.12, 0.18)
+            else -> List(mealsCount) { 1.0 / mealsCount }
+        }.map { (totalP * it).toInt() }
+
+    private fun computePerSlotCarbsDistribution(totalC: Int, mealsCount: Int): List<Int> =
+        // Węgle: dużo śniadanie i obiad, MAŁO kolacja (low-carb wieczorem)
+        when (mealsCount) {
+            2 -> listOf(0.55, 0.45)
+            3 -> listOf(0.35, 0.45, 0.20)
+            4 -> listOf(0.30, 0.13, 0.45, 0.12)
+            5 -> listOf(0.25, 0.12, 0.40, 0.13, 0.10)
+            6 -> listOf(0.22, 0.13, 0.35, 0.12, 0.10, 0.08)
+            else -> List(mealsCount) { 1.0 / mealsCount }
+        }.map { (totalC * it).toInt() }
+
+    private fun computePerSlotFatDistribution(totalF: Int, mealsCount: Int): List<Int> =
+        // Tłuszcze: rozłożone, mało wieczorem (lepsze trawienie)
+        when (mealsCount) {
+            2 -> listOf(0.50, 0.50)
+            3 -> listOf(0.30, 0.40, 0.30)
+            4 -> listOf(0.27, 0.10, 0.40, 0.23)
+            5 -> listOf(0.22, 0.10, 0.35, 0.13, 0.20)
+            6 -> listOf(0.20, 0.10, 0.30, 0.13, 0.12, 0.15)
+            else -> List(mealsCount) { 1.0 / mealsCount }
+        }.map { (totalF * it).toInt() }
 
     private fun dietPreferenceLabel(pref: pl.filebit.gymtracker.data.entity.DietPreference): String = when (pref) {
         pl.filebit.gymtracker.data.entity.DietPreference.STANDARD -> ""

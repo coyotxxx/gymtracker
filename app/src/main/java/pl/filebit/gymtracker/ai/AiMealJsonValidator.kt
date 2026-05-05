@@ -45,7 +45,11 @@ data class ValidationContext(
     val ketoMaxCarbsG: Int? = null,
     val lowCarbDinnerMaxG: Int = 30,
     val productsByName: Map<String, FoodProduct>,  // klucz = name.lowercase()
-    val constraints: List<DietConstraint>
+    val constraints: List<DietConstraint>,
+    /** Targety kcal per slot — używane do twardej walidacji dystrybucji. Pusta lista = bez per-slot check. */
+    val perSlotKcalTargets: List<Int> = emptyList(),
+    /** Tolerancja per-slot kcal (np. 0.25 = ±25%). Powyżej → ERROR. */
+    val perSlotKcalTolerance: Double = 0.25
 )
 
 /**
@@ -73,13 +77,14 @@ class AiMealJsonValidator @Inject constructor(
         var totalCarbsReal = 0
         var totalFatReal = 0
 
-        // === Walidacja liczby posiłków ===
+        // === Walidacja liczby posiłków — TWARDY WYMÓG ===
         if (plan.meals.size != ctx.expectedMealsCount) {
-            warnings += ValidationIssue(
-                severity = ValidationSeverity.WARNING,
+            errors += ValidationIssue(
+                severity = ValidationSeverity.ERROR,
                 mealIndex = null,
                 code = "meals_count_mismatch",
-                message = "AI zwróciło ${plan.meals.size} posiłków, oczekiwano ${ctx.expectedMealsCount}."
+                message = "AI zwróciło ${plan.meals.size} posiłków, oczekiwano DOKŁADNIE ${ctx.expectedMealsCount}. " +
+                    "Wygeneruj plan z ${ctx.expectedMealsCount} pełnymi posiłkami (każdy z osobnymi kcal)."
             )
         }
 
@@ -180,6 +185,21 @@ class AiMealJsonValidator @Inject constructor(
                         )
                     }
                 }
+
+            // === PER-SLOT KCAL TARGET — TWARDY WYMÓG ===
+            // AI musi rozłożyć kcal proporcjonalnie do typu posiłku, nie wrzucać wszystkiego w jeden slot.
+            ctx.perSlotKcalTargets.getOrNull(mIdx)?.let { target ->
+                val tolerance = ctx.perSlotKcalTolerance
+                val minK = target * (1.0 - tolerance)
+                val maxK = target * (1.0 + tolerance)
+                if (mealKcalReal < minK || mealKcalReal > maxK) {
+                    errors += ValidationIssue(
+                        ValidationSeverity.ERROR, mIdx, "slot_kcal_off_target",
+                        "Slot $mIdx ('${meal.name}'): ${mealKcalReal.toInt()} kcal, target $target kcal " +
+                            "(zakres ${minK.toInt()}–${maxK.toInt()}). Dostosuj gramatury żeby zmieścić się w celu tego slotu."
+                    )
+                }
+            }
 
             totalKcalReal += mealKcalReal.toInt()
             totalProteinReal += mealProteinReal.toInt()

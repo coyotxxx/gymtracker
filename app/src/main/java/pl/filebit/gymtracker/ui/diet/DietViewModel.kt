@@ -930,6 +930,13 @@ class DietViewModel @Inject constructor(
         }
     }
 
+    /** Przełącza flagę isFavorite na produkcie — używane przez AI do priorytetyzacji w generowanym planie. */
+    fun toggleProductFavorite(productId: Long, isFavorite: Boolean) {
+        viewModelScope.launch {
+            repo.setProductFavorite(productId, isFavorite)
+        }
+    }
+
     /**
      * Generuje plan dnia AI: woła DietAiService → mapuje productName → productId
      * (case-insensitive) → zapisuje MealEntry per posiłek + Recipe.

@@ -28,6 +28,8 @@ class DietRepository @Inject constructor(
     suspend fun getProduct(id: Long): FoodProduct? = foodDao.getById(id)
     suspend fun upsertProduct(p: FoodProduct): Long = foodDao.upsert(p)
     suspend fun deleteProduct(id: Long) = foodDao.delete(id)
+    suspend fun setProductFavorite(id: Long, fav: Boolean) = foodDao.setFavorite(id, fav)
+    suspend fun getFavoriteProducts(): List<FoodProduct> = foodDao.getFavorites()
 
     // ===== Meal entries =====
     fun observeMealsForDate(dateMs: Long): Flow<List<MealEntry>> {

@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -67,7 +69,8 @@ fun AddMealDialog(
     onSearchQueryChange: (String) -> Unit,
     onCategoryFilterChange: (FoodCategory?) -> Unit,
     onAdd: (productId: Long, grams: Double) -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    onToggleFavorite: ((FoodProduct) -> Unit)? = null
 ) {
     var selectedProduct by remember { mutableStateOf<FoodProduct?>(null) }
     var gramsText by remember { mutableStateOf("100") }
@@ -149,7 +152,11 @@ fun AddMealDialog(
                         verticalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         items(filteredProducts, key = { it.id }) { p ->
-                            ProductPickerRow(p, onClick = { selectedProduct = p })
+                            ProductPickerRow(
+                                p,
+                                onClick = { selectedProduct = p },
+                                onToggleFavorite = onToggleFavorite
+                            )
                         }
                     }
                 } else {
@@ -256,7 +263,11 @@ fun AddMealDialog(
 }
 
 @Composable
-private fun ProductPickerRow(p: FoodProduct, onClick: () -> Unit) {
+private fun ProductPickerRow(
+    p: FoodProduct,
+    onClick: () -> Unit,
+    onToggleFavorite: ((FoodProduct) -> Unit)? = null
+) {
     Card(
         modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -297,6 +308,20 @@ private fun ProductPickerRow(p: FoodProduct, onClick: () -> Unit) {
                 style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
                 color = DarkOnSurfaceVariant
             )
+            if (onToggleFavorite != null) {
+                Spacer(Modifier.width(6.dp))
+                Box(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .clickable { onToggleFavorite(p) },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        if (p.isFavorite) "❤" else "🤍",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                }
+            }
         }
     }
 }

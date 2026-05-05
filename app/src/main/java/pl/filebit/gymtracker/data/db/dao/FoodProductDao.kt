@@ -36,6 +36,12 @@ interface FoodProductDao {
     @Query("SELECT * FROM food_products WHERE barcode = :barcode LIMIT 1")
     suspend fun getByBarcode(barcode: String): FoodProduct?
 
+    @Query("SELECT * FROM food_products WHERE isFavorite = 1 ORDER BY name COLLATE NOCASE ASC")
+    suspend fun getFavorites(): List<FoodProduct>
+
+    @Query("UPDATE food_products SET isFavorite = :fav WHERE id = :id")
+    suspend fun setFavorite(id: Long, fav: Boolean)
+
     @Query("SELECT COUNT(*) FROM food_products")
     suspend fun count(): Int
 
