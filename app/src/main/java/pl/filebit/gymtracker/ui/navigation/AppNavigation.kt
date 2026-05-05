@@ -487,7 +487,8 @@ fun AppNavigation() {
                     onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) },
                     onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) },
                     onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) },
-                    onOpenFoodImageAnalyzer = { navController.navigate(Screen.FoodImageAnalyzer.route) }
+                    onOpenFoodImageAnalyzer = { navController.navigate(Screen.FoodImageAnalyzer.route) },
+                    onOpenRecipeBrowser = { navController.navigate(Screen.RecipeBrowser.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
@@ -537,6 +538,11 @@ fun AppNavigation() {
             }
             composable(Screen.FoodImageAnalyzer.route) {
                 pl.filebit.gymtracker.ui.diet.imageanalyzer.FoodImageAnalyzerScreen(
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.RecipeBrowser.route) {
+                pl.filebit.gymtracker.ui.diet.recipes.RecipeBrowserScreen(
                     onBack = { navController.popBackStack() }
                 )
             }

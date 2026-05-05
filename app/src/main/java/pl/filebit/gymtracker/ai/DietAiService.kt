@@ -115,7 +115,8 @@ class DietAiService @Inject constructor(
     private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository,
     private val constraintResolver: pl.filebit.gymtracker.data.repository.ConstraintResolver,
     private val validator: AiMealJsonValidator,
-    private val workoutTimeAnalyzer: pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer
+    private val workoutTimeAnalyzer: pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer,
+    private val knowledgeRepo: pl.filebit.gymtracker.data.repository.DietaryKnowledgeRepository
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -411,6 +412,31 @@ class DietAiService @Inject constructor(
             if (constraintsText.isNotBlank()) {
                 append("\n")
                 append(constraintsText)
+            }
+
+            // === SEZONOWOŚĆ (z dietary_knowledge.json) ===
+            val now = java.util.Calendar.getInstance()
+            val month = now.get(java.util.Calendar.MONTH) + 1
+            val seasonal = runCatching { knowledgeRepo.seasonalForMonth(month) }.getOrNull().orEmpty()
+            if (seasonal.isNotEmpty()) {
+                val monthName = listOf("styczniu", "lutym", "marcu", "kwietniu", "maju", "czerwcu",
+                    "lipcu", "sierpniu", "wrześniu", "październiku", "listopadzie", "grudniu")[month - 1]
+                append("\n=== W SEZONIE (w $monthName) ===\n")
+                append("Preferuj te owoce/warzywa — świeższe, lepsze ceny, lepszy smak:\n")
+                append(seasonal.take(20).joinToString(", "))
+                append("\n")
+            }
+
+            // === LOW IG (gdy cukrzyca lub insulinooporność) ===
+            val medical = dietProfile?.parsedMedicalConditions().orEmpty()
+            if ("cukrzyca" in medical || "insulinooporność" in medical) {
+                val lowGi = runCatching { knowledgeRepo.lowGiProducts() }.getOrNull().orEmpty()
+                if (lowGi.isNotEmpty()) {
+                    append("\n=== PRODUKTY LOW IG (cukrzyca/IR — preferuj!) ===\n")
+                    append("Stabilizują poziom cukru. Wybieraj te ZAMIAST produktów o wysokim IG:\n")
+                    append(lowGi.take(30).joinToString(", ") { "${it.name} (IG ${it.gi})" })
+                    append("\n")
+                }
             }
 
             append("\n=== DOSTĘPNE PRODUKTY (używaj WYŁĄCZNIE z tej listy, nazwy DOKŁADNIE) ===\n")

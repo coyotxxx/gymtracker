@@ -76,6 +76,7 @@ fun DietScreen(
     onOpenMealPrep: () -> Unit = {},
     onOpenBarcodeScanner: () -> Unit = {},
     onOpenFoodImageAnalyzer: () -> Unit = {},
+    onOpenRecipeBrowser: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -244,7 +245,7 @@ fun DietScreen(
                     )
                 }
 
-                // 6. Collapsible "🛠 Narzędzia (6)"
+                // 6. Collapsible "🛠 Narzędzia (7)"
                 item {
                     NarzedziaSection(
                         expanded = toolsExpanded,
@@ -254,7 +255,8 @@ fun DietScreen(
                         onHistoria = onOpenAdjustmentHistory,
                         onPreferencje = onOpenMealPreferences,
                         onZakupy = onOpenShoppingList,
-                        onMealPrep = onOpenMealPrep
+                        onMealPrep = onOpenMealPrep,
+                        onRecipes = onOpenRecipeBrowser
                     )
                 }
 
@@ -1397,7 +1399,8 @@ private fun NarzedziaSection(
     onHistoria: () -> Unit,
     onPreferencje: () -> Unit,
     onZakupy: () -> Unit,
-    onMealPrep: () -> Unit
+    onMealPrep: () -> Unit,
+    onRecipes: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -1425,7 +1428,7 @@ private fun NarzedziaSection(
                         .padding(horizontal = 8.dp, vertical = 2.dp)
                 ) {
                     Text(
-                        "6",
+                        "7",
                         style = MaterialTheme.typography.labelMedium.copy(
                             fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace
                         ),
@@ -1454,6 +1457,11 @@ private fun NarzedziaSection(
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         ToolButton("🛒", "Zakupy", Modifier.weight(1f), onZakupy)
                         ToolButton("🍱", "Meal prep", Modifier.weight(1f), onMealPrep)
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        ToolButton("📖", "Przepisy (79)", Modifier.weight(1f), onRecipes)
+                        Spacer(Modifier.weight(1f))
                     }
                 }
             }
