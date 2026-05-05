@@ -90,17 +90,21 @@ object EmergencyFoodEstimates {
 
     /**
      * Najbardziej popularne (top 10 do quick selection w UI).
+     * Wybierane po nazwie zamiast hardkodowanych indeksów (odporne na zmiany kolejności).
      */
-    val POPULAR: List<FoodEstimate> = listOf(
-        DISHES[0],   // kebab klasyczny
-        DISHES[3],   // pizza margherita
-        DISHES[7],   // burger
-        DISHES[14],  // sushi 12 sztuk
-        DISHES[17],  // pierogi z mięsem
-        DISHES[19],  // schabowy
-        DISHES[24],  // wrap z kurczakiem
-        DISHES[28],  // sałatka cezar
-        DISHES[32],  // pączek
-        DISHES[36]   // cola
-    )
+    val POPULAR: List<FoodEstimate>
+        get() = listOf(
+            "Kebab klasyczny",
+            "Pizza średnia margherita",
+            "Burger klasyczny",
+            "Sushi 12 sztuk",
+            "Pierogi z mięsem",
+            "Schabowy",
+            "Wrap z kurczakiem",
+            "Sałatka cezar",
+            "Pączek",
+            "Cola"
+        ).mapNotNull { needle ->
+            DISHES.firstOrNull { it.displayName.contains(needle, ignoreCase = true) }
+        }
 }
