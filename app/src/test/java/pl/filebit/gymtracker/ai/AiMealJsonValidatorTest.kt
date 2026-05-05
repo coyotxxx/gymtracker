@@ -246,12 +246,13 @@ class AiMealJsonValidatorTest {
     }
 
     @Test
-    fun `meal count mismatch produces warning`() {
+    fun `meal count mismatch produces ERROR (hard violation)`() {
         val plan = AiDayPlan(meals = listOf(
             AiMealRecipe("X", listOf(AiRecipeIngredient("Brokuły gotowane", 100)), "...", 5, 35, 2, 7, 0)
         ))
         val result = validator.validate(plan, ctx(meals = 3))
-        assertTrue(result.warnings.any { it.code == "meals_count_mismatch" })
+        assertTrue(result.errors.any { it.code == "meals_count_mismatch" })
+        assertFalse(result.isValid)
     }
 
     @Test
