@@ -30,6 +30,7 @@ class DietPreferences @Inject constructor(
         windowStartHour = prefs.getInt(KEY_WINDOW_START, 12).coerceIn(0, 23),
         mealRemindersEnabled = prefs.getBoolean(KEY_REMINDERS, true),
         autoCheckAdjustments = prefs.getBoolean(KEY_AUTO_CHECK, true),
+        healthConnectSyncEnabled = prefs.getBoolean(KEY_HC_SYNC, false),
         customDeficit = prefs.getInt(KEY_DEFICIT, Int.MIN_VALUE).takeIf { it != Int.MIN_VALUE },
         manualKcal = prefs.getInt(KEY_KCAL_OVERRIDE, 0).takeIf { it > 0 }
     )
@@ -41,6 +42,7 @@ class DietPreferences @Inject constructor(
             .putInt(KEY_WINDOW_START, config.windowStartHour)
             .putBoolean(KEY_REMINDERS, config.mealRemindersEnabled)
             .putBoolean(KEY_AUTO_CHECK, config.autoCheckAdjustments)
+            .putBoolean(KEY_HC_SYNC, config.healthConnectSyncEnabled)
             .also { editor ->
                 if (config.customDeficit != null) editor.putInt(KEY_DEFICIT, config.customDeficit)
                 else editor.remove(KEY_DEFICIT)
@@ -57,6 +59,7 @@ class DietPreferences @Inject constructor(
         private const val KEY_WINDOW_START = "window_start_hour"
         private const val KEY_REMINDERS = "meal_reminders_enabled"
         private const val KEY_AUTO_CHECK = "auto_check_adjustments"
+        private const val KEY_HC_SYNC = "health_connect_sync"
         private const val KEY_DEFICIT = "custom_deficit_kcal"
         private const val KEY_KCAL_OVERRIDE = "manual_kcal_override"
     }
@@ -69,6 +72,8 @@ data class DietConfig(
     val mealRemindersEnabled: Boolean = true,
     /** Co 14 dni AI sprawdza trend wagi/adherence i sugeruje korektę kcal (notyfikacja). */
     val autoCheckAdjustments: Boolean = true,
+    /** Sync kroków z Google Health Connect (zamiast manual entry). */
+    val healthConnectSyncEnabled: Boolean = false,
     /** Override default deficit (-750..+500). null = użyj wartości domyślnej z celu (CUT=-500, BULK=+300). */
     val customDeficit: Int? = null,
     /** Manualne nadpisanie kcal — jeśli != null, ignoruje TDEE+deficit. */

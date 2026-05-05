@@ -88,6 +88,8 @@ fun DietScreen(
     val showRecoveryDialog by vm.showRecoveryDialog.collectAsStateWithLifecycle()
     val stepsToday by vm.stepsToday.collectAsStateWithLifecycle()
     val showStepsDialog by vm.showStepsDialog.collectAsStateWithLifecycle()
+    val hcAvailability by vm.hcAvailability.collectAsStateWithLifecycle()
+    val hcHasPermission by vm.hcHasPermission.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
@@ -257,14 +259,32 @@ fun DietScreen(
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Column(modifier = Modifier.weight(1f)) {
-                                Text(
-                                    "🚶 KROKI DZIŚ",
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
-                                        letterSpacing = 1.4.sp
-                                    ),
-                                    color = AccentOrange
-                                )
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        "🚶 KROKI DZIŚ",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                            letterSpacing = 1.4.sp
+                                        ),
+                                        color = AccentOrange
+                                    )
+                                    if (hcHasPermission && state.config.healthConnectSyncEnabled) {
+                                        Spacer(Modifier.width(6.dp))
+                                        Box(
+                                            modifier = Modifier
+                                                .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(4.dp))
+                                                .padding(horizontal = 4.dp, vertical = 1.dp)
+                                        ) {
+                                            Text(
+                                                "🔗 HC",
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    fontSize = 9.sp, fontWeight = FontWeight.Bold
+                                                ),
+                                                color = AccentOrange
+                                            )
+                                        }
+                                    }
+                                }
                                 Text(
                                     if (stepsToday > 0) "$stepsToday kroków" else "Brak — dotknij by wpisać",
                                     style = MaterialTheme.typography.bodyMedium.copy(

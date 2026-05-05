@@ -122,6 +122,7 @@ data class DietPreferencesDto(
     val mealsPerDay: Int, val eatingWindowHours: Int,
     val windowStartHour: Int, val mealRemindersEnabled: Boolean,
     val autoCheckAdjustments: Boolean,
+    val healthConnectSyncEnabled: Boolean = false,
     val customDeficit: Int?, val manualKcal: Int?
 )
 
@@ -203,6 +204,7 @@ class DietBackupManager @Inject constructor(
                     mealsPerDay = c.mealsPerDay, eatingWindowHours = c.eatingWindowHours,
                     windowStartHour = c.windowStartHour, mealRemindersEnabled = c.mealRemindersEnabled,
                     autoCheckAdjustments = c.autoCheckAdjustments,
+                    healthConnectSyncEnabled = c.healthConnectSyncEnabled,
                     customDeficit = c.customDeficit, manualKcal = c.manualKcal
                 )
             }
@@ -316,6 +318,7 @@ class DietBackupManager @Inject constructor(
                 windowStartHour = dto.windowStartHour,
                 mealRemindersEnabled = dto.mealRemindersEnabled,
                 autoCheckAdjustments = dto.autoCheckAdjustments,
+                healthConnectSyncEnabled = dto.healthConnectSyncEnabled,
                 customDeficit = dto.customDeficit,
                 manualKcal = dto.manualKcal
             ))

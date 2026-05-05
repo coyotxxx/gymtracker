@@ -113,8 +113,57 @@ class DietViewModel @Inject constructor(
     private val phaseManager: pl.filebit.gymtracker.data.repository.PhaseManager,
     private val recoveryAnalyzer: pl.filebit.gymtracker.data.repository.RecoveryAnalyzer,
     private val emergencyMealGen: pl.filebit.gymtracker.ai.EmergencyMealGenerator,
-    private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl
+    private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl,
+    private val healthConnect: pl.filebit.gymtracker.data.health.HealthConnectManager,
+    private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler
 ) : ViewModel() {
+
+    // === HEALTH CONNECT ===
+    private val _hcAvailability = MutableStateFlow(pl.filebit.gymtracker.data.health.HealthConnectAvailability.NOT_SUPPORTED)
+    val hcAvailability: StateFlow<pl.filebit.gymtracker.data.health.HealthConnectAvailability> = _hcAvailability.asStateFlow()
+
+    private val _hcHasPermission = MutableStateFlow(false)
+    val hcHasPermission: StateFlow<Boolean> = _hcHasPermission.asStateFlow()
+
+    fun refreshHealthConnect() {
+        viewModelScope.launch {
+            _hcAvailability.value = healthConnect.checkAvailability()
+            _hcHasPermission.value = healthConnect.hasAllPermissions()
+
+            // Jeśli włączony sync + permissions OK → pobierz kroki na dziś
+            val cfg = dietPrefs.load()
+            if (cfg.healthConnectSyncEnabled && _hcHasPermission.value) {
+                runCatching {
+                    val steps = healthConnect.readStepsForDate(_selectedDateMs.value)
+                    if (steps > 0) {
+                        activityRepo.setSteps(_selectedDateMs.value, steps,
+                            source = pl.filebit.gymtracker.data.entity.ActivitySource.HEALTH_CONNECT)
+                        refreshSteps()
+                    }
+                }
+            }
+        }
+    }
+
+    fun toggleHealthConnectSync(enabled: Boolean) {
+        viewModelScope.launch {
+            val cfg = dietPrefs.load()
+            dietPrefs.save(cfg.copy(healthConnectSyncEnabled = enabled))
+            if (enabled) healthConnectScheduler.schedule()
+            else healthConnectScheduler.cancel()
+            refreshHealthConnect()
+        }
+    }
+
+    suspend fun syncHealthConnectNow(): Int {
+        val steps = healthConnect.readStepsForDate(_selectedDateMs.value)
+        if (steps > 0) {
+            activityRepo.setSteps(_selectedDateMs.value, steps,
+                source = pl.filebit.gymtracker.data.entity.ActivitySource.HEALTH_CONNECT)
+            refreshSteps()
+        }
+        return steps
+    }
 
     // === EMERGENCY ===
     private val _showEmergencyDialog = MutableStateFlow(false)
@@ -542,6 +591,8 @@ class DietViewModel @Inject constructor(
             runCatching { refreshSteps() }
             // Refresh diet phase
             runCatching { refreshCurrentPhase() }
+            // Refresh Health Connect availability + steps
+            runCatching { refreshHealthConnect() }
         }
     }
 
@@ -760,6 +811,9 @@ class DietViewModel @Inject constructor(
             reminderScheduler.rescheduleAll(config)
             if (config.autoCheckAdjustments) dietAdjustmentScheduler.schedulePeriodic()
             else dietAdjustmentScheduler.cancel()
+            if (config.healthConnectSyncEnabled) healthConnectScheduler.schedule()
+            else healthConnectScheduler.cancel()
+            refreshHealthConnect()
         }
     }
 

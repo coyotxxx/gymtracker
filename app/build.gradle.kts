@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 206
-        versionName = "0.95.0"
+        versionCode = 207
+        versionName = "0.96.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -128,6 +128,9 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.4")
     implementation("androidx.camera:camera-view:1.3.4")
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
+
+    // Health Connect (v0.96) — auto-sync kroków
+    implementation("androidx.health.connect:connect-client:1.1.0-alpha07")
 
     // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
     testImplementation(libs.junit)

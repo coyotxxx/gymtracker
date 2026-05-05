@@ -51,13 +51,15 @@ fun DietSettingsDialog(
     var startHour by remember { mutableStateOf(initial.windowStartHour) }
     var reminders by remember { mutableStateOf(initial.mealRemindersEnabled) }
     var autoCheck by remember { mutableStateOf(initial.autoCheckAdjustments) }
+    var hcSync by remember { mutableStateOf(initial.healthConnectSyncEnabled) }
 
     val previewConfig = initial.copy(
         mealsPerDay = meals,
         eatingWindowHours = window,
         windowStartHour = startHour,
         mealRemindersEnabled = reminders,
-        autoCheckAdjustments = autoCheck
+        autoCheckAdjustments = autoCheck,
+        healthConnectSyncEnabled = hcSync
     )
     val mealHours = previewConfig.mealHoursDecimal()
 
@@ -149,6 +151,27 @@ fun DietSettingsDialog(
                         Text("Auto-sprawdzanie planu", fontWeight = FontWeight.SemiBold, color = DarkOnSurface)
                         Text(
                             "Co 14 dni AI analizuje trend wagi i sugeruje korekty kcal (notyfikacja)",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                }
+
+                // Health Connect sync (kroki)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Switch(
+                        checked = hcSync,
+                        onCheckedChange = { hcSync = it },
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = AccentOrange,
+                            checkedTrackColor = AccentOrange.copy(alpha = 0.5f)
+                        )
+                    )
+                    Spacer(Modifier.padding(start = 8.dp))
+                    Column {
+                        Text("🔗 Health Connect (kroki)", fontWeight = FontWeight.SemiBold, color = DarkOnSurface)
+                        Text(
+                            "Auto-sync kroków z Google Health Connect (zamiast wpisywania ręcznie). Wymaga aplikacji Health Connect i zgody.",
                             style = MaterialTheme.typography.bodySmall,
                             color = DarkOnSurfaceVariant
                         )
