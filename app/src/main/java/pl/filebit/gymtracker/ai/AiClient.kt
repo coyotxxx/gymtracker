@@ -139,19 +139,71 @@ class AiClientImpl @Inject constructor() : AiClient {
         http.newCall(req).execute().use { resp ->
             val raw = resp.body?.string().orEmpty()
             if (!resp.isSuccessful) {
-                val errMsg = runCatching {
+                val (errMsg, errType) = runCatching {
                     val obj = json.parseToJsonElement(raw).jsonObject
                     val err = obj["error"]
                     when (err) {
-                        is JsonObject -> err["message"]?.jsonPrimitive?.content
-                        is JsonArray -> err.firstOrNull()?.jsonObject?.get("message")?.jsonPrimitive?.content
-                        else -> null
+                        is JsonObject -> {
+                            val m = err["message"]?.jsonPrimitive?.content
+                            val t = err["type"]?.jsonPrimitive?.content
+                            m to t
+                        }
+                        is JsonArray -> {
+                            val first = err.firstOrNull()?.jsonObject
+                            first?.get("message")?.jsonPrimitive?.content to first?.get("type")?.jsonPrimitive?.content
+                        }
+                        else -> null to null
                     }
-                }.getOrNull() ?: raw.take(500)
-                throw IllegalStateException("Błąd API (${resp.code}): $errMsg")
+                }.getOrNull() ?: (raw.take(500) to null)
+
+                val hint = buildErrorHint(resp.code, errMsg, errType)
+                val baseMsg = errMsg ?: raw.take(300)
+                val full = if (hint.isNotBlank()) "$baseMsg\n\n$hint" else baseMsg
+                throw IllegalStateException("Błąd API (${resp.code}): $full")
             }
             val obj = json.parseToJsonElement(raw).jsonObject
             return parse(obj)
+        }
+    }
+
+    /**
+     * Diagnostyka błędu Anthropic/OpenAI z polską poradą — co sprawdzić.
+     * Dotyczy najczęstszych przyczyn (workspace spend limit, klucz w innym koncie itd.).
+     */
+    private fun buildErrorHint(code: Int, message: String?, type: String?): String {
+        val msgLower = message?.lowercase().orEmpty()
+        return when {
+            // Anthropic: credit balance / workspace spend limit
+            msgLower.contains("credit balance") ||
+                msgLower.contains("insufficient") ||
+                msgLower.contains("billing") -> """
+                Najczęstsze przyczyny (mimo wpłaty):
+                1. Workspace Spend Limit = 0
+                   → console.anthropic.com → Settings → Workspaces
+                   → otwórz workspace klucza → Spend Limit (musi być >0 lub Unlimited)
+                2. Klucz z innego konta niż to na które wpłaciłeś
+                   → console.anthropic.com → API Keys → sprawdź workspace klucza
+                3. Promo credits wygasły / Pay-as-you-go nie aktywny
+                   → console.anthropic.com → Plans & Billing
+                """.trimIndent()
+            // 401 / authentication
+            code == 401 || type == "authentication_error" || msgLower.contains("invalid api key") -> """
+                Klucz API nieprawidłowy lub odwołany.
+                → Wygeneruj nowy: console.anthropic.com → API Keys → Create Key
+                → Skopiuj DOKŁADNIE (bez spacji/nowych linii) i wklej w Profil → Połączenie AI
+                """.trimIndent()
+            code == 429 || type == "rate_limit_error" -> """
+                Przekroczyłeś limit zapytań na minutę/godzinę.
+                → Poczekaj kilka minut i spróbuj ponownie
+                → Lub przejdź na model tańszy/szybszy (Haiku 4.5)
+                """.trimIndent()
+            code == 529 || code == 503 -> """
+                Anthropic API tymczasowo niedostępne (przeciążenie).
+                → Spróbuj za 1-2 minuty
+                → Status: status.anthropic.com
+                """.trimIndent()
+            code in 500..599 -> "Błąd po stronie serwera. Spróbuj ponownie za chwilę."
+            else -> ""
         }
     }
 }
