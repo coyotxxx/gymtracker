@@ -100,8 +100,70 @@ class DietViewModel @Inject constructor(
     private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
     private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService,
     private val dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler,
-    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository
+    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository,
+    private val substituteService: pl.filebit.gymtracker.data.repository.SubstituteService
 ) : ViewModel() {
+
+    data class SubstitutePrompt(
+        val entry: pl.filebit.gymtracker.data.entity.MealEntry,
+        val original: FoodProduct,
+        val substitutes: List<pl.filebit.gymtracker.data.repository.Substitute>,
+        val tolerance: pl.filebit.gymtracker.data.repository.MatchTolerance
+    )
+
+    private val _substitutePrompt = MutableStateFlow<SubstitutePrompt?>(null)
+    val substitutePrompt: StateFlow<SubstitutePrompt?> = _substitutePrompt.asStateFlow()
+
+    fun openSubstitutes(
+        entry: pl.filebit.gymtracker.data.entity.MealEntry,
+        product: FoodProduct,
+        tolerance: pl.filebit.gymtracker.data.repository.MatchTolerance =
+            pl.filebit.gymtracker.data.repository.MatchTolerance.STRICT
+    ) {
+        val all = state.value.productsAll
+        val subs = substituteService.findSubstitutes(
+            original = product,
+            originalGrams = entry.grams,
+            allProducts = all,
+            tolerance = tolerance
+        )
+        _substitutePrompt.value = SubstitutePrompt(entry, product, subs, tolerance)
+    }
+
+    fun changeSubstituteTolerance(tolerance: pl.filebit.gymtracker.data.repository.MatchTolerance) {
+        val cur = _substitutePrompt.value ?: return
+        val all = state.value.productsAll
+        val subs = substituteService.findSubstitutes(
+            original = cur.original,
+            originalGrams = cur.entry.grams,
+            allProducts = all,
+            tolerance = tolerance
+        )
+        _substitutePrompt.value = cur.copy(substitutes = subs, tolerance = tolerance)
+    }
+
+    fun applySubstitute(newProduct: FoodProduct, newGrams: Double) {
+        val cur = _substitutePrompt.value ?: return
+        viewModelScope.launch {
+            // Usuń starą pozycję, dodaj nową z tą samą datą i typem posiłku
+            repo.deleteMeal(cur.entry.id)
+            repo.addMeal(
+                pl.filebit.gymtracker.data.entity.MealEntry(
+                    dateMs = cur.entry.dateMs,
+                    mealType = cur.entry.mealType,
+                    productId = newProduct.id,
+                    grams = newGrams,
+                    notes = cur.entry.notes
+                )
+            )
+            runCatching { adherenceCalc.computeForDate(cur.entry.dateMs) }
+            _substitutePrompt.value = null
+        }
+    }
+
+    fun dismissSubstitute() {
+        _substitutePrompt.value = null
+    }
 
     /**
      * Lista nazw potraw z ostatnio wygenerowanego planu AI — do oceny przez usera.

@@ -25,6 +25,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -74,6 +75,7 @@ fun DietScreen(
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
     val ratingPrompt by vm.aiPlanRatingPrompt.collectAsStateWithLifecycle()
+    val substitutePrompt by vm.substitutePrompt.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
         if (needsOnboarding) onNeedsOnboarding()
@@ -180,7 +182,8 @@ fun DietScreen(
                         group = group,
                         targetKcalPerMeal = state.perMealKcal,
                         onAdd = { addMealForType = group.type },
-                        onDelete = { id -> vm.deleteMeal(id) }
+                        onDelete = { id -> vm.deleteMeal(id) },
+                        onSwap = { e -> vm.openSubstitutes(e.entry, e.product) }
                     )
                 }
 
@@ -211,6 +214,18 @@ fun DietScreen(
             items = ratingPrompt,
             onRate = { name, rating -> vm.rateMeal(name, rating) },
             onDismiss = { vm.consumeAiPlanRatingPrompt() }
+        )
+    }
+
+    substitutePrompt?.let { sp ->
+        SubstituteDialog(
+            original = sp.original,
+            originalGrams = sp.entry.grams,
+            substitutes = sp.substitutes,
+            tolerance = sp.tolerance,
+            onToleranceChange = { vm.changeSubstituteTolerance(it) },
+            onSelect = { product, grams -> vm.applySubstitute(product, grams) },
+            onDismiss = { vm.dismissSubstitute() }
         )
     }
 
@@ -580,7 +595,8 @@ private fun MealGroupCard(
     group: MealGroup,
     targetKcalPerMeal: Int,
     onAdd: () -> Unit,
-    onDelete: (Long) -> Unit
+    onDelete: (Long) -> Unit,
+    onSwap: (MealEntryWithMacros) -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -682,7 +698,11 @@ private fun MealGroupCard(
             if (group.entries.isNotEmpty()) {
                 Spacer(Modifier.height(8.dp))
                 group.entries.forEach { e ->
-                    MealEntryRow(e, onDelete = { onDelete(e.entry.id) })
+                    MealEntryRow(
+                        e,
+                        onDelete = { onDelete(e.entry.id) },
+                        onSwap = { onSwap(e) }
+                    )
                 }
             }
             Spacer(Modifier.height(8.dp))
@@ -720,7 +740,8 @@ private fun MealGroupCard(
 @Composable
 private fun MealEntryRow(
     m: MealEntryWithMacros,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
+    onSwap: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -752,7 +773,20 @@ private fun MealEntryRow(
             ),
             color = DarkOnSurface
         )
-        Spacer(Modifier.width(8.dp))
+        Spacer(Modifier.width(4.dp))
+        Box(
+            modifier = Modifier
+                .size(28.dp)
+                .clickable(onClick = onSwap),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                Icons.Default.SwapHoriz,
+                contentDescription = "Zamień",
+                tint = AccentOrange,
+                modifier = Modifier.size(18.dp)
+            )
+        }
         Box(
             modifier = Modifier
                 .size(28.dp)
