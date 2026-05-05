@@ -260,16 +260,29 @@ class AiMealJsonValidatorTest {
             id = 1, dislikedFoods = "tofu", ageYears = 30, heightCm = 180
         )
         val constraints = resolver.resolve(profileMale, dietProfile)
+        // Plan musi mieć >=1500 kcal (safety) — 1100g tofu = 1584 kcal
         val plan = AiDayPlan(meals = listOf(
             AiMealRecipe(
                 name = "Tofu meal",
-                ingredients = listOf(AiRecipeIngredient("Tofu naturalne", 200)),
+                ingredients = listOf(AiRecipeIngredient("Tofu naturalne", 800)),
                 instructions = "...", prepMinutes = 8,
-                kcal = 288, proteinG = 34, carbsG = 6, fatG = 17
+                kcal = 1152, proteinG = 136, carbsG = 22, fatG = 70
+            ),
+            AiMealRecipe(
+                name = "Sałatka",
+                ingredients = listOf(AiRecipeIngredient("Brokuły gotowane", 200)),
+                instructions = "...", prepMinutes = 5,
+                kcal = 70, proteinG = 5, carbsG = 14, fatG = 1
+            ),
+            AiMealRecipe(
+                name = "Drugi tofu",
+                ingredients = listOf(AiRecipeIngredient("Tofu naturalne", 300)),
+                instructions = "...", prepMinutes = 5,
+                kcal = 432, proteinG = 51, carbsG = 8, fatG = 26
             )
         ))
-        val result = validator.validate(plan, ctx(meals = 1, constraints = constraints))
-        assertTrue(result.isValid) // SOFT = nie blokuje
+        val result = validator.validate(plan, ctx(meals = 3, constraints = constraints))
+        assertTrue("isValid should be true (only SOFT violations): errors=${result.errors}", result.isValid)
         assertTrue(result.warnings.any { it.code == "soft_constraint_violation" })
     }
 
