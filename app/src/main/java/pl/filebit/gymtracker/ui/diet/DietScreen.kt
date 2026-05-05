@@ -439,6 +439,45 @@ private fun MealGroupCard(
                     }
                 }
             }
+            // Makro per posiłek — pasek z B/W/T summary
+            if (group.entries.isNotEmpty()) {
+                Spacer(Modifier.height(6.dp))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(DarkSurfaceVariant.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                        .padding(horizontal = 10.dp, vertical = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        "B ${group.totals.protein.roundToInt()}g",
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        color = AccentOrange
+                    )
+                    Text(
+                        "W ${group.totals.carbs.roundToInt()}g",
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        color = SuccessGreen
+                    )
+                    Text(
+                        "T ${group.totals.fat.roundToInt()}g",
+                        style = MaterialTheme.typography.labelMedium.copy(
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        color = Color(0xFFFFB74D)
+                    )
+                }
+            }
             if (group.entries.isNotEmpty()) {
                 Spacer(Modifier.height(8.dp))
                 group.entries.forEach { e ->
