@@ -50,7 +50,8 @@ class AiMealJsonValidatorTest {
         kcal: Int = 2000,
         protein: Int = 160,
         constraints: List<pl.filebit.gymtracker.data.repository.DietConstraint> = emptyList(),
-        enforceDailyKcal: Boolean = false
+        enforceDailyKcal: Boolean = false,
+        enforceDailyMacros: Boolean = false
     ) = ValidationContext(
         expectedMealsCount = meals,
         targetKcal = kcal,
@@ -59,7 +60,8 @@ class AiMealJsonValidatorTest {
         maxCookingMinutesPerMeal = 20,
         productsByName = productMap,
         constraints = constraints,
-        enforceDailyKcal = enforceDailyKcal
+        enforceDailyKcal = enforceDailyKcal,
+        enforceDailyMacros = enforceDailyMacros
     )
 
     private fun goodPlan() = AiDayPlan(
@@ -349,5 +351,76 @@ class AiMealJsonValidatorTest {
             ctx(kcal = 1400, enforceDailyKcal = true)
         )
         assertTrue("daily kcal blisko targetu — brak ERROR", result.errors.none { it.code == "daily_kcal_off_target" })
+    }
+
+    @Test
+    fun `protein over target by 50 percent → ERROR`() {
+        // Plan z dużą ilością białka — kurczak + twaróg gęsto
+        val highProteinPlan = AiDayPlan(
+            meals = listOf(
+                AiMealRecipe(
+                    name = "Białkowa bomba",
+                    ingredients = listOf(
+                        AiRecipeIngredient("Pierś z kurczaka", 400),  // 124g białka
+                        AiRecipeIngredient("Twaróg chudy", 400)         // 76g białka
+                    ),
+                    instructions = "...", prepMinutes = 10,
+                    kcal = 1060, proteinG = 200, carbsG = 14, fatG = 16
+                )
+            )
+        )
+        val customCtx = ValidationContext(
+            expectedMealsCount = 1,
+            targetKcal = 1060,
+            targetProteinG = 130,    // 200g real vs 130g target = +54%
+            targetCarbsG = 100,
+            targetFatG = 30,
+            perMealProteinMinG = 30,
+            maxCookingMinutesPerMeal = 20,
+            productsByName = productMap,
+            constraints = emptyList(),
+            enforceDailyMacros = true
+        )
+        val result = validator.validate(highProteinPlan, customCtx)
+        assertFalse(result.isValid)
+        assertTrue(
+            "powinien być ERROR daily_protein_off_target",
+            result.errors.any { it.code == "daily_protein_off_target" }
+        )
+    }
+
+    @Test
+    fun `carbs under target by 30 percent → ERROR`() {
+        val lowCarbPlan = AiDayPlan(
+            meals = listOf(
+                AiMealRecipe(
+                    name = "Białko + warzywa",
+                    ingredients = listOf(
+                        AiRecipeIngredient("Pierś z kurczaka", 300),  // 0g węgli
+                        AiRecipeIngredient("Brokuły gotowane", 200)     // 14g węgli
+                    ),
+                    instructions = "...", prepMinutes = 10,
+                    kcal = 565, proteinG = 96, carbsG = 14, fatG = 11
+                )
+            )
+        )
+        val customCtx = ValidationContext(
+            expectedMealsCount = 1,
+            targetKcal = 565,
+            targetProteinG = 90,
+            targetCarbsG = 80,    // 14g real vs 80g target = -82%
+            targetFatG = 12,
+            perMealProteinMinG = 30,
+            maxCookingMinutesPerMeal = 20,
+            productsByName = productMap,
+            constraints = emptyList(),
+            enforceDailyMacros = true
+        )
+        val result = validator.validate(lowCarbPlan, customCtx)
+        assertFalse(result.isValid)
+        assertTrue(
+            "powinien być ERROR daily_carbs_off_target",
+            result.errors.any { it.code == "daily_carbs_off_target" }
+        )
     }
 }

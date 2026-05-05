@@ -360,10 +360,15 @@ class DietAiService @Inject constructor(
             append("\n=== CEL DZIENNY ⚠ MUSI BYĆ TRAFIONY ⚠ ===\n")
             append("- **${goal.kcal} kcal** ⚠ Suma posiłków MUSI być ${(goal.kcal*0.93).toInt()}–${(goal.kcal*1.07).toInt()} kcal\n")
             append("- Deficyt/nadwyżka jest JUŻ WLICZONA w ten cel — NIE odejmuj dodatkowych kalorii!\n")
-            append("- Generowanie planu z 1500-1800 kcal gdy cel to ${goal.kcal} kcal = NIEBEZPIECZNE i zostanie odrzucone\n")
-            append("- Białko: ${goal.proteinG} g (priorytet — chroni masę mięśniową)\n")
-            append("- Węglowodany: ${goal.carbsG} g\n")
-            append("- Tłuszcz: ${goal.fatG} g (zdrowe — oliwa/orzechy/awokado/mleko kokosowe)\n")
+            append("- Generowanie planu z 1500-1800 kcal gdy cel to ${goal.kcal} kcal = NIEBEZPIECZNE i zostanie odrzucone\n\n")
+            append("**MAKRO — ZAKRESY DOPUSZCZALNE (±20%, poza tym plan zostanie ODRZUCONY):**\n")
+            append("- Białko: **${goal.proteinG}g** (zakres ${(goal.proteinG*0.8).toInt()}–${(goal.proteinG*1.2).toInt()}g) ⚠ NIE PRZEKRACZAJ!\n")
+            append("- Węglowodany: **${goal.carbsG}g** (zakres ${(goal.carbsG*0.8).toInt()}–${(goal.carbsG*1.2).toInt()}g)\n")
+            append("- Tłuszcz: **${goal.fatG}g** (zakres ${(goal.fatG*0.8).toInt()}–${(goal.fatG*1.2).toInt()}g)\n\n")
+            append("⚠ KLUCZOWA ZASADA: kcal się zgadza, ALE makro też MUSI! ")
+            append("Nie wystarczy mieć 2200 kcal jeśli białko 230g (zamiast 150g) i węgli 170g (zamiast 244g).\n")
+            append("→ Strategia balansowania: jeśli za dużo białka, dodaj więcej WĘGLOWYCH (ryż, kasza, pieczywo, owoce, ziemniaki). ")
+            append("Jeśli za dużo węgli, dodaj białkowe (kurczak, twaróg, jaja). Jeśli za dużo tłuszczu, ZMNIEJSZ orzechy/oliwę/masło.\n")
 
             append("\n=== KONFIGURACJA DNIA ===\n")
             append("- Liczba posiłków: $mealsCount\n")
@@ -629,13 +634,17 @@ class DietAiService @Inject constructor(
             expectedMealsCount = mealsCount,
             targetKcal = goal.kcal,
             targetProteinG = goal.proteinG,
+            targetCarbsG = goal.carbsG,
+            targetFatG = goal.fatG,
             perMealProteinMinG = (perMealProtein * 0.7).toInt().coerceAtLeast(15),
             maxCookingMinutesPerMeal = dietProfile?.cookingTimePerMealMin ?: 20,
             ketoMaxCarbsG = if (dietProfile?.dietPreference == pl.filebit.gymtracker.data.entity.DietPreference.KETO) 30 else null,
             productsByName = productsByName,
             constraints = constraints,
             perSlotKcalTargets = perSlotKcalTargets,
-            perSlotKcalTolerance = 0.15
+            perSlotKcalTolerance = 0.15,
+            enforceDailyMacros = true,
+            dailyMacroTolerance = 0.20
         )
 
         // Próba 1: oryginalny prompt

@@ -40,6 +40,8 @@ data class ValidationContext(
     val expectedMealsCount: Int,
     val targetKcal: Int,
     val targetProteinG: Int,
+    val targetCarbsG: Int = 0,
+    val targetFatG: Int = 0,
     val perMealProteinMinG: Int,
     val maxCookingMinutesPerMeal: Int,
     val ketoMaxCarbsG: Int? = null,
@@ -51,7 +53,11 @@ data class ValidationContext(
     /** Tolerancja per-slot kcal (np. 0.25 = ±25%). Powyżej → ERROR. */
     val perSlotKcalTolerance: Double = 0.25,
     /** Czy wymuszać twardy check sumy dnia ±7%. False = warning only (testy unit jednoposiłkowe). */
-    val enforceDailyKcal: Boolean = true
+    val enforceDailyKcal: Boolean = true,
+    /** Czy wymuszać twardy check makro dnia (białko/węgle/tłuszcz ±20%). */
+    val enforceDailyMacros: Boolean = true,
+    /** Tolerancja makro dnia (0.20 = ±20%). Powyżej → ERROR. */
+    val dailyMacroTolerance: Double = 0.20
 )
 
 /**
@@ -233,12 +239,66 @@ class AiMealJsonValidator @Inject constructor(
             }
         }
 
-        // Białko dnia
-        if (totalProteinReal < ctx.targetProteinG * 0.85) {
-            warnings += ValidationIssue(
-                ValidationSeverity.WARNING, null, "daily_protein_low",
-                "Białko dnia: ${totalProteinReal}g (cel ${ctx.targetProteinG}g)."
-            )
+        // === MAKRO DNIA — TWARDY WYMÓG (±20% per makro) ===
+        // Skalowanie gramatur ratuje kcal ale nie naprawia rozkładu — jeśli AI dało za dużo
+        // białkowych a za mało węglowych produktów, factor × wszystko zachowa złą proporcję.
+        // Dlatego makro = ERROR przy >20% odchylenia → retry z konkretną instrukcją zmiany SKŁADU.
+        if (ctx.enforceDailyMacros) {
+            val tol = ctx.dailyMacroTolerance
+
+            // Białko: dopuszczamy ±20%, ale pełzanie w GÓRĘ jest też złe (227/150 = +51%)
+            if (ctx.targetProteinG > 0) {
+                val dev = abs(totalProteinReal - ctx.targetProteinG).toDouble() / ctx.targetProteinG
+                val minP = (ctx.targetProteinG * (1 - tol)).toInt()
+                val maxP = (ctx.targetProteinG * (1 + tol)).toInt()
+                if (dev > tol) {
+                    val direction = if (totalProteinReal > ctx.targetProteinG) "ZA DUŻO" else "ZA MAŁO"
+                    val action = if (totalProteinReal > ctx.targetProteinG)
+                        "ZMNIEJSZ ilość produktów białkowych (kurczak/twaróg/jajka/ryba) lub zastąp je węglowymi"
+                    else
+                        "DODAJ więcej produktów białkowych (kurczak, twaróg, jaja, ryba, wołowina, tofu)"
+                    errors += ValidationIssue(
+                        ValidationSeverity.ERROR, null, "daily_protein_off_target",
+                        "Białko dnia: ${totalProteinReal}g, cel ${ctx.targetProteinG}g — $direction (zakres $minP–$maxP). $action."
+                    )
+                }
+            }
+
+            // Węglowodany
+            if (ctx.targetCarbsG > 0) {
+                val dev = abs(totalCarbsReal - ctx.targetCarbsG).toDouble() / ctx.targetCarbsG
+                val minC = (ctx.targetCarbsG * (1 - tol)).toInt()
+                val maxC = (ctx.targetCarbsG * (1 + tol)).toInt()
+                if (dev > tol) {
+                    val direction = if (totalCarbsReal > ctx.targetCarbsG) "ZA DUŻO" else "ZA MAŁO"
+                    val action = if (totalCarbsReal > ctx.targetCarbsG)
+                        "ZMNIEJSZ węglowe (ryż/kasze/pieczywo/owoce) lub zastąp warzywami"
+                    else
+                        "DODAJ więcej węglowych (ryż, kasza gryczana, owsianka, makaron pełnoziarnisty, ziemniaki, owoce)"
+                    errors += ValidationIssue(
+                        ValidationSeverity.ERROR, null, "daily_carbs_off_target",
+                        "Węgle dnia: ${totalCarbsReal}g, cel ${ctx.targetCarbsG}g — $direction (zakres $minC–$maxC). $action."
+                    )
+                }
+            }
+
+            // Tłuszcze
+            if (ctx.targetFatG > 0) {
+                val dev = abs(totalFatReal - ctx.targetFatG).toDouble() / ctx.targetFatG
+                val minF = (ctx.targetFatG * (1 - tol)).toInt()
+                val maxF = (ctx.targetFatG * (1 + tol)).toInt()
+                if (dev > tol) {
+                    val direction = if (totalFatReal > ctx.targetFatG) "ZA DUŻO" else "ZA MAŁO"
+                    val action = if (totalFatReal > ctx.targetFatG)
+                        "ZMNIEJSZ tłuste produkty (oliwa, masło, orzechy, awokado, ser żółty)"
+                    else
+                        "DODAJ zdrowe tłuszcze (oliwa, awokado, orzechy włoskie/migdały, masło orzechowe, jaja)"
+                    errors += ValidationIssue(
+                        ValidationSeverity.ERROR, null, "daily_fat_off_target",
+                        "Tłuszcz dnia: ${totalFatReal}g, cel ${ctx.targetFatG}g — $direction (zakres $minF–$maxF). $action."
+                    )
+                }
+            }
         }
 
         // Keto check
