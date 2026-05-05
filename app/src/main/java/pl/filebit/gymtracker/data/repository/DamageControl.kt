@@ -31,20 +31,26 @@ class DamageControl @Inject constructor() {
      * @param remainingSlots ile slotów zostało dziś do zjedzenia
      * @return rekomendacja
      */
+    /**
+     * @param totalSlotsToday liczba slotów dnia (z DietConfig.mealsPerDay)
+     */
     fun recommend(
         unplannedKcal: Int,
         dailyGoalKcal: Int,
         alreadyConsumedKcalIncludingUnplanned: Int,
-        remainingSlots: Int
+        remainingSlots: Int,
+        totalSlotsToday: Int = 4
     ): DamageControlResult {
         val safetyFloor = (dailyGoalKcal * 0.85).toInt()
-        val safetyFloorPerSlot = if (remainingSlots > 0) safetyFloor / remainingSlots else 0
+        // Safety floor per slot = 85% normalnego per slot (z TOTAL slotów, nie remaining)
+        val normalPerSlot = if (totalSlotsToday > 0) dailyGoalKcal / totalSlotsToday else 0
+        val safetyFloorPerSlot = (normalPerSlot * 0.7).toInt()  // 70% normalnego per slot = silne ograniczenie ale nie głodówka
         val budgetLeft = dailyGoalKcal - alreadyConsumedKcalIncludingUnplanned
         val isExtreme = budgetLeft < -dailyGoalKcal / 2  // przekroczenie >50% celu
 
         val newPerSlot = if (remainingSlots > 0) {
             val raw = budgetLeft / remainingSlots
-            // Floor: pozostałe sloty NIE niżej niż safety
+            // Floor: pozostałe sloty NIE niżej niż safety per slot (70% normy)
             max(raw, safetyFloorPerSlot)
         } else 0
 

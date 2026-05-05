@@ -151,7 +151,8 @@ class DietViewModel @Inject constructor(
                 unplannedKcal = unplannedKcal,
                 dailyGoalKcal = s.goal.kcal,
                 alreadyConsumedKcalIncludingUnplanned = totalAfter,
-                remainingSlots = remaining
+                remainingSlots = remaining,
+                totalSlotsToday = totalSlots
             )
             _damageControlResult.value = res
         }
