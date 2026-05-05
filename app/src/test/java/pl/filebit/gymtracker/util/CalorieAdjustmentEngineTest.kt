@@ -35,7 +35,7 @@ class CalorieAdjustmentEngineTest {
         isStagnation: Boolean = false,
         isFastLoss: Boolean = false,
         isFastGain: Boolean = false,
-        direction: TrendDirection = TrendDirection.STABLE
+        direction: TrendDirection = TrendDirection.FLAT
     ) = WeightTrend(
         sampleCount = samples,
         avg7Days = avg14,
@@ -80,7 +80,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.CUT),
             currentKcal = 2400,
-            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.FLAT),
             adherence14d = adherence(kcal = 95, protein = 90),
             adherence7d = adherence(kcal = 95, protein = 90)
         )
@@ -94,7 +94,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.CUT),
             currentKcal = 2400,
-            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.FLAT),
             adherence14d = adherence(kcal = 60, protein = 50),
             adherence7d = adherence(kcal = 60, protein = 50)
         )
@@ -104,7 +104,7 @@ class CalorieAdjustmentEngineTest {
     }
 
     @Test
-    fun `cut + fast loss (>1_5 kg per week) → INCREASE_KCAL +150 (chronimy mięśnie)`() {
+    fun `cut + fast loss over 1_5 kg per week INCREASE_KCAL +150 chronimy miesnie`() {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.CUT),
             currentKcal = 2200,
@@ -121,7 +121,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.CUT),
             currentKcal = 2400,
-            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.FLAT),
             adherence14d = adherence(kcal = 95, protein = 90, workoutsDone = 2, workoutsPlanned = 4),
             adherence7d = adherence(workoutsDone = 1, workoutsPlanned = 2)
         )
@@ -146,7 +146,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.BULK),
             currentKcal = 3000,
-            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.FLAT),
             adherence14d = adherence(kcal = 95, protein = 90),
             adherence7d = adherence(kcal = 95, protein = 90)
         )
@@ -159,7 +159,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.BULK),
             currentKcal = 3000,
-            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.0, isStagnation = true, direction = TrendDirection.FLAT),
             adherence14d = adherence(workoutsDone = 1, workoutsPlanned = 4),
             adherence7d = adherence(workoutsDone = 1, workoutsPlanned = 4)
         )
@@ -207,7 +207,7 @@ class CalorieAdjustmentEngineTest {
         val decision = CalorieAdjustmentEngine.analyze(
             profile = profile(WeightGoalType.MAINTAIN),
             currentKcal = 2500,
-            weightTrend = trend(slope = 0.05, direction = TrendDirection.STABLE),
+            weightTrend = trend(slope = 0.05, direction = TrendDirection.FLAT),
             adherence14d = adherence(),
             adherence7d = adherence()
         )
