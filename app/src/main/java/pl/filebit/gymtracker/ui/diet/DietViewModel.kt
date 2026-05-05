@@ -101,24 +101,42 @@ class DietViewModel @Inject constructor(
     private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService
 ) : ViewModel() {
 
-    private val _adjustmentPreview = MutableStateFlow<pl.filebit.gymtracker.util.AdjustmentDecision?>(null)
-    val adjustmentPreview: StateFlow<pl.filebit.gymtracker.util.AdjustmentDecision?> = _adjustmentPreview.asStateFlow()
+    data class AdjustmentPreview(
+        val id: Long,
+        val decision: pl.filebit.gymtracker.util.AdjustmentDecision,
+        val aiExplanation: String?
+    )
+
+    private val _adjustmentPreview = MutableStateFlow<AdjustmentPreview?>(null)
+    val adjustmentPreview: StateFlow<AdjustmentPreview?> = _adjustmentPreview.asStateFlow()
 
     fun checkForAdjustment() {
         viewModelScope.launch {
             val decision = autoAdjust.analyzeNow()
-            _adjustmentPreview.value = decision
+            // Save preview do DietAdjustment (z AI explainer) — zwraca id
+            val adjId = autoAdjust.savePreview(decision)
+            val saved = autoAdjust.getRecent(1).firstOrNull { it.id == adjId }
+            _adjustmentPreview.value = AdjustmentPreview(
+                id = adjId,
+                decision = decision,
+                aiExplanation = saved?.aiExplanation
+            )
         }
     }
 
-    fun applyAdjustment(decision: pl.filebit.gymtracker.util.AdjustmentDecision) {
+    fun applyAdjustment() {
+        val preview = _adjustmentPreview.value ?: return
         viewModelScope.launch {
-            autoAdjust.applyDecision(decision)
+            autoAdjust.applyDecision(preview.id)
             _adjustmentPreview.value = null
         }
     }
 
     fun dismissAdjustmentPreview() {
+        val preview = _adjustmentPreview.value
+        viewModelScope.launch {
+            preview?.id?.let { autoAdjust.dismissAdjustment(it) }
+        }
         _adjustmentPreview.value = null
     }
 

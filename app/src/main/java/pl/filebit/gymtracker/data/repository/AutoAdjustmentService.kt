@@ -1,6 +1,9 @@
 package pl.filebit.gymtracker.data.repository
 
+import pl.filebit.gymtracker.ai.AiDecisionExplainer
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
+import pl.filebit.gymtracker.data.db.dao.DietAdjustmentDao
+import pl.filebit.gymtracker.data.entity.DietAdjustment
 import pl.filebit.gymtracker.util.AdjustmentAction
 import pl.filebit.gymtracker.util.AdjustmentDecision
 import pl.filebit.gymtracker.util.CalorieAdjustmentEngine
@@ -23,7 +26,9 @@ class AutoAdjustmentService @Inject constructor(
     private val dietProfileRepo: UserDietProfileRepository,
     private val dietPrefs: DietPreferences,
     private val bodyDao: BodyMeasurementDao,
-    private val adherenceCalc: AdherenceCalculator
+    private val adherenceCalc: AdherenceCalculator,
+    private val adjustmentDao: DietAdjustmentDao,
+    private val aiExplainer: AiDecisionExplainer
 ) {
     suspend fun analyzeNow(): AdjustmentDecision {
         val profile = profileRepo.get()
@@ -73,22 +78,68 @@ class AutoAdjustmentService @Inject constructor(
     }
 
     /**
-     * Aplikuje decyzję do DietPreferences (zmienia customDeficit żeby compute
-     * dał nową wartość kcal). NIE wywołane automatycznie — tylko z UI po
-     * zatwierdzeniu przez usera.
+     * Zapisuje DietAdjustment przed zatwierdzeniem (preview) — z aiExplanation
+     * (jeśli dostępne AI). Zwraca id, użyjemy do apply/dismiss.
      */
-    suspend fun applyDecision(decision: AdjustmentDecision) {
-        if (decision.kcalDeltaProposed == 0) return
+    suspend fun savePreview(decision: AdjustmentDecision): Long {
+        val profile = profileRepo.get()
+        val measurements = bodyDao.getAllAsc()
+        val trend = TrendAnalyzer.analyze(measurements)
+        val ad14 = adherenceCalc.avgAdherenceLastDays(14)
+        val aiExpl = runCatching { aiExplainer.rewriteForUser(decision, profile) }.getOrNull()
+
+        val adj = DietAdjustment(
+            dateMs = System.currentTimeMillis(),
+            oldKcal = decision.newKcal - decision.kcalDeltaProposed,
+            newKcal = decision.newKcal,
+            actionCode = decision.action.name,
+            reason = decision.reason,
+            engineExplanation = decision.explanation,
+            aiExplanation = aiExpl,
+            confidence = decision.confidence.name,
+            snapshotAvgWeight7d = trend.avg7Days,
+            snapshotAvgWeight14d = trend.avg14Days,
+            snapshotSlopeKgPerWeek = trend.slopeKgPerWeek,
+            snapshotAdherence14dKcal = ad14.avgKcalPct,
+            snapshotAdherence14dProtein = ad14.avgProteinPct,
+            snapshotWorkoutsDone = ad14.workoutsDone,
+            snapshotWorkoutsPlanned = ad14.workoutsPlanned,
+            applied = false
+        )
+        return adjustmentDao.insert(adj)
+    }
+
+    /**
+     * Aplikuje decyzję — zapisuje do DietPreferences (customDeficit) + oznacza
+     * DietAdjustment jako applied. Audytowalne.
+     */
+    suspend fun applyDecision(adjustmentId: Long) {
+        val adj = adjustmentDao.getById(adjustmentId) ?: return
+        if (adj.applied) return  // idempotent
+        if (adj.actionCode == AdjustmentAction.HOLD.name ||
+            adj.actionCode == AdjustmentAction.SIMPLIFY_PLAN.name ||
+            adj.actionCode == AdjustmentAction.NEEDS_MORE_DATA.name) {
+            // Tylko log — nic nie zmieniamy w DietPreferences
+            adjustmentDao.update(adj.copy(applied = true, appliedAt = System.currentTimeMillis()))
+            return
+        }
         val config = dietPrefs.load()
-        // Ustaw nowy customDeficit żeby (TDEE + deficit) = newKcal
         val profile = profileRepo.get()
         val dietProfile = dietProfileRepo.get()
-        val currentGoal = computeDailyGoal(
+        val baseline = computeDailyGoal(
             profile = profile,
-            customDeficit = null, // bez override żeby zobaczyć baseline
+            customDeficit = null,
             dietProfile = dietProfile
         )
-        val newDeficit = decision.newKcal - currentGoal.breakdown.tdeeKcal
+        val newDeficit = adj.newKcal - baseline.breakdown.tdeeKcal
         dietPrefs.save(config.copy(customDeficit = newDeficit, manualKcal = null))
+        adjustmentDao.update(adj.copy(applied = true, appliedAt = System.currentTimeMillis()))
     }
+
+    suspend fun dismissAdjustment(adjustmentId: Long) {
+        val adj = adjustmentDao.getById(adjustmentId) ?: return
+        adjustmentDao.update(adj.copy(dismissed = true))
+    }
+
+    suspend fun getRecent(limit: Int = 50) = adjustmentDao.getRecent(limit)
 }

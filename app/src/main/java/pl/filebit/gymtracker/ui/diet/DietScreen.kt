@@ -66,6 +66,7 @@ fun DietScreen(
     onBack: () -> Unit,
     onNeedsOnboarding: () -> Unit,
     onOpenAdherenceReport: () -> Unit = {},
+    onOpenAdjustmentHistory: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -136,6 +137,24 @@ fun DietScreen(
                     }
                 }
 
+                // Historia zmian planu
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(40.dp)
+                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                            .clickable(onClick = onOpenAdjustmentHistory),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "📋 Historia zmian planu",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
+                    }
+                }
+
                 // Sekcje posiłków (zgodnie z liczbą z DietConfig)
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
@@ -169,7 +188,8 @@ fun DietScreen(
         )
     }
 
-    adjustmentPreview?.let { decision ->
+    adjustmentPreview?.let { preview ->
+        val decision = preview.decision
         androidx.compose.material3.AlertDialog(
             onDismissRequest = { vm.dismissAdjustmentPreview() },
             title = {
@@ -194,7 +214,35 @@ fun DietScreen(
                             color = AccentOrange
                         )
                     }
-                    Text(decision.explanation, style = MaterialTheme.typography.bodyMedium)
+                    // AI explanation jeśli dostępne — bardziej "po ludzku"
+                    preview.aiExplanation?.let { aiText ->
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
+                                .padding(10.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    "✨ AI",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 10.sp,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                                Spacer(Modifier.height(2.dp))
+                                Text(aiText, style = MaterialTheme.typography.bodyMedium)
+                            }
+                        }
+                    }
+                    // Engine explanation (zawsze)
+                    Text(
+                        decision.explanation,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
                     if (decision.warnings.isNotEmpty()) {
                         decision.warnings.forEach { w ->
                             Text(
@@ -214,7 +262,7 @@ fun DietScreen(
             confirmButton = {
                 if (decision.kcalDeltaProposed != 0) {
                     androidx.compose.material3.TextButton(
-                        onClick = { vm.applyAdjustment(decision) }
+                        onClick = { vm.applyAdjustment() }
                     ) {
                         Text("✓ Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
                     }
