@@ -50,8 +50,8 @@ class ConstraintResolverTest {
         )
         val hardViolations = resolver.checkAllHard(constraints, plan)
         assertTrue(hardViolations.any { it.constraint is DietConstraint.DietPreferenceConstraint })
-        // Nazwa kurczaka w producentach
-        assertTrue(hardViolations.flatMap { it.productNames }.any { it.contains("Kurczak") })
+        // Nazwa kurczaka w producentach (case insensitive)
+        assertTrue(hardViolations.flatMap { it.productNames }.any { it.contains("kurczak", ignoreCase = true) })
     }
 
     @Test
