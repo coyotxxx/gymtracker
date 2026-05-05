@@ -92,6 +92,7 @@ fun DietScreen(
     val hcHasPermission by vm.hcHasPermission.collectAsStateWithLifecycle()
     val hcPermissionRequest by vm.hcPermissionRequest.collectAsStateWithLifecycle()
     val hcInstallNeeded by vm.hcInstallNeeded.collectAsStateWithLifecycle()
+    val hcSyncMessage by vm.hcSyncMessage.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
@@ -144,6 +145,19 @@ fun DietScreen(
             dismissButton = {
                 androidx.compose.material3.TextButton(onClick = { vm.consumeHcInstallNeeded() }) {
                     Text("Anuluj", color = DarkOnSurfaceVariant)
+                }
+            }
+        )
+    }
+
+    hcSyncMessage?.let { msg ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.consumeHcSyncMessage() },
+            title = { Text("🔗 Health Connect", fontWeight = FontWeight.Bold) },
+            text = { Text(msg, style = MaterialTheme.typography.bodyMedium) },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { vm.consumeHcSyncMessage() }) {
+                    Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
                 }
             }
         )
@@ -316,6 +330,22 @@ fun DietScreen(
                                         ) {
                                             Text(
                                                 "🔗 HC",
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    fontSize = 9.sp, fontWeight = FontWeight.Bold
+                                                ),
+                                                color = AccentOrange
+                                            )
+                                        }
+                                        Spacer(Modifier.width(8.dp))
+                                        // Przycisk Sync teraz
+                                        Box(
+                                            modifier = Modifier
+                                                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(4.dp))
+                                                .clickable { vm.manualHealthConnectSync() }
+                                                .padding(horizontal = 6.dp, vertical = 2.dp)
+                                        ) {
+                                            Text(
+                                                "🔄 Sync",
                                                 style = MaterialTheme.typography.labelSmall.copy(
                                                     fontSize = 9.sp, fontWeight = FontWeight.Bold
                                                 ),

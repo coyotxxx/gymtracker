@@ -199,9 +199,13 @@ class DietViewModel @Inject constructor(
             val hasIt = healthConnect.hasAllPermissions()
             if (hasIt) {
                 toggleHealthConnectSync(true)
-                syncHealthConnectNow()
+                val steps = syncHealthConnectNow()
+                _hcSyncMessage.value = when {
+                    steps == 0 -> "✓ Permission OK, ale Health Connect zwrócił 0 kroków na dziś.\n\nMożliwe przyczyny:\n• Brak providera kroków (Google Fit / krokomierz)\n• Telefon nie liczył dziś kroków\n• Sync wewnętrzny HC jeszcze nie zaszedł\n\nKliknij '🔄 Sync HC' w kaflu kroków po zsync'owaniu się Twojego krokomierza."
+                    else -> "✓ Pobrano $steps kroków z Health Connect"
+                }
             } else {
-                // User odmówił — wyłącz toggle
+                _hcSyncMessage.value = "✗ Brak zgody na READ_STEPS — Health Connect wyłączony"
                 toggleHealthConnectSync(false)
             }
         }
@@ -226,6 +230,43 @@ class DietViewModel @Inject constructor(
             refreshSteps()
         }
         return steps
+    }
+
+    /**
+     * Status sync HC z komunikatem dla usera.
+     */
+    private val _hcSyncMessage = MutableStateFlow<String?>(null)
+    val hcSyncMessage: StateFlow<String?> = _hcSyncMessage.asStateFlow()
+
+    fun consumeHcSyncMessage() { _hcSyncMessage.value = null }
+
+    /**
+     * Manualne uruchomienie sync z UI (przycisk "Sync HC").
+     * Pokazuje Snackbar z wynikiem.
+     */
+    fun manualHealthConnectSync() {
+        viewModelScope.launch {
+            val avail = healthConnect.checkAvailability()
+            if (avail != pl.filebit.gymtracker.data.health.HealthConnectAvailability.INSTALLED) {
+                _hcSyncMessage.value = "Health Connect niedostępny na tym urządzeniu"
+                return@launch
+            }
+            if (!healthConnect.hasAllPermissions()) {
+                _hcSyncMessage.value = "Brak permission. Włącz toggle ponownie."
+                return@launch
+            }
+            val steps = runCatching { healthConnect.readStepsForDate(_selectedDateMs.value) }.getOrNull() ?: -1
+            _hcSyncMessage.value = when {
+                steps < 0 -> "Błąd sync z Health Connect"
+                steps == 0 -> "Health Connect zwrócił 0 kroków na dziś.\n\nMożliwe przyczyny:\n• Brak aplikacji która zapisuje kroki do HC (Google Fit / krokomierz / Samsung Health)\n• Telefon nie liczył dziś kroków\n• Provider nie zsync'ował się jeszcze\n\nW Health Connect sprawdź zakładkę 'Połączone aplikacje'."
+                else -> {
+                    activityRepo.setSteps(_selectedDateMs.value, steps,
+                        source = pl.filebit.gymtracker.data.entity.ActivitySource.HEALTH_CONNECT)
+                    refreshSteps()
+                    "✓ Pobrano $steps kroków z Health Connect"
+                }
+            }
+        }
     }
 
     // === EMERGENCY ===
