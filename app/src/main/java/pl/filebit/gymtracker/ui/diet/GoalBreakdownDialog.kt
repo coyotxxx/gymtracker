@@ -39,8 +39,10 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.DailyMacroGoal
+import pl.filebit.gymtracker.util.MedicalSeverity
 
 /**
  * Dialog edukacyjny: pokazuje JAK wyliczyliśmy kcal+makro + pozwala edytować deficyt.
@@ -197,6 +199,89 @@ fun GoalBreakdownDialog(
                     explanation = "Reszta po białku i tłuszczu: ${br.carbsCalculation}\n" +
                         "Główne paliwo dla treningu — w dni treningowe więcej w obiad/post-WO."
                 )
+
+                // === SAFETY WARNINGS ===
+                if (goal.safetyWarnings.isNotEmpty()) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
+                            .padding(12.dp)
+                    ) {
+                        Column {
+                            Text(
+                                "⚠ OSTRZEŻENIA BEZPIECZEŃSTWA",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 11.sp,
+                                    letterSpacing = 1.4.sp
+                                ),
+                                color = AccentOrange
+                            )
+                            goal.safetyWarnings.forEach { msg ->
+                                Spacer(Modifier.size(4.dp))
+                                Text(
+                                    "• $msg",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = DarkOnSurface
+                                )
+                            }
+                            if (goal.wasCapped) {
+                                Spacer(Modifier.size(6.dp))
+                                Text(
+                                    "Wartości zostały zabezpieczone — apka nie pozwoli zejść poniżej minimum.",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+
+                // === MEDICAL FLAGS ===
+                if (goal.medicalFlags.isNotEmpty()) {
+                    val anyCritical = goal.medicalFlags.any { it.severity == MedicalSeverity.CRITICAL }
+                    val flagColor = if (anyCritical) ErrorRed else AccentOrange
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(flagColor.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
+                            .padding(12.dp)
+                    ) {
+                        Column {
+                            Text(
+                                "⚕ KONSULTACJA ZE SPECJALISTĄ",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 11.sp,
+                                    letterSpacing = 1.4.sp
+                                ),
+                                color = flagColor
+                            )
+                            goal.medicalFlags.forEach { flag ->
+                                Spacer(Modifier.size(6.dp))
+                                Text(
+                                    flag.message,
+                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                    color = DarkOnSurface
+                                )
+                                Text(
+                                    flag.recommendation,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
+                            if (anyCritical) {
+                                Spacer(Modifier.size(8.dp))
+                                Text(
+                                    "Aplikacja NIE jest narzędziem medycznym. Plan żywieniowy konsultuj z lekarzem / dietetykiem klinicznym.",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                                    color = ErrorRed
+                                )
+                            }
+                        }
+                    }
+                }
             }
         },
         confirmButton = {

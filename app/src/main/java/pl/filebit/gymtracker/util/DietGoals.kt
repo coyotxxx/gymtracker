@@ -11,7 +11,13 @@ data class DailyMacroGoal(
     val proteinG: Int,
     val carbsG: Int,
     val fatG: Int,
-    val breakdown: GoalBreakdown
+    val breakdown: GoalBreakdown,
+    /** Lista ostrzeżeń SafetyGuard (np. zbyt agresywny deficyt) — pokazujemy w UI. */
+    val safetyWarnings: List<String> = emptyList(),
+    /** Lista flag medycznych — pokazujemy w GoalBreakdownDialog z disclaimerem. */
+    val medicalFlags: List<MedicalFlag> = emptyList(),
+    /** True gdy SafetyGuard cap'nął kcal lub makro (zostały zmienione na bezpieczne). */
+    val wasCapped: Boolean = false
 )
 
 /**
@@ -119,19 +125,64 @@ fun computeDailyGoal(
         WeightGoalType.MAINTAIN -> 2.0 to 1.0  // balans
         WeightGoalType.NONE -> 2.0 to 1.0
     }
-    val proteinG = (weight * proteinPerKg).toInt()
-    val fatG = (weight * fatPerKg).toInt()
-    val proteinKcal = proteinG * 4
-    val fatKcal = fatG * 9
-    val carbsKcal = (finalKcal - proteinKcal - fatKcal).coerceAtLeast(0)
+    val rawProteinG = (weight * proteinPerKg).toInt()
+    val rawFatG = (weight * fatPerKg).toInt()
+
+    // === SAFETYGUARD: hard-limity ===
+    val warnings = mutableListOf<String>()
+    var wasCapped = false
+
+    val kcalResult = SafetyGuard.validateKcal(finalKcal, profile, weight)
+    val safeKcal = if (kcalResult is SafetyResult.Block) {
+        wasCapped = true
+        warnings += kcalResult.message
+        kcalResult.cappedValue
+    } else {
+        kcalResult.warningMessage?.let { warnings += it }
+        finalKcal
+    }
+
+    val proteinResult = SafetyGuard.validateProtein(rawProteinG, weight)
+    val safeProteinG = if (proteinResult is SafetyResult.Block) {
+        wasCapped = true
+        warnings += proteinResult.message
+        proteinResult.cappedValue
+    } else {
+        proteinResult.warningMessage?.let { warnings += it }
+        rawProteinG
+    }
+
+    val fatResult = SafetyGuard.validateFat(rawFatG, weight)
+    val safeFatG = if (fatResult is SafetyResult.Block) {
+        wasCapped = true
+        warnings += fatResult.message
+        fatResult.cappedValue
+    } else {
+        rawFatG
+    }
+
+    // Tempo redukcji — info-only, nie cap
+    val weeklyKgChange = effectiveDeficit / 1100.0
+    val rateResult = SafetyGuard.validateDeficitRate(weeklyKgChange)
+    rateResult.warningMessage?.let { warnings += it }
+
+    val proteinKcal = safeProteinG * 4
+    val fatKcal = safeFatG * 9
+    val carbsKcal = (safeKcal - proteinKcal - fatKcal).coerceAtLeast(0)
     val carbsG = carbsKcal / 4
-    val carbsCalc = "($finalKcal - $proteinKcal - $fatKcal) / 4 = ${carbsG}g"
+    val carbsCalc = "($safeKcal - $proteinKcal - $fatKcal) / 4 = ${carbsG}g"
+
+    // Medical flags
+    val medicalFlags = MedicalFlagger.analyze(profile, dietProfile, weight)
 
     return DailyMacroGoal(
-        kcal = finalKcal,
-        proteinG = proteinG,
+        kcal = safeKcal,
+        proteinG = safeProteinG,
         carbsG = carbsG,
-        fatG = fatG,
+        fatG = safeFatG,
+        safetyWarnings = warnings,
+        medicalFlags = medicalFlags,
+        wasCapped = wasCapped,
         breakdown = GoalBreakdown(
             weightKg = weight,
             genderLabel = if (profile.gender == Gender.MALE) "mężczyzna (×1.03)" else "kobieta (×0.97)",
