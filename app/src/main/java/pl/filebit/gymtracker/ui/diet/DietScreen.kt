@@ -97,6 +97,7 @@ fun DietScreen(
     val hcPermissionRequest by vm.hcPermissionRequest.collectAsStateWithLifecycle()
     val hcInstallNeeded by vm.hcInstallNeeded.collectAsStateWithLifecycle()
     val hcSyncMessage by vm.hcSyncMessage.collectAsStateWithLifecycle()
+    val consumptions by vm.consumptions.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
@@ -221,20 +222,23 @@ fun DietScreen(
                     )
                 }
 
-                // 5. Sekcje posiłków — z expandable + checkmark zjedzonego
+                // 5. Sekcje posiłków — domyślnie ROZWINIĘTE + status (PLANNED/CONSUMED/SKIPPED)
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
-                    val expanded = expandedSlots[group.type] ?: isCurrentSlot(group.timeLabel)
+                    // Domyślnie expanded=true; user może kliknąć by zwinąć
+                    val expanded = expandedSlots[group.type] ?: true
                     val targetKcal = state.perMealKcal
+                    val status = consumptions[group.type]
+                        ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                     MealGroupCard(
                         group = group,
                         targetKcalPerMeal = targetKcal,
                         expanded = expanded,
                         onToggleExpanded = { expandedSlots[group.type] = !expanded },
-                        isConsumed = group.entries.isNotEmpty() &&
-                            targetKcal > 0 && group.totals.kcal >= targetKcal * 0.8,
+                        consumptionStatus = status,
+                        onCycleStatus = { vm.cycleConsumption(group.type) },
                         isCurrent = isCurrentSlot(group.timeLabel) &&
-                            !(targetKcal > 0 && group.totals.kcal >= targetKcal * 0.8),
+                            status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED,
                         onAdd = { addMealForType = group.type },
                         onDelete = { id -> vm.deleteMeal(id) },
                         onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
@@ -835,7 +839,9 @@ private fun MealGroupCard(
     targetKcalPerMeal: Int,
     expanded: Boolean = true,
     onToggleExpanded: () -> Unit = {},
-    isConsumed: Boolean = false,
+    consumptionStatus: pl.filebit.gymtracker.data.entity.MealConsumptionStatus =
+        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED,
+    onCycleStatus: () -> Unit = {},
     isCurrent: Boolean = false,
     onAdd: () -> Unit,
     onDelete: (Long) -> Unit,
@@ -845,6 +851,8 @@ private fun MealGroupCard(
     hasRecipe: Boolean = false,
     onShowRecipe: () -> Unit = {}
 ) {
+    val isConsumed = consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED
+    val isSkipped = consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -862,14 +870,32 @@ private fun MealGroupCard(
                     .clickable(onClick = onToggleExpanded),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                if (isConsumed) {
-                    Text(
-                        "✓",
-                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                        color = SuccessGreen
-                    )
-                    Spacer(Modifier.width(6.dp))
+                // Status badge — clickable cycle PLANNED → CONSUMED → SKIPPED → PLANNED
+                Box(
+                    modifier = Modifier
+                        .size(32.dp)
+                        .clickable(onClick = onCycleStatus),
+                    contentAlignment = Alignment.Center
+                ) {
+                    when (consumptionStatus) {
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> Text(
+                            "✓",
+                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                            color = SuccessGreen
+                        )
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> Text(
+                            "✗",
+                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                            color = DarkOnSurfaceVariant
+                        )
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED -> Text(
+                            "○",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
                 }
+                Spacer(Modifier.width(6.dp))
                 Column(modifier = Modifier.weight(1f)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(

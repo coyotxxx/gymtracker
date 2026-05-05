@@ -32,12 +32,40 @@ class MealReminderWorker @AssistedInject constructor(
         val ctx = applicationContext
         val slotIndex = inputData.getInt("slot_index", 1)
         val slotLabel = inputData.getString("slot_label") ?: "Posiłek $slotIndex"
+        val mealTypeName = inputData.getString("meal_type") ?: "SNACK"
+        val notificationId = NOTIFICATION_BASE_ID + slotIndex
 
         val openIntent = Intent(ctx, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         }
         val pi = PendingIntent.getActivity(
-            ctx, NOTIFICATION_BASE_ID + slotIndex, openIntent,
+            ctx, notificationId, openIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
+        )
+
+        // Akcja "Zjedzone"
+        val consumedIntent = Intent(ctx, MealStatusReceiver::class.java).apply {
+            action = MealStatusReceiver.ACTION
+            putExtra(MealStatusReceiver.EXTRA_MEAL_TYPE, mealTypeName)
+            putExtra(MealStatusReceiver.EXTRA_STATUS, "CONSUMED")
+            putExtra(MealStatusReceiver.EXTRA_NOTIFICATION_ID, notificationId)
+        }
+        val consumedPi = PendingIntent.getBroadcast(
+            ctx, notificationId * 10 + 1, consumedIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
+        )
+
+        // Akcja "Pominięte"
+        val skippedIntent = Intent(ctx, MealStatusReceiver::class.java).apply {
+            action = MealStatusReceiver.ACTION
+            putExtra(MealStatusReceiver.EXTRA_MEAL_TYPE, mealTypeName)
+            putExtra(MealStatusReceiver.EXTRA_STATUS, "SKIPPED")
+            putExtra(MealStatusReceiver.EXTRA_NOTIFICATION_ID, notificationId)
+        }
+        val skippedPi = PendingIntent.getBroadcast(
+            ctx, notificationId * 10 + 2, skippedIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
         )
@@ -45,14 +73,16 @@ class MealReminderWorker @AssistedInject constructor(
         val notification = NotificationCompat.Builder(ctx, CHANNEL_ID)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("🍽️ Pora na $slotLabel")
-            .setContentText("Otwórz GymTracker → Dieta i odznacz zjedzony posiłek.")
+            .setContentText("Oznacz status — Zjedzone lub Pominięte.")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pi)
+            .addAction(android.R.drawable.checkbox_on_background, "✓ Zjedzone", consumedPi)
+            .addAction(android.R.drawable.ic_menu_close_clear_cancel, "✗ Pominięte", skippedPi)
             .setAutoCancel(true)
             .build()
 
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        nm.notify(NOTIFICATION_BASE_ID + slotIndex, notification)
+        nm.notify(notificationId, notification)
         return Result.success()
     }
 

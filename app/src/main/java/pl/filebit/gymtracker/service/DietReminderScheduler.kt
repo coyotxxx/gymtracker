@@ -37,6 +37,7 @@ class DietReminderScheduler @Inject constructor(
         hours.forEachIndexed { idx, h ->
             val slotIndex = idx + 1
             val slotLabel = labelFor(slotIndex, hours.size)
+            val mealType = mealTypeFor(slotIndex, hours.size)
             val target = nextOccurrenceOf(h)
             val delayMs = (target - now).coerceAtLeast(60_000L)
 
@@ -46,12 +47,31 @@ class DietReminderScheduler @Inject constructor(
                     Data.Builder()
                         .putInt("slot_index", slotIndex)
                         .putString("slot_label", slotLabel)
+                        .putString("meal_type", mealType)
                         .build()
                 )
                 .build()
 
             workManager.enqueue(request)
         }
+    }
+
+    private fun mealTypeFor(slot: Int, total: Int): String = when {
+        total == 2 && slot == 1 -> "BREAKFAST"
+        total == 2 -> "DINNER"
+        total == 3 && slot == 1 -> "BREAKFAST"
+        total == 3 && slot == 2 -> "LUNCH"
+        total == 3 -> "DINNER"
+        total == 4 && slot == 1 -> "BREAKFAST"
+        total == 4 && slot == 2 -> "SNACK"
+        total == 4 && slot == 3 -> "LUNCH"
+        total == 4 -> "DINNER"
+        total == 5 && slot == 1 -> "BREAKFAST"
+        total == 5 && slot == 2 -> "SNACK"
+        total == 5 && slot == 3 -> "LUNCH"
+        total == 5 && slot == 4 -> "SNACK"
+        total == 5 -> "DINNER"
+        else -> "SNACK"
     }
 
     fun cancelAll() {

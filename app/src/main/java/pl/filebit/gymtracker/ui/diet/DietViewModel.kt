@@ -115,8 +115,32 @@ class DietViewModel @Inject constructor(
     private val emergencyMealGen: pl.filebit.gymtracker.ai.EmergencyMealGenerator,
     private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl,
     private val healthConnect: pl.filebit.gymtracker.data.health.HealthConnectManager,
-    private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler
+    private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler,
+    private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository
 ) : ViewModel() {
+
+    // === MEAL CONSUMPTION STATUS ===
+    private val _consumptions = MutableStateFlow<Map<MealType, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>>(emptyMap())
+    val consumptions: StateFlow<Map<MealType, pl.filebit.gymtracker.data.entity.MealConsumptionStatus>> = _consumptions.asStateFlow()
+
+    fun cycleConsumption(mealType: MealType) {
+        viewModelScope.launch {
+            consumptionRepo.cycleStatus(_selectedDateMs.value, mealType)
+            refreshConsumptions()
+        }
+    }
+
+    fun setConsumption(mealType: MealType, status: pl.filebit.gymtracker.data.entity.MealConsumptionStatus) {
+        viewModelScope.launch {
+            consumptionRepo.setStatus(_selectedDateMs.value, mealType, status)
+            refreshConsumptions()
+        }
+    }
+
+    private suspend fun refreshConsumptions() {
+        val list = consumptionRepo.getForDate(_selectedDateMs.value)
+        _consumptions.value = list.associate { it.mealType to it.status }
+    }
 
     // === HEALTH CONNECT ===
     private val _hcAvailability = MutableStateFlow(pl.filebit.gymtracker.data.health.HealthConnectAvailability.NOT_SUPPORTED)
@@ -768,6 +792,7 @@ class DietViewModel @Inject constructor(
             runCatching { refreshCurrentPhase() }
             // Refresh Health Connect availability + steps
             runCatching { refreshHealthConnect() }
+            runCatching { refreshConsumptions() }
         }
     }
 

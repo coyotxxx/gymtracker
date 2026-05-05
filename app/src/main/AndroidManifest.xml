@@ -77,6 +77,11 @@
                 android:value="rest_timer_between_workout_sets" />
         </service>
 
+        <!-- Meal status receiver — akcje 'Zjedzone/Pominięte' z notyfikacji posiłku (v1.0.1) -->
+        <receiver
+            android:name=".service.MealStatusReceiver"
+            android:exported="false" />
+
         <!-- FileProvider dla aparatu — share URI dla TakePicture -->
         <provider
             android:name="androidx.core.content.FileProvider"
