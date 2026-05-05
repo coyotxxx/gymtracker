@@ -67,6 +67,7 @@ fun DietScreen(
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
+    val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     androidx.compose.runtime.LaunchedEffect(state.config.mealRemindersEnabled, state.config.mealsPerDay) {
@@ -87,8 +88,9 @@ fun DietScreen(
                 item {
                     DayHeroCard(
                         state = state,
+                        aiLoading = aiState is pl.filebit.gymtracker.ui.diet.AiPlanState.Loading,
                         onSettings = { showSettings = true },
-                        onGenerateAi = { /* TODO v0.89.35: AI plan dnia */ }
+                        onGenerateAi = { vm.generateAiDayPlan() }
                     )
                 }
 
@@ -116,6 +118,34 @@ fun DietScreen(
         )
     }
 
+    when (val s = aiState) {
+        is pl.filebit.gymtracker.ui.diet.AiPlanState.Success -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { vm.consumeAiPlanState() },
+                title = { Text("✨ Plan dnia gotowy", fontWeight = FontWeight.Bold) },
+                text = { Text(s.message) },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.consumeAiPlanState() }) {
+                        Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                }
+            )
+        }
+        is pl.filebit.gymtracker.ui.diet.AiPlanState.Error -> {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { vm.consumeAiPlanState() },
+                title = { Text("Błąd AI", fontWeight = FontWeight.Bold) },
+                text = { Text(s.message) },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { vm.consumeAiPlanState() }) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
+        else -> Unit
+    }
+
     // Dialog dodawania posiłku
     addMealForType?.let { mealType ->
         AddMealDialog(
@@ -138,6 +168,7 @@ fun DietScreen(
 @Composable
 private fun DayHeroCard(
     state: DietUiState,
+    aiLoading: Boolean,
     onSettings: () -> Unit,
     onGenerateAi: () -> Unit
 ) {
@@ -242,30 +273,46 @@ private fun DayHeroCard(
 
             Spacer(Modifier.height(14.dp))
 
-            // Button "Wygeneruj plan AI" — placeholder do v0.89.35
+            // Button "Wygeneruj plan AI" — woła DietAiService
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(44.dp)
-                    .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(12.dp))
-                    .clickable(onClick = onGenerateAi),
+                    .background(AccentOrange.copy(alpha = if (aiLoading) 0.05f else 0.15f), RoundedCornerShape(12.dp))
+                    .clickable(enabled = !aiLoading, onClick = onGenerateAi),
                 contentAlignment = Alignment.Center
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        Icons.Default.AutoAwesome,
-                        contentDescription = null,
-                        tint = AccentOrange,
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        "Wygeneruj plan dnia AI",
-                        style = MaterialTheme.typography.bodyMedium.copy(
-                            fontWeight = FontWeight.Bold
-                        ),
-                        color = AccentOrange
-                    )
+                if (aiLoading) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        androidx.compose.material3.CircularProgressIndicator(
+                            modifier = Modifier.size(16.dp),
+                            color = AccentOrange,
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(Modifier.width(10.dp))
+                        Text(
+                            "AI układa Twój dzień…",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = AccentOrange
+                        )
+                    }
+                } else {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            Icons.Default.AutoAwesome,
+                            contentDescription = null,
+                            tint = AccentOrange,
+                            modifier = Modifier.size(18.dp)
+                        )
+                        Spacer(Modifier.width(8.dp))
+                        Text(
+                            "Wygeneruj plan dnia AI",
+                            style = MaterialTheme.typography.bodyMedium.copy(
+                                fontWeight = FontWeight.Bold
+                            ),
+                            color = AccentOrange
+                        )
+                    }
                 }
             }
         }

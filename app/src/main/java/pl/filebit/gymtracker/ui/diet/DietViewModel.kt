@@ -16,6 +16,8 @@ import pl.filebit.gymtracker.data.entity.FoodCategory
 import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealType
+import pl.filebit.gymtracker.ai.DietAiService
+import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.repository.DietConfig
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.DietRepository
@@ -62,17 +64,27 @@ data class DietUiState(
     val perMealKcal: Int = 0          // cel kcal podzielony przez liczbę posiłków
 )
 
+sealed class AiPlanState {
+    object Idle : AiPlanState()
+    object Loading : AiPlanState()
+    data class Success(val message: String) : AiPlanState()
+    data class Error(val message: String) : AiPlanState()
+}
+
 @HiltViewModel
 class DietViewModel @Inject constructor(
     private val repo: DietRepository,
     private val profileRepo: UserProfileRepository,
     private val dietPrefs: DietPreferences,
-    private val reminderScheduler: DietReminderScheduler
+    private val reminderScheduler: DietReminderScheduler,
+    private val dietAi: DietAiService
 ) : ViewModel() {
 
     private val _searchQuery = MutableStateFlow("")
     private val _categoryFilter = MutableStateFlow<FoodCategory?>(null)
     private val _selectedDateMs = MutableStateFlow(todayStartMs())
+    private val _aiPlanState = MutableStateFlow<AiPlanState>(AiPlanState.Idle)
+    val aiPlanState: StateFlow<AiPlanState> = _aiPlanState.asStateFlow()
 
     private data class FilterTuple(
         val dateMs: Long,
@@ -184,6 +196,70 @@ class DietViewModel @Inject constructor(
 
     fun deleteMeal(id: Long) {
         viewModelScope.launch { repo.deleteMeal(id) }
+    }
+
+    /**
+     * Generuje plan dnia AI: woła DietAiService → mapuje productName → productId
+     * (case-insensitive) → zapisuje MealEntry per posiłek + Recipe.
+     * Stan AI loading/success/error eksponuje przez aiPlanState.
+     */
+    fun generateAiDayPlan() {
+        if (_aiPlanState.value is AiPlanState.Loading) return
+        _aiPlanState.value = AiPlanState.Loading
+        viewModelScope.launch {
+            val config = dietPrefs.load()
+            val result = dietAi.generateDayPlan(config)
+            result.fold(
+                onSuccess = { plan ->
+                    val products = state.value.productsAll
+                    val byNameLower = products.associateBy { it.name.lowercase() }
+                    var addedMeals = 0
+                    var skippedIngredients = 0
+
+                    // Wyczyść istniejące posiłki dnia (start od czystej karty)
+                    val dateMs = _selectedDateMs.value
+                    state.value.groups.forEach { g ->
+                        g.entries.forEach { e -> repo.deleteMeal(e.entry.id) }
+                    }
+
+                    plan.mealsForSlots.forEach { (mealType, recipe) ->
+                        var anyAdded = false
+                        recipe.ingredients.forEach { ing ->
+                            val product = byNameLower[ing.productName.lowercase()]
+                            if (product != null) {
+                                repo.addMeal(
+                                    MealEntry(
+                                        dateMs = dateMs,
+                                        mealType = mealType,
+                                        productId = product.id,
+                                        grams = ing.grams.toDouble(),
+                                        notes = recipe.name
+                                    )
+                                )
+                                anyAdded = true
+                            } else {
+                                skippedIngredients++
+                            }
+                        }
+                        if (anyAdded) addedMeals++
+                    }
+
+                    _aiPlanState.value = AiPlanState.Success(
+                        if (skippedIngredients > 0)
+                            "Plan dnia gotowy ($addedMeals posiłków, $skippedIngredients składników pominiętych — brak w bazie)"
+                        else
+                            "Plan dnia gotowy — $addedMeals posiłków dodanych do dziennika"
+                    )
+                },
+                onFailure = { err ->
+                    _aiPlanState.value = AiPlanState.Error(err.message ?: "Nieznany błąd AI")
+                }
+            )
+        }
+    }
+
+    fun consumeAiPlanState() {
+        _aiPlanState.value = AiPlanState.Idle
     }
 
     fun saveConfig(config: DietConfig) {
