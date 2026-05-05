@@ -29,6 +29,7 @@ class DietPreferences @Inject constructor(
         eatingWindowHours = prefs.getInt(KEY_WINDOW_HOURS, 8).coerceIn(4, 24),
         windowStartHour = prefs.getInt(KEY_WINDOW_START, 12).coerceIn(0, 23),
         mealRemindersEnabled = prefs.getBoolean(KEY_REMINDERS, true),
+        autoCheckAdjustments = prefs.getBoolean(KEY_AUTO_CHECK, true),
         customDeficit = prefs.getInt(KEY_DEFICIT, Int.MIN_VALUE).takeIf { it != Int.MIN_VALUE },
         manualKcal = prefs.getInt(KEY_KCAL_OVERRIDE, 0).takeIf { it > 0 }
     )
@@ -39,6 +40,7 @@ class DietPreferences @Inject constructor(
             .putInt(KEY_WINDOW_HOURS, config.eatingWindowHours)
             .putInt(KEY_WINDOW_START, config.windowStartHour)
             .putBoolean(KEY_REMINDERS, config.mealRemindersEnabled)
+            .putBoolean(KEY_AUTO_CHECK, config.autoCheckAdjustments)
             .also { editor ->
                 if (config.customDeficit != null) editor.putInt(KEY_DEFICIT, config.customDeficit)
                 else editor.remove(KEY_DEFICIT)
@@ -54,6 +56,7 @@ class DietPreferences @Inject constructor(
         private const val KEY_WINDOW_HOURS = "eating_window_hours"
         private const val KEY_WINDOW_START = "window_start_hour"
         private const val KEY_REMINDERS = "meal_reminders_enabled"
+        private const val KEY_AUTO_CHECK = "auto_check_adjustments"
         private const val KEY_DEFICIT = "custom_deficit_kcal"
         private const val KEY_KCAL_OVERRIDE = "manual_kcal_override"
     }
@@ -64,6 +67,8 @@ data class DietConfig(
     val eatingWindowHours: Int = 8,
     val windowStartHour: Int = 12,
     val mealRemindersEnabled: Boolean = true,
+    /** Co 14 dni AI sprawdza trend wagi/adherence i sugeruje korektę kcal (notyfikacja). */
+    val autoCheckAdjustments: Boolean = true,
     /** Override default deficit (-750..+500). null = użyj wartości domyślnej z celu (CUT=-500, BULK=+300). */
     val customDeficit: Int? = null,
     /** Manualne nadpisanie kcal — jeśli != null, ignoruje TDEE+deficit. */

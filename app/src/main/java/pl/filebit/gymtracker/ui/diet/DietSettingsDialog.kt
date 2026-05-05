@@ -48,8 +48,15 @@ fun DietSettingsDialog(
     var window by remember { mutableStateOf(initial.eatingWindowHours) }
     var startHour by remember { mutableStateOf(initial.windowStartHour) }
     var reminders by remember { mutableStateOf(initial.mealRemindersEnabled) }
+    var autoCheck by remember { mutableStateOf(initial.autoCheckAdjustments) }
 
-    val previewConfig = DietConfig(meals, window, startHour, reminders)
+    val previewConfig = initial.copy(
+        mealsPerDay = meals,
+        eatingWindowHours = window,
+        windowStartHour = startHour,
+        mealRemindersEnabled = reminders,
+        autoCheckAdjustments = autoCheck
+    )
     val mealHours = previewConfig.mealHoursDecimal()
 
     AlertDialog(
@@ -119,6 +126,27 @@ fun DietSettingsDialog(
                         Text("Powiadomienia o posiłkach", fontWeight = FontWeight.SemiBold, color = DarkOnSurface)
                         Text(
                             "Pora posiłku przypomni notyfikacja",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                }
+
+                // Auto-korekty co 14 dni
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Switch(
+                        checked = autoCheck,
+                        onCheckedChange = { autoCheck = it },
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = AccentOrange,
+                            checkedTrackColor = AccentOrange.copy(alpha = 0.5f)
+                        )
+                    )
+                    Spacer(Modifier.padding(start = 8.dp))
+                    Column {
+                        Text("Auto-sprawdzanie planu", fontWeight = FontWeight.SemiBold, color = DarkOnSurface)
+                        Text(
+                            "Co 14 dni AI analizuje trend wagi i sugeruje korekty kcal (notyfikacja)",
                             style = MaterialTheme.typography.bodySmall,
                             color = DarkOnSurfaceVariant
                         )

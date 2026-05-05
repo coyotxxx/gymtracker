@@ -98,7 +98,8 @@ class DietViewModel @Inject constructor(
     private val dietAi: DietAiService,
     private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge,
     private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
-    private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService
+    private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService,
+    private val dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
 ) : ViewModel() {
 
     data class AdjustmentPreview(
@@ -355,7 +356,11 @@ class DietViewModel @Inject constructor(
 
     fun saveConfig(config: DietConfig) {
         dietPrefs.save(config)
-        viewModelScope.launch { reminderScheduler.rescheduleAll(config) }
+        viewModelScope.launch {
+            reminderScheduler.rescheduleAll(config)
+            if (config.autoCheckAdjustments) dietAdjustmentScheduler.schedulePeriodic()
+            else dietAdjustmentScheduler.cancel()
+        }
     }
 
     fun rescheduleReminders() {

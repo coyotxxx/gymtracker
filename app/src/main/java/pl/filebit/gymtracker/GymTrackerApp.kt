@@ -37,6 +37,8 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var profileRepo: UserProfileRepository
     @Inject lateinit var unfinishedScheduler: UnfinishedWorkoutScheduler
     @Inject lateinit var proactiveAiScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
+    @Inject lateinit var dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
+    @Inject lateinit var dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -56,6 +58,11 @@ class GymTrackerApp : Application(), Configuration.Provider {
             val profile = profileRepo.get()
             if (profile.aiProactiveChecksEnabled) {
                 proactiveAiScheduler.schedulePeriodic()
+            }
+            if (dietPrefs.load().autoCheckAdjustments) {
+                dietAdjustmentScheduler.schedulePeriodic()
+            } else {
+                dietAdjustmentScheduler.cancel()
             }
         }
         observeActiveWorkoutForReminder()
@@ -150,6 +157,16 @@ class GymTrackerApp : Application(), Configuration.Provider {
                     NotificationManager.IMPORTANCE_DEFAULT
                 ).apply {
                     description = "Przypomnienia o porach posiłków w oknie żywieniowym."
+                    setShowBadge(true)
+                }
+            )
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.DietAutoAdjustmentWorker.CHANNEL_ID,
+                    "Korekty planu żywieniowego",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "AI sprawdza co 14 dni czy plan kcal nadal pasuje do trendu wagi."
                     setShowBadge(true)
                 }
             )
