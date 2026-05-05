@@ -14,7 +14,11 @@ private data class SeedFoodProduct(
     val kcalPer100g: Double,
     val proteinPer100g: Double,
     val carbsPer100g: Double,
-    val fatPer100g: Double
+    val fatPer100g: Double,
+    val fiberPer100g: Double = 0.0,
+    val calciumMgPer100g: Double = 0.0,
+    val potassiumMgPer100g: Double = 0.0,
+    val sodiumMgPer100g: Double = 0.0
 )
 
 class FoodProductSeeder(
@@ -36,6 +40,10 @@ class FoodProductSeeder(
                 proteinPer100g = s.proteinPer100g,
                 carbsPer100g = s.carbsPer100g,
                 fatPer100g = s.fatPer100g,
+                fiberPer100g = s.fiberPer100g,
+                calciumMgPer100g = s.calciumMgPer100g,
+                potassiumMgPer100g = s.potassiumMgPer100g,
+                sodiumMgPer100g = s.sodiumMgPer100g,
                 isCustom = false
             )
         }

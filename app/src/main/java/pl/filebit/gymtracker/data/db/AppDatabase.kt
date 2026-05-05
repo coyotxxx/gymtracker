@@ -84,7 +84,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         ShoppingList::class,
         ShoppingListItem::class
     ],
-    version = 36,
+    version = 37,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

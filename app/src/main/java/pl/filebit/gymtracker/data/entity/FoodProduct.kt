@@ -26,6 +26,15 @@ data class FoodProduct(
     val proteinPer100g: Double,
     val carbsPer100g: Double,
     val fatPer100g: Double,
+    // === Quality fields (v0.90) — wszystkie default 0.0, można uzupełnić w czasie ===
+    /** Błonnik w gramach na 100g. Cel dzienny: 25-35g. */
+    val fiberPer100g: Double = 0.0,
+    /** Wapń w mg na 100g. Cel dzienny: 1000-1300mg. */
+    val calciumMgPer100g: Double = 0.0,
+    /** Potas w mg na 100g. Cel dzienny: 3500mg. */
+    val potassiumMgPer100g: Double = 0.0,
+    /** Sód w mg na 100g. Max dzienny: 2300mg. */
+    val sodiumMgPer100g: Double = 0.0,
     /** false = z seed-u, true = user dodał. */
     val isCustom: Boolean = false,
     /** Notatka usera (np. "z bistro", "w Lidl"). */
