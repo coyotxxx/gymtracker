@@ -128,6 +128,8 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.4")
     implementation("androidx.camera:camera-view:1.3.4")
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    // ListenableFuture dla CameraX (skipped przez Health Connect alpha)
+    implementation("com.google.guava:guava:32.1.3-android")
 
     // Health Connect (v0.96) — auto-sync kroków
     implementation("androidx.health.connect:connect-client:1.1.0-alpha07")
