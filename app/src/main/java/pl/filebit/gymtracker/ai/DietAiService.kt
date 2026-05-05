@@ -182,64 +182,66 @@ class DietAiService @Inject constructor(
             }
 
             // === PROFIL DIETETYCZNY (z DietOnboarding) ===
-            append("- Wiek: ${dietProfile.ageYears} lat\n")
-            append("- Wzrost: ${dietProfile.heightCm} cm\n")
-            append("- Aktywność poza treningiem: ${activityLabel(dietProfile.activityLevel)}\n")
+            dietProfile?.let { dp ->
+                append("- Wiek: ${dp.ageYears} lat\n")
+                append("- Wzrost: ${dp.heightCm} cm\n")
+                append("- Aktywność poza treningiem: ${activityLabel(dp.activityLevel)}\n")
 
-            // PREFERENCJE DIETETYCZNE — TWARDE OGRANICZENIA
-            val prefLabel = dietPreferenceLabel(dietProfile.dietPreference)
-            if (prefLabel.isNotBlank()) {
-                append("- Preferencja: $prefLabel ⚠ MUSI być przestrzegana\n")
-            }
-
-            // ALERGIE — KRYTYCZNE
-            val allergies = dietProfile.parsedAllergies()
-            if (allergies.isNotEmpty()) {
-                append("- ⚠ ALERGIE (BEZWZGLĘDNIE UNIKAJ): ${allergies.joinToString(", ")}\n")
-            }
-            if (dietProfile.intolerances.isNotBlank()) {
-                append("- Nietolerancje: ${dietProfile.intolerances}\n")
-            }
-
-            // PREFEROWANE/UNIKANE PRODUKTY (z onboardingu, niezależne od MealFeedback)
-            val loved = dietProfile.parsedLovedFoods()
-            if (loved.isNotEmpty()) {
-                append("- Lubi: ${loved.joinToString(", ")}\n")
-            }
-            val disliked = dietProfile.parsedDislikedFoods()
-            if (disliked.isNotEmpty()) {
-                append("- NIE lubi: ${disliked.joinToString(", ")}\n")
-            }
-
-            // PRAKTYCZNE OGRANICZENIA WYKONALNOŚCI
-            append("- Max czas na 1 posiłek: ${dietProfile.cookingTimePerMealMin} min ⚠ przepisy MUSZĄ się zmieścić\n")
-            if (dietProfile.eatsAtWork) {
-                append("- Jada w pracy/szkole — obiad MUSI być przenośny w pojemniku")
-                if (dietProfile.hasMicrowaveAtWork) append(" (ma mikrofalówkę)\n")
-                else append(" (BEZ mikrofalówki — preferuj zimne dania: sałatki, kanapki, wraps)\n")
-            }
-            if (dietProfile.mealPrepInterested) {
-                append("- Meal prep: tak — preferuj porcje gotujące się raz na 2-3 dni (np. zapiekanki, gulasze)\n")
-            }
-            dietProfile.weeklyBudgetPln?.let { budget ->
-                val tier = when {
-                    budget <= 100 -> "BARDZO NISKI: kurczak udko, jaja, twaróg, kasza, ryż, marchew, kapusta — UNIKAJ łososia, wołowiny, awokado, nasion chia"
-                    budget <= 200 -> "NISKI: kurczak pierś, jaja, twaróg, ryż, makaron, sezon. warzywa — UNIKAJ łososia, wołowiny premium"
-                    budget <= 300 -> "ŚREDNI: większość produktów OK, oszczędnie z premium (łosoś 1-2x/tydz)"
-                    else -> "WYSOKI: brak ograniczeń"
+                // PREFERENCJE DIETETYCZNE — TWARDE OGRANICZENIA
+                val prefLabel = dietPreferenceLabel(dp.dietPreference)
+                if (prefLabel.isNotBlank()) {
+                    append("- Preferencja: $prefLabel ⚠ MUSI być przestrzegana\n")
                 }
-                append("- Budżet tygodniowy: $budget zł — $tier\n")
-            }
 
-            // STANY ZDROWIA — konserwatywne sugestie
-            val medical = dietProfile.parsedMedicalConditions()
-            if (medical.isNotEmpty()) {
-                append("- ⚠ Stany zdrowia: ${medical.joinToString(", ")} — WYMAGAJ konsultacji ze specjalistą, generuj KONSERWATYWNE plany:\n")
-                if ("cukrzyca" in medical) append("  • cukrzyca: niski IG, ograniczone proste cukry, podziel węgle równomiernie\n")
-                if ("nadciśnienie" in medical) append("  • nadciśnienie: niska sól, ograniczone konserwy/wędliny\n")
-                if ("choroby_nerek" in medical) append("  • nerki: kontrolowane białko (NIE 2g/kg), niski potas/fosfor — sugeruj konsultację\n")
-                if ("ciąża" in medical || "karmienie_piersią" in medical) append("  • ciąża/karmienie: NIE redukcja kcal, dodatek żelazo+kwas foliowy, unikaj sushi/serów pleśniowych\n")
-                if ("zaburzenia_odżywiania" in medical) append("  • zab. odżywiania: NIE liczenie kcal jako głównego mechanizmu, łagodny ton, sugeruj specjalistę\n")
+                // ALERGIE — KRYTYCZNE
+                val dpAllergies = dp.parsedAllergies()
+                if (dpAllergies.isNotEmpty()) {
+                    append("- ⚠ ALERGIE (BEZWZGLĘDNIE UNIKAJ): ${dpAllergies.joinToString(", ")}\n")
+                }
+                if (dp.intolerances.isNotBlank()) {
+                    append("- Nietolerancje: ${dp.intolerances}\n")
+                }
+
+                // PREFEROWANE/UNIKANE PRODUKTY (z onboardingu, niezależne od MealFeedback)
+                val dpLoved = dp.parsedLovedFoods()
+                if (dpLoved.isNotEmpty()) {
+                    append("- Lubi: ${dpLoved.joinToString(", ")}\n")
+                }
+                val dpDisliked = dp.parsedDislikedFoods()
+                if (dpDisliked.isNotEmpty()) {
+                    append("- NIE lubi: ${dpDisliked.joinToString(", ")}\n")
+                }
+
+                // PRAKTYCZNE OGRANICZENIA WYKONALNOŚCI
+                append("- Max czas na 1 posiłek: ${dp.cookingTimePerMealMin} min ⚠ przepisy MUSZĄ się zmieścić\n")
+                if (dp.eatsAtWork) {
+                    append("- Jada w pracy/szkole — obiad MUSI być przenośny w pojemniku")
+                    if (dp.hasMicrowaveAtWork) append(" (ma mikrofalówkę)\n")
+                    else append(" (BEZ mikrofalówki — preferuj zimne dania: sałatki, kanapki, wraps)\n")
+                }
+                if (dp.mealPrepInterested) {
+                    append("- Meal prep: tak — preferuj porcje gotujące się raz na 2-3 dni (np. zapiekanki, gulasze)\n")
+                }
+                dp.weeklyBudgetPln?.let { budget ->
+                    val tier = when {
+                        budget <= 100 -> "BARDZO NISKI: kurczak udko, jaja, twaróg, kasza, ryż, marchew, kapusta — UNIKAJ łososia, wołowiny, awokado, nasion chia"
+                        budget <= 200 -> "NISKI: kurczak pierś, jaja, twaróg, ryż, makaron, sezon. warzywa — UNIKAJ łososia, wołowiny premium"
+                        budget <= 300 -> "ŚREDNI: większość produktów OK, oszczędnie z premium (łosoś 1-2x/tydz)"
+                        else -> "WYSOKI: brak ograniczeń"
+                    }
+                    append("- Budżet tygodniowy: $budget zł — $tier\n")
+                }
+
+                // STANY ZDROWIA — konserwatywne sugestie
+                val medical = dp.parsedMedicalConditions()
+                if (medical.isNotEmpty()) {
+                    append("- ⚠ Stany zdrowia: ${medical.joinToString(", ")} — WYMAGAJ konsultacji ze specjalistą, generuj KONSERWATYWNE plany:\n")
+                    if ("cukrzyca" in medical) append("  • cukrzyca: niski IG, ograniczone proste cukry, podziel węgle równomiernie\n")
+                    if ("nadciśnienie" in medical) append("  • nadciśnienie: niska sól, ograniczone konserwy/wędliny\n")
+                    if ("choroby_nerek" in medical) append("  • nerki: kontrolowane białko (NIE 2g/kg), niski potas/fosfor — sugeruj konsultację\n")
+                    if ("ciąża" in medical || "karmienie_piersią" in medical) append("  • ciąża/karmienie: NIE redukcja kcal, dodatek żelazo+kwas foliowy, unikaj sushi/serów pleśniowych\n")
+                    if ("zaburzenia_odżywiania" in medical) append("  • zab. odżywiania: NIE liczenie kcal jako głównego mechanizmu, łagodny ton, sugeruj specjalistę\n")
+                }
             }
 
             // Pomiary obwodów (jeśli świeże)
