@@ -80,7 +80,11 @@ data class AiDayPlan(
 )
 
 data class GeneratedDayPlan(
-    val mealsForSlots: List<Pair<MealType, AiMealRecipe>>
+    val mealsForSlots: List<Pair<MealType, AiMealRecipe>>,
+    /** SOFT warnings z walidatora — pokaż userowi (nie blokujące). */
+    val warnings: List<ValidationIssue> = emptyList(),
+    /** Suma kcal/makro POLICZONA Z LOKALNEJ BAZY (nie z deklaracji AI). */
+    val correctedTotal: CorrectedMacros? = null
 )
 
 /**
@@ -108,7 +112,9 @@ class DietAiService @Inject constructor(
     private val statsRepo: StatsRepository,
     private val trainingDietBridge: TrainingDietBridge,
     private val bodyMeasurementDao: BodyMeasurementDao,
-    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository
+    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository,
+    private val constraintResolver: pl.filebit.gymtracker.data.repository.ConstraintResolver,
+    private val validator: AiMealJsonValidator
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -350,6 +356,14 @@ class DietAiService @Inject constructor(
                 append("→ Jeśli tworzysz nowe dania, inspiruj się PROFILEM smakowym ulubionych (np. user lubi twaróg → częściej twaróg w innych daniach).\n")
             }
 
+            // === Constraints (HARD i SOFT) z ConstraintResolver ===
+            val constraintsForPrompt = constraintResolver.resolve(profile, dietProfile)
+            val constraintsText = constraintResolver.toPromptText(constraintsForPrompt)
+            if (constraintsText.isNotBlank()) {
+                append("\n")
+                append(constraintsText)
+            }
+
             append("\n=== DOSTĘPNE PRODUKTY (używaj WYŁĄCZNIE z tej listy, nazwy DOKŁADNIE) ===\n")
             append(productsListing)
 
@@ -478,25 +492,67 @@ class DietAiService @Inject constructor(
             """.trimIndent())
         }
 
-        val result = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)))
-        return result.mapCatching { raw ->
-            Log.d("DietAiService", "raw response: ${raw.take(500)}")
-            val cleaned = stripJsonFences(raw)
-            val parsed = json.decodeFromString<AiDayPlan>(cleaned)
-            if (parsed.meals.isEmpty()) error("AI zwróciło pusty plan")
+        // Buduj kontekst walidacji
+        val constraints = constraintResolver.resolve(profile, dietProfile)
+        val productsByName = products.associateBy { it.name.lowercase() }
+        val validationCtx = ValidationContext(
+            expectedMealsCount = mealsCount,
+            targetKcal = goal.kcal,
+            targetProteinG = goal.proteinG,
+            perMealProteinMinG = (perMealProtein * 0.7).toInt().coerceAtLeast(15),
+            maxCookingMinutesPerMeal = dietProfile?.cookingTimePerMealMin ?: 20,
+            ketoMaxCarbsG = if (dietProfile?.dietPreference == pl.filebit.gymtracker.data.entity.DietPreference.KETO) 30 else null,
+            productsByName = productsByName,
+            constraints = constraints
+        )
 
-            // Mapowanie sloty → MealType (analogicznie do DietViewModel)
-            val typesForSlots: List<MealType> = when (mealsCount) {
-                2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
-                3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
-                4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
-                5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
-                6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
-                else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+        // Próba 1: oryginalny prompt
+        var attempt = 1
+        var validation: ValidationResult? = null
+        var parsed: AiDayPlan? = null
+        var lastRaw: String? = null
+        var currentPrompt = prompt
+
+        while (attempt <= 2) {
+            val callResult = client.chat(cfg, listOf(AiMessage(AiRole.USER, currentPrompt)))
+            if (callResult.isFailure) return callResult.map { GeneratedDayPlan(emptyList()) }
+
+            lastRaw = callResult.getOrThrow()
+            Log.d("DietAiService", "attempt=$attempt raw response: ${lastRaw!!.take(500)}")
+            val cleaned = stripJsonFences(lastRaw!!)
+            parsed = runCatching { json.decodeFromString<AiDayPlan>(cleaned) }.getOrNull()
+            if (parsed == null || parsed.meals.isEmpty()) {
+                return Result.failure(IllegalStateException("AI zwróciło niepoprawny lub pusty JSON (attempt=$attempt)"))
             }
-            val mealsForSlots = parsed.meals.zip(typesForSlots).map { (m, t) -> t to m }
-            GeneratedDayPlan(mealsForSlots)
+
+            validation = validator.validate(parsed, validationCtx)
+            Log.d("DietAiService", "validation isValid=${validation.isValid} errors=${validation.errors.size} warnings=${validation.warnings.size}")
+            if (validation.isValid) break
+
+            // Retry z error feedback
+            val feedback = validator.buildRetryFeedback(validation)
+            currentPrompt = "$prompt\n\n=== POPRAWKA (PILNE) ===\n$feedback"
+            attempt++
         }
+
+        if (parsed == null) return Result.failure(IllegalStateException("AI nie zwróciło planu"))
+        if (validation != null && !validation.isValid) {
+            // Po 2 próbach nadal HARD violations — zwróć błąd informujący
+            val errorMsgs = validation.errors.joinToString("\n") { "• ${it.message}" }
+            return Result.failure(IllegalStateException("Po 2 próbach AI nadal generuje plan z naruszeniami HARD constraints:\n$errorMsgs"))
+        }
+
+        // Mapowanie sloty → MealType
+        val typesForSlots: List<MealType> = when (mealsCount) {
+            2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
+            3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+            4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
+            5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
+            6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
+            else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+        }
+        val mealsForSlots = parsed.meals.zip(typesForSlots).map { (m, t) -> t to m }
+        return Result.success(GeneratedDayPlan(mealsForSlots, validation?.warnings.orEmpty(), validation?.correctedTotal))
     }
 
     private fun stripJsonFences(s: String): String {
