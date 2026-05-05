@@ -65,6 +65,7 @@ import kotlin.math.roundToInt
 fun DietScreen(
     onBack: () -> Unit,
     onNeedsOnboarding: () -> Unit,
+    onOpenAdherenceReport: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -99,6 +100,23 @@ fun DietScreen(
                         onShowBreakdown = { showGoalBreakdown = true },
                         onGenerateAi = { vm.generateAiDayPlan() }
                     )
+                }
+                // Button "Raport zgodności"
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(40.dp)
+                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                            .clickable(onClick = onOpenAdherenceReport),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "📊 Raport zgodności (7 / 14 dni)",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
+                    }
                 }
 
                 // Sekcje posiłków (zgodnie z liczbą z DietConfig)

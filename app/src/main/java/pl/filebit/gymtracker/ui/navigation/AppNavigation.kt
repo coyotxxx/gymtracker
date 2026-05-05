@@ -479,7 +479,8 @@ fun AppNavigation() {
                         navController.navigate(Screen.DietOnboarding.route) {
                             popUpTo(Screen.Diet.route) { inclusive = true }
                         }
-                    }
+                    },
+                    onOpenAdherenceReport = { navController.navigate(Screen.DietAdherenceReport.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
@@ -489,6 +490,11 @@ fun AppNavigation() {
                             popUpTo(Screen.Profile.route)
                         }
                     },
+                    onBack = { navController.popBackStack() }
+                )
+            }
+            composable(Screen.DietAdherenceReport.route) {
+                pl.filebit.gymtracker.ui.diet.AdherenceReportScreen(
                     onBack = { navController.popBackStack() }
                 )
             }

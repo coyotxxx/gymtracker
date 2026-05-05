@@ -96,7 +96,8 @@ class DietViewModel @Inject constructor(
     private val dietPrefs: DietPreferences,
     private val reminderScheduler: DietReminderScheduler,
     private val dietAi: DietAiService,
-    private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge
+    private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge,
+    private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator
 ) : ViewModel() {
 
     private val _onboardingChecked = MutableStateFlow(false)
@@ -235,11 +236,16 @@ class DietViewModel @Inject constructor(
                     grams = grams
                 )
             )
+            // Update adherence po każdej zmianie posiłków
+            runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
         }
     }
 
     fun deleteMeal(id: Long) {
-        viewModelScope.launch { repo.deleteMeal(id) }
+        viewModelScope.launch {
+            repo.deleteMeal(id)
+            runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
+        }
     }
 
     /**
@@ -288,6 +294,7 @@ class DietViewModel @Inject constructor(
                         if (anyAdded) addedMeals++
                     }
 
+                    runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
                     _aiPlanState.value = AiPlanState.Success(
                         if (skippedIngredients > 0)
                             "Plan dnia gotowy ($addedMeals posiłków, $skippedIngredients składników pominiętych — brak w bazie)"
