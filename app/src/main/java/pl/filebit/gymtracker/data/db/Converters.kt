@@ -76,4 +76,19 @@ class Converters {
     @TypeConverter fun mealTypeToString(m: MealType): String = m.name
     @TypeConverter fun stringToMealType(s: String): MealType =
         runCatching { MealType.valueOf(s) }.getOrDefault(MealType.LUNCH)
+
+    @TypeConverter fun activityLevelToString(a: pl.filebit.gymtracker.data.entity.ActivityLevel): String = a.name
+    @TypeConverter fun stringToActivityLevel(s: String): pl.filebit.gymtracker.data.entity.ActivityLevel =
+        runCatching { pl.filebit.gymtracker.data.entity.ActivityLevel.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE)
+
+    @TypeConverter fun dietPrefToString(d: pl.filebit.gymtracker.data.entity.DietPreference): String = d.name
+    @TypeConverter fun stringToDietPref(s: String): pl.filebit.gymtracker.data.entity.DietPreference =
+        runCatching { pl.filebit.gymtracker.data.entity.DietPreference.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.DietPreference.STANDARD)
+
+    @TypeConverter fun dietGoalToString(g: pl.filebit.gymtracker.data.entity.DietGoalType): String = g.name
+    @TypeConverter fun stringToDietGoalType(s: String): pl.filebit.gymtracker.data.entity.DietGoalType =
+        runCatching { pl.filebit.gymtracker.data.entity.DietGoalType.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN)
 }

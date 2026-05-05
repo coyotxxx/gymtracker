@@ -473,7 +473,24 @@ fun AppNavigation() {
                 GlossaryScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.Diet.route) {
-                pl.filebit.gymtracker.ui.diet.DietScreen(onBack = { navController.popBackStack() })
+                pl.filebit.gymtracker.ui.diet.DietScreen(
+                    onBack = { navController.popBackStack() },
+                    onNeedsOnboarding = {
+                        navController.navigate(Screen.DietOnboarding.route) {
+                            popUpTo(Screen.Diet.route) { inclusive = true }
+                        }
+                    }
+                )
+            }
+            composable(Screen.DietOnboarding.route) {
+                pl.filebit.gymtracker.ui.diet.DietOnboardingScreen(
+                    onCompleted = {
+                        navController.navigate(Screen.Diet.route) {
+                            popUpTo(Screen.Profile.route)
+                        }
+                    },
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.ActiveWorkout.route) {
                 ActiveWorkoutScreen(

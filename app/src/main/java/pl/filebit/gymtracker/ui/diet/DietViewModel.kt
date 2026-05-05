@@ -21,6 +21,7 @@ import pl.filebit.gymtracker.data.repository.DietConfig
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.DietRepository
 import pl.filebit.gymtracker.data.repository.MealEntryWithMacros
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.macrosFor
 import pl.filebit.gymtracker.service.DietReminderScheduler
@@ -91,10 +92,23 @@ sealed class AiPlanState {
 class DietViewModel @Inject constructor(
     private val repo: DietRepository,
     private val profileRepo: UserProfileRepository,
+    private val dietProfileRepo: UserDietProfileRepository,
     private val dietPrefs: DietPreferences,
     private val reminderScheduler: DietReminderScheduler,
     private val dietAi: DietAiService
 ) : ViewModel() {
+
+    private val _onboardingChecked = MutableStateFlow(false)
+    private val _needsOnboarding = MutableStateFlow(false)
+    val needsOnboarding: StateFlow<Boolean> = _needsOnboarding.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            val done = dietProfileRepo.isOnboardingDone()
+            _needsOnboarding.value = !done
+            _onboardingChecked.value = true
+        }
+    }
 
     private val _searchQuery = MutableStateFlow("")
     private val _categoryFilter = MutableStateFlow<FoodCategory?>(null)
@@ -167,10 +181,12 @@ class DietViewModel @Inject constructor(
                     }
 
                     val profile = runCatching { profileRepo.get() }.getOrNull()
+                    val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
                     val goal = if (profile != null) computeDailyGoal(
                         profile,
                         manualKcalOverride = cfg.manualKcal,
-                        customDeficit = cfg.customDeficit
+                        customDeficit = cfg.customDeficit,
+                        dietProfile = dietProfile
                     ) else DailyMacroGoal(
                         2200, 150, 250, 70,
                         pl.filebit.gymtracker.util.GoalBreakdown(

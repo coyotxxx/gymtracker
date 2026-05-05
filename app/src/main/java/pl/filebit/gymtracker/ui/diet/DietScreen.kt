@@ -64,10 +64,15 @@ import kotlin.math.roundToInt
 @Composable
 fun DietScreen(
     onBack: () -> Unit,
+    onNeedsOnboarding: () -> Unit,
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
+    val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
+    androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
+        if (needsOnboarding) onNeedsOnboarding()
+    }
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }

@@ -12,6 +12,7 @@ import pl.filebit.gymtracker.data.repository.DietConfig
 import pl.filebit.gymtracker.data.repository.DietRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 import pl.filebit.gymtracker.util.computeDailyGoal
@@ -70,6 +71,7 @@ class DietAiService @Inject constructor(
     private val client: AiClient,
     private val prefs: AiPreferences,
     private val profileRepo: UserProfileRepository,
+    private val dietProfileRepo: UserDietProfileRepository,
     private val dietRepo: DietRepository,
     private val workoutRepo: WorkoutRepository,
     private val planRepo: PlanRepository,
@@ -85,11 +87,13 @@ class DietAiService @Inject constructor(
         }
 
         val profile = profileRepo.get()
-        // Uwzględnij ewentualny override usera (manualKcal lub customDeficit)
+        val dietProfile = dietProfileRepo.get()
+        // Uwzględnij ewentualny override usera (manualKcal lub customDeficit) + UserDietProfile
         val goal = computeDailyGoal(
             profile,
             manualKcalOverride = config.manualKcal,
-            customDeficit = config.customDeficit
+            customDeficit = config.customDeficit,
+            dietProfile = dietProfile
         )
         val products = dietRepo.observeAllProducts().first()
 

@@ -1,6 +1,8 @@
 package pl.filebit.gymtracker.util
 
+import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 
@@ -41,20 +43,41 @@ fun computeDailyGoal(
     profile: UserProfile,
     fallbackWeightKg: Double? = null,
     manualKcalOverride: Int? = null,
-    customDeficit: Int? = null
+    customDeficit: Int? = null,
+    dietProfile: UserDietProfile? = null
 ): DailyMacroGoal {
     val weight = profile.bodyweightKg ?: fallbackWeightKg ?: 75.0
 
     // === KROK 1: TDEE (Total Daily Energy Expenditure) ===
-    // Uproszczony Mifflin (bez wzrostu/wieku — używamy multiplier per kg).
-    // Dla CUT/MAINTAIN/BULK te multipliery są BAZOWE — adjustment osobno.
-    val baseMultiplier = 33.0  // średnio aktywny człowiek, bazowy ratio
-    val genderMod = if (profile.gender == Gender.MALE) 1.03 else 0.97
-    val activityBonus = profile.daysPerWeek * 30
-    val tdee = (weight * baseMultiplier * genderMod + activityBonus).toInt()
-    val tdeeFormula = "%.0f kg × %.1f × %.2f + %d × 30 = %d kcal".format(
-        weight, baseMultiplier, genderMod, profile.daysPerWeek, tdee
-    )
+    val tdee: Int
+    val tdeeFormula: String
+    if (dietProfile != null) {
+        // Pełen Mifflin-St Jeor — najdokładniejszy wzór
+        val maleConst = if (profile.gender == Gender.MALE) 5.0 else -161.0
+        val bmr = 10.0 * weight + 6.25 * dietProfile.heightCm - 5.0 * dietProfile.ageYears + maleConst
+        val activityMult = when (dietProfile.activityLevel) {
+            ActivityLevel.SEDENTARY -> 1.2
+            ActivityLevel.LIGHT -> 1.375
+            ActivityLevel.MODERATE -> 1.55
+            ActivityLevel.VERY_ACTIVE -> 1.725
+            ActivityLevel.EXTREME -> 1.9
+        }
+        // Plus dodatkowy bonus za treningi (jeśli activity level nie obejmuje)
+        val trainingBonus = profile.daysPerWeek * 30
+        tdee = (bmr * activityMult + trainingBonus).toInt()
+        tdeeFormula = "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 = %d kcal".format(
+            bmr, activityMult, profile.daysPerWeek, tdee
+        )
+    } else {
+        // Fallback gdy brak UserDietProfile (przed onboardingiem diety)
+        val baseMultiplier = 33.0
+        val genderMod = if (profile.gender == Gender.MALE) 1.03 else 0.97
+        val activityBonus = profile.daysPerWeek * 30
+        tdee = (weight * baseMultiplier * genderMod + activityBonus).toInt()
+        tdeeFormula = "%.0f kg × %.1f × %.2f + %d × 30 = %d kcal (uproszczone, brak danych wieku/wzrostu)".format(
+            weight, baseMultiplier, genderMod, profile.daysPerWeek, tdee
+        )
+    }
 
     // === KROK 2: Adjustment per cel ===
     val defaultDeficit = when (profile.weightGoalType) {
