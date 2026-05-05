@@ -78,7 +78,8 @@ class DietAiService @Inject constructor(
     private val planRepo: PlanRepository,
     private val statsRepo: StatsRepository,
     private val trainingDietBridge: TrainingDietBridge,
-    private val bodyMeasurementDao: BodyMeasurementDao
+    private val bodyMeasurementDao: BodyMeasurementDao,
+    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -141,6 +142,10 @@ class DietAiService @Inject constructor(
         val productsListing = products.joinToString("\n") { p ->
             "- ${p.name} (${p.kcalPer100g.toInt()} kcal/100g, B${p.proteinPer100g.toInt()}/W${p.carbsPer100g.toInt()}/T${p.fatPer100g.toInt()})"
         }
+
+        // Preferencje usera (rating ≥4 = preferuj, ≤2 = unikaj)
+        val favorites = runCatching { mealFeedbackRepo.getTopFavorites(limit = 10) }.getOrNull().orEmpty()
+        val disliked = runCatching { mealFeedbackRepo.getTopDisliked(limit = 5) }.getOrNull().orEmpty()
 
         val slotLabels = mealHours.indices.map { idx ->
             val time = config.formatTime(mealHours[idx])
@@ -229,6 +234,29 @@ class DietAiService @Inject constructor(
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
             slotLabels.forEach { append("- $it\n") }
+
+            // === PREFERENCJE USERA (z MealFeedback) ===
+            if (favorites.isNotEmpty() || disliked.isNotEmpty()) {
+                append("\n=== PREFERENCJE USERA (na bazie wcześniejszych ocen) ===\n")
+                if (favorites.isNotEmpty()) {
+                    append("ULUBIONE (PREFERUJ — używaj jako inspirację, możesz powtarzać 1-2x w tygodniu):\n")
+                    favorites.forEach { f ->
+                        append("- ${f.displayName} (ocena ${f.rating}/5, zjedzono ${f.timesEaten}×")
+                        if (f.tags.isNotBlank()) append(", tagi: ${f.tags}")
+                        append(")\n")
+                    }
+                }
+                if (disliked.isNotEmpty()) {
+                    append("UNIKAJ (rating ≤2 — nie generuj tych dań ani BARDZO podobnych):\n")
+                    disliked.forEach { f ->
+                        append("- ${f.displayName} (ocena ${f.rating}/5")
+                        if (f.tags.isNotBlank()) append(", powód: ${f.tags}")
+                        if (f.notes.isNotBlank()) append(", notatka: ${f.notes}")
+                        append(")\n")
+                    }
+                }
+                append("→ Jeśli tworzysz nowe dania, inspiruj się PROFILEM smakowym ulubionych (np. user lubi twaróg → częściej twaróg w innych daniach).\n")
+            }
 
             append("\n=== DOSTĘPNE PRODUKTY (używaj WYŁĄCZNIE z tej listy, nazwy DOKŁADNIE) ===\n")
             append(productsListing)

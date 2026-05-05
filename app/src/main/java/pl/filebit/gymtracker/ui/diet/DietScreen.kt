@@ -67,11 +67,13 @@ fun DietScreen(
     onNeedsOnboarding: () -> Unit,
     onOpenAdherenceReport: () -> Unit = {},
     onOpenAdjustmentHistory: () -> Unit = {},
+    onOpenMealPreferences: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
+    val ratingPrompt by vm.aiPlanRatingPrompt.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
     androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
         if (needsOnboarding) onNeedsOnboarding()
@@ -137,21 +139,37 @@ fun DietScreen(
                     }
                 }
 
-                // Historia zmian planu
+                // Historia + preferencje smakowe
                 item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(40.dp)
-                            .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
-                            .clickable(onClick = onOpenAdjustmentHistory),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            "📋 Historia zmian planu",
-                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                            color = DarkOnSurface
-                        )
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenAdjustmentHistory),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "📋 Historia zmian",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                .clickable(onClick = onOpenMealPreferences),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "⭐ Preferencje",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = DarkOnSurface
+                            )
+                        }
                     }
                 }
 
@@ -185,6 +203,14 @@ fun DietScreen(
             config = state.config,
             onSave = { vm.saveConfig(it) },
             onDismiss = { showGoalBreakdown = false }
+        )
+    }
+
+    if (ratingPrompt.isNotEmpty()) {
+        MealRatingDialog(
+            items = ratingPrompt,
+            onRate = { name, rating -> vm.rateMeal(name, rating) },
+            onDismiss = { vm.consumeAiPlanRatingPrompt() }
         )
     }
 

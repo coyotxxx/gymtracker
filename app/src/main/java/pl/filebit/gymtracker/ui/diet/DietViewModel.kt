@@ -99,8 +99,26 @@ class DietViewModel @Inject constructor(
     private val trainingDietBridge: pl.filebit.gymtracker.data.repository.TrainingDietBridge,
     private val adherenceCalc: pl.filebit.gymtracker.data.repository.AdherenceCalculator,
     private val autoAdjust: pl.filebit.gymtracker.data.repository.AutoAdjustmentService,
-    private val dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
+    private val dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler,
+    private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository
 ) : ViewModel() {
+
+    /**
+     * Lista nazw potraw z ostatnio wygenerowanego planu AI — do oceny przez usera.
+     * Czyszczone po użyciu (consumeAiPlanRatingPrompt).
+     */
+    private val _aiPlanRatingPrompt = MutableStateFlow<List<Pair<MealType, String>>>(emptyList())
+    val aiPlanRatingPrompt: StateFlow<List<Pair<MealType, String>>> = _aiPlanRatingPrompt.asStateFlow()
+
+    fun rateMeal(displayName: String, rating: Int, tags: String = "", notes: String = "") {
+        viewModelScope.launch {
+            runCatching { mealFeedbackRepo.rate(displayName, rating, tags, notes) }
+        }
+    }
+
+    fun consumeAiPlanRatingPrompt() {
+        _aiPlanRatingPrompt.value = emptyList()
+    }
 
     data class AdjustmentPreview(
         val id: Long,
@@ -336,6 +354,10 @@ class DietViewModel @Inject constructor(
                     }
 
                     runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
+                    // Zaproponuj userowi ocenę wygenerowanych potraw (MealFeedback)
+                    _aiPlanRatingPrompt.value = plan.mealsForSlots
+                        .map { (type, recipe) -> type to recipe.name }
+                        .filter { it.second.isNotBlank() }
                     _aiPlanState.value = AiPlanState.Success(
                         if (skippedIngredients > 0)
                             "Plan dnia gotowy ($addedMeals posiłków, $skippedIngredients składników pominiętych — brak w bazie)"
