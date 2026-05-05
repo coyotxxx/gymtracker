@@ -27,8 +27,17 @@ data class Recipe(
     val proteinPerServing: Int = 0,
     val carbsPerServing: Int = 0,
     val fatPerServing: Int = 0,
+    val fiberPerServingG: Double = 0.0,
+    /** Liczba porcji w przepisie (1-6). */
+    val servings: Int = 1,
+    /** Surowy tekst składników (z PDF/seed bez mapping na productId). */
+    val rawIngredientsText: String? = null,
     /** true = wygenerowane przez AI, false = user wpisał. */
     val isAiGenerated: Boolean = false,
+    /** "user" / "ai" / "seed_jurkian" / "import". */
+    val source: String = "user",
+    /** "sweet" / "savory" / null (dla obiadów). */
+    val mealCategory: String? = null,
     val isFavorite: Boolean = false,
     val createdAt: Long = System.currentTimeMillis()
 )

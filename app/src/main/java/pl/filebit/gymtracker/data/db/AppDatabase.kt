@@ -101,7 +101,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         MealPrepPlan::class,
         MealPrepStep::class
     ],
-    version = 43,
+    version = 44,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
