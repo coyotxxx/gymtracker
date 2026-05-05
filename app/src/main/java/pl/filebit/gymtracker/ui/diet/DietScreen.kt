@@ -70,6 +70,7 @@ fun DietScreen(
     onOpenAdjustmentHistory: () -> Unit = {},
     onOpenMealPreferences: () -> Unit = {},
     onOpenShoppingList: () -> Unit = {},
+    onEditDietProfile: () -> Unit = {},
     vm: DietViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -211,6 +212,7 @@ fun DietScreen(
         DietSettingsDialog(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
+            onEditProfile = onEditDietProfile,
             onDismiss = { showSettings = false }
         )
     }

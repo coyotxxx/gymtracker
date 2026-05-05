@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.diet
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,6 +43,7 @@ import pl.filebit.gymtracker.ui.theme.SelectableChip
 fun DietSettingsDialog(
     initial: DietConfig,
     onSave: (DietConfig) -> Unit,
+    onEditProfile: () -> Unit = {},
     onDismiss: () -> Unit
 ) {
     var meals by remember { mutableStateOf(initial.mealsPerDay) }
@@ -168,6 +170,31 @@ fun DietSettingsDialog(
                                 fontSize = 14.sp
                             ),
                             color = AccentOrange
+                        )
+                    }
+                }
+
+                // Edytuj profil dietetyczny (alergie, preferencje, budżet, choroby)
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                        .clickable {
+                            onEditProfile()
+                            onDismiss()
+                        }
+                        .padding(12.dp)
+                ) {
+                    Column {
+                        Text(
+                            "🩺 Edytuj profil dietetyczny",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
+                        Text(
+                            "Wiek, wzrost, alergie, preferencje, budżet, stany zdrowia",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = DarkOnSurfaceVariant
                         )
                     }
                 }

@@ -346,6 +346,26 @@ private fun StepPracticalAndMedical(state: DietOnboardingState, vm: DietOnboardi
         }
         ToggleRow("Chcę meal prep (gotowanie raz / 2-3 dni)", state.mealPrepInterested, vm::setMealPrep)
 
+        Spacer(Modifier.height(8.dp))
+        FieldLabel(
+            "Budżet tygodniowy (PLN)",
+            state.weeklyBudgetPln?.let { "$it zł" } ?: "bez limitu"
+        )
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            items(listOf<Int?>(null, 100, 150, 200, 300, 500)) { budget ->
+                SelectableChip(
+                    text = budget?.let { "$it zł" } ?: "bez limitu",
+                    selected = state.weeklyBudgetPln == budget,
+                    onClick = { vm.setBudget(budget) }
+                )
+            }
+        }
+        Text(
+            "AI dobierze produkty pasujące do budżetu (np. kurczak/jaja zamiast łososia/wołowiny w tańszych poziomach)",
+            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+            color = DarkOnSurfaceVariant
+        )
+
         Spacer(Modifier.height(4.dp))
         FieldLabel("Stany zdrowia (wymaga konsultacji ze specjalistą)", "")
         val medFlags = listOf("cukrzyca", "nadciśnienie", "choroby_nerek", "choroby_wątroby", "choroby_serca", "ciąża", "karmienie_piersią", "zaburzenia_odżywiania")

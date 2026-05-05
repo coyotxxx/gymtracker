@@ -483,7 +483,8 @@ fun AppNavigation() {
                     onOpenAdherenceReport = { navController.navigate(Screen.DietAdherenceReport.route) },
                     onOpenAdjustmentHistory = { navController.navigate(Screen.DietAdjustmentHistory.route) },
                     onOpenMealPreferences = { navController.navigate(Screen.MealPreferences.route) },
-                    onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) }
+                    onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) },
+                    onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) }
                 )
             }
             composable(Screen.DietOnboarding.route) {
