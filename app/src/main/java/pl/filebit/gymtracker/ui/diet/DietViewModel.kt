@@ -74,19 +74,30 @@ class DietViewModel @Inject constructor(
     private val _categoryFilter = MutableStateFlow<FoodCategory?>(null)
     private val _selectedDateMs = MutableStateFlow(todayStartMs())
 
+    private data class FilterTuple(
+        val dateMs: Long,
+        val query: String,
+        val cat: FoodCategory?,
+        val config: DietConfig
+    )
+
     val state: StateFlow<DietUiState> = combine(
         _selectedDateMs,
         _searchQuery,
         _categoryFilter,
         dietPrefs.state
     ) { dateMs, query, cat, config ->
-        listOf(dateMs, query, cat, config)
+        FilterTuple(dateMs, query, cat, config)
     }
-        .let { quad ->
+        .let { tuple ->
             @OptIn(ExperimentalCoroutinesApi::class)
-            quad.flatMapLatest { (dateMs, query, cat, config) ->
+            tuple.flatMapLatest { t ->
+                val dateMs = t.dateMs
+                val query = t.query
+                val cat = t.cat
+                val config = t.config
                 combine(
-                    repo.observeMealsForDate(dateMs as Long),
+                    repo.observeMealsForDate(dateMs),
                     repo.observeAllProducts()
                 ) { meals, allProducts ->
                     val productMap = allProducts.associateBy { it.id }
@@ -94,7 +105,7 @@ class DietViewModel @Inject constructor(
                         productMap[e.productId]?.let { p -> e.macrosFor(p) }
                     }
                     val byType = withMacros.groupBy { it.entry.mealType }
-                    val cfg = config as DietConfig
+                    val cfg = config
                     val mealHours = cfg.mealHoursDecimal()
                     // Mapowanie slot index → MealType (max 4 — bo enum ma 4 wartości).
                     // Dla 5-6 posiłków SNACK się powtarza wizualnie ale w bazie wszystkie
@@ -132,8 +143,8 @@ class DietViewModel @Inject constructor(
                     else DailyMacroGoal(2200, 150, 250, 70)
 
                     val filtered = allProducts.let { list ->
-                        val byCat = if (cat == null) list else list.filter { it.category == cat as FoodCategory }
-                        if ((query as String).isBlank()) byCat
+                        val byCat = if (cat == null) list else list.filter { it.category == cat }
+                        if (query.isBlank()) byCat
                         else byCat.filter { it.name.contains(query, ignoreCase = true) }
                     }
 
@@ -145,7 +156,7 @@ class DietViewModel @Inject constructor(
                         groups = groups,
                         productsAll = allProducts,
                         searchQuery = query,
-                        categoryFilter = cat as FoodCategory?,
+                        categoryFilter = cat,
                         filteredProducts = filtered,
                         config = cfg,
                         perMealKcal = if (cfg.mealsPerDay > 0) goal.kcal / cfg.mealsPerDay else 0
