@@ -49,7 +49,9 @@ data class ValidationContext(
     /** Targety kcal per slot — używane do twardej walidacji dystrybucji. Pusta lista = bez per-slot check. */
     val perSlotKcalTargets: List<Int> = emptyList(),
     /** Tolerancja per-slot kcal (np. 0.25 = ±25%). Powyżej → ERROR. */
-    val perSlotKcalTolerance: Double = 0.25
+    val perSlotKcalTolerance: Double = 0.25,
+    /** Czy wymuszać twardy check sumy dnia ±7%. False = warning only (testy unit jednoposiłkowe). */
+    val enforceDailyKcal: Boolean = true
 )
 
 /**
@@ -210,7 +212,7 @@ class AiMealJsonValidator @Inject constructor(
         // === Walidacja sumy dnia — TWARDY WYMÓG (±7% albo retry) ===
         // Powyżej 7% odchylenia = niebezpieczny dodatkowy deficyt/nadwyżka.
         // User ma już zakładany deficyt z TDEE, więc -15% kcal nad target = niebezpieczne -1000 kcal.
-        if (totalKcalReal > 0) {
+        if (totalKcalReal > 0 && ctx.enforceDailyKcal) {
             val kcalDeviation = abs(totalKcalReal - ctx.targetKcal).toDouble() / ctx.targetKcal
             val minDaily = (ctx.targetKcal * 0.93).toInt()
             val maxDaily = (ctx.targetKcal * 1.07).toInt()

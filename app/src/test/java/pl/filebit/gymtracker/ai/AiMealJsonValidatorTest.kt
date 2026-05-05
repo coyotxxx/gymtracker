@@ -42,11 +42,15 @@ class AiMealJsonValidatorTest {
         weightGoalType = WeightGoalType.CUT, goal = TrainingGoal.HYPERTROPHY
     )
 
+    // Testy jednostkowe testują pojedyncze aspekty (constraints, count, gramatura).
+    // Wyłączamy enforceDailyKcal — nowy twardy check ±7% jest pokryty przez
+    // dedykowany test poniżej.
     private fun ctx(
         meals: Int = 3,
         kcal: Int = 2000,
         protein: Int = 160,
-        constraints: List<pl.filebit.gymtracker.data.repository.DietConstraint> = emptyList()
+        constraints: List<pl.filebit.gymtracker.data.repository.DietConstraint> = emptyList(),
+        enforceDailyKcal: Boolean = false
     ) = ValidationContext(
         expectedMealsCount = meals,
         targetKcal = kcal,
@@ -54,7 +58,8 @@ class AiMealJsonValidatorTest {
         perMealProteinMinG = 30,
         maxCookingMinutesPerMeal = 20,
         productsByName = productMap,
-        constraints = constraints
+        constraints = constraints,
+        enforceDailyKcal = enforceDailyKcal
     )
 
     private fun goodPlan() = AiDayPlan(
@@ -320,5 +325,29 @@ class AiMealJsonValidatorTest {
         ))
         val result = validator.validate(plan, ctx(meals = 1))
         assertTrue(result.warnings.any { it.code == "low_protein" })
+    }
+
+    @Test
+    fun `daily kcal under target by 20 percent → ERROR`() {
+        // Plan ma realnie 1404 kcal (z bazy), target 2000 → odchylenie 30% > 7% = ERROR
+        val result = validator.validate(
+            goodPlan(),
+            ctx(kcal = 2000, enforceDailyKcal = true)
+        )
+        assertFalse("isValid powinno być false", result.isValid)
+        assertTrue(
+            "powinien być ERROR daily_kcal_off_target",
+            result.errors.any { it.code == "daily_kcal_off_target" }
+        )
+    }
+
+    @Test
+    fun `daily kcal within 5 percent → no error`() {
+        // goodPlan = 1404 kcal real, target 1400 → odchylenie ~0.3% = OK
+        val result = validator.validate(
+            goodPlan(),
+            ctx(kcal = 1400, enforceDailyKcal = true)
+        )
+        assertTrue("daily kcal blisko targetu — brak ERROR", result.errors.none { it.code == "daily_kcal_off_target" })
     }
 }
