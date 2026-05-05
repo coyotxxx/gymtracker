@@ -32,7 +32,9 @@ class AutoAdjustmentService @Inject constructor(
     private val recoveryRepo: RecoveryRepository,
     private val recoveryAnalyzer: RecoveryAnalyzer,
     private val hydrationRepo: HydrationRepository,
-    private val hydrationCalc: HydrationCalculator
+    private val hydrationCalc: HydrationCalculator,
+    private val activityRepo: ActivityRepository,
+    private val neatAnalyzer: NeatAnalyzer
 ) {
     suspend fun analyzeNow(): AdjustmentDecision {
         val profile = profileRepo.get()
@@ -61,6 +63,12 @@ class AutoAdjustmentService @Inject constructor(
         val weight = profile.bodyweightKg ?: 75.0
         val hydrationAdherence = hydrationRepo.avgAdherenceLastNDays(weight, 14, hydrationCalc)
 
+        // NEAT snapshot z 30 dni kroków
+        val activityLogs = activityRepo.getRecent(days = 30)
+        val recentSteps = activityLogs.sortedByDescending { it.dateMs }.map { it.steps }
+        val baselineSteps = dietProfile?.avgStepsPerDay ?: 0
+        val neat = neatAnalyzer.analyze(recentSteps, baselineSteps)
+
         // Silnik regułowy z pełnym kontekstem
         val raw = CalorieAdjustmentEngine.analyze(
             profile = profile,
@@ -69,7 +77,8 @@ class AutoAdjustmentService @Inject constructor(
             adherence14d = adherence14,
             adherence7d = adherence7,
             recovery = recovery,
-            hydrationAdherencePct = hydrationAdherence
+            hydrationAdherencePct = hydrationAdherence,
+            neat = neat
         )
 
         // SafetyGuard cap

@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.util
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.AdherenceSummary
+import pl.filebit.gymtracker.data.repository.NeatSnapshot
 import pl.filebit.gymtracker.data.repository.RecoverySnapshot
 
 enum class AdjustmentAction {
@@ -57,7 +58,8 @@ object CalorieAdjustmentEngine {
         adherence14d: AdherenceSummary,
         adherence7d: AdherenceSummary,
         recovery: RecoverySnapshot = RecoverySnapshot.EMPTY,
-        hydrationAdherencePct: Int = 100
+        hydrationAdherencePct: Int = 100,
+        neat: NeatSnapshot = NeatSnapshot.EMPTY
     ): AdjustmentDecision {
 
         // === Brak danych → poczekaj ===
@@ -123,6 +125,18 @@ object CalorieAdjustmentEngine {
                     reason = "cut_high_difficulty",
                     explanation = "Średnia 7d: trudność trzymania planu %.1f/5. NIE tnę kcal — uprośćmy plan: prostsze posiłki, mniej składników, krótsze gotowanie.".format(recovery.avgDifficulty ?: 0.0),
                     confidence = Confidence.HIGH
+                )
+            }
+            // NEAT drop: jeśli waga stoi a kroki spadły >30% → NIE TNIJ kcal, najpierw kroki
+            if (neat.hasEnoughData && neat.significantStepsDrop && weightTrend.isStagnationLikely) {
+                return AdjustmentDecision(
+                    action = AdjustmentAction.HOLD,
+                    kcalDeltaProposed = 0,
+                    newKcal = currentKcal,
+                    reason = "cut_neat_drop",
+                    explanation = "Waga stoi, ale Twoje kroki spadły z ${neat.avg30dSteps}/dzień (30d) do ${neat.avg14dSteps}/dzień (14d) — ${100 - neat.avg14dSteps * 100 / neat.avg30dSteps}% mniej. To NEAT spadł, nie metabolizm. Wróć do kroków, nie tnij jedzenia.",
+                    confidence = Confidence.HIGH,
+                    warnings = listOf("Spadek kroków powoduje stagnację — najpierw popraw NEAT, dopiero potem kcal.")
                 )
             }
             // Hydration adherence niski + waga stoi → blokada cięć (zatrzymanie wody maskuje progres)

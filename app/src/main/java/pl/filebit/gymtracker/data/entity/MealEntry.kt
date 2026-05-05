@@ -12,6 +12,12 @@ enum class MealType {
     SNACK         // przekąska (po treningu, drugie śniadanie)
 }
 
+enum class WorkoutContext {
+    NORMAL,       // posiłek niezwiązany z treningiem
+    PRE_WORKOUT,  // 1-2h przed treningiem (szybkie węgle, średnie białko)
+    POST_WORKOUT  // do 1h po treningu (białko + szybkie węgle)
+}
+
 /**
  * Pojedynczy wpis spożycia: produkt × gramatura w danym posiłku danego dnia.
  * Z dnia agregujemy kcal+makro.
@@ -36,5 +42,7 @@ data class MealEntry(
     val productId: Long,
     val grams: Double,
     val notes: String = "",
+    /** Kontekst treningowy posiłku (PRE/POST/NORMAL). Default NORMAL. */
+    val workoutContext: WorkoutContext = WorkoutContext.NORMAL,
     val createdAt: Long = System.currentTimeMillis()
 )

@@ -81,6 +81,10 @@ data class UserDietProfile(
     /** True = user zaakceptował info "skonsultuj ze specjalistą". */
     val medicalAwareness: Boolean = false,
 
+    // === Trening: typowa godzina (do pre/post-WO matching) ===
+    /** Modalna godzina treningu (0-23) — wykrywana z historii lub z onboardingu. Null = nie wiadomo. */
+    val usualTrainingHour: Int? = null,
+
     // === Stan onboardingu ===
     val onboardingCompletedAt: Long? = null,
     val updatedAt: Long = System.currentTimeMillis()

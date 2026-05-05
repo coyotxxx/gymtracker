@@ -84,6 +84,8 @@ fun DietScreen(
     val hydrationLogs by vm.hydrationLogs.collectAsStateWithLifecycle()
     val showHydrationDialog by vm.showHydrationDialog.collectAsStateWithLifecycle()
     val showRecoveryDialog by vm.showRecoveryDialog.collectAsStateWithLifecycle()
+    val stepsToday by vm.stepsToday.collectAsStateWithLifecycle()
+    val showStepsDialog by vm.showStepsDialog.collectAsStateWithLifecycle()
     val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
     val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
@@ -237,6 +239,42 @@ fun DietScreen(
                     }
                 }
 
+                // 🚶 Kroki (NEAT) — szerokość pełna
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(DarkSurface, RoundedCornerShape(12.dp))
+                            .clickable { vm.openStepsDialog() }
+                            .padding(10.dp)
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    "🚶 KROKI DZIŚ",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                        letterSpacing = 1.4.sp
+                                    ),
+                                    color = AccentOrange
+                                )
+                                Text(
+                                    if (stepsToday > 0) "$stepsToday kroków" else "Brak — dotknij by wpisać",
+                                    style = MaterialTheme.typography.bodyMedium.copy(
+                                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                                    ),
+                                    color = DarkOnSurface
+                                )
+                                Text(
+                                    "NEAT — silnik korekt blokuje cięcie kcal gdy kroki spadną",
+                                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                    color = DarkOnSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+
                 // Historia + preferencje smakowe
                 item {
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -369,6 +407,14 @@ fun DietScreen(
             goal = hydrationGoal,
             onDelete = { id -> vm.deleteHydration(id) },
             onDismiss = { vm.dismissHydrationDialog() }
+        )
+    }
+
+    if (showStepsDialog) {
+        StepsDialog(
+            currentSteps = stepsToday,
+            onSave = { steps -> vm.setSteps(steps) },
+            onDismiss = { vm.dismissStepsDialog() }
         )
     }
 

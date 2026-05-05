@@ -66,6 +66,7 @@ object AppModule {
     @Provides fun provideShoppingListDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.ShoppingListDao = db.shoppingListDao()
     @Provides fun provideHydrationLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.HydrationLogDao = db.hydrationLogDao()
     @Provides fun provideRecoveryLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.RecoveryLogDao = db.recoveryLogDao()
+    @Provides fun provideDailyActivityLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DailyActivityLogDao = db.dailyActivityLogDao()
 
     @Provides
     @Singleton

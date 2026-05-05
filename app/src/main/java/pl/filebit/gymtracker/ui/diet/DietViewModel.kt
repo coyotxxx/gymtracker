@@ -107,8 +107,31 @@ class DietViewModel @Inject constructor(
     private val hydrationCalc: pl.filebit.gymtracker.data.repository.HydrationCalculator,
     private val recoveryRepo: pl.filebit.gymtracker.data.repository.RecoveryRepository,
     private val qualityScorer: pl.filebit.gymtracker.data.repository.DailyQualityScorer,
-    private val weeklyBudgetCalc: pl.filebit.gymtracker.data.repository.WeeklyBudgetCalculator
+    private val weeklyBudgetCalc: pl.filebit.gymtracker.data.repository.WeeklyBudgetCalculator,
+    private val activityRepo: pl.filebit.gymtracker.data.repository.ActivityRepository
 ) : ViewModel() {
+
+    // === DAILY ACTIVITY (steps) ===
+    private val _stepsToday = MutableStateFlow(0)
+    val stepsToday: StateFlow<Int> = _stepsToday.asStateFlow()
+
+    private val _showStepsDialog = MutableStateFlow(false)
+    val showStepsDialog: StateFlow<Boolean> = _showStepsDialog.asStateFlow()
+
+    fun openStepsDialog() { _showStepsDialog.value = true }
+    fun dismissStepsDialog() { _showStepsDialog.value = false }
+
+    fun setSteps(steps: Int) {
+        viewModelScope.launch {
+            activityRepo.setSteps(_selectedDateMs.value, steps)
+            refreshSteps()
+        }
+    }
+
+    private suspend fun refreshSteps() {
+        val log = activityRepo.getForDate(_selectedDateMs.value)
+        _stepsToday.value = log?.steps ?: 0
+    }
 
     // === HYDRATION ===
     private val _hydrationToday = MutableStateFlow(0)
@@ -404,6 +427,8 @@ class DietViewModel @Inject constructor(
             runCatching { trainingDietBridge.ensureForToday() }
             // Refresh hydration today
             runCatching { refreshHydration() }
+            // Refresh steps today
+            runCatching { refreshSteps() }
         }
     }
 

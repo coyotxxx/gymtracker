@@ -114,7 +114,8 @@ class DietAiService @Inject constructor(
     private val bodyMeasurementDao: BodyMeasurementDao,
     private val mealFeedbackRepo: pl.filebit.gymtracker.data.repository.MealFeedbackRepository,
     private val constraintResolver: pl.filebit.gymtracker.data.repository.ConstraintResolver,
-    private val validator: AiMealJsonValidator
+    private val validator: AiMealJsonValidator,
+    private val workoutTimeAnalyzer: pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -182,10 +183,31 @@ class DietAiService @Inject constructor(
         val favorites = runCatching { mealFeedbackRepo.getTopFavorites(limit = 10) }.getOrNull().orEmpty()
         val disliked = runCatching { mealFeedbackRepo.getTopDisliked(limit = 5) }.getOrNull().orEmpty()
 
+        // Wykryj typową godzinę treningu (z UserDietProfile lub z historii treningów)
+        val typesForSlotsForCtx = mealTypesForSlots(mealsCount)
+        val trainingHourCandidate = dietProfile?.usualTrainingHour
+            ?: run {
+                val recentStarts = workoutRepo.observeRecent(50).first()
+                    .filter { it.finishedAt != null }
+                    .map { it.startedAt }
+                workoutTimeAnalyzer.detectUsualTrainingHour(recentStarts)
+            }
+        val slotContexts = workoutTimeAnalyzer.classifySlots(
+            mealHoursDecimal = mealHours,
+            mealTypesForSlots = typesForSlotsForCtx,
+            trainingHour = if (isTrainingDay) trainingHourCandidate else null
+        )
+
         val slotLabels = mealHours.indices.map { idx ->
             val time = config.formatTime(mealHours[idx])
             val label = labelForSlot(idx + 1, mealsCount)
-            "$label (godz. $time, ~$perMealKcal kcal, B${perMealProtein}g W${perMealCarbs}g T${perMealFat}g)"
+            val ctx = slotContexts.getOrNull(idx)?.workoutContext
+            val ctxTag = when (ctx) {
+                pl.filebit.gymtracker.data.entity.WorkoutContext.PRE_WORKOUT -> " 🏋 PRE-WORKOUT"
+                pl.filebit.gymtracker.data.entity.WorkoutContext.POST_WORKOUT -> " 🏋 POST-WORKOUT"
+                else -> ""
+            }
+            "$label (godz. $time, ~$perMealKcal kcal, B${perMealProtein}g W${perMealCarbs}g T${perMealFat}g)$ctxTag"
         }
 
         val goalLabel = when (profile.weightGoalType) {
@@ -332,6 +354,33 @@ class DietAiService @Inject constructor(
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
             slotLabels.forEach { append("- $it\n") }
+
+            // PRE/POST workout — szczegółowe instrukcje
+            val hasPreOrPost = slotContexts.any {
+                it.workoutContext != pl.filebit.gymtracker.data.entity.WorkoutContext.NORMAL
+            }
+            if (hasPreOrPost && isTrainingDay) {
+                append("\n=== POSIŁKI WOKÓŁ TRENINGU ===\n")
+                slotContexts.forEachIndexed { idx, ctx ->
+                    when (ctx.workoutContext) {
+                        pl.filebit.gymtracker.data.entity.WorkoutContext.PRE_WORKOUT -> {
+                            append("- Slot ${idx + 1} = PRE-WORKOUT (${config.formatTime(ctx.mealHourDecimal)}):\n")
+                            append("  • SZYBKIE węgle (banan, ryż biały, miód, owsianka błyskawiczna)\n")
+                            append("  • ŚREDNIE białko 20-30g (twaróg/jogurt/kanapka z indykiem)\n")
+                            append("  • MAŁO tłuszczu (gorsze trawienie przed wysiłkiem)\n")
+                            append("  • Brak warzyw kapustnych (gazy)\n")
+                        }
+                        pl.filebit.gymtracker.data.entity.WorkoutContext.POST_WORKOUT -> {
+                            append("- Slot ${idx + 1} = POST-WORKOUT (${config.formatTime(ctx.mealHourDecimal)}):\n")
+                            append("  • DUŻO białka 30-40g (kurczak/ryba/twaróg/WPI)\n")
+                            append("  • SZYBKIE węgle 60-80g (ryż biały, ziemniaki, banany)\n")
+                            append("  • MAŁO tłuszczu (spowalnia anabolizm)\n")
+                            append("  • Anaboliczne okno — nie pomijaj\n")
+                        }
+                        else -> { /* normal */ }
+                    }
+                }
+            }
 
             // === PREFERENCJE USERA (z MealFeedback) ===
             if (favorites.isNotEmpty() || disliked.isNotEmpty()) {
@@ -585,6 +634,15 @@ class DietAiService @Inject constructor(
         total == 5 && slot == 4 -> "Podwieczorek"
         total == 5 -> "Kolacja"
         else -> "Posiłek $slot"
+    }
+
+    private fun mealTypesForSlots(mealsCount: Int): List<MealType> = when (mealsCount) {
+        2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
+        3 -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
+        4 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.DINNER)
+        5 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.DINNER)
+        6 -> listOf(MealType.BREAKFAST, MealType.SNACK, MealType.LUNCH, MealType.SNACK, MealType.SNACK, MealType.DINNER)
+        else -> listOf(MealType.BREAKFAST, MealType.LUNCH, MealType.DINNER)
     }
 
     private fun activityLabel(level: pl.filebit.gymtracker.data.entity.ActivityLevel): String = when (level) {
