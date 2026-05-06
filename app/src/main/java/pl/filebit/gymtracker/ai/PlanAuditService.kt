@@ -25,7 +25,8 @@ class PlanAuditService @Inject constructor(
     private val exerciseDao: ExerciseDao,
     private val profileRepo: UserProfileRepository,
     private val applier: AiPlanApplier,
-    private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao
+    private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
+    private val masterContextBuilder: MasterAiContextBuilder
 ) {
     /**
      * Po audycie — wywołuje AI ponownie z prośbą o WYGENEROWANIE poprawionej
@@ -55,10 +56,23 @@ class PlanAuditService @Inject constructor(
         val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
         val recentFeedback = collectRecentFeedback()
 
+        // === MASTER CONTEXT — pełen obraz dla audytu ===
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
+
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Otrzymałeś plan treningowy oraz audyt z poprzedniej tury. ")
             append("Wygeneruj POPRAWIONĄ wersję planu uwzględniając wszystkie problemy z audytu. ")
             append("Trzymaj styl/cel użytkownika. Używaj WYŁĄCZNIE ćwiczeń z biblioteki poniżej (cytuj nazwy 1:1).\n\n")
+
+            if (masterCtx != null) {
+                append("# KONTEKST OGÓLNY (do tła decyzji)\n")
+                append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
+                append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append("\n")
+            }
             if (recentFeedback.isNotBlank()) {
                 append("# OSTATNIE FEEDBACK Z TRENINGÓW\n")
                 append(recentFeedback)
@@ -196,11 +210,21 @@ class PlanAuditService @Inject constructor(
         val profile = profileRepo.get()
 
         val recentFeedback = collectRecentFeedback()
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Przeanalizuj plan treningowy użytkownika ")
             append("i wskaż mocne strony oraz problemy. Bądź konkretny — cytuj nazwy ćwiczeń ")
             append("i liczby. Bazuj na zasadach: balans push/pull, antagonista wzgl. agonisty, ")
             append("volume 10-20 setów/partia/tydzień (hipertrofia), nie więcej niż 6 ćwiczeń/dzień.\n\n")
+
+            if (masterCtx != null) {
+                append("# KONTEKST OGÓLNY (do tła audytu)\n")
+                append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append("\n")
+            }
             if (recentFeedback.isNotBlank()) {
                 append("# OSTATNIE FEEDBACK Z TRENINGÓW (wellbeing 1-5 + ból)\n")
                 append(recentFeedback)

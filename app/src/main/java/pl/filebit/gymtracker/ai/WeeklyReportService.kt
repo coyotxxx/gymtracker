@@ -62,7 +62,8 @@ class WeeklyReportService @Inject constructor(
     private val planRepo: PlanRepository,
     private val planExerciseDao: PlanExerciseDao,
     private val planSetDao: PlanExerciseSetDao,
-    private val applier: AiPlanApplier
+    private val applier: AiPlanApplier,
+    private val masterContextBuilder: MasterAiContextBuilder
 ) {
     private val jsonCfg = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -293,12 +294,28 @@ class WeeklyReportService @Inject constructor(
         val profile = profileRepo.get()
         val goal = profile.goal.name
 
+        // === MASTER CONTEXT — pełen obraz usera ===
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
+
         // Build prompt
         val withFeedback = workouts.filter { it.wellbeingRating != null || it.painArea != null }
         val prompt = buildString {
             append("Jesteś trenerem personalnym. Przeanalizuj poniższy tydzień treningowy ")
             append("użytkownika i daj rekomendacje na następny tydzień. Bądź konkretny — ")
             append("cytuj liczby z danych. Bazuj na zasadach RP, MASS i Israetela. Polski język.\n\n")
+
+            // Pełen kontekst z całej aplikacji (recovery, sen, NEAT, adherence diety,
+            // faza, PRy) — pozwala AI łączyć kropki: trening + dieta + regeneracja
+            if (masterCtx != null) {
+                append("# KONTEKST OGÓLNY (do tła analizy tygodnia)\n")
+                append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
+                append(MasterAiContextPromptHelper.toWeightTrendSection(masterCtx))
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
+                append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append("\n")
+            }
             if (withFeedback.isNotEmpty()) {
                 append("# FEEDBACK Z TRENINGÓW (samopoczucie 1-5 + ból)\n")
                 val df = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())

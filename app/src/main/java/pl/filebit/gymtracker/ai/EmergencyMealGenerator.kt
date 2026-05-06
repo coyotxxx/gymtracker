@@ -27,7 +27,8 @@ class EmergencyMealGenerator @Inject constructor(
     private val prefs: AiPreferences,
     private val profileRepo: UserProfileRepository,
     private val dietProfileRepo: UserDietProfileRepository,
-    private val dietRepo: DietRepository
+    private val dietRepo: DietRepository,
+    private val masterContextBuilder: MasterAiContextBuilder
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -93,8 +94,19 @@ class EmergencyMealGenerator @Inject constructor(
             MealType.SNACK -> "przekąska"
         }
 
+        // === MASTER CONTEXT (krótka sekcja — nie potrzebujemy pełnej historii) ===
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
+
         val prompt = buildString {
             append("Wygeneruj JEDEN szybki posiłek po polsku — POSIŁEK AWARYJNY.\n\n")
+
+            if (masterCtx != null) {
+                append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
+                append(MasterAiContextPromptHelper.toDietProfileSection(masterCtx))
+                append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
+                append("\n")
+            }
+
             append("=== CEL ===\n")
             append("- Posiłek: $mealLabel\n")
             append("- Kcal docelowo: ~$targetKcal kcal (±15%)\n")

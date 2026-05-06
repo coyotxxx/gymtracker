@@ -24,7 +24,8 @@ import javax.inject.Singleton
 @Singleton
 class AiDecisionExplainer @Inject constructor(
     private val client: AiClient,
-    private val prefs: AiPreferences
+    private val prefs: AiPreferences,
+    private val masterContextBuilder: MasterAiContextBuilder
 ) {
 
     suspend fun rewriteForUser(
@@ -35,6 +36,11 @@ class AiDecisionExplainer @Inject constructor(
         if (!cfg.isConnected) return null  // brak klucza = nie generuj
 
         val displayName = profile.displayName.ifBlank { "Cześć" }
+
+        // Master context — krótka sekcja z trendem + recovery żeby AI tłumaczył
+        // decyzję w pełnym kontekście (np. "tracisz wagę, sen 8h, super!")
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
+
         val prompt = buildString {
             append("Jesteś personalnym dietetykiem-trenerem. Przerób TECHNICZNE wyjaśnienie ")
             append("decyzji silnika regułowego na CIEPŁY, KRÓTKI komunikat dla osoby '${displayName}' po polsku.\n\n")
@@ -45,6 +51,15 @@ class AiDecisionExplainer @Inject constructor(
             append("- Jeśli korekta jest minus kcal — podkreśl że to drobna zmiana, nie panika\n")
             append("- Bez markdown, bez list, bez 'Świetnie!'\n")
             append("- Mów 'Ty' nie 'Pan/Pani'\n\n")
+
+            if (masterCtx != null) {
+                append("KONTEKST OGÓLNY (referencja):\n")
+                append(MasterAiContextPromptHelper.toWeightTrendSection(masterCtx))
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append("\n")
+            }
+
             append("DECYZJA SILNIKA:\n")
             append("Action: ${decision.action.name}\n")
             append("Delta kcal: ${decision.kcalDeltaProposed}\n")
