@@ -74,25 +74,32 @@ class WorkoutPlanAiService @Inject constructor(
             } else favs
         } else available
 
+        Log.d("WorkoutPlanAi", "generate(): pool=${pool.size} favs=${pool.count { it.isFavorite }} cfg.isConnected=${cfg.isConnected} provider=${cfg.provider}")
+
         if (pool.size < 12) {
             return@runCatching GeneratedPlanResult(
                 planId = -1L,
                 planName = "—",
                 daysCount = 0,
                 exercisesPerDay = emptyMap(),
-                warnings = listOf("Za mało ćwiczeń w bazie (mniej niż 12) — nie mogę wygenerować planu."),
+                warnings = listOf("Za mało ćwiczeń w bazie (${pool.size}/12) — nie mogę wygenerować planu."),
                 usedAi = false
             )
         }
 
         if (cfg.isConnected) {
-            // Spróbuj AI; jeśli się nie uda → fallback
+            // Spróbuj AI; jeśli się nie uda → fallback z KONKRETNYM błędem
             val aiResult = runCatching { generateWithAi(daysPerWeek, favoritesOnly, planName, cfg, profile, pool) }
             aiResult.getOrNull()?.let { return@runCatching it }
-            Log.w("WorkoutPlanAi", "AI generation failed, falling back to rule-based: ${aiResult.exceptionOrNull()?.message}")
-            generateRuleBased(daysPerWeek, favoritesOnly, planName, profile, pool, aiFailed = true)
+            val errMsg = aiResult.exceptionOrNull()?.message ?: "nieznany błąd AI"
+            Log.e("WorkoutPlanAi", "AI generation failed: $errMsg", aiResult.exceptionOrNull())
+            // Fallback z DOKŁADNYM komunikatem błędu (nie ukrywamy)
+            val fallback = generateRuleBased(daysPerWeek, favoritesOnly, planName, profile, pool, aiFailed = true)
+            fallback.copy(warnings = listOf("⚠ AI nie zadziałało: $errMsg") + fallback.warnings)
         } else {
-            generateRuleBased(daysPerWeek, favoritesOnly, planName, profile, pool, aiFailed = false)
+            // Klucz nie skonfigurowany — fallback od razu z konkretnym powodem
+            val fallback = generateRuleBased(daysPerWeek, favoritesOnly, planName, profile, pool, aiFailed = false)
+            fallback.copy(warnings = listOf("ℹ️ Brak klucza AI — wpisz go w Profil → Ustawienia AI żeby otrzymać lepszy plan z LLM") + fallback.warnings)
         }
     }
 
@@ -261,14 +268,23 @@ class WorkoutPlanAiService @Inject constructor(
             append("- compound NA POCZĄTKU, izolacje NA KOŃCU\n")
         }
 
-        Log.d("WorkoutPlanAi", "Prompt length: ${prompt.length} chars")
+        Log.d("WorkoutPlanAi", "Prompt length: ${prompt.length} chars, pool=${pool.size} ćwiczeń, days=$daysPerWeek, exp=${profile.experience}, goal=${profile.goal}")
 
-        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt))).getOrThrow()
+        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt))).fold(
+            onSuccess = { it },
+            onFailure = { throw IllegalStateException("Błąd komunikacji z AI: ${it.message}") }
+        )
+        Log.d("WorkoutPlanAi", "AI response (first 500): ${response.take(500)}")
+
         val cleaned = stripJsonFences(response)
-        val parsed = json.decodeFromString<AiPlanResponse>(cleaned)
+        val parsed = try {
+            json.decodeFromString<AiPlanResponse>(cleaned)
+        } catch (e: Exception) {
+            throw IllegalStateException("Nie udało się sparsować odpowiedzi AI (JSON): ${e.message?.take(200)}")
+        }
 
         if (parsed.days.isEmpty()) {
-            throw IllegalStateException("AI nie zwróciło żadnego dnia")
+            throw IllegalStateException("AI zwróciło 0 dni treningowych w JSON")
         }
 
         // === WALIDACJA ===
@@ -324,10 +340,17 @@ class WorkoutPlanAiService @Inject constructor(
             exercisesByDay[day.dayOfWeek] = names
         }
 
-        if (totalAdded < 6) {
+        Log.d("WorkoutPlanAi", "AI parsed: ${parsed.days.size} dni, $totalAdded ćwiczeń dodanych, $skipped pominiętych")
+
+        if (totalAdded < 3) {
             // AI zwróciło prawie nic użytecznego — fallback
             planRepo.deletePlanById(planId)
-            throw IllegalStateException("AI zwróciło tylko $totalAdded użytecznych ćwiczeń ($skipped pominięto). Fallback.")
+            throw IllegalStateException(
+                "AI zwróciło tylko $totalAdded użytecznych ćwiczeń ($skipped pominiętych — brak nazw w bazie)"
+            )
+        }
+        if (skipped > totalAdded) {
+            warnings += "⚠ AI pominęło więcej ćwiczeń ($skipped) niż dodało ($totalAdded) — odpowiedź była niedopasowana do bazy"
         }
 
         return GeneratedPlanResult(
