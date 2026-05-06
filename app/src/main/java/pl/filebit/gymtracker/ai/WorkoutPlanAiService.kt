@@ -41,7 +41,8 @@ class WorkoutPlanAiService @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val profileRepo: UserProfileRepository,
     private val dietProfileRepo: UserDietProfileRepository,
-    private val planRepo: PlanRepository
+    private val planRepo: PlanRepository,
+    private val contextBuilder: MasterAiContextBuilder
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -138,10 +139,12 @@ class WorkoutPlanAiService @Inject constructor(
         profile: UserProfile,
         pool: List<Exercise>
     ): GeneratedPlanResult {
-        val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
         val warnings = mutableListOf<String>()
 
-        // === KONTEKST ===
+        // === MASTER CONTEXT — ten sam co używa DietAi ===
+        val masterCtx = runCatching { contextBuilder.build() }.getOrNull()
+
+        // === POOL DOSTĘPNYCH ĆWICZEŃ ===
         val poolListing = pool.joinToString("\n") { ex ->
             val fav = if (ex.isFavorite) " ⭐" else ""
             "- ${ex.name}$fav (partia: ${ex.primaryMuscle.name}, sprzęt: ${ex.equipment.name})"
@@ -160,29 +163,29 @@ class WorkoutPlanAiService @Inject constructor(
             append("Twoja wiedza: split treningowy, SFR (stimulus-fatigue ratio), progresja, ")
             append("compound vs isolation, ratio objętości per partia. Wygeneruj plan.\n\n")
 
-            // PROFIL
-            append("=== PROFIL UŻYTKOWNIKA ===\n")
-            append("- Imię: ${profile.displayName.ifBlank { "—" }}\n")
-            append("- Płeć: ${if (profile.gender.name == "MALE") "mężczyzna" else "kobieta"}\n")
-            dietProfile?.let { dp ->
-                append("- Wiek: ${dp.ageYears} lat\n")
-                append("- Wzrost: ${dp.heightCm} cm\n")
-            }
-            profile.bodyweightKg?.let { append("- Waga: $it kg\n") }
-            append("- Doświadczenie: ${experienceLabel(profile.experience.name)}\n")
-            append("- Cel treningowy: ${goalLabelLong(profile.goal)}\n")
-            append("- Cel wagowy: ${weightGoalLabel(profile.weightGoalType)}\n")
-            append("- Liczba dni / tydz: $daysPerWeek\n")
-            append("- Czas sesji: ${profile.sessionMinutes} minut\n")
-            append("- Domyślny odpoczynek: ${profile.defaultRestSeconds}s\n")
-            if (profile.injuriesNotes.isNotBlank()) {
-                append("- ⚠ KONTUZJE/UWAGI: ${profile.injuriesNotes}\n")
-                append("  → UNIKAJ ćwiczeń obciążających te partie!\n")
-            }
-            if (profile.availableEquipmentCsv.isNotBlank()) {
-                append("- Dostępny sprzęt: ${profile.availableEquipmentCsv}\n")
+            // === MASTER CONTEXT (jeden obraz dla wszystkich AI) ===
+            if (masterCtx != null) {
+                append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
+                append("- Liczba dni TEGO planu: $daysPerWeek\n")
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
+                append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append("\n→ Plan ma uwzględniać:\n")
+                append("  • Trend wagi (jeśli redukcja → mniej objętości)\n")
+                append("  • Adherence (jeśli niska → uprość plan, mniej ćwiczeń)\n")
+                append("  • Recovery (jeśli słaby sen/wysoki stres → DELOAD)\n")
+                append("  • PRy (rekomendacja wag jako % maksów — np. 70% PR jako start)\n")
             } else {
-                append("- Dostępny sprzęt: pełna siłownia (wszystko)\n")
+                // Fallback gdy MasterContext się nie zbudował
+                append("=== PROFIL ===\n")
+                append("- Płeć: ${if (profile.gender.name == "MALE") "M" else "K"}\n")
+                profile.bodyweightKg?.let { append("- Waga: $it kg\n") }
+                append("- Cel: ${profile.goal.name}\n")
+                append("- Dni: $daysPerWeek\n")
+                if (profile.injuriesNotes.isNotBlank()) {
+                    append("- ⚠ KONTUZJE: ${profile.injuriesNotes}\n")
+                }
             }
 
             // ZASADY METODOLOGICZNE

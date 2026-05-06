@@ -116,7 +116,8 @@ class DietAiService @Inject constructor(
     private val constraintResolver: pl.filebit.gymtracker.data.repository.ConstraintResolver,
     private val validator: AiMealJsonValidator,
     private val workoutTimeAnalyzer: pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer,
-    private val knowledgeRepo: pl.filebit.gymtracker.data.repository.DietaryKnowledgeRepository
+    private val knowledgeRepo: pl.filebit.gymtracker.data.repository.DietaryKnowledgeRepository,
+    private val masterContextBuilder: MasterAiContextBuilder
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
@@ -241,12 +242,25 @@ class DietAiService @Inject constructor(
 
         val today = SimpleDateFormat("EEEE, d MMMM yyyy", Locale("pl", "PL")).format(Date())
 
+        // === MASTER CONTEXT — ten sam co używa WorkoutPlanAi (spójność) ===
+        val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
+
         val prompt = buildString {
             append("Jesteś personalnym dietetykiem-trenerem (jak Israetel/RP Strength). ")
             append("Twoja wiedza: dietetyka sportowa, IF 16/8, wymienniki kaloryczne, makroskładniki. ")
             append("Wygeneruj plan dnia po polsku dla tej osoby:\n\n")
 
             append("DZIŚ: $today\n\n")
+
+            // === KONTEKST OGÓLNY (master) — historie/trendy/PRy/recovery ===
+            if (masterCtx != null) {
+                append("=== KONTEKST OGÓLNY (do tła decyzji) ===\n")
+                append(MasterAiContextPromptHelper.toWeightTrendSection(masterCtx))
+                append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
+                append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
+                append("\n")
+            }
 
             append("=== PROFIL ===\n")
             append("- Imię: ${profile.displayName.ifBlank { "—" }}\n")
