@@ -85,16 +85,14 @@ class MasterAiContextBuilder @Inject constructor(
         }.getOrDefault(0)
 
         // === Faza diety ===
-        val activePhase = runCatching { dietPhaseRepo.getActive() }.getOrNull()
-        val phaseLabel = activePhase?.phaseType?.name ?: when (profile.weightGoalType.name) {
+        val activePhase = runCatching { dietPhaseRepo.getCurrent() }.getOrNull()
+        val phaseLabel = activePhase?.type?.name ?: when (profile.weightGoalType.name) {
             "CUT" -> "CUT"
             "BULK" -> "BULK"
             "MAINTAIN" -> "MAINTAIN"
             else -> "—"
         }
-        val daysInPhase = activePhase?.let {
-            ((System.currentTimeMillis() - it.startDateMs) / (24 * 3600 * 1000L)).toInt().coerceAtLeast(0)
-        } ?: 0
+        val daysInPhase = activePhase?.durationDays() ?: 0
 
         // === Dziś ===
         runCatching { trainingBridge.ensureForToday() }
