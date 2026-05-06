@@ -6,14 +6,15 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
@@ -30,7 +31,10 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 
@@ -59,47 +63,71 @@ fun RecoveryDialog(
     var soreness by remember { mutableStateOf(3) }
     var difficulty by remember { mutableStateOf(3) }
 
-    AlertDialog(
+    Dialog(
         onDismissRequest = onDismiss,
-        title = { Text("🛌 Jak się dziś czujesz?", fontWeight = FontWeight.Bold) },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(0.92f)
+                .padding(8.dp),
+            colors = CardDefaults.cardColors(containerColor = DarkBg),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+                Text(
+                    "🛌 Jak się dziś czujesz?",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(4.dp))
                 Text(
                     "30 sekund — pomoże silnikowi nie ciąć kcal kiedy nie powinien.",
                     style = MaterialTheme.typography.bodySmall,
                     color = DarkOnSurfaceVariant
                 )
-                SleepHoursRow(sleep, onChange = { sleep = it })
-                Rating15Row("😴 Jakość snu", sleepQ, onChange = { sleepQ = it }, low = "źle", high = "świetnie")
-                Rating15Row("😰 Stres", stress, onChange = { stress = it }, low = "spokój", high = "skrajny")
-                Rating15Row("🍽️ Głód", hunger, onChange = { hunger = it }, low = "brak", high = "ciągły")
-                Rating15Row("⚡ Energia", energy, onChange = { energy = it }, low = "wyczerpana", high = "pełna")
-                Rating15Row("💪 Soreness", soreness, onChange = { soreness = it }, low = "brak", high = "ciężki DOMS")
-                Rating15Row("🎯 Trudność diety", difficulty, onChange = { difficulty = it }, low = "łatwo", high = "bardzo trudno")
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                onSave(
-                    sleep.toDouble(),
-                    sleepQ, stress, hunger, energy, soreness, difficulty
-                )
-                onDismiss()
-            }) {
-                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Pomiń", color = DarkOnSurfaceVariant)
+                Spacer(Modifier.height(8.dp))
+
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    SleepHoursRow(sleep, onChange = { sleep = it })
+                    Rating15Row("😴 Jakość snu", sleepQ, onChange = { sleepQ = it }, low = "źle", high = "świetnie")
+                    Rating15Row("😰 Stres", stress, onChange = { stress = it }, low = "spokój", high = "skrajny")
+                    Rating15Row("🍽️ Głód", hunger, onChange = { hunger = it }, low = "brak", high = "ciągły")
+                    Rating15Row("⚡ Energia", energy, onChange = { energy = it }, low = "wyczerpana", high = "pełna")
+                    Rating15Row("💪 Soreness", soreness, onChange = { soreness = it }, low = "brak", high = "ciężki DOMS")
+                    Rating15Row("🎯 Trudność diety", difficulty, onChange = { difficulty = it }, low = "łatwo", high = "bardzo trudno")
+                }
+
+                Spacer(Modifier.height(8.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text("Pomiń", color = DarkOnSurfaceVariant)
+                    }
+                    TextButton(onClick = {
+                        onSave(
+                            sleep.toDouble(),
+                            sleepQ, stress, hunger, energy, soreness, difficulty
+                        )
+                        onDismiss()
+                    }) {
+                        Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                }
             }
         }
-    )
+    }
 }
 
 @Composable

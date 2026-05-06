@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -301,133 +302,159 @@ private fun RecipeDetailDialog(
         mutableStateOf(recipe.mealType)
     }
 
-    AlertDialog(
+    androidx.compose.ui.window.Dialog(
         onDismissRequest = onDismiss,
-        title = {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(recipe.name, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
-                Box(
-                    modifier = Modifier
-                        .clickable(onClick = onToggleFav)
-                        .padding(4.dp)
-                ) {
-                    Text(if (recipe.isFavorite) "❤" else "🤍", style = MaterialTheme.typography.titleLarge)
-                }
-            }
-        },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                // Makro
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
-                        .padding(10.dp)
-                ) {
-                    Column {
-                        Text(
-                            "${recipe.kcalPerServing} kcal · B${recipe.proteinPerServing} W${recipe.carbsPerServing} T${recipe.fatPerServing}",
-                            style = MaterialTheme.typography.bodyMedium.copy(
-                                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
-                            ),
-                            color = AccentOrange
-                        )
-                        Text(
-                            "⏱ ${recipe.prepMinutes} min · ${recipe.servings} ${if (recipe.servings == 1) "porcja" else "porcji"}",
-                            style = MaterialTheme.typography.labelSmall, color = DarkOnSurfaceVariant
-                        )
+        properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        androidx.compose.material3.Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(0.92f)
+                .padding(8.dp),
+            colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = DarkBg),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+                // === HEADER (sticky) ===
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        recipe.name,
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
+                        color = DarkOnSurface,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Box(
+                        modifier = Modifier
+                            .clickable(onClick = onToggleFav)
+                            .padding(4.dp)
+                    ) {
+                        Text(if (recipe.isFavorite) "❤" else "🤍", style = MaterialTheme.typography.titleLarge)
                     }
                 }
-                // Składniki
-                Text("SKŁADNIKI", style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
-                ), color = DarkOnSurfaceVariant)
-                if (!recipe.rawIngredientsText.isNullOrBlank()) {
+
+                Spacer(Modifier.height(8.dp))
+
+                // === SCROLLOWALNA TREŚĆ ===
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    // Makro
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(DarkSurfaceVariant.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                            .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
                             .padding(10.dp)
                     ) {
-                        Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                            recipe.rawIngredientsText.split("\n").filter { it.isNotBlank() }.forEach { line ->
-                                Text("• $line", style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
-                            }
-                        }
-                    }
-                }
-                // Instrukcja
-                Text("PRZYGOTOWANIE", style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
-                ), color = DarkOnSurfaceVariant)
-                Text(
-                    recipe.instructions.ifBlank { "Brak instrukcji." },
-                    style = MaterialTheme.typography.bodySmall, color = DarkOnSurface
-                )
-
-                // Slot picker
-                Text("DODAJ DO SLOTU", style = MaterialTheme.typography.labelSmall.copy(
-                    fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
-                ), color = DarkOnSurfaceVariant)
-                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                    MealType.values().forEach { mt ->
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(34.dp)
-                                .background(
-                                    if (selectedMealType == mt) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant,
-                                    RoundedCornerShape(8.dp)
-                                )
-                                .clickable { selectedMealType = mt },
-                            contentAlignment = Alignment.Center
-                        ) {
+                        Column {
                             Text(
-                                when (mt) {
-                                    MealType.BREAKFAST -> "🌅"
-                                    MealType.LUNCH -> "🍽"
-                                    MealType.DINNER -> "🌙"
-                                    MealType.SNACK -> "🥨"
-                                },
-                                style = MaterialTheme.typography.titleSmall
+                                "${recipe.kcalPerServing} kcal · B${recipe.proteinPerServing} W${recipe.carbsPerServing} T${recipe.fatPerServing}",
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                                ),
+                                color = AccentOrange
+                            )
+                            Text(
+                                "⏱ ${recipe.prepMinutes} min · ${recipe.servings} ${if (recipe.servings == 1) "porcja" else "porcji"}",
+                                style = MaterialTheme.typography.labelSmall, color = DarkOnSurfaceVariant
                             )
                         }
                     }
+                    // Składniki
+                    Text("SKŁADNIKI", style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
+                    ), color = DarkOnSurfaceVariant)
+                    if (!recipe.rawIngredientsText.isNullOrBlank()) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(DarkSurfaceVariant.copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                                .padding(10.dp)
+                        ) {
+                            Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                                recipe.rawIngredientsText.split("\n").filter { it.isNotBlank() }.forEach { line ->
+                                    Text("• $line", style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                                }
+                            }
+                        }
+                    }
+                    // Instrukcja
+                    Text("PRZYGOTOWANIE", style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
+                    ), color = DarkOnSurfaceVariant)
+                    Text(
+                        recipe.instructions.ifBlank { "Brak instrukcji." },
+                        style = MaterialTheme.typography.bodySmall, color = DarkOnSurface
+                    )
+
+                    // Slot picker
+                    Text("DODAJ DO SLOTU", style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
+                    ), color = DarkOnSurfaceVariant)
+                    Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                        MealType.values().forEach { mt ->
+                            Box(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(34.dp)
+                                    .background(
+                                        if (selectedMealType == mt) AccentOrange.copy(alpha = 0.18f) else DarkSurfaceVariant,
+                                        RoundedCornerShape(8.dp)
+                                    )
+                                    .clickable { selectedMealType = mt },
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    when (mt) {
+                                        MealType.BREAKFAST -> "🌅"
+                                        MealType.LUNCH -> "🍽"
+                                        MealType.DINNER -> "🌙"
+                                        MealType.SNACK -> "🥨"
+                                    },
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                            }
+                        }
+                    }
+
+                    // Result
+                    addResult?.let { res ->
+                        val (text, color) = when (res) {
+                            is RecipeBrowserViewModel.AddResult.Success ->
+                                "✓ Dodano ${res.matched}/${res.total} składników do dziennika" to SuccessGreen
+                            is RecipeBrowserViewModel.AddResult.Failed ->
+                                "✗ ${res.reason}" to AccentOrange
+                        }
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(color.copy(alpha = 0.15f), RoundedCornerShape(8.dp))
+                                .padding(10.dp)
+                        ) {
+                            Text(text, style = MaterialTheme.typography.bodySmall, color = color, fontWeight = FontWeight.SemiBold)
+                        }
+                    }
                 }
 
-                // Result
-                addResult?.let { res ->
-                    val (text, color) = when (res) {
-                        is RecipeBrowserViewModel.AddResult.Success ->
-                            "✓ Dodano ${res.matched}/${res.total} składników do dziennika" to SuccessGreen
-                        is RecipeBrowserViewModel.AddResult.Failed ->
-                            "✗ ${res.reason}" to AccentOrange
+                Spacer(Modifier.height(8.dp))
+
+                // === STICKY ACTIONS ===
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text("Zamknij", color = DarkOnSurfaceVariant)
                     }
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(color.copy(alpha = 0.15f), RoundedCornerShape(8.dp))
-                            .padding(10.dp)
-                    ) {
-                        Text(text, style = MaterialTheme.typography.bodySmall, color = color, fontWeight = FontWeight.SemiBold)
+                    TextButton(onClick = { onAddToDiet(selectedMealType) }) {
+                        Text("Dodaj do diety", color = AccentOrange, fontWeight = FontWeight.Bold)
                     }
                 }
             }
-        },
-        confirmButton = {
-            TextButton(onClick = { onAddToDiet(selectedMealType) }) {
-                Text("Dodaj do diety", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Zamknij", color = DarkOnSurfaceVariant)
-            }
         }
-    )
+    }
 }
