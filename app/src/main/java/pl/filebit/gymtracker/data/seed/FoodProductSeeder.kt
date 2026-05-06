@@ -27,11 +27,18 @@ class FoodProductSeeder(
 ) {
     private val json = Json { ignoreUnknownKeys = true }
 
+    /**
+     * Idempotentny seed:
+     *  - jeśli baza pusta → ładuje wszystko
+     *  - jeśli baza ma już produkty → dodaje TYLKO brakujące (po nazwie)
+     *
+     * Dzięki temu update aplikacji z nowymi produktami w JSON nie wymaga
+     * destructive migration i nie kasuje favorites/custom usera.
+     */
     suspend fun seedIfEmpty() {
-        if (dao.count() > 0) return
         val raw = context.assets.open("food_products.json").bufferedReader().use { it.readText() }
         val seedList = json.decodeFromString<List<SeedFoodProduct>>(raw)
-        val entities = seedList.map { s ->
+        val seedEntities = seedList.map { s ->
             FoodProduct(
                 name = s.name,
                 category = runCatching { FoodCategory.valueOf(s.category) }
@@ -48,6 +55,15 @@ class FoodProductSeeder(
                 source = "seed"
             )
         }
-        dao.insertAll(entities)
+
+        if (dao.count() == 0) {
+            dao.insertAll(seedEntities)
+            return
+        }
+
+        // Dodaj tylko brakujące — match po nazwie (case-insensitive)
+        val existingNames = dao.allNamesLower().toHashSet()
+        val newOnly = seedEntities.filter { it.name.lowercase() !in existingNames }
+        if (newOnly.isNotEmpty()) dao.insertAll(newOnly)
     }
 }

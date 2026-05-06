@@ -45,6 +45,9 @@ interface FoodProductDao {
     @Query("SELECT COUNT(*) FROM food_products")
     suspend fun count(): Int
 
+    @Query("SELECT LOWER(name) FROM food_products")
+    suspend fun allNamesLower(): List<String>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(products: List<FoodProduct>): List<Long>
 
