@@ -9,9 +9,16 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Audyt planu treningowego — AI sprawdza balans (push/pull, częstotliwość per
- * partia, volume tygodniowo, brakujące partie, dysbalans antagonistów) i
- * sugeruje konkretne korekty.
+ * Audyt planu treningowego — HYBRYDA algorytm + AI.
+ *
+ * - **Algorytm (Kotlin/PlanAuditEngine)** liczy sety per partia, push/pull,
+ *   ćwiczenia/dzień. Twarde reguły bazujące na konsensusie naukowym
+ *   (Schoenfeld, Helms, RP). Zawsze zwraca te same liczby — koniec halucynacji.
+ * - **AI (LLM)** dostaje gotowy raport algorytmu i tylko PROPONUJE konkretne
+ *   zmiany. Nie liczy, nie ocenia. Tłumaczy DLACZEGO i podaje nazwy ćwiczeń.
+ *
+ * Pętla audyt→popraw ograniczona do **2 iteracji** — żeby AI nie oscylował
+ * w nieskończoność ("klatka mała / klatka duża / klatka mała").
  *
  * BYOK — wymaga klucza API.
  */
@@ -28,18 +35,34 @@ class PlanAuditService @Inject constructor(
     private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
     private val masterContextBuilder: MasterAiContextBuilder
 ) {
+    companion object {
+        /** Max ile razy ten sam plan może być poprawiany cyklem audyt→popraw. */
+        const val MAX_IMPROVE_ITERATIONS = 2
+    }
+
     /**
      * Po audycie — wywołuje AI ponownie z prośbą o WYGENEROWANIE poprawionej
-     * wersji planu. AI dostaje stary plan, wcześniejszą analizę i listę ćwiczeń
-     * z biblioteki — zwraca JSON nowego planu (parsowany przez AiPlanApplier).
+     * wersji planu.
      *
+     * @param iterationCount który to z kolei cykl popraw (1 = pierwsza poprawa).
+     *                        Po przekroczeniu MAX_IMPROVE_ITERATIONS zwraca błąd
+     *                        — gate przeciw nieskończonej pętli.
      * @param userMessage opcjonalne doprecyzowanie ("nie chcę dipów", "dodaj dzień nóg")
      */
     suspend fun improvePlan(
         planId: Long,
         auditMarkdown: String,
-        userMessage: String? = null
+        userMessage: String? = null,
+        iterationCount: Int = 1
     ): Result<AiPlanProposal> {
+        if (iterationCount > MAX_IMPROVE_ITERATIONS) {
+            return Result.failure(IllegalStateException(
+                "Plan był poprawiany $MAX_IMPROVE_ITERATIONS× — to wystarczy. " +
+                "Zaakceptuj aktualną wersję, edytuj ręcznie lub wygeneruj cały plan od zera. " +
+                "Powtarzanie audytu prowadzi do oscylacji (raz 'za mało', raz 'za dużo')."
+            ))
+        }
+
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             return Result.failure(IllegalStateException("AI nie skonfigurowane — wpisz klucz API w Profilu"))
@@ -56,13 +79,24 @@ class PlanAuditService @Inject constructor(
         val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
         val recentFeedback = collectRecentFeedback()
 
-        // === MASTER CONTEXT — pełen obraz dla audytu ===
+        // === DETERMINISTYCZNY RAPORT — nie pozwalamy AI liczyć samodzielnie ===
+        val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
+        val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
+
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
 
         val prompt = buildString {
-            append("Jesteś trenerem personalnym. Otrzymałeś plan treningowy oraz audyt z poprzedniej tury. ")
-            append("Wygeneruj POPRAWIONĄ wersję planu uwzględniając wszystkie problemy z audytu. ")
-            append("Trzymaj styl/cel użytkownika. Używaj WYŁĄCZNIE ćwiczeń z biblioteki poniżej (cytuj nazwy 1:1).\n\n")
+            append("Jesteś trenerem personalnym. Otrzymałeś plan treningowy oraz GOTOWY raport ")
+            append("z deterministycznego algorytmu audytu (liczby SĄ POPRAWNE — nie sprawdzaj ich). ")
+            append("Wygeneruj POPRAWIONĄ wersję planu adresując TYLKO problemy ze WERDYKTU ALGORYTMU. ")
+            append("Używaj WYŁĄCZNIE ćwiczeń z biblioteki poniżej (cytuj nazwy 1:1).\n\n")
+
+            append("⚠️ ITERACJA $iterationCount z max $MAX_IMPROVE_ITERATIONS — ")
+            if (iterationCount == MAX_IMPROVE_ITERATIONS) {
+                append("**TO OSTATNIA POPRAWA**. Zrób ją perfekcyjnie. Po niej plan jest finalny.\n\n")
+            } else {
+                append("zachowaj umiar — drobne poprawki, nie przebudowuj planu od zera.\n\n")
+            }
 
             if (masterCtx != null) {
                 append("# KONTEKST OGÓLNY (do tła decyzji)\n")
@@ -76,9 +110,12 @@ class PlanAuditService @Inject constructor(
             if (recentFeedback.isNotBlank()) {
                 append("# OSTATNIE FEEDBACK Z TRENINGÓW\n")
                 append(recentFeedback)
-                append("Jeśli widać ból w danej partii — zaproponuj LŻEJSZĄ alternatywę dla ćwiczeń ją obciążających. ")
+                append("Jeśli widać ból w danej partii — zaproponuj LŻEJSZĄ alternatywę. ")
                 append("Jeśli wellbeing 1-2 przez >2 sesje — rozważ deload (-10% volume).\n\n")
             }
+
+            // === RAPORT Z ALGORYTMU — gotowe liczby ===
+            append(PlanAuditEngine.toPromptSection(report))
 
             append("# OBECNY PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -90,7 +127,7 @@ class PlanAuditService @Inject constructor(
                 append("## $dayName\n")
                 dayExes.sortedBy { it.orderIndex }.forEach { pe ->
                     val ex = exMap[pe.exerciseId]
-                    val sets = planSetDao.getForPlanExercise(pe.id)
+                    val sets = setsByPe[pe.id] ?: emptyList()
                     val repsRange = if (sets.isNotEmpty()) {
                         val unique = sets.map { it.reps }.distinct().sorted()
                         if (unique.size == 1) "${unique[0]} powt." else "${unique.first()}-${unique.last()} powt."
@@ -102,9 +139,10 @@ class PlanAuditService @Inject constructor(
                 append("\n")
             }
 
-            append("# AUDYT (poprzednia analiza AI)\n")
-            append(auditMarkdown.take(2000))
-            append("\n\n")
+            append("# POPRZEDNI AUDYT (jakościowy — kontekst, nie literalna instrukcja)\n")
+            append(auditMarkdown.take(1500))
+            append("\n\nUWAGA: jeśli poprzedni audyt wskazywał problem KTÓREGO ALGORYTM NIE POTWIERDZA ")
+            append("(patrz WERDYKT ALGORYTMU wyżej), zignoruj go — algorytm jest źródłem prawdy.\n\n")
 
             if (!userMessage.isNullOrBlank()) {
                 append("# DODATKOWE WYMAGANIE UŻYTKOWNIKA\n")
@@ -159,11 +197,6 @@ class PlanAuditService @Inject constructor(
         else -> "Dzień $day"
     }
 
-    /**
-     * Krótkie podsumowanie ostatnich 5 treningów: ich data + wellbeing + painArea
-     * (jeśli zgłoszono). Pusty string jeśli brak feedbacku — wtedy AI nie dostaje
-     * tej sekcji w prompt.
-     */
     private suspend fun collectRecentFeedback(): String {
         val recent = workoutDao.observeAllOnce()
             .filter { it.finishedAt != null }
@@ -188,7 +221,17 @@ class PlanAuditService @Inject constructor(
         }
     }
 
-    suspend fun audit(planId: Long): Result<String> {
+    /**
+     * Audyt planu. **Hybrid: algorytm liczy + ocenia, AI tylko sugeruje zmiany.**
+     *
+     * Gdy algorytm uzna plan za dobry (`isPlanGood = true`) — AI dostaje
+     * instrukcję żeby tylko potwierdzić "plan OK" zamiast wymyślać problemy.
+     *
+     * Zwraca pair: (markdown audytu od AI, raport algorytmu).
+     * VM/UI mogą sprawdzić `report.isPlanGood` żeby wiedzieć czy w ogóle
+     * pokazywać przycisk "Popraw plan".
+     */
+    suspend fun auditWithReport(planId: Long): Result<Pair<String, AuditReport>> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             return Result.failure(IllegalStateException("AI nie skonfigurowane — wpisz klucz API w Profilu"))
@@ -202,24 +245,24 @@ class PlanAuditService @Inject constructor(
             return Result.failure(IllegalStateException("Plan nie ma żadnych ćwiczeń — dodaj choć jedno"))
         }
 
-        // Cache exercise per id
         val exMap = exercises.map { it.exerciseId }.distinct()
             .associateWith { exerciseDao.getById(it) }
-
-        // Per dzień tygodnia
         val byDay = exercises.groupBy { it.dayOfWeek }.toSortedMap()
         val profile = profileRepo.get()
+
+        // === DETERMINISTYCZNY RAPORT — wstrzykujemy w prompt ===
+        val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
+        val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
 
         val recentFeedback = collectRecentFeedback()
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
         val prompt = buildString {
-            append("Jesteś trenerem personalnym. Przeanalizuj plan treningowy użytkownika ")
-            append("i wskaż mocne strony oraz problemy. Bądź konkretny — cytuj nazwy ćwiczeń ")
-            append("i liczby. Bazuj na zasadach: balans push/pull, antagonista wzgl. agonisty, ")
-            append("volume 10-20 setów/partia/tydzień (hipertrofia), nie więcej niż 6 ćwiczeń/dzień.\n\n")
+            append("Jesteś trenerem personalnym. Otrzymałeś plan oraz GOTOWY RAPORT z deterministycznego ")
+            append("algorytmu audytu. Liczby SĄ POPRAWNE — nie weryfikuj, nie przeliczaj. ")
+            append("Twoje zadanie: skomentować raport po polsku i (jeśli są problemy) zaproponować KONKRETNE zmiany.\n\n")
 
             if (masterCtx != null) {
-                append("# KONTEKST OGÓLNY (do tła audytu)\n")
+                append("# KONTEKST OGÓLNY\n")
                 append(MasterAiContextPromptHelper.toBaseProfileSection(masterCtx))
                 append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
                 append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
@@ -227,11 +270,13 @@ class PlanAuditService @Inject constructor(
                 append("\n")
             }
             if (recentFeedback.isNotBlank()) {
-                append("# OSTATNIE FEEDBACK Z TRENINGÓW (wellbeing 1-5 + ból)\n")
+                append("# OSTATNIE FEEDBACK Z TRENINGÓW\n")
                 append(recentFeedback)
-                append("Jeśli widać ból lub niski wellbeing — UWZGLĘDNIJ to w ocenie planu ")
-                append("(czy plan nie nadmiernie obciąża bolącej partii, czy nie wymaga deloadu).\n\n")
+                append("Jeśli widać ból — uwzględnij w komentarzu, nawet jeśli volume w normie.\n\n")
             }
+
+            // === RAPORT ALGORYTMU — gotowe liczby + werdykt ===
+            append(PlanAuditEngine.toPromptSection(report))
 
             append("# PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -240,20 +285,11 @@ class PlanAuditService @Inject constructor(
             append("\n")
 
             byDay.forEach { (day, dayExes) ->
-                val dayName = when (day) {
-                    1 -> "Poniedziałek"
-                    2 -> "Wtorek"
-                    3 -> "Środa"
-                    4 -> "Czwartek"
-                    5 -> "Piątek"
-                    6 -> "Sobota"
-                    7 -> "Niedziela"
-                    else -> "Dzień $day"
-                }
+                val dayName = dayName(day)
                 append("## $dayName (${dayExes.size} ćwiczeń)\n")
                 dayExes.sortedBy { it.orderIndex }.forEach { pe ->
                     val ex = exMap[pe.exerciseId]
-                    val sets = planSetDao.getForPlanExercise(pe.id)
+                    val sets = setsByPe[pe.id] ?: emptyList()
                     val repsRange = if (sets.isNotEmpty()) {
                         val unique = sets.map { it.reps }.distinct().sorted()
                         if (unique.size == 1) "${unique[0]} powt." else "${unique.first()}-${unique.last()} powt."
@@ -266,21 +302,32 @@ class PlanAuditService @Inject constructor(
                 append("\n")
             }
 
-            append("# OCZEKIWANY FORMAT ODPOWIEDZI (Markdown, max 500 słów)\n\n")
-            append("## Mocne strony\n(2-3 punkty z konkretami)\n\n")
-            append("## Problemy do poprawy\n(jeśli są — luki, dysbalans push/pull, brak partii, za dużo ćwiczeń jednego dnia)\n\n")
-            append("## Konkretne sugestie\n")
-            append("(dla każdego problemu — co dodać/wymienić/usunąć, najlepiej z nazwą ćwiczenia)\n\n")
-            append("## Volume per partia (oszacowanie tygodniowe)\n")
-            append("Klatka: X setów (10-20 OK / ZA MAŁO / ZA DUŻO)\n")
-            append("Plecy: ...\n(itd dla głównych partii)\n\n")
-            append("Bądź pomocny, nie laudator. Cytuj liczby.")
+            append("# OCZEKIWANY FORMAT ODPOWIEDZI (Markdown, max 400 słów)\n\n")
+            if (report.isPlanGood) {
+                append("## Plan jest dobry ✅\n")
+                append("(2-3 zdania potwierdzające że plan jest OK, ze wskazaniem 1-2 mocnych stron z konkretnymi liczbami z raportu)\n\n")
+                append("## Drobne sugestie (opcjonalnie, max 1)\n")
+                append("(JEDNA opcjonalna sugestia stylu — np. zmiana kolejności ćwiczeń. NIE wymyślaj problemów których algorytm nie zgłosił.)\n\n")
+                append("**KRYTYCZNE: NIE PISZ że jakaś partia ma 'za mało' lub 'za dużo' setów. Algorytm sprawdził — wszystko jest w normie. **\n")
+            } else {
+                append("## Mocne strony\n(1-2 punkty)\n\n")
+                append("## Konkretne sugestie zmian\n")
+                append("(dla KAŻDEGO problemu z WERDYKTU ALGORYTMU napisz: jakie ćwiczenie dodać/wymienić/usunąć i ile setów)\n\n")
+                append("**KRYTYCZNE: nie wymyślaj problemów których algorytm nie zgłosił. Trzymaj się raportu wyżej. ")
+                append("Jeśli partia ma ✅ OK — NIE komentuj jej.**\n")
+            }
+
+            append("\nBądź pomocny, nie laudator. Cytuj liczby z RAPORTU ALGORYTMU.")
         }
 
         return client.chat(
             cfg,
             listOf(AiMessage(AiRole.USER, prompt)),
             source = "PlanAudit.audit"
-        ).map { it.trim() }
+        ).map { it.trim() to report }
     }
+
+    /** Backward-compatible: stara sygnatura tylko ze stringiem. */
+    suspend fun audit(planId: Long): Result<String> =
+        auditWithReport(planId).map { it.first }
 }

@@ -90,6 +90,9 @@ class PlanEditViewModel @Inject constructor(
     private val _improvementState = MutableStateFlow<PlanImprovementState>(PlanImprovementState.Idle)
     val improvementState: StateFlow<PlanImprovementState> = _improvementState.asStateFlow()
 
+    /** Licznik iteracji audyt→popraw — zapobiega oscylacji AI. Reset przy apply/dismiss. */
+    private var improvementIteration = 0
+
     /** Wywołuje AI z prośbą o wygenerowanie poprawionej wersji planu na podstawie audytu. */
     fun requestImprovement(userMessage: String? = null) {
         if (planId == 0L) {
@@ -101,9 +104,15 @@ class PlanEditViewModel @Inject constructor(
                 _improvementState.value = PlanImprovementState.Error("Brak audytu — najpierw uruchom 'Audyt planu AI'.")
                 return
             }
+        improvementIteration += 1
         _improvementState.value = PlanImprovementState.Loading
         viewModelScope.launch {
-            val result = planAuditService.improvePlan(planId, auditText, userMessage)
+            val result = planAuditService.improvePlan(
+                planId = planId,
+                auditMarkdown = auditText,
+                userMessage = userMessage,
+                iterationCount = improvementIteration
+            )
             result.fold(
                 onSuccess = { proposal ->
                     _improvementState.value = PlanImprovementState.Preview(proposal, auditText)
@@ -130,6 +139,7 @@ class PlanEditViewModel @Inject constructor(
                 onSuccess = { newId ->
                     _improvementState.value = PlanImprovementState.Idle
                     _auditState.value = PlanAuditState.Idle
+                    improvementIteration = 0
                     if (!asCopy) load() // odśwież widok edytowanego planu
                     onDone(newId)
                 },
@@ -142,6 +152,7 @@ class PlanEditViewModel @Inject constructor(
 
     fun dismissImprovement() {
         _improvementState.value = PlanImprovementState.Idle
+        improvementIteration = 0
     }
 
     fun runPlanAudit() {
