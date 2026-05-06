@@ -239,63 +239,61 @@ class AiMealJsonValidator @Inject constructor(
             }
         }
 
-        // === MAKRO DNIA — TWARDY WYMÓG (±20% per makro) ===
-        // Skalowanie gramatur ratuje kcal ale nie naprawia rozkładu — jeśli AI dało za dużo
-        // białkowych a za mało węglowych produktów, factor × wszystko zachowa złą proporcję.
-        // Dlatego makro = ERROR przy >20% odchylenia → retry z konkretną instrukcją zmiany SKŁADU.
+        // === MAKRO DNIA — ASYMETRYCZNE PROGI (filozofia dietetyki sportowej) ===
+        // Cel makro = MINIMUM (białko/tłuszcz) lub przedział tolerancji (węgle).
+        // Israetel/Helms: cel białka to MINIMUM, nadmiar nie szkodzi, NIEDOBÓR szkodzi mięśniom.
+        // Tłuszcz ma min bezpieczeństwa (0.8g/kg) — niedobór = problemy hormonalne.
+        // Węgle = balansujące makro (kcal trafione → węgle automatycznie blisko celu).
         if (ctx.enforceDailyMacros) {
-            val tol = ctx.dailyMacroTolerance
-
-            // Białko: dopuszczamy ±20%, ale pełzanie w GÓRĘ jest też złe (227/150 = +51%)
+            // === BIAŁKO ===
+            // ERROR tylko przy ZNACZĄCYM niedoborze (-15%). Nadmiar OK do +50%, powyżej WARNING.
             if (ctx.targetProteinG > 0) {
-                val dev = abs(totalProteinReal - ctx.targetProteinG).toDouble() / ctx.targetProteinG
-                val minP = (ctx.targetProteinG * (1 - tol)).toInt()
-                val maxP = (ctx.targetProteinG * (1 + tol)).toInt()
-                if (dev > tol) {
-                    val direction = if (totalProteinReal > ctx.targetProteinG) "ZA DUŻO" else "ZA MAŁO"
-                    val action = if (totalProteinReal > ctx.targetProteinG)
-                        "ZMNIEJSZ ilość produktów białkowych (kurczak/twaróg/jajka/ryba) lub zastąp je węglowymi"
-                    else
-                        "DODAJ więcej produktów białkowych (kurczak, twaróg, jaja, ryba, wołowina, tofu)"
+                val minP = (ctx.targetProteinG * 0.85).toInt()
+                if (totalProteinReal < minP) {
                     errors += ValidationIssue(
-                        ValidationSeverity.ERROR, null, "daily_protein_off_target",
-                        "Białko dnia: ${totalProteinReal}g, cel ${ctx.targetProteinG}g — $direction (zakres $minP–$maxP). $action."
+                        ValidationSeverity.ERROR, null, "daily_protein_too_low",
+                        "Białko dnia: ${totalProteinReal}g, cel ≥${ctx.targetProteinG}g (min ${minP}g). " +
+                            "Białko chroni masę mięśniową — niedobór = utrata mięśni. " +
+                            "DODAJ więcej produktów białkowych (kurczak, twaróg, jaja, ryba, wołowina, tofu)."
+                    )
+                } else if (totalProteinReal > ctx.targetProteinG * 1.5) {
+                    warnings += ValidationIssue(
+                        ValidationSeverity.WARNING, null, "daily_protein_high",
+                        "Białko dnia: ${totalProteinReal}g vs cel ${ctx.targetProteinG}g (+${((totalProteinReal - ctx.targetProteinG)*100/ctx.targetProteinG)}%). " +
+                            "Nadmiar nie szkodzi, ale można dodać więcej węgli/tłuszczu zamiast białka."
                     )
                 }
             }
 
-            // Węglowodany
+            // === TŁUSZCZ ===
+            // ERROR tylko przy znaczącym niedoborze (-25%, ≈ poniżej 0.6g/kg dla średniego usera).
+            // Nadmiar do +30% OK, powyżej WARNING.
+            if (ctx.targetFatG > 0) {
+                val minF = (ctx.targetFatG * 0.75).toInt()
+                if (totalFatReal < minF) {
+                    errors += ValidationIssue(
+                        ValidationSeverity.ERROR, null, "daily_fat_too_low",
+                        "Tłuszcz dnia: ${totalFatReal}g, cel ≥${ctx.targetFatG}g (min ${minF}g). " +
+                            "Tłuszcz to hormony i wchłanianie witamin — niedobór szkodzi. " +
+                            "DODAJ zdrowe tłuszcze (oliwa, awokado, orzechy włoskie/migdały, masło orzechowe, jaja)."
+                    )
+                } else if (totalFatReal > ctx.targetFatG * 1.3) {
+                    warnings += ValidationIssue(
+                        ValidationSeverity.WARNING, null, "daily_fat_high",
+                        "Tłuszcz dnia: ${totalFatReal}g vs cel ${ctx.targetFatG}g (+${((totalFatReal - ctx.targetFatG)*100/ctx.targetFatG)}%)."
+                    )
+                }
+            }
+
+            // === WĘGLOWODANY ===
+            // Tylko WARNING — to balansujący makroskładnik. Jeśli kcal trafione i białko/tłuszcz w normach,
+            // węgle są blisko celu z definicji.
             if (ctx.targetCarbsG > 0) {
                 val dev = abs(totalCarbsReal - ctx.targetCarbsG).toDouble() / ctx.targetCarbsG
-                val minC = (ctx.targetCarbsG * (1 - tol)).toInt()
-                val maxC = (ctx.targetCarbsG * (1 + tol)).toInt()
-                if (dev > tol) {
-                    val direction = if (totalCarbsReal > ctx.targetCarbsG) "ZA DUŻO" else "ZA MAŁO"
-                    val action = if (totalCarbsReal > ctx.targetCarbsG)
-                        "ZMNIEJSZ węglowe (ryż/kasze/pieczywo/owoce) lub zastąp warzywami"
-                    else
-                        "DODAJ więcej węglowych (ryż, kasza gryczana, owsianka, makaron pełnoziarnisty, ziemniaki, owoce)"
-                    errors += ValidationIssue(
-                        ValidationSeverity.ERROR, null, "daily_carbs_off_target",
-                        "Węgle dnia: ${totalCarbsReal}g, cel ${ctx.targetCarbsG}g — $direction (zakres $minC–$maxC). $action."
-                    )
-                }
-            }
-
-            // Tłuszcze
-            if (ctx.targetFatG > 0) {
-                val dev = abs(totalFatReal - ctx.targetFatG).toDouble() / ctx.targetFatG
-                val minF = (ctx.targetFatG * (1 - tol)).toInt()
-                val maxF = (ctx.targetFatG * (1 + tol)).toInt()
-                if (dev > tol) {
-                    val direction = if (totalFatReal > ctx.targetFatG) "ZA DUŻO" else "ZA MAŁO"
-                    val action = if (totalFatReal > ctx.targetFatG)
-                        "ZMNIEJSZ tłuste produkty (oliwa, masło, orzechy, awokado, ser żółty)"
-                    else
-                        "DODAJ zdrowe tłuszcze (oliwa, awokado, orzechy włoskie/migdały, masło orzechowe, jaja)"
-                    errors += ValidationIssue(
-                        ValidationSeverity.ERROR, null, "daily_fat_off_target",
-                        "Tłuszcz dnia: ${totalFatReal}g, cel ${ctx.targetFatG}g — $direction (zakres $minF–$maxF). $action."
+                if (dev > 0.30) {
+                    warnings += ValidationIssue(
+                        ValidationSeverity.WARNING, null, "daily_carbs_off",
+                        "Węgle dnia: ${totalCarbsReal}g vs cel ${ctx.targetCarbsG}g (odchylenie ${(dev*100).toInt()}%)."
                     )
                 }
             }

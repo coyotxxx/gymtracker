@@ -354,15 +354,50 @@ class AiMealJsonValidatorTest {
     }
 
     @Test
-    fun `protein over target by 50 percent → ERROR`() {
-        // Plan z dużą ilością białka — kurczak + twaróg gęsto
+    fun `protein WAY too low → ERROR (filozofia: niedobór szkodzi mięśniom)`() {
+        // Mało białka, dużo węgli — niedobór białka
+        val lowProteinPlan = AiDayPlan(
+            meals = listOf(
+                AiMealRecipe(
+                    name = "Czysty ryż",
+                    ingredients = listOf(
+                        AiRecipeIngredient("Ryż basmati gotowany", 800)   // 24g białka
+                    ),
+                    instructions = "...", prepMinutes = 10,
+                    kcal = 968, proteinG = 24, carbsG = 200, fatG = 3
+                )
+            )
+        )
+        val customCtx = ValidationContext(
+            expectedMealsCount = 1,
+            targetKcal = 968,
+            targetProteinG = 100,    // 24g real vs 100g target = -76% niedobór
+            targetCarbsG = 200,
+            targetFatG = 20,
+            perMealProteinMinG = 30,
+            maxCookingMinutesPerMeal = 20,
+            productsByName = productMap,
+            constraints = emptyList(),
+            enforceDailyMacros = true
+        )
+        val result = validator.validate(lowProteinPlan, customCtx)
+        assertFalse(result.isValid)
+        assertTrue(
+            "powinien być ERROR daily_protein_too_low",
+            result.errors.any { it.code == "daily_protein_too_low" }
+        )
+    }
+
+    @Test
+    fun `protein over target by 50 percent → OK (nadmiar białka nie szkodzi)`() {
+        // Filozofia: cel białka to MINIMUM, nadmiar OK
         val highProteinPlan = AiDayPlan(
             meals = listOf(
                 AiMealRecipe(
                     name = "Białkowa bomba",
                     ingredients = listOf(
-                        AiRecipeIngredient("Pierś z kurczaka", 400),  // 124g białka
-                        AiRecipeIngredient("Twaróg chudy", 400)         // 76g białka
+                        AiRecipeIngredient("Pierś z kurczaka", 400),  // 124g
+                        AiRecipeIngredient("Twaróg chudy", 400)         // 76g
                     ),
                     instructions = "...", prepMinutes = 10,
                     kcal = 1060, proteinG = 200, carbsG = 14, fatG = 16
@@ -372,7 +407,7 @@ class AiMealJsonValidatorTest {
         val customCtx = ValidationContext(
             expectedMealsCount = 1,
             targetKcal = 1060,
-            targetProteinG = 130,    // 200g real vs 130g target = +54%
+            targetProteinG = 130,    // 200g vs cel 130 = +54% — nadmiar
             targetCarbsG = 100,
             targetFatG = 30,
             perMealProteinMinG = 30,
@@ -382,45 +417,43 @@ class AiMealJsonValidatorTest {
             enforceDailyMacros = true
         )
         val result = validator.validate(highProteinPlan, customCtx)
-        assertFalse(result.isValid)
-        assertTrue(
-            "powinien być ERROR daily_protein_off_target",
-            result.errors.any { it.code == "daily_protein_off_target" }
-        )
+        assertTrue("nadmiar białka NIE powinien być ERROR", result.errors.none { it.code.contains("protein") })
     }
 
     @Test
-    fun `carbs under target by 30 percent → ERROR`() {
-        val lowCarbPlan = AiDayPlan(
+    fun `fat too low → ERROR (filozofia: hormony, witaminy)`() {
+        // Niedobór tłuszczu — istotny problem hormonalny
+        val noFatPlan = AiDayPlan(
             meals = listOf(
                 AiMealRecipe(
-                    name = "Białko + warzywa",
+                    name = "Beztłuszczowy",
                     ingredients = listOf(
-                        AiRecipeIngredient("Pierś z kurczaka", 300),  // 0g węgli
-                        AiRecipeIngredient("Brokuły gotowane", 200)     // 14g węgli
+                        AiRecipeIngredient("Pierś z kurczaka", 200),
+                        AiRecipeIngredient("Ryż basmati gotowany", 200),
+                        AiRecipeIngredient("Brokuły gotowane", 200)
                     ),
                     instructions = "...", prepMinutes = 10,
-                    kcal = 565, proteinG = 96, carbsG = 14, fatG = 11
+                    kcal = 642, proteinG = 75, carbsG = 64, fatG = 9
                 )
             )
         )
         val customCtx = ValidationContext(
             expectedMealsCount = 1,
-            targetKcal = 565,
-            targetProteinG = 90,
-            targetCarbsG = 80,    // 14g real vs 80g target = -82%
-            targetFatG = 12,
+            targetKcal = 642,
+            targetProteinG = 70,
+            targetCarbsG = 60,
+            targetFatG = 30,    // 9g real vs cel 30 = -70% niedobór
             perMealProteinMinG = 30,
             maxCookingMinutesPerMeal = 20,
             productsByName = productMap,
             constraints = emptyList(),
             enforceDailyMacros = true
         )
-        val result = validator.validate(lowCarbPlan, customCtx)
+        val result = validator.validate(noFatPlan, customCtx)
         assertFalse(result.isValid)
         assertTrue(
-            "powinien być ERROR daily_carbs_off_target",
-            result.errors.any { it.code == "daily_carbs_off_target" }
+            "powinien być ERROR daily_fat_too_low",
+            result.errors.any { it.code == "daily_fat_too_low" }
         )
     }
 }

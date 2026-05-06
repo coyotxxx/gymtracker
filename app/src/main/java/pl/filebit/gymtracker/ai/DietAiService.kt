@@ -357,18 +357,17 @@ class DietAiService @Inject constructor(
                 append("- → Dieta: MNIEJ węgli (-10% vs trening), WIĘCEJ tłuszczu i białka. Niski deficyt OK.\n")
             }
 
-            append("\n=== CEL DZIENNY ⚠ MUSI BYĆ TRAFIONY ⚠ ===\n")
+            append("\n=== CEL DZIENNY ===\n")
+            append("**KCAL — TWARDY (musi być trafiony):**\n")
             append("- **${goal.kcal} kcal** ⚠ Suma posiłków MUSI być ${(goal.kcal*0.93).toInt()}–${(goal.kcal*1.07).toInt()} kcal\n")
-            append("- Deficyt/nadwyżka jest JUŻ WLICZONA w ten cel — NIE odejmuj dodatkowych kalorii!\n")
-            append("- Generowanie planu z 1500-1800 kcal gdy cel to ${goal.kcal} kcal = NIEBEZPIECZNE i zostanie odrzucone\n\n")
-            append("**MAKRO — ZAKRESY DOPUSZCZALNE (±20%, poza tym plan zostanie ODRZUCONY):**\n")
-            append("- Białko: **${goal.proteinG}g** (zakres ${(goal.proteinG*0.8).toInt()}–${(goal.proteinG*1.2).toInt()}g) ⚠ NIE PRZEKRACZAJ!\n")
-            append("- Węglowodany: **${goal.carbsG}g** (zakres ${(goal.carbsG*0.8).toInt()}–${(goal.carbsG*1.2).toInt()}g)\n")
-            append("- Tłuszcz: **${goal.fatG}g** (zakres ${(goal.fatG*0.8).toInt()}–${(goal.fatG*1.2).toInt()}g)\n\n")
-            append("⚠ KLUCZOWA ZASADA: kcal się zgadza, ALE makro też MUSI! ")
-            append("Nie wystarczy mieć 2200 kcal jeśli białko 230g (zamiast 150g) i węgli 170g (zamiast 244g).\n")
-            append("→ Strategia balansowania: jeśli za dużo białka, dodaj więcej WĘGLOWYCH (ryż, kasza, pieczywo, owoce, ziemniaki). ")
-            append("Jeśli za dużo węgli, dodaj białkowe (kurczak, twaróg, jaja). Jeśli za dużo tłuszczu, ZMNIEJSZ orzechy/oliwę/masło.\n")
+            append("- Deficyt/nadwyżka jest JUŻ WLICZONA w ten cel — NIE odejmuj dodatkowych kalorii!\n\n")
+
+            append("**MAKRO — asymetryczne progi (filozofia dietetyki sportowej):**\n")
+            append("- Białko: **min ${goal.proteinG}g** (cel = MINIMUM, nadmiar OK do +50%, niedobór szkodzi mięśniom). " +
+                "Bezwzględny min ${(goal.proteinG*0.85).toInt()}g.\n")
+            append("- Tłuszcz: **min ${(goal.fatG*0.75).toInt()}g, cel ~${goal.fatG}g** (potrzebny dla hormonów; powyżej +30% — bez sensu).\n")
+            append("- Węgle: **~${goal.carbsG}g** (balansujące makro — wypełnij to co zostanie po białku/tłuszczu, ±30% OK).\n\n")
+            append("→ Reguła praktyczna: TRAFI W KCAL → spełnij białko (≥cel) → tłuszcz (≥min) → węgle wezmą resztę.\n")
 
             append("\n=== KONFIGURACJA DNIA ===\n")
             append("- Liczba posiłków: $mealsCount\n")
