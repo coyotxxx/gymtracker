@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -77,6 +78,7 @@ fun GeneratePlanPreferencesDialog(
         Card(
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxHeight(0.92f)
                 .padding(8.dp),
             colors = CardDefaults.cardColors(containerColor = DarkBg),
             shape = RoundedCornerShape(20.dp)
@@ -84,9 +86,14 @@ fun GeneratePlanPreferencesDialog(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
                     .padding(16.dp)
             ) {
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
+                ) {
                 Text(
                     "✨ Jaki plan dnia wygenerować?",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
@@ -188,9 +195,11 @@ fun GeneratePlanPreferencesDialog(
                     )
                 )
 
-                Spacer(Modifier.height(16.dp))
+                }   // koniec scroll-owanego Column
 
-                // === ACTIONS ===
+                Spacer(Modifier.height(8.dp))
+
+                // === ACTIONS (sticky, poza scrollem) ===
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End,

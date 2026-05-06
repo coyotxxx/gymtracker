@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -78,6 +79,7 @@ fun WeeklyKcalDialog(
         Card(
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxHeight(0.92f)
                 .padding(8.dp),
             colors = CardDefaults.cardColors(containerColor = DarkBg),
             shape = RoundedCornerShape(20.dp)
@@ -85,7 +87,6 @@ fun WeeklyKcalDialog(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
                     .padding(16.dp)
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -99,6 +100,12 @@ fun WeeklyKcalDialog(
                         Text("Anuluj", color = DarkOnSurfaceVariant)
                     }
                 }
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
+                ) {
                 Text(
                     "Filozofia: w niektóre dni więcej kcal (refeed po treningu siłowym), " +
                         "w inne mniej (deficyt). Puste pole = domyślne $defaultKcal kcal.",
@@ -108,33 +115,35 @@ fun WeeklyKcalDialog(
 
                 Spacer(Modifier.height(12.dp))
 
-                // SZABLONY
-                Text("Szablony", color = DarkOnSurface, style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
+                // SZABLONY (uniwersalne, bez nazwisk)
+                val refeedKcal = (defaultKcal * 1.10).toInt()
+                val deficitKcal = (defaultKcal * 0.90).toInt()
+                Text("Szybkie szablony", color = DarkOnSurface, style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold))
                 Spacer(Modifier.height(6.dp))
                 Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     TemplateButton(
-                        label = "Wszystkie dni równo (wyczyść override)",
+                        label = "Wszystkie dni równo ($defaultKcal kcal)",
                         onClick = { for (d in 1..7) texts[d] = "" }
                     )
-                    val refeedKcal = (defaultKcal * 1.10).toInt()
-                    val deficitKcal = (defaultKcal * 0.90).toInt()
                     TemplateButton(
-                        label = "Maciej 2022: refeed pn/wt/nd ($refeedKcal), deficyt śr/czw ($deficitKcal)",
+                        label = "Refeed weekendowy: sob+nd $refeedKcal, reszta $defaultKcal",
                         onClick = {
-                            texts[1] = refeedKcal.toString()
-                            texts[2] = refeedKcal.toString()
-                            texts[3] = deficitKcal.toString()
-                            texts[4] = deficitKcal.toString()
-                            texts[5] = ""
-                            texts[6] = ""
+                            for (d in 1..5) texts[d] = ""
+                            texts[6] = refeedKcal.toString()
                             texts[7] = refeedKcal.toString()
                         }
                     )
                     TemplateButton(
-                        label = "Refeed niedziela ($refeedKcal), reszta domyślnie",
+                        label = "Cykliczny: dni treningowe $refeedKcal, reszta $deficitKcal",
                         onClick = {
-                            for (d in 1..6) texts[d] = ""
-                            texts[7] = refeedKcal.toString()
+                            // Zakładamy domyślnie: pn/śr/pt = trening, reszta = rest
+                            texts[1] = refeedKcal.toString()
+                            texts[2] = deficitKcal.toString()
+                            texts[3] = refeedKcal.toString()
+                            texts[4] = deficitKcal.toString()
+                            texts[5] = refeedKcal.toString()
+                            texts[6] = deficitKcal.toString()
+                            texts[7] = deficitKcal.toString()
                         }
                     )
                 }
@@ -184,8 +193,11 @@ fun WeeklyKcalDialog(
                     }
                 }
 
-                Spacer(Modifier.height(16.dp))
+                }   // koniec scroll-owanego Column
 
+                Spacer(Modifier.height(8.dp))
+
+                // ACTIONS sticky
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End,

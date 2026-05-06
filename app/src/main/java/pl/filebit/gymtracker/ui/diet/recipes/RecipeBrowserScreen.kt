@@ -319,7 +319,7 @@ private fun RecipeDetailDialog(
             Column(
                 modifier = Modifier
                     .verticalScroll(rememberScrollState())
-                    .heightIn(max = 480.dp),
+                    .heightIn(max = 600.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 // Makro

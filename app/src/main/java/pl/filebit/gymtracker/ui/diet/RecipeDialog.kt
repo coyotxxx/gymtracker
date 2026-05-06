@@ -45,7 +45,7 @@ fun RecipeDialog(
             Column(
                 modifier = Modifier
                     .verticalScroll(rememberScrollState())
-                    .heightIn(max = 480.dp),
+                    .heightIn(max = 600.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 // Makro / czas
