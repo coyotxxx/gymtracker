@@ -116,7 +116,8 @@ class DietViewModel @Inject constructor(
     private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl,
     private val healthConnect: pl.filebit.gymtracker.data.health.HealthConnectManager,
     private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler,
-    private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository
+    private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository,
+    val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService
 ) : ViewModel() {
 
     // === MEAL CONSUMPTION STATUS ===
@@ -927,6 +928,24 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             repo.deleteMeal(id)
             runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
+        }
+    }
+
+    /** Quick Compose — dodaje wszystkie wybrane produkty (po obliczonych gramach) jako MealEntry tego slotu. */
+    fun quickComposeAdd(mealType: MealType, picks: List<Pair<pl.filebit.gymtracker.data.entity.FoodProduct, Int>>) {
+        viewModelScope.launch {
+            val dateMs = _selectedDateMs.value
+            picks.forEach { (product, grams) ->
+                repo.addMeal(
+                    MealEntry(
+                        dateMs = dateMs,
+                        mealType = mealType,
+                        productId = product.id,
+                        grams = grams.toDouble()
+                    )
+                )
+            }
+            runCatching { adherenceCalc.computeForDate(dateMs) }
         }
     }
 

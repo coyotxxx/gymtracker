@@ -113,6 +113,7 @@ fun DietScreen(
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }
     var showStylePicker by remember { mutableStateOf(false) }
+    var showQuickCompose by remember { mutableStateOf(false) }
     // Stan rozwinięcia sekcji
     val expandedSlots = remember { mutableStateMapOf<MealType, Boolean>() }
     var toolsExpanded by remember { mutableStateOf(false) }
@@ -187,7 +188,8 @@ fun DietScreen(
                         aiLoading = aiState is pl.filebit.gymtracker.ui.diet.AiPlanState.Loading,
                         onSettings = { showSettings = true },
                         onShowBreakdown = { showGoalBreakdown = true },
-                        onGenerateAi = { showStylePicker = true }
+                        onGenerateAi = { showStylePicker = true },
+                        onQuickCompose = { showQuickCompose = true }
                     )
                 }
 
@@ -297,6 +299,26 @@ fun DietScreen(
                 vm.generateAiDayPlan(stylePrefs)
             },
             onDismiss = { showStylePicker = false }
+        )
+    }
+
+    if (showQuickCompose) {
+        // Targety per slot — proste 30/40/30 dla 3 posiłków, lub równo
+        val mealsCount = state.config.mealsPerDay.coerceAtLeast(1)
+        val perMealKcal = state.goal.kcal / mealsCount
+        val perMealProt = state.goal.proteinG / mealsCount
+        val perMealFat = state.goal.fatG / mealsCount
+        QuickComposeDialog(
+            products = state.productsAll,
+            targetKcalPerSlot = perMealKcal,
+            targetProteinPerSlot = perMealProt,
+            targetFatPerSlot = perMealFat,
+            composeService = vm.quickComposeService,
+            onAccept = { mealType, picks ->
+                showQuickCompose = false
+                vm.quickComposeAdd(mealType, picks)
+            },
+            onDismiss = { showQuickCompose = false }
         )
     }
 
@@ -623,7 +645,8 @@ private fun DayHeroCard(
     aiLoading: Boolean,
     onSettings: () -> Unit,
     onShowBreakdown: () -> Unit,
-    onGenerateAi: () -> Unit
+    onGenerateAi: () -> Unit,
+    onQuickCompose: () -> Unit = {}
 ) {
     val kcalNow = state.totals.kcal.roundToInt()
     val kcalGoal = state.goal.kcal
@@ -776,6 +799,31 @@ private fun DayHeroCard(
                             color = AccentOrange
                         )
                     }
+                }
+            }
+
+            Spacer(Modifier.height(8.dp))
+
+            // Button "Quick Compose" — szybki kompozytor (filozofia wymienników Macieja)
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(40.dp)
+                    .background(SuccessGreen.copy(alpha = 0.12f), RoundedCornerShape(12.dp))
+                    .clickable(onClick = onQuickCompose),
+                contentAlignment = Alignment.Center
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "🥗",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        "Skomponuj posiłek (1B + 1W + 1T)",
+                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                        color = SuccessGreen
+                    )
                 }
             }
         }
