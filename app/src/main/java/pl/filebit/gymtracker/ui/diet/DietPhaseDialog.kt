@@ -34,26 +34,27 @@ fun DietPhaseDialog(
     onAccept: () -> Unit,
     onDismiss: () -> Unit
 ) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            val (emoji, label) = when (suggestion.proposedType) {
-                DietPhaseType.DIET_BREAK -> "🛑" to "Diet break — propozycja silnika"
-                DietPhaseType.MAINTENANCE -> "⏸ Maintenance" to "Faza maintenance — propozycja silnika"
-                DietPhaseType.REFEED_DAY -> "🍝" to "Refeed day — propozycja"
-                DietPhaseType.CUT -> "↘️" to "Faza CUT"
-                DietPhaseType.BULK -> "↗️" to "Faza BULK"
-                null -> "" to "Faza"
+    val (emoji, label) = when (suggestion.proposedType) {
+        DietPhaseType.DIET_BREAK -> "🛑" to "Diet break — propozycja silnika"
+        DietPhaseType.MAINTENANCE -> "⏸ Maintenance" to "Faza maintenance — propozycja silnika"
+        DietPhaseType.REFEED_DAY -> "🍝" to "Refeed day — propozycja"
+        DietPhaseType.CUT -> "↘️" to "Faza CUT"
+        DietPhaseType.BULK -> "↗️" to "Faza BULK"
+        null -> "" to "Faza"
+    }
+    ScrollableDialogShell(
+        title = "$emoji $label",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Anuluj", color = DarkOnSurfaceVariant)
             }
-            Text("$emoji $label", fontWeight = FontWeight.Bold)
+            TextButton(onClick = { onAccept(); onDismiss() }) {
+                Text("Akceptuj", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
         },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
+        bodyArrangement = Arrangement.spacedBy(10.dp)
+    ) {
                 if (suggestion.proposedType != null) {
                     Box(
                         modifier = Modifier
@@ -89,17 +90,5 @@ fun DietPhaseDialog(
                         color = DarkOnSurfaceVariant
                     )
                 }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = { onAccept(); onDismiss() }) {
-                Text("Akceptuj", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Anuluj", color = DarkOnSurfaceVariant)
-            }
-        }
-    )
+    }
 }

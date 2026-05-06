@@ -45,16 +45,23 @@ fun StepsDialog(
 ) {
     var text by remember { mutableStateOf(if (currentSteps > 0) currentSteps.toString() else "") }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("🚶 Kroki dziś", fontWeight = FontWeight.Bold) },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
+    ScrollableDialogShell(
+        title = "🚶 Kroki dziś",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Anuluj", color = DarkOnSurfaceVariant)
+            }
+            TextButton(onClick = {
+                val n = text.toIntOrNull()?.coerceIn(0, 100000) ?: 0
+                onSave(n)
+                onDismiss()
+            }) {
+                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
+        },
+        bodyArrangement = Arrangement.spacedBy(10.dp)
+    ) {
                 Text(
                     "Wpisz ile zrobiłeś dziś kroków. Możesz odczytać z telefonu (Google Fit / Krokomierz).",
                     style = MaterialTheme.typography.bodySmall,
@@ -96,21 +103,5 @@ fun StepsDialog(
                         color = DarkOnSurfaceVariant
                     )
                 }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                val n = text.toIntOrNull()?.coerceIn(0, 100000) ?: 0
-                onSave(n)
-                onDismiss()
-            }) {
-                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Anuluj", color = DarkOnSurfaceVariant)
-            }
-        }
-    )
+    }
 }

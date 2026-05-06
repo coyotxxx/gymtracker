@@ -60,16 +60,23 @@ fun GoalBreakdownDialog(
     val livePreviewKcal = br.tdeeKcal + deficitPick.toInt()
     val livePreviewWeeklyKg = -deficitPick.toInt() / 1100.0
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text("Twój dzienny cel — breakdown", fontWeight = FontWeight.Bold)
+    ScrollableDialogShell(
+        title = "Twój dzienny cel — breakdown",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Zamknij", color = DarkOnSurfaceVariant)
+            }
+            TextButton(onClick = {
+                val newConfig = config.copy(customDeficit = deficitPick.toInt())
+                onSave(newConfig)
+                onDismiss()
+            }) {
+                Text("Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
         },
-        text = {
-            Column(
-                modifier = Modifier.verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
+        bodyArrangement = Arrangement.spacedBy(14.dp)
+    ) {
                 // Krok 1: TDEE
                 BreakdownStep(
                     number = "1",
@@ -282,23 +289,7 @@ fun GoalBreakdownDialog(
                         }
                     }
                 }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                val newConfig = config.copy(customDeficit = deficitPick.toInt())
-                onSave(newConfig)
-                onDismiss()
-            }) {
-                Text("Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Zamknij", color = DarkOnSurfaceVariant)
-            }
-        }
-    )
+    }
 }
 
 @Composable

@@ -42,42 +42,31 @@ fun AlternativesDialog(
     onSelect: (AiAlternative) -> Unit,
     onDismiss: () -> Unit
 ) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text(
-                "🔁 Inne opcje na ${mealTypeLabel(mealType).lowercase()}",
-                fontWeight = FontWeight.Bold
-            )
-        },
-        text = {
-            if (alternatives.isEmpty()) {
-                Text(
-                    "AI nie wygenerowało alternatyw dla tego slotu.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-            } else {
-                LazyColumn(
-                    modifier = Modifier.heightIn(max = 380.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(alternatives.size) { idx ->
-                        AlternativeCard(alternatives[idx]) {
-                            onSelect(it)
-                            onDismiss()
-                        }
-                    }
-                }
-            }
-        },
-        confirmButton = {
+    ScrollableDialogShell(
+        title = "🔁 Inne opcje na ${mealTypeLabel(mealType).lowercase()}",
+        onDismiss = onDismiss,
+        actions = {
             TextButton(onClick = onDismiss) {
                 Text("Anuluj", color = DarkOnSurfaceVariant)
             }
         },
-        dismissButton = null
-    )
+        bodyArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        if (alternatives.isEmpty()) {
+            Text(
+                "AI nie wygenerowało alternatyw dla tego slotu.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+        } else {
+            alternatives.forEach { alt ->
+                AlternativeCard(alt) {
+                    onSelect(it)
+                    onDismiss()
+                }
+            }
+        }
+    }
 }
 
 @Composable

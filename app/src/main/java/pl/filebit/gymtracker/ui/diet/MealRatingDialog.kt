@@ -51,21 +51,25 @@ fun MealRatingDialog(
     val ratings = remember { mutableStateMapOf<String, Int>() }
     var savedCount by remember { mutableStateOf(0) }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text(
-                "Oceń wygenerowany plan",
-                fontWeight = FontWeight.Bold
-            )
+    ScrollableDialogShell(
+        title = "Oceń wygenerowany plan",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Pomiń", color = DarkOnSurfaceVariant)
+            }
+            TextButton(onClick = {
+                ratings.forEach { (name, rating) ->
+                    if (rating in 1..5) onRate(name, rating)
+                }
+                savedCount = ratings.count { it.value in 1..5 }
+                onDismiss()
+            }) {
+                Text("Zapisz oceny", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
         },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
+        bodyArrangement = Arrangement.spacedBy(10.dp)
+    ) {
                 Text(
                     "AI wygenerował te potrawy. Oceń (1-5★) — pomoże generować lepiej kolejnym razem. Pomiń jeśli nie chcesz oceniać.",
                     style = MaterialTheme.typography.bodySmall,
@@ -104,25 +108,7 @@ fun MealRatingDialog(
                         }
                     }
                 }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = {
-                ratings.forEach { (name, rating) ->
-                    if (rating in 1..5) onRate(name, rating)
-                }
-                savedCount = ratings.count { it.value in 1..5 }
-                onDismiss()
-            }) {
-                Text("Zapisz oceny", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Pomiń", color = DarkOnSurfaceVariant)
-            }
-        }
-    )
+    }
 }
 
 @Composable

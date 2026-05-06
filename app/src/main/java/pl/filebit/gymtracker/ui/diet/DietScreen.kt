@@ -425,52 +425,48 @@ substitutePrompt?.let { sp ->
             )
         }
         is DietViewModel.EmergencyMealState.Success -> {
-            androidx.compose.material3.AlertDialog(
-                onDismissRequest = { vm.dismissEmergencyMeal() },
-                title = { Text("${s.modeLabel}: ${s.recipe.name}", fontWeight = FontWeight.Bold) },
-                text = {
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(8.dp))
-                                .padding(10.dp)
-                        ) {
-                            Text(
-                                "${s.recipe.kcal} kcal · B${s.recipe.proteinG} W${s.recipe.carbsG} T${s.recipe.fatG} · ⏱ ${s.recipe.prepMinutes} min",
-                                style = MaterialTheme.typography.bodyMedium.copy(
-                                    fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
-                                ),
-                                color = AccentOrange
-                            )
-                        }
-                        Text("SKŁADNIKI", style = MaterialTheme.typography.labelSmall.copy(
-                            fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
-                        ), color = DarkOnSurfaceVariant)
-                        s.recipe.ingredients.forEach { ing ->
-                            Text("• ${ing.productName} — ${ing.grams} g",
-                                style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
-                        }
-                        if (s.recipe.instructions.isNotBlank()) {
-                            Text("PRZEPIS", style = MaterialTheme.typography.labelSmall.copy(
-                                fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
-                            ), color = DarkOnSurfaceVariant)
-                            Text(s.recipe.instructions,
-                                style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
-                        }
+            ScrollableDialogShell(
+                title = "${s.modeLabel}: ${s.recipe.name}",
+                onDismiss = { vm.dismissEmergencyMeal() },
+                actions = {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissEmergencyMeal() }) {
+                        Text("Anuluj", color = DarkOnSurfaceVariant)
                     }
-                },
-                confirmButton = {
                     androidx.compose.material3.TextButton(onClick = { vm.acceptEmergencyMeal() }) {
                         Text("Dodaj do diety", color = AccentOrange, fontWeight = FontWeight.Bold)
                     }
                 },
-                dismissButton = {
-                    androidx.compose.material3.TextButton(onClick = { vm.dismissEmergencyMeal() }) {
-                        Text("Anuluj", color = DarkOnSurfaceVariant)
-                    }
+                bodyArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(8.dp))
+                        .padding(10.dp)
+                ) {
+                    Text(
+                        "${s.recipe.kcal} kcal · B${s.recipe.proteinG} W${s.recipe.carbsG} T${s.recipe.fatG} · ⏱ ${s.recipe.prepMinutes} min",
+                        style = MaterialTheme.typography.bodyMedium.copy(
+                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                        ),
+                        color = AccentOrange
+                    )
                 }
-            )
+                Text("SKŁADNIKI", style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
+                ), color = DarkOnSurfaceVariant)
+                s.recipe.ingredients.forEach { ing ->
+                    Text("• ${ing.productName} — ${ing.grams} g",
+                        style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                }
+                if (s.recipe.instructions.isNotBlank()) {
+                    Text("PRZEPIS", style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold, fontSize = 10.sp, letterSpacing = 1.4.sp
+                    ), color = DarkOnSurfaceVariant)
+                    Text(s.recipe.instructions,
+                        style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                }
+            }
         }
         is DietViewModel.EmergencyMealState.Saved -> {
             androidx.compose.material3.AlertDialog(
@@ -512,24 +508,34 @@ substitutePrompt?.let { sp ->
 
     adjustmentPreview?.let { preview ->
         val decision = preview.decision
-        androidx.compose.material3.AlertDialog(
-            onDismissRequest = { vm.dismissAdjustmentPreview() },
-            title = {
-                Text(
-                    when (decision.action) {
-                        pl.filebit.gymtracker.util.AdjustmentAction.HOLD -> "✓ Trzymaj plan"
-                        pl.filebit.gymtracker.util.AdjustmentAction.DECREASE_KCAL -> "↓ Sugestia: obniż kcal"
-                        pl.filebit.gymtracker.util.AdjustmentAction.INCREASE_KCAL -> "↑ Sugestia: dodaj kcal"
-                        pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: deload"
-                        pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan"
-                        pl.filebit.gymtracker.util.AdjustmentAction.REFEED_DAY -> "🍝 Refeed day (+kcal)"
-                        pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA -> "📊 Brak danych"
-                    },
-                    fontWeight = FontWeight.Bold
-                )
+        val titleText = when (decision.action) {
+            pl.filebit.gymtracker.util.AdjustmentAction.HOLD -> "✓ Trzymaj plan"
+            pl.filebit.gymtracker.util.AdjustmentAction.DECREASE_KCAL -> "↓ Sugestia: obniż kcal"
+            pl.filebit.gymtracker.util.AdjustmentAction.INCREASE_KCAL -> "↑ Sugestia: dodaj kcal"
+            pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: deload"
+            pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan"
+            pl.filebit.gymtracker.util.AdjustmentAction.REFEED_DAY -> "🍝 Refeed day (+kcal)"
+            pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA -> "📊 Brak danych"
+        }
+        ScrollableDialogShell(
+            title = titleText,
+            onDismiss = { vm.dismissAdjustmentPreview() },
+            actions = {
+                if (decision.kcalDeltaProposed != 0) {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
+                        Text("Anuluj", color = DarkOnSurfaceVariant)
+                    }
+                    androidx.compose.material3.TextButton(onClick = { vm.applyAdjustment() }) {
+                        Text("✓ Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
+                    }
+                } else {
+                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
+                        Text("Rozumiem", color = AccentOrange)
+                    }
+                }
             },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            bodyArrangement = Arrangement.spacedBy(10.dp)
+        ) {
                     if (decision.kcalDeltaProposed != 0) {
                         Text(
                             "${if (decision.kcalDeltaProposed > 0) "+" else ""}${decision.kcalDeltaProposed} kcal → ${decision.newKcal} kcal/dziennie",
@@ -580,29 +586,7 @@ substitutePrompt?.let { sp ->
                         style = MaterialTheme.typography.labelSmall,
                         color = DarkOnSurfaceVariant
                     )
-                }
-            },
-            confirmButton = {
-                if (decision.kcalDeltaProposed != 0) {
-                    androidx.compose.material3.TextButton(
-                        onClick = { vm.applyAdjustment() }
-                    ) {
-                        Text("✓ Zastosuj", color = AccentOrange, fontWeight = FontWeight.Bold)
-                    }
-                } else {
-                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
-                        Text("Rozumiem", color = AccentOrange)
-                    }
-                }
-            },
-            dismissButton = {
-                if (decision.kcalDeltaProposed != 0) {
-                    androidx.compose.material3.TextButton(onClick = { vm.dismissAdjustmentPreview() }) {
-                        Text("Anuluj", color = DarkOnSurfaceVariant)
-                    }
-                }
-            }
-        )
+        }
     }
 
     when (val s = aiState) {

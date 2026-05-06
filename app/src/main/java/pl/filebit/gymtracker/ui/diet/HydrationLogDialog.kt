@@ -54,66 +54,58 @@ fun HydrationLogDialog(
     onDelete: (Long) -> Unit,
     onDismiss: () -> Unit
 ) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("💧 Woda dzisiaj", fontWeight = FontWeight.Bold) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
-                        .padding(10.dp)
-                ) {
-                    Column {
-                        Text(
-                            "$consumedToday / $goal ml",
-                            style = MaterialTheme.typography.titleMedium.copy(
-                                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
-                            ),
-                            color = AccentOrange
-                        )
-                        val pct = if (goal > 0) (consumedToday * 100 / goal) else 0
-                        Text(
-                            "$pct% celu dziennego",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = DarkOnSurfaceVariant
-                        )
-                    }
-                }
-
-                if (logs.isEmpty()) {
-                    Text(
-                        "Brak wpisów dzisiaj. Użyj +250 / +500 / +750 ml żeby dodać.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = DarkOnSurfaceVariant
-                    )
-                } else {
-                    Text(
-                        "Wpisy:",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
-                        ),
-                        color = DarkOnSurfaceVariant
-                    )
-                    LazyColumn(
-                        modifier = Modifier.heightIn(max = 280.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        items(logs.size) { idx ->
-                            val log = logs[idx]
-                            HydrationRow(log = log, onDelete = { onDelete(log.id) })
-                        }
-                    }
-                }
-            }
-        },
-        confirmButton = {
+    ScrollableDialogShell(
+        title = "💧 Woda dzisiaj",
+        onDismiss = onDismiss,
+        actions = {
             TextButton(onClick = onDismiss) {
                 Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
+        },
+        bodyArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
+                .padding(10.dp)
+        ) {
+            Column {
+                Text(
+                    "$consumedToday / $goal ml",
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold
+                    ),
+                    color = AccentOrange
+                )
+                val pct = if (goal > 0) (consumedToday * 100 / goal) else 0
+                Text(
+                    "$pct% celu dziennego",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
         }
-    )
+
+        if (logs.isEmpty()) {
+            Text(
+                "Brak wpisów dzisiaj. Użyj +250 / +500 / +750 ml żeby dodać.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+        } else {
+            Text(
+                "Wpisy:",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            logs.forEach { log ->
+                HydrationRow(log = log, onDelete = { onDelete(log.id) })
+            }
+        }
+    }
 }
 
 @Composable

@@ -69,16 +69,19 @@ fun DietSettingsDialog(
     )
     val mealHours = previewConfig.mealHoursDecimal()
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("Konfiguracja diety", fontWeight = FontWeight.Bold) },
-        text = {
-            Column(
-                modifier = Modifier
-                    .verticalScroll(rememberScrollState())
-                    .heightIn(max = 600.dp),
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
+    ScrollableDialogShell(
+        title = "Konfiguracja diety",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Anuluj", color = DarkOnSurfaceVariant)
+            }
+            TextButton(onClick = { onSave(previewConfig); onDismiss() }) {
+                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
+        },
+        bodyArrangement = Arrangement.spacedBy(14.dp)
+    ) {
                 // Liczba posiłków
                 SettingSection("Liczba posiłków: $meals") {
                     Slider(
@@ -269,19 +272,7 @@ fun DietSettingsDialog(
                         )
                     }
                 }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = { onSave(previewConfig); onDismiss() }) {
-                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Anuluj", color = DarkOnSurfaceVariant)
-            }
-        }
-    )
+    }
 }
 
 @Composable

@@ -59,66 +59,56 @@ fun SubstituteDialog(
     onSelect: (FoodProduct, Double) -> Unit,
     onDismiss: () -> Unit
 ) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text("🔄 Zamień produkt", fontWeight = FontWeight.Bold)
-        },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(
-                    "Zamiast: ${original.name} (${originalGrams.roundToInt()} g)",
-                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                    color = DarkOnSurface
-                )
-
-                // Toggle tolerancji
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    ToleranceChip("Ścisłe ±10%", tolerance == MatchTolerance.STRICT) {
-                        onToleranceChange(MatchTolerance.STRICT)
-                    }
-                    ToleranceChip("Luźne ±25%", tolerance == MatchTolerance.LOOSE) {
-                        onToleranceChange(MatchTolerance.LOOSE)
-                    }
-                    ToleranceChip("Tylko kcal", tolerance == MatchTolerance.KCAL_ONLY) {
-                        onToleranceChange(MatchTolerance.KCAL_ONLY)
-                    }
-                }
-
-                if (substitutes.isEmpty()) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 24.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            "Brak pasujących zamienników w tej tolerancji.\nSpróbuj 'Luźne' albo 'Tylko kcal'.",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = DarkOnSurfaceVariant
-                        )
-                    }
-                } else {
-                    LazyColumn(
-                        modifier = Modifier.heightIn(max = 360.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        items(substitutes.size) { idx ->
-                            SubstituteCard(substitutes[idx]) {
-                                onSelect(it.product, it.suggestedGrams)
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        confirmButton = {
+    ScrollableDialogShell(
+        title = "🔄 Zamień produkt",
+        onDismiss = onDismiss,
+        actions = {
             TextButton(onClick = onDismiss) {
                 Text("Anuluj", color = DarkOnSurfaceVariant)
             }
         },
-        dismissButton = null
-    )
+        bodyArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Text(
+            "Zamiast: ${original.name} (${originalGrams.roundToInt()} g)",
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = DarkOnSurface
+        )
+
+        // Toggle tolerancji
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            ToleranceChip("Ścisłe ±10%", tolerance == MatchTolerance.STRICT) {
+                onToleranceChange(MatchTolerance.STRICT)
+            }
+            ToleranceChip("Luźne ±25%", tolerance == MatchTolerance.LOOSE) {
+                onToleranceChange(MatchTolerance.LOOSE)
+            }
+            ToleranceChip("Tylko kcal", tolerance == MatchTolerance.KCAL_ONLY) {
+                onToleranceChange(MatchTolerance.KCAL_ONLY)
+            }
+        }
+
+        if (substitutes.isEmpty()) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 24.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "Brak pasujących zamienników w tej tolerancji.\nSpróbuj 'Luźne' albo 'Tylko kcal'.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        } else {
+            substitutes.forEach { sub ->
+                SubstituteCard(sub) {
+                    onSelect(it.product, it.suggestedGrams)
+                }
+            }
+        }
+    }
 }
 
 @Composable
