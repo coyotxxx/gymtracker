@@ -125,7 +125,8 @@ class RpeOpinionService @Inject constructor(
 
         return client.chat(
             cfg,
-            listOf(AiMessage(AiRole.USER, prompt))
+            listOf(AiMessage(AiRole.USER, prompt)),
+            source = "RpeOpinion"
         ).map { raw ->
             val text = raw.trim()
             val (kg, reps) = RpeOpinionService.parseSuggestion(text)

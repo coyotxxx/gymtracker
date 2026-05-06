@@ -142,7 +142,8 @@ class PlanAuditService @Inject constructor(
 
         val response = client.chat(
             cfg,
-            listOf(AiMessage(AiRole.USER, prompt))
+            listOf(AiMessage(AiRole.USER, prompt)),
+            source = "PlanAudit.improve"
         ).getOrElse { return Result.failure(it) }
 
         val proposal = applier.extractProposal(response)
@@ -278,7 +279,8 @@ class PlanAuditService @Inject constructor(
 
         return client.chat(
             cfg,
-            listOf(AiMessage(AiRole.USER, prompt))
+            listOf(AiMessage(AiRole.USER, prompt)),
+            source = "PlanAudit.audit"
         ).map { it.trim() }
     }
 }

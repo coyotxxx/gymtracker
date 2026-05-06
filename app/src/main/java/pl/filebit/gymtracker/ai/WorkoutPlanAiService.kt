@@ -292,7 +292,7 @@ class WorkoutPlanAiService @Inject constructor(
         var currentMessages = listOf(AiMessage(AiRole.USER, prompt))
 
         for (attempt in 1..2) {
-            val response = client.chat(cfg, currentMessages).fold(
+            val response = client.chat(cfg, currentMessages, source = "WorkoutPlanAi").fold(
                 onSuccess = { it },
                 onFailure = { throw IllegalStateException("Błąd komunikacji z AI: ${it.message}") }
             )

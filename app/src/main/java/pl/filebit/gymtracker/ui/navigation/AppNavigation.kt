@@ -464,7 +464,13 @@ fun AppNavigation() {
                 )
             }
             composable(Screen.AiSettings.route) {
-                AiSettingsScreen(onBack = { navController.popBackStack() })
+                AiSettingsScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenAiLog = { navController.navigate(Screen.AiLog.route) }
+                )
+            }
+            composable(Screen.AiLog.route) {
+                pl.filebit.gymtracker.ui.ai.AiLogScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })

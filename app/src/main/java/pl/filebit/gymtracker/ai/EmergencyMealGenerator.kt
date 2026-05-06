@@ -147,7 +147,7 @@ class EmergencyMealGenerator @Inject constructor(
             """.trimIndent())
         }
 
-        val result = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)))
+        val result = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)), source = "EmergencyMeal")
         return result.mapCatching { raw ->
             val cleaned = stripJsonFences(raw)
             json.decodeFromString<AiMealRecipe>(cleaned)

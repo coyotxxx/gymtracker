@@ -85,7 +85,7 @@ class FoodImageAnalyzer @Inject constructor(
             """.trimIndent())
         }
 
-        val result = client.chatWithImage(cfg, base64, mimeType, prompt)
+        val result = client.chatWithImage(cfg, base64, mimeType, prompt, source = "FoodImageAnalyzer")
         return result.mapCatching { raw ->
             val cleaned = stripJsonFences(raw)
             json.decodeFromString<FoodAnalysis>(cleaned)

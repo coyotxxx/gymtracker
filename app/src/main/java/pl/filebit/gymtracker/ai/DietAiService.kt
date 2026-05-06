@@ -697,7 +697,7 @@ class DietAiService @Inject constructor(
         var currentPrompt = prompt
 
         while (attempt <= 3) {
-            val callResult = client.chat(cfg, listOf(AiMessage(AiRole.USER, currentPrompt)))
+            val callResult = client.chat(cfg, listOf(AiMessage(AiRole.USER, currentPrompt)), source = "DietAi")
             if (callResult.isFailure) return callResult.map { GeneratedDayPlan(emptyList()) }
 
             lastRaw = callResult.getOrThrow()

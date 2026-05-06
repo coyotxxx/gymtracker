@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -82,6 +83,7 @@ private val OPENAI_MODELS = listOf(
 @Composable
 fun AiSettingsScreen(
     onBack: () -> Unit,
+    onOpenAiLog: () -> Unit = {},
     vm: AiSettingsViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -254,6 +256,37 @@ fun AiSettingsScreen(
                         color = MaterialTheme.colorScheme.tertiary,
                         style = MaterialTheme.typography.bodyMedium
                     )
+                }
+            }
+
+            // Logi AI — diagnostyka, podgląd wszystkich pytań i odpowiedzi
+            item {
+                Card(
+                    onClick = onOpenAiLog,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("📋", style = MaterialTheme.typography.titleLarge)
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                "Logi AI",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                "Pełen prompt + odpowiedź każdego wywołania AI. Toggle on/off + diagnostyka błędów.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Text("›", style = MaterialTheme.typography.titleLarge)
+                    }
                 }
             }
 

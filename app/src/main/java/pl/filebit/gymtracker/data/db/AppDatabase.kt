@@ -102,9 +102,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         DietPhase::class,
         MealPrepPlan::class,
         MealPrepStep::class,
-        MealConsumption::class
+        MealConsumption::class,
+        pl.filebit.gymtracker.data.entity.AiLog::class
     ],
-    version = 48,
+    version = 49,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -140,6 +141,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun dietPhaseDao(): DietPhaseDao
     abstract fun mealPrepPlanDao(): MealPrepPlanDao
     abstract fun mealConsumptionDao(): MealConsumptionDao
+    abstract fun aiLogDao(): pl.filebit.gymtracker.data.db.dao.AiLogDao
 
     companion object {
         const val NAME = "gymtracker.db"

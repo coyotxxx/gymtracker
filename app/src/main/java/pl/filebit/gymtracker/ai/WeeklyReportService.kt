@@ -205,7 +205,7 @@ class WeeklyReportService @Inject constructor(
             append("Bez komentarzy poza blokiem JSON.")
         }
 
-        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)))
+        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)), source = "WeeklyReport.improvePlan")
             .getOrElse { return Result.failure(it) }
         val proposal = applier.extractProposal(response)
             ?: return Result.failure(IllegalStateException("AI nie zwrócił poprawnego JSON. Spróbuj ponownie."))
@@ -387,7 +387,8 @@ class WeeklyReportService @Inject constructor(
 
         val result = client.chat(
             cfg,
-            listOf(AiMessage(AiRole.USER, prompt))
+            listOf(AiMessage(AiRole.USER, prompt)),
+            source = "WeeklyReport.generate"
         )
         // Po sukcesie — zapisz do bazy żeby user miał historię
         return result.onSuccess { content ->

@@ -84,6 +84,12 @@ class AiPreferences @Inject constructor(
         secure.edit().clear().apply()
     }
 
+    /** Logging — toggle on/off. Default OFF (privacy). */
+    fun isLoggingEnabled(): Boolean = plain.getBoolean(KEY_LOGGING_ENABLED, false)
+    fun setLoggingEnabled(enabled: Boolean) {
+        plain.edit().putBoolean(KEY_LOGGING_ENABLED, enabled).apply()
+    }
+
     fun defaultModelFor(p: AiProvider) = when (p) {
         AiProvider.ANTHROPIC -> AiConfig.DEFAULT_ANTHROPIC
         AiProvider.OPENAI -> AiConfig.DEFAULT_OPENAI
@@ -94,5 +100,6 @@ class AiPreferences @Inject constructor(
         private const val KEY_API_KEY = "api_key"
         private const val KEY_MODEL = "model"
         private const val KEY_SYSTEM_PROMPT = "system_prompt"
+        private const val KEY_LOGGING_ENABLED = "logging_enabled"
     }
 }

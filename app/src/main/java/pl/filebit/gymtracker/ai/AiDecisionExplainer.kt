@@ -71,7 +71,7 @@ class AiDecisionExplainer @Inject constructor(
             }
         }
 
-        val result = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)))
+        val result = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)), source = "DecisionExplainer")
         return result.fold(
             onSuccess = { raw -> raw.trim().lines().joinToString(" ").take(400) },
             onFailure = {

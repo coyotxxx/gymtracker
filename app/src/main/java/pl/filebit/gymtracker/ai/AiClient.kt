@@ -25,9 +25,13 @@ enum class AiRole { USER, ASSISTANT }
 data class AiMessage(val role: AiRole, val content: String)
 
 interface AiClient {
+    /**
+     * @param source nazwa wywołującego service (np. "DietAi", "WorkoutPlanAi") — używana do logowania
+     */
     suspend fun chat(
         config: AiConfig,
-        messages: List<AiMessage>
+        messages: List<AiMessage>,
+        source: String = "unknown"
     ): Result<String>
 
     /**
@@ -39,14 +43,18 @@ interface AiClient {
         config: AiConfig,
         imageBase64: String,
         mimeType: String,           // np. "image/jpeg"
-        userPrompt: String
+        userPrompt: String,
+        source: String = "unknown"
     ): Result<String>
 
     suspend fun ping(config: AiConfig): Result<Unit>
 }
 
 @Singleton
-class AiClientImpl @Inject constructor() : AiClient {
+class AiClientImpl @Inject constructor(
+    private val aiLogRepo: pl.filebit.gymtracker.data.repository.AiLogRepository,
+    private val aiPrefs: AiPreferences
+) : AiClient {
 
     private val http = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
@@ -55,6 +63,33 @@ class AiClientImpl @Inject constructor() : AiClient {
         .build()
 
     private val json = Json { ignoreUnknownKeys = true }
+
+    /** Zapisuje wywołanie AI do bazy jeśli logging enabled. */
+    private suspend fun logCall(
+        source: String,
+        config: AiConfig,
+        prompt: String,
+        response: String,
+        success: Boolean,
+        errorMsg: String?,
+        durationMs: Long
+    ) {
+        if (!aiPrefs.isLoggingEnabled()) return
+        runCatching {
+            aiLogRepo.log(
+                pl.filebit.gymtracker.data.entity.AiLog(
+                    service = source,
+                    provider = config.provider.name,
+                    model = config.model,
+                    fullPrompt = prompt,
+                    fullResponse = response,
+                    success = success,
+                    errorMessage = errorMsg,
+                    durationMs = durationMs
+                )
+            )
+        }
+    }
 
     /**
      * Sanityzacja klucza API: usuwa białe znaki + trailing kropki/przecinki/cudzysłowy
@@ -65,21 +100,35 @@ class AiClientImpl @Inject constructor() : AiClient {
 
     override suspend fun chat(
         config: AiConfig,
-        messages: List<AiMessage>
+        messages: List<AiMessage>,
+        source: String
     ): Result<String> = withContext(Dispatchers.IO) {
-        runCatching {
+        val startMs = System.currentTimeMillis()
+        val combinedPrompt = messages.joinToString("\n\n") { "[${it.role.name}]\n${it.content}" }
+        val result = runCatching {
             when (config.provider) {
                 AiProvider.ANTHROPIC -> callAnthropic(config, messages)
                 AiProvider.OPENAI -> callOpenAi(config, messages)
             }
         }
+        val duration = System.currentTimeMillis() - startMs
+        result.fold(
+            onSuccess = { response ->
+                logCall(source, config, combinedPrompt, response, true, null, duration)
+            },
+            onFailure = { err ->
+                logCall(source, config, combinedPrompt, "", false, err.message, duration)
+            }
+        )
+        result
     }
 
     override suspend fun ping(config: AiConfig): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
             chat(
                 config,
-                listOf(AiMessage(AiRole.USER, "Odpowiedz jednym słowem: pong"))
+                listOf(AiMessage(AiRole.USER, "Odpowiedz jednym słowem: pong")),
+                source = "Ping"
             ).getOrThrow()
             Unit
         }
@@ -89,14 +138,23 @@ class AiClientImpl @Inject constructor() : AiClient {
         config: AiConfig,
         imageBase64: String,
         mimeType: String,
-        userPrompt: String
+        userPrompt: String,
+        source: String
     ): Result<String> = withContext(Dispatchers.IO) {
-        runCatching {
+        val startMs = System.currentTimeMillis()
+        val result = runCatching {
             when (config.provider) {
                 AiProvider.ANTHROPIC -> callAnthropicWithImage(config, imageBase64, mimeType, userPrompt)
                 AiProvider.OPENAI -> callOpenAiWithImage(config, imageBase64, mimeType, userPrompt)
             }
         }
+        val duration = System.currentTimeMillis() - startMs
+        val promptForLog = "[IMG ${mimeType}]\n[USER]\n$userPrompt"
+        result.fold(
+            onSuccess = { response -> logCall(source, config, promptForLog, response, true, null, duration) },
+            onFailure = { err -> logCall(source, config, promptForLog, "", false, err.message, duration) }
+        )
+        result
     }
 
     private fun callAnthropicWithImage(

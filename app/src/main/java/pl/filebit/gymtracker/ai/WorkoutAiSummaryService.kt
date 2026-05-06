@@ -80,7 +80,8 @@ class WorkoutAiSummaryService @Inject constructor(
 
         val result = client.chat(
             cfg,
-            listOf(AiMessage(AiRole.USER, prompt))
+            listOf(AiMessage(AiRole.USER, prompt)),
+            source = "WorkoutSummary"
         )
         return result.mapCatching { raw ->
             val cleaned = raw.trim().lines().joinToString(" ").take(400)
