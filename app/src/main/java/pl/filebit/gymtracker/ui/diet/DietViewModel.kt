@@ -990,10 +990,7 @@ class DietViewModel @Inject constructor(
                         .filterValues { it.isNotEmpty() }
                     // Recipe per slot — do wyświetlenia "Pokaż przepis"
                     _slotRecipes.value = plan.mealsForSlots.associate { (type, recipe) -> type to recipe }
-                    // Zaproponuj userowi ocenę wygenerowanych potraw (MealFeedback)
-                    _aiPlanRatingPrompt.value = plan.mealsForSlots
-                        .map { (type, recipe) -> type to recipe.name }
-                        .filter { it.second.isNotBlank() }
+                    // (Ocena posiłków przeniesiona — pojawi się PO zjedzeniu, nie zaraz po wygenerowaniu)
                     _aiPlanState.value = AiPlanState.Success(
                         if (skippedIngredients > 0)
                             "Plan dnia gotowy ($addedMeals posiłków, $skippedIngredients składników pominiętych — brak w bazie)"

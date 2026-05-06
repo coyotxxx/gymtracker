@@ -82,7 +82,6 @@ fun DietScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     val aiState by vm.aiPlanState.collectAsStateWithLifecycle()
     val adjustmentPreview by vm.adjustmentPreview.collectAsStateWithLifecycle()
-    val ratingPrompt by vm.aiPlanRatingPrompt.collectAsStateWithLifecycle()
     val substitutePrompt by vm.substitutePrompt.collectAsStateWithLifecycle()
     val slotAlternatives by vm.slotAlternatives.collectAsStateWithLifecycle()
     val hydrationToday by vm.hydrationToday.collectAsStateWithLifecycle()
@@ -289,15 +288,7 @@ fun DietScreen(
         )
     }
 
-    if (ratingPrompt.isNotEmpty()) {
-        MealRatingDialog(
-            items = ratingPrompt,
-            onRate = { name, rating -> vm.rateMeal(name, rating) },
-            onDismiss = { vm.consumeAiPlanRatingPrompt() }
-        )
-    }
-
-    substitutePrompt?.let { sp ->
+substitutePrompt?.let { sp ->
         SubstituteDialog(
             original = sp.original,
             originalGrams = sp.entry.grams,
