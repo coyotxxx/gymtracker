@@ -174,6 +174,14 @@ fun TrainingSettingsScreen(
                 )
             }
 
+            // Mój sprzęt — używany przez AI generator planu
+            item {
+                EquipmentPickerCard(
+                    selectedCsv = draft.availableEquipmentCsv,
+                    onChange = { draft = draft.copy(availableEquipmentCsv = it) }
+                )
+            }
+
             // Czas sesji
             item {
                 TsNumberFieldCard(
@@ -388,4 +396,139 @@ private fun experienceLabel(e: ExperienceLevel): String = when (e) {
     ExperienceLevel.BEGINNER -> "Początkujący"
     ExperienceLevel.INTERMEDIATE -> "Średnio zaawansowany"
     ExperienceLevel.ADVANCED -> "Zaawansowany"
+}
+
+@Composable
+private fun EquipmentPickerCard(
+    selectedCsv: String,
+    onChange: (String) -> Unit
+) {
+    val selected = remember(selectedCsv) {
+        selectedCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+    }
+    val all = pl.filebit.gymtracker.data.entity.Equipment.values()
+        .filter { it != pl.filebit.gymtracker.data.entity.Equipment.OTHER }
+
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutline
+        ),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "🏋 Mój sprzęt",
+                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Zaznacz co masz dostępne. AI będzie generował plany TYLKO z ćwiczeń " +
+                    "na tym sprzęcie. Pusty wybór = brak ograniczeń (siłownia z pełnym wyposażeniem).",
+                style = MaterialTheme.typography.bodySmall,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(10.dp))
+            // Grid 2 kolumny
+            val pairs = all.chunked(2)
+            for (pair in pairs) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    pair.forEach { eq ->
+                        val isSelected = eq.name in selected
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .background(
+                                    if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
+                                    else pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
+                                    RoundedCornerShape(8.dp)
+                                )
+                                .clickable {
+                                    val newSet = if (isSelected) selected - eq.name else selected + eq.name
+                                    onChange(newSet.joinToString(","))
+                                }
+                                .padding(horizontal = 10.dp, vertical = 8.dp)
+                        ) {
+                            Text(
+                                "${if (isSelected) "✓" else "○"} ${equipmentLabel(eq)}",
+                                style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                                       else pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                            )
+                        }
+                    }
+                    if (pair.size == 1) {
+                        Spacer(Modifier.weight(1f))
+                    }
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            // Quick presets
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
+                        .clickable {
+                            // Maciej preset (z xlsx)
+                            onChange("BARBELL,DUMBBELLS,BODYWEIGHT,CABLE")
+                        }
+                        .padding(8.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "🏠 Dom (sztanga + sztangielki + drążek)",
+                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
+                    )
+                }
+            }
+            Row(modifier = Modifier.padding(top = 4.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
+                        .clickable { onChange("BODYWEIGHT") }
+                        .padding(8.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "💪 Tylko masa ciała",
+                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
+                    )
+                }
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
+                        .clickable { onChange("") }
+                        .padding(8.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "🏋 Pełna siłownia (wszystko)",
+                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
+                    )
+                }
+            }
+        }
+    }
+}
+
+private fun equipmentLabel(e: pl.filebit.gymtracker.data.entity.Equipment): String = when (e) {
+    pl.filebit.gymtracker.data.entity.Equipment.BARBELL -> "Sztanga olimpijska"
+    pl.filebit.gymtracker.data.entity.Equipment.DUMBBELLS -> "Sztangielki / hantle"
+    pl.filebit.gymtracker.data.entity.Equipment.MACHINE -> "Maszyny siłowe"
+    pl.filebit.gymtracker.data.entity.Equipment.CABLE -> "Wyciąg / linki"
+    pl.filebit.gymtracker.data.entity.Equipment.BODYWEIGHT -> "Masa ciała / drążek"
+    pl.filebit.gymtracker.data.entity.Equipment.OTHER -> "Inne"
 }
