@@ -60,6 +60,7 @@ fun ExerciseLibraryScreen(
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
     val equipmentFilter by vm.equipmentFilter.collectAsStateWithLifecycle()
+    val favoritesOnly by vm.favoritesOnly.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
     val prs by vm.prs.collectAsStateWithLifecycle()
 
@@ -109,6 +110,31 @@ fun ExerciseLibraryScreen(
         )
 
         Spacer(Modifier.height(12.dp))
+
+        // Filtr "❤ tylko ulubione"
+        Box(
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+                .background(
+                    if (favoritesOnly) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                    RoundedCornerShape(50)
+                )
+                .border(
+                    1.dp,
+                    if (favoritesOnly) AccentOrange else DarkOutlineSoft,
+                    RoundedCornerShape(50)
+                )
+                .clickable { vm.setFavoritesOnly(!favoritesOnly) }
+                .padding(horizontal = 14.dp, vertical = 8.dp)
+        ) {
+            Text(
+                if (favoritesOnly) "❤ Tylko ulubione (${exercises.size})" else "🤍 Wszystkie / pokaż ulubione",
+                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+                color = if (favoritesOnly) AccentOrange else DarkOnSurface
+            )
+        }
+
+        Spacer(Modifier.height(10.dp))
 
         // Filtr po partii mięśniowej
         FilterSectionLabel("Partia")
@@ -185,7 +211,9 @@ fun ExerciseLibraryScreen(
                     equipment = ex.equipment.displayName(),
                     prMaxWeight = pr?.maxWeightKg,
                     prReps = pr?.repsAtMaxWeight,
-                    onClick = { onOpenDetail(ex.id) }
+                    isFavorite = ex.isFavorite,
+                    onClick = { onOpenDetail(ex.id) },
+                    onToggleFavorite = { vm.toggleFavorite(ex.id, !ex.isFavorite) }
                 )
             }
         }
@@ -229,7 +257,9 @@ private fun ExerciseRow(
     equipment: String,
     prMaxWeight: Double?,
     prReps: Int?,
-    onClick: () -> Unit
+    isFavorite: Boolean = false,
+    onClick: () -> Unit,
+    onToggleFavorite: (() -> Unit)? = null
 ) {
     Card(
         onClick = onClick,
@@ -329,6 +359,21 @@ private fun ExerciseRow(
                             color = AccentOrange
                         )
                     }
+                }
+            }
+            // Heart icon (toggle favorite)
+            if (onToggleFavorite != null) {
+                Spacer(Modifier.width(8.dp))
+                Box(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .clickable { onToggleFavorite() },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        if (isFavorite) "❤" else "🤍",
+                        style = MaterialTheme.typography.titleMedium
+                    )
                 }
             }
         }

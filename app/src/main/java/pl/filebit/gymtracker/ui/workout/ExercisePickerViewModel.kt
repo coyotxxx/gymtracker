@@ -40,6 +40,9 @@ class ExercisePickerViewModel @Inject constructor(
     private val _equipmentFilter = MutableStateFlow<Equipment?>(null)
     val equipmentFilter: StateFlow<Equipment?> = _equipmentFilter.asStateFlow()
 
+    private val _favoritesOnly = MutableStateFlow(false)
+    val favoritesOnly: StateFlow<Boolean> = _favoritesOnly.asStateFlow()
+
     @OptIn(ExperimentalCoroutinesApi::class)
     private val baseExercises: kotlinx.coroutines.flow.Flow<List<Exercise>> = _query.flatMapLatest { q ->
         if (q.isBlank()) {
@@ -54,14 +57,21 @@ class ExercisePickerViewModel @Inject constructor(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val exercises: StateFlow<List<Exercise>> = _equipmentFilter.flatMapLatest { eq ->
-        baseExercises.flatMapLatest { list ->
-            flowOf(if (eq == null) list else list.filter { it.equipment == eq })
+        _favoritesOnly.flatMapLatest { favOnly ->
+            baseExercises.flatMapLatest { list ->
+                flowOf(
+                    list
+                        .let { if (eq == null) it else it.filter { ex -> ex.equipment == eq } }
+                        .let { if (favOnly) it.filter { ex -> ex.isFavorite } else it }
+                )
+            }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     fun setQuery(q: String) { _query.value = q }
     fun setMuscleFilter(m: MuscleGroup?) { _muscleFilter.value = m }
     fun setEquipmentFilter(e: Equipment?) { _equipmentFilter.value = e }
+    fun setFavoritesOnly(v: Boolean) { _favoritesOnly.value = v }
 
     /**
      * Tryb WORKOUT: dodaje pierwszą serię z auto-fill z ostatniej sesji

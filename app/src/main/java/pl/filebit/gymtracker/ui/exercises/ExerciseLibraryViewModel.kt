@@ -34,6 +34,9 @@ class ExerciseLibraryViewModel @Inject constructor(
     private val _equipmentFilter = MutableStateFlow<Equipment?>(null)
     val equipmentFilter: StateFlow<Equipment?> = _equipmentFilter.asStateFlow()
 
+    private val _favoritesOnly = MutableStateFlow(false)
+    val favoritesOnly: StateFlow<Boolean> = _favoritesOnly.asStateFlow()
+
     private val _prs = MutableStateFlow<Map<Long, ExercisePr>>(emptyMap())
     val prs: StateFlow<Map<Long, ExercisePr>> = _prs.asStateFlow()
 
@@ -51,10 +54,14 @@ class ExerciseLibraryViewModel @Inject constructor(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val exercises: StateFlow<List<Exercise>> = _equipmentFilter.flatMapLatest { eq ->
-        baseExercises.flatMapLatest { list ->
-            kotlinx.coroutines.flow.flowOf(
-                if (eq == null) list else list.filter { it.equipment == eq }
-            )
+        _favoritesOnly.flatMapLatest { favOnly ->
+            baseExercises.flatMapLatest { list ->
+                kotlinx.coroutines.flow.flowOf(
+                    list
+                        .let { if (eq == null) it else it.filter { ex -> ex.equipment == eq } }
+                        .let { if (favOnly) it.filter { ex -> ex.isFavorite } else it }
+                )
+            }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
@@ -74,11 +81,18 @@ class ExerciseLibraryViewModel @Inject constructor(
     fun setQuery(q: String) { _query.value = q }
     fun setMuscleFilter(m: MuscleGroup?) { _muscleFilter.value = m }
     fun setEquipmentFilter(e: Equipment?) { _equipmentFilter.value = e }
+    fun setFavoritesOnly(v: Boolean) { _favoritesOnly.value = v }
 
     fun saveExerciseNotes(exerciseId: Long, notes: String) {
         viewModelScope.launch {
             val ex = repo.get(exerciseId) ?: return@launch
             repo.upsert(ex.copy(notes = notes))
+        }
+    }
+
+    fun toggleFavorite(exerciseId: Long, isFavorite: Boolean) {
+        viewModelScope.launch {
+            repo.setFavorite(exerciseId, isFavorite)
         }
     }
 }

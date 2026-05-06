@@ -34,5 +34,7 @@ data class Exercise(
     val notes: String = "",
     val metricType: MetricType = MetricType.WEIGHT_REPS,
     /** Edukacyjny opis ćwiczenia: czym jest, jak wykonać, na co uważać. */
-    val description: String = ""
+    val description: String = "",
+    /** Ulubione ćwiczenie usera — AI używa do priorytetyzacji w generowanym planie. */
+    val isFavorite: Boolean = false
 )

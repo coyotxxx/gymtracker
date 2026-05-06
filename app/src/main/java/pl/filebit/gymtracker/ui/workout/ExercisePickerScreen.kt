@@ -63,6 +63,7 @@ fun ExercisePickerScreen(
     val query by vm.query.collectAsStateWithLifecycle()
     val muscleFilter by vm.muscleFilter.collectAsStateWithLifecycle()
     val equipmentFilter by vm.equipmentFilter.collectAsStateWithLifecycle()
+    val favoritesOnly by vm.favoritesOnly.collectAsStateWithLifecycle()
     val exercises by vm.exercises.collectAsStateWithLifecycle()
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
@@ -93,6 +94,20 @@ fun ExercisePickerScreen(
             )
 
             Spacer(Modifier.height(12.dp))
+
+            // Filtr "❤ tylko ulubione"
+            androidx.compose.foundation.layout.Row(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                SelectableChip(
+                    text = if (favoritesOnly) "❤ Tylko ulubione" else "🤍 Filtruj ulubione",
+                    selected = favoritesOnly,
+                    onClick = { vm.setFavoritesOnly(!favoritesOnly) }
+                )
+            }
+
+            Spacer(Modifier.height(10.dp))
 
             // Filtr po partii mięśniowej
             FilterSectionLabel("Partia")
