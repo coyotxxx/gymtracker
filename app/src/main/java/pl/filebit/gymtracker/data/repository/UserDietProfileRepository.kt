@@ -13,6 +13,7 @@ class UserDietProfileRepository @Inject constructor(
     fun observe(): Flow<UserDietProfile?> = dao.observe()
     suspend fun get(): UserDietProfile? = dao.get()
     suspend fun upsert(profile: UserDietProfile) = dao.upsert(profile)
+    suspend fun save(profile: UserDietProfile) = dao.upsert(profile)
 
     /** Sprawdza czy onboarding diety jest ukończony (do redirectu w DietScreen). */
     suspend fun isOnboardingDone(): Boolean = dao.get()?.isOnboardingDone == true

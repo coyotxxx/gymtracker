@@ -3,6 +3,8 @@ package pl.filebit.gymtracker.ui.onboarding
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,6 +47,7 @@ import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.ui.theme.AccentOrange
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -52,7 +55,7 @@ import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 
-private const val TOTAL_PAGES = 5
+private const val TOTAL_PAGES = 9
 
 @Composable
 fun OnboardingScreen(
@@ -113,10 +116,25 @@ fun OnboardingScreen(
 
             when (page) {
                 0 -> WelcomePage(state, vm::setName)
-                1 -> GoalExperiencePage(state, vm::setGoal, vm::setExperience, vm::setGender)
-                2 -> DaysSessionWeightPage(state, vm::setDaysPerWeek, vm::setSessionMinutes, vm::setBodyweight)
-                3 -> WeightGoalPage(state, vm::setWeightGoalType, vm::setTargetWeight)
-                4 -> FinishPage(state)
+                1 -> AgeHeightGenderPage(state, vm::setGender, vm::setAge, vm::setHeight)
+                2 -> GoalExperiencePage(state, vm::setGoal, vm::setExperience, vm::setGender)
+                3 -> DaysSessionWeightPage(state, vm::setDaysPerWeek, vm::setSessionMinutes, vm::setBodyweight)
+                4 -> WeightGoalPage(state, vm::setWeightGoalType, vm::setTargetWeight)
+                5 -> EquipmentPage(state, vm::setEquipment)
+                6 -> ActivityLevelPage(state, vm::setActivityLevel)
+                7 -> DietProfilePage(
+                    state = state,
+                    onSetWantsDietProfile = vm::setWantsDietProfile,
+                    onSetDietPreference = vm::setDietPreference,
+                    onSetAllergies = vm::setAllergies,
+                    onSetIntolerances = vm::setIntolerances,
+                    onSetWeeklyBudget = vm::setWeeklyBudget,
+                    onSetMedicalConditions = vm::setMedicalConditions,
+                    onSetCookingTime = vm::setCookingTimePerMeal,
+                    onSetLovedFoods = vm::setLovedFoods,
+                    onSetDislikedFoods = vm::setDislikedFoods
+                )
+                8 -> FinishPage(state)
             }
 
             Spacer(Modifier.height(32.dp))
@@ -517,4 +535,498 @@ private fun weightGoalLabel(g: WeightGoalType): String = when (g) {
     WeightGoalType.CUT -> "Redukcja"
     WeightGoalType.BULK -> "Masa"
     WeightGoalType.MAINTAIN -> "Utrzymanie"
+}
+
+// =============================================================
+// === NOWE STRONY WIZARDA v1.0.18 ===
+// =============================================================
+
+@Composable
+private fun AgeHeightGenderPage(
+    state: OnboardingUiState,
+    onGenderChange: (pl.filebit.gymtracker.data.entity.Gender) -> Unit,
+    onAgeChange: (Int) -> Unit,
+    onHeightChange: (Int) -> Unit
+) {
+    StepCard(title = "Twoje dane", subtitle = "Potrzebne do dokładnego obliczenia zapotrzebowania kalorycznego (BMR)") {
+        // Płeć
+        Text("Płeć", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold), color = DarkOnSurface)
+        Spacer(Modifier.height(6.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            ChoiceChipRow(
+                selected = state.gender == pl.filebit.gymtracker.data.entity.Gender.MALE,
+                text = "♂ Mężczyzna",
+                onClick = { onGenderChange(pl.filebit.gymtracker.data.entity.Gender.MALE) },
+                modifier = Modifier.weight(1f)
+            )
+            ChoiceChipRow(
+                selected = state.gender == pl.filebit.gymtracker.data.entity.Gender.FEMALE,
+                text = "♀ Kobieta",
+                onClick = { onGenderChange(pl.filebit.gymtracker.data.entity.Gender.FEMALE) },
+                modifier = Modifier.weight(1f)
+            )
+        }
+
+        Spacer(Modifier.height(14.dp))
+
+        // Wiek
+        OutlinedTextField(
+            value = state.ageYears.toString(),
+            onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onAgeChange) },
+            label = { Text("Wiek (lata)") },
+            keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+            colors = onboardingTextFieldColors()
+        )
+
+        Spacer(Modifier.height(8.dp))
+
+        // Wzrost
+        OutlinedTextField(
+            value = state.heightCm.toString(),
+            onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onHeightChange) },
+            label = { Text("Wzrost (cm)") },
+            keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+            colors = onboardingTextFieldColors()
+        )
+    }
+}
+
+@Composable
+private fun EquipmentPage(
+    state: OnboardingUiState,
+    onChange: (String) -> Unit
+) {
+    val selected = remember(state.availableEquipmentCsv) {
+        state.availableEquipmentCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+    }
+    val all = pl.filebit.gymtracker.data.entity.Equipment.values()
+        .filter { it != pl.filebit.gymtracker.data.entity.Equipment.OTHER }
+
+    StepCard(title = "Twój sprzęt", subtitle = "AI ułoży plan z ćwiczeń tylko na sprzęcie który masz. Pusty wybór = pełna siłownia.") {
+        // Quick presety
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            QuickPresetChip(
+                label = "🏠 Dom (sztanga + sztangielki)",
+                onClick = { onChange("BARBELL,DUMBBELLS,BODYWEIGHT,CABLE") },
+                modifier = Modifier.weight(1f)
+            )
+        }
+        Spacer(Modifier.height(6.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            QuickPresetChip(
+                label = "💪 Tylko masa ciała",
+                onClick = { onChange("BODYWEIGHT") },
+                modifier = Modifier.weight(1f)
+            )
+            QuickPresetChip(
+                label = "🏋 Pełna siłownia",
+                onClick = { onChange("") },
+                modifier = Modifier.weight(1f)
+            )
+        }
+
+        Spacer(Modifier.height(14.dp))
+
+        Text("Lub zaznacz pojedynczo:", style = MaterialTheme.typography.bodySmall, color = DarkOnSurfaceVariant)
+        Spacer(Modifier.height(6.dp))
+        val pairs = all.chunked(2)
+        for (pair in pairs) {
+            Row(modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                pair.forEach { eq ->
+                    val isSel = eq.name in selected
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .background(
+                                if (isSel) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .border(1.dp, if (isSel) AccentOrange else DarkOutlineSoft, RoundedCornerShape(8.dp))
+                            .clickable {
+                                val newSet = if (isSel) selected - eq.name else selected + eq.name
+                                onChange(newSet.joinToString(","))
+                            }
+                            .padding(horizontal = 10.dp, vertical = 10.dp)
+                    ) {
+                        Text(
+                            "${if (isSel) "✓" else "○"} ${equipmentDisplayName(eq)}",
+                            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                            color = if (isSel) AccentOrange else DarkOnSurface
+                        )
+                    }
+                }
+                if (pair.size == 1) Spacer(Modifier.weight(1f))
+            }
+        }
+    }
+}
+
+@Composable
+private fun ActivityLevelPage(
+    state: OnboardingUiState,
+    onChange: (pl.filebit.gymtracker.data.entity.ActivityLevel) -> Unit
+) {
+    StepCard(title = "Aktywność POZA treningiem", subtitle = "Praca, codzienne życie, chodzenie. Bez treningów na siłowni.") {
+        val all = pl.filebit.gymtracker.data.entity.ActivityLevel.values()
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            all.forEach { lvl ->
+                val isSel = state.activityLevel == lvl
+                androidx.compose.foundation.layout.Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(
+                            if (isSel) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                            RoundedCornerShape(10.dp)
+                        )
+                        .border(1.dp, if (isSel) AccentOrange else DarkOutlineSoft, RoundedCornerShape(10.dp))
+                        .clickable { onChange(lvl) }
+                        .padding(12.dp)
+                ) {
+                    Column {
+                        Text(
+                            activityLevelTitle(lvl),
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = if (isSel) AccentOrange else DarkOnSurface
+                        )
+                        Text(
+                            activityLevelDesc(lvl),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun DietProfilePage(
+    state: OnboardingUiState,
+    onSetWantsDietProfile: (Boolean) -> Unit,
+    onSetDietPreference: (pl.filebit.gymtracker.data.entity.DietPreference) -> Unit,
+    onSetAllergies: (String) -> Unit,
+    onSetIntolerances: (String) -> Unit,
+    onSetWeeklyBudget: (Int?) -> Unit,
+    onSetMedicalConditions: (String) -> Unit,
+    onSetCookingTime: (Int) -> Unit,
+    onSetLovedFoods: (String) -> Unit,
+    onSetDislikedFoods: (String) -> Unit
+) {
+    StepCard(title = "Profil dietetyczny", subtitle = "Pomijalne — uzupełnisz później w 'Dieta → Profil'.") {
+        // Toggle "Chcę wypełnić teraz"
+        Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+            androidx.compose.material3.Switch(
+                checked = state.wantsDietProfile,
+                onCheckedChange = onSetWantsDietProfile
+            )
+            Spacer(Modifier.width(10.dp))
+            Column {
+                Text("Wypełnij teraz", fontWeight = FontWeight.SemiBold, color = DarkOnSurface)
+                Text(
+                    "AI lepiej dopasuje dietę gdy zna alergie, preferencje, choroby",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+
+        if (state.wantsDietProfile) {
+            Spacer(Modifier.height(16.dp))
+
+            // Preferencja dietetyczna
+            Text("Preferencja dietetyczna:", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold), color = DarkOnSurface)
+            Spacer(Modifier.height(6.dp))
+            val prefs = pl.filebit.gymtracker.data.entity.DietPreference.values()
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                prefs.forEach { p ->
+                    val isSel = state.dietPreference == p
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                if (isSel) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .border(1.dp, if (isSel) AccentOrange else DarkOutlineSoft, RoundedCornerShape(8.dp))
+                            .clickable { onSetDietPreference(p) }
+                            .padding(10.dp)
+                    ) {
+                        Text(
+                            dietPreferenceLabelForOnboarding(p),
+                            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Medium),
+                            color = if (isSel) AccentOrange else DarkOnSurface
+                        )
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(14.dp))
+
+            // Alergie (CSV — dropdown z popularnymi)
+            Text("Alergie / nietolerancje:", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold), color = DarkOnSurface)
+            Spacer(Modifier.height(6.dp))
+            val commonAllergies = listOf("laktoza", "gluten", "jaja", "orzechy", "soja", "ryby", "owoce_morza", "sezam", "gorczyca")
+            val selectedAllergies = remember(state.allergiesCsv) {
+                state.allergiesCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+            }
+            androidx.compose.foundation.layout.FlowRow(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                commonAllergies.forEach { allergen ->
+                    val isSel = allergen in selectedAllergies
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier
+                            .background(
+                                if (isSel) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                                RoundedCornerShape(50)
+                            )
+                            .border(1.dp, if (isSel) AccentOrange else DarkOutlineSoft, RoundedCornerShape(50))
+                            .clickable {
+                                val newSet = if (isSel) selectedAllergies - allergen else selectedAllergies + allergen
+                                onSetAllergies(newSet.joinToString(","))
+                            }
+                            .padding(horizontal = 10.dp, vertical = 6.dp)
+                    ) {
+                        Text(
+                            "${if (isSel) "✓ " else ""}$allergen",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = if (isSel) AccentOrange else DarkOnSurface
+                        )
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(14.dp))
+
+            // Lubione produkty (CSV)
+            OutlinedTextField(
+                value = state.lovedFoodsCsv,
+                onValueChange = onSetLovedFoods,
+                label = { Text("Lubię (CSV) np. kurczak, twaróg, ryż") },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                colors = onboardingTextFieldColors()
+            )
+            Spacer(Modifier.height(8.dp))
+            // Nielubione
+            OutlinedTextField(
+                value = state.dislikedFoodsCsv,
+                onValueChange = onSetDislikedFoods,
+                label = { Text("Nie lubię (CSV) np. brokuły, tofu") },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                colors = onboardingTextFieldColors()
+            )
+
+            Spacer(Modifier.height(14.dp))
+
+            // Budżet tygodniowy
+            OutlinedTextField(
+                value = state.weeklyBudgetPln?.toString() ?: "",
+                onValueChange = { v ->
+                    onSetWeeklyBudget(v.filter { it.isDigit() }.toIntOrNull())
+                },
+                label = { Text("Budżet tygodniowy (zł, opcjonalnie)") },
+                keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                colors = onboardingTextFieldColors()
+            )
+
+            Spacer(Modifier.height(8.dp))
+
+            // Czas gotowania
+            OutlinedTextField(
+                value = state.cookingTimePerMealMin.toString(),
+                onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onSetCookingTime) },
+                label = { Text("Max czas gotowania 1 posiłku (min)") },
+                keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                colors = onboardingTextFieldColors()
+            )
+
+            Spacer(Modifier.height(14.dp))
+
+            // Choroby (medical flags)
+            Text("Stany zdrowia (opcjonalnie):", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold), color = DarkOnSurface)
+            Text(
+                "AI dostosuje plan zachowując konserwatywne podejście.",
+                style = MaterialTheme.typography.labelSmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(6.dp))
+            val medical = listOf(
+                "cukrzyca" to "Cukrzyca / IR",
+                "nadciśnienie" to "Nadciśnienie",
+                "choroby_nerek" to "Choroby nerek",
+                "ciąża" to "Ciąża",
+                "karmienie_piersią" to "Karmienie piersią",
+                "zaburzenia_odżywiania" to "Zaburzenia odżywiania"
+            )
+            val selectedMedical = remember(state.medicalConditionsCsv) {
+                state.medicalConditionsCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+            }
+            androidx.compose.foundation.layout.FlowRow(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                medical.forEach { (key, label) ->
+                    val isSel = key in selectedMedical
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier
+                            .background(
+                                if (isSel) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                                RoundedCornerShape(50)
+                            )
+                            .border(1.dp, if (isSel) AccentOrange else DarkOutlineSoft, RoundedCornerShape(50))
+                            .clickable {
+                                val newSet = if (isSel) selectedMedical - key else selectedMedical + key
+                                onSetMedicalConditions(newSet.joinToString(","))
+                            }
+                            .padding(horizontal = 10.dp, vertical = 6.dp)
+                    ) {
+                        Text(
+                            "${if (isSel) "✓ " else ""}$label",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = if (isSel) AccentOrange else DarkOnSurface
+                        )
+                    }
+                }
+            }
+        } else {
+            Spacer(Modifier.height(8.dp))
+            Text(
+                "✓ Pomijasz profil dietetyczny — uzupełnisz później w 'Dieta → Profil dietetyczny'.",
+                style = MaterialTheme.typography.bodySmall,
+                color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+// === Helpers ===
+
+@Composable
+private fun ChoiceChipRow(
+    selected: Boolean,
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    androidx.compose.foundation.layout.Box(
+        modifier = modifier
+            .background(
+                if (selected) AccentOrange.copy(alpha = 0.18f) else DarkSurface,
+                RoundedCornerShape(10.dp)
+            )
+            .border(1.dp, if (selected) AccentOrange else DarkOutlineSoft, RoundedCornerShape(10.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 12.dp)
+    ) {
+        Text(
+            text,
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = if (selected) AccentOrange else DarkOnSurface,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
+    }
+}
+
+@Composable
+private fun QuickPresetChip(
+    label: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    androidx.compose.foundation.layout.Box(
+        modifier = modifier
+            .background(SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(8.dp))
+            .border(1.dp, SuccessGreen.copy(alpha = 0.4f), RoundedCornerShape(8.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold, fontSize = 11.sp),
+            color = SuccessGreen,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
+    }
+}
+
+@Composable
+private fun onboardingTextFieldColors() = androidx.compose.material3.OutlinedTextFieldDefaults.colors(
+    focusedContainerColor = DarkSurface,
+    unfocusedContainerColor = DarkSurface,
+    focusedBorderColor = AccentOrange,
+    unfocusedBorderColor = DarkOutlineSoft,
+    cursorColor = AccentOrange,
+    focusedLabelColor = AccentOrange,
+    unfocusedLabelColor = DarkOnSurfaceVariant
+)
+
+private fun equipmentDisplayName(e: pl.filebit.gymtracker.data.entity.Equipment): String = when (e) {
+    pl.filebit.gymtracker.data.entity.Equipment.BARBELL -> "Sztanga olimpijska"
+    pl.filebit.gymtracker.data.entity.Equipment.DUMBBELLS -> "Sztangielki / hantle"
+    pl.filebit.gymtracker.data.entity.Equipment.MACHINE -> "Maszyny siłowe"
+    pl.filebit.gymtracker.data.entity.Equipment.CABLE -> "Wyciąg / linki"
+    pl.filebit.gymtracker.data.entity.Equipment.BODYWEIGHT -> "Masa ciała / drążek"
+    pl.filebit.gymtracker.data.entity.Equipment.OTHER -> "Inne"
+}
+
+private fun activityLevelTitle(l: pl.filebit.gymtracker.data.entity.ActivityLevel): String = when (l) {
+    pl.filebit.gymtracker.data.entity.ActivityLevel.SEDENTARY -> "Siedzący tryb (×1.2)"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.LIGHT -> "Lekko aktywny (×1.375)"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE -> "Umiarkowanie aktywny (×1.55)"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.VERY_ACTIVE -> "Bardzo aktywny (×1.725)"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.EXTREME -> "Ekstremalnie aktywny (×1.9)"
+}
+
+private fun activityLevelDesc(l: pl.filebit.gymtracker.data.entity.ActivityLevel): String = when (l) {
+    pl.filebit.gymtracker.data.entity.ActivityLevel.SEDENTARY -> "Praca biurowa, mało ruchu poza treningiem"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.LIGHT -> "Lekkie chodzenie, drobne prace, sporadyczna aktywność"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE -> "3-5 treningów + sporo chodzenia / praca aktywna"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.VERY_ACTIVE -> "6-7 treningów + ciężka praca fizyczna"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.EXTREME -> "Sportowiec wyczynowy, wielogodzinne treningi"
+}
+
+private fun dietPreferenceLabelForOnboarding(p: pl.filebit.gymtracker.data.entity.DietPreference): String = when (p) {
+    pl.filebit.gymtracker.data.entity.DietPreference.STANDARD -> "Standardowa (mięso + nabiał + warzywa)"
+    pl.filebit.gymtracker.data.entity.DietPreference.VEGETARIAN -> "Wegetariańska (bez mięsa, nabiał+jaja OK)"
+    pl.filebit.gymtracker.data.entity.DietPreference.VEGAN -> "Wegańska (bez produktów odzwierzęcych)"
+    pl.filebit.gymtracker.data.entity.DietPreference.PESCATARIAN -> "Pescatariańska (ryby + nabiał, bez mięsa)"
+    pl.filebit.gymtracker.data.entity.DietPreference.KETO -> "Keto (max 30g węgli/dzień, dużo tłuszczu)"
+    pl.filebit.gymtracker.data.entity.DietPreference.MEDITERRANEAN -> "Śródziemnomorska (oliwa, ryby, warzywa)"
+}
+
+@Composable
+private fun StepCard(
+    title: String,
+    subtitle: String,
+    content: @Composable () -> Unit
+) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            title,
+            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
+            color = DarkOnSurface
+        )
+        Text(
+            subtitle,
+            style = MaterialTheme.typography.bodySmall,
+            color = DarkOnSurfaceVariant
+        )
+        Spacer(Modifier.height(16.dp))
+        content()
+    }
 }

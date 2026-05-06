@@ -9,29 +9,56 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.ai.AiPreferences
+import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
+import pl.filebit.gymtracker.data.entity.DietGoalType
+import pl.filebit.gymtracker.data.entity.DietPreference
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.Goal
 import pl.filebit.gymtracker.data.entity.GoalType
 import pl.filebit.gymtracker.data.entity.GoalUnit
 import pl.filebit.gymtracker.data.entity.TrainingGoal
+import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.BodyRepository
 import pl.filebit.gymtracker.data.repository.GoalRepository
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 
 data class OnboardingUiState(
+    // === KROK 0: Welcome / imię ===
     val displayName: String = "",
+    // === KROK 1: Płeć + wiek + wzrost (do dokładnego BMR Mifflin-St Jeor) ===
+    val gender: Gender = Gender.MALE,
+    val ageYears: Int = 30,
+    val heightCm: Int = 175,
+    // === KROK 2: Cel treningowy + doświadczenie ===
     val goal: TrainingGoal = TrainingGoal.HYPERTROPHY,
     val experience: ExperienceLevel = ExperienceLevel.INTERMEDIATE,
-    val gender: Gender = Gender.MALE,
+    // === KROK 3: Dni/tydz + czas sesji ===
     val daysPerWeek: Int = 4,
     val sessionMinutes: Int = 60,
+    // === KROK 4: Aktualna waga + cel wagowy + waga docelowa ===
     val bodyweightKg: Double? = null,
     val weightGoalType: WeightGoalType = WeightGoalType.NONE,
     val targetWeightKg: Double? = null,
+    // === KROK 5: Sprzęt ===
+    val availableEquipmentCsv: String = "",
+    // === KROK 6: Aktywność poza treningiem ===
+    val activityLevel: ActivityLevel = ActivityLevel.MODERATE,
+    // === KROK 7: Dieta — opcjonalna ===
+    val wantsDietProfile: Boolean = true,                       // user może pominąć
+    val dietPreference: DietPreference = DietPreference.STANDARD,
+    val allergiesCsv: String = "",                              // CSV: laktoza,gluten,...
+    val intolerances: String = "",
+    val dislikedFoodsCsv: String = "",
+    val lovedFoodsCsv: String = "",
+    val weeklyBudgetPln: Int? = null,
+    val medicalConditionsCsv: String = "",
+    val cookingTimePerMealMin: Int = 15,
+
     val isSaving: Boolean = false,
     val aiKeyConfigured: Boolean = false
 )
@@ -39,6 +66,7 @@ data class OnboardingUiState(
 @HiltViewModel
 class OnboardingViewModel @Inject constructor(
     private val profileRepo: UserProfileRepository,
+    private val dietProfileRepo: UserDietProfileRepository,
     private val bodyRepo: BodyRepository,
     private val goalRepo: GoalRepository,
     private val aiPrefs: AiPreferences
@@ -49,9 +77,9 @@ class OnboardingViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            // Prefill — gdy user uruchamia wizard ponownie, ładujemy obecne
-            // wartości z profilu zamiast resetować do defaults
+            // Prefill — gdy user uruchamia wizard ponownie, ładujemy obecne wartości
             val current = profileRepo.get()
+            val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
             val cfg = aiPrefs.load()
             _state.update {
                 it.copy(
@@ -64,6 +92,18 @@ class OnboardingViewModel @Inject constructor(
                     bodyweightKg = current.bodyweightKg,
                     weightGoalType = current.weightGoalType,
                     targetWeightKg = current.targetWeightKg,
+                    availableEquipmentCsv = current.availableEquipmentCsv,
+                    ageYears = dietProfile?.ageYears ?: 30,
+                    heightCm = dietProfile?.heightCm ?: 175,
+                    activityLevel = dietProfile?.activityLevel ?: ActivityLevel.MODERATE,
+                    dietPreference = dietProfile?.dietPreference ?: DietPreference.STANDARD,
+                    allergiesCsv = dietProfile?.allergies ?: "",
+                    intolerances = dietProfile?.intolerances ?: "",
+                    dislikedFoodsCsv = dietProfile?.dislikedFoods ?: "",
+                    lovedFoodsCsv = dietProfile?.lovedFoods ?: "",
+                    weeklyBudgetPln = dietProfile?.weeklyBudgetPln,
+                    medicalConditionsCsv = dietProfile?.medicalConditions ?: "",
+                    cookingTimePerMealMin = dietProfile?.cookingTimePerMealMin ?: 15,
                     aiKeyConfigured = cfg.isConnected
                 )
             }
@@ -74,22 +114,34 @@ class OnboardingViewModel @Inject constructor(
     fun setGoal(g: TrainingGoal) = _state.update { it.copy(goal = g) }
     fun setExperience(e: ExperienceLevel) = _state.update { it.copy(experience = e) }
     fun setGender(g: Gender) = _state.update { it.copy(gender = g) }
+    fun setAge(years: Int) = _state.update { it.copy(ageYears = years.coerceIn(13, 90)) }
+    fun setHeight(cm: Int) = _state.update { it.copy(heightCm = cm.coerceIn(140, 220)) }
     fun setDaysPerWeek(d: Int) = _state.update { it.copy(daysPerWeek = d.coerceIn(1, 7)) }
     fun setSessionMinutes(m: Int) = _state.update { it.copy(sessionMinutes = m.coerceIn(15, 240)) }
     fun setBodyweight(kg: Double?) = _state.update { it.copy(bodyweightKg = kg) }
     fun setWeightGoalType(t: WeightGoalType) = _state.update {
         it.copy(
             weightGoalType = t,
-            // Reset target waga gdy NONE
             targetWeightKg = if (t == WeightGoalType.NONE) null else it.targetWeightKg
         )
     }
     fun setTargetWeight(kg: Double?) = _state.update { it.copy(targetWeightKg = kg) }
+    fun setEquipment(csv: String) = _state.update { it.copy(availableEquipmentCsv = csv) }
+    fun setActivityLevel(level: ActivityLevel) = _state.update { it.copy(activityLevel = level) }
+    fun setWantsDietProfile(v: Boolean) = _state.update { it.copy(wantsDietProfile = v) }
+    fun setDietPreference(p: DietPreference) = _state.update { it.copy(dietPreference = p) }
+    fun setAllergies(csv: String) = _state.update { it.copy(allergiesCsv = csv) }
+    fun setIntolerances(s: String) = _state.update { it.copy(intolerances = s) }
+    fun setDislikedFoods(csv: String) = _state.update { it.copy(dislikedFoodsCsv = csv) }
+    fun setLovedFoods(csv: String) = _state.update { it.copy(lovedFoodsCsv = csv) }
+    fun setWeeklyBudget(pln: Int?) = _state.update { it.copy(weeklyBudgetPln = pln) }
+    fun setMedicalConditions(csv: String) = _state.update { it.copy(medicalConditionsCsv = csv) }
+    fun setCookingTimePerMeal(min: Int) = _state.update { it.copy(cookingTimePerMealMin = min.coerceIn(5, 60)) }
 
     /**
      * Zapisuje profil + ustawia onboardingCompleted = true.
      * Jeśli waga ciała była podana — tworzy też pierwszy BodyMeasurement (dziś).
-     * @param onDone wywołuje się po zapisie
+     * Jeśli wantsDietProfile=true — zapisuje UserDietProfile.
      */
     fun complete(onDone: () -> Unit) {
         if (_state.value.isSaving) return
@@ -108,13 +160,12 @@ class OnboardingViewModel @Inject constructor(
                     bodyweightKg = s.bodyweightKg,
                     weightGoalType = s.weightGoalType,
                     targetWeightKg = s.targetWeightKg,
+                    availableEquipmentCsv = s.availableEquipmentCsv,
                     onboardingCompleted = true
                 )
             )
-            // Body measurement — utwórz pomiar dziś jeśli:
-            //  (a) brak jakiegokolwiek pomiaru → pierwszy
-            //  (b) ostatnia waga różni się o ≥0.5kg od wpisanej w wizardzie → user
-            //      najwyraźniej zmienił/skoryguje wagę
+
+            // Body measurement
             if (s.bodyweightKg != null && s.bodyweightKg > 0) {
                 val latest = bodyRepo.getLatest()
                 val needsNew = latest == null ||
@@ -128,8 +179,35 @@ class OnboardingViewModel @Inject constructor(
                     )
                 }
             }
-            // Cele — gdy user wybrał CUT/BULK + docelową wagę, utwórz pierwszy Goal
-            // (jeśli jeszcze nie istnieje aktywny Goal tego typu)
+
+            // UserDietProfile — zapisuj tylko jeśli user wypełnił sekcję dietetyczną
+            // Wiek/wzrost ZAWSZE zapisujemy (są niezbędne do TDEE)
+            val existingDiet = runCatching { dietProfileRepo.get() }.getOrNull()
+            val dietGoalType = when (s.weightGoalType) {
+                WeightGoalType.CUT -> DietGoalType.FAT_LOSS
+                WeightGoalType.BULK -> DietGoalType.MUSCLE_GAIN
+                WeightGoalType.MAINTAIN -> DietGoalType.MAINTAIN
+                WeightGoalType.NONE -> DietGoalType.MAINTAIN
+            }
+            val newDietProfile = (existingDiet ?: UserDietProfile()).copy(
+                ageYears = s.ageYears,
+                heightCm = s.heightCm,
+                activityLevel = s.activityLevel,
+                goalType = dietGoalType,
+                dietPreference = if (s.wantsDietProfile) s.dietPreference else (existingDiet?.dietPreference ?: DietPreference.STANDARD),
+                allergies = if (s.wantsDietProfile) s.allergiesCsv else (existingDiet?.allergies ?: ""),
+                intolerances = if (s.wantsDietProfile) s.intolerances else (existingDiet?.intolerances ?: ""),
+                dislikedFoods = if (s.wantsDietProfile) s.dislikedFoodsCsv else (existingDiet?.dislikedFoods ?: ""),
+                lovedFoods = if (s.wantsDietProfile) s.lovedFoodsCsv else (existingDiet?.lovedFoods ?: ""),
+                weeklyBudgetPln = if (s.wantsDietProfile) s.weeklyBudgetPln else existingDiet?.weeklyBudgetPln,
+                medicalConditions = if (s.wantsDietProfile) s.medicalConditionsCsv else (existingDiet?.medicalConditions ?: ""),
+                cookingTimePerMealMin = if (s.wantsDietProfile) s.cookingTimePerMealMin else (existingDiet?.cookingTimePerMealMin ?: 15),
+                onboardingCompletedAt = if (s.wantsDietProfile) System.currentTimeMillis() else existingDiet?.onboardingCompletedAt,
+                updatedAt = System.currentTimeMillis()
+            )
+            runCatching { dietProfileRepo.save(newDietProfile) }
+
+            // Cele
             if (s.bodyweightKg != null && s.targetWeightKg != null && s.bodyweightKg > 0) {
                 val goalType = when (s.weightGoalType) {
                     WeightGoalType.CUT -> GoalType.LOSE_WEIGHT
