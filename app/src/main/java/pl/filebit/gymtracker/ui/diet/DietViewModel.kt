@@ -117,7 +117,8 @@ class DietViewModel @Inject constructor(
     private val healthConnect: pl.filebit.gymtracker.data.health.HealthConnectManager,
     private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler,
     private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository,
-    val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService
+    val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService,
+    private val cardioKcalEstimator: pl.filebit.gymtracker.data.repository.CardioKcalEstimator
 ) : ViewModel() {
 
     // === MEAL CONSUMPTION STATUS ===
@@ -500,10 +501,10 @@ class DietViewModel @Inject constructor(
     private val _hydrationGoal = MutableStateFlow(2400)
     val hydrationGoal: StateFlow<Int> = _hydrationGoal.asStateFlow()
 
-    fun addHydration(ml: Int) {
+    fun addHydration(ml: Int, source: pl.filebit.gymtracker.data.entity.HydrationSource = pl.filebit.gymtracker.data.entity.HydrationSource.WATER) {
         viewModelScope.launch {
             val date = _selectedDateMs.value
-            hydrationRepo.add(date, ml)
+            hydrationRepo.add(date, ml, source)
             refreshHydration()
             refreshHydrationLogs()
         }
@@ -871,11 +872,13 @@ class DietViewModel @Inject constructor(
                     val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
                     // Cykliczne kcal per dzień tygodnia (refeed/deficyt) — bierze pierwszeństwo
                     val effectiveKcal = cfg.kcalForDate(dateMs) ?: cfg.manualKcal
+                    val cardioBonus = runCatching { cardioKcalEstimator.avgDailyKcalLast7Days() }.getOrDefault(0)
                     val goal = if (profile != null) computeDailyGoal(
                         profile,
                         manualKcalOverride = effectiveKcal,
                         customDeficit = cfg.customDeficit,
-                        dietProfile = dietProfile
+                        dietProfile = dietProfile,
+                        avgDailyCardioKcal = cardioBonus
                     ) else DailyMacroGoal(
                         2200, 150, 250, 70,
                         pl.filebit.gymtracker.util.GoalBreakdown(

@@ -50,16 +50,27 @@ class TrainingDietBridge @Inject constructor(
             val rirAvg = rirs.takeIf { it.isNotEmpty() }?.average()
 
             // Partie mięśniowe — z exerciseDao po exerciseId
-            val muscleGroups = workingSets.map { it.exerciseId }.distinct()
-                .mapNotNull { exerciseDao.getById(it)?.primaryMuscle?.name }
+            val exercisesById = workingSets.map { it.exerciseId }.distinct()
+                .mapNotNull { exerciseDao.getById(it) }
+                .associateBy { it.id }
+            val muscleGroups = exercisesById.values
+                .map { it.primaryMuscle.name }
                 .distinct().joinToString(",")
+
+            // Cardio: sumuj durationSec z setów ćwiczeń CARDIO → minuty
+            val cardioMinutes = workingSets
+                .filter { exercisesById[it.exerciseId]?.primaryMuscle?.name == "CARDIO" }
+                .sumOf { it.durationSec ?: 0 } / 60
 
             // Intensywność: RPE + objętość
             val intensity = computeIntensity(rpeAvg, workingSets.size, volumeKg)
             val trainingType = inferType(rpeAvg, workingSets, volumeKg)
 
+            // Planowana objętość (kg) — z PlanExerciseSet dla dnia tygodnia
+            val plannedVolumeKg = computePlannedVolume(start)
+
             // Wykonany %: porównanie z planem (jeśli z planu)
-            val completedPct = computeCompletedPct(workout, workingSets.size)
+            val completedPct = computeCompletedPct(workout, workingSets.size, plannedVolumeKg, volumeKg)
 
             // Trend: PROGRESS jeśli wszystkie reps zrobione, REGRESS jeśli niedokończone
             val trend = computeTrend(workingSets, sets)
@@ -76,14 +87,14 @@ class TrainingDietBridge @Inject constructor(
                     startTimeMs = workout.startedAt,
                     durationMinutes = (workout.durationMillis / 60_000L).toInt(),
                     trainedMuscleGroupsCsv = muscleGroups,
-                    plannedVolumeKg = 0.0,                      // TODO: porównaj z planem
+                    plannedVolumeKg = plannedVolumeKg,
                     completedVolumeKg = volumeKg,
                     intensityScore = intensity,
                     rpeAverage = rpeAvg,
                     rirAverage = rirAvg,
                     workingSetsCount = workingSets.size,
                     repsTotal = workingSets.sumOf { it.reps },
-                    cardioMinutes = 0,                          // TODO: cardio gdy dodamy
+                    cardioMinutes = cardioMinutes,
                     workoutCompletedPct = completedPct,
                     performanceTrend = trend,
                     fatigueScore = fatigue
@@ -167,9 +178,15 @@ class TrainingDietBridge @Inject constructor(
 
     private fun computeCompletedPct(
         workout: pl.filebit.gymtracker.data.entity.Workout,
-        workingSetsCount: Int
+        workingSetsCount: Int,
+        plannedVolumeKg: Double = 0.0,
+        completedVolumeKg: Double = 0.0
     ): Int {
-        // Jeśli z planu — porównaj z PlanExerciseSet count, inaczej 100%
+        // Najpierw porównanie objętości jeśli plan ma ciężary
+        if (plannedVolumeKg > 0.0 && completedVolumeKg > 0.0) {
+            return ((completedVolumeKg / plannedVolumeKg) * 100).toInt().coerceIn(0, 100)
+        }
+        // Fallback: liczba serii z planu
         val planId = workout.fromPlanId ?: return 100
         val day = workout.fromDayOfWeek ?: return 100
         return runCatching {
@@ -185,6 +202,25 @@ class TrainingDietBridge @Inject constructor(
             if (planSetsCount == 0) 100
             else (workingSetsCount * 100 / planSetsCount).coerceIn(0, 100)
         }.getOrDefault(100)
+    }
+
+    /**
+     * Sumuje planowaną objętość (kg) z PlanExerciseSet dla dnia tygodnia.
+     * Bierze pod uwagę plan przypisany do dnia (po isoDayOfWeek).
+     */
+    private suspend fun computePlannedVolume(dayStartMs: Long): Double {
+        val isoDay = isoDayOfWeek(dayStartMs)
+        val plansForDay = runCatching { planRepo.getPlansForDay(isoDay) }.getOrNull().orEmpty()
+        if (plansForDay.isEmpty()) return 0.0
+        var total = 0.0
+        for (plan in plansForDay) {
+            val planExes = planRepo.getPlanExercisesForDay(plan.id, isoDay)
+            for (pe in planExes) {
+                val sets = planRepo.getSetsForPlanExercise(pe.id)
+                total += sets.sumOf { (it.weightKg ?: 0.0) * it.reps }
+            }
+        }
+        return total
     }
 
     private fun computeTrend(

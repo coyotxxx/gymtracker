@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -52,7 +53,8 @@ fun HydrationLogDialog(
     consumedToday: Int,
     goal: Int,
     onDelete: (Long) -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    onAdd: ((Int, HydrationSource) -> Unit)? = null
 ) {
     ScrollableDialogShell(
         title = "💧 Woda dzisiaj",
@@ -87,9 +89,26 @@ fun HydrationLogDialog(
             }
         }
 
+        // Sekcja DODAJ — przyciski per typ napoju
+        if (onAdd != null) {
+            Text(
+                "Dodaj napój:",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            // Woda (kafelek z 3 ilościami)
+            HydrationAddRow("💧 Woda", HydrationSource.WATER, listOf(250, 500, 750), onAdd)
+            HydrationAddRow("🍵 Herbata", HydrationSource.TEA, listOf(200, 300), onAdd)
+            HydrationAddRow("☕ Kawa", HydrationSource.COFFEE, listOf(150, 250), onAdd)
+            HydrationAddRow("🍊 Sok / 🥛 inne", HydrationSource.JUICE, listOf(200, 300), onAdd)
+            Spacer(Modifier.height(4.dp))
+        }
+
         if (logs.isEmpty()) {
             Text(
-                "Brak wpisów dzisiaj. Użyj +250 / +500 / +750 ml żeby dodać.",
+                "Brak wpisów dzisiaj. Użyj przycisków powyżej żeby dodać napój.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -158,6 +177,45 @@ private fun HydrationRow(
                     contentDescription = "Usuń",
                     tint = DarkOnSurfaceVariant,
                     modifier = Modifier.size(18.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun HydrationAddRow(
+    label: String,
+    source: HydrationSource,
+    presets: List<Int>,
+    onAdd: (Int, HydrationSource) -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            label,
+            modifier = Modifier.width(120.dp),
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = DarkOnSurface
+        )
+        presets.forEach { ml ->
+            Box(
+                modifier = Modifier
+                    .padding(end = 6.dp)
+                    .height(36.dp)
+                    .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(8.dp))
+                    .clickable { onAdd(ml, source) }
+                    .padding(horizontal = 12.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "+${ml}ml",
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace
+                    ),
+                    color = AccentOrange
                 )
             }
         }

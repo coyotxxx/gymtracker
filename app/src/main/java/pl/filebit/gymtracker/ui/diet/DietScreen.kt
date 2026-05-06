@@ -372,6 +372,7 @@ substitutePrompt?.let { sp ->
             consumedToday = hydrationToday,
             goal = hydrationGoal,
             onDelete = { id -> vm.deleteHydration(id) },
+            onAdd = { ml, source -> vm.addHydration(ml, source) },
             onDismiss = { vm.dismissHydrationDialog() }
         )
     }

@@ -50,7 +50,9 @@ fun computeDailyGoal(
     fallbackWeightKg: Double? = null,
     manualKcalOverride: Int? = null,
     customDeficit: Int? = null,
-    dietProfile: UserDietProfile? = null
+    dietProfile: UserDietProfile? = null,
+    /** Średni dzienny dodatek kcal z cardio (z TrainingDaySummary.cardioMinutes × 10 kcal/min). */
+    avgDailyCardioKcal: Int = 0
 ): DailyMacroGoal {
     val weight = profile.bodyweightKg ?: fallbackWeightKg ?: 75.0
 
@@ -70,10 +72,16 @@ fun computeDailyGoal(
         }
         // Plus dodatkowy bonus za treningi (jeśli activity level nie obejmuje)
         val trainingBonus = profile.daysPerWeek * 30
-        tdee = (bmr * activityMult + trainingBonus).toInt()
-        tdeeFormula = "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 = %d kcal".format(
-            bmr, activityMult, profile.daysPerWeek, tdee
-        )
+        // Cardio: średni dzienny kcal z bieżni/roweru/itp z 7 ostatnich dni
+        tdee = (bmr * activityMult + trainingBonus + avgDailyCardioKcal).toInt()
+        tdeeFormula = if (avgDailyCardioKcal > 0)
+            "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 + cardio %d kcal/dzień = %d kcal".format(
+                bmr, activityMult, profile.daysPerWeek, avgDailyCardioKcal, tdee
+            )
+        else
+            "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 = %d kcal".format(
+                bmr, activityMult, profile.daysPerWeek, tdee
+            )
     } else {
         // Fallback gdy brak UserDietProfile (przed onboardingiem diety)
         val baseMultiplier = 33.0

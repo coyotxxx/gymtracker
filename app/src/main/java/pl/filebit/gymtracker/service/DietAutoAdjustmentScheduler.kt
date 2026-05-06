@@ -22,13 +22,14 @@ class DietAutoAdjustmentScheduler @Inject constructor(
 ) {
     fun schedulePeriodic() {
         val request = PeriodicWorkRequestBuilder<DietAutoAdjustmentWorker>(
-            14, TimeUnit.DAYS
+            7, TimeUnit.DAYS
         )
-            .setInitialDelay(14, TimeUnit.DAYS)
+            .setInitialDelay(7, TimeUnit.DAYS)
             .build()
+        // REPLACE — żeby zaktualizować z 14d na 7d u userów którzy już mają zaplanowany worker
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             DietAutoAdjustmentWorker.UNIQUE_WORK_NAME,
-            ExistingPeriodicWorkPolicy.KEEP,
+            ExistingPeriodicWorkPolicy.UPDATE,
             request
         )
     }
