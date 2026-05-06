@@ -140,8 +140,8 @@ fun GeneratePlanPreferencesDialog(
                     Spacer(Modifier.height(4.dp))
                     FlowRow(
                         modifier = Modifier.fillMaxWidth(),
-                        mainAxisSpacing = 6.dp,
-                        crossAxisSpacing = 6.dp
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         slotChoicesFor(type).forEach { style ->
                             SelectableChip(
