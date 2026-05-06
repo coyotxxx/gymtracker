@@ -42,7 +42,13 @@ class PlanListViewModel @Inject constructor(
     sealed class AiPlanGenState {
         data object Idle : AiPlanGenState()
         data object Loading : AiPlanGenState()
-        data class Success(val planId: Long, val planName: String, val daysCount: Int) : AiPlanGenState()
+        data class Success(
+            val planId: Long,
+            val planName: String,
+            val daysCount: Int,
+            val usedAi: Boolean,
+            val warnings: List<String> = emptyList()
+        ) : AiPlanGenState()
         data class Error(val message: String) : AiPlanGenState()
     }
 
@@ -57,7 +63,7 @@ class PlanListViewModel @Inject constructor(
             _aiGenState.value = result.fold(
                 onSuccess = { r ->
                     if (r.planId < 0) AiPlanGenState.Error(r.warnings.firstOrNull() ?: "Nie udało się wygenerować planu.")
-                    else AiPlanGenState.Success(r.planId, r.planName, r.daysCount)
+                    else AiPlanGenState.Success(r.planId, r.planName, r.daysCount, r.usedAi, r.warnings)
                 },
                 onFailure = { AiPlanGenState.Error(it.message ?: "Nieznany błąd") }
             )

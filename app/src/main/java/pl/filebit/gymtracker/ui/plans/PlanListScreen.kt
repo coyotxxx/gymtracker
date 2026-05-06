@@ -201,9 +201,30 @@ fun PlanListScreen(
         is PlanListViewModel.AiPlanGenState.Success -> {
             AlertDialog(
                 onDismissRequest = { vm.consumeAiGenState(); showAiGenDialog = false },
-                title = { Text("✨ Plan wygenerowany", fontWeight = FontWeight.Bold) },
+                title = {
+                    Text(
+                        if (s.usedAi) "✨ Plan AI gotowy" else "📋 Plan gotowy (offline)",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
                 text = {
-                    Text("'${s.planName}' (${s.daysCount} dni). Otwieram edytor żebyś sprawdził i dopasował.")
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        Text("'${s.planName}' — ${s.daysCount} dni")
+                        Text(
+                            if (s.usedAi) "🤖 Użyto AI z Twoim profilem (sprzęt, ulubione, cel, doświadczenie)."
+                            else "⚙ Tryb offline — silnik regułowy bez AI. Klucz API niedostępny lub AI zwróciło błąd.",
+                            style = MaterialTheme.typography.bodySmall
+                        )
+                        if (s.warnings.isNotEmpty()) {
+                            Text(
+                                "Uwagi:",
+                                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
+                            )
+                            s.warnings.take(5).forEach { w ->
+                                Text("• $w", style = MaterialTheme.typography.bodySmall)
+                            }
+                        }
+                    }
                 },
                 confirmButton = {
                     TextButton(onClick = {
