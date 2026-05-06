@@ -150,9 +150,15 @@ class WorkoutPlanAiService @Inject constructor(
         val (defaultSets, defaultReps, defaultRest) = setsConfigFor(profile.goal)
 
         val prompt = buildString {
+            // === KRYTYCZNE — TYLKO JSON ===
+            append("⚠ TYLKO JSON ⚠\n")
+            append("ODPOWIEDŹ MUSI ZACZYNAĆ SIĘ ZNAKIEM `{` I KOŃCZYĆ `}`\n")
+            append("ZERO TEKSTU PRZED JSON. ZERO MARKDOWN. ZERO ``` FENCES. ZERO KOMENTARZY.\n")
+            append("Jeśli zaczniesz od '#' lub 'Oto plan' lub czegokolwiek innego niż '{' — system Cię odrzuci.\n\n")
+
             append("Jesteś profesjonalnym trenerem siłowym (jak Israetel/Helms/Schoenfeld). ")
             append("Twoja wiedza: split treningowy, SFR (stimulus-fatigue ratio), progresja, ")
-            append("compound vs isolation, ratio objętości per partia. Wygeneruj plan po polsku.\n\n")
+            append("compound vs isolation, ratio objętości per partia. Wygeneruj plan.\n\n")
 
             // PROFIL
             append("=== PROFIL UŻYTKOWNIKA ===\n")
@@ -265,22 +271,55 @@ class WorkoutPlanAiService @Inject constructor(
             append("- dayOfWeek 1=PN, 2=WT, 3=ŚR, 4=CZW, 5=PT, 6=SB, 7=ND\n")
             append("- nazwy ćwiczeń DOKŁADNIE z listy DOSTĘPNE ĆWICZENIA (literówka = błąd)\n")
             append("- max ${if (profile.sessionMinutes <= 30) 3 else if (profile.sessionMinutes <= 45) 4 else if (profile.sessionMinutes <= 60) 6 else 8} ćwiczeń per dzień\n")
-            append("- compound NA POCZĄTKU, izolacje NA KOŃCU\n")
+            append("- compound NA POCZĄTKU, izolacje NA KOŃCU\n\n")
+
+            // OSTATNIE PRZYPOMNIENIE — najczęstszy błąd Claude
+            append("=== KRYTYCZNE ===\n")
+            append("Pierwszy znak Twojej odpowiedzi MUSI być '{'.\n")
+            append("Ostatni znak MUSI być '}'.\n")
+            append("Nie pisz 'Oto plan'. Nie pisz '# Plan'. Nie pisz nic poza JSON.\n")
+            append("Jeśli złamiesz tę zasadę, system odrzuci odpowiedź i będę musiał Cię prosić o korektę.")
         }
 
         Log.d("WorkoutPlanAi", "Prompt length: ${prompt.length} chars, pool=${pool.size} ćwiczeń, days=$daysPerWeek, exp=${profile.experience}, goal=${profile.goal}")
 
-        val response = client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt))).fold(
-            onSuccess = { it },
-            onFailure = { throw IllegalStateException("Błąd komunikacji z AI: ${it.message}") }
-        )
-        Log.d("WorkoutPlanAi", "AI response (first 500): ${response.take(500)}")
+        // === DWIE PRÓBY: pierwsza, potem retry z korektą ===
+        var parsed: AiPlanResponse? = null
+        var lastError: String? = null
+        var currentMessages = listOf(AiMessage(AiRole.USER, prompt))
 
-        val cleaned = stripJsonFences(response)
-        val parsed = try {
-            json.decodeFromString<AiPlanResponse>(cleaned)
-        } catch (e: Exception) {
-            throw IllegalStateException("Nie udało się sparsować odpowiedzi AI (JSON): ${e.message?.take(200)}")
+        for (attempt in 1..2) {
+            val response = client.chat(cfg, currentMessages).fold(
+                onSuccess = { it },
+                onFailure = { throw IllegalStateException("Błąd komunikacji z AI: ${it.message}") }
+            )
+            Log.d("WorkoutPlanAi", "Attempt $attempt — response (first 500): ${response.take(500)}")
+
+            val cleaned = stripJsonFences(response)
+            try {
+                parsed = json.decodeFromString<AiPlanResponse>(cleaned)
+                break  // sukces
+            } catch (e: Exception) {
+                lastError = e.message?.take(200) ?: "parse error"
+                Log.w("WorkoutPlanAi", "Attempt $attempt parse failed: $lastError")
+                if (attempt < 2) {
+                    // Retry z explicit korektą
+                    currentMessages = listOf(
+                        AiMessage(AiRole.USER, prompt),
+                        AiMessage(AiRole.ASSISTANT, response),
+                        AiMessage(AiRole.USER,
+                            "Poprzednia odpowiedź NIE była poprawnym JSON. Błąd: $lastError\n\n" +
+                            "ODPOWIEDŹ MUSI ZACZYNAĆ SIĘ OD '{' I KOŃCZYĆ NA '}'.\n" +
+                            "ZERO tekstu, ZERO markdown, ZERO komentarzy. Tylko czysty JSON.\n" +
+                            "Spróbuj ponownie — wygeneruj TEN SAM plan ale w poprawnym formacie."
+                        )
+                    )
+                }
+            }
+        }
+
+        if (parsed == null) {
+            throw IllegalStateException("Po 2 próbach AI nadal nie zwróciło poprawnego JSON: $lastError")
         }
 
         if (parsed.days.isEmpty()) {
@@ -515,10 +554,30 @@ class WorkoutPlanAiService @Inject constructor(
         return picked
     }
 
+    /**
+     * Robust JSON extractor — radzi sobie z 4 wariantami które AI może zwrócić:
+     *  1. Czysty JSON: {"days":[...]}
+     *  2. JSON w markdown fence: ```json\n{...}\n```
+     *  3. Tekst + JSON: "Oto plan: {...}"
+     *  4. Markdown + JSON: "# Plan\n\n{...}\n\nUwagi: ..."
+     *
+     * Strategia: znajdź pierwsze '{' i odpowiadające mu ostatnie '}'.
+     * Wyczyść markdown fences jeśli są.
+     */
     private fun stripJsonFences(s: String): String {
         var t = s.trim()
+        // Usuń markdown fence ```json...```
         if (t.startsWith("```")) {
             t = t.substringAfter("\n").substringBeforeLast("```").trim()
+        }
+        // Jeśli już zaczyna się od { — OK
+        if (t.startsWith("{")) return t
+
+        // AI zwróciło coś przed JSON — znajdź pierwsze '{' i ostatnie '}'
+        val firstBrace = t.indexOf('{')
+        val lastBrace = t.lastIndexOf('}')
+        if (firstBrace >= 0 && lastBrace > firstBrace) {
+            return t.substring(firstBrace, lastBrace + 1)
         }
         return t
     }
