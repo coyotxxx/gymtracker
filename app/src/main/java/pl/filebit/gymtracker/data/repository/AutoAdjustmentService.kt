@@ -40,11 +40,13 @@ class AutoAdjustmentService @Inject constructor(
         val profile = profileRepo.get()
         val dietProfile = dietProfileRepo.get()
         val config = dietPrefs.load()
+        val latestWeight = runCatching { bodyDao.getLatest()?.weightKg }.getOrNull()
         val currentGoal = computeDailyGoal(
             profile = profile,
             manualKcalOverride = config.manualKcal,
             customDeficit = config.customDeficit,
-            dietProfile = dietProfile
+            dietProfile = dietProfile,
+            latestMeasuredWeightKg = latestWeight
         )
 
         // Trend wagi z BodyMeasurement
@@ -148,10 +150,12 @@ class AutoAdjustmentService @Inject constructor(
         val config = dietPrefs.load()
         val profile = profileRepo.get()
         val dietProfile = dietProfileRepo.get()
+        val latestWeight = runCatching { bodyDao.getLatest()?.weightKg }.getOrNull()
         val baseline = computeDailyGoal(
             profile = profile,
             customDeficit = null,
-            dietProfile = dietProfile
+            dietProfile = dietProfile,
+            latestMeasuredWeightKg = latestWeight
         )
         val newDeficit = adj.newKcal - baseline.breakdown.tdeeKcal
         dietPrefs.save(config.copy(customDeficit = newDeficit, manualKcal = null))

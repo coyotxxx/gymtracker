@@ -52,9 +52,15 @@ fun computeDailyGoal(
     customDeficit: Int? = null,
     dietProfile: UserDietProfile? = null,
     /** Średni dzienny dodatek kcal z cardio (z TrainingDaySummary.cardioMinutes × 10 kcal/min). */
-    avgDailyCardioKcal: Int = 0
+    avgDailyCardioKcal: Int = 0,
+    /**
+     * Najświeższa zmierzona waga (z BodyMeasurement) — ma PIERWSZEŃSTWO przed
+     * profile.bodyweightKg które bywa stare (wprowadzone raz przy onboardingu).
+     * Naprawa bug'a v1.0.17 — TDEE liczony dla aktualnej wagi.
+     */
+    latestMeasuredWeightKg: Double? = null
 ): DailyMacroGoal {
-    val weight = profile.bodyweightKg ?: fallbackWeightKg ?: 75.0
+    val weight = latestMeasuredWeightKg ?: profile.bodyweightKg ?: fallbackWeightKg ?: 75.0
 
     // === KROK 1: TDEE (Total Daily Energy Expenditure) ===
     val tdee: Int

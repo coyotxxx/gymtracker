@@ -24,6 +24,7 @@ class AdherenceCalculator @Inject constructor(
     private val profileRepo: UserProfileRepository,
     private val dietProfileRepo: UserDietProfileRepository,
     private val trainingDietBridge: TrainingDietBridge,
+    private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
     private val dao: AdherenceLogDao
 ) {
 
@@ -33,11 +34,13 @@ class AdherenceCalculator @Inject constructor(
         val profile = runCatching { profileRepo.get() }.getOrNull() ?: return
         val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
         val config = dietPrefs.load()
+        val latestWeight = runCatching { bodyDao.getLatest()?.weightKg }.getOrNull()
         val goal = computeDailyGoal(
             profile = profile,
             manualKcalOverride = config.manualKcal,
             customDeficit = config.customDeficit,
-            dietProfile = dietProfile
+            dietProfile = dietProfile,
+            latestMeasuredWeightKg = latestWeight
         )
 
         // Faktyczne spożycie z MealEntries

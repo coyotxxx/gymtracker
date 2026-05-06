@@ -47,5 +47,11 @@ data class UserProfile(
     val flashOnTimerEnd: Boolean = false,
     val aiOverlayEnabled: Boolean = false,  // pływający FAB Asystenta AI dostępny z każdego ekranu
     val onboardingCompleted: Boolean = false,  // true po przejściu wizard'a pierwszego uruchomienia (v0.86)
-    val aiProactiveChecksEnabled: Boolean = false  // codzienna notyfikacja od AI o regeneracji/stagnacji/bólu (v0.87)
+    val aiProactiveChecksEnabled: Boolean = false,  // codzienna notyfikacja od AI o regeneracji/stagnacji/bólu (v0.87)
+    /**
+     * Dostępny sprzęt (CSV nazw Equipment enum).
+     * Pusty = brak ograniczeń (pełna siłownia).
+     * AI generator planu treningowego filtruje ćwiczenia po tym polu.
+     */
+    val availableEquipmentCsv: String = ""
 )

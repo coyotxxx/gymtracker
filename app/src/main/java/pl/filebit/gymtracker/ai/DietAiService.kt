@@ -131,12 +131,14 @@ class DietAiService @Inject constructor(
 
         val profile = profileRepo.get()
         val dietProfile = dietProfileRepo.get()
+        val latestWeight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
         // Uwzględnij ewentualny override usera (manualKcal lub customDeficit) + UserDietProfile
         val goal = computeDailyGoal(
             profile,
             manualKcalOverride = config.manualKcal,
             customDeficit = config.customDeficit,
-            dietProfile = dietProfile
+            dietProfile = dietProfile,
+            latestMeasuredWeightKg = latestWeight
         )
         val products = dietRepo.observeAllProducts().first()
 

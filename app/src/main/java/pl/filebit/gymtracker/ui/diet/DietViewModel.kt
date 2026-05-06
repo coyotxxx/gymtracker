@@ -118,7 +118,8 @@ class DietViewModel @Inject constructor(
     private val healthConnectScheduler: pl.filebit.gymtracker.service.HealthConnectSyncScheduler,
     private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository,
     val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService,
-    private val cardioKcalEstimator: pl.filebit.gymtracker.data.repository.CardioKcalEstimator
+    private val cardioKcalEstimator: pl.filebit.gymtracker.data.repository.CardioKcalEstimator,
+    private val bodyMeasurementDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 ) : ViewModel() {
 
     // === MEAL CONSUMPTION STATUS ===
@@ -873,12 +874,14 @@ class DietViewModel @Inject constructor(
                     // Cykliczne kcal per dzień tygodnia (refeed/deficyt) — bierze pierwszeństwo
                     val effectiveKcal = cfg.kcalForDate(dateMs) ?: cfg.manualKcal
                     val cardioBonus = runCatching { cardioKcalEstimator.avgDailyKcalLast7Days() }.getOrDefault(0)
+                    val latestMeasuredWeight = runCatching { bodyMeasurementDao.getLatest()?.weightKg }.getOrNull()
                     val goal = if (profile != null) computeDailyGoal(
                         profile,
                         manualKcalOverride = effectiveKcal,
                         customDeficit = cfg.customDeficit,
                         dietProfile = dietProfile,
-                        avgDailyCardioKcal = cardioBonus
+                        avgDailyCardioKcal = cardioBonus,
+                        latestMeasuredWeightKg = latestMeasuredWeight
                     ) else DailyMacroGoal(
                         2200, 150, 250, 70,
                         pl.filebit.gymtracker.util.GoalBreakdown(
