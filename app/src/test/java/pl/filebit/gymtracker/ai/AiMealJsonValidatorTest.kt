@@ -354,7 +354,7 @@ class AiMealJsonValidatorTest {
     }
 
     @Test
-    fun `protein WAY too low → ERROR (filozofia: niedobór szkodzi mięśniom)`() {
+    fun `protein WAY too low produces ERROR`() {
         // Mało białka, dużo węgli — niedobór białka
         val lowProteinPlan = AiDayPlan(
             meals = listOf(
@@ -389,7 +389,7 @@ class AiMealJsonValidatorTest {
     }
 
     @Test
-    fun `protein over target by 50 percent → OK (nadmiar białka nie szkodzi)`() {
+    fun `protein over target by 50 percent passes (nadmiar bialka nie szkodzi)`() {
         // Filozofia: cel białka to MINIMUM, nadmiar OK
         val highProteinPlan = AiDayPlan(
             meals = listOf(
@@ -421,7 +421,7 @@ class AiMealJsonValidatorTest {
     }
 
     @Test
-    fun `fat too low → ERROR (filozofia: hormony, witaminy)`() {
+    fun `fat too low produces ERROR`() {
         // Niedobór tłuszczu — istotny problem hormonalny
         val noFatPlan = AiDayPlan(
             meals = listOf(
