@@ -44,6 +44,7 @@ fun DietSettingsDialog(
     initial: DietConfig,
     onSave: (DietConfig) -> Unit,
     onEditProfile: () -> Unit = {},
+    onEditWeeklyKcal: () -> Unit = {},
     onHealthConnectEnableRequest: () -> Unit = {},
     onHealthConnectDisable: () -> Unit = {},
     onDismiss: () -> Unit
@@ -228,6 +229,33 @@ fun DietSettingsDialog(
                         )
                         Text(
                             "Wiek, wzrost, alergie, preferencje, budżet, stany zdrowia",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                }
+
+                // Refeed/deficyt cyklicznie
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                        .clickable {
+                            onEditWeeklyKcal()
+                            onDismiss()
+                        }
+                        .padding(12.dp)
+                ) {
+                    Column {
+                        val activeOverrides = previewConfig.weeklyKcalOverrides.size
+                        Text(
+                            if (activeOverrides > 0) "🔁 Refeed/deficyt: $activeOverrides dni"
+                            else "🔁 Refeed / deficyt cyklicznie",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
+                        Text(
+                            "Różne kcal w różne dni tygodnia (np. wyższe pn/wt/nd, niższe śr/czw)",
                             style = MaterialTheme.typography.labelSmall,
                             color = DarkOnSurfaceVariant
                         )

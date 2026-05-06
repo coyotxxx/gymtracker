@@ -32,8 +32,25 @@ class DietPreferences @Inject constructor(
         autoCheckAdjustments = prefs.getBoolean(KEY_AUTO_CHECK, true),
         healthConnectSyncEnabled = prefs.getBoolean(KEY_HC_SYNC, false),
         customDeficit = prefs.getInt(KEY_DEFICIT, Int.MIN_VALUE).takeIf { it != Int.MIN_VALUE },
-        manualKcal = prefs.getInt(KEY_KCAL_OVERRIDE, 0).takeIf { it > 0 }
+        manualKcal = prefs.getInt(KEY_KCAL_OVERRIDE, 0).takeIf { it > 0 },
+        weeklyKcalOverrides = parseWeeklyOverrides(prefs.getString(KEY_WEEKLY_KCAL, null))
     )
+
+    /** Format: "1=2750,2=2750,3=2500,4=2500,7=2750" */
+    private fun parseWeeklyOverrides(s: String?): Map<Int, Int> {
+        if (s.isNullOrBlank()) return emptyMap()
+        return s.split(",").mapNotNull { entry ->
+            val parts = entry.split("=")
+            if (parts.size == 2) {
+                val day = parts[0].trim().toIntOrNull()
+                val kcal = parts[1].trim().toIntOrNull()
+                if (day != null && kcal != null && day in 1..7 && kcal > 0) day to kcal else null
+            } else null
+        }.toMap()
+    }
+
+    private fun serializeWeeklyOverrides(m: Map<Int, Int>): String =
+        m.entries.joinToString(",") { "${it.key}=${it.value}" }
 
     fun save(config: DietConfig) {
         prefs.edit()
@@ -48,6 +65,11 @@ class DietPreferences @Inject constructor(
                 else editor.remove(KEY_DEFICIT)
                 if (config.manualKcal != null) editor.putInt(KEY_KCAL_OVERRIDE, config.manualKcal)
                 else editor.remove(KEY_KCAL_OVERRIDE)
+                if (config.weeklyKcalOverrides.isNotEmpty()) {
+                    editor.putString(KEY_WEEKLY_KCAL, serializeWeeklyOverrides(config.weeklyKcalOverrides))
+                } else {
+                    editor.remove(KEY_WEEKLY_KCAL)
+                }
             }
             .apply()
         _state.value = config
@@ -62,6 +84,7 @@ class DietPreferences @Inject constructor(
         private const val KEY_HC_SYNC = "health_connect_sync"
         private const val KEY_DEFICIT = "custom_deficit_kcal"
         private const val KEY_KCAL_OVERRIDE = "manual_kcal_override"
+        private const val KEY_WEEKLY_KCAL = "weekly_kcal_overrides"
     }
 }
 
@@ -77,7 +100,22 @@ data class DietConfig(
     /** Override default deficit (-750..+500). null = użyj wartości domyślnej z celu (CUT=-500, BULK=+300). */
     val customDeficit: Int? = null,
     /** Manualne nadpisanie kcal — jeśli != null, ignoruje TDEE+deficit. */
-    val manualKcal: Int? = null
+    val manualKcal: Int? = null,
+    /**
+     * Cykliczne kcal per dzień tygodnia (refeed/deficyt — filozofia z xlsx Macieja).
+     *
+     * Klucz: java.time.DayOfWeek.value (1=PN, 2=WT, ..., 7=ND).
+     * Wartość: kcal targetu dla tego dnia. null = użyj manualKcal/TDEE.
+     *
+     * Pusta mapa = wszystkie dni równo (klasycznie).
+     * Niepełna mapa = dni bez wpisu używają manualKcal/TDEE.
+     *
+     * Przykład Macieja 2022 redukcja:
+     *   PN/WT/ND → 2750 (refeed)
+     *   ŚR/CZW    → 2500 (deficyt)
+     *   PT/SOB    → null (TDEE z celu)
+     */
+    val weeklyKcalOverrides: Map<Int, Int> = emptyMap()
 ) {
     /**
      * Godziny posiłków rozłożone równo w oknie żywieniowym.
@@ -102,5 +140,28 @@ data class DietConfig(
         val h = hourDecimal.toInt()
         val m = ((hourDecimal - h) * 60).toInt()
         return "%02d:%02d".format(h, m)
+    }
+
+    /**
+     * Zwraca override kcal dla konkretnej daty na bazie weeklyKcalOverrides,
+     * lub null jeśli nie ma wpisu dla tego dnia tygodnia.
+     *
+     * Klucz: java.time.DayOfWeek.value (1=PN, 2=WT, ..., 7=ND).
+     */
+    fun kcalForDate(dateMs: Long): Int? {
+        if (weeklyKcalOverrides.isEmpty()) return null
+        val cal = java.util.Calendar.getInstance().apply { timeInMillis = dateMs }
+        // Calendar.MONDAY = 2, ..., SUNDAY = 1 → konwersja do DayOfWeek (1=PN..7=ND)
+        val dayOfWeek = when (cal.get(java.util.Calendar.DAY_OF_WEEK)) {
+            java.util.Calendar.MONDAY -> 1
+            java.util.Calendar.TUESDAY -> 2
+            java.util.Calendar.WEDNESDAY -> 3
+            java.util.Calendar.THURSDAY -> 4
+            java.util.Calendar.FRIDAY -> 5
+            java.util.Calendar.SATURDAY -> 6
+            java.util.Calendar.SUNDAY -> 7
+            else -> return null
+        }
+        return weeklyKcalOverrides[dayOfWeek]
     }
 }

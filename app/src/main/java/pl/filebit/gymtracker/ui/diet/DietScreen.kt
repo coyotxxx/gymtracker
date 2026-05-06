@@ -114,6 +114,7 @@ fun DietScreen(
     var showGoalBreakdown by remember { mutableStateOf(false) }
     var showStylePicker by remember { mutableStateOf(false) }
     var showQuickCompose by remember { mutableStateOf(false) }
+    var showWeeklyKcal by remember { mutableStateOf(false) }
     // Stan rozwinięcia sekcji
     val expandedSlots = remember { mutableStateMapOf<MealType, Boolean>() }
     var toolsExpanded by remember { mutableStateOf(false) }
@@ -276,9 +277,22 @@ fun DietScreen(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
             onEditProfile = onEditDietProfile,
+            onEditWeeklyKcal = { showWeeklyKcal = true },
             onHealthConnectEnableRequest = { vm.startHealthConnectEnableFlow() },
             onHealthConnectDisable = { vm.toggleHealthConnectSync(false) },
             onDismiss = { showSettings = false }
+        )
+    }
+
+    if (showWeeklyKcal) {
+        WeeklyKcalDialog(
+            initial = state.config.weeklyKcalOverrides,
+            defaultKcal = state.goal.kcal,
+            onSave = { newMap ->
+                showWeeklyKcal = false
+                vm.saveConfig(state.config.copy(weeklyKcalOverrides = newMap))
+            },
+            onDismiss = { showWeeklyKcal = false }
         )
     }
 

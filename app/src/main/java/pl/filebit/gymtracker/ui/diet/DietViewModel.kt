@@ -869,9 +869,11 @@ class DietViewModel @Inject constructor(
 
                     val profile = runCatching { profileRepo.get() }.getOrNull()
                     val dietProfile = runCatching { dietProfileRepo.get() }.getOrNull()
+                    // Cykliczne kcal per dzień tygodnia (refeed/deficyt) — bierze pierwszeństwo
+                    val effectiveKcal = cfg.kcalForDate(dateMs) ?: cfg.manualKcal
                     val goal = if (profile != null) computeDailyGoal(
                         profile,
-                        manualKcalOverride = cfg.manualKcal,
+                        manualKcalOverride = effectiveKcal,
                         customDeficit = cfg.customDeficit,
                         dietProfile = dietProfile
                     ) else DailyMacroGoal(
