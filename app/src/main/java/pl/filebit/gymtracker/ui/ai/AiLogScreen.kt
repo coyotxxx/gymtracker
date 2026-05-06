@@ -21,6 +21,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.DeleteSweep
+import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -42,8 +44,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.AnnotatedString
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import android.content.Intent
+import android.widget.Toast
 import pl.filebit.gymtracker.data.entity.AiLog
 import pl.filebit.gymtracker.ui.diet.ScrollableDialogShell
 import pl.filebit.gymtracker.ui.theme.AccentOrange
@@ -72,6 +79,7 @@ fun AiLogScreen(
     val selected by vm.selectedLog.collectAsStateWithLifecycle()
 
     var showClearConfirm by remember { mutableStateOf(false) }
+    val context = LocalContext.current
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         // Header
@@ -89,6 +97,12 @@ fun AiLogScreen(
                 modifier = Modifier.weight(1f)
             )
             if (logs.isNotEmpty()) {
+                IconButton(onClick = {
+                    val text = formatAllLogs(logs)
+                    shareText(context, text, "Logi AI GymTracker — ${logs.size} wpisów")
+                }) {
+                    Icon(Icons.Default.Share, contentDescription = "Udostępnij", tint = AccentOrange)
+                }
                 IconButton(onClick = { showClearConfirm = true }) {
                     Icon(Icons.Default.DeleteSweep, contentDescription = "Wyczyść", tint = ErrorRed)
                 }
@@ -251,12 +265,29 @@ private fun LogRow(log: AiLog, onClick: () -> Unit) {
 
 @Composable
 private fun AiLogDetailDialog(log: AiLog, onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val clipboard = LocalClipboardManager.current
     ScrollableDialogShell(
         title = "${log.service} · ${formatTime(log.createdAt)}",
         onDismiss = onDismiss,
         actions = {
+            TextButton(onClick = {
+                clipboard.setText(AnnotatedString(formatLog(log)))
+                Toast.makeText(context, "Skopiowano do schowka", Toast.LENGTH_SHORT).show()
+            }) {
+                Icon(Icons.Default.ContentCopy, contentDescription = null, tint = AccentOrange, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(4.dp))
+                Text("Kopiuj", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
+            TextButton(onClick = {
+                shareText(context, formatLog(log), "Log AI ${log.service}")
+            }) {
+                Icon(Icons.Default.Share, contentDescription = null, tint = AccentOrange, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(4.dp))
+                Text("Udostępnij", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
             TextButton(onClick = onDismiss) {
-                Text("Zamknij", color = AccentOrange, fontWeight = FontWeight.Bold)
+                Text("Zamknij", color = DarkOnSurfaceVariant)
             }
         }
     ) {
@@ -337,4 +368,52 @@ private fun SectionLabel(text: String) {
 private fun formatTime(ms: Long): String {
     val sdf = SimpleDateFormat("dd.MM HH:mm:ss", Locale.getDefault())
     return sdf.format(Date(ms))
+}
+
+private fun formatLog(log: AiLog): String {
+    val date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(log.createdAt))
+    val sb = StringBuilder()
+    sb.appendLine("=== AI Log ===")
+    sb.appendLine("Service:  ${log.service}")
+    sb.appendLine("Provider: ${log.provider}")
+    sb.appendLine("Model:    ${log.model}")
+    sb.appendLine("Time:     $date")
+    sb.appendLine("Duration: ${log.durationMs}ms")
+    sb.appendLine("Status:   ${if (log.success) "SUCCESS" else "ERROR"}")
+    log.errorMessage?.let { sb.appendLine("Error:    $it") }
+    if (log.inputTokens != null || log.outputTokens != null) {
+        sb.appendLine("Tokens:   in=${log.inputTokens ?: "-"} out=${log.outputTokens ?: "-"}")
+    }
+    sb.appendLine()
+    sb.appendLine("--- PROMPT (${log.fullPrompt.length} chars) ---")
+    sb.appendLine(log.fullPrompt)
+    sb.appendLine()
+    sb.appendLine("--- RESPONSE (${log.fullResponse.length} chars) ---")
+    sb.appendLine(log.fullResponse.ifBlank { "(empty)" })
+    return sb.toString()
+}
+
+private fun formatAllLogs(logs: List<AiLog>): String {
+    val sb = StringBuilder()
+    sb.appendLine("=== GymTracker — Logi AI (${logs.size}) ===")
+    sb.appendLine("Wygenerowano: ${SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())}")
+    sb.appendLine()
+    logs.forEachIndexed { i, log ->
+        sb.appendLine("######## [${i + 1}/${logs.size}] ########")
+        sb.appendLine(formatLog(log))
+        sb.appendLine()
+    }
+    return sb.toString()
+}
+
+private fun shareText(context: android.content.Context, text: String, subject: String) {
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        putExtra(Intent.EXTRA_SUBJECT, subject)
+        putExtra(Intent.EXTRA_TEXT, text)
+    }
+    val chooser = Intent.createChooser(intent, "Udostępnij log AI").apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    }
+    context.startActivity(chooser)
 }
