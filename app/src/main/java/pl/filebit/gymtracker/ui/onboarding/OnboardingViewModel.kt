@@ -32,8 +32,8 @@ data class OnboardingUiState(
     val displayName: String = "",
     // === KROK 1: Płeć + wiek + wzrost (do dokładnego BMR Mifflin-St Jeor) ===
     val gender: Gender = Gender.MALE,
-    val ageYears: Int = 30,
-    val heightCm: Int = 175,
+    val ageYears: Int? = null,
+    val heightCm: Int? = null,
     // === KROK 2: Cel treningowy + doświadczenie ===
     val goal: TrainingGoal = TrainingGoal.HYPERTROPHY,
     val experience: ExperienceLevel = ExperienceLevel.INTERMEDIATE,
@@ -93,8 +93,10 @@ class OnboardingViewModel @Inject constructor(
                     weightGoalType = current.weightGoalType,
                     targetWeightKg = current.targetWeightKg,
                     availableEquipmentCsv = current.availableEquipmentCsv,
-                    ageYears = dietProfile?.ageYears ?: 30,
-                    heightCm = dietProfile?.heightCm ?: 175,
+                    // Prefill TYLKO jeśli user już wcześniej wypełnił — pusty stan
+                    // pozwala wpisać wartość w czystym polu (nie dokleja się do "30")
+                    ageYears = dietProfile?.ageYears?.takeIf { it > 0 },
+                    heightCm = dietProfile?.heightCm?.takeIf { it > 0 },
                     activityLevel = dietProfile?.activityLevel ?: ActivityLevel.MODERATE,
                     dietPreference = dietProfile?.dietPreference ?: DietPreference.STANDARD,
                     allergiesCsv = dietProfile?.allergies ?: "",
@@ -114,8 +116,8 @@ class OnboardingViewModel @Inject constructor(
     fun setGoal(g: TrainingGoal) = _state.update { it.copy(goal = g) }
     fun setExperience(e: ExperienceLevel) = _state.update { it.copy(experience = e) }
     fun setGender(g: Gender) = _state.update { it.copy(gender = g) }
-    fun setAge(years: Int) = _state.update { it.copy(ageYears = years.coerceIn(13, 90)) }
-    fun setHeight(cm: Int) = _state.update { it.copy(heightCm = cm.coerceIn(140, 220)) }
+    fun setAge(years: Int?) = _state.update { it.copy(ageYears = years) }
+    fun setHeight(cm: Int?) = _state.update { it.copy(heightCm = cm) }
     fun setDaysPerWeek(d: Int) = _state.update { it.copy(daysPerWeek = d.coerceIn(1, 7)) }
     fun setSessionMinutes(m: Int) = _state.update { it.copy(sessionMinutes = m.coerceIn(15, 240)) }
     fun setBodyweight(kg: Double?) = _state.update { it.copy(bodyweightKg = kg) }
@@ -190,8 +192,8 @@ class OnboardingViewModel @Inject constructor(
                 WeightGoalType.NONE -> DietGoalType.MAINTAIN
             }
             val newDietProfile = (existingDiet ?: UserDietProfile()).copy(
-                ageYears = s.ageYears,
-                heightCm = s.heightCm,
+                ageYears = s.ageYears?.coerceIn(13, 90) ?: 30,
+                heightCm = s.heightCm?.coerceIn(140, 220) ?: 175,
                 activityLevel = s.activityLevel,
                 goalType = dietGoalType,
                 dietPreference = if (s.wantsDietProfile) s.dietPreference else (existingDiet?.dietPreference ?: DietPreference.STANDARD),

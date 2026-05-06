@@ -546,8 +546,8 @@ private fun weightGoalLabel(g: WeightGoalType): String = when (g) {
 private fun AgeHeightGenderPage(
     state: OnboardingUiState,
     onGenderChange: (pl.filebit.gymtracker.data.entity.Gender) -> Unit,
-    onAgeChange: (Int) -> Unit,
-    onHeightChange: (Int) -> Unit
+    onAgeChange: (Int?) -> Unit,
+    onHeightChange: (Int?) -> Unit
 ) {
     StepCard(title = "Twoje dane", subtitle = "Potrzebne do dokładnego obliczenia zapotrzebowania kalorycznego (BMR)") {
         // Płeć
@@ -570,28 +570,59 @@ private fun AgeHeightGenderPage(
 
         Spacer(Modifier.height(14.dp))
 
-        // Wiek
+        // Wiek — TextField pamięta lokalny tekst (żeby user mógł kasować/wpisywać bez doklejania się)
+        var ageText by remember(state.ageYears) {
+            androidx.compose.runtime.mutableStateOf(state.ageYears?.toString() ?: "")
+        }
         OutlinedTextField(
-            value = state.ageYears.toString(),
-            onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onAgeChange) },
+            value = ageText,
+            onValueChange = { v ->
+                // Tylko cyfry, max 3 znaki
+                val cleaned = v.filter { it.isDigit() }.take(3)
+                ageText = cleaned
+                onAgeChange(cleaned.toIntOrNull())
+            },
             label = { Text("Wiek (lata)") },
+            placeholder = { Text("np. 30", color = DarkOnSurfaceVariant) },
             keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
-            colors = onboardingTextFieldColors()
+            colors = onboardingTextFieldColors(),
+            isError = state.ageYears != null && (state.ageYears < 13 || state.ageYears > 90),
+            supportingText = {
+                val a = state.ageYears
+                if (a != null && (a < 13 || a > 90)) {
+                    Text("Wiek powinien być w zakresie 13-90 lat", color = androidx.compose.ui.graphics.Color.Red)
+                }
+            }
         )
 
         Spacer(Modifier.height(8.dp))
 
-        // Wzrost
+        // Wzrost — analogicznie
+        var heightText by remember(state.heightCm) {
+            androidx.compose.runtime.mutableStateOf(state.heightCm?.toString() ?: "")
+        }
         OutlinedTextField(
-            value = state.heightCm.toString(),
-            onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onHeightChange) },
+            value = heightText,
+            onValueChange = { v ->
+                val cleaned = v.filter { it.isDigit() }.take(3)
+                heightText = cleaned
+                onHeightChange(cleaned.toIntOrNull())
+            },
             label = { Text("Wzrost (cm)") },
+            placeholder = { Text("np. 175", color = DarkOnSurfaceVariant) },
             keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
-            colors = onboardingTextFieldColors()
+            colors = onboardingTextFieldColors(),
+            isError = state.heightCm != null && (state.heightCm < 140 || state.heightCm > 220),
+            supportingText = {
+                val h = state.heightCm
+                if (h != null && (h < 140 || h > 220)) {
+                    Text("Wzrost powinien być w zakresie 140-220 cm", color = androidx.compose.ui.graphics.Color.Red)
+                }
+            }
         )
     }
 }
@@ -828,13 +859,19 @@ private fun DietProfilePage(
 
             Spacer(Modifier.height(14.dp))
 
-            // Budżet tygodniowy
+            // Budżet tygodniowy — tekst lokalny żeby user mógł czyścić
+            var budgetText by remember(state.weeklyBudgetPln) {
+                androidx.compose.runtime.mutableStateOf(state.weeklyBudgetPln?.toString() ?: "")
+            }
             OutlinedTextField(
-                value = state.weeklyBudgetPln?.toString() ?: "",
+                value = budgetText,
                 onValueChange = { v ->
-                    onSetWeeklyBudget(v.filter { it.isDigit() }.toIntOrNull())
+                    val cleaned = v.filter { it.isDigit() }.take(4)
+                    budgetText = cleaned
+                    onSetWeeklyBudget(cleaned.toIntOrNull())
                 },
                 label = { Text("Budżet tygodniowy (zł, opcjonalnie)") },
+                placeholder = { Text("np. 250", color = DarkOnSurfaceVariant) },
                 keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
@@ -844,10 +881,20 @@ private fun DietProfilePage(
             Spacer(Modifier.height(8.dp))
 
             // Czas gotowania
+            var cookText by remember(state.cookingTimePerMealMin) {
+                androidx.compose.runtime.mutableStateOf(
+                    if (state.cookingTimePerMealMin > 0) state.cookingTimePerMealMin.toString() else ""
+                )
+            }
             OutlinedTextField(
-                value = state.cookingTimePerMealMin.toString(),
-                onValueChange = { v -> v.filter { it.isDigit() }.toIntOrNull()?.let(onSetCookingTime) },
+                value = cookText,
+                onValueChange = { v ->
+                    val cleaned = v.filter { it.isDigit() }.take(2)
+                    cookText = cleaned
+                    cleaned.toIntOrNull()?.let(onSetCookingTime)
+                },
                 label = { Text("Max czas gotowania 1 posiłku (min)") },
+                placeholder = { Text("np. 15", color = DarkOnSurfaceVariant) },
                 keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
