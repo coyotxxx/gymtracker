@@ -5,7 +5,9 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapLatest
@@ -30,8 +32,41 @@ data class PlanListItem(
 class PlanListViewModel @Inject constructor(
     private val planRepo: PlanRepository,
     private val workoutRepo: WorkoutRepository,
-    private val exerciseRepo: ExerciseRepository
+    private val exerciseRepo: ExerciseRepository,
+    private val workoutPlanAi: pl.filebit.gymtracker.ai.WorkoutPlanAiService
 ) : ViewModel() {
+
+    private val _aiGenState = MutableStateFlow<AiPlanGenState>(AiPlanGenState.Idle)
+    val aiGenState: StateFlow<AiPlanGenState> = _aiGenState.asStateFlow()
+
+    sealed class AiPlanGenState {
+        data object Idle : AiPlanGenState()
+        data object Loading : AiPlanGenState()
+        data class Success(val planId: Long, val planName: String, val daysCount: Int) : AiPlanGenState()
+        data class Error(val message: String) : AiPlanGenState()
+    }
+
+    fun generateAiPlan(daysPerWeek: Int, favoritesOnly: Boolean) {
+        if (_aiGenState.value is AiPlanGenState.Loading) return
+        _aiGenState.value = AiPlanGenState.Loading
+        viewModelScope.launch {
+            val result = workoutPlanAi.generate(
+                daysPerWeek = daysPerWeek,
+                favoritesOnly = favoritesOnly
+            )
+            _aiGenState.value = result.fold(
+                onSuccess = { r ->
+                    if (r.planId < 0) AiPlanGenState.Error(r.warnings.firstOrNull() ?: "Nie udało się wygenerować planu.")
+                    else AiPlanGenState.Success(r.planId, r.planName, r.daysCount)
+                },
+                onFailure = { AiPlanGenState.Error(it.message ?: "Nieznany błąd") }
+            )
+        }
+    }
+
+    fun consumeAiGenState() {
+        _aiGenState.value = AiPlanGenState.Idle
+    }
 
     /** Plan ID aktywnego treningu (jeśli z planu) — używane do badge "AKTYWNY". */
     val activePlanId: StateFlow<Long?> = workoutRepo.observeActive()

@@ -72,13 +72,16 @@ fun PlanListScreen(
     onCreateNewPlan: () -> Unit,
     onStartedCoachWorkout: () -> Unit,
     onOpenTemplates: () -> Unit,
+    onAiGenerate: () -> Unit = {},
     vm: PlanListViewModel = hiltViewModel()
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
     val activePlanId by vm.activePlanId.collectAsStateWithLifecycle()
+    val aiGenState by vm.aiGenState.collectAsStateWithLifecycle()
     var dayPickerForPlan by remember { mutableStateOf<PlanListItem?>(null) }
     var newMenuOpen by remember { mutableStateOf(false) }
     var showDeleteDialog by remember { mutableStateOf<Long?>(null) }
+    var showAiGenDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -112,6 +115,11 @@ fun PlanListScreen(
                     count = pl.filebit.gymtracker.data.template.PlanTemplates.all.size,
                     onClick = onOpenTemplates
                 )
+            }
+
+            // ✨ Generator AI plan z ulubionych + sprzętu
+            item {
+                AiGeneratePlanButton(onClick = { showAiGenDialog = true })
             }
 
             if (plans.isEmpty()) {
@@ -178,6 +186,144 @@ fun PlanListScreen(
             }
         )
     }
+
+    if (showAiGenDialog) {
+        AiPlanGenDialog(
+            isLoading = aiGenState is PlanListViewModel.AiPlanGenState.Loading,
+            onGenerate = { days, favOnly ->
+                vm.generateAiPlan(days, favOnly)
+            },
+            onDismiss = { showAiGenDialog = false }
+        )
+    }
+
+    when (val s = aiGenState) {
+        is PlanListViewModel.AiPlanGenState.Success -> {
+            AlertDialog(
+                onDismissRequest = { vm.consumeAiGenState(); showAiGenDialog = false },
+                title = { Text("✨ Plan wygenerowany", fontWeight = FontWeight.Bold) },
+                text = {
+                    Text("'${s.planName}' (${s.daysCount} dni). Otwieram edytor żebyś sprawdził i dopasował.")
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        vm.consumeAiGenState()
+                        showAiGenDialog = false
+                        onEditPlan(s.planId)
+                    }) {
+                        Text("Otwórz", fontWeight = FontWeight.Bold)
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = {
+                        vm.consumeAiGenState()
+                        showAiGenDialog = false
+                    }) { Text("OK") }
+                }
+            )
+        }
+        is PlanListViewModel.AiPlanGenState.Error -> {
+            AlertDialog(
+                onDismissRequest = { vm.consumeAiGenState() },
+                title = { Text("❌ Błąd generowania") },
+                text = { Text(s.message) },
+                confirmButton = {
+                    TextButton(onClick = { vm.consumeAiGenState() }) { Text("OK") }
+                }
+            )
+        }
+        else -> {}
+    }
+}
+
+@Composable
+private fun AiPlanGenDialog(
+    isLoading: Boolean,
+    onGenerate: (daysPerWeek: Int, favoritesOnly: Boolean) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var days by remember { mutableStateOf(4) }
+    var favOnly by remember { mutableStateOf(true) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("✨ Generuj plan AI", fontWeight = FontWeight.Bold) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(
+                    "AI ułoży plan z Twoich ulubionych ćwiczeń + dostępnego sprzętu.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+
+                Text("Liczba dni treningowych:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    listOf(2, 3, 4, 5, 6).forEach { d ->
+                        val sel = days == d
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(40.dp)
+                                .background(
+                                    if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.2f)
+                                    else pl.filebit.gymtracker.ui.theme.DarkSurface,
+                                    RoundedCornerShape(8.dp)
+                                )
+                                .clickable { days = d },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "$d dni",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                                color = if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange
+                                       else pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                            )
+                        }
+                    }
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    androidx.compose.material3.Switch(
+                        checked = favOnly,
+                        onCheckedChange = { favOnly = it }
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Column {
+                        Text("Tylko ulubione (❤)", fontWeight = FontWeight.SemiBold)
+                        Text(
+                            if (favOnly) "Plan z Twoich ulubionych ćwiczeń"
+                            else "Plan z całej bazy",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                        )
+                    }
+                }
+
+                if (isLoading) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        androidx.compose.material3.CircularProgressIndicator(
+                            modifier = Modifier.size(16.dp),
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(Modifier.width(8.dp))
+                        Text("Generuję plan...", style = MaterialTheme.typography.bodySmall)
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(
+                onClick = { onGenerate(days, favOnly) },
+                enabled = !isLoading
+            ) {
+                Text("✨ Generuj", fontWeight = FontWeight.Bold)
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss, enabled = !isLoading) {
+                Text("Anuluj")
+            }
+        }
+    )
 }
 
 @Composable
@@ -328,6 +474,48 @@ private fun PlanCard(
                         )
                     }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun AiGeneratePlanButton(onClick: () -> Unit) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 4.dp),
+        colors = CardDefaults.cardColors(containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.10f)),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.4f)
+        ),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                Icons.Default.AutoAwesome,
+                contentDescription = null,
+                tint = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                modifier = Modifier.size(18.dp)
+            )
+            Spacer(Modifier.width(10.dp))
+            Column {
+                Text(
+                    "✨ Wygeneruj plan AI",
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                )
+                Text(
+                    "Z Twoich ulubionych ćwiczeń + dostępnego sprzętu",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                )
             }
         }
     }
