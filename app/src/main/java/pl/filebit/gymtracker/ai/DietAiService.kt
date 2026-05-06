@@ -120,7 +120,10 @@ class DietAiService @Inject constructor(
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
 
-    suspend fun generateDayPlan(config: DietConfig): Result<GeneratedDayPlan> {
+    suspend fun generateDayPlan(
+        config: DietConfig,
+        stylePrefs: MealStylePreferences = MealStylePreferences()
+    ): Result<GeneratedDayPlan> {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             return Result.failure(IllegalStateException("Skonfiguruj klucz AI w ustawieniach (Profil → Połączenie AI)"))
@@ -374,6 +377,30 @@ class DietAiService @Inject constructor(
             append("- Okno żywieniowe: ${config.eatingWindowHours}h (${"%02d:00".format(config.windowStartHour)}–${"%02d:00".format(config.windowEndHour())})\n")
             append("- Cel kcal/posiłek: ~$perMealKcal kcal\n")
             append("- Cel makro/posiłek: B${perMealProtein}g W${perMealCarbs}g T${perMealFat}g\n")
+
+            // === STYL PLANU (od usera, przed wygenerowaniem) ===
+            if (stylePrefs.globalStyle != PlanStyle.CLASSIC ||
+                stylePrefs.slotStyles.isNotEmpty() ||
+                stylePrefs.freeText.isNotBlank()) {
+                append("\n=== STYL PLANU (preferencje usera dla TEJ generacji) ===\n")
+                if (stylePrefs.globalStyle != PlanStyle.CLASSIC) {
+                    append("Styl globalny: **${stylePrefs.globalStyle.label}** — ${stylePrefs.globalStyle.promptHint}\n")
+                }
+                if (stylePrefs.slotStyles.isNotEmpty()) {
+                    append("Per slot:\n")
+                    val typesForSlots = mealTypesForSlots(mealsCount)
+                    typesForSlots.forEachIndexed { idx, type ->
+                        val style = stylePrefs.slotStyles[type] ?: return@forEachIndexed
+                        if (style == MealStyle.DEFAULT || style == MealStyle.NO_PREFERENCE) return@forEachIndexed
+                        val slotLabel = labelForSlot(idx + 1, mealsCount)
+                        append("  - $slotLabel: **${style.label}** — ${style.promptHint}\n")
+                    }
+                }
+                if (stylePrefs.freeText.isNotBlank()) {
+                    append("Dodatkowe życzenia usera: \"${stylePrefs.freeText}\"\n")
+                }
+                append("→ Honor preferencje stylu przy generowaniu, ALE makro/kcal targety dalej obowiązują.\n")
+            }
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
             slotLabels.forEach { append("- $it\n") }

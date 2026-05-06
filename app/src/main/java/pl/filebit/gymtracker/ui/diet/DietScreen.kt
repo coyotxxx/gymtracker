@@ -112,6 +112,7 @@ fun DietScreen(
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }
+    var showStylePicker by remember { mutableStateOf(false) }
     // Stan rozwinięcia sekcji
     val expandedSlots = remember { mutableStateMapOf<MealType, Boolean>() }
     var toolsExpanded by remember { mutableStateOf(false) }
@@ -186,7 +187,7 @@ fun DietScreen(
                         aiLoading = aiState is pl.filebit.gymtracker.ui.diet.AiPlanState.Loading,
                         onSettings = { showSettings = true },
                         onShowBreakdown = { showGoalBreakdown = true },
-                        onGenerateAi = { vm.generateAiDayPlan() }
+                        onGenerateAi = { showStylePicker = true }
                     )
                 }
 
@@ -285,6 +286,17 @@ fun DietScreen(
             config = state.config,
             onSave = { vm.saveConfig(it) },
             onDismiss = { showGoalBreakdown = false }
+        )
+    }
+
+    if (showStylePicker) {
+        GeneratePlanPreferencesDialog(
+            mealsCount = state.config.mealsPerDay,
+            onGenerate = { stylePrefs ->
+                showStylePicker = false
+                vm.generateAiDayPlan(stylePrefs)
+            },
+            onDismiss = { showStylePicker = false }
         )
     }
 

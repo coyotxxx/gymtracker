@@ -942,12 +942,14 @@ class DietViewModel @Inject constructor(
      * (case-insensitive) → zapisuje MealEntry per posiłek + Recipe.
      * Stan AI loading/success/error eksponuje przez aiPlanState.
      */
-    fun generateAiDayPlan() {
+    fun generateAiDayPlan(
+        stylePrefs: pl.filebit.gymtracker.ai.MealStylePreferences = pl.filebit.gymtracker.ai.MealStylePreferences()
+    ) {
         if (_aiPlanState.value is AiPlanState.Loading) return
         _aiPlanState.value = AiPlanState.Loading
         viewModelScope.launch {
             val config = dietPrefs.load()
-            val result = dietAi.generateDayPlan(config)
+            val result = dietAi.generateDayPlan(config, stylePrefs)
             result.fold(
                 onSuccess = { plan ->
                     val products = state.value.productsAll
