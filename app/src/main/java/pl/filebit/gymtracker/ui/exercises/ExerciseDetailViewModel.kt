@@ -61,4 +61,28 @@ class ExerciseDetailViewModel @Inject constructor(
             _state.value = _state.value.copy(exercise = ex.copy(notes = notes))
         }
     }
+
+    /** Toggle "unikaj" — AI nie zaproponuje tego ćwiczenia w nowym planie. */
+    fun toggleAvoided() {
+        val ex = _state.value.exercise ?: return
+        viewModelScope.launch {
+            val newAvoided = !ex.isAvoided
+            // Logika: gdy zaznaczasz "unikaj" — auto-odznacz "ulubione" (sprzeczne).
+            val newFav = if (newAvoided) false else ex.isFavorite
+            exerciseRepo.upsert(ex.copy(isAvoided = newAvoided, isFavorite = newFav))
+            _state.value = _state.value.copy(exercise = ex.copy(isAvoided = newAvoided, isFavorite = newFav))
+        }
+    }
+
+    /** Toggle "ulubione" — AI używa do priorytetyzacji w generowanym planie. */
+    fun toggleFavorite() {
+        val ex = _state.value.exercise ?: return
+        viewModelScope.launch {
+            val newFav = !ex.isFavorite
+            // Auto-odznacz "unikaj" gdy zaznaczasz "ulubione".
+            val newAvoided = if (newFav) false else ex.isAvoided
+            exerciseRepo.upsert(ex.copy(isFavorite = newFav, isAvoided = newAvoided))
+            _state.value = _state.value.copy(exercise = ex.copy(isFavorite = newFav, isAvoided = newAvoided))
+        }
+    }
 }

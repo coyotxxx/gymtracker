@@ -47,13 +47,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Block
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.repository.ExerciseProgressionPoint
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
+import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
+import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.formatDate
 import pl.filebit.gymtracker.util.formatWeight
 
@@ -94,6 +101,15 @@ fun ExerciseDetailScreen(
                 AskAiAboutExerciseRow(
                     exerciseName = ex.name,
                     onAskAi = onAskAi
+                )
+            }
+            // Karta preferencji — Lubię / Unikaj. AI używa tych flag przy generowaniu planu.
+            item {
+                ExercisePreferenceCard(
+                    isFavorite = ex.isFavorite,
+                    isAvoided = ex.isAvoided,
+                    onToggleFavorite = { vm.toggleFavorite() },
+                    onToggleAvoided = { vm.toggleAvoided() }
                 )
             }
             // Opis ćwiczenia (jeśli wbudowany)
@@ -435,3 +451,89 @@ private fun AskAiAboutExerciseRow(
         }
     }
 }
+
+
+@Composable
+private fun ExercisePreferenceCard(
+    isFavorite: Boolean,
+    isAvoided: Boolean,
+    onToggleFavorite: () -> Unit,
+    onToggleAvoided: () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Text(
+                "PREFERENCJE",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                "AI uwzględnia te flagi przy generowaniu i poprawianiu planu",
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(10.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                PreferenceChip(
+                    label = if (isFavorite) "Lubię ✓" else "Lubię",
+                    icon = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+                    active = isFavorite,
+                    activeColor = SuccessGreen,
+                    onClick = onToggleFavorite,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(Modifier.size(8.dp))
+                PreferenceChip(
+                    label = if (isAvoided) "Unikam ✓" else "Unikam",
+                    icon = Icons.Filled.Block,
+                    active = isAvoided,
+                    activeColor = ErrorRed,
+                    onClick = onToggleAvoided,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun PreferenceChip(
+    label: String,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    active: Boolean,
+    activeColor: androidx.compose.ui.graphics.Color,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val bg = if (active) activeColor.copy(alpha = 0.15f) else androidx.compose.ui.graphics.Color.Transparent
+    val border = if (active) activeColor.copy(alpha = 0.5f) else DarkOutlineSoft
+    val textColor = if (active) activeColor else DarkOnSurface
+    Row(
+        modifier = modifier
+            .clickable(onClick = onClick)
+            .background(bg, RoundedCornerShape(10.dp))
+            .border(1.dp, border, RoundedCornerShape(10.dp))
+            .padding(horizontal = 10.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {
+        Icon(icon, contentDescription = null, tint = textColor, modifier = Modifier.size(16.dp))
+        Spacer(Modifier.size(6.dp))
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+            color = textColor
+        )
+    }
+}
+

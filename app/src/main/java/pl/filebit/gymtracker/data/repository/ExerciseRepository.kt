@@ -21,4 +21,7 @@ class ExerciseRepository @Inject constructor(
     suspend fun setFavorite(id: Long, fav: Boolean) = dao.setFavorite(id, fav)
     suspend fun getFavorites(): List<Exercise> = dao.getFavorites()
     fun observeFavorites(): Flow<List<Exercise>> = dao.observeFavorites()
+
+    suspend fun setAvoided(id: Long, avoided: Boolean) = dao.setAvoided(id, avoided)
+    suspend fun getAvoided(): List<Exercise> = dao.getAvoided()
 }

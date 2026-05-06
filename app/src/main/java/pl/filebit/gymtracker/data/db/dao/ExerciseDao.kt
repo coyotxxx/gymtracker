@@ -51,6 +51,13 @@ interface ExerciseDao {
     @Query("UPDATE exercises SET isFavorite = 1 WHERE LOWER(name) = LOWER(:name)")
     suspend fun markFavoriteByName(name: String): Int
 
+    /** Ćwiczenia które user oznaczył jako "unikaj" (np. boli kolano przy wykrokach). AI ich nie zaproponuje. */
+    @Query("SELECT * FROM exercises WHERE isAvoided = 1 ORDER BY name COLLATE NOCASE ASC")
+    suspend fun getAvoided(): List<Exercise>
+
+    @Query("UPDATE exercises SET isAvoided = :avoided WHERE id = :id")
+    suspend fun setAvoided(id: Long, avoided: Boolean)
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(exercises: List<Exercise>): List<Long>
 

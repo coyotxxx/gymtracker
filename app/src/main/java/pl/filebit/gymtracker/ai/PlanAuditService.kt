@@ -105,6 +105,7 @@ class PlanAuditService @Inject constructor(
                 append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
                 append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
                 append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append(MasterAiContextPromptHelper.toExercisePreferencesSection(masterCtx))
                 append("\n")
             }
             if (recentFeedback.isNotBlank()) {
@@ -267,6 +268,7 @@ class PlanAuditService @Inject constructor(
                 append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
                 append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
                 append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append(MasterAiContextPromptHelper.toExercisePreferencesSection(masterCtx))
                 append("\n")
             }
             if (recentFeedback.isNotBlank()) {

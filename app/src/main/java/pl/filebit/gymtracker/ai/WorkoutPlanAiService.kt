@@ -171,6 +171,7 @@ class WorkoutPlanAiService @Inject constructor(
                 append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
                 append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
                 append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
+                append(MasterAiContextPromptHelper.toExercisePreferencesSection(masterCtx))
                 append("\n→ Plan ma uwzględniać:\n")
                 append("  • Trend wagi (jeśli redukcja → mniej objętości)\n")
                 append("  • Adherence (jeśli niska → uprość plan, mniej ćwiczeń)\n")

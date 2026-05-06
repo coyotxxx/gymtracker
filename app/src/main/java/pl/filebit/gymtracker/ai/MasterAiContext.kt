@@ -54,6 +54,7 @@ data class MasterAiContext(
 
     // === ULUBIONE ===
     val favoriteExercises: List<Exercise>,  // do generatora planu
+    val avoidedExercises: List<Exercise>,   // user oznaczył jako "unikam" — AI nie wstawi
     val favoriteFoodNames: List<String>,    // do generatora diety
     val likedMealNames: List<String>,       // rating ≥4
     val dislikedMealNames: List<String>,    // rating ≤2
@@ -247,6 +248,26 @@ object MasterAiContextPromptHelper {
         }
     }
 
+    /**
+     * Preferencje ćwiczeń — lubię (priorytetuj) i unikam (NIE używaj).
+     * AI musi to widzieć żeby spersonalizować plan/audyt.
+     */
+    fun toExercisePreferencesSection(ctx: MasterAiContext): String = buildString {
+        if (ctx.favoriteExercises.isNotEmpty()) {
+            append("\n=== ULUBIONE ĆWICZENIA (preferuj w nowym planie) ===\n")
+            append(ctx.favoriteExercises.take(20).joinToString(", ") { it.name })
+            append("\n")
+        }
+        if (ctx.avoidedExercises.isNotEmpty()) {
+            append("\n=== ⛔ ĆWICZENIA UNIKANE (BEZWZGLĘDNIE NIE UŻYWAJ) ===\n")
+            append(ctx.avoidedExercises.joinToString(", ") { it.name })
+            append("\nUser oznaczył te ćwiczenia jako 'unikam' — nie wstawiaj ich do planu, ")
+            append("nie proponuj jako alternatyw, nie sugeruj przy audycie. Jeśli partia, którą ")
+            append("normalnie pokrywałyby te ćwiczenia, jest niedoreprezentowana — wybierz INNE ćwiczenia ")
+            append("na tę samą partię z biblioteki.\n")
+        }
+    }
+
     /** Ulubione produkty + posiłki. */
     fun toFavoritesFoodSection(ctx: MasterAiContext): String = buildString {
         if (ctx.favoriteFoodNames.isNotEmpty()) {
@@ -275,6 +296,7 @@ object MasterAiContextPromptHelper {
         append(toRecoverySection(ctx))
         append(toCurrentStateSection(ctx))
         append(toPRsSection(ctx))
+        append(toExercisePreferencesSection(ctx))
         append(toFavoritesFoodSection(ctx))
     }
 

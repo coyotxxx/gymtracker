@@ -36,5 +36,7 @@ data class Exercise(
     /** Edukacyjny opis ćwiczenia: czym jest, jak wykonać, na co uważać. */
     val description: String = "",
     /** Ulubione ćwiczenie usera — AI używa do priorytetyzacji w generowanym planie. */
-    val isFavorite: Boolean = false
+    val isFavorite: Boolean = false,
+    /** Ćwiczenie do unikania — AI nie wstawi go do nowego planu (np. boli kolano przy wykrokach). */
+    val isAvoided: Boolean = false
 )

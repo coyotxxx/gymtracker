@@ -112,8 +112,9 @@ class MasterAiContextBuilder @Inject constructor(
         val favoriteProducts = runCatching { dietRepo.getFavoriteProducts() }.getOrNull().orEmpty()
         val favoriteFoodNames = favoriteProducts.map { it.name }
 
-        // === Ulubione ćwiczenia (z Exercise.isFavorite) ===
+        // === Ulubione + unikane ćwiczenia (Exercise.isFavorite/isAvoided) ===
         val favoriteExercises = runCatching { exerciseRepo.getFavorites() }.getOrNull().orEmpty()
+        val avoidedExercises = runCatching { exerciseRepo.getAvoided() }.getOrNull().orEmpty()
 
         // === Top PRy (top 5) ===
         val allExes = runCatching { exerciseRepo.observeAll().first() }.getOrNull().orEmpty()
@@ -170,6 +171,7 @@ class MasterAiContextBuilder @Inject constructor(
 
             // Ulubione
             favoriteExercises = favoriteExercises,
+            avoidedExercises = avoidedExercises,
             favoriteFoodNames = favoriteFoodNames,
             likedMealNames = feedbacks.map { it.displayName },
             dislikedMealNames = disliked.map { it.displayName },

@@ -2,6 +2,8 @@ package pl.filebit.gymtracker.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,11 +32,23 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    /**
+     * Migracja 49→50 (v1.2.0): dodaje Exercise.isAvoided. Bez kasowania danych —
+     * od tego release'u trzymamy zachowanie historyczne (treningi, logi AI, ćwiczenia).
+     */
+    private val MIGRATION_49_50 = object : Migration(49, 50) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE exercises ADD COLUMN isAvoided INTEGER NOT NULL DEFAULT 0")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, AppDatabase.NAME)
-            // MVP, brak produkcyjnych danych do migracji
+            .addMigrations(MIGRATION_49_50)
+            // Fallback gdy ktoś instaluje na starszej wersji bez ścieżki migracji.
+            // Dla v1.2.0+ konkretne migracje (jak 49→50) zachowują dane.
             .fallbackToDestructiveMigration(true)
             .build()
     }
