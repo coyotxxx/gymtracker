@@ -57,9 +57,13 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
+import pl.filebit.gymtracker.ai.TrainingPhase
+import pl.filebit.gymtracker.ai.TrainingPhaseStatus
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
+import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.util.formatDuration
@@ -221,6 +225,13 @@ fun HomeScreen(
                     weekTarget = state.weeklyTarget,
                     onClick = onOpenAchievements
                 )
+            }
+
+            // Faza cyklu treningowego (computed z TrainingPhaseAnalyzer)
+            state.trainingPhase?.let { phase ->
+                if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA) {
+                    item { TrainingPhaseCard(status = phase) }
+                }
             }
 
             // Section header z linkiem
@@ -1259,3 +1270,58 @@ private fun DayOffHeroCard(
 
 // (Dialogi PostponeDialogContent + WeekPlanDialogContent z v0.75.0 zastąpione
 //  pełnym WeekPlanSheet w v0.76.0 — patrz ui/home/WeekPlanSheet.kt)
+
+
+@androidx.compose.runtime.Composable
+private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
+    val (accent, emoji) = when (status.phase) {
+        TrainingPhase.ACCUMULATION -> SuccessGreen to "📈"
+        TrainingPhase.INTENSIFICATION -> AccentOrange to "⚡"
+        TrainingPhase.DELOAD -> DarkOnSurfaceVariant to "🛌"
+        TrainingPhase.NEEDS_DELOAD -> ErrorRed to "⚠️"
+        TrainingPhase.NO_DATA -> DarkOnSurfaceVariant to "❓"
+    }
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.10f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                androidx.compose.material3.Text(
+                    emoji,
+                    style = androidx.compose.material3.MaterialTheme.typography.titleMedium
+                )
+                Spacer(Modifier.width(10.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "FAZA CYKLU",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    androidx.compose.material3.Text(
+                        status.polishLabel,
+                        style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.ExtraBold
+                        ),
+                        color = accent
+                    )
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            androidx.compose.material3.Text(
+                status.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
+            )
+        }
+    }
+}
+
