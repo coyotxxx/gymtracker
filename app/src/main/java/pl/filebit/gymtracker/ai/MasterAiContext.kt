@@ -83,6 +83,15 @@ data class MasterAiContext(
     val avgSorenessLevel: Double?,
     val avgDifficultyLevel: Double?,
     val recoverySampleDays: Int,
+    // Z zegarka (v1.7.3) — null gdy brak danych
+    val avgRestingHr: Double? = null,
+    val avgSpO2: Double? = null,
+    val avgHrv: Double? = null,
+    val avgVo2max: Double? = null,
+    val elevatedHeartRate: Boolean = false,
+    val lowHrv: Boolean = false,
+    val lowSpO2: Boolean = false,
+    val improvingFitness: Boolean = false,
 
     // === NEAT (kroki) ===
     val avgSteps7d: Int,
@@ -220,6 +229,24 @@ object MasterAiContextPromptHelper {
             ctx.avgDifficultyLevel?.let { append("- Trudność diety: %.1f/5\n".format(it)) }
         } else {
             append("- ⚠ Mało wpisów regeneracji (${ctx.recoverySampleDays}/7 dni)\n")
+        }
+        // Metryki z zegarka (v1.7.3) — pokazuj tylko gdy są
+        ctx.avgRestingHr?.let { append("- Tętno spoczynkowe (7d): %.0f bpm\n".format(it)) }
+        ctx.avgSpO2?.let { append("- SpO2 (7d): %.0f%%\n".format(it)) }
+        ctx.avgHrv?.let { append("- HRV (7d): %.0f ms\n".format(it)) }
+        ctx.avgVo2max?.let { append("- VO2Max (7d): %.1f ml/kg/min\n".format(it)) }
+        // Sygnały deterministyczne — AI ma wziąć pod uwagę przy decyzjach
+        if (ctx.elevatedHeartRate) {
+            append("- ⚠ PODWYŻSZONE TĘTNO SPOCZYNKOWE — ostatnie 3 dni ≥+10 bpm vs baseline. Sygnał stresu/przemęczenia/choroby. Rozważ deload/lżejszy trening.\n")
+        }
+        if (ctx.lowHrv) {
+            append("- ⚠ NISKIE HRV — spadek >15% vs baseline 7d. CNS przeładowane, regeneracja słaba. Sugeruj deload.\n")
+        }
+        if (ctx.lowSpO2) {
+            append("- ⚠ NISKIE SpO2 (<94%) — możliwy problem oddechowy lub kiepski sen. Mniej intensywnych treningów.\n")
+        }
+        if (ctx.improvingFitness) {
+            append("- ✅ Kondycja się poprawia — VO2Max rośnie. Plan działa, kontynuuj.\n")
         }
         append("- Kroki: 7d=${ctx.avgSteps7d}/dzień, 30d=${ctx.avgSteps30d}/dzień (baseline ${ctx.baselineSteps})\n")
         append("- Adherence wody (14d): ${ctx.hydrationAdherencePct}%\n")

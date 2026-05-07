@@ -33,7 +33,20 @@ data class RecoverySnapshot(
     /** True gdy avgSoreness >=4. */
     val highSoreness: Boolean,
     /** True gdy avgDifficulty >=4. */
-    val highDifficulty: Boolean
+    val highDifficulty: Boolean,
+    // === Metryki z zegarka (v1.7.3) ===
+    val avgRestingHr: Double? = null,
+    val avgSpO2: Double? = null,
+    val avgHrv: Double? = null,
+    val avgVo2max: Double? = null,
+    /** True gdy ostatnie 3d tętno spoczynkowe ≥+10bpm vs baseline 7d → przemęczenie/stres. */
+    val elevatedHeartRate: Boolean = false,
+    /** True gdy HRV spadek ≥15% vs baseline 7d → CNS przeładowane. */
+    val lowHrv: Boolean = false,
+    /** True gdy SpO2 <94% — niedobór tlenu, problem oddechowy lub kiepski sen. */
+    val lowSpO2: Boolean = false,
+    /** True gdy VO2Max rośnie o >0.5 ml/kg/min/miesiąc — kondycja się poprawia. */
+    val improvingFitness: Boolean = false
 ) {
     companion object {
         val EMPTY = RecoverySnapshot(
@@ -74,6 +87,43 @@ class RecoveryAnalyzer @Inject constructor() {
         val avgSoreness = soreness.takeIf { it.isNotEmpty() }?.average()
         val avgDifficulty = difficulty.takeIf { it.isNotEmpty() }?.average()
 
+        // === Metryki z zegarka (v1.7.3) ===
+        val sortedByDate = logs7d.sortedByDescending { it.dateMs }
+        val hrAll = sortedByDate.mapNotNull { it.restingHeartRateBpm?.toDouble() }
+        val spO2All = sortedByDate.mapNotNull { it.spO2Pct?.toDouble() }
+        val hrvAll = sortedByDate.mapNotNull { it.hrvMs }
+        val vo2All = sortedByDate.mapNotNull { it.vo2max }
+
+        val avgHr = hrAll.takeIf { it.isNotEmpty() }?.average()
+        val avgSpO2 = spO2All.takeIf { it.isNotEmpty() }?.average()
+        val avgHrv = hrvAll.takeIf { it.isNotEmpty() }?.average()
+        val avgVo2 = vo2All.takeIf { it.isNotEmpty() }?.average()
+
+        // Trend tętna: ostatnie 3d vs cała 7d
+        val recentHr = sortedByDate.take(3).mapNotNull { it.restingHeartRateBpm?.toDouble() }
+        val baselineHr = sortedByDate.drop(3).mapNotNull { it.restingHeartRateBpm?.toDouble() }
+        val elevatedHr = if (recentHr.isNotEmpty() && baselineHr.isNotEmpty())
+            recentHr.average() - baselineHr.average() >= 10.0 else false
+
+        // Trend HRV: ostatnie 3d vs cała 7d (>15% spadek = problem)
+        val recentHrv = sortedByDate.take(3).mapNotNull { it.hrvMs }
+        val baselineHrv = sortedByDate.drop(3).mapNotNull { it.hrvMs }
+        val lowHrv = if (recentHrv.isNotEmpty() && baselineHrv.isNotEmpty()) {
+            val recent = recentHrv.average()
+            val baseline = baselineHrv.average()
+            baseline > 0 && (baseline - recent) / baseline > 0.15
+        } else false
+
+        // SpO2 niskie — średnia <94% (lub <93% jeśli chcemy ostrzejszy próg)
+        val lowSpO2 = avgSpO2 != null && avgSpO2 < 94.0
+
+        // Improving fitness — VO2Max rośnie w czasie (trend dodatni)
+        val improvingFitness = if (vo2All.size >= 3) {
+            val first = vo2All.takeLast(vo2All.size / 2).average()
+            val last = vo2All.take(vo2All.size / 2).average()
+            last - first > 0.5
+        } else false
+
         return RecoverySnapshot(
             sampleDays = logs7d.size,
             avgSleepHours = avgSleep,
@@ -88,7 +138,15 @@ class RecoveryAnalyzer @Inject constructor() {
             highHunger = avgHunger != null && avgHunger >= 4.0,
             lowEnergy = avgEnergy != null && avgEnergy <= 2.0,
             highSoreness = avgSoreness != null && avgSoreness >= 4.0,
-            highDifficulty = avgDifficulty != null && avgDifficulty >= 4.0
+            highDifficulty = avgDifficulty != null && avgDifficulty >= 4.0,
+            avgRestingHr = avgHr,
+            avgSpO2 = avgSpO2,
+            avgHrv = avgHrv,
+            avgVo2max = avgVo2,
+            elevatedHeartRate = elevatedHr,
+            lowHrv = lowHrv,
+            lowSpO2 = lowSpO2,
+            improvingFitness = improvingFitness
         )
     }
 }

@@ -200,6 +200,14 @@ class MasterAiContextBuilder @Inject constructor(
             avgSorenessLevel = recovery.avgSoreness,
             avgDifficultyLevel = recovery.avgDifficulty,
             recoverySampleDays = recoveryLogs.size,
+            avgRestingHr = recovery.avgRestingHr,
+            avgSpO2 = recovery.avgSpO2,
+            avgHrv = recovery.avgHrv,
+            avgVo2max = recovery.avgVo2max,
+            elevatedHeartRate = recovery.elevatedHeartRate,
+            lowHrv = recovery.lowHrv,
+            lowSpO2 = recovery.lowSpO2,
+            improvingFitness = recovery.improvingFitness,
 
             // NEAT
             avgSteps7d = avgSteps7d,

@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.ai
 
+import pl.filebit.gymtracker.data.db.dao.RecoveryLogDao
 import pl.filebit.gymtracker.data.health.HealthConnectManager
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -44,11 +45,43 @@ enum class WorkoutAdjustment {
  */
 @Singleton
 class HealthInsightAnalyzer @Inject constructor(
-    private val hcManager: HealthConnectManager
+    private val hcManager: HealthConnectManager,
+    private val recoveryLogDao: RecoveryLogDao
 ) {
     suspend fun analyze(): HealthInsight {
-        val sleepHours = runCatching { hcManager.readSleepHoursForLastNights(7) }.getOrNull()
-        val hrvList = runCatching { hcManager.readHrvForLastDays(7) }.getOrNull()
+        // 1. Spróbuj Health Connect (Garmin/Polar/Samsung)
+        val hcSleep = runCatching { hcManager.readSleepHoursForLastNights(7) }.getOrNull()
+        val hcHrv = runCatching { hcManager.readHrvForLastDays(7) }.getOrNull()
+
+        var sleepHours = hcSleep
+        var hrvList = hcHrv
+
+        // 2. Fallback do RecoveryLog (Huawei + wgrane zrzuty z v1.7.0+)
+        // Jeśli HC nie ma danych — czytaj z RecoveryLog (źródło: HealthScreenshotAnalyzer lub manual)
+        val needFallback = (sleepHours.isNullOrEmpty() || sleepHours.all { it == 0.0 }) ||
+            (hrvList.isNullOrEmpty() || hrvList.all { it == 0.0 })
+        if (needFallback) {
+            val now = System.currentTimeMillis()
+            val cutoff = now - 7L * 24 * 3600 * 1000
+            val logs = runCatching { recoveryLogDao.getSince(cutoff, 7) }.getOrNull().orEmpty()
+            if (logs.isNotEmpty()) {
+                val msPerDay = 24L * 3600 * 1000
+                val sleepFromLogs = (0 until 7).map { d ->
+                    val dayMs = now - d * msPerDay
+                    logs.firstOrNull { Math.abs(it.dateMs - dayMs) < msPerDay }?.sleepHours ?: 0.0
+                }
+                if (sleepHours.isNullOrEmpty() || sleepHours.all { it == 0.0 }) {
+                    sleepHours = sleepFromLogs
+                }
+                val hrvFromLogs = (0 until 7).map { d ->
+                    val dayMs = now - d * msPerDay
+                    logs.firstOrNull { Math.abs(it.dateMs - dayMs) < msPerDay }?.hrvMs ?: 0.0
+                }
+                if (hrvList.isNullOrEmpty() || hrvList.all { it == 0.0 }) {
+                    hrvList = hrvFromLogs
+                }
+            }
+        }
 
         val sleepValid = sleepHours?.filter { it > 0 }
         val avgSleep = sleepValid?.takeIf { it.isNotEmpty() }?.average()
