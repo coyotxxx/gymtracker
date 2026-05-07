@@ -108,16 +108,39 @@ fun AchievementBadge(
         label = "float"
     )
 
+    // === Pulsing highlight (subtelne pulsowanie jaśniejszego centrum) ===
+    // alpha animowana w graphicsLayer lambda → zero recompose
+    val highlightAlpha = infinite.animateFloat(
+        initialValue = 0.0f, targetValue = 0.25f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(2400, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "highlight"
+    )
+
     // === Brushe w remember (zero recreate) ===
-    // Płynny gradient 2 stops — BEZ plateau (które tworzyło "drugie koło" w v1.11.20)
+    // Mocny gradient 4 stops — od jasnego żółtego centra przez pomarańczowy
+    // do ciemnobrązowej krawędzi. BEZ plateau (przejścia w każdym przedziale).
     val discBrush = remember {
         Brush.radialGradient(
-            colors = listOf(
-                Color(0xFFFFE082),  // jasny żółty center
-                AccentOrange,        // pomarańczowy edge — płynne przejście
-                AccentOrangeDim     // ciemniejsza krawędź — TYLKO ostatnie ~5%, niewidoczna
-            ),
-            // tu colorStops dla niewielkiego zaciemnienia tylko na samej krawędzi
+            colorStops = arrayOf(
+                0.0f to Color(0xFFFFF3C4),   // bardzo jasny żółty (highlight)
+                0.35f to Color(0xFFFFC107),  // jasny pomarańcz
+                0.75f to AccentOrange,        // pełny pomarańcz
+                1.0f to Color(0xFF8B5A00)    // ciemny brąz (krawędź)
+            )
+        )
+    }
+    // Highlight overlay (subtle pulsing white center) — Brush w remember
+    val highlightBrush = remember {
+        Brush.radialGradient(
+            colorStops = arrayOf(
+                0.0f to Color.White.copy(alpha = 0.6f),
+                0.4f to Color.White.copy(alpha = 0.15f),
+                0.7f to Color.Transparent,
+                1.0f to Color.Transparent
+            )
         )
     }
 
@@ -131,12 +154,10 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // TARCZA — shadow + clip + gradient + border + subtelny inner ring
+        // TARCZA — shadow + clip + gradient + highlight pulsing + border + inner ring
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                // Drop shadow (natywny Android RenderNode → GPU free, brak halo)
-                // ambientColor + spotColor pomaranczowy daje "swiecacy" efekt
                 .shadow(
                     elevation = 16.dp,
                     shape = CircleShape,
@@ -147,7 +168,6 @@ fun AchievementBadge(
                 .background(discBrush)
                 .border(1.dp, Color.White.copy(alpha = 0.2f), CircleShape)
                 .drawBehind {
-                    // Subtelny inner ring (premium 3D feel) — alpha 0.08, ledwo widoczny
                     val s = size.minDimension
                     drawCircle(
                         color = Color.White.copy(alpha = 0.08f),
@@ -156,7 +176,16 @@ fun AchievementBadge(
                         style = Stroke(width = 1.dp.toPx())
                     )
                 }
-        )
+        ) {
+            // Pulsing highlight overlay — alpha animowana w lambda graphicsLayer
+            // (zero recompose, tylko draw). Highlight pulsuje 0.0 ↔ 0.25 alpha.
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .graphicsLayer { alpha = highlightAlpha.value }
+                    .background(highlightBrush)
+            )
+        }
 
         // EMOJI — własny graphicsLayer (scale + rotation entry)
         Box(
