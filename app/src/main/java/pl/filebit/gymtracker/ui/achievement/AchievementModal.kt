@@ -1,11 +1,6 @@
 package pl.filebit.gymtracker.ui.achievement
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInVertically
@@ -58,7 +53,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.ui.theme.AccentOrange
-import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -131,7 +125,7 @@ private fun AchievementModal(
                 onClick = onDismiss
             )
     ) {
-        BreathingBackground()
+        // BreathingBackground USUNIĘTY w v1.11.15 — statyczny scrim zamiast animowanego halo
 
             // Close button (prawy górny)
             IconButton(
@@ -221,37 +215,7 @@ private fun AchievementModal(
     }
 }
 
-@Composable
-private fun BreathingBackground() {
-    val infinite = rememberInfiniteTransition(label = "bg")
-    // State.value czytany w graphicsLayer LAMBDA — zero recompose tego Box
-    val intensityState = infinite.animateFloat(
-        initialValue = 0.65f,
-        targetValue = 1.0f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(2200, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "bgIntensity"
-    )
-    // Brush w remember — tworzy się RAZ, nie 60×/sec
-    val bgBrush = remember {
-        Brush.radialGradient(
-            colors = listOf(
-                AccentOrange.copy(alpha = 0.32f),
-                AccentOrangeDim.copy(alpha = 0.14f),
-                Color.Transparent
-            ),
-            radius = 900f
-        )
-    }
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .graphicsLayer { alpha = intensityState.value }
-            .background(bgBrush)
-    )
-}
+// BreathingBackground USUNIĘTY w v1.11.15 — był głównym źródłem stutterów
 
 @Composable
 private fun AnimatedLabel(modifier: Modifier = Modifier) {
