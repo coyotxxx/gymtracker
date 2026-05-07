@@ -27,6 +27,13 @@ data class RecoveryLog(
     val energyLevel: Int? = null,             // 1-5, 5=pełen energii
     val sorenessLevel: Int? = null,           // 1-5, 1=brak DOMS, 5=skrajny
     val difficultyAdherence: Int? = null,     // 1-5, 5=plan był bardzo trudny
+    // === Metryki ze smartwatcha (v1.7.2) — wgrywane przez HealthScreenshotAnalyzer lub HC ===
+    val restingHeartRateBpm: Int? = null,     // tętno spoczynkowe
+    val spO2Pct: Int? = null,                 // saturacja w %
+    val hrvMs: Double? = null,                // RMSSD ms
+    val vo2max: Double? = null,               // ml/kg/min
+    val stepsCount: Int? = null,              // liczba kroków
+    val activeCalories: Int? = null,          // kalorie aktywne (nie BMR)
     val notes: String = "",
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis()

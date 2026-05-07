@@ -23,6 +23,7 @@ sealed class Screen(val route: String) {
     object AiSettings : Screen("ai/settings")
     object AiLog : Screen("ai/log")
     object HealthScreenshot : Screen("health/screenshot")
+    object HealthHistory : Screen("health/history")
     object AiTrainer : Screen("ai/trainer/{conversationId}?auto={auto}") {
         fun create(conversationId: Long, autoAction: String? = null): String {
             // Zawsze dołączamy ?auto=… żeby Compose Navigation rejestrował query

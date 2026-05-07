@@ -80,17 +80,36 @@ class HealthScreenshotViewModel @Inject constructor(
                 val data = r.data
                 val dateMs = parseDateOrToday(data.detectedDate)
 
-                val hasRecoveryData = data.sleepHours != null || data.stressLevel1to5 != null
+                val hasRecoveryData = data.sleepHours != null ||
+                    data.stressLevel1to5 != null ||
+                    data.restingHeartRateBpm != null ||
+                    data.spO2Pct != null ||
+                    data.hrvMs != null ||
+                    data.vo2max != null ||
+                    data.steps != null ||
+                    data.activeCalories != null
                 if (hasRecoveryData) {
                     val existing = recoveryLogDao.getForDate(dateMs)
                     val merged = (existing ?: RecoveryLog(dateMs = dateMs)).copy(
                         sleepHours = data.sleepHours ?: existing?.sleepHours,
                         stressLevel = data.stressLevel1to5 ?: existing?.stressLevel,
+                        restingHeartRateBpm = data.restingHeartRateBpm ?: existing?.restingHeartRateBpm,
+                        spO2Pct = data.spO2Pct ?: existing?.spO2Pct,
+                        hrvMs = data.hrvMs ?: existing?.hrvMs,
+                        vo2max = data.vo2max ?: existing?.vo2max,
+                        stepsCount = data.steps ?: existing?.stepsCount,
+                        activeCalories = data.activeCalories ?: existing?.activeCalories,
                         updatedAt = System.currentTimeMillis()
                     )
                     recoveryLogDao.insert(merged)
                     if (data.sleepHours != null) saved += "sen ${"%.1f".format(data.sleepHours)}h"
                     if (data.stressLevel1to5 != null) saved += "stres ${data.stressLevel1to5}/5"
+                    if (data.restingHeartRateBpm != null) saved += "tętno ${data.restingHeartRateBpm} bpm"
+                    if (data.spO2Pct != null) saved += "SpO2 ${data.spO2Pct}%"
+                    if (data.hrvMs != null) saved += "HRV ${"%.0f".format(data.hrvMs)}ms"
+                    if (data.vo2max != null) saved += "VO2Max ${"%.1f".format(data.vo2max)}"
+                    if (data.steps != null) saved += "kroki ${data.steps}"
+                    if (data.activeCalories != null) saved += "kcal ${data.activeCalories}"
                 }
 
                 if (data.weightKg != null && data.weightKg > 0) {

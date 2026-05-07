@@ -105,7 +105,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         MealConsumption::class,
         pl.filebit.gymtracker.data.entity.AiLog::class
     ],
-    version = 50,
+    version = 51,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

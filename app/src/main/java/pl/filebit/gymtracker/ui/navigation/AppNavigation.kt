@@ -476,6 +476,9 @@ fun AppNavigation() {
             composable(Screen.HealthScreenshot.route) {
                 pl.filebit.gymtracker.ui.health.HealthScreenshotScreen(onBack = { navController.popBackStack() })
             }
+            composable(Screen.HealthHistory.route) {
+                pl.filebit.gymtracker.ui.health.HealthHistoryScreen(onBack = { navController.popBackStack() })
+            }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
             }
@@ -659,6 +662,10 @@ fun AppNavigation() {
                 onSendHealthScreenshot = {
                     aiChoiceVisible = false
                     navController.navigate(Screen.HealthScreenshot.route)
+                },
+                onOpenHealthHistory = {
+                    aiChoiceVisible = false
+                    navController.navigate(Screen.HealthHistory.route)
                 }
             )
         }

@@ -42,11 +42,27 @@ object AppModule {
         }
     }
 
+    /**
+     * Migracja 50→51 (v1.7.2): rozszerzony RecoveryLog o metryki ze smartwatcha
+     * (tętno spoczynkowe, SpO2, HRV, VO2Max, kroki, kalorie aktywne).
+     * Wszystkie kolumny nullable — brak kasowania danych.
+     */
+    private val MIGRATION_50_51 = object : Migration(50, 51) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN restingHeartRateBpm INTEGER DEFAULT NULL")
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN spO2Pct INTEGER DEFAULT NULL")
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN hrvMs REAL DEFAULT NULL")
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN vo2max REAL DEFAULT NULL")
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN stepsCount INTEGER DEFAULT NULL")
+            db.execSQL("ALTER TABLE recovery_logs ADD COLUMN activeCalories INTEGER DEFAULT NULL")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, AppDatabase.NAME)
-            .addMigrations(MIGRATION_49_50)
+            .addMigrations(MIGRATION_49_50, MIGRATION_50_51)
             // Fallback gdy ktoś instaluje na starszej wersji bez ścieżki migracji.
             // Dla v1.2.0+ konkretne migracje (jak 49→50) zachowują dane.
             .fallbackToDestructiveMigration(true)
