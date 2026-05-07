@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,6 +37,12 @@ import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
 
+/** Diagnostyka — licznik recomposition (do podglądu w UI lub logach). */
+object BadgeDiagnostics {
+    var recomposeCount: Int = 0
+    fun reset() { recomposeCount = 0 }
+}
+
 /**
  * Premium animowany medal — pełen 60fps na debug build.
  *
@@ -55,6 +62,13 @@ fun AchievementBadge(
     emoji: String,
     modifier: Modifier = Modifier
 ) {
+    // === DIAGNOSTYKA v1.11.10 — licznik recomposition ===
+    SideEffect {
+        BadgeDiagnostics.recomposeCount++
+        android.util.Log.d("BADGE_RECOMPOSE",
+            "recompose #${BadgeDiagnostics.recomposeCount} at ${System.currentTimeMillis()}")
+    }
+
     val appleEase = remember { CubicBezierEasing(0.22f, 1f, 0.36f, 1f) }
 
     // Spring entry — czytane TYLKO w lambda

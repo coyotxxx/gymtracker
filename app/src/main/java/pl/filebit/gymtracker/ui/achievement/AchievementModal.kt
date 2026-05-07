@@ -94,6 +94,17 @@ private fun AchievementModal(
     onShare: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
+
+    // DIAGNOSTYKA v1.11.10 — reset licznika przy każdym otwarciu modala
+    LaunchedEffect(achievement.id) { BadgeDiagnostics.reset() }
+    // Co 500ms odświeżamy widok licznika (force recomposition w MODAL, nie w Badge)
+    var recompCounter by remember { androidx.compose.runtime.mutableStateOf(0) }
+    LaunchedEffect(achievement.id) {
+        while (true) {
+            kotlinx.coroutines.delay(500)
+            recompCounter = BadgeDiagnostics.recomposeCount
+        }
+    }
     // Karta wjazd — scale 0.85→1 z Apple bezier (0.2s start)
     val cardScale = remember { androidx.compose.animation.core.Animatable(0.85f) }
     val cardAlpha = remember { androidx.compose.animation.core.Animatable(0f) }
@@ -153,6 +164,27 @@ private fun AchievementModal(
                     contentDescription = "Zamknij",
                     tint = DarkOnSurfaceVariant,
                     modifier = Modifier.size(16.dp)
+                )
+            }
+
+            // DIAGNOSTYKA v1.11.10 — licznik recompose (do usunięcia po teście)
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 16.dp, bottom = 16.dp)
+                    .background(Color.Black.copy(alpha = 0.6f), RoundedCornerShape(8.dp))
+                    .padding(horizontal = 10.dp, vertical = 6.dp)
+            ) {
+                Text(
+                    text = "RECOMPOSE: $recompCounter",
+                    style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace
+                    ),
+                    color = if (recompCounter < 10) Color(0xFF4CAF7B)  // <10 = OK
+                    else if (recompCounter < 60) Color(0xFFFFC107)     // 10-60 = średnio
+                    else Color(0xFFE05B5B)                             // 60+ = źle
                 )
             }
 
