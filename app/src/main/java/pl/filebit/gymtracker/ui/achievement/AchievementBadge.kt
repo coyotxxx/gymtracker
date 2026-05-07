@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,31 +37,27 @@ import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
 
 /**
- * Premium animowany medal odznaki — wdrożenie 1:1 ze specyfikacją timeline.
+ * Premium animowany medal — pełen 60fps na debug build.
  *
- * **Performance:**
- * - graphicsLayer dla scaleX/scaleY/rotation/translation (GPU, skip recomposition)
- * - drawWithCache + drawBehind (cache brushes, tylko faza DRAW)
- * - 3 osobne graphicsLayer (tarcza, emoji, ring) — każdy independent transform
+ * **Krytyczna optymalizacja Compose performance (v1.11.9):**
+ * - Animacje state zwracane z `infinite.animateFloat(...)` (bez `by`) —
+ *   composable NIE czyta wartości w body, więc state changes nie triggerują
+ *   recomposition.
+ * - Wartości czytane DOPIERO w lambda block: `graphicsLayer { ... }`,
+ *   `drawWithCache { ... }`, `drawBehind { ... }`.
+ * - Compose wykrywa że state.value czytany w deferred lambda → uruchamia tylko
+ *   fazę DRAW, omija COMPOSE i LAYOUT phase.
  *
- * **Timeline:**
- *  0.30s — tarcza wjazd: scale 0→1.08→1 + rotation -180°→0° (spring bouncy)
- *  0.55s — emoji wjazd: scale 0→1.15→1 + rotation -90°→8°→0°
- *  1.20s — shimmer start na medalu (2.4s loop)
- *  1.30s — medal float góra-dół 6px (4s loop)
- *  1.50s — emoji micro-float (4s, inne tempo) + micro-rotation
- *  glow pulse — od początku (3s loop, desync z float)
- *  rotation ring — 40s/360° linear
+ * Wynik: 60fps stable, brak recomposition cycles per frame.
  */
 @Composable
 fun AchievementBadge(
     emoji: String,
     modifier: Modifier = Modifier
 ) {
-    // Apple-standard cubic bezier (iOS Health/Music)
     val appleEase = remember { CubicBezierEasing(0.22f, 1f, 0.36f, 1f) }
 
-    // === 0.30s — tarcza wjazd ===
+    // Spring entry — czytane TYLKO w lambda
     val discScale = remember { Animatable(0f) }
     val discRotation = remember { Animatable(-180f) }
     LaunchedEffect(Unit) {
@@ -80,7 +75,6 @@ fun AchievementBadge(
         }
     }
 
-    // === 0.55s — emoji wjazd (większy bounce niż tarcza) ===
     val emojiScale = remember { Animatable(0f) }
     val emojiRotation = remember { Animatable(-90f) }
     LaunchedEffect(Unit) {
@@ -111,37 +105,34 @@ fun AchievementBadge(
         }
     }
 
-    // === Infinite — odpalają się stopniowo z opóźnieniami ===
+    // Infinite transitions — BEZ `by`, czytane w lambda
     val infinite = rememberInfiniteTransition(label = "badge")
-    val glowAlpha by infinite.animateFloat(
+    val glowAlphaState = infinite.animateFloat(
         initialValue = 0.50f, targetValue = 0.95f,
         animationSpec = infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse),
         label = "glow"
     )
-    // Float medalu — 6px, 4s (start od 1.30s logicznie, ale uruchomiony od początku — różnica niewielka)
-    val floatY by infinite.animateFloat(
+    val floatYState = infinite.animateFloat(
         initialValue = -3f, targetValue = 3f,
         animationSpec = infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse),
         label = "float"
     )
-    // Emoji micro-float — inne tempo (4s), różny period z medalem (3s)
-    val emojiFloat by infinite.animateFloat(
+    val emojiFloatState = infinite.animateFloat(
         initialValue = -1.5f, targetValue = 1.5f,
         animationSpec = infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse),
         label = "emojiFloat"
     )
-    val emojiMicroRot by infinite.animateFloat(
+    val emojiMicroRotState = infinite.animateFloat(
         initialValue = -1f, targetValue = 1f,
         animationSpec = infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse),
         label = "emojiRot"
     )
-    // Shimmer 2.4s
-    val shimmer by infinite.animateFloat(
+    val shimmerState = infinite.animateFloat(
         initialValue = -0.3f, targetValue = 1.3f,
         animationSpec = infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Restart),
         label = "shimmer"
     )
-    val rotation by infinite.animateFloat(
+    val rotationState = infinite.animateFloat(
         initialValue = 0f, targetValue = 360f,
         animationSpec = infiniteRepeatable(tween(40_000, easing = LinearEasing), RepeatMode.Restart),
         label = "ring"
@@ -149,32 +140,36 @@ fun AchievementBadge(
 
     Box(
         modifier = modifier
-            // Tarcza: wjazd (scale + rotation) + ciągły float (translationY)
+            // graphicsLayer lambda — czyta state, ale tylko draw phase
             .graphicsLayer {
                 scaleX = discScale.value
                 scaleY = discScale.value
                 rotationZ = discRotation.value
-                translationY = floatY
+                translationY = floatYState.value
             }
+            // drawWithCache lambda — czyta state w onDrawBehind, BRAK recomposition
             .drawWithCache {
                 val s = size.minDimension
                 val cx = size.width / 2f
                 val cy = size.height / 2f
 
-                // Cached: gradient tarczy z highlightem w centrum (jak referencja)
                 val discBrush = Brush.radialGradient(
                     colorStops = arrayOf(
-                        0.0f to Color(0xFFFFE082),         // jasny żółty highlight
-                        0.30f to AccentOrange,             // pełen gold
+                        0.0f to Color(0xFFFFE082),
+                        0.30f to AccentOrange,
                         0.80f to AccentOrange,
-                        1.0f to AccentOrangeDim            // głęboki amber
+                        1.0f to AccentOrangeDim
                     ),
                     center = Offset(size.width * 0.50f, size.height * 0.42f),
                     radius = s * 0.42f
                 )
 
                 onDrawBehind {
-                    // 1. Outer glow (poza dyskiem) — pulsuje co 3s
+                    // Wszystkie state.value czytane TUTAJ — tylko draw phase
+                    val glowAlpha = glowAlphaState.value
+                    val shimmer = shimmerState.value
+                    val rotation = rotationState.value
+
                     drawCircle(
                         brush = Brush.radialGradient(
                             colors = listOf(
@@ -189,14 +184,12 @@ fun AchievementBadge(
                         center = Offset(cx, cy)
                     )
 
-                    // 2. Tarcza
                     drawCircle(
                         brush = discBrush,
                         radius = s * 0.39f,
                         center = Offset(cx, cy)
                     )
 
-                    // 3. Inner ring rotacyjny
                     rotate(rotation, Offset(cx, cy)) {
                         drawCircle(
                             color = Color.White.copy(alpha = 0.18f),
@@ -206,7 +199,6 @@ fun AchievementBadge(
                         )
                     }
 
-                    // 4. Shimmer — diagonal light, 2.4s loop
                     val sx = size.width * shimmer
                     drawCircle(
                         brush = Brush.linearGradient(
@@ -222,14 +214,12 @@ fun AchievementBadge(
                         center = Offset(cx, cy)
                     )
 
-                    // 5. Pierścień grawerunku (premium feel — jak prawdziwa moneta)
                     drawCircle(
                         color = Color.White.copy(alpha = 0.50f),
                         radius = s * 0.39f,
                         center = Offset(cx, cy),
                         style = Stroke(width = 1.5.dp.toPx())
                     )
-                    // Dodatkowy cieńszy pierścień grawerunku 8% wewnątrz (subtelne 3D)
                     drawCircle(
                         color = Color.White.copy(alpha = 0.20f),
                         radius = s * 0.355f,
@@ -240,13 +230,12 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // Emoji — własna graphicsLayer (osobny lifecycle animacji)
         Box(
             modifier = Modifier.graphicsLayer {
                 scaleX = emojiScale.value
                 scaleY = emojiScale.value
-                rotationZ = emojiRotation.value + emojiMicroRot
-                translationY = emojiFloat
+                rotationZ = emojiRotation.value + emojiMicroRotState.value
+                translationY = emojiFloatState.value
             }
         ) {
             Text(

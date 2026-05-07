@@ -56,9 +56,9 @@ fun AchievementProgress(
         animPct.animateTo(pct, animationSpec = tween(1400))
     }
 
-    // Shimmer wewnątrz paska — premium gloss effect
+    // Shimmer wewnątrz paska — czytamy state w drawWithCache lambda (no recomposition)
     val infinite = rememberInfiniteTransition(label = "barShimmer")
-    val barShimmer by infinite.animateFloat(
+    val barShimmerState = infinite.animateFloat(
         initialValue = -0.3f, targetValue = 1.3f,
         animationSpec = infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Restart),
         label = "barSh"
@@ -111,10 +111,10 @@ fun AchievementProgress(
                         )
                     )
                     .drawWithCache {
-                        // Shimmer wewnątrz wypełnionego obszaru
+                        // Shimmer wewnątrz wypełnionego obszaru — state.value czytany TUTAJ
                         onDrawWithContent {
                             drawContent()
-                            val sx = size.width * barShimmer
+                            val sx = size.width * barShimmerState.value
                             drawRect(
                                 brush = Brush.horizontalGradient(
                                     colors = listOf(
