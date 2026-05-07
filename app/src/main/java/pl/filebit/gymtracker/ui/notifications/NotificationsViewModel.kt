@@ -31,17 +31,34 @@ class NotificationsViewModel @Inject constructor(
     fun reload() {
         _loading.value = true
         viewModelScope.launch {
-            val items = runCatching { center.computeNotifications() }.getOrDefault(emptyList())
-            _items.value = items
-            _unreadCount.value = readPrefs.unreadCount(items.map { it.id })
+            val all = runCatching { center.computeNotifications() }.getOrDefault(emptyList())
+            // Filtruj wyczyszczone (dismissed) na dziś
+            val visible = all.filterNot { readPrefs.isDismissed(it.id) }
+            _items.value = visible
+            _unreadCount.value = readPrefs.unreadCount(visible.map { it.id })
             _loading.value = false
         }
     }
 
-    /** Wywoływane gdy user otwiera ekran NotificationsScreen — oznacza wszystkie jako przeczytane. */
+    /** Wywoływane gdy user otwiera ekran — oznacza wszystkie aktywne jako przeczytane. */
     fun markAllAsRead() {
         val ids = _items.value.map { it.id }
         readPrefs.markAllRead(ids)
+        _unreadCount.value = 0
+    }
+
+    /** Wyczyść jeden alert (X na karcie) — znika z listy + counter spada. */
+    fun dismissOne(notificationId: String) {
+        readPrefs.dismissOne(notificationId)
+        _items.value = _items.value.filterNot { it.id == notificationId }
+        _unreadCount.value = readPrefs.unreadCount(_items.value.map { it.id })
+    }
+
+    /** Wyczyść wszystkie aktualne alerty — lista pusta + counter 0. */
+    fun dismissAll() {
+        val ids = _items.value.map { it.id }
+        readPrefs.dismissAll(ids)
+        _items.value = emptyList()
         _unreadCount.value = 0
     }
 }

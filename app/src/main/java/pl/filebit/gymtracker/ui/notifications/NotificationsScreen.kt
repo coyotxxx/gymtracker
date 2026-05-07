@@ -20,8 +20,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.DeleteSweep
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -60,7 +65,24 @@ fun NotificationsScreen(
     }
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
-        ScreenHeader(title = "Powiadomienia", onBack = onBack)
+        Box {
+            ScreenHeader(title = "Powiadomienia", onBack = onBack)
+            // Trash icon — wyczyść wszystkie (tylko gdy są jakieś)
+            if (items.isNotEmpty()) {
+                IconButton(
+                    onClick = { vm.dismissAll() },
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .padding(end = 12.dp)
+                ) {
+                    Icon(
+                        Icons.Filled.DeleteSweep,
+                        contentDescription = "Wyczyść wszystkie",
+                        tint = AccentOrange
+                    )
+                }
+            }
+        }
 
         when {
             loading -> {
@@ -105,7 +127,11 @@ fun NotificationsScreen(
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     items(items, key = { it.id }) { notif ->
-                        NotificationCard(notif = notif, onClick = { onAction(notif.actionType) })
+                        NotificationCard(
+                            notif = notif,
+                            onClick = { onAction(notif.actionType) },
+                            onDismiss = { vm.dismissOne(notif.id) }
+                        )
                     }
                 }
             }
@@ -114,7 +140,11 @@ fun NotificationsScreen(
 }
 
 @Composable
-private fun NotificationCard(notif: AppNotification, onClick: () -> Unit) {
+private fun NotificationCard(
+    notif: AppNotification,
+    onClick: () -> Unit,
+    onDismiss: () -> Unit
+) {
     val accent = when (notif.severity) {
         NotificationSeverity.CRITICAL -> ErrorRed
         NotificationSeverity.WARNING -> AccentOrange
@@ -130,13 +160,29 @@ private fun NotificationCard(notif: AppNotification, onClick: () -> Unit) {
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
-            Text(
-                notif.title,
-                style = MaterialTheme.typography.titleSmall.copy(
-                    fontWeight = FontWeight.Bold
-                ),
-                color = accent
-            )
+            androidx.compose.foundation.layout.Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    notif.title,
+                    style = MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = accent,
+                    modifier = Modifier.weight(1f)
+                )
+                IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Icon(
+                        Icons.Filled.Close,
+                        contentDescription = "Wyczyść",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(16.dp)
+                    )
+                }
+            }
             Spacer(Modifier.height(6.dp))
             Text(
                 notif.message,

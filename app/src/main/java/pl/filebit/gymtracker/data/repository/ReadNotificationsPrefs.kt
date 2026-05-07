@@ -50,12 +50,52 @@ class ReadNotificationsPrefs @Inject constructor(
         return activeIds.count { it !in readIds }
     }
 
+    /** Czy alert został wyczyszczony (usunięty z listy) na dziś? */
+    fun isDismissed(notificationId: String): Boolean {
+        ensureFreshDay()
+        val dismissed = prefs.getStringSet(KEY_DISMISSED_IDS, emptySet()) ?: emptySet()
+        return notificationId in dismissed
+    }
+
+    /** Wyczyść jeden alert na dziś (X na karcie). */
+    fun dismissOne(notificationId: String) {
+        ensureFreshDay()
+        val current = prefs.getStringSet(KEY_DISMISSED_IDS, emptySet())?.toMutableSet() ?: mutableSetOf()
+        current.add(notificationId)
+        // Plus oznacz jako read żeby counter spadł
+        val read = prefs.getStringSet(KEY_READ_IDS, emptySet())?.toMutableSet() ?: mutableSetOf()
+        read.add(notificationId)
+        prefs.edit()
+            .putStringSet(KEY_DISMISSED_IDS, current)
+            .putStringSet(KEY_READ_IDS, read)
+            .putLong(KEY_LAST_DAY_MS, todayStartMs())
+            .apply()
+    }
+
+    /** Wyczyść wszystkie aktualne alerty na dziś (przycisk "Wyczyść wszystkie"). */
+    fun dismissAll(notificationIds: Collection<String>) {
+        ensureFreshDay()
+        val current = prefs.getStringSet(KEY_DISMISSED_IDS, emptySet())?.toMutableSet() ?: mutableSetOf()
+        current.addAll(notificationIds)
+        val read = prefs.getStringSet(KEY_READ_IDS, emptySet())?.toMutableSet() ?: mutableSetOf()
+        read.addAll(notificationIds)
+        prefs.edit()
+            .putStringSet(KEY_DISMISSED_IDS, current)
+            .putStringSet(KEY_READ_IDS, read)
+            .putLong(KEY_LAST_DAY_MS, todayStartMs())
+            .apply()
+    }
+
     /** Reset gdy data się zmieniła — codziennie rano użytkownik widzi powiadomienia od nowa. */
     private fun ensureFreshDay() {
         val savedDay = prefs.getLong(KEY_LAST_DAY_MS, 0L)
         val today = todayStartMs()
         if (savedDay != 0L && savedDay != today) {
-            prefs.edit().remove(KEY_READ_IDS).putLong(KEY_LAST_DAY_MS, today).apply()
+            prefs.edit()
+                .remove(KEY_READ_IDS)
+                .remove(KEY_DISMISSED_IDS)
+                .putLong(KEY_LAST_DAY_MS, today)
+                .apply()
         }
     }
 
@@ -70,6 +110,7 @@ class ReadNotificationsPrefs @Inject constructor(
 
     companion object {
         private const val KEY_READ_IDS = "read_ids"
+        private const val KEY_DISMISSED_IDS = "dismissed_ids"
         private const val KEY_LAST_DAY_MS = "last_day_ms"
     }
 }
