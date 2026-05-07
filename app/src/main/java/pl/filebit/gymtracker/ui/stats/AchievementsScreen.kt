@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.ui.stats
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,7 +42,8 @@ import pl.filebit.gymtracker.ui.theme.ScreenHeader
 @Composable
 fun AchievementsScreen(
     onBack: () -> Unit,
-    vm: StatsViewModel = hiltViewModel()
+    vm: StatsViewModel = hiltViewModel(),
+    achievementVm: pl.filebit.gymtracker.ui.achievement.AchievementViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
     val achievements = state.achievements
@@ -84,7 +86,12 @@ fun AchievementsScreen(
                     CategorySectionHeader(cat, unlockedInCat, items.size)
                 }
                 items(items.size, key = { idx -> items[idx].id }) { idx ->
-                    BigAchievementRow(items[idx])
+                    BigAchievementRow(
+                        a = items[idx],
+                        onClick = if (items[idx].unlocked) {
+                            { achievementVm.previewAchievement(items[idx]) }
+                        } else null
+                    )
                 }
                 item(key = "spacer_${cat.name}") {
                     Spacer(Modifier.height(4.dp))
@@ -165,10 +172,15 @@ private fun CategorySectionHeader(
 }
 
 @Composable
-private fun BigAchievementRow(a: Achievement) {
+private fun BigAchievementRow(
+    a: Achievement,
+    onClick: (() -> Unit)? = null
+) {
     val levelColor = a.level.color()
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier),
         colors = CardDefaults.cardColors(
             containerColor = if (a.unlocked) MaterialTheme.colorScheme.surface
             else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)

@@ -65,6 +65,12 @@ class AchievementViewModel @Inject constructor(
         achievements.forEach { showAchievement(it) }
     }
 
+    /** Preview — zawsze pokazuje (nawet jeśli ta sama jest już w kolejce). Dla AchievementsScreen klik. */
+    fun previewAchievement(achievement: Achievement) {
+        queue.addLast(achievement)
+        if (!isShowing) processNext()
+    }
+
     fun dismiss() {
         viewModelScope.launch {
             _uiState.value = AchievementUiState.Hidden
