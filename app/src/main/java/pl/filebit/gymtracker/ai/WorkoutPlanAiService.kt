@@ -169,6 +169,7 @@ class WorkoutPlanAiService @Inject constructor(
                 append("- Liczba dni TEGO planu: $daysPerWeek\n")
                 append(MasterAiContextPromptHelper.toAdherenceSection(masterCtx))
                 append(MasterAiContextPromptHelper.toRecoverySection(masterCtx))
+                append(MasterAiContextPromptHelper.toReadinessAndMuscleSection(masterCtx))
                 append(MasterAiContextPromptHelper.toCurrentStateSection(masterCtx))
                 append(MasterAiContextPromptHelper.toPRsSection(masterCtx))
                 append(MasterAiContextPromptHelper.toExercisePreferencesSection(masterCtx))

@@ -14,11 +14,15 @@ import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.ai.HealthInsight
 import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
+import pl.filebit.gymtracker.ai.MuscleRecoveryAnalyzer
+import pl.filebit.gymtracker.ai.MuscleRecoveryReport
 import pl.filebit.gymtracker.ai.RecoveryScore
 import pl.filebit.gymtracker.ai.RecoveryScoreCalculator
 import pl.filebit.gymtracker.ai.RecoveryStatus
 import pl.filebit.gymtracker.ai.TrainingLoad
 import pl.filebit.gymtracker.ai.TrainingLoadAnalyzer
+import pl.filebit.gymtracker.ai.TrainingReadiness
+import pl.filebit.gymtracker.ai.TrainingReadinessAnalyzer
 import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
@@ -56,7 +60,9 @@ data class HomeUiState(
     val healthInsight: HealthInsight? = null,           // null = jeszcze nie obliczone (Health Connect)
     val recoveryScore: RecoveryScore? = null,           // v1.7.4 — WHOOP-like 0-100
     val trainingLoad: TrainingLoad? = null,             // v1.7.4 — ACWR
-    val recoveryCardDismissed: Boolean = false           // v1.7.5 — user zamknął kartę na dziś
+    val recoveryCardDismissed: Boolean = false,          // v1.7.5 — user zamknął kartę na dziś
+    val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
+    val muscleRecovery: MuscleRecoveryReport? = null    // v1.9.0 — per partia
 )
 
 data class NextPlannedDay(
@@ -85,7 +91,9 @@ class HomeViewModel @Inject constructor(
     private val healthAnalyzer: HealthInsightAnalyzer,
     private val recoveryScoreCalculator: RecoveryScoreCalculator,
     private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
-    private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs
+    private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs,
+    private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
+    private val readinessAnalyzer: TrainingReadinessAnalyzer
 ) : ViewModel() {
 
     private val recoveryCardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
@@ -147,6 +155,9 @@ class HomeViewModel @Inject constructor(
         val recoveryScore = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
         // v1.7.4 ACWR — Acute:Chronic Workload Ratio
         val trainingLoad = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
+        // v1.9.0 Recovery per partia + Training Readiness
+        val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
+        val trainingReadiness = runCatching { readinessAnalyzer.analyze() }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {
@@ -227,7 +238,9 @@ class HomeViewModel @Inject constructor(
             healthInsight = healthInsight,
             recoveryScore = recoveryScore,
             trainingLoad = trainingLoad,
-            recoveryCardDismissed = recoveryCardPrefs.isDismissedForToday()
+            recoveryCardDismissed = recoveryCardPrefs.isDismissedForToday(),
+            trainingReadiness = trainingReadiness,
+            muscleRecovery = muscleRecovery
         )
     }.stateIn(
         scope = viewModelScope,

@@ -52,6 +52,8 @@ class MasterAiContextBuilder @Inject constructor(
     private val hydrationCalc: HydrationCalculator,
     private val dietPhaseRepo: DietPhaseRepository,
     private val trainingBridge: TrainingDietBridge,
+    private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
+    private val readinessAnalyzer: TrainingReadinessAnalyzer,
     private val statsRepo: StatsRepository
 ) {
 
@@ -134,7 +136,11 @@ class MasterAiContextBuilder @Inject constructor(
         }
         val topPRs = prList.sortedByDescending { it.estimatedOneRepMaxKg }.take(5)
 
-        Log.d("MasterAiContext", "Built: weight=$weight phase=$phaseLabel adherence=${adherence14.avgKcalPct}% recovery=${recoveryLogs.size}d steps7=$avgSteps7d PRs=${topPRs.size}")
+        // v1.9.0: recovery per partia + training readiness (kompozyt)
+        val muscleReport = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
+        val readiness = runCatching { readinessAnalyzer.analyze() }.getOrNull()
+
+        Log.d("MasterAiContext", "Built: weight=$weight phase=$phaseLabel adherence=${adherence14.avgKcalPct}% recovery=${recoveryLogs.size}d steps7=$avgSteps7d PRs=${topPRs.size} readiness=${readiness?.score}")
 
         return MasterAiContext(
             // Profil bazowy
@@ -208,6 +214,8 @@ class MasterAiContextBuilder @Inject constructor(
             lowHrv = recovery.lowHrv,
             lowSpO2 = recovery.lowSpO2,
             improvingFitness = recovery.improvingFitness,
+            muscleRecoveryReport = muscleReport,
+            trainingReadiness = readiness,
 
             // NEAT
             avgSteps7d = avgSteps7d,

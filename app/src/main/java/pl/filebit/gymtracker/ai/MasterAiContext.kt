@@ -92,6 +92,9 @@ data class MasterAiContext(
     val lowHrv: Boolean = false,
     val lowSpO2: Boolean = false,
     val improvingFitness: Boolean = false,
+    // === v1.9.0: Recovery per partia + Training Readiness ===
+    val muscleRecoveryReport: MuscleRecoveryReport? = null,
+    val trainingReadiness: TrainingReadiness? = null,
 
     // === NEAT (kroki) ===
     val avgSteps7d: Int,
@@ -314,6 +317,12 @@ object MasterAiContextPromptHelper {
         }
     }
 
+    /** v1.9.0 — readiness + recovery per partia (kompozyty z innych analyzerów). */
+    fun toReadinessAndMuscleSection(ctx: MasterAiContext): String = buildString {
+        ctx.trainingReadiness?.let { append(TrainingReadinessPromptHelper.toPromptSection(it)) }
+        ctx.muscleRecoveryReport?.let { append(MuscleRecoveryPromptHelper.toPromptSection(it)) }
+    }
+
     /** Pełen kontekst — używaj jeśli chcesz dać AI wszystko. */
     fun toFullContext(ctx: MasterAiContext): String = buildString {
         append(toBaseProfileSection(ctx))
@@ -321,6 +330,7 @@ object MasterAiContextPromptHelper {
         append(toWeightTrendSection(ctx))
         append(toAdherenceSection(ctx))
         append(toRecoverySection(ctx))
+        append(toReadinessAndMuscleSection(ctx))
         append(toCurrentStateSection(ctx))
         append(toPRsSection(ctx))
         append(toExercisePreferencesSection(ctx))

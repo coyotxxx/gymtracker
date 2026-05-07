@@ -61,6 +61,8 @@ import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.ai.DataMaturity
 import pl.filebit.gymtracker.ai.HealthInsight
 import pl.filebit.gymtracker.ai.LoadZone
+import pl.filebit.gymtracker.ai.MuscleRecoveryReport
+import pl.filebit.gymtracker.ai.ReadinessZone
 import pl.filebit.gymtracker.ai.RecoveryFactorSeverity
 import pl.filebit.gymtracker.ai.RecoveryScore
 import pl.filebit.gymtracker.ai.RecoveryStatus
@@ -68,6 +70,8 @@ import pl.filebit.gymtracker.ai.RecoveryZone
 import pl.filebit.gymtracker.ai.TrainingLoad
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
+import pl.filebit.gymtracker.ai.TrainingReadiness
+import pl.filebit.gymtracker.ai.TrainingRecommendation
 import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -236,6 +240,18 @@ fun HomeScreen(
                     weekTarget = state.weeklyTarget,
                     onClick = onOpenAchievements
                 )
+            }
+
+            // v1.9.0: Training Readiness + Muscle Recovery (na samej górze — primary metric)
+            state.trainingReadiness?.let { readiness ->
+                if (readiness.maturity != DataMaturity.LEARNING) {
+                    item {
+                        TrainingReadinessCard(
+                            readiness = readiness,
+                            muscleReport = state.muscleRecovery
+                        )
+                    }
+                }
             }
 
             // Faza cyklu treningowego (computed z TrainingPhaseAnalyzer)
@@ -1827,6 +1843,162 @@ private fun TrainingLoadCard(load: TrainingLoad) {
                 color = DarkOnSurface
             )
         }
+    }
+}
+
+
+
+@androidx.compose.runtime.Composable
+private fun TrainingReadinessCard(
+    readiness: TrainingReadiness,
+    muscleReport: MuscleRecoveryReport?
+) {
+    val (accent, label) = when (readiness.zone) {
+        ReadinessZone.PEAK -> SuccessGreen to "PEAK — gotów na PR"
+        ReadinessZone.GOOD -> SuccessGreen to "GOOD — normalnie"
+        ReadinessZone.MODERATE -> AccentOrange to "MODERATE — łagodnie"
+        ReadinessZone.REST -> ErrorRed to "REST — odpuść"
+    }
+    var expanded by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+
+    androidx.compose.material3.Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { expanded = !expanded },
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.10f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "TRAINING READINESS",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    androidx.compose.material3.Text(
+                        "${readiness.score} / 100",
+                        style = androidx.compose.material3.MaterialTheme.typography.headlineLarge.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        ),
+                        color = accent
+                    )
+                }
+                androidx.compose.material3.Text(
+                    label,
+                    style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = accent
+                )
+            }
+            Spacer(Modifier.height(6.dp))
+            androidx.compose.material3.Text(
+                readiness.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
+            )
+            // Komponenty z procentami
+            Spacer(Modifier.height(10.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                ReadinessMini("Sen/HRV", readiness.recoveryComponent, "50%")
+                ReadinessMini("Tonaż", readiness.loadComponent, "30%")
+                ReadinessMini("Mięśnie", readiness.muscleComponent, "20%")
+            }
+
+            // Expandable: muscle recovery
+            if (expanded && muscleReport != null) {
+                Spacer(Modifier.height(12.dp))
+                androidx.compose.material3.HorizontalDivider(color = accent.copy(alpha = 0.3f))
+                Spacer(Modifier.height(8.dp))
+                androidx.compose.material3.Text(
+                    "REGENERACJA PER PARTIA",
+                    style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                muscleReport.statuses.forEach { s ->
+                    val (mc, _) = when (s.recommendation) {
+                        TrainingRecommendation.TRAIN_HEAVY -> SuccessGreen to "✅"
+                        TrainingRecommendation.TRAIN_LIGHT -> AccentOrange to "⚠️"
+                        TrainingRecommendation.REST -> AccentOrange to "🔶"
+                        TrainingRecommendation.AVOID -> ErrorRed to "❌"
+                    }
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp),
+                        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    ) {
+                        androidx.compose.material3.Text(
+                            s.polishName,
+                            style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurface,
+                            modifier = Modifier.weight(1f)
+                        )
+                        androidx.compose.material3.LinearProgressIndicator(
+                            progress = { s.recoveryPct / 100f },
+                            color = mc,
+                            trackColor = mc.copy(alpha = 0.2f),
+                            modifier = Modifier.width(80.dp).height(6.dp)
+                        )
+                        Spacer(Modifier.width(8.dp))
+                        androidx.compose.material3.Text(
+                            "${s.recoveryPct}%",
+                            style = androidx.compose.material3.MaterialTheme.typography.bodySmall.copy(
+                                fontWeight = FontWeight.SemiBold,
+                                fontFamily = FontFamily.Monospace
+                            ),
+                            color = mc,
+                            modifier = Modifier.width(40.dp)
+                        )
+                    }
+                }
+                if (muscleReport.todayFocus.isNotBlank()) {
+                    Spacer(Modifier.height(6.dp))
+                    androidx.compose.material3.Text(
+                        muscleReport.todayFocus,
+                        style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+            } else if (muscleReport != null) {
+                Spacer(Modifier.height(6.dp))
+                androidx.compose.material3.Text(
+                    "Klik → szczegóły regeneracji per partia mięśniowa",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp),
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+@androidx.compose.runtime.Composable
+private fun ReadinessMini(label: String, value: Int, weight: String) {
+    Column(modifier = Modifier.weight(1f)) {
+        androidx.compose.material3.Text(
+            "$label ($weight)",
+            style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
+            color = DarkOnSurfaceVariant
+        )
+        androidx.compose.material3.Text(
+            "$value",
+            style = androidx.compose.material3.MaterialTheme.typography.titleMedium.copy(
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Monospace
+            ),
+            color = DarkOnSurface
+        )
     }
 }
 
