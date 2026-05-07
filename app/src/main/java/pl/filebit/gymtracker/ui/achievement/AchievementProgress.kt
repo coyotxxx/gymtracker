@@ -1,7 +1,5 @@
 package pl.filebit.gymtracker.ui.achievement
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,8 +12,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,12 +37,6 @@ fun AchievementProgress(
     modifier: Modifier = Modifier
 ) {
     val pct = if (target > 0) (current.toFloat() / target).coerceIn(0f, 1f) else 1f
-    val animPct = remember { Animatable(0f) }
-
-    LaunchedEffect(current, target) {
-        kotlinx.coroutines.delay(1200)
-        animPct.animateTo(pct, animationSpec = tween(1400))
-    }
 
     Column(modifier = modifier) {
         Row(
@@ -84,7 +74,7 @@ fun AchievementProgress(
         ) {
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(animPct.value)
+                    .fillMaxWidth(pct)
                     .height(8.dp)
                     .clip(RoundedCornerShape(4.dp))
                     .background(

@@ -1,9 +1,5 @@
 package pl.filebit.gymtracker.ui.achievement
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -32,9 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -153,7 +147,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.20",
+                text = "v1.11.21",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -180,10 +174,9 @@ private fun AchievementModal(
 
                 AchievementBadge(
                     emoji = achievement.emoji,
-                    modifier = Modifier
-                        .size(240.dp)
-                        .padding(bottom = 40.dp)
+                    modifier = Modifier.size(240.dp)
                 )
+                Spacer(Modifier.height(40.dp))
 
                 AnimatedTitle(text = achievement.title)
                 Spacer(Modifier.height(12.dp))
@@ -210,83 +203,62 @@ private fun AchievementModal(
     }
 }
 
-// BreathingBackground USUNIĘTY w v1.11.15 — był głównym źródłem stutterów
+// === STATYCZNE WERSJE — bez AnimatedVisibility, bez LaunchedEffect ===
+// Po szczegolowej analizie usunieto wszystkie animacje wjazdu — modal
+// pojawia sie INSTANT, calosc statyczna od razu. Zero recompositions.
 
 @Composable
 private fun AnimatedLabel(modifier: Modifier = Modifier) {
-    var visible by remember { mutableStateOf(false) }
-    LaunchedEffect(Unit) { delay(400); visible = true }
-    AnimatedVisibility(
-        visible = visible,
-        enter = fadeIn(tween(700)) + slideInVertically(tween(700)) { 14 }
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Row(
-            modifier = modifier,
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            Box(
-                Modifier
-                    .height(1.dp)
-                    .padding(horizontal = 0.dp)
-                    .background(
-                        Brush.horizontalGradient(listOf(Color.Transparent, AccentOrange))
-                    )
-                    .size(width = 24.dp, height = 1.dp)
-            )
-            Text(
-                text = "ODZNAKA ODBLOKOWANA",
-                color = AccentOrange,
-                fontSize = 10.sp,
-                fontWeight = FontWeight.ExtraBold,
-                letterSpacing = 2.4.sp
-            )
-            Box(
-                Modifier
-                    .size(width = 24.dp, height = 1.dp)
-                    .background(
-                        Brush.horizontalGradient(listOf(AccentOrange, Color.Transparent))
-                    )
-            )
-        }
+        Box(
+            Modifier
+                .background(
+                    Brush.horizontalGradient(listOf(Color.Transparent, AccentOrange))
+                )
+                .size(width = 24.dp, height = 1.dp)
+        )
+        Text(
+            text = "ODZNAKA ODBLOKOWANA",
+            color = AccentOrange,
+            fontSize = 10.sp,
+            fontWeight = FontWeight.ExtraBold,
+            letterSpacing = 2.4.sp
+        )
+        Box(
+            Modifier
+                .size(width = 24.dp, height = 1.dp)
+                .background(
+                    Brush.horizontalGradient(listOf(AccentOrange, Color.Transparent))
+                )
+        )
     }
 }
 
 @Composable
 private fun AnimatedTitle(text: String) {
-    var visible by remember { mutableStateOf(false) }
-    LaunchedEffect(Unit) { delay(700); visible = true }
-    AnimatedVisibility(
-        visible = visible,
-        enter = fadeIn(tween(700)) + slideInVertically(tween(700)) { 14 }
-    ) {
-        Text(
-            text = text,
-            fontSize = 36.sp,
-            fontWeight = FontWeight.Black,
-            letterSpacing = (-1).sp,
-            color = DarkOnSurface,
-            textAlign = TextAlign.Center
-        )
-    }
+    Text(
+        text = text,
+        fontSize = 36.sp,
+        fontWeight = FontWeight.Black,
+        letterSpacing = (-1).sp,
+        color = DarkOnSurface,
+        textAlign = TextAlign.Center
+    )
 }
 
 @Composable
 private fun AnimatedDescription(text: String) {
-    var visible by remember { mutableStateOf(false) }
-    LaunchedEffect(Unit) { delay(850); visible = true }
-    AnimatedVisibility(
-        visible = visible,
-        enter = fadeIn(tween(700)) + slideInVertically(tween(700)) { 14 }
-    ) {
-        Text(
-            text = text,
-            fontSize = 14.sp,
-            color = DarkOnSurfaceVariant,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.widthIn(max = 280.dp)
-        )
-    }
+    Text(
+        text = text,
+        fontSize = 14.sp,
+        color = DarkOnSurfaceVariant,
+        textAlign = TextAlign.Center,
+        modifier = Modifier.widthIn(max = 280.dp)
+    )
 }
 
 @Composable
@@ -295,46 +267,39 @@ private fun AnimatedActions(
     onShare: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var visible by remember { mutableStateOf(false) }
-    LaunchedEffect(Unit) { delay(1150); visible = true }
-    AnimatedVisibility(
-        visible = visible,
-        enter = fadeIn(tween(700)) + slideInVertically(tween(700)) { 14 }
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        Row(
-            modifier = modifier,
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        Button(
+            onClick = onConfirm,
+            modifier = Modifier
+                .weight(1f)
+                .height(50.dp),
+            shape = RoundedCornerShape(100.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = AccentOrange,
+                contentColor = DarkBg
+            )
         ) {
-            Button(
-                onClick = onConfirm,
-                modifier = Modifier
-                    .weight(1f)
-                    .height(50.dp),
-                shape = RoundedCornerShape(100.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = AccentOrange,
-                    contentColor = DarkBg
-                )
-            ) {
-                Text(
-                    "Świetnie!",
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.ExtraBold
-                )
-            }
-            IconButton(
-                onClick = onShare,
-                modifier = Modifier
-                    .size(50.dp)
-                    .background(Color.White.copy(alpha = 0.08f), CircleShape)
-            ) {
-                Icon(
-                    Icons.Default.Share,
-                    contentDescription = "Udostępnij",
-                    tint = DarkOnSurface,
-                    modifier = Modifier.size(18.dp)
-                )
-            }
+            Text(
+                "Świetnie!",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.ExtraBold
+            )
+        }
+        IconButton(
+            onClick = onShare,
+            modifier = Modifier
+                .size(50.dp)
+                .background(Color.White.copy(alpha = 0.08f), CircleShape)
+        ) {
+            Icon(
+                Icons.Default.Share,
+                contentDescription = "Udostępnij",
+                tint = DarkOnSurface,
+                modifier = Modifier.size(18.dp)
+            )
         }
     }
 }
