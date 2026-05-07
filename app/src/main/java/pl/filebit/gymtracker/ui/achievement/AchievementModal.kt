@@ -87,11 +87,17 @@ private fun AchievementModal(
         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
     }
 
-    // === Fade-in scrim 0→1 (zewnętrzny Box overlay) — czytany w lambda graphicsLayer ===
-    // Animuje TYLKO alpha całego Box (skala by była drogiego), zero recompose dzieci.
+    // === Fade-in scrim 0→1 ===
     val scrimAlpha = remember { Animatable(0f) }
     LaunchedEffect(achievement.id) {
         scrimAlpha.animateTo(1f, tween(250))
+    }
+
+    // === Card slide-in: translationY 30dp → 0 (czytany w lambda → zero recompose) ===
+    val cardTranslateY = remember { Animatable(30f) }
+    LaunchedEffect(achievement.id) {
+        delay(150)
+        cardTranslateY.animateTo(0f, tween(700, easing = AppleEase))
     }
 
     BackHandler(onBack = onDismiss)
@@ -147,7 +153,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.22",
+                text = "v1.11.23",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -158,11 +164,13 @@ private fun AchievementModal(
                     .padding(bottom = 12.dp, end = 12.dp)
             )
 
-            // Content card — BEZ graphicsLayer scale (powodowal "drugie kolo")
+            // Content card — translationY przez graphicsLayer (czytany w lambda → zero recompose)
+            // BEZ scale (scale tworzy offscreen layer = halo)
             Column(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .padding(horizontal = 32.dp)
+                    .graphicsLayer { translationY = cardTranslateY.value }
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,

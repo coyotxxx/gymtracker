@@ -23,8 +23,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -127,13 +131,31 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // TARCZA — clip Circle, gradient, subtelny border
+        // TARCZA — shadow + clip + gradient + border + subtelny inner ring
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                // Drop shadow (natywny Android RenderNode → GPU free, brak halo)
+                // ambientColor + spotColor pomaranczowy daje "swiecacy" efekt
+                .shadow(
+                    elevation = 16.dp,
+                    shape = CircleShape,
+                    ambientColor = AccentOrange,
+                    spotColor = AccentOrange
+                )
                 .clip(CircleShape)
                 .background(discBrush)
                 .border(1.dp, Color.White.copy(alpha = 0.2f), CircleShape)
+                .drawBehind {
+                    // Subtelny inner ring (premium 3D feel) — alpha 0.08, ledwo widoczny
+                    val s = size.minDimension
+                    drawCircle(
+                        color = Color.White.copy(alpha = 0.08f),
+                        radius = s * 0.44f,
+                        center = Offset(size.width / 2f, size.height / 2f),
+                        style = Stroke(width = 1.dp.toPx())
+                    )
+                }
         )
 
         // EMOJI — własny graphicsLayer (scale + rotation entry)
