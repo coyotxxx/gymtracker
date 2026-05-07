@@ -231,28 +231,32 @@ private fun AchievementModal(
 @Composable
 private fun BreathingBackground() {
     val infinite = rememberInfiniteTransition(label = "bg")
-    val intensity by infinite.animateFloat(
-        initialValue = 0.20f,
-        targetValue = 0.32f,
+    // State.value czytany w graphicsLayer LAMBDA — zero recompose tego Box
+    val intensityState = infinite.animateFloat(
+        initialValue = 0.65f,
+        targetValue = 1.0f,
         animationSpec = infiniteRepeatable(
             animation = tween(2200, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
         label = "bgIntensity"
     )
+    // Brush w remember — tworzy się RAZ, nie 60×/sec
+    val bgBrush = remember {
+        Brush.radialGradient(
+            colors = listOf(
+                AccentOrange.copy(alpha = 0.32f),
+                AccentOrangeDim.copy(alpha = 0.14f),
+                Color.Transparent
+            ),
+            radius = 900f
+        )
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.radialGradient(
-                    colors = listOf(
-                        AccentOrange.copy(alpha = intensity),
-                        AccentOrangeDim.copy(alpha = intensity * 0.45f),
-                        Color.Transparent
-                    ),
-                    radius = 900f
-                )
-            )
+            .graphicsLayer { alpha = intensityState.value }
+            .background(bgBrush)
     )
 }
 

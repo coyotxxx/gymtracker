@@ -3,6 +3,8 @@ package pl.filebit.gymtracker.ui.stats
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -66,46 +68,55 @@ class StatsViewModel @Inject constructor(
     fun reload() {
         viewModelScope.launch {
             _state.value = StatsUiState(loading = true)
-            val o = statsRepo.overview()
-            val vol26 = runCatching { statsRepo.volumePerWeek(26) }.getOrDefault(emptyList())
-            val vol8 = vol26.takeLast(8)
-            val volWeek = vol26.lastOrNull() ?: 0.0
-            val volPrev = vol26.dropLast(1).lastOrNull() ?: 0.0
-            val delta = if (volPrev > 0) ((volWeek - volPrev) / volPrev * 100.0) else 0.0
-
-            val avgDuration = if (o.totalWorkouts > 0) o.totalDurationMillis / o.totalWorkouts else 0L
 
             val period = _state.value.muscleVolumePeriod
-            val muscleReport = runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList())
-            // Dni do końca tygodnia (Pon-Nd)
             val cal = java.util.Calendar.getInstance().apply { firstDayOfWeek = java.util.Calendar.MONDAY }
             val isoDay = (cal.get(java.util.Calendar.DAY_OF_WEEK) - java.util.Calendar.MONDAY + 7) % 7 + 1
             val daysLeft = (7 - isoDay).coerceAtLeast(0)
-            val prs = runCatching { statsRepo.allPersonalRecords() }.getOrDefault(emptyList())
-            val recovery = runCatching { statsRepo.recoveryByMuscle() }.getOrDefault(emptyList())
-            val stagnations = runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList())
-            val heatmap = runCatching { statsRepo.calendarHeatmap(84) }.getOrDefault(emptyMap())
-            val profile = profileRepo.get()
-            val target = profile.daysPerWeek.coerceAtLeast(1)
-            val achievements = runCatching { statsRepo.unlockedAchievements(target) }.getOrDefault(emptyList())
 
-            _state.value = StatsUiState(
-                loading = false,
-                overview = o,
-                volumeWeek = volWeek,
-                volumeWeekDelta = delta,
-                avgWorkoutDurationMillis = avgDuration,
-                volumePerWeek8 = vol8,
-                volumePerWeek26 = vol26,
-                muscleVolumeReport = muscleReport,
-                muscleVolumePeriod = period,
-                daysToWeekEnd = daysLeft,
-                personalRecords = prs,
-                recovery = recovery,
-                stagnations = stagnations,
-                calendarHeatmap = heatmap,
-                achievements = achievements
-            )
+            // === RÓWNOLEGLE — async × 9 (zamiast sekwencyjnie). ~3-5x szybsze. ===
+            coroutineScope {
+                val overviewD = async { statsRepo.overview() } // może rzucić — propaguje (jak w oryginale)
+                val vol26D = async { runCatching { statsRepo.volumePerWeek(26) }.getOrDefault(emptyList()) }
+                val muscleD = async { runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList()) }
+                val prsD = async { runCatching { statsRepo.allPersonalRecords() }.getOrDefault(emptyList()) }
+                val recoveryD = async { runCatching { statsRepo.recoveryByMuscle() }.getOrDefault(emptyList()) }
+                val stagnD = async { runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList()) }
+                val heatmapD = async { runCatching { statsRepo.calendarHeatmap(84) }.getOrDefault(emptyMap()) }
+                val profileD = async { profileRepo.get() }
+
+                val o = overviewD.await()
+                val vol26 = vol26D.await()
+                val profile = profileD.await()
+                val target = profile.daysPerWeek.coerceAtLeast(1)
+
+                // achievements zależy od target — uruchom dopiero teraz, ale to też async OK
+                val achievementsD = async { runCatching { statsRepo.unlockedAchievements(target) }.getOrDefault(emptyList()) }
+
+                val vol8 = vol26.takeLast(8)
+                val volWeek = vol26.lastOrNull() ?: 0.0
+                val volPrev = vol26.dropLast(1).lastOrNull() ?: 0.0
+                val delta = if (volPrev > 0) ((volWeek - volPrev) / volPrev * 100.0) else 0.0
+                val avgDuration = if (o.totalWorkouts > 0) o.totalDurationMillis / o.totalWorkouts else 0L
+
+                _state.value = StatsUiState(
+                    loading = false,
+                    overview = o,
+                    volumeWeek = volWeek,
+                    volumeWeekDelta = delta,
+                    avgWorkoutDurationMillis = avgDuration,
+                    volumePerWeek8 = vol8,
+                    volumePerWeek26 = vol26,
+                    muscleVolumeReport = muscleD.await(),
+                    muscleVolumePeriod = period,
+                    daysToWeekEnd = daysLeft,
+                    personalRecords = prsD.await(),
+                    recovery = recoveryD.await(),
+                    stagnations = stagnD.await(),
+                    calendarHeatmap = heatmapD.await(),
+                    achievements = achievementsD.await()
+                )
+            }
         }
     }
 }

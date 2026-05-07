@@ -15,7 +15,9 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,7 +35,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextStyle
@@ -48,13 +49,20 @@ import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
 
 /**
- * Premium animowany medal — pełen 60fps zgodnie z 5 zasadami performance:
+ * Premium animowany medal — 5 zasad performance + naprawa "drugiego koła":
  *
- * 1. graphicsLayer {} z LAMBDA (defer state read do GPU draw, skip recomposition)
- * 2. Wszystkie Brushe w remember {} (no re-create co frame)
- * 3. Shimmer przez Box.graphicsLayer { translationX } (GPU translate, nie Canvas)
- * 4. Spring twardszy: LowBouncy + StiffnessMedium (krótszy czas → mniej kosztu)
- * 5. StartOffset zamiast LaunchedEffect+delay dla pętli
+ * BUG NAPRAWIONY: shimmer Box był fillMaxSize z brush 0%-100% → biały gradient
+ * widoczny ZAWSZE jako "drugie koło" w środku. Fix: pasek 35% szerokości,
+ * brush transparent → biały → transparent (jak prawdziwy reflex).
+ *
+ * 1. graphicsLayer {} z LAMBDA (zero recompose, tylko draw)
+ * 2. Brushe w remember {} (no re-create per frame)
+ * 3. Shimmer pasek przez translationX (GPU translate)
+ * 4. Spring LowBouncy + StiffnessMedium
+ * 5. StartOffset zamiast LaunchedEffect+delay
+ *
+ * Optymalizacja v1.11.13: usunięto rotującą obręcz + emojiMicroRot
+ * (4 infinite floats zamiast 6 → 33% mniej tickerów co frame).
  */
 @Composable
 fun AchievementBadge(
@@ -63,14 +71,13 @@ fun AchievementBadge(
 ) {
     val appleEase = remember { CubicBezierEasing(0.22f, 1f, 0.36f, 1f) }
 
-    // === Wjazdy (jednorazowe — mogą zostać LaunchedEffect+delay) ===
+    // === Wjazdy (jednorazowe) ===
     val discScale = remember { Animatable(0f) }
     val discRotation = remember { Animatable(-180f) }
     LaunchedEffect(Unit) {
         kotlinx.coroutines.delay(300)
         kotlinx.coroutines.coroutineScope {
             launch {
-                // Spring twardszy — krótszy, mniej kosztu (Zasada B)
                 discScale.animateTo(1f, spring(
                     dampingRatio = Spring.DampingRatioLowBouncy,
                     stiffness = Spring.StiffnessMedium
@@ -104,7 +111,7 @@ fun AchievementBadge(
         }
     }
 
-    // === Infinite transitions z StartOffset (Zasada A) ===
+    // === 4 infinite floats (zredukowane z 6) ===
     val infinite = rememberInfiniteTransition(label = "badge")
 
     val glowAlphaState = infinite.animateFloat(
@@ -133,33 +140,16 @@ fun AchievementBadge(
         ),
         label = "emojiFloat"
     )
-    val emojiMicroRotState = infinite.animateFloat(
-        initialValue = -1f, targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(4000, easing = LinearEasing),
-            repeatMode = RepeatMode.Reverse,
-            initialStartOffset = StartOffset(1500)
-        ),
-        label = "emojiRot"
-    )
     val shimmerProgressState = infinite.animateFloat(
-        initialValue = -1.5f, targetValue = 1.5f,
+        initialValue = -1f, targetValue = 2f,
         animationSpec = infiniteRepeatable(
-            animation = tween(2400, easing = LinearEasing),
+            animation = tween(2200, easing = LinearEasing),
             initialStartOffset = StartOffset(1200)
         ),
         label = "shimmerProgress"
     )
-    val rotationState = infinite.animateFloat(
-        initialValue = 0f, targetValue = 360f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(40_000, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "ring"
-    )
 
-    // === Brushe w remember (Zasada 2) ===
+    // === Brushe w remember ===
     val discBrush = remember {
         Brush.radialGradient(
             colorStops = arrayOf(
@@ -179,24 +169,21 @@ fun AchievementBadge(
             )
         )
     }
+    // Wąski reflex — transparent → biały → transparent
     val shimmerBrush = remember {
         Brush.linearGradient(
             colors = listOf(
                 Color.Transparent,
-                Color.White.copy(alpha = 0.40f),
-                Color.White.copy(alpha = 0.70f),
-                Color.White.copy(alpha = 0.40f),
+                Color.White.copy(alpha = 0.55f),
                 Color.Transparent
             )
         )
     }
 
-    // Box size — dla shimmer translationX
-    var boxSize by remember { mutableStateOf(IntSize.Zero) }
+    var discBoxSize by remember { mutableStateOf(IntSize.Zero) }
 
     Box(
         modifier = modifier
-            .onSizeChanged { boxSize = it }
             .graphicsLayer {
                 scaleX = discScale.value
                 scaleY = discScale.value
@@ -205,7 +192,7 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // 1. GLOW — animowane alpha przez graphicsLayer (BEZ recompose)
+        // 1. GLOW — graphicsLayer alpha (BEZ recompose)
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -213,58 +200,59 @@ fun AchievementBadge(
                 .background(glowBrush)
         )
 
-        // 2. TARCZA + shimmer overlay + ring rotation
+        // 2. TARCZA — clip Circle, zawiera disc + shimmer reflex
         Box(
             modifier = Modifier
                 .fillMaxSize(0.78f)
+                .onSizeChanged { discBoxSize = it }
                 .clip(CircleShape)
         ) {
-            // Tarcza — natywny background (Compose optimized)
+            // Tarcza
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(discBrush)
                     .border(1.5.dp, Color.White.copy(alpha = 0.50f), CircleShape)
                     .drawBehind {
+                        // Statyczny inner ring (premium 3D — bez animacji = bez drogi)
                         val s = size.minDimension
                         val cx = size.width / 2f
                         val cy = size.height / 2f
-                        // Inner ring grawerunku (statyczny — premium 3D feel)
                         drawCircle(
                             color = Color.White.copy(alpha = 0.20f),
                             radius = s * 0.46f,
                             center = Offset(cx, cy),
                             style = Stroke(width = 1.dp.toPx())
                         )
-                        // Inner ring rotacyjny — state.value w lambda
-                        rotate(rotationState.value, Offset(cx, cy)) {
-                            drawCircle(
-                                color = Color.White.copy(alpha = 0.18f),
-                                radius = s * 0.42f,
-                                center = Offset(cx, cy),
-                                style = Stroke(width = 1.dp.toPx())
-                            )
-                        }
+                        drawCircle(
+                            color = Color.White.copy(alpha = 0.10f),
+                            radius = s * 0.42f,
+                            center = Offset(cx, cy),
+                            style = Stroke(width = 1.dp.toPx())
+                        )
                     }
             )
 
-            // 3. SHIMMER overlay — translationX (Zasada 3, GPU translate)
+            // 3. SHIMMER REFLEX — wąski pasek 35% szerokości, ślizga się przez tarczę
+            // Pozycja translationX: -1×width (poza ekranem lewo) → 2×width (poza prawo)
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxHeight()
+                    .fillMaxWidth(0.35f)
                     .graphicsLayer {
-                        translationX = shimmerProgressState.value * boxSize.width
+                        translationX = shimmerProgressState.value * discBoxSize.width
+                        rotationZ = 18f // lekkie pochylenie — bardziej naturalny reflex
                     }
                     .background(shimmerBrush)
             )
         }
 
-        // 4. EMOJI — własna graphicsLayer
+        // 4. EMOJI
         Box(
             modifier = Modifier.graphicsLayer {
                 scaleX = emojiScale.value
                 scaleY = emojiScale.value
-                rotationZ = emojiRotation.value + emojiMicroRotState.value
+                rotationZ = emojiRotation.value
                 translationY = emojiFloatState.value
             }
         ) {
