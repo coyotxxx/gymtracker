@@ -173,19 +173,19 @@ private fun AchievementModal(
                     ),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                AnimatedLabel(modifier = Modifier.padding(bottom = 24.dp))
+                AnimatedLabel(modifier = Modifier.padding(bottom = 28.dp))
 
                 AchievementBadge(
                     emoji = achievement.emoji,
                     modifier = Modifier
-                        .size(220.dp)
-                        .padding(bottom = 32.dp)
+                        .size(240.dp)
+                        .padding(bottom = 40.dp)
                 )
 
                 AnimatedTitle(text = achievement.title)
-                Spacer(Modifier.height(8.dp))
+                Spacer(Modifier.height(12.dp))
                 AnimatedDescription(text = achievement.description)
-                Spacer(Modifier.height(28.dp))
+                Spacer(Modifier.height(36.dp))
 
                 AchievementProgress(
                     current = achievement.currentValue,
