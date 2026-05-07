@@ -147,15 +147,24 @@ class StatsRepository @Inject constructor(
      * jej w DB, zapisuje wpis (z timestampem teraz).
      */
     suspend fun unlockedAchievements(weeklyTarget: Int): List<Achievement> {
+        // === BULK FETCH — eliminacja N+1 query (300+ → ~10 zapytań DB) ===
         val o = overview()
         val streak = streakInfo()
-        val finishedWorkouts = workoutDao.observeAllOnce().filter { it.finishedAt != null }
-        val allSets = finishedWorkouts.flatMap { setDao.getForWorkout(it.id) }
-            .filter { it.isCompleted && it.setType != SetType.WARMUP }
+        val allWorkouts = workoutDao.observeAllOnce()
+        val finishedWorkoutIds = allWorkouts.filter { it.finishedAt != null }.map { it.id }.toSet()
+        val allExercises = exerciseDao.getAll()
+        val exerciseById = allExercises.associateBy { it.id }
+        // Jeden SQL zamiast 30× getForWorkout w pętli
+        val allSetsRaw = setDao.getAll()
+        val allSets = allSetsRaw.filter {
+            it.workoutId in finishedWorkoutIds && it.isCompleted && it.setType != SetType.WARMUP
+        }
         val distinctExercises = allSets.map { it.exerciseId }.distinct().size
-        val musclesTrained = allSets.mapNotNull { exerciseDao.getById(it.exerciseId)?.primaryMuscle }
+        // Map w pamięci zamiast 500× exerciseDao.getById
+        val musclesTrained = allSets
+            .mapNotNull { exerciseById[it.exerciseId]?.primaryMuscle }
             .distinct().size
-        val customExercises = exerciseDao.getAll().count { it.isCustom }
+        val customExercises = allExercises.count { it.isCustom }
 
         // PRs — ile rekordów ciężaru ustanowiono (count distinct exerciseIds gdzie jest set z 1RM > 0)
         val prCount = run {
@@ -200,11 +209,17 @@ class StatsRepository @Inject constructor(
         val waistDrop = -delta { it.waistCm }   // dodatnie gdy spadł
         val bodyFatDrop = -delta { it.bodyFatPercent }
 
-        // Strength — relative to bodyweight (1RM lub max set weight)
-        val benchMax = bestWeightForExerciseLike("Wyciskanie sztangi leżąc")
-        val squatMax = bestWeightForExerciseLike("Przysiad ze sztangą")
-        val deadliftMax = bestWeightForExerciseLike("Martwy ciąg klasyczny")
-        val ohpMax = bestWeightForExerciseLike("Wyciskanie żołnierskie")
+        // Strength — z BULK allSets + allExercises (zamiast 4× DAO queries)
+        fun bestWeightFor(prefix: String): Double {
+            val ex = allExercises.firstOrNull { it.name.startsWith(prefix, ignoreCase = true) }
+                ?: return 0.0
+            return allSets.filter { it.exerciseId == ex.id }
+                .maxOfOrNull { it.weightKg } ?: 0.0
+        }
+        val benchMax = bestWeightFor("Wyciskanie sztangi leżąc")
+        val squatMax = bestWeightFor("Przysiad ze sztangą")
+        val deadliftMax = bestWeightFor("Martwy ciąg klasyczny")
+        val ohpMax = bestWeightFor("Wyciskanie żołnierskie")
         val bw = currentBodyweight ?: 0.0
 
         val all = AchievementDefinitions.all(

@@ -160,12 +160,15 @@ fun AchievementBadge(
             )
         )
     }
+    // Glow z płynnym fade — colorStops wymusza early-fade, znika ostra krawędź
     val glowBrush = remember {
         Brush.radialGradient(
-            colors = listOf(
-                AccentGlow.copy(alpha = 0.55f),
-                AccentGlow.copy(alpha = 0.18f),
-                Color.Transparent
+            colorStops = arrayOf(
+                0.0f to AccentGlow.copy(alpha = 0.45f),
+                0.42f to AccentGlow.copy(alpha = 0.22f),
+                0.65f to AccentGlow.copy(alpha = 0.06f),
+                0.85f to Color.Transparent,
+                1.0f to Color.Transparent
             )
         )
     }

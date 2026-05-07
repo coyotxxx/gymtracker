@@ -32,6 +32,10 @@ interface WorkoutSetDao {
     @Query("SELECT * FROM workout_sets WHERE exerciseId = :exerciseId")
     suspend fun getAllForExercise(exerciseId: Long): List<WorkoutSet>
 
+    /** Bulk fetch — używane w stats do uniknięcia N+1 query */
+    @Query("SELECT * FROM workout_sets")
+    suspend fun getAll(): List<WorkoutSet>
+
     /**
      * Ostatnia (zakończona) seria danego ćwiczenia — używana do auto-fill
      * "ostatni raz robiłeś X kg × Y reps".
