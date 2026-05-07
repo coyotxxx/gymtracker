@@ -336,21 +336,6 @@ class HomeViewModel @Inject constructor(
         recoveryCardRefresh.value = System.currentTimeMillis()
     }
 
-    /** v1.10 — uniwersalny apply deload z konkretnym severity (z dowolnej karty alertowej). */
-    fun applyDeload(
-        severity: pl.filebit.gymtracker.util.DeloadSeverity,
-        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
-    ) {
-        val planId = state.value.todaysPlan?.id
-            ?: state.value.nextPlannedDay?.planId
-            ?: return
-        viewModelScope.launch {
-            val result = deloadService.apply(planId, severity)
-            deloadRefresh.value = System.currentTimeMillis()
-            onApplied(result)
-        }
-    }
-
     /**
      * v1.7.4 — deload na bazie Recovery Score (jeśli trwale niskie).
      * Severity bazuje na zone (RED/ORANGE/YELLOW).
