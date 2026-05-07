@@ -14,7 +14,11 @@ import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.ai.HealthInsight
 import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
+import pl.filebit.gymtracker.ai.RecoveryScore
+import pl.filebit.gymtracker.ai.RecoveryScoreCalculator
 import pl.filebit.gymtracker.ai.RecoveryStatus
+import pl.filebit.gymtracker.ai.TrainingLoad
+import pl.filebit.gymtracker.ai.TrainingLoadAnalyzer
 import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
@@ -49,7 +53,9 @@ data class HomeUiState(
     val plansById: Map<Long, pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyMap(),
     val completedDaysThisWeek: Set<Int> = emptySet(),  // dni Pn-Nd z ukończonym treningiem
     val trainingPhase: TrainingPhaseStatus? = null,    // null = jeszcze nie obliczone
-    val healthInsight: HealthInsight? = null            // null = jeszcze nie obliczone (Health Connect)
+    val healthInsight: HealthInsight? = null,           // null = jeszcze nie obliczone (Health Connect)
+    val recoveryScore: RecoveryScore? = null,           // v1.7.4 — WHOOP-like 0-100
+    val trainingLoad: TrainingLoad? = null              // v1.7.4 — ACWR
 )
 
 data class NextPlannedDay(
@@ -75,7 +81,9 @@ class HomeViewModel @Inject constructor(
     private val profileRepo: UserProfileRepository,
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
     private val phaseAnalyzer: TrainingPhaseAnalyzer,
-    private val healthAnalyzer: HealthInsightAnalyzer
+    private val healthAnalyzer: HealthInsightAnalyzer,
+    private val recoveryScoreCalculator: RecoveryScoreCalculator,
+    private val trainingLoadAnalyzer: TrainingLoadAnalyzer
 ) : ViewModel() {
 
     // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
@@ -130,6 +138,10 @@ class HomeViewModel @Inject constructor(
         val trainingPhase = runCatching { phaseAnalyzer.analyze() }.getOrNull()
         // Regeneracja — sen + HRV z Health Connect
         val healthInsight = runCatching { healthAnalyzer.analyze() }.getOrNull()
+        // v1.7.4 WHOOP-like Recovery Score 0-100 z personal baseline
+        val recoveryScore = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
+        // v1.7.4 ACWR — Acute:Chronic Workload Ratio
+        val trainingLoad = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {
@@ -207,7 +219,9 @@ class HomeViewModel @Inject constructor(
             plansById = plans.associateBy { it.id },
             completedDaysThisWeek = completedDays,
             trainingPhase = trainingPhase,
-            healthInsight = healthInsight
+            healthInsight = healthInsight,
+            recoveryScore = recoveryScore,
+            trainingLoad = trainingLoad
         )
     }.stateIn(
         scope = viewModelScope,
@@ -275,6 +289,30 @@ class HomeViewModel @Inject constructor(
             WorkoutAdjustment.DELOAD_TODAY -> DeloadSeverity.HIGH
             WorkoutAdjustment.REST_RECOMMENDED -> DeloadSeverity.HIGH
             WorkoutAdjustment.AS_PLANNED -> return  // brak akcji — plan OK
+        }
+        viewModelScope.launch {
+            val result = deloadService.apply(planId, severity)
+            deloadRefresh.value = System.currentTimeMillis()
+            onApplied(result)
+        }
+    }
+
+    /**
+     * v1.7.4 — deload na bazie Recovery Score (jeśli trwale niskie).
+     * Severity bazuje na zone (RED/ORANGE/YELLOW).
+     */
+    fun applyScoreBasedDeload(
+        score: RecoveryScore,
+        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
+    ) {
+        val planId = state.value.todaysPlan?.id
+            ?: state.value.nextPlannedDay?.planId
+            ?: return
+        val severity = when (score.zone) {
+            pl.filebit.gymtracker.ai.RecoveryZone.RED -> DeloadSeverity.HIGH
+            pl.filebit.gymtracker.ai.RecoveryZone.ORANGE -> DeloadSeverity.MED
+            pl.filebit.gymtracker.ai.RecoveryZone.YELLOW -> DeloadSeverity.LOW
+            pl.filebit.gymtracker.ai.RecoveryZone.GREEN -> return
         }
         viewModelScope.launch {
             val result = deloadService.apply(planId, severity)

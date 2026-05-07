@@ -57,8 +57,14 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
+import pl.filebit.gymtracker.ai.DataMaturity
 import pl.filebit.gymtracker.ai.HealthInsight
+import pl.filebit.gymtracker.ai.LoadZone
+import pl.filebit.gymtracker.ai.RecoveryFactorSeverity
+import pl.filebit.gymtracker.ai.RecoveryScore
 import pl.filebit.gymtracker.ai.RecoveryStatus
+import pl.filebit.gymtracker.ai.RecoveryZone
+import pl.filebit.gymtracker.ai.TrainingLoad
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
 import pl.filebit.gymtracker.ai.WorkoutAdjustment
@@ -238,24 +244,27 @@ fun HomeScreen(
                 }
             }
 
-            // Regeneracja — sen + HRV z Health Connect (RecoveryCard)
-            state.healthInsight?.let { insight ->
-                if (insight.recoveryStatus != RecoveryStatus.NO_DATA) {
-                    item {
-                        RecoveryCard(
-                            insight = insight,
-                            canApplyDeload = vm.activePlanIdForDeload() != null,
-                            onApplyDeload = {
-                                vm.applyHealthBasedDeload(insight.workoutAdjustment) { result ->
-                                    scope.launch {
-                                        snackbar.showSnackbar(
-                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
-                                        )
-                                    }
+            // v1.7.4 WHOOP-like Recovery Score + ACWR
+            state.recoveryScore?.let { score ->
+                item {
+                    WhoopRecoveryCard(
+                        score = score,
+                        canApplyDeload = vm.activePlanIdForDeload() != null,
+                        onApplyDeload = {
+                            vm.applyScoreBasedDeload(score) { result ->
+                                scope.launch {
+                                    snackbar.showSnackbar(
+                                        "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                    )
                                 }
                             }
-                        )
-                    }
+                        }
+                    )
+                }
+            }
+            state.trainingLoad?.let { load ->
+                if (load.zone != pl.filebit.gymtracker.ai.LoadZone.INSUFFICIENT) {
+                    item { TrainingLoadCard(load = load) }
                 }
             }
             // Skan zdrowotny dostępny przez ikonę AI w pasku górnym (FAB → Wyślij screen z zegarka)
@@ -1544,6 +1553,248 @@ private fun ScreenshotImportCard(onClick: () -> Unit) {
                 "›",
                 style = androidx.compose.material3.MaterialTheme.typography.titleLarge,
                 color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+
+
+@androidx.compose.runtime.Composable
+private fun WhoopRecoveryCard(
+    score: RecoveryScore,
+    canApplyDeload: Boolean,
+    onApplyDeload: () -> Unit
+) {
+    val (accent, label) = when (score.zone) {
+        RecoveryZone.GREEN -> SuccessGreen to "Wysokie"
+        RecoveryZone.YELLOW -> AccentOrange to "Umiarkowane"
+        RecoveryZone.ORANGE -> AccentOrange to "Niskie"
+        RecoveryZone.RED -> ErrorRed to "Krytyczne"
+    }
+    val showDeloadButton = canApplyDeload &&
+        score.maturity != DataMaturity.LEARNING &&
+        score.daysBelowThreshold >= 5 &&
+        (score.zone == RecoveryZone.RED || score.zone == RecoveryZone.ORANGE)
+    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+
+    if (showConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showConfirm = false },
+            title = {
+                androidx.compose.material3.Text(
+                    "Zastosować deload?",
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                androidx.compose.material3.Text(
+                    "Recovery Score ${score.score}/100 utrzymuje się nisko od ${score.daysBelowThreshold} dni z rzędu. To trwały sygnał — deload pomoże CNS się zregenerować."
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = {
+                    showConfirm = false
+                    onApplyDeload()
+                }) {
+                    androidx.compose.material3.Text(
+                        "Zastosuj",
+                        color = accent,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
+    }
+
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.10f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            // Quiet mode (LEARNING) — pierwsze 7 dni
+            if (score.maturity == DataMaturity.LEARNING) {
+                androidx.compose.material3.Text(
+                    "REGENERACJA",
+                    style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                androidx.compose.material3.Text(
+                    "📊 Zbieram dane (${score.daysOfData}/7 dni)",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(6.dp))
+                androidx.compose.material3.Text(
+                    "Algorytm uczy się twojej baseline (sen, HRV, tętno). Pierwsze 7 dni bez sugestii — dopiero potem mogę porównywać z TWOJĄ normą zamiast ogólnych progów.",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+                return@Card
+            }
+
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "RECOVERY SCORE",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    androidx.compose.material3.Text(
+                        "${score.score} / 100",
+                        style = androidx.compose.material3.MaterialTheme.typography.headlineMedium.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        ),
+                        color = accent
+                    )
+                }
+                androidx.compose.material3.Text(
+                    label,
+                    style = androidx.compose.material3.MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = accent
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+
+            // Personal baselines info
+            score.baselines.sleepHours?.let {
+                androidx.compose.material3.Text(
+                    "Twoja baseline: sen %.1fh".format(it) +
+                        (score.baselines.restingHrBpm?.let { hr -> " • tętno %.0f bpm".format(hr) } ?: "") +
+                        (score.baselines.hrvMs?.let { hrv -> " • HRV %.0f ms".format(hrv) } ?: ""),
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(4.dp))
+            }
+
+            // Czynniki obniżające score
+            if (score.factors.isNotEmpty()) {
+                Spacer(Modifier.height(4.dp))
+                score.factors.take(3).forEach { f ->
+                    val fc = when (f.severity) {
+                        RecoveryFactorSeverity.CRITICAL -> ErrorRed
+                        RecoveryFactorSeverity.WARNING -> AccentOrange
+                        RecoveryFactorSeverity.INFO -> DarkOnSurfaceVariant
+                    }
+                    androidx.compose.material3.Text(
+                        "• ${f.label} (${f.deltaText})",
+                        style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                        color = fc
+                    )
+                }
+            } else if (score.zone == RecoveryZone.GREEN) {
+                androidx.compose.material3.Text(
+                    "Wszystkie metryki w normie. Trenuj zgodnie z planem.",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurface
+                )
+            }
+
+            // Trwały trend → przycisk deloadu
+            if (score.daysBelowThreshold >= 3) {
+                Spacer(Modifier.height(8.dp))
+                androidx.compose.material3.Text(
+                    "Trend: niski score od ${score.daysBelowThreshold} dni z rzędu",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = accent
+                )
+            }
+            if (showDeloadButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text(
+                        "Zastosuj deload",
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
+}
+
+@androidx.compose.runtime.Composable
+private fun TrainingLoadCard(load: TrainingLoad) {
+    val (accent, label) = when (load.zone) {
+        LoadZone.OPTIMAL -> SuccessGreen to "Optymalne"
+        LoadZone.DETRAINING -> DarkOnSurfaceVariant to "Detraining"
+        LoadZone.OVERREACHING -> AccentOrange to "Wysokie"
+        LoadZone.RISKY -> ErrorRed to "Ryzyko kontuzji"
+        LoadZone.INSUFFICIENT -> DarkOnSurfaceVariant to "Mało danych"
+    }
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.10f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "OBCIĄŻENIE TRENINGOWE (ACWR)",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    androidx.compose.material3.Text(
+                        "%.2f".format(load.acwr),
+                        style = androidx.compose.material3.MaterialTheme.typography.headlineSmall.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        ),
+                        color = accent
+                    )
+                }
+                androidx.compose.material3.Text(
+                    label,
+                    style = androidx.compose.material3.MaterialTheme.typography.titleSmall.copy(
+                        fontWeight = FontWeight.Bold
+                    ),
+                    color = accent
+                )
+            }
+            Spacer(Modifier.height(6.dp))
+            androidx.compose.material3.Text(
+                load.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
             )
         }
     }
