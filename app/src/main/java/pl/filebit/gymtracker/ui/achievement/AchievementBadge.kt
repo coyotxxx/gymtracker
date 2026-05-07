@@ -26,6 +26,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
@@ -50,10 +53,10 @@ fun AchievementBadge(
     val scale = remember { Animatable(0.85f) }
     val alpha = remember { Animatable(0f) }
     LaunchedEffect(Unit) {
-        kotlinx.coroutines.delay(250)
-        kotlinx.coroutines.coroutineScope {
-            kotlinx.coroutines.launch { scale.animateTo(1f, tween(700, easing = appleEase)) }
-            kotlinx.coroutines.launch { alpha.animateTo(1f, tween(500, easing = appleEase)) }
+        delay(250)
+        coroutineScope {
+            launch { scale.animateTo(1f, tween(700, easing = appleEase)) }
+            launch { alpha.animateTo(1f, tween(500, easing = appleEase)) }
         }
     }
 
