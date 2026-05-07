@@ -12,6 +12,9 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
+import pl.filebit.gymtracker.ai.HealthInsight
+import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
+import pl.filebit.gymtracker.ai.RecoveryStatus
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
@@ -43,7 +46,8 @@ data class HomeUiState(
     val weekSlots: Map<Int, List<pl.filebit.gymtracker.util.ScheduleSlot>> = emptyMap(),
     val plansById: Map<Long, pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyMap(),
     val completedDaysThisWeek: Set<Int> = emptySet(),  // dni Pn-Nd z ukończonym treningiem
-    val trainingPhase: TrainingPhaseStatus? = null     // null = jeszcze nie obliczone
+    val trainingPhase: TrainingPhaseStatus? = null,    // null = jeszcze nie obliczone
+    val healthInsight: HealthInsight? = null            // null = jeszcze nie obliczone (Health Connect)
 )
 
 data class NextPlannedDay(
@@ -68,7 +72,8 @@ class HomeViewModel @Inject constructor(
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository,
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
-    private val phaseAnalyzer: TrainingPhaseAnalyzer
+    private val phaseAnalyzer: TrainingPhaseAnalyzer,
+    private val healthAnalyzer: HealthInsightAnalyzer
 ) : ViewModel() {
 
     // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
@@ -121,6 +126,8 @@ class HomeViewModel @Inject constructor(
 
         // Faza cyklu treningowego — z TrainingPhaseAnalyzer (deterministic)
         val trainingPhase = runCatching { phaseAnalyzer.analyze() }.getOrNull()
+        // Regeneracja — sen + HRV z Health Connect
+        val healthInsight = runCatching { healthAnalyzer.analyze() }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {
@@ -197,7 +204,8 @@ class HomeViewModel @Inject constructor(
             weekSlots = schedule,
             plansById = plans.associateBy { it.id },
             completedDaysThisWeek = completedDays,
-            trainingPhase = trainingPhase
+            trainingPhase = trainingPhase,
+            healthInsight = healthInsight
         )
     }.stateIn(
         scope = viewModelScope,

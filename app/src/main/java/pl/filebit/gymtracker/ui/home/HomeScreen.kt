@@ -57,8 +57,11 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.isoDayNumber
 import kotlinx.datetime.todayIn
+import pl.filebit.gymtracker.ai.HealthInsight
+import pl.filebit.gymtracker.ai.RecoveryStatus
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
+import pl.filebit.gymtracker.ai.WorkoutAdjustment
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
@@ -231,6 +234,13 @@ fun HomeScreen(
             state.trainingPhase?.let { phase ->
                 if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA) {
                     item { TrainingPhaseCard(status = phase) }
+                }
+            }
+
+            // Regeneracja — sen + HRV z Health Connect (RecoveryCard)
+            state.healthInsight?.let { insight ->
+                if (insight.recoveryStatus != RecoveryStatus.NO_DATA) {
+                    item { RecoveryCard(insight = insight) }
                 }
             }
 
@@ -1322,6 +1332,94 @@ private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
                 color = DarkOnSurface
             )
         }
+    }
+}
+
+
+
+@androidx.compose.runtime.Composable
+private fun RecoveryCard(insight: HealthInsight) {
+    val (accent, emoji, label) = when (insight.recoveryStatus) {
+        RecoveryStatus.EXCELLENT -> Triple(SuccessGreen, "✅", "Doskonała")
+        RecoveryStatus.GOOD -> Triple(SuccessGreen, "✅", "Dobra")
+        RecoveryStatus.MODERATE -> Triple(AccentOrange, "⚠️", "Umiarkowana")
+        RecoveryStatus.POOR -> Triple(ErrorRed, "❌", "Słaba")
+        RecoveryStatus.NO_DATA -> Triple(DarkOnSurfaceVariant, "❓", "Brak danych")
+    }
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.10f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                androidx.compose.material3.Text(
+                    emoji,
+                    style = androidx.compose.material3.MaterialTheme.typography.titleMedium
+                )
+                Spacer(Modifier.width(10.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "REGENERACJA",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant
+                    )
+                    androidx.compose.material3.Text(
+                        label,
+                        style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.ExtraBold
+                        ),
+                        color = accent
+                    )
+                }
+            }
+            // Liczby — sen + HRV (jeśli są)
+            if (insight.lastNightSleepHours != null || insight.avgSleepHours7d != null || insight.avgHrvMs7d != null) {
+                Spacer(Modifier.height(8.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                    insight.lastNightSleepHours?.let {
+                        MetricMini(label = "Ostatnia noc", value = "%.1fh".format(it))
+                    }
+                    insight.avgSleepHours7d?.let {
+                        MetricMini(label = "Sen 7d", value = "%.1fh".format(it))
+                    }
+                    insight.avgHrvMs7d?.let {
+                        MetricMini(label = "HRV 7d", value = "%.0f ms".format(it))
+                    }
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            androidx.compose.material3.Text(
+                insight.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
+            )
+        }
+    }
+}
+
+@androidx.compose.runtime.Composable
+private fun MetricMini(label: String, value: String) {
+    Column {
+        androidx.compose.material3.Text(
+            label,
+            style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+            color = DarkOnSurfaceVariant
+        )
+        androidx.compose.material3.Text(
+            value,
+            style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold
+            ),
+            color = DarkOnSurface
+        )
     }
 }
 
