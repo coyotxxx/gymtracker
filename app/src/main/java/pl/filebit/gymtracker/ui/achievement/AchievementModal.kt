@@ -178,8 +178,8 @@ private fun AchievementModal(
                 AchievementBadge(
                     emoji = achievement.emoji,
                     modifier = Modifier
-                        .size(160.dp)
-                        .padding(bottom = 28.dp)
+                        .size(220.dp)
+                        .padding(bottom = 32.dp)
                 )
 
                 AnimatedTitle(text = achievement.title)

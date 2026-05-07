@@ -190,12 +190,12 @@ fun AchievementBadge(
                 Text(
                     text = emoji,
                     style = TextStyle(
-                        fontSize = 56.sp,
+                        fontSize = 80.sp,
                         fontWeight = FontWeight.Bold,
                         shadow = Shadow(
                             color = DarkBg.copy(alpha = 0.6f),
                             offset = Offset(0f, 4f),
-                            blurRadius = 8f
+                            blurRadius = 12f
                         )
                     )
                 )
