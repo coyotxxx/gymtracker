@@ -1,11 +1,6 @@
 package pl.filebit.gymtracker.ui.achievement
 
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,19 +10,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -39,8 +30,9 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurface
 
 /**
- * Animowany pasek progresu — od 0 do (current/target × 100)% w 1.5s,
- * z opóźnieniem 600ms (po wjeździe medalu).
+ * Pasek progresu — animacja 0 → pct w 1.4s, potem STATYCZNY.
+ * v1.11.18: usunięty infinite barShimmer (drawWithCache + state.value
+ * = redraw co frame, jedyna pozostała ciągła animacja w modal).
  */
 @Composable
 fun AchievementProgress(
@@ -56,16 +48,7 @@ fun AchievementProgress(
         animPct.animateTo(pct, animationSpec = tween(1400))
     }
 
-    // Shimmer wewnątrz paska — czytamy state w drawWithCache lambda (no recomposition)
-    val infinite = rememberInfiniteTransition(label = "barShimmer")
-    val barShimmerState = infinite.animateFloat(
-        initialValue = -0.3f, targetValue = 1.3f,
-        animationSpec = infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Restart),
-        label = "barSh"
-    )
-
     Column(modifier = modifier) {
-        // Label "TWÓJ POSTĘP" + duża wartość "X / Y" (jak w referencji)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -91,7 +74,7 @@ fun AchievementProgress(
             )
         }
         Spacer(Modifier.height(10.dp))
-        // Track + fill + shimmer overlay
+        // Track + fill (statyczny po wjeździe)
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -99,7 +82,6 @@ fun AchievementProgress(
                 .clip(RoundedCornerShape(4.dp))
                 .background(DarkSurface)
         ) {
-            // Fill (gradient gold)
             Box(
                 modifier = Modifier
                     .fillMaxWidth(animPct.value)
@@ -110,24 +92,6 @@ fun AchievementProgress(
                             listOf(AccentOrangeDim, AccentOrange, AccentOrangeDim)
                         )
                     )
-                    .drawWithCache {
-                        // Shimmer wewnątrz wypełnionego obszaru — state.value czytany TUTAJ
-                        onDrawWithContent {
-                            drawContent()
-                            val sx = size.width * barShimmerState.value
-                            drawRect(
-                                brush = Brush.horizontalGradient(
-                                    colors = listOf(
-                                        Color.Transparent,
-                                        Color.White.copy(alpha = 0.45f),
-                                        Color.Transparent
-                                    ),
-                                    startX = sx - size.width * 0.15f,
-                                    endX = sx + size.width * 0.15f
-                                )
-                            )
-                        }
-                    }
             )
         }
     }
