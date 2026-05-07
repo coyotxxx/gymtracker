@@ -86,6 +86,7 @@ fun HomeScreen(
     onOpenStats: () -> Unit = {},
     onOpenAchievements: () -> Unit = {},
     onOpenHistory: () -> Unit = {},
+    onOpenHealthScreenshot: () -> Unit = {},
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -256,6 +257,12 @@ fun HomeScreen(
                         )
                     }
                 }
+            }
+            // Skan zdrowotny — zawsze dostępny call-to-action (Huawei/Mi/Garmin etc.)
+            item {
+                ScreenshotImportCard(
+                    onClick = { onOpenHealthScreenshot() }
+                )
             }
 
             // Section header z linkiem
@@ -1498,6 +1505,52 @@ private fun MetricMini(label: String, value: String) {
             ),
             color = DarkOnSurface
         )
+    }
+}
+
+
+
+@androidx.compose.runtime.Composable
+private fun ScreenshotImportCard(onClick: () -> Unit) {
+    androidx.compose.material3.Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = DarkSurface
+        ),
+        border = BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            androidx.compose.material3.Text(
+                "📸",
+                style = androidx.compose.material3.MaterialTheme.typography.titleMedium
+            )
+            Spacer(Modifier.width(10.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                androidx.compose.material3.Text(
+                    "Wyślij screen z zegarka",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = DarkOnSurface
+                )
+                androidx.compose.material3.Text(
+                    "Huawei / Mi / Garmin / Samsung — AI uzupełni dane",
+                    style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            androidx.compose.material3.Text(
+                "›",
+                style = androidx.compose.material3.MaterialTheme.typography.titleLarge,
+                color = DarkOnSurfaceVariant
+            )
+        }
     }
 }
 

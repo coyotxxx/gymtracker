@@ -269,7 +269,8 @@ fun AppNavigation() {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    }
+                    },
+                    onOpenHealthScreenshot = { navController.navigate(Screen.HealthScreenshot.route) }
                 )
             }
             composable(Screen.History.route) {
@@ -471,6 +472,9 @@ fun AppNavigation() {
             }
             composable(Screen.AiLog.route) {
                 pl.filebit.gymtracker.ui.ai.AiLogScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.HealthScreenshot.route) {
+                pl.filebit.gymtracker.ui.health.HealthScreenshotScreen(onBack = { navController.popBackStack() })
             }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
