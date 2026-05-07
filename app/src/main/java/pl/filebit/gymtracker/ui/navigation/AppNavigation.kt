@@ -145,6 +145,19 @@ fun AppNavigation() {
     val notificationsVm: pl.filebit.gymtracker.ui.notifications.NotificationsViewModel = hiltViewModel()
     val unreadNotificationsCount by notificationsVm.unreadCount.collectAsStateWithLifecycle()
 
+    // v1.11.0 Achievement modal — po zakończeniu treningu wyzwala check
+    val achievementVm: pl.filebit.gymtracker.ui.achievement.AchievementViewModel = hiltViewModel()
+    // Trigger: gdy workoutShellState.hasActive zmieni się z true na false (trening zakończony)
+    val previousHasActive = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(workoutShellState.hasActive) }
+    LaunchedEffect(workoutShellState.hasActive) {
+        if (previousHasActive.value && !workoutShellState.hasActive) {
+            // Trening właśnie się skończył — sprawdź nowo odblokowane odznaki
+            kotlinx.coroutines.delay(800)  // poczekaj aż dialog z PR/sugestiami zniknie
+            achievementVm.checkForNewAchievements()
+        }
+        previousHasActive.value = workoutShellState.hasActive
+    }
+
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
         topBar = {
@@ -719,6 +732,9 @@ fun AppNavigation() {
                 }
             )
         }
+
+        // v1.11.0 — globalny modal odznak (pojawia się po finish workout)
+        pl.filebit.gymtracker.ui.achievement.AchievementModalHost(vm = achievementVm)
     }
 }
 
