@@ -17,10 +17,16 @@ import java.util.Calendar
 import java.util.TimeZone
 import javax.inject.Inject
 
+data class AnalyzedScreenshot(
+    val index: Int,                 // pozycja w liście wgranych
+    val data: HealthScreenshotData,
+    val errorMessage: String? = null
+)
+
 sealed class HealthScreenshotState {
     object Idle : HealthScreenshotState()
-    object Analyzing : HealthScreenshotState()
-    data class Success(val data: HealthScreenshotData) : HealthScreenshotState()
+    data class Analyzing(val current: Int, val total: Int) : HealthScreenshotState()
+    data class Reviewing(val results: List<AnalyzedScreenshot>) : HealthScreenshotState()
     data class Error(val message: String) : HealthScreenshotState()
     data class Saved(val savedFields: List<String>) : HealthScreenshotState()
 }
@@ -35,50 +41,66 @@ class HealthScreenshotViewModel @Inject constructor(
     private val _state = MutableStateFlow<HealthScreenshotState>(HealthScreenshotState.Idle)
     val state: StateFlow<HealthScreenshotState> = _state.asStateFlow()
 
-    fun analyzeImage(imageBytes: ByteArray, mimeType: String = "image/jpeg") {
+    /**
+     * Analizuje listę zrzutów ekranu PO KOLEI (sekwencyjnie — żeby nie przeciążyć API).
+     * Wynik = lista AnalyzedScreenshot (z opcjonalnym błędem per zdjęcie).
+     */
+    fun analyzeImages(images: List<Pair<ByteArray, String>>) {
         if (_state.value is HealthScreenshotState.Analyzing) return
+        if (images.isEmpty()) return
         viewModelScope.launch {
-            _state.value = HealthScreenshotState.Analyzing
-            val result = analyzer.analyze(imageBytes, mimeType)
-            _state.value = result.fold(
-                onSuccess = { HealthScreenshotState.Success(it) },
-                onFailure = { HealthScreenshotState.Error(it.message ?: "Nieznany błąd AI") }
-            )
+            val results = mutableListOf<AnalyzedScreenshot>()
+            for ((idx, pair) in images.withIndex()) {
+                _state.value = HealthScreenshotState.Analyzing(idx + 1, images.size)
+                val (bytes, mime) = pair
+                val result = analyzer.analyze(bytes, mime)
+                result.fold(
+                    onSuccess = { data ->
+                        results.add(AnalyzedScreenshot(idx, data))
+                    },
+                    onFailure = { err ->
+                        // Zapisz placeholder z błędem — user widzi które zdjęcie nie wyszło
+                        results.add(AnalyzedScreenshot(idx, HealthScreenshotData(), err.message))
+                    }
+                )
+            }
+            _state.value = HealthScreenshotState.Reviewing(results)
         }
     }
 
     /**
-     * Zapisuje wyciągnięte dane do RecoveryLog (sen/stres/kalorie) i BodyMeasurement (waga).
-     * Data: detectedDate jeśli AI ją wyciągnął, inaczej dzisiaj.
+     * Zapisuje WSZYSTKIE zrecenzowane wyniki (po confirm). Per data — merge do
+     * istniejącego RecoveryLog. Wagę aktualizujemy zawsze (nadpisujemy datę).
      */
-    fun save(data: HealthScreenshotData) {
+    fun saveAll(results: List<AnalyzedScreenshot>) {
         viewModelScope.launch {
-            val dateMs = parseDateOrToday(data.detectedDate)
             val saved = mutableListOf<String>()
+            for (r in results) {
+                if (r.errorMessage != null) continue
+                val data = r.data
+                val dateMs = parseDateOrToday(data.detectedDate)
 
-            // RecoveryLog — upsert: scal z istniejącym jeśli już istnieje dla tej daty
-            val hasRecoveryData = data.sleepHours != null || data.stressLevel1to5 != null
-            if (hasRecoveryData) {
-                val existing = recoveryLogDao.getForDate(dateMs)
-                val merged = (existing ?: RecoveryLog(dateMs = dateMs)).copy(
-                    sleepHours = data.sleepHours ?: existing?.sleepHours,
-                    stressLevel = data.stressLevel1to5 ?: existing?.stressLevel,
-                    updatedAt = System.currentTimeMillis()
-                )
-                recoveryLogDao.insert(merged)
-                if (data.sleepHours != null) saved += "sen ${"%.1f".format(data.sleepHours)}h"
-                if (data.stressLevel1to5 != null) saved += "stres ${data.stressLevel1to5}/5"
+                val hasRecoveryData = data.sleepHours != null || data.stressLevel1to5 != null
+                if (hasRecoveryData) {
+                    val existing = recoveryLogDao.getForDate(dateMs)
+                    val merged = (existing ?: RecoveryLog(dateMs = dateMs)).copy(
+                        sleepHours = data.sleepHours ?: existing?.sleepHours,
+                        stressLevel = data.stressLevel1to5 ?: existing?.stressLevel,
+                        updatedAt = System.currentTimeMillis()
+                    )
+                    recoveryLogDao.insert(merged)
+                    if (data.sleepHours != null) saved += "sen ${"%.1f".format(data.sleepHours)}h"
+                    if (data.stressLevel1to5 != null) saved += "stres ${data.stressLevel1to5}/5"
+                }
+
+                if (data.weightKg != null && data.weightKg > 0) {
+                    bodyDao.upsert(BodyMeasurement(
+                        date = dateMs,
+                        weightKg = data.weightKg
+                    ))
+                    saved += "waga ${"%.1f".format(data.weightKg)}kg"
+                }
             }
-
-            // BodyMeasurement (waga) — tylko jeśli waga widoczna
-            if (data.weightKg != null && data.weightKg > 0) {
-                bodyDao.upsert(BodyMeasurement(
-                    date = dateMs,
-                    weightKg = data.weightKg
-                ))
-                saved += "waga ${"%.1f".format(data.weightKg)}kg"
-            }
-
             _state.value = HealthScreenshotState.Saved(saved)
         }
     }

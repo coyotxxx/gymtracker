@@ -258,12 +258,7 @@ fun HomeScreen(
                     }
                 }
             }
-            // Skan zdrowotny — zawsze dostępny call-to-action (Huawei/Mi/Garmin etc.)
-            item {
-                ScreenshotImportCard(
-                    onClick = { onOpenHealthScreenshot() }
-                )
-            }
+            // Skan zdrowotny dostępny przez ikonę AI w pasku górnym (FAB → Wyślij screen z zegarka)
 
             // Section header z linkiem
             item {

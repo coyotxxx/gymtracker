@@ -655,6 +655,10 @@ fun AppNavigation() {
                 onAskAboutScreen = {
                     aiChoiceVisible = false
                     aiQuickAskVisible = true
+                },
+                onSendHealthScreenshot = {
+                    aiChoiceVisible = false
+                    navController.navigate(Screen.HealthScreenshot.route)
                 }
             )
         }

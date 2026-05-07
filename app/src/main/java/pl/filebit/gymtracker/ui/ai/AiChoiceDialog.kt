@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.QuestionAnswer
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
@@ -39,7 +40,8 @@ fun AiChoiceDialog(
     screenLabel: String,
     onDismiss: () -> Unit,
     onOpenAssistant: () -> Unit,
-    onAskAboutScreen: () -> Unit
+    onAskAboutScreen: () -> Unit,
+    onSendHealthScreenshot: () -> Unit = {}
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     ModalBottomSheet(
@@ -73,6 +75,12 @@ fun AiChoiceDialog(
                 label = "Zapytaj o ten ekran",
                 subtitle = screenLabel,
                 onClick = onAskAboutScreen
+            )
+            ActionSheetRow(
+                icon = Icons.Default.PhotoLibrary,
+                label = "Wyślij screen z zegarka",
+                subtitle = "Sen, waga, HRV, stres — AI uzupełni dane (Huawei/Mi/Garmin/Samsung)",
+                onClick = onSendHealthScreenshot
             )
 
             Spacer(Modifier.height(8.dp))

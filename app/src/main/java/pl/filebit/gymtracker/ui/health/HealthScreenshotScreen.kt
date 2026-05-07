@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddPhotoAlternate
@@ -32,9 +33,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -63,18 +61,20 @@ fun HealthScreenshotScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
-    val pickImageLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        if (uri != null) {
+    val pickImagesLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetMultipleContents()
+    ) { uris: List<Uri> ->
+        if (uris.isEmpty()) return@rememberLauncherForActivityResult
+        val images = uris.mapNotNull { uri ->
             try {
                 val bytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
                 if (bytes != null && bytes.isNotEmpty()) {
                     val mime = context.contentResolver.getType(uri) ?: "image/jpeg"
-                    vm.analyzeImage(bytes, mime)
-                }
-            } catch (_: Exception) { /* ignored — UI shows generic error */ }
+                    bytes to mime
+                } else null
+            } catch (_: Exception) { null }
         }
+        if (images.isNotEmpty()) vm.analyzeImages(images)
     }
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
@@ -85,25 +85,31 @@ fun HealthScreenshotScreen(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item {
-                IntroCard()
-            }
+            item { IntroCard() }
 
             when (val s = state) {
                 HealthScreenshotState.Idle -> {
-                    item { PickImageButton(onPick = { pickImageLauncher.launch("image/*") }) }
+                    item { PickImageButton(onPick = { pickImagesLauncher.launch("image/*") }) }
                     item { ExamplesCard() }
                 }
-                HealthScreenshotState.Analyzing -> {
-                    item { AnalyzingCard() }
+                is HealthScreenshotState.Analyzing -> {
+                    item { AnalyzingCard(current = s.current, total = s.total) }
                 }
-                is HealthScreenshotState.Success -> {
-                    item { ResultCard(data = s.data) }
+                is HealthScreenshotState.Reviewing -> {
+                    items(items = s.results, key = { it.index }) { r ->
+                        if (r.errorMessage != null) {
+                            ErrorCardItem(idx = r.index + 1, message = r.errorMessage)
+                        } else {
+                            ResultCard(idx = r.index + 1, total = s.results.size, data = r.data)
+                        }
+                    }
                     item {
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            val anyValid = s.results.any { it.errorMessage == null }
                             Button(
-                                onClick = { vm.save(s.data) },
+                                onClick = { vm.saveAll(s.results) },
                                 modifier = Modifier.weight(1f),
+                                enabled = anyValid,
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = SuccessGreen,
                                     contentColor = Color.White
@@ -112,7 +118,7 @@ fun HealthScreenshotScreen(
                             ) {
                                 Icon(Icons.Filled.CheckCircle, contentDescription = null, modifier = Modifier.size(18.dp))
                                 Spacer(Modifier.size(6.dp))
-                                Text("Zapisz", fontWeight = FontWeight.Bold)
+                                Text("Zapisz wszystkie", fontWeight = FontWeight.Bold)
                             }
                             TextButton(
                                 onClick = { vm.reset() },
@@ -124,7 +130,12 @@ fun HealthScreenshotScreen(
                     }
                 }
                 is HealthScreenshotState.Error -> {
-                    item { ErrorCard(message = s.message, onRetry = { vm.reset() }) }
+                    item { ErrorCardItem(idx = null, message = s.message) }
+                    item {
+                        TextButton(onClick = { vm.reset() }) {
+                            Text("Spróbuj ponownie", color = AccentOrange, fontWeight = FontWeight.Bold)
+                        }
+                    }
                 }
                 is HealthScreenshotState.Saved -> {
                     item { SavedCard(savedFields = s.savedFields, onDone = { vm.reset() }) }
@@ -150,8 +161,7 @@ private fun IntroCard() {
             )
             Spacer(Modifier.height(6.dp))
             Text(
-                "Twój smartwatch (Huawei, Mi, Garmin, Samsung, Polar) zbiera dane o śnie, wadze, tętnie, stresie. " +
-                    "AI je przeczyta z zrzutu ekranu i zapisze w aplikacji — żeby trener mógł je uwzględnić.",
+                "Możesz wybrać KILKA zdjęć naraz. AI przeanalizuje każdy zrzut po kolei i zapisze dane (sen, waga, stres) do RecoveryLog/BodyMeasurement. Wszystko w jednej operacji.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -172,7 +182,7 @@ private fun PickImageButton(onPick: () -> Unit) {
     ) {
         Icon(Icons.Filled.AddPhotoAlternate, contentDescription = null)
         Spacer(Modifier.size(8.dp))
-        Text("Wybierz zrzut z galerii", fontWeight = FontWeight.Bold)
+        Text("Wybierz zrzuty z galerii (1-N)", fontWeight = FontWeight.Bold)
     }
 }
 
@@ -200,7 +210,7 @@ private fun ExamplesCard() {
                     "• Waga (np. \"77,2 kg\")\n" +
                     "• Tętno spoczynkowe (np. \"64 ud./min\")\n" +
                     "• SpO2 (np. \"97%\")\n" +
-                    "• Stres (Huawei: 0-99)\n" +
+                    "• Stres (Huawei: 0-99 → 1-5)\n" +
                     "• Kroki, kalorie, VO2Max\n" +
                     "• HRV jeśli widoczne",
                 style = MaterialTheme.typography.bodySmall,
@@ -208,7 +218,7 @@ private fun ExamplesCard() {
             )
             Spacer(Modifier.height(8.dp))
             Text(
-                "Zapisuje do RecoveryLog (sen, stres) i BodyMeasurement (waga). Pozostałe metryki są informacyjne i wykorzystywane przez AI w prompcie.",
+                "Sen i stres trafiają do RecoveryLog (używane przez analyzer regeneracji + AI). Waga do BodyMeasurement (trend wagi). Pozostałe metryki są informacyjne.",
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
@@ -217,7 +227,7 @@ private fun ExamplesCard() {
 }
 
 @Composable
-private fun AnalyzingCard() {
+private fun AnalyzingCard(current: Int, total: Int) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = AccentOrange.copy(alpha = 0.10f)),
@@ -235,7 +245,7 @@ private fun AnalyzingCard() {
             )
             Spacer(Modifier.size(10.dp))
             Text(
-                "AI analizuje zrzut...",
+                "AI analizuje zrzut $current z $total...",
                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                 color = AccentOrange
             )
@@ -244,7 +254,7 @@ private fun AnalyzingCard() {
 }
 
 @Composable
-private fun ResultCard(data: HealthScreenshotData) {
+private fun ResultCard(idx: Int, total: Int, data: HealthScreenshotData) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -254,14 +264,18 @@ private fun ResultCard(data: HealthScreenshotData) {
         Column(modifier = Modifier.padding(14.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "Wynik analizy",
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                    color = DarkOnSurface
+                    "Zrzut $idx / $total",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
                 )
                 Spacer(Modifier.weight(1f))
                 ConfidenceBadge(level = data.overallConfidence)
             }
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(8.dp))
             data.detectedDate?.let { ResultLine("Data", it) }
             data.sleepHours?.let { ResultLine("Sen", "%.1fh".format(it)) }
             data.weightKg?.let { ResultLine("Waga", "%.1f kg".format(it)) }
@@ -322,7 +336,7 @@ private fun ConfidenceBadge(level: String) {
 }
 
 @Composable
-private fun ErrorCard(message: String, onRetry: () -> Unit) {
+private fun ErrorCardItem(idx: Int?, message: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = ErrorRed.copy(alpha = 0.10f)),
@@ -331,7 +345,7 @@ private fun ErrorCard(message: String, onRetry: () -> Unit) {
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
             Text(
-                "Błąd analizy",
+                if (idx != null) "Zrzut $idx — błąd analizy" else "Błąd",
                 style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
                 color = ErrorRed
             )
@@ -341,10 +355,6 @@ private fun ErrorCard(message: String, onRetry: () -> Unit) {
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurface
             )
-            Spacer(Modifier.height(10.dp))
-            TextButton(onClick = onRetry) {
-                Text("Spróbuj ponownie", color = AccentOrange, fontWeight = FontWeight.Bold)
-            }
         }
     }
 }
@@ -384,8 +394,9 @@ private fun SavedCard(savedFields: List<String>, onDone: () -> Unit) {
                 ),
                 shape = RoundedCornerShape(10.dp)
             ) {
-                Text("Wyślij kolejny zrzut", fontWeight = FontWeight.SemiBold)
+                Text("Wgraj kolejną serię", fontWeight = FontWeight.SemiBold)
             }
         }
     }
 }
+
