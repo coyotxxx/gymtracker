@@ -62,7 +62,8 @@ data class HomeUiState(
     val trainingLoad: TrainingLoad? = null,             // v1.7.4 — ACWR
     val recoveryCardDismissed: Boolean = false,          // v1.7.5 — user zamknął kartę na dziś
     val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
-    val muscleRecovery: MuscleRecoveryReport? = null    // v1.9.0 — per partia
+    val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
+    val dismissedCards: Set<String> = emptySet()         // v1.10 — generyczny dismiss per cardKey
 )
 
 data class NextPlannedDay(
@@ -92,6 +93,7 @@ class HomeViewModel @Inject constructor(
     private val recoveryScoreCalculator: RecoveryScoreCalculator,
     private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
     private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs,
+    private val dismissedCardsPrefs: pl.filebit.gymtracker.data.repository.DismissedCardsPrefs,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
     private val readinessAnalyzer: TrainingReadinessAnalyzer
 ) : ViewModel() {
@@ -240,7 +242,13 @@ class HomeViewModel @Inject constructor(
             trainingLoad = trainingLoad,
             recoveryCardDismissed = recoveryCardPrefs.isDismissedForToday(),
             trainingReadiness = trainingReadiness,
-            muscleRecovery = muscleRecovery
+            muscleRecovery = muscleRecovery,
+            dismissedCards = setOf(
+                pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.RECOVERY,
+                pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE,
+                pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS,
+                pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD
+            ).filter { dismissedCardsPrefs.isDismissedToday(it) }.toSet()
         )
     }.stateIn(
         scope = viewModelScope,
@@ -320,6 +328,27 @@ class HomeViewModel @Inject constructor(
     fun dismissRecoveryCard() {
         recoveryCardPrefs.dismissForToday()
         recoveryCardRefresh.value = System.currentTimeMillis()
+    }
+
+    /** v1.10 — generyczny dismiss dla dowolnej karty alertowej (Phase/Readiness/Load). */
+    fun dismissCard(cardKey: String) {
+        dismissedCardsPrefs.dismissToday(cardKey)
+        recoveryCardRefresh.value = System.currentTimeMillis()
+    }
+
+    /** v1.10 — uniwersalny apply deload z konkretnym severity (z dowolnej karty alertowej). */
+    fun applyDeload(
+        severity: pl.filebit.gymtracker.util.DeloadSeverity,
+        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
+    ) {
+        val planId = state.value.todaysPlan?.id
+            ?: state.value.nextPlannedDay?.planId
+            ?: return
+        viewModelScope.launch {
+            val result = deloadService.apply(planId, severity)
+            deloadRefresh.value = System.currentTimeMillis()
+            onApplied(result)
+        }
     }
 
     /**

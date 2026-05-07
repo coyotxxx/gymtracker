@@ -245,11 +245,25 @@ fun HomeScreen(
 
             // v1.9.0: Training Readiness + Muscle Recovery (na samej górze — primary metric)
             state.trainingReadiness?.let { readiness ->
-                if (readiness.maturity != DataMaturity.LEARNING) {
+                val readinessDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS in state.dismissedCards
+                if (readiness.maturity != DataMaturity.LEARNING && !readinessDismissed) {
                     item {
                         TrainingReadinessCard(
                             readiness = readiness,
-                            muscleReport = state.muscleRecovery
+                            muscleReport = state.muscleRecovery,
+                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            onApplyDeload = { severity ->
+                                vm.applyDeload(severity) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
+                                }
+                            },
+                            onDismiss = {
+                                vm.dismissCard(pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS)
+                            }
                         )
                     }
                 }
@@ -257,8 +271,26 @@ fun HomeScreen(
 
             // Faza cyklu treningowego (computed z TrainingPhaseAnalyzer)
             state.trainingPhase?.let { phase ->
-                if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA) {
-                    item { TrainingPhaseCard(status = phase) }
+                val phaseDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE in state.dismissedCards
+                if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA && !phaseDismissed) {
+                    item {
+                        TrainingPhaseCard(
+                            status = phase,
+                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            onApplyDeload = {
+                                vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.HIGH) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
+                                }
+                            },
+                            onDismiss = {
+                                vm.dismissCard(pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE)
+                            }
+                        )
+                    }
                 }
             }
 
@@ -284,8 +316,25 @@ fun HomeScreen(
                 }
             }
             state.trainingLoad?.let { load ->
-                if (load.zone != pl.filebit.gymtracker.ai.LoadZone.INSUFFICIENT) {
-                    item { TrainingLoadCard(load = load) }
+                val loadDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD in state.dismissedCards
+                if (load.zone != pl.filebit.gymtracker.ai.LoadZone.INSUFFICIENT && !loadDismissed) {
+                    item {
+                        TrainingLoadCard(
+                            load = load,
+                            onDismiss = {
+                                vm.dismissCard(pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD)
+                            },
+                            onApplyDeload = {
+                                vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.HIGH) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    }
                 }
             }
             // Skan zdrowotny dostępny przez ikonę AI w pasku górnym (FAB → Wyślij screen z zegarka)
@@ -1329,7 +1378,12 @@ private fun DayOffHeroCard(
 
 
 @androidx.compose.runtime.Composable
-private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
+private fun TrainingPhaseCard(
+    status: TrainingPhaseStatus,
+    canApplyDeload: Boolean,
+    onApplyDeload: () -> Unit,
+    onDismiss: () -> Unit
+) {
     val (accent, emoji) = when (status.phase) {
         TrainingPhase.ACCUMULATION -> SuccessGreen to "📈"
         TrainingPhase.INTENSIFICATION -> AccentOrange to "⚡"
@@ -1337,6 +1391,27 @@ private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
         TrainingPhase.NEEDS_DELOAD -> ErrorRed to "⚠️"
         TrainingPhase.NO_DATA -> DarkOnSurfaceVariant to "❓"
     }
+    val showDeloadButton = canApplyDeload && status.phase == TrainingPhase.NEEDS_DELOAD
+    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+
+    if (showConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showConfirm = false },
+            title = { androidx.compose.material3.Text("Zastosować deload?", fontWeight = FontWeight.Bold) },
+            text = { androidx.compose.material3.Text("${status.weeksSinceLastDeload} tygodni bez deloadu — algorytm sugeruje tydzień lekki (-30% obciążenie). Możesz w każdej chwili przywrócić oryginalne wagi.") },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload() }) {
+                    androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
+    }
+
     androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
         colors = androidx.compose.material3.CardDefaults.cardColors(
@@ -1370,6 +1445,17 @@ private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
                         color = accent
                     )
                 }
+                androidx.compose.material3.IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    androidx.compose.material3.Icon(
+                        androidx.compose.material.icons.Icons.Filled.Close,
+                        contentDescription = "Zamknij na dziś",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
             Spacer(Modifier.height(8.dp))
             androidx.compose.material3.Text(
@@ -1377,6 +1463,20 @@ private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
                 style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
                 color = DarkOnSurface
             )
+            if (showDeloadButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text("Zastosuj deload (-30%)", fontWeight = FontWeight.Bold)
+                }
+            }
         }
     }
 }
@@ -1793,7 +1893,11 @@ private fun WhoopRecoveryCard(
 }
 
 @androidx.compose.runtime.Composable
-private fun TrainingLoadCard(load: TrainingLoad) {
+private fun TrainingLoadCard(
+    load: TrainingLoad,
+    onDismiss: () -> Unit,
+    onApplyDeload: () -> Unit
+) {
     val (accent, label) = when (load.zone) {
         LoadZone.OPTIMAL -> SuccessGreen to "Optymalne"
         LoadZone.DETRAINING -> DarkOnSurfaceVariant to "Detraining"
@@ -1801,6 +1905,27 @@ private fun TrainingLoadCard(load: TrainingLoad) {
         LoadZone.RISKY -> ErrorRed to "Ryzyko kontuzji"
         LoadZone.INSUFFICIENT -> DarkOnSurfaceVariant to "Mało danych"
     }
+    val showActionButton = load.zone == LoadZone.RISKY || load.zone == LoadZone.OVERREACHING
+    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+
+    if (showConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showConfirm = false },
+            title = { androidx.compose.material3.Text("Zastosować redukcję obciążenia?", fontWeight = FontWeight.Bold) },
+            text = { androidx.compose.material3.Text("ACWR ${"%.2f".format(load.acwr)} sygnalizuje przeciążenie. Algorytm sugeruje -30% obciążenie. Możesz w każdej chwili przywrócić oryginalne wagi.") },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload() }) {
+                    androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
+    }
+
     androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
         colors = androidx.compose.material3.CardDefaults.cardColors(
@@ -1836,6 +1961,17 @@ private fun TrainingLoadCard(load: TrainingLoad) {
                     ),
                     color = accent
                 )
+                androidx.compose.material3.IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    androidx.compose.material3.Icon(
+                        androidx.compose.material.icons.Icons.Filled.Close,
+                        contentDescription = "Zamknij na dziś",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
             Spacer(Modifier.height(6.dp))
             androidx.compose.material3.Text(
@@ -1843,6 +1979,20 @@ private fun TrainingLoadCard(load: TrainingLoad) {
                 style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
                 color = DarkOnSurface
             )
+            if (showActionButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text("Zastosuj redukcję obciążenia", fontWeight = FontWeight.Bold)
+                }
+            }
         }
     }
 }
@@ -1852,7 +2002,10 @@ private fun TrainingLoadCard(load: TrainingLoad) {
 @androidx.compose.runtime.Composable
 private fun TrainingReadinessCard(
     readiness: TrainingReadiness,
-    muscleReport: MuscleRecoveryReport?
+    muscleReport: MuscleRecoveryReport?,
+    canApplyDeload: Boolean,
+    onApplyDeload: (pl.filebit.gymtracker.util.DeloadSeverity) -> Unit,
+    onDismiss: () -> Unit
 ) {
     val (accent, label) = when (readiness.zone) {
         ReadinessZone.PEAK -> SuccessGreen to "PEAK — gotów na PR"
@@ -1861,6 +2014,36 @@ private fun TrainingReadinessCard(
         ReadinessZone.REST -> ErrorRed to "REST — odpuść"
     }
     var expanded by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val showActionButton = canApplyDeload && (readiness.zone == ReadinessZone.REST || readiness.zone == ReadinessZone.MODERATE)
+    val severity = when (readiness.zone) {
+        ReadinessZone.REST -> pl.filebit.gymtracker.util.DeloadSeverity.HIGH
+        ReadinessZone.MODERATE -> pl.filebit.gymtracker.util.DeloadSeverity.LOW
+        else -> pl.filebit.gymtracker.util.DeloadSeverity.LOW
+    }
+    val severityLabel = when (readiness.zone) {
+        ReadinessZone.REST -> "deload (-30%)"
+        ReadinessZone.MODERATE -> "lekki deload (-15%)"
+        else -> "deload"
+    }
+
+    if (showConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showConfirm = false },
+            title = { androidx.compose.material3.Text("Zastosować $severityLabel?", fontWeight = FontWeight.Bold) },
+            text = { androidx.compose.material3.Text("Training Readiness ${readiness.score}/100. Algorytm sugeruje redukcję obciążenia. Możesz w każdej chwili przywrócić oryginalne wagi.") },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload(severity) }) {
+                    androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
+    }
 
     androidx.compose.material3.Card(
         modifier = Modifier
@@ -1899,6 +2082,17 @@ private fun TrainingReadinessCard(
                     ),
                     color = accent
                 )
+                androidx.compose.material3.IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    androidx.compose.material3.Icon(
+                        androidx.compose.material.icons.Icons.Filled.Close,
+                        contentDescription = "Zamknij na dziś",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
             Spacer(Modifier.height(6.dp))
             androidx.compose.material3.Text(
@@ -1912,6 +2106,25 @@ private fun TrainingReadinessCard(
                 ReadinessMini("Sen/HRV", readiness.recoveryComponent, "50%")
                 ReadinessMini("Tonaż", readiness.loadComponent, "30%")
                 ReadinessMini("Mięśnie", readiness.muscleComponent, "20%")
+            }
+
+            // Przycisk akcji gdy MODERATE/REST (sugeruje deload)
+            if (showActionButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text(
+                        "Zastosuj $severityLabel",
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             }
 
             // Expandable: muscle recovery

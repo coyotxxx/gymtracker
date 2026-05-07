@@ -34,7 +34,7 @@ data class TrainingPhaseStatus(
         TrainingPhase.ACCUMULATION -> "Akumulacja (tydzień $weeksSinceLastDeload/3)"
         TrainingPhase.INTENSIFICATION -> "Intensyfikacja (tydzień ${weeksSinceLastDeload - 3}/3)"
         TrainingPhase.DELOAD -> "Deload"
-        TrainingPhase.NEEDS_DELOAD -> "⚠️ Czas na deload"
+        TrainingPhase.NEEDS_DELOAD -> "Czas na deload"
         TrainingPhase.NO_DATA -> "Za mało danych"
     }
 }

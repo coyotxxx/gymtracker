@@ -806,8 +806,8 @@ private fun AppTopBar(
                 Box(
                     modifier = Modifier
                         .align(Alignment.TopEnd)
-                        .padding(top = 6.dp, end = 6.dp)
-                        .size(16.dp)
+                        .padding(top = 4.dp, end = 4.dp)
+                        .size(if (notificationsCount > 9) 18.dp else 16.dp)
                         .background(ErrorRed, CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
@@ -815,7 +815,10 @@ private fun AppTopBar(
                         text = if (notificationsCount > 9) "9+" else "$notificationsCount",
                         color = Color.White,
                         fontSize = 10.sp,
-                        fontWeight = FontWeight.Bold
+                        lineHeight = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
                     )
                 }
             }
