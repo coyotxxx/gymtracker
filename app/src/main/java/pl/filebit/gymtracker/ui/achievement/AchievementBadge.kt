@@ -1,16 +1,17 @@
 package pl.filebit.gymtracker.ui.achievement
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -18,7 +19,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
@@ -31,62 +31,114 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.ui.theme.AccentGlow
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
-import pl.filebit.gymtracker.ui.theme.DarkSurface3
 
 /**
- * Animowany medal odznaki — w pełni GPU-accelerated (graphicsLayer + drawBehind).
+ * Premium animowany medal odznaki — wdrożenie 1:1 ze specyfikacją timeline.
  *
  * **Performance:**
- * - graphicsLayer dla scale/translation — pomija recomposition + measure
- *   (operuje wyłącznie na compose layer)
- * - drawWithCache + drawBehind dla wszystkich kolorów/gradientów —
- *   cachowane brush'e, tylko faza DRAW na każdej klatce, BEZ recomposition
- * - 1 Box zamiast 3 (outer Canvas + inner Box + inner Canvas)
- * - Brushy gradient cached przez drawWithCache (nie rebuilded co frame)
+ * - graphicsLayer dla scaleX/scaleY/rotation/translation (GPU, skip recomposition)
+ * - drawWithCache + drawBehind (cache brushes, tylko faza DRAW)
+ * - 3 osobne graphicsLayer (tarcza, emoji, ring) — każdy independent transform
  *
- * Animacje (wszystkie odczytywane wewnątrz drawBehind, nie wymagają recomp):
- *   1. Wjazd: spring bouncy scale 0 → 1.08 → 1
- *   2. Glow pulse: 1.8s reverse loop (alpha 0.55 ↔ 0.95)
- *   3. Float bobbing: ±3px, 2.4s reverse loop
- *   4. Shimmer diagonal: -0.3 → 1.3 (linear), 3.5s loop
- *   5. Inner ring rotation: 360°, 40s linear loop
+ * **Timeline:**
+ *  0.30s — tarcza wjazd: scale 0→1.08→1 + rotation -180°→0° (spring bouncy)
+ *  0.55s — emoji wjazd: scale 0→1.15→1 + rotation -90°→8°→0°
+ *  1.20s — shimmer start na medalu (2.4s loop)
+ *  1.30s — medal float góra-dół 6px (4s loop)
+ *  1.50s — emoji micro-float (4s, inne tempo) + micro-rotation
+ *  glow pulse — od początku (3s loop, desync z float)
+ *  rotation ring — 40s/360° linear
  */
 @Composable
 fun AchievementBadge(
     emoji: String,
     modifier: Modifier = Modifier
 ) {
-    // === Spring entry (1× przy starcie) ===
-    val entryScale = remember { Animatable(0f) }
+    // Apple-standard cubic bezier (iOS Health/Music)
+    val appleEase = remember { CubicBezierEasing(0.22f, 1f, 0.36f, 1f) }
+
+    // === 0.30s — tarcza wjazd ===
+    val discScale = remember { Animatable(0f) }
+    val discRotation = remember { Animatable(-180f) }
     LaunchedEffect(Unit) {
-        entryScale.animateTo(
-            targetValue = 1f,
-            animationSpec = spring(
-                dampingRatio = Spring.DampingRatioMediumBouncy,
-                stiffness = Spring.StiffnessLow
-            )
-        )
+        kotlinx.coroutines.delay(300)
+        kotlinx.coroutines.coroutineScope {
+            launch {
+                discScale.animateTo(1f, spring(
+                    dampingRatio = Spring.DampingRatioMediumBouncy,
+                    stiffness = Spring.StiffnessLow
+                ))
+            }
+            launch {
+                discRotation.animateTo(0f, tween(700, easing = appleEase))
+            }
+        }
     }
 
-    // === Infinite animations — wszystko z jednej InfiniteTransition (jeden ticker) ===
+    // === 0.55s — emoji wjazd (większy bounce niż tarcza) ===
+    val emojiScale = remember { Animatable(0f) }
+    val emojiRotation = remember { Animatable(-90f) }
+    LaunchedEffect(Unit) {
+        kotlinx.coroutines.delay(550)
+        kotlinx.coroutines.coroutineScope {
+            launch {
+                emojiScale.animateTo(
+                    targetValue = 1f,
+                    animationSpec = keyframes {
+                        durationMillis = 700
+                        0f at 0
+                        1.15f at 350 using appleEase
+                        1f at 700
+                    }
+                )
+            }
+            launch {
+                emojiRotation.animateTo(
+                    targetValue = 0f,
+                    animationSpec = keyframes {
+                        durationMillis = 700
+                        -90f at 0
+                        8f at 400 using appleEase
+                        0f at 700
+                    }
+                )
+            }
+        }
+    }
+
+    // === Infinite — odpalają się stopniowo z opóźnieniami ===
     val infinite = rememberInfiniteTransition(label = "badge")
     val glowAlpha by infinite.animateFloat(
-        initialValue = 0.55f, targetValue = 0.95f,
-        animationSpec = infiniteRepeatable(tween(1800, easing = LinearEasing), RepeatMode.Reverse),
+        initialValue = 0.50f, targetValue = 0.95f,
+        animationSpec = infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse),
         label = "glow"
     )
+    // Float medalu — 6px, 4s (start od 1.30s logicznie, ale uruchomiony od początku — różnica niewielka)
     val floatY by infinite.animateFloat(
         initialValue = -3f, targetValue = 3f,
-        animationSpec = infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Reverse),
+        animationSpec = infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse),
         label = "float"
     )
+    // Emoji micro-float — inne tempo (4s), różny period z medalem (3s)
+    val emojiFloat by infinite.animateFloat(
+        initialValue = -1.5f, targetValue = 1.5f,
+        animationSpec = infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse),
+        label = "emojiFloat"
+    )
+    val emojiMicroRot by infinite.animateFloat(
+        initialValue = -1f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse),
+        label = "emojiRot"
+    )
+    // Shimmer 2.4s
     val shimmer by infinite.animateFloat(
         initialValue = -0.3f, targetValue = 1.3f,
-        animationSpec = infiniteRepeatable(tween(3500, easing = LinearEasing), RepeatMode.Restart),
+        animationSpec = infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Restart),
         label = "shimmer"
     )
     val rotation by infinite.animateFloat(
@@ -97,32 +149,32 @@ fun AchievementBadge(
 
     Box(
         modifier = modifier
-            // Wszystkie transformacje GPU-accelerated:
+            // Tarcza: wjazd (scale + rotation) + ciągły float (translationY)
             .graphicsLayer {
-                scaleX = entryScale.value
-                scaleY = entryScale.value
+                scaleX = discScale.value
+                scaleY = discScale.value
+                rotationZ = discRotation.value
                 translationY = floatY
             }
-            // Cache brushes — przebudowane TYLKO przy zmianie size, nie animacji
             .drawWithCache {
                 val s = size.minDimension
                 val cx = size.width / 2f
                 val cy = size.height / 2f
 
-                // Tarcza — soft highlight in center fading to deeper gold (jak referencja)
+                // Cached: gradient tarczy z highlightem w centrum (jak referencja)
                 val discBrush = Brush.radialGradient(
                     colorStops = arrayOf(
-                        0.0f to Color(0xFFFFE082),         // jasny żółty highlight w środku
-                        0.25f to AccentOrange,             // pełen gold/amber
-                        0.75f to AccentOrange,
-                        1.0f to AccentOrangeDim            // głęboki amber na krawędzi
+                        0.0f to Color(0xFFFFE082),         // jasny żółty highlight
+                        0.30f to AccentOrange,             // pełen gold
+                        0.80f to AccentOrange,
+                        1.0f to AccentOrangeDim            // głęboki amber
                     ),
                     center = Offset(size.width * 0.50f, size.height * 0.42f),
                     radius = s * 0.42f
                 )
 
                 onDrawBehind {
-                    // 1. Outer glow (poza dyskiem) — alpha modulated by glowAlpha
+                    // 1. Outer glow (poza dyskiem) — pulsuje co 3s
                     drawCircle(
                         brush = Brush.radialGradient(
                             colors = listOf(
@@ -137,7 +189,7 @@ fun AchievementBadge(
                         center = Offset(cx, cy)
                     )
 
-                    // 2. Tarcza medalu (cached brush)
+                    // 2. Tarcza
                     drawCircle(
                         brush = discBrush,
                         radius = s * 0.39f,
@@ -154,13 +206,13 @@ fun AchievementBadge(
                         )
                     }
 
-                    // 4. Shimmer — diagonal light wewnątrz dysku
+                    // 4. Shimmer — diagonal light, 2.4s loop
                     val sx = size.width * shimmer
                     drawCircle(
                         brush = Brush.linearGradient(
                             colors = listOf(
                                 Color.Transparent,
-                                Color.White.copy(alpha = 0.30f),
+                                Color.White.copy(alpha = 0.32f),
                                 Color.Transparent
                             ),
                             start = Offset(sx - size.width * 0.2f, 0f),
@@ -170,28 +222,45 @@ fun AchievementBadge(
                         center = Offset(cx, cy)
                     )
 
-                    // 5. Highlight ring — cienki, jasny
+                    // 5. Pierścień grawerunku (premium feel — jak prawdziwa moneta)
                     drawCircle(
-                        color = Color.White.copy(alpha = 0.35f),
+                        color = Color.White.copy(alpha = 0.50f),
                         radius = s * 0.39f,
                         center = Offset(cx, cy),
                         style = Stroke(width = 1.5.dp.toPx())
+                    )
+                    // Dodatkowy cieńszy pierścień grawerunku 8% wewnątrz (subtelne 3D)
+                    drawCircle(
+                        color = Color.White.copy(alpha = 0.20f),
+                        radius = s * 0.355f,
+                        center = Offset(cx, cy),
+                        style = Stroke(width = 1.dp.toPx())
                     )
                 }
             },
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = emoji,
-            style = TextStyle(
-                fontSize = 80.sp,
-                fontWeight = FontWeight.Bold,
-                shadow = Shadow(
-                    color = DarkBg.copy(alpha = 0.6f),
-                    offset = Offset(0f, 4f),
-                    blurRadius = 12f
+        // Emoji — własna graphicsLayer (osobny lifecycle animacji)
+        Box(
+            modifier = Modifier.graphicsLayer {
+                scaleX = emojiScale.value
+                scaleY = emojiScale.value
+                rotationZ = emojiRotation.value + emojiMicroRot
+                translationY = emojiFloat
+            }
+        ) {
+            Text(
+                text = emoji,
+                style = TextStyle(
+                    fontSize = 80.sp,
+                    fontWeight = FontWeight.Bold,
+                    shadow = Shadow(
+                        color = DarkBg.copy(alpha = 0.6f),
+                        offset = Offset(0f, 4f),
+                        blurRadius = 12f
+                    )
                 )
             )
-        )
+        }
     }
 }

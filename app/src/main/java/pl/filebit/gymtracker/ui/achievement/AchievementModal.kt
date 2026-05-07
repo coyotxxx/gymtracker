@@ -44,6 +44,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
@@ -81,6 +82,8 @@ fun AchievementModalHost(
     }
 }
 
+private val AppleEase = androidx.compose.animation.core.CubicBezierEasing(0.22f, 1f, 0.36f, 1f)
+
 @Composable
 private fun AchievementModal(
     achievement: Achievement,
@@ -89,6 +92,20 @@ private fun AchievementModal(
     onShare: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
+    // Karta wjazd — scale 0.85→1 z Apple bezier (0.2s start)
+    val cardScale = remember { androidx.compose.animation.core.Animatable(0.85f) }
+    val cardAlpha = remember { androidx.compose.animation.core.Animatable(0f) }
+    LaunchedEffect(achievement.id) {
+        kotlinx.coroutines.delay(200)
+        kotlinx.coroutines.coroutineScope {
+            kotlinx.coroutines.launch {
+                cardScale.animateTo(1f, tween(700, easing = AppleEase))
+            }
+            kotlinx.coroutines.launch {
+                cardAlpha.animateTo(1f, tween(500, easing = AppleEase))
+            }
+        }
+    }
 
     // Haptic — synchroniczny z animacją medalu i progresu
     LaunchedEffect(achievement.id) {
@@ -161,11 +178,16 @@ private fun AchievementModal(
                 }
             }
 
-            // Content card (centered)
+            // Content card (centered) — z wjazdem scale 0.85→1
             Column(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .padding(horizontal = 32.dp)
+                    .graphicsLayer {
+                        scaleX = cardScale.value
+                        scaleY = cardScale.value
+                        alpha = cardAlpha.value
+                    }
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
