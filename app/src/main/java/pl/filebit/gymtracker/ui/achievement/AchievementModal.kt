@@ -39,7 +39,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
@@ -48,9 +47,7 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
@@ -77,8 +74,6 @@ fun AchievementModalHost(
     }
 }
 
-private val AppleEase = androidx.compose.animation.core.CubicBezierEasing(0.22f, 1f, 0.36f, 1f)
-
 @Composable
 private fun AchievementModal(
     achievement: Achievement,
@@ -87,30 +82,19 @@ private fun AchievementModal(
     onShare: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
-    // Karta wjazd — scale 0.85→1 z Apple bezier (0.2s start)
-    val cardScale = remember { androidx.compose.animation.core.Animatable(0.85f) }
-    val cardAlpha = remember { androidx.compose.animation.core.Animatable(0f) }
-    LaunchedEffect(achievement.id) {
-        delay(200)
-        coroutineScope {
-            launch { cardScale.animateTo(1f, tween(700, easing = AppleEase)) }
-            launch { cardAlpha.animateTo(1f, tween(500, easing = AppleEase)) }
-        }
-    }
 
-    // Haptic — synchroniczny z animacją medalu i progresu
+    // Tylko JEDEN haptic na otwarcie — drugi po 2.6s usuniety (powodowal puls)
     LaunchedEffect(achievement.id) {
-        delay(550)
-        haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-        delay(2050)
+        delay(300)
         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
     }
 
-    // Auto-dismiss po 5s (dodatkowo do timeoutu w VM — defensywny)
-    LaunchedEffect(achievement.id) {
-        delay(6500)
-        // VM również wyzwala dismiss — to backup
-    }
+    // USUNIETO v1.11.19:
+    // - cardScale + cardAlpha animation → graphicsLayer w Column tworzyl
+    //   offscreen GPU layer dla calego contentu, subpixel sampling przy
+    //   scale produkowal HALO/aliasing edges = "drugie kolo" wokol medalu.
+    // - Drugi haptic po 2.05s (powodowal puls, kolejny stutter).
+    // - Martwy LaunchedEffect z delay(6500) bez akcji.
 
     // Box overlay zamiast Dialog — wyzwala render w tym samym window co reszta UI
     // (zero overhead nowego DecorView/Surface, ~150ms szybsze otwarcie + lepszy fps)
@@ -167,16 +151,24 @@ private fun AchievementModal(
                 }
             }
 
-            // Content card (centered) — z wjazdem scale 0.85→1
+            // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
+            Text(
+                text = "v1.11.19",
+                style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 9.sp,
+                    fontWeight = FontWeight.Normal
+                ),
+                color = DarkOnSurfaceVariant.copy(alpha = 0.5f),
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(bottom = 12.dp, end = 12.dp)
+            )
+
+            // Content card — BEZ graphicsLayer scale (powodowal "drugie kolo")
             Column(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .padding(horizontal = 32.dp)
-                    .graphicsLayer {
-                        scaleX = cardScale.value
-                        scaleY = cardScale.value
-                        alpha = cardAlpha.value
-                    }
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null,
