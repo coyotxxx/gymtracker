@@ -33,7 +33,8 @@ class PlanAuditService @Inject constructor(
     private val profileRepo: UserProfileRepository,
     private val applier: AiPlanApplier,
     private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
-    private val masterContextBuilder: MasterAiContextBuilder
+    private val masterContextBuilder: MasterAiContextBuilder,
+    private val stagnationAnalyzer: StagnationAnalyzer
 ) {
     companion object {
         /** Max ile razy ten sam plan może być poprawiany cyklem audyt→popraw. */
@@ -82,6 +83,7 @@ class PlanAuditService @Inject constructor(
         // === DETERMINISTYCZNY RAPORT — nie pozwalamy AI liczyć samodzielnie ===
         val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
         val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
+        val stagnationReport = runCatching { stagnationAnalyzer.analyzePlan(planId) }.getOrNull()
 
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
 
@@ -117,6 +119,12 @@ class PlanAuditService @Inject constructor(
 
             // === RAPORT Z ALGORYTMU — gotowe liczby ===
             append(PlanAuditEngine.toPromptSection(report))
+
+            // === RAPORT STAGNACJI (e1RM trend per ćwiczenie) ===
+            if (stagnationReport != null) {
+                append(StagnationPromptHelper.toPromptSection(stagnationReport))
+                append("\n")
+            }
 
             append("# OBECNY PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -254,6 +262,7 @@ class PlanAuditService @Inject constructor(
         // === DETERMINISTYCZNY RAPORT — wstrzykujemy w prompt ===
         val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
         val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
+        val stagnationReport = runCatching { stagnationAnalyzer.analyzePlan(planId) }.getOrNull()
 
         val recentFeedback = collectRecentFeedback()
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
@@ -279,6 +288,12 @@ class PlanAuditService @Inject constructor(
 
             // === RAPORT ALGORYTMU — gotowe liczby + werdykt ===
             append(PlanAuditEngine.toPromptSection(report))
+
+            // === RAPORT STAGNACJI ===
+            if (stagnationReport != null) {
+                append(StagnationPromptHelper.toPromptSection(stagnationReport))
+                append("\n")
+            }
 
             append("# PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -317,6 +332,15 @@ class PlanAuditService @Inject constructor(
                 append("(dla KAŻDEGO problemu z WERDYKTU ALGORYTMU napisz: jakie ćwiczenie dodać/wymienić/usunąć i ile setów)\n\n")
                 append("**KRYTYCZNE: nie wymyślaj problemów których algorytm nie zgłosił. Trzymaj się raportu wyżej. ")
                 append("Jeśli partia ma ✅ OK — NIE komentuj jej.**\n")
+            }
+
+            // Sekcja DELOAD — gdy raport stagnacji to zaleca, daj AI dodatkową instrukcję
+            if (stagnationReport?.deloadRecommended == true) {
+                append("\n\n## ⚠️ DELOAD\n")
+                append("Algorytm wykrył stagnację. W odpowiedzi DODAJ sekcję:\n")
+                append("`## Czas na deload` — wyjaśnij co to deload (1-2 zdania), wymień stagnujące ćwiczenia ")
+                append("z raportu, zaproponuj 1 tydzień lekki (-30% volume, -10% obciążenie, RPE ≤7), ")
+                append("potem powrót na 100%.\n")
             }
 
             append("\nBądź pomocny, nie laudator. Cytuj liczby z RAPORTU ALGORYTMU.")
