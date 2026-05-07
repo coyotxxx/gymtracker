@@ -43,6 +43,7 @@ import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+import pl.filebit.gymtracker.ui.theme.ErrorRed
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -140,6 +141,10 @@ fun AppNavigation() {
     val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
+    // Powiadomienia — counter na dzwonku (v1.8.0)
+    val notificationsVm: pl.filebit.gymtracker.ui.notifications.NotificationsViewModel = hiltViewModel()
+    val notifications by notificationsVm.items.collectAsStateWithLifecycle()
+
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
         topBar = {
@@ -147,7 +152,12 @@ fun AppNavigation() {
                 // Globalny TopBar zawsze 'GymTracker' + dzwonek + AI (jak na 5 tabs).
                 // Każda podstrona zachowuje własny ScreenHeader z back+tytułem PONIŻEJ.
                 AppTopBar(
-                    onOpenAiAssistant = { aiChoiceVisible = true }
+                    onOpenAiAssistant = { aiChoiceVisible = true },
+                    onOpenNotifications = {
+                        notificationsVm.reload()
+                        navController.navigate(Screen.Notifications.route)
+                    },
+                    notificationsCount = notifications.size
                 )
             }
         },
@@ -479,6 +489,35 @@ fun AppNavigation() {
             composable(Screen.HealthHistory.route) {
                 pl.filebit.gymtracker.ui.health.HealthHistoryScreen(onBack = { navController.popBackStack() })
             }
+            composable(Screen.Notifications.route) {
+                pl.filebit.gymtracker.ui.notifications.NotificationsScreen(
+                    onBack = { navController.popBackStack() },
+                    onAction = { action ->
+                        when (action) {
+                            pl.filebit.gymtracker.ai.NotificationAction.APPLY_DELOAD -> {
+                                navController.popBackStack()
+                                // Po powrocie do HomeScreen — RecoveryCard ma przycisk Zastosuj deload
+                            }
+                            pl.filebit.gymtracker.ai.NotificationAction.AUDIT_PLAN -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.Plans.route)
+                            }
+                            pl.filebit.gymtracker.ai.NotificationAction.ADD_WEIGHT -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.Measurements.route)
+                            }
+                            pl.filebit.gymtracker.ai.NotificationAction.SEND_HEALTH_SCREEN -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.HealthScreenshot.route)
+                            }
+                            pl.filebit.gymtracker.ai.NotificationAction.START_WORKOUT -> {
+                                navController.popBackStack()
+                            }
+                            pl.filebit.gymtracker.ai.NotificationAction.NONE -> { /* no-op */ }
+                        }
+                    }
+                )
+            }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
             }
@@ -706,7 +745,9 @@ private fun AppTopBar(
     showBack: Boolean = false,
     onBack: () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
-    onOpenAiAssistant: () -> Unit
+    onOpenAiAssistant: () -> Unit,
+    onOpenNotifications: () -> Unit = {},
+    notificationsCount: Int = 0
 ) {
     Row(
         modifier = Modifier
@@ -747,20 +788,37 @@ private fun AppTopBar(
         Spacer(Modifier.weight(1f))
         // Custom actions slot (np. delete, share) — przed dzwonkiem
         actions()
-        // Dzwonek (placeholder bez akcji)
+        // Dzwonek — centrum powiadomień (v1.8.0)
         Box(
             modifier = Modifier
                 .size(40.dp)
                 .clip(CircleShape)
-                .clickable { /* TODO: notyfikacje */ },
+                .clickable(onClick = onOpenNotifications),
             contentAlignment = Alignment.Center
         ) {
             Icon(
                 Icons.Default.Notifications,
                 contentDescription = "Powiadomienia",
-                tint = DarkOnSurfaceVariant,
+                tint = if (notificationsCount > 0) AccentOrange else DarkOnSurfaceVariant,
                 modifier = Modifier.size(22.dp)
             )
+            if (notificationsCount > 0) {
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(top = 6.dp, end = 6.dp)
+                        .size(16.dp)
+                        .background(ErrorRed, CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = if (notificationsCount > 9) "9+" else "$notificationsCount",
+                        color = Color.White,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
         }
         Spacer(Modifier.width(4.dp))
         // AI button — żółte kółko
