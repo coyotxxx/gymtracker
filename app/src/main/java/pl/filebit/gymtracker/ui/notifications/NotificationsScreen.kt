@@ -23,6 +23,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -52,6 +53,11 @@ fun NotificationsScreen(
 ) {
     val items by vm.items.collectAsStateWithLifecycle()
     val loading by vm.loading.collectAsStateWithLifecycle()
+
+    // Auto-mark wszystkich jako przeczytane gdy user wchodzi na ekran (po załadowaniu listy).
+    LaunchedEffect(items) {
+        if (items.isNotEmpty()) vm.markAllAsRead()
+    }
 
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         ScreenHeader(title = "Powiadomienia", onBack = onBack)

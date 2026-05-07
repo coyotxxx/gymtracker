@@ -13,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NotificationsViewModel @Inject constructor(
-    private val center: NotificationCenter
+    private val center: NotificationCenter,
+    private val readPrefs: pl.filebit.gymtracker.data.repository.ReadNotificationsPrefs
 ) : ViewModel() {
 
     private val _items = MutableStateFlow<List<AppNotification>>(emptyList())
@@ -22,13 +23,25 @@ class NotificationsViewModel @Inject constructor(
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
 
+    private val _unreadCount = MutableStateFlow(0)
+    val unreadCount: StateFlow<Int> = _unreadCount.asStateFlow()
+
     init { reload() }
 
     fun reload() {
         _loading.value = true
         viewModelScope.launch {
-            _items.value = runCatching { center.computeNotifications() }.getOrDefault(emptyList())
+            val items = runCatching { center.computeNotifications() }.getOrDefault(emptyList())
+            _items.value = items
+            _unreadCount.value = readPrefs.unreadCount(items.map { it.id })
             _loading.value = false
         }
+    }
+
+    /** Wywoływane gdy user otwiera ekran NotificationsScreen — oznacza wszystkie jako przeczytane. */
+    fun markAllAsRead() {
+        val ids = _items.value.map { it.id }
+        readPrefs.markAllRead(ids)
+        _unreadCount.value = 0
     }
 }

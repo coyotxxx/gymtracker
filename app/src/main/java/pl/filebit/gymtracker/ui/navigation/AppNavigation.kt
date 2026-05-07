@@ -141,9 +141,9 @@ fun AppNavigation() {
     val onboardingNavState by workoutShellVm.onboardingState.collectAsStateWithLifecycle()
     val showActiveBar = workoutShellState.hasActive && currentRoute !in workoutRoutes
 
-    // Powiadomienia — counter na dzwonku (v1.8.0)
+    // Powiadomienia — counter na dzwonku (v1.8.0, v1.10.2 unread tracking)
     val notificationsVm: pl.filebit.gymtracker.ui.notifications.NotificationsViewModel = hiltViewModel()
-    val notifications by notificationsVm.items.collectAsStateWithLifecycle()
+    val unreadNotificationsCount by notificationsVm.unreadCount.collectAsStateWithLifecycle()
 
     Box(modifier = Modifier.fillMaxSize()) {
         Scaffold(
@@ -157,7 +157,7 @@ fun AppNavigation() {
                         notificationsVm.reload()
                         navController.navigate(Screen.Notifications.route)
                     },
-                    notificationsCount = notifications.size
+                    notificationsCount = unreadNotificationsCount
                 )
             }
         },
