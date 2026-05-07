@@ -118,7 +118,10 @@ private fun AchievementModal(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black.copy(alpha = 0.88f))
+            // PEŁNA czerń (alpha=1.0) — alpha 0.88 powodował że pomarańczowe ikony
+            // BigAchievementRow z listy w tle przebijały się przez scrim i wyglądały
+            // jak "drugie koło" wokół medalu. To był prawdziwy bug, nie medal.
+            .background(Color.Black)
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
