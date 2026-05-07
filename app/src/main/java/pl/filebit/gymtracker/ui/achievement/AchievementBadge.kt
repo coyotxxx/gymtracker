@@ -24,7 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -114,7 +114,12 @@ fun AchievementBadge(
     )
 
     Box(
-        modifier = modifier.scale(entryScale.value),
+        modifier = modifier.graphicsLayer {
+            scaleX = entryScale.value
+            scaleY = entryScale.value
+            // Float bobbing — GPU translation, bez recomposition
+            translationY = floatY
+        },
         contentAlignment = Alignment.Center
     ) {
         // Outer glow (większy obszar, niżej w stosie)
@@ -136,7 +141,6 @@ fun AchievementBadge(
         Box(
             modifier = Modifier
                 .fillMaxSize(0.78f)
-                .scale(1f, 1f)
                 .clip(CircleShape)
         ) {
             Canvas(modifier = Modifier.fillMaxSize()) {
