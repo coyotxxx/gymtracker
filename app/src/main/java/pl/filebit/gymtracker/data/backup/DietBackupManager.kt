@@ -156,6 +156,11 @@ class DietBackupManager @Inject constructor(
     suspend fun importFromUri(uri: Uri): ImportSummary {
         val text = context.contentResolver.openInputStream(uri)?.use { it.bufferedReader().readText() }
             ?: error("Nie udało się otworzyć pliku do odczytu")
+        return importFromText(text)
+    }
+
+    /** Import z gotowego JSON-text — używane przy auto-detekcji w BackupViewModel. */
+    suspend fun importFromText(text: String): ImportSummary {
         val backup = json.decodeFromString<DietBackup>(text)
         return applyAll(backup)
     }

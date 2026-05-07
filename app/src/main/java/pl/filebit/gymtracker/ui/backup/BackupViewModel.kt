@@ -206,7 +206,8 @@ class BackupViewModel @Inject constructor(
     private val profileRepo: UserProfileRepository,
     private val aiPrefs: AiPreferences,
     private val db: AppDatabase,
-    private val exerciseSeeder: pl.filebit.gymtracker.data.seed.ExerciseSeeder
+    private val exerciseSeeder: pl.filebit.gymtracker.data.seed.ExerciseSeeder,
+    private val dietBackupManager: pl.filebit.gymtracker.data.backup.DietBackupManager
 ) : ViewModel() {
 
     private val json = Json { prettyPrint = true; ignoreUnknownKeys = true }
@@ -458,6 +459,21 @@ class BackupViewModel @Inject constructor(
                     jsonText ?: return
                 } else {
                     rawBytes.toString(Charsets.UTF_8)
+                }
+
+                // v1.10.1: smart detection — czy to plik treningowy czy dietetyczny?
+                // DietBackup ma "userDietProfile" lub "recoveryLogs" lub "mealEntries".
+                // BackupData (treningowy) ma "workouts" + "exercises".
+                val looksLikeDietBackup = (
+                    text.contains("\"userDietProfile\"") ||
+                    text.contains("\"mealEntries\"") ||
+                    text.contains("\"recoveryLogs\"")
+                ) && !text.contains("\"workouts\"")
+
+                if (looksLikeDietBackup) {
+                    val summary = dietBackupManager.importFromText(text)
+                    _status.value = summary.toUserMessage()
+                    return
                 }
 
                 val data = json.decodeFromString<BackupData>(text)
