@@ -1,7 +1,5 @@
 package pl.filebit.gymtracker.ui.achievement
 
-import android.content.Context
-import dagger.hilt.android.qualifiers.ApplicationContext
 import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
@@ -9,57 +7,38 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Wykrywa nowo odblokowane odznaki — zwraca tylko te, których ID jeszcze nie
- * zostało "zobaczone" przez user'a (zapisane w SharedPrefs).
+ * Wykrywa świeżo odblokowane odznaki na podstawie `Achievement.unlockedAt`.
  *
- * Pierwsze uruchomienie po imporcie/instalacji NIE wyświetla wszystkiego —
- * inicjalizuje seenIds wszystkimi obecnie odblokowanymi (cichy start).
+ * Filozofia (v1.11.2):
+ * - StatsRepository.unlockedAchievements() ustawia `unlockedAt = now` przy
+ *   PIERWSZYM wykryciu odblokowania (insertIfNew do UnlockedAchievement).
+ * - Po finish workout → wywołujemy watcher → bierzemy wszystkie z `unlockedAt`
+ *   nowszym niż 5 minut → te są "świeże" i pokazujemy modal.
+ *
+ * Brak potrzeby SharedPrefs / bootstrap — odznaki mają persistentny timestamp w DB.
+ * Po imporcie testowych danych (60 dni temu) — wszystkie istniejące odznaki mają
+ * stary unlockedAt → modal się NIE pokazuje. Świeżo odblokowane (po treningu)
+ * mają unlockedAt = teraz → pokazują się.
  */
 @Singleton
 class AchievementWatcher @Inject constructor(
-    @ApplicationContext context: Context,
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository
 ) {
-    private val prefs = context.getSharedPreferences("achievement_watcher", Context.MODE_PRIVATE)
-
     /**
-     * @return lista odznak które właśnie odblokował user (nigdy wcześniej nie pokazane).
-     *         Pierwsze wywołanie zawsze zwraca pustą listę (cichy bootstrap).
+     * @return lista odznak właśnie odblokowanych (unlockedAt < FRESH_WINDOW_MS temu).
      */
     suspend fun checkForNewlyUnlocked(): List<Achievement> {
         val target = profileRepo.get().daysPerWeek
         val all = runCatching { statsRepo.unlockedAchievements(target) }.getOrNull().orEmpty()
-        val unlocked = all.filter { it.unlocked }
-
-        val seen = prefs.getStringSet(KEY_SEEN_IDS, emptySet()) ?: emptySet()
-        val initialized = prefs.getBoolean(KEY_INITIALIZED, false)
-
-        if (!initialized) {
-            // Pierwszy raz — tylko zapisz aktualnie unlocked, nie pokazuj nic
-            prefs.edit()
-                .putStringSet(KEY_SEEN_IDS, unlocked.map { it.id }.toSet())
-                .putBoolean(KEY_INITIALIZED, true)
-                .apply()
-            return emptyList()
-        }
-
-        val newlyUnlocked = unlocked.filter { it.id !in seen }
-        if (newlyUnlocked.isNotEmpty()) {
-            // Zapisz wszystkie obecne (nie tylko nowo zobaczone — żeby kolejne checki były spójne)
-            val newSeen = unlocked.map { it.id }.toSet()
-            prefs.edit().putStringSet(KEY_SEEN_IDS, newSeen).apply()
-        }
-        return newlyUnlocked
-    }
-
-    /** Reset (debug / test). */
-    fun reset() {
-        prefs.edit().clear().apply()
+        val freshThreshold = System.currentTimeMillis() - FRESH_WINDOW_MS
+        return all.filter { a ->
+            a.unlocked && (a.unlockedAt ?: 0L) >= freshThreshold
+        }.sortedBy { it.unlockedAt }   // najstarsze pierwsze (jakby się "odblokowywały po kolei")
     }
 
     companion object {
-        private const val KEY_SEEN_IDS = "seen_ids"
-        private const val KEY_INITIALIZED = "initialized"
+        /** Okno "świeżości" — odznaka jest "nowa" przez 5 minut od pierwszego wykrycia. */
+        private const val FRESH_WINDOW_MS = 5L * 60 * 1000
     }
 }
