@@ -374,7 +374,8 @@ fun AppNavigation() {
             }
             composable(Screen.Achievements.route) {
                 pl.filebit.gymtracker.ui.stats.AchievementsScreen(
-                    onBack = { navController.popBackStack() }
+                    onBack = { navController.popBackStack() },
+                    achievementVm = achievementVm  // współdzielona instancja z AppNavigation
                 )
             }
             composable(Screen.Calculators.route) {
