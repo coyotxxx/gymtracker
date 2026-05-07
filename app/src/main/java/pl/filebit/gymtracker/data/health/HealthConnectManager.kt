@@ -6,10 +6,13 @@ import android.net.Uri
 import androidx.health.connect.client.HealthConnectClient
 import androidx.health.connect.client.PermissionController
 import androidx.health.connect.client.permission.HealthPermission
+import androidx.health.connect.client.records.HeartRateVariabilityRmssdRecord
+import androidx.health.connect.client.records.SleepSessionRecord
 import androidx.health.connect.client.records.StepsRecord
 import androidx.health.connect.client.request.ReadRecordsRequest
 import androidx.health.connect.client.time.TimeRangeFilter
 import dagger.hilt.android.qualifiers.ApplicationContext
+import java.time.Duration
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -35,8 +38,19 @@ enum class HealthConnectAvailability {
 class HealthConnectManager @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
+    /**
+     * Wymagane: tylko kroki (legacy). Sen i HRV są opcjonalne — user może odmówić bez
+     * blamowania całej integracji.
+     */
     private val requiredPermissions = setOf(
         HealthPermission.getReadPermission(StepsRecord::class)
+    )
+
+    /** Pełen zestaw — kroki + sen + HRV. Używamy do żądania uprawnień (user wybiera). */
+    private val allPermissions = setOf(
+        HealthPermission.getReadPermission(StepsRecord::class),
+        HealthPermission.getReadPermission(SleepSessionRecord::class),
+        HealthPermission.getReadPermission(HeartRateVariabilityRmssdRecord::class)
     )
 
     fun checkAvailability(): HealthConnectAvailability =
@@ -74,7 +88,13 @@ class HealthConnectManager @Inject constructor(
     fun permissionContract() =
         PermissionController.createRequestPermissionResultContract()
 
-    fun permissionsToRequest(): Set<String> = requiredPermissions
+    /** Żądamy WSZYSTKIEGO przy onboarding (user może odmówić części). */
+    fun permissionsToRequest(): Set<String> = allPermissions
+
+    private suspend fun hasPermission(permission: String): Boolean {
+        val c = client() ?: return false
+        return c.permissionController.getGrantedPermissions().contains(permission)
+    }
 
     /**
      * Pobiera sumę kroków dla danej daty (start dnia → następny dzień start, lokalnie).
@@ -117,5 +137,87 @@ class HealthConnectManager @Inject constructor(
             map[dayStartMs] = readStepsForDate(dayStartMs)
         }
         return map
+    }
+
+    /**
+     * Pobiera długość snu (godziny) dla N ostatnich nocy.
+     * "Noc 0" = ostatnia minione noc (sen kończący się dziś przed południem).
+     * Zwraca listę godzin per noc, [0] = najnowsza.
+     */
+    suspend fun readSleepHoursForLastNights(nights: Int): List<Double> {
+        val c = client() ?: return emptyList()
+        val sleepPerm = HealthPermission.getReadPermission(SleepSessionRecord::class)
+        if (!hasPermission(sleepPerm)) return emptyList()
+
+        val zone = ZoneId.systemDefault()
+        val now = ZonedDateTime.now(zone)
+        // Bierzemy okno: ostatnie `nights+1` dni — sesja snu może spinać 2 dni kalendarzowe.
+        val windowStart = now.minusDays(nights.toLong() + 1).toInstant()
+        val windowEnd = now.toInstant()
+
+        val sessions = try {
+            c.readRecords(
+                ReadRecordsRequest(
+                    recordType = SleepSessionRecord::class,
+                    timeRangeFilter = TimeRangeFilter.between(windowStart, windowEnd)
+                )
+            ).records
+        } catch (e: Exception) {
+            return emptyList()
+        }
+
+        // Grupuj sesje po dacie ZAKOŃCZENIA (sen kończący się o 7:00 = sen tej nocy).
+        val byEndDate = sessions.groupBy { it.endTime.atZone(zone).toLocalDate() }
+        val result = mutableListOf<Double>()
+        for (d in 0 until nights) {
+            val date = now.minusDays(d.toLong()).toLocalDate()
+            val sessionsThisNight = byEndDate[date].orEmpty()
+            val totalMinutes = sessionsThisNight.sumOf {
+                Duration.between(it.startTime, it.endTime).toMinutes()
+            }
+            result.add(totalMinutes / 60.0)
+        }
+        return result
+    }
+
+    /**
+     * Średnia HRV (RMSSD) dla N ostatnich dni — w milisekundach.
+     * Wyższe = lepsza regeneracja. Bierzemy median per dzień (odporne na outliery).
+     */
+    suspend fun readHrvForLastDays(days: Int): List<Double> {
+        val c = client() ?: return emptyList()
+        val hrvPerm = HealthPermission.getReadPermission(HeartRateVariabilityRmssdRecord::class)
+        if (!hasPermission(hrvPerm)) return emptyList()
+
+        val zone = ZoneId.systemDefault()
+        val now = ZonedDateTime.now(zone)
+        val windowStart = now.minusDays(days.toLong()).toInstant()
+
+        val records = try {
+            c.readRecords(
+                ReadRecordsRequest(
+                    recordType = HeartRateVariabilityRmssdRecord::class,
+                    timeRangeFilter = TimeRangeFilter.between(windowStart, now.toInstant())
+                )
+            ).records
+        } catch (e: Exception) {
+            return emptyList()
+        }
+
+        val byDate = records.groupBy { it.time.atZone(zone).toLocalDate() }
+        val result = mutableListOf<Double>()
+        for (d in 0 until days) {
+            val date = now.minusDays(d.toLong()).toLocalDate()
+            val pomiar = byDate[date].orEmpty()
+            if (pomiar.isEmpty()) {
+                result.add(0.0)
+            } else {
+                val sorted = pomiar.map { it.heartRateVariabilityMillis }.sorted()
+                val median = if (sorted.size % 2 == 1) sorted[sorted.size / 2]
+                else (sorted[sorted.size / 2 - 1] + sorted[sorted.size / 2]) / 2
+                result.add(median)
+            }
+        }
+        return result
     }
 }
