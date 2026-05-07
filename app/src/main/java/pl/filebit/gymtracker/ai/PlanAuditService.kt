@@ -34,7 +34,8 @@ class PlanAuditService @Inject constructor(
     private val applier: AiPlanApplier,
     private val workoutDao: pl.filebit.gymtracker.data.db.dao.WorkoutDao,
     private val masterContextBuilder: MasterAiContextBuilder,
-    private val stagnationAnalyzer: StagnationAnalyzer
+    private val stagnationAnalyzer: StagnationAnalyzer,
+    private val phaseAnalyzer: TrainingPhaseAnalyzer
 ) {
     companion object {
         /** Max ile razy ten sam plan może być poprawiany cyklem audyt→popraw. */
@@ -84,6 +85,8 @@ class PlanAuditService @Inject constructor(
         val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
         val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
         val stagnationReport = runCatching { stagnationAnalyzer.analyzePlan(planId) }.getOrNull()
+        val phaseStatus = runCatching { phaseAnalyzer.analyze(stagnationReport) }
+            .getOrDefault(TrainingPhaseStatus(TrainingPhase.NO_DATA, 0, ""))
 
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
 
@@ -125,6 +128,9 @@ class PlanAuditService @Inject constructor(
                 append(StagnationPromptHelper.toPromptSection(stagnationReport))
                 append("\n")
             }
+            // === FAZA CYKLU TRENINGOWEGO ===
+            append(TrainingPhasePromptHelper.toPromptSection(phaseStatus))
+            if (phaseStatus.phase != TrainingPhase.NO_DATA) append("\n")
 
             append("# OBECNY PLAN: ${plan.name}\n")
             append("- Cel użytkownika: ${profile.goal.name}\n")
@@ -263,6 +269,8 @@ class PlanAuditService @Inject constructor(
         val setsByPe = exercises.associate { it.id to planSetDao.getForPlanExercise(it.id) }
         val report = PlanAuditEngine.audit(exercises, setsByPe, exMap, profile.goal)
         val stagnationReport = runCatching { stagnationAnalyzer.analyzePlan(planId) }.getOrNull()
+        val phaseStatus = runCatching { phaseAnalyzer.analyze(stagnationReport) }
+            .getOrDefault(TrainingPhaseStatus(TrainingPhase.NO_DATA, 0, ""))
 
         val recentFeedback = collectRecentFeedback()
         val masterCtx = runCatching { masterContextBuilder.build() }.getOrNull()
