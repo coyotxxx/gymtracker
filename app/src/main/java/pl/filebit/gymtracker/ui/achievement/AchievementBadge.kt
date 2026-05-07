@@ -5,6 +5,7 @@ import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.StartOffset
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.keyframes
@@ -19,7 +20,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -31,8 +35,10 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
@@ -42,22 +48,13 @@ import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
 import pl.filebit.gymtracker.ui.theme.DarkBg
 
 /**
- * Premium animowany medal — ZNACZNIE prostsza implementacja.
+ * Premium animowany medal — pełen 60fps zgodnie z 5 zasadami performance:
  *
- * **Klucz do płynności:**
- * Zamiast skomplikowanego Canvas + drawBehind dla wszystkiego, używamy
- * **standardowych Modifier-ów** Compose które są mocno zoptymalizowane:
- *
- * 1. Tarcza = `Modifier.background(radialGradient).clip(CircleShape)` — Compose
- *    rysuje to RAZ i cache'uje. Jeden gładki render.
- * 2. Pierścienie = `Modifier.border(stroke, CircleShape)` — natywna Compose
- *    obsługa, super szybka.
- * 3. Glow = osobny Box z `.background(radialGradient)` z animowaną alpha.
- * 4. Shimmer i ring rotation = `drawBehind` (jedyny case gdzie Canvas potrzebny).
- *
- * Wszystkie scale/rotation/translation = `graphicsLayer { state.value }` — GPU.
- *
- * Wynik: 60fps stable, prosty kod, łatwy debug.
+ * 1. graphicsLayer {} z LAMBDA (defer state read do GPU draw, skip recomposition)
+ * 2. Wszystkie Brushe w remember {} (no re-create co frame)
+ * 3. Shimmer przez Box.graphicsLayer { translationX } (GPU translate, nie Canvas)
+ * 4. Spring twardszy: LowBouncy + StiffnessMedium (krótszy czas → mniej kosztu)
+ * 5. StartOffset zamiast LaunchedEffect+delay dla pętli
  */
 @Composable
 fun AchievementBadge(
@@ -66,18 +63,23 @@ fun AchievementBadge(
 ) {
     val appleEase = remember { CubicBezierEasing(0.22f, 1f, 0.36f, 1f) }
 
-    // Wjazd tarczy
+    // === Wjazdy (jednorazowe — mogą zostać LaunchedEffect+delay) ===
     val discScale = remember { Animatable(0f) }
     val discRotation = remember { Animatable(-180f) }
     LaunchedEffect(Unit) {
         kotlinx.coroutines.delay(300)
         kotlinx.coroutines.coroutineScope {
-            launch { discScale.animateTo(1f, spring(Spring.DampingRatioMediumBouncy, Spring.StiffnessLow)) }
+            launch {
+                // Spring twardszy — krótszy, mniej kosztu (Zasada B)
+                discScale.animateTo(1f, spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessMedium
+                ))
+            }
             launch { discRotation.animateTo(0f, tween(700, easing = appleEase)) }
         }
     }
 
-    // Wjazd emoji
     val emojiScale = remember { Animatable(0f) }
     val emojiRotation = remember { Animatable(-90f) }
     LaunchedEffect(Unit) {
@@ -102,34 +104,62 @@ fun AchievementBadge(
         }
     }
 
-    // Infinite — wszystkie czytane W LAMBDA, nie w composable body
+    // === Infinite transitions z StartOffset (Zasada A) ===
     val infinite = rememberInfiniteTransition(label = "badge")
+
     val glowAlphaState = infinite.animateFloat(
-        0.50f, 0.95f,
-        infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse), "glow"
+        initialValue = 0.50f, targetValue = 0.95f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(3000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "glow"
     )
     val floatYState = infinite.animateFloat(
-        -3f, 3f,
-        infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse), "float"
+        initialValue = -3f, targetValue = 3f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(4000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse,
+            initialStartOffset = StartOffset(1300)
+        ),
+        label = "float"
     )
     val emojiFloatState = infinite.animateFloat(
-        -1.5f, 1.5f,
-        infiniteRepeatable(tween(3000, easing = LinearEasing), RepeatMode.Reverse), "emojiFloat"
+        initialValue = -1.5f, targetValue = 1.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(3000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse,
+            initialStartOffset = StartOffset(1500)
+        ),
+        label = "emojiFloat"
     )
     val emojiMicroRotState = infinite.animateFloat(
-        -1f, 1f,
-        infiniteRepeatable(tween(4000, easing = LinearEasing), RepeatMode.Reverse), "emojiRot"
+        initialValue = -1f, targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(4000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse,
+            initialStartOffset = StartOffset(1500)
+        ),
+        label = "emojiRot"
     )
-    val shimmerState = infinite.animateFloat(
-        -0.3f, 1.3f,
-        infiniteRepeatable(tween(2400, easing = LinearEasing), RepeatMode.Restart), "shimmer"
+    val shimmerProgressState = infinite.animateFloat(
+        initialValue = -1.5f, targetValue = 1.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(2400, easing = LinearEasing),
+            initialStartOffset = StartOffset(1200)
+        ),
+        label = "shimmerProgress"
     )
     val rotationState = infinite.animateFloat(
-        0f, 360f,
-        infiniteRepeatable(tween(40_000, easing = LinearEasing), RepeatMode.Restart), "ring"
+        initialValue = 0f, targetValue = 360f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(40_000, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ),
+        label = "ring"
     )
 
-    // Cache brushes — remember
+    // === Brushe w remember (Zasada 2) ===
     val discBrush = remember {
         Brush.radialGradient(
             colorStops = arrayOf(
@@ -137,13 +167,36 @@ fun AchievementBadge(
                 0.30f to AccentOrange,
                 0.80f to AccentOrange,
                 1.0f to AccentOrangeDim
-            ),
-            radius = 220f
+            )
+        )
+    }
+    val glowBrush = remember {
+        Brush.radialGradient(
+            colors = listOf(
+                AccentGlow.copy(alpha = 0.55f),
+                AccentGlow.copy(alpha = 0.18f),
+                Color.Transparent
+            )
+        )
+    }
+    val shimmerBrush = remember {
+        Brush.linearGradient(
+            colors = listOf(
+                Color.Transparent,
+                Color.White.copy(alpha = 0.40f),
+                Color.White.copy(alpha = 0.70f),
+                Color.White.copy(alpha = 0.40f),
+                Color.Transparent
+            )
         )
     }
 
+    // Box size — dla shimmer translationX
+    var boxSize by remember { mutableStateOf(IntSize.Zero) }
+
     Box(
         modifier = modifier
+            .onSizeChanged { boxSize = it }
             .graphicsLayer {
                 scaleX = discScale.value
                 scaleY = discScale.value
@@ -152,73 +205,61 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // 1. GLOW — osobny Box, alpha animated przez graphicsLayer
+        // 1. GLOW — animowane alpha przez graphicsLayer (BEZ recompose)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .graphicsLayer { alpha = glowAlphaState.value }
-                .background(
-                    Brush.radialGradient(
-                        colors = listOf(
-                            AccentGlow.copy(alpha = 0.55f),
-                            AccentGlow.copy(alpha = 0.18f),
-                            Color.Transparent
-                        )
-                    )
-                )
+                .background(glowBrush)
         )
 
-        // 2. TARCZA — natywny background + clip (Compose optimized)
+        // 2. TARCZA + shimmer overlay + ring rotation
         Box(
             modifier = Modifier
                 .fillMaxSize(0.78f)
                 .clip(CircleShape)
-                .background(discBrush)
-                .border(1.5.dp, Color.White.copy(alpha = 0.50f), CircleShape)
-                // Inner ring grawerunku — drugi border z padding nie jest możliwy,
-                // więc rysujemy go w drawBehind RAZEM z shimmer i rotation ring
-                .drawBehind {
-                    val s = size.minDimension
-                    val cx = size.width / 2f
-                    val cy = size.height / 2f
-
-                    // Inner ring grawerunku (8% od krawędzi)
-                    drawCircle(
-                        color = Color.White.copy(alpha = 0.20f),
-                        radius = s * 0.46f,
-                        center = Offset(cx, cy),
-                        style = Stroke(width = 1.dp.toPx())
-                    )
-
-                    // Inner ring rotacyjny — czyta state.value w lambda (no recomp)
-                    rotate(rotationState.value, Offset(cx, cy)) {
+        ) {
+            // Tarcza — natywny background (Compose optimized)
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(discBrush)
+                    .border(1.5.dp, Color.White.copy(alpha = 0.50f), CircleShape)
+                    .drawBehind {
+                        val s = size.minDimension
+                        val cx = size.width / 2f
+                        val cy = size.height / 2f
+                        // Inner ring grawerunku (statyczny — premium 3D feel)
                         drawCircle(
-                            color = Color.White.copy(alpha = 0.18f),
-                            radius = s * 0.42f,
+                            color = Color.White.copy(alpha = 0.20f),
+                            radius = s * 0.46f,
                             center = Offset(cx, cy),
                             style = Stroke(width = 1.dp.toPx())
                         )
+                        // Inner ring rotacyjny — state.value w lambda
+                        rotate(rotationState.value, Offset(cx, cy)) {
+                            drawCircle(
+                                color = Color.White.copy(alpha = 0.18f),
+                                radius = s * 0.42f,
+                                center = Offset(cx, cy),
+                                style = Stroke(width = 1.dp.toPx())
+                            )
+                        }
                     }
+            )
 
-                    // Shimmer diagonal — także czyta state.value w lambda
-                    val sx = size.width * shimmerState.value
-                    drawCircle(
-                        brush = Brush.linearGradient(
-                            colors = listOf(
-                                Color.Transparent,
-                                Color.White.copy(alpha = 0.32f),
-                                Color.Transparent
-                            ),
-                            start = Offset(sx - size.width * 0.2f, 0f),
-                            end = Offset(sx + size.width * 0.2f, size.height)
-                        ),
-                        radius = s * 0.5f,
-                        center = Offset(cx, cy)
-                    )
-                }
-        )
+            // 3. SHIMMER overlay — translationX (Zasada 3, GPU translate)
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        translationX = shimmerProgressState.value * boxSize.width
+                    }
+                    .background(shimmerBrush)
+            )
+        }
 
-        // 3. EMOJI — własna graphicsLayer
+        // 4. EMOJI — własna graphicsLayer
         Box(
             modifier = Modifier.graphicsLayer {
                 scaleX = emojiScale.value
