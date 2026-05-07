@@ -1,5 +1,7 @@
 package pl.filebit.gymtracker.ui.achievement
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +14,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -37,6 +42,12 @@ fun AchievementProgress(
     modifier: Modifier = Modifier
 ) {
     val pct = if (target > 0) (current.toFloat() / target).coerceIn(0f, 1f) else 1f
+    // Plynna animacja paska 0 → pct po wjezdzie medalu (delay 1300ms)
+    val animPct = remember { Animatable(0f) }
+    LaunchedEffect(current, target) {
+        kotlinx.coroutines.delay(1300)
+        animPct.animateTo(pct, animationSpec = tween(1200))
+    }
 
     Column(modifier = modifier) {
         Row(
@@ -72,10 +83,18 @@ fun AchievementProgress(
                 .clip(RoundedCornerShape(4.dp))
                 .background(DarkSurface)
         ) {
+            // Custom layout — wczytujemy animPct.value w lambda → zero recompose,
+            // tylko remeasure width tego konkretnego Box.
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(pct)
                     .height(8.dp)
+                    .layout { measurable, constraints ->
+                        val width = (constraints.maxWidth * animPct.value).toInt()
+                        val placeable = measurable.measure(
+                            constraints.copy(minWidth = width, maxWidth = width)
+                        )
+                        layout(width, placeable.height) { placeable.place(0, 0) }
+                    }
                     .clip(RoundedCornerShape(4.dp))
                     .background(
                         Brush.horizontalGradient(

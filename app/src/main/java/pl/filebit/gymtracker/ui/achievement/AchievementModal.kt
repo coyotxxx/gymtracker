@@ -1,5 +1,8 @@
 package pl.filebit.gymtracker.ui.achievement
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -33,6 +36,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
@@ -77,28 +81,24 @@ private fun AchievementModal(
 ) {
     val haptic = LocalHapticFeedback.current
 
-    // Tylko JEDEN haptic na otwarcie — drugi po 2.6s usuniety (powodowal puls)
+    // Haptic na otwarcie modal
     LaunchedEffect(achievement.id) {
         delay(300)
         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
     }
 
-    // USUNIETO v1.11.19:
-    // - cardScale + cardAlpha animation → graphicsLayer w Column tworzyl
-    //   offscreen GPU layer dla calego contentu, subpixel sampling przy
-    //   scale produkowal HALO/aliasing edges = "drugie kolo" wokol medalu.
-    // - Drugi haptic po 2.05s (powodowal puls, kolejny stutter).
-    // - Martwy LaunchedEffect z delay(6500) bez akcji.
+    // === Fade-in scrim 0→1 (zewnętrzny Box overlay) — czytany w lambda graphicsLayer ===
+    // Animuje TYLKO alpha całego Box (skala by była drogiego), zero recompose dzieci.
+    val scrimAlpha = remember { Animatable(0f) }
+    LaunchedEffect(achievement.id) {
+        scrimAlpha.animateTo(1f, tween(250))
+    }
 
-    // Box overlay zamiast Dialog — wyzwala render w tym samym window co reszta UI
-    // (zero overhead nowego DecorView/Surface, ~150ms szybsze otwarcie + lepszy fps)
     BackHandler(onBack = onDismiss)
     Box(
         modifier = Modifier
             .fillMaxSize()
-            // PEŁNA czerń (alpha=1.0) — alpha 0.88 powodował że pomarańczowe ikony
-            // BigAchievementRow z listy w tle przebijały się przez scrim i wyglądały
-            // jak "drugie koło" wokół medalu. To był prawdziwy bug, nie medal.
+            .graphicsLayer { alpha = scrimAlpha.value }
             .background(Color.Black)
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
@@ -147,7 +147,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.21",
+                text = "v1.11.22",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -170,7 +170,10 @@ private fun AchievementModal(
                     ),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                AnimatedLabel(modifier = Modifier.padding(bottom = 28.dp))
+                AnimatedLabel(
+                    delayMs = 100,
+                    modifier = Modifier.padding(bottom = 28.dp)
+                )
 
                 AchievementBadge(
                     emoji = achievement.emoji,
@@ -178,9 +181,9 @@ private fun AchievementModal(
                 )
                 Spacer(Modifier.height(40.dp))
 
-                AnimatedTitle(text = achievement.title)
+                AnimatedTitle(text = achievement.title, delayMs = 700)
                 Spacer(Modifier.height(12.dp))
-                AnimatedDescription(text = achievement.description)
+                AnimatedDescription(text = achievement.description, delayMs = 850)
                 Spacer(Modifier.height(36.dp))
 
                 AchievementProgress(
@@ -195,6 +198,7 @@ private fun AchievementModal(
                 AnimatedActions(
                     onConfirm = onDismiss,
                     onShare = onShare,
+                    delayMs = 1100,
                     modifier = Modifier
                         .fillMaxWidth()
                         .widthIn(max = 280.dp)
@@ -203,14 +207,24 @@ private fun AchievementModal(
     }
 }
 
-// === STATYCZNE WERSJE — bez AnimatedVisibility, bez LaunchedEffect ===
-// Po szczegolowej analizie usunieto wszystkie animacje wjazdu — modal
-// pojawia sie INSTANT, calosc statyczna od razu. Zero recompositions.
+// === Plynne entry przez graphicsLayer.alpha (state.value w lambda → zero recompose) ===
+private val AppleEase = CubicBezierEasing(0.22f, 1f, 0.36f, 1f)
 
 @Composable
-private fun AnimatedLabel(modifier: Modifier = Modifier) {
+private fun rememberFadeInAlpha(delayMs: Int): Animatable<Float, *> {
+    val alpha = remember { Animatable(0f) }
+    LaunchedEffect(Unit) {
+        delay(delayMs.toLong())
+        alpha.animateTo(1f, tween(500, easing = AppleEase))
+    }
+    return alpha
+}
+
+@Composable
+private fun AnimatedLabel(delayMs: Int, modifier: Modifier = Modifier) {
+    val alphaAnim = rememberFadeInAlpha(delayMs)
     Row(
-        modifier = modifier,
+        modifier = modifier.graphicsLayer { alpha = alphaAnim.value },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -239,25 +253,30 @@ private fun AnimatedLabel(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun AnimatedTitle(text: String) {
+private fun AnimatedTitle(text: String, delayMs: Int) {
+    val alphaAnim = rememberFadeInAlpha(delayMs)
     Text(
         text = text,
         fontSize = 36.sp,
         fontWeight = FontWeight.Black,
         letterSpacing = (-1).sp,
         color = DarkOnSurface,
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
+        modifier = Modifier.graphicsLayer { alpha = alphaAnim.value }
     )
 }
 
 @Composable
-private fun AnimatedDescription(text: String) {
+private fun AnimatedDescription(text: String, delayMs: Int) {
+    val alphaAnim = rememberFadeInAlpha(delayMs)
     Text(
         text = text,
         fontSize = 14.sp,
         color = DarkOnSurfaceVariant,
         textAlign = TextAlign.Center,
-        modifier = Modifier.widthIn(max = 280.dp)
+        modifier = Modifier
+            .widthIn(max = 280.dp)
+            .graphicsLayer { alpha = alphaAnim.value }
     )
 }
 
@@ -265,10 +284,12 @@ private fun AnimatedDescription(text: String) {
 private fun AnimatedActions(
     onConfirm: () -> Unit,
     onShare: () -> Unit,
+    delayMs: Int,
     modifier: Modifier = Modifier
 ) {
+    val alphaAnim = rememberFadeInAlpha(delayMs)
     Row(
-        modifier = modifier,
+        modifier = modifier.graphicsLayer { alpha = alphaAnim.value },
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Button(
