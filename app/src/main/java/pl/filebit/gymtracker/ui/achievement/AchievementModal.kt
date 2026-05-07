@@ -286,9 +286,9 @@ private fun AnimatedTitle(text: String) {
     ) {
         Text(
             text = text,
-            fontSize = 28.sp,
+            fontSize = 36.sp,
             fontWeight = FontWeight.Black,
-            letterSpacing = (-0.5).sp,
+            letterSpacing = (-1).sp,
             color = DarkOnSurface,
             textAlign = TextAlign.Center
         )

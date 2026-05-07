@@ -49,32 +49,32 @@ fun AchievementProgress(
     }
 
     Column(modifier = modifier) {
-        // Tekst current / target
+        // Label "TWÓJ POSTĘP" + duża wartość "X / Y" (jak w referencji)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "$current / $target",
-                style = MaterialTheme.typography.bodyMedium.copy(
+                text = "TWÓJ POSTĘP",
+                style = MaterialTheme.typography.labelSmall.copy(
                     fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Monospace,
-                    fontSize = 14.sp
-                ),
-                color = AccentOrange
-            )
-            Text(
-                text = "${(animPct.value * 100).toInt()}%",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    fontWeight = FontWeight.SemiBold,
-                    fontFamily = FontFamily.Monospace,
-                    fontSize = 12.sp
+                    fontSize = 11.sp,
+                    letterSpacing = 1.5.sp
                 ),
                 color = DarkOnSurfaceVariant
             )
+            Text(
+                text = "$current / $target",
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.ExtraBold,
+                    fontFamily = FontFamily.Monospace,
+                    fontSize = 18.sp
+                ),
+                color = AccentOrange
+            )
         }
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(10.dp))
         // Track + fill
         Box(
             modifier = Modifier
