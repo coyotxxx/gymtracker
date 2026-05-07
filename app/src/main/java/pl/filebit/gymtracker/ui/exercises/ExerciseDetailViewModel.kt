@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.ai.ExerciseTrend
+import pl.filebit.gymtracker.ai.StagnationAnalyzer
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.data.repository.ExercisePr
@@ -21,13 +23,15 @@ data class ExerciseDetailUiState(
     val exercise: Exercise? = null,
     val pr: ExercisePr? = null,
     val progression: List<ExerciseProgressionPoint> = emptyList(),
-    val history: List<WorkoutSet> = emptyList()
+    val history: List<WorkoutSet> = emptyList(),
+    val trend: ExerciseTrend? = null
 )
 
 @HiltViewModel
 class ExerciseDetailViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val statsRepo: StatsRepository,
+    private val stagnationAnalyzer: StagnationAnalyzer,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -44,12 +48,14 @@ class ExerciseDetailViewModel @Inject constructor(
             val pr = statsRepo.prForExercise(exerciseId)
             val progression = statsRepo.progressionForExercise(exerciseId)
             val history = statsRepo.historyForExercise(exerciseId)
+            val trend = runCatching { stagnationAnalyzer.analyzeOne(exerciseId) }.getOrNull()
             _state.value = ExerciseDetailUiState(
                 loading = false,
                 exercise = ex,
                 pr = pr,
                 progression = progression,
-                history = history
+                history = history,
+                trend = trend
             )
         }
     }

@@ -50,6 +50,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Block
+import androidx.compose.material.icons.filled.TrendingUp
+import androidx.compose.material.icons.filled.TrendingDown
+import androidx.compose.material.icons.filled.TrendingFlat
+import androidx.compose.material.icons.filled.HelpOutline
+import pl.filebit.gymtracker.ai.ExerciseTrend
+import pl.filebit.gymtracker.ai.ProgressionStatus
 import pl.filebit.gymtracker.R
 import pl.filebit.gymtracker.data.repository.ExerciseProgressionPoint
 import pl.filebit.gymtracker.ui.theme.AccentOrange
@@ -111,6 +117,10 @@ fun ExerciseDetailScreen(
                     onToggleFavorite = { vm.toggleFavorite() },
                     onToggleAvoided = { vm.toggleAvoided() }
                 )
+            }
+            // Karta statusu progresji (e1RM trend ostatnich 6 tygodni)
+            state.trend?.let { trend ->
+                item { ProgressionStatusCard(trend = trend) }
             }
             // Opis ćwiczenia (jeśli wbudowany)
             if (ex.description.isNotBlank()) {
@@ -534,6 +544,91 @@ private fun PreferenceChip(
             style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
             color = textColor
         )
+    }
+}
+
+
+
+@Composable
+private fun ProgressionStatusCard(trend: ExerciseTrend) {
+    val (accent, icon, headline) = when (trend.status) {
+        ProgressionStatus.PROGRESSING -> Triple(
+            SuccessGreen,
+            Icons.Filled.TrendingUp,
+            "Postęp"
+        )
+        ProgressionStatus.STAGNATING -> Triple(
+            AccentOrange,
+            Icons.Filled.TrendingFlat,
+            "Stagnacja"
+        )
+        ProgressionStatus.REGRESSING -> Triple(
+            ErrorRed,
+            Icons.Filled.TrendingDown,
+            "Regres"
+        )
+        ProgressionStatus.INSUFFICIENT_DATA -> Triple(
+            DarkOnSurfaceVariant,
+            Icons.Filled.HelpOutline,
+            "Za mało danych"
+        )
+    }
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = accent.copy(alpha = 0.10f)),
+        border = androidx.compose.foundation.BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(icon, contentDescription = null, tint = accent, modifier = Modifier.size(20.dp))
+                Spacer(Modifier.size(8.dp))
+                Text(
+                    "STATUS PROGRESJI",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.weight(1f))
+                Text(
+                    headline,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.ExtraBold),
+                    color = accent
+                )
+            }
+            if (trend.status != ProgressionStatus.INSUFFICIENT_DATA) {
+                Spacer(Modifier.height(8.dp))
+                val pctStr = if (trend.percentChange >= 0) "+%.1f%%".format(trend.percentChange)
+                else "%.1f%%".format(trend.percentChange)
+                Text(
+                    "e1RM $pctStr w 6 tyg. (${trend.sessionsAnalyzed} sesji)",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(4.dp))
+                val msg = when (trend.status) {
+                    ProgressionStatus.PROGRESSING -> "Świetnie. Trzymaj plan, kontynuuj progresję."
+                    ProgressionStatus.STAGNATING -> "Plateau >4 tyg. Rozważ deload, zmianę repów lub techniki."
+                    ProgressionStatus.REGRESSING -> "Spadek formy. Sprawdź sen, dietę, stres. Możliwy deload."
+                    else -> ""
+                }
+                Text(
+                    msg,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            } else {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Potrzeba ≥3 sesji w 6 tyg. żeby ocenić trend.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+        }
     }
 }
 

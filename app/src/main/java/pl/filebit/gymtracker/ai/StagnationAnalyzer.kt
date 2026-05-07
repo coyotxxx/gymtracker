@@ -134,6 +134,18 @@ class StagnationAnalyzer @Inject constructor(
     }
 
     /**
+     * Analiza pojedynczego ćwiczenia — używana w ExerciseDetailScreen do pokazania
+     * statusu progresji jako badge.
+     */
+    suspend fun analyzeOne(exerciseId: Long): ExerciseTrend? {
+        val ex = exerciseDao.getById(exerciseId) ?: return null
+        val finished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val workoutStartById = finished.associate { it.id to it.startedAt }
+        val sets = setDao.getAllForExercise(exerciseId)
+        return analyzeExerciseSets(exerciseId, ex.name, sets, workoutStartById)
+    }
+
+    /**
      * Analiza całego planu — bierze unikalne ćwiczenia z planu, analizuje historię
      * każdego, zwraca raport z werdyktem czy deload zalecany.
      */
