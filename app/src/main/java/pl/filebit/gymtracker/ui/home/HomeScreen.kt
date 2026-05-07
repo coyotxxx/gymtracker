@@ -240,7 +240,21 @@ fun HomeScreen(
             // Regeneracja — sen + HRV z Health Connect (RecoveryCard)
             state.healthInsight?.let { insight ->
                 if (insight.recoveryStatus != RecoveryStatus.NO_DATA) {
-                    item { RecoveryCard(insight = insight) }
+                    item {
+                        RecoveryCard(
+                            insight = insight,
+                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            onApplyDeload = {
+                                vm.applyHealthBasedDeload(insight.workoutAdjustment) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
+                                }
+                            }
+                        )
+                    }
                 }
             }
 
@@ -1338,13 +1352,58 @@ private fun TrainingPhaseCard(status: TrainingPhaseStatus) {
 
 
 @androidx.compose.runtime.Composable
-private fun RecoveryCard(insight: HealthInsight) {
+private fun RecoveryCard(
+    insight: HealthInsight,
+    canApplyDeload: Boolean,
+    onApplyDeload: () -> Unit
+) {
     val (accent, emoji, label) = when (insight.recoveryStatus) {
         RecoveryStatus.EXCELLENT -> Triple(SuccessGreen, "✅", "Doskonała")
         RecoveryStatus.GOOD -> Triple(SuccessGreen, "✅", "Dobra")
         RecoveryStatus.MODERATE -> Triple(AccentOrange, "⚠️", "Umiarkowana")
         RecoveryStatus.POOR -> Triple(ErrorRed, "❌", "Słaba")
         RecoveryStatus.NO_DATA -> Triple(DarkOnSurfaceVariant, "❓", "Brak danych")
+    }
+    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val deloadPctLabel = when (insight.workoutAdjustment) {
+        WorkoutAdjustment.LIGHT_VOLUME -> "lekki deload (-15%)"
+        WorkoutAdjustment.DELOAD_TODAY -> "deload (-30%)"
+        WorkoutAdjustment.REST_RECOMMENDED -> "deload (-30%)"
+        WorkoutAdjustment.AS_PLANNED -> ""
+    }
+    val showDeloadButton = canApplyDeload && insight.workoutAdjustment != WorkoutAdjustment.AS_PLANNED
+    if (showConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showConfirm = false },
+            title = {
+                androidx.compose.material3.Text(
+                    "Zastosować $deloadPctLabel?",
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                )
+            },
+            text = {
+                androidx.compose.material3.Text(
+                    "Plan zostanie zmodyfikowany — obciążenia zmniejszone. Możesz w każdej chwili przywrócić oryginalne wagi (kafel 'Aktywny deload')."
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = {
+                    showConfirm = false
+                    onApplyDeload()
+                }) {
+                    androidx.compose.material3.Text(
+                        "Zastosuj",
+                        color = accent,
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                    )
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
     }
     androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
@@ -1401,6 +1460,25 @@ private fun RecoveryCard(insight: HealthInsight) {
                 style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
                 color = DarkOnSurface
             )
+            if (showDeloadButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text(
+                        "Zastosuj $deloadPctLabel",
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+                    )
+                }
+            } else if (canApplyDeload && insight.workoutAdjustment == WorkoutAdjustment.AS_PLANNED) {
+                // Brak przycisku, ale daj subtelny hint że plan jest OK
+            }
         }
     }
 }

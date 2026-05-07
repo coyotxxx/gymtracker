@@ -15,6 +15,8 @@ import kotlinx.datetime.todayIn
 import pl.filebit.gymtracker.ai.HealthInsight
 import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
 import pl.filebit.gymtracker.ai.RecoveryStatus
+import pl.filebit.gymtracker.ai.WorkoutAdjustment
+import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
@@ -249,6 +251,35 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             deloadService.cancelWithoutRestore()
             deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    /**
+     * Aplikuje deload bazując na statusie regeneracji (HealthInsight).
+     * Mapowanie:
+     *  - LIGHT_VOLUME (sen 5-6h) → DeloadSeverity.LOW (-15%)
+     *  - DELOAD_TODAY (HRV -15%) → DeloadSeverity.HIGH (-30%)
+     *  - REST_RECOMMENDED (sen <5h ≥2 noce) → DeloadSeverity.HIGH (-30%) z odrobiną
+     *    sugestii rest, ale plan modyfikujemy "na maks redukcji" — user sam zdecyduje
+     *    czy w ogóle pójdzie trenować.
+     */
+    fun applyHealthBasedDeload(
+        adjustment: WorkoutAdjustment,
+        onApplied: (pl.filebit.gymtracker.data.repository.DeloadService.ApplyResult) -> Unit
+    ) {
+        val planId = state.value.todaysPlan?.id
+            ?: state.value.nextPlannedDay?.planId
+            ?: return
+        val severity = when (adjustment) {
+            WorkoutAdjustment.LIGHT_VOLUME -> DeloadSeverity.LOW
+            WorkoutAdjustment.DELOAD_TODAY -> DeloadSeverity.HIGH
+            WorkoutAdjustment.REST_RECOMMENDED -> DeloadSeverity.HIGH
+            WorkoutAdjustment.AS_PLANNED -> return  // brak akcji — plan OK
+        }
+        viewModelScope.launch {
+            val result = deloadService.apply(planId, severity)
+            deloadRefresh.value = System.currentTimeMillis()
+            onApplied(result)
         }
     }
 
