@@ -54,7 +54,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.repository.Achievement
 import pl.filebit.gymtracker.ui.theme.AccentOrange
 import pl.filebit.gymtracker.ui.theme.AccentOrangeDim
@@ -96,14 +98,10 @@ private fun AchievementModal(
     val cardScale = remember { androidx.compose.animation.core.Animatable(0.85f) }
     val cardAlpha = remember { androidx.compose.animation.core.Animatable(0f) }
     LaunchedEffect(achievement.id) {
-        kotlinx.coroutines.delay(200)
-        kotlinx.coroutines.coroutineScope {
-            kotlinx.coroutines.launch {
-                cardScale.animateTo(1f, tween(700, easing = AppleEase))
-            }
-            kotlinx.coroutines.launch {
-                cardAlpha.animateTo(1f, tween(500, easing = AppleEase))
-            }
+        delay(200)
+        coroutineScope {
+            launch { cardScale.animateTo(1f, tween(700, easing = AppleEase)) }
+            launch { cardAlpha.animateTo(1f, tween(500, easing = AppleEase)) }
         }
     }
 
