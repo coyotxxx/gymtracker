@@ -244,22 +244,25 @@ fun HomeScreen(
                 }
             }
 
-            // v1.7.4 WHOOP-like Recovery Score + ACWR
+            // v1.7.4 WHOOP-like Recovery Score + ACWR (ukryta gdy user dismissował na dziś)
             state.recoveryScore?.let { score ->
-                item {
-                    WhoopRecoveryCard(
-                        score = score,
-                        canApplyDeload = vm.activePlanIdForDeload() != null,
-                        onApplyDeload = {
-                            vm.applyScoreBasedDeload(score) { result ->
-                                scope.launch {
-                                    snackbar.showSnackbar(
-                                        "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
-                                    )
+                if (!state.recoveryCardDismissed) {
+                    item {
+                        WhoopRecoveryCard(
+                            score = score,
+                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            onApplyDeload = {
+                                vm.applyScoreBasedDeload(score) { result ->
+                                    scope.launch {
+                                        snackbar.showSnackbar(
+                                            "Plan '${result.planName}': ${result.updatedSets} setów × ${(result.factor * 100).toInt()}%"
+                                        )
+                                    }
                                 }
-                            }
-                        }
-                    )
+                            },
+                            onDismiss = { vm.dismissRecoveryCard() }
+                        )
+                    }
                 }
             }
             state.trainingLoad?.let { load ->
@@ -1564,7 +1567,8 @@ private fun ScreenshotImportCard(onClick: () -> Unit) {
 private fun WhoopRecoveryCard(
     score: RecoveryScore,
     canApplyDeload: Boolean,
-    onApplyDeload: () -> Unit
+    onApplyDeload: () -> Unit,
+    onDismiss: () -> Unit
 ) {
     val (accent, label) = when (score.zone) {
         RecoveryZone.GREEN -> SuccessGreen to "Wysokie"
@@ -1623,15 +1627,29 @@ private fun WhoopRecoveryCard(
         Column(modifier = Modifier.padding(14.dp)) {
             // Quiet mode (LEARNING) — pierwsze 7 dni
             if (score.maturity == DataMaturity.LEARNING) {
-                androidx.compose.material3.Text(
-                    "REGENERACJA",
-                    style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 10.sp,
-                        fontWeight = FontWeight.Bold,
-                        letterSpacing = 1.4.sp
-                    ),
-                    color = DarkOnSurfaceVariant
-                )
+                Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                    androidx.compose.material3.Text(
+                        "REGENERACJA",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = DarkOnSurfaceVariant,
+                        modifier = Modifier.weight(1f)
+                    )
+                    androidx.compose.material3.IconButton(
+                        onClick = onDismiss,
+                        modifier = Modifier.size(28.dp)
+                    ) {
+                        androidx.compose.material3.Icon(
+                            androidx.compose.material.icons.Icons.Filled.Close,
+                            contentDescription = "Zamknij na dziś",
+                            tint = DarkOnSurfaceVariant,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
                 Spacer(Modifier.height(6.dp))
                 androidx.compose.material3.Text(
                     "📊 Zbieram dane (${score.daysOfData}/7 dni)",
@@ -1675,6 +1693,17 @@ private fun WhoopRecoveryCard(
                     ),
                     color = accent
                 )
+                androidx.compose.material3.IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    androidx.compose.material3.Icon(
+                        androidx.compose.material.icons.Icons.Filled.Close,
+                        contentDescription = "Zamknij na dziś",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
             Spacer(Modifier.height(8.dp))
 

@@ -55,7 +55,8 @@ data class HomeUiState(
     val trainingPhase: TrainingPhaseStatus? = null,    // null = jeszcze nie obliczone
     val healthInsight: HealthInsight? = null,           // null = jeszcze nie obliczone (Health Connect)
     val recoveryScore: RecoveryScore? = null,           // v1.7.4 — WHOOP-like 0-100
-    val trainingLoad: TrainingLoad? = null              // v1.7.4 — ACWR
+    val trainingLoad: TrainingLoad? = null,             // v1.7.4 — ACWR
+    val recoveryCardDismissed: Boolean = false           // v1.7.5 — user zamknął kartę na dziś
 )
 
 data class NextPlannedDay(
@@ -83,8 +84,11 @@ class HomeViewModel @Inject constructor(
     private val phaseAnalyzer: TrainingPhaseAnalyzer,
     private val healthAnalyzer: HealthInsightAnalyzer,
     private val recoveryScoreCalculator: RecoveryScoreCalculator,
-    private val trainingLoadAnalyzer: TrainingLoadAnalyzer
+    private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
+    private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs
 ) : ViewModel() {
+
+    private val recoveryCardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
 
     // Trigger do wymuszania rebuild state po akcjach deload (Apply/Dismiss/Restore/Cancel).
     // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
@@ -94,8 +98,9 @@ class HomeViewModel @Inject constructor(
         workoutRepo.observeActive(),
         workoutRepo.observeRecent(4),
         planRepo.observeAllPlans(),
-        deloadRefresh
-    ) { active, recent, plans, _ ->
+        deloadRefresh,
+        recoveryCardRefresh
+    ) { active, recent, plans, _, _ ->
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
@@ -221,7 +226,8 @@ class HomeViewModel @Inject constructor(
             trainingPhase = trainingPhase,
             healthInsight = healthInsight,
             recoveryScore = recoveryScore,
-            trainingLoad = trainingLoad
+            trainingLoad = trainingLoad,
+            recoveryCardDismissed = recoveryCardPrefs.isDismissedForToday()
         )
     }.stateIn(
         scope = viewModelScope,
@@ -295,6 +301,12 @@ class HomeViewModel @Inject constructor(
             deloadRefresh.value = System.currentTimeMillis()
             onApplied(result)
         }
+    }
+
+    /** v1.7.5 — user zamyka kartę REGENERACJA na bieżący dzień. Następny dzień wraca. */
+    fun dismissRecoveryCard() {
+        recoveryCardPrefs.dismissForToday()
+        recoveryCardRefresh.value = System.currentTimeMillis()
     }
 
     /**
