@@ -459,6 +459,10 @@ class StatsRepository @Inject constructor(
     fun calendarHeatmapFast(days: Int, snapshot: StatsSnapshot): Map<Long, Double> =
         computeCalendarHeatmapFromSnapshot(days, snapshot, System.currentTimeMillis())
 
+    /** v1.11.43 — recoveryByMuscle z snapshot (N+1 → 0 queries). */
+    fun recoveryByMuscleFast(snapshot: StatsSnapshot): List<MuscleRecovery> =
+        computeRecoveryByMuscleFromSnapshot(snapshot, System.currentTimeMillis())
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -1323,4 +1327,30 @@ fun computeCalendarHeatmapFromSnapshot(
     val sets = workouts.flatMap { snapshot.completedSetsFor(it.id) }
     return sets.groupBy { (it.createdAt / 86_400_000L) }
         .mapValues { (_, list) -> list.sumOf { it.reps * it.weightKg } }
+}
+
+/**
+ * Pure function — recoveryByMuscle z snapshot.
+ * Logika identyczna z StatsRepository.recoveryByMuscle().
+ */
+fun computeRecoveryByMuscleFromSnapshot(
+    snapshot: StatsSnapshot,
+    now: Long
+): List<MuscleRecovery> {
+    val workoutsById = snapshot.workoutsById.filterValues { it.finishedAt != null }
+    val allSets = workoutsById.keys.flatMap { snapshot.completedSetsFor(it) }
+    if (allSets.isEmpty()) return emptyList()
+
+    val byMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Long>()
+    allSets.forEach { s ->
+        val muscle = snapshot.exerciseForSet(s)?.primaryMuscle ?: return@forEach
+        val workout = workoutsById[s.workoutId] ?: return@forEach
+        val day = workout.startedAt
+        val current = byMuscle[muscle]
+        if (current == null || day > current) byMuscle[muscle] = day
+    }
+    return byMuscle.map { (muscle, lastTraining) ->
+        val daysAgo = ((now - lastTraining) / 86_400_000L).toInt()
+        MuscleRecovery(muscle = muscle, lastTrainingMillis = lastTraining, daysAgo = daysAgo)
+    }.sortedByDescending { it.daysAgo }
 }
