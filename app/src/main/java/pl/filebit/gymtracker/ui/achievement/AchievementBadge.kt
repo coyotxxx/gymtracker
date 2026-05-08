@@ -24,9 +24,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
@@ -154,27 +156,54 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // TARCZA — shadow + clip + gradient + highlight pulsing + border + inner ring
+        // TARCZA — premium look (lustrowy medal):
+        // - silniejszy shadow (poświata)
+        // - off-center highlight (lustrowy odblask u góry-lewej)
+        // - jaśniejszy inner ring
+        // - pulsing highlight overlay (animowane oddychanie)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .shadow(
-                    elevation = 16.dp,
+                    elevation = 24.dp,
                     shape = CircleShape,
                     ambientColor = AccentOrange,
                     spotColor = AccentOrange
                 )
                 .clip(CircleShape)
                 .background(discBrush)
-                .border(1.dp, Color.White.copy(alpha = 0.2f), CircleShape)
-                .drawBehind {
+                .border(1.dp, Color.White.copy(alpha = 0.25f), CircleShape)
+                .drawWithCache {
+                    // Brushes cached — przelicza tylko przy zmianie size, nie co frame
                     val s = size.minDimension
-                    drawCircle(
-                        color = Color.White.copy(alpha = 0.08f),
-                        radius = s * 0.44f,
-                        center = Offset(size.width / 2f, size.height / 2f),
-                        style = Stroke(width = 1.dp.toPx())
+                    val cx = size.width / 2f
+                    val cy = size.height / 2f
+                    val highlightOffsetCenter = Offset(size.width * 0.32f, size.height * 0.30f)
+                    val highlightRadius = s * 0.40f
+                    val highlightBrushOff = Brush.radialGradient(
+                        colors = listOf(
+                            Color.White.copy(alpha = 0.55f),
+                            Color.White.copy(alpha = 0.20f),
+                            Color.Transparent
+                        ),
+                        center = highlightOffsetCenter,
+                        radius = highlightRadius
                     )
+                    onDrawBehind {
+                        // Off-center highlight — lustrowy odblask u góry-lewej
+                        drawCircle(
+                            brush = highlightBrushOff,
+                            radius = highlightRadius,
+                            center = highlightOffsetCenter
+                        )
+                        // Inner ring — jaśniejszy premium 3D feel
+                        drawCircle(
+                            color = Color.White.copy(alpha = 0.22f),
+                            radius = s * 0.44f,
+                            center = Offset(cx, cy),
+                            style = Stroke(width = 1.5.dp.toPx())
+                        )
+                    }
                 }
         ) {
             // Pulsing highlight overlay — alpha animowana w lambda graphicsLayer
@@ -199,7 +228,13 @@ fun AchievementBadge(
                 text = emoji,
                 style = TextStyle(
                     fontSize = 80.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    // Subtelny cień pod emoji — premium 3D depth
+                    shadow = Shadow(
+                        color = Color.Black.copy(alpha = 0.35f),
+                        offset = Offset(0f, 3f),
+                        blurRadius = 6f
+                    )
                 )
             )
         }
