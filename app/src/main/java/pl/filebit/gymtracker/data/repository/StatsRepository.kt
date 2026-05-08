@@ -463,6 +463,14 @@ class StatsRepository @Inject constructor(
     fun recoveryByMuscleFast(snapshot: StatsSnapshot): List<MuscleRecovery> =
         computeRecoveryByMuscleFromSnapshot(snapshot, System.currentTimeMillis())
 
+    /** v1.11.44 — allPersonalRecords z snapshot. */
+    fun allPersonalRecordsFast(snapshot: StatsSnapshot): List<PersonalRecordRow> =
+        computeAllPersonalRecordsFromSnapshot(snapshot) { weight, reps -> epley1RM(weight, reps) }
+
+    /** v1.11.44 — allStagnations z snapshot. */
+    fun allStagnationsFast(snapshot: StatsSnapshot, threshold: Int = 3): List<StagnationAlert> =
+        computeAllStagnationsFromSnapshot(snapshot, threshold)
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -1353,4 +1361,98 @@ fun computeRecoveryByMuscleFromSnapshot(
         val daysAgo = ((now - lastTraining) / 86_400_000L).toInt()
         MuscleRecovery(muscle = muscle, lastTrainingMillis = lastTraining, daysAgo = daysAgo)
     }.sortedByDescending { it.daysAgo }
+}
+
+/**
+ * Pure function — allPersonalRecords z snapshot.
+ * Logika identyczna z StatsRepository.allPersonalRecords() + prForExercise().
+ */
+fun computeAllPersonalRecordsFromSnapshot(
+    snapshot: StatsSnapshot,
+    epley: (Double, Int) -> Double = { w, r -> if (w > 0 && r > 0) w * (1 + r / 30.0) else 0.0 }
+): List<PersonalRecordRow> {
+    // Pre-group: completedSets by exerciseId (raz, dla wszystkich exercises)
+    val setsByExercise = snapshot.completedSets.groupBy { it.exerciseId }
+    return snapshot.allExercises.mapNotNull { ex ->
+        val sets = setsByExercise[ex.id] ?: return@mapNotNull null
+        if (sets.isEmpty()) return@mapNotNull null
+        val maxWeightSet = sets.maxByOrNull { it.weightKg } ?: return@mapNotNull null
+        val perWorkoutVol = sets.groupBy { it.workoutId }
+            .mapValues { (_, list) -> list.sumOf { it.reps * it.weightKg } }
+        val maxVolume = perWorkoutVol.values.maxOrNull() ?: 0.0
+        val best1RM = sets.maxOf { epley(it.weightKg, it.reps) }
+        val pr = ExercisePr(
+            maxWeightKg = maxWeightSet.weightKg,
+            repsAtMaxWeight = maxWeightSet.reps,
+            maxVolumeKg = maxVolume,
+            estimated1RM = (best1RM * 10).roundToInt() / 10.0,
+            totalSetsLogged = sets.size
+        )
+        PersonalRecordRow(
+            exerciseId = ex.id,
+            exerciseName = ex.name,
+            muscle = ex.primaryMuscle,
+            pr = pr
+        )
+    }.sortedByDescending { it.pr.estimated1RM }
+}
+
+/**
+ * Pure function — allStagnations z snapshot.
+ * Logika identyczna z StatsRepository.allStagnations() → detectStagnation().
+ */
+fun computeAllStagnationsFromSnapshot(
+    snapshot: StatsSnapshot,
+    threshold: Int = 3
+): List<StagnationAlert> {
+    // Najnowszy zakończony trening (analog allStagnations: lastFinished)
+    val lastFinished = snapshot.finishedWorkouts.maxByOrNull { it.startedAt }
+        ?: return emptyList()
+
+    // Wewnętrzny detectStagnation z snapshot
+    val curSets = snapshot.completedSetsFor(lastFinished.id)
+    if (curSets.isEmpty()) return emptyList()
+    val byExercise = curSets.groupBy { it.exerciseId }
+    val results = mutableListOf<StagnationAlert>()
+
+    val finishedById = snapshot.finishedWorkouts.associateBy { it.id }
+    if (finishedById.size < threshold) return emptyList()
+
+    // Pre-group all completed sets by exerciseId — raz dla wszystkich
+    val setsByExercise = snapshot.completedSets
+        .filter { it.workoutId in finishedById.keys }
+        .groupBy { it.exerciseId }
+
+    for ((exId, _) in byExercise) {
+        val allSets = setsByExercise[exId] ?: continue
+        if (allSets.isEmpty()) continue
+
+        val perWorkoutMaxWeight = allSets.groupBy { it.workoutId }
+            .map { (wid, list) ->
+                val w = finishedById[wid]!!
+                w.startedAt to list.maxOf { it.weightKg }
+            }
+            .sortedByDescending { it.first }
+            .map { it.second }
+            .take(threshold + 1)
+
+        if (perWorkoutMaxWeight.size < threshold) continue
+
+        val lastN = perWorkoutMaxWeight.take(threshold)
+        val firstWeight = lastN.first()
+        if (firstWeight <= 0) continue
+        val allEqual = lastN.all { it == firstWeight }
+        if (allEqual) {
+            val name = snapshot.exercisesById[exId]?.name ?: "?"
+            results.add(
+                StagnationAlert(
+                    exerciseId = exId,
+                    exerciseName = name,
+                    stuckAtKg = firstWeight,
+                    workoutsAtSameWeight = threshold
+                )
+            )
+        }
+    }
+    return results
 }

@@ -85,9 +85,9 @@ class StatsViewModel @Inject constructor(
                 val overviewD = async { statsRepo.overviewFast(snapshot) }
                 val vol26D = async { runCatching { statsRepo.volumePerWeekFast(26, snapshot) }.getOrDefault(emptyList()) }
                 val muscleD = async { runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList()) }
-                val prsD = async { runCatching { statsRepo.allPersonalRecords() }.getOrDefault(emptyList()) }
+                val prsD = async { runCatching { statsRepo.allPersonalRecordsFast(snapshot) }.getOrDefault(emptyList()) }
                 val recoveryD = async { runCatching { statsRepo.recoveryByMuscleFast(snapshot) }.getOrDefault(emptyList()) }
-                val stagnD = async { runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList()) }
+                val stagnD = async { runCatching { statsRepo.allStagnationsFast(snapshot) }.getOrDefault(emptyList()) }
                 val heatmapD = async { runCatching { statsRepo.calendarHeatmapFast(84, snapshot) }.getOrDefault(emptyMap()) }
                 val profileD = async { profileRepo.get() }
 
