@@ -46,10 +46,10 @@ class MuscleEngagementViewModel @Inject constructor(
     private fun reload() {
         viewModelScope.launch {
             val period = _state.value.period.days
-            // v1.11.40: muscleAnalysis() → muscleAnalysisFast() z pre-fetched snapshot.
-            // Snapshot = 3 bulk queries zamiast 30+ queries w pętli (~570 queries).
+            // v1.11.41: oba wywołania używają tego samego snapshot — 3 queries dla
+            // obu metod zamiast osobnych N+1 per metoda (~1140 queries → 3 queries).
             val snapshot = statsCacheService.snapshot()
-            val list = statsRepo.muscleEngagement(period)
+            val list = statsRepo.muscleEngagementFast(period, snapshot)
             val analysis = statsRepo.muscleAnalysisFast(period, snapshot)
             _state.value = _state.value.copy(
                 loading = false,

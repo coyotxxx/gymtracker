@@ -440,6 +440,13 @@ class StatsRepository @Inject constructor(
             .sortedByDescending { it.volumeKg }
     }
 
+    /**
+     * MuscleEngagementFast — używa StatsSnapshot zamiast N+1 queries.
+     * Logika identyczna z muscleEngagement().
+     */
+    fun muscleEngagementFast(periodDays: Int, snapshot: StatsSnapshot): List<MuscleEngagement> =
+        computeMuscleEngagementFromSnapshot(periodDays, snapshot, System.currentTimeMillis())
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -1182,4 +1189,43 @@ private fun computeMuscleStatusForSnapshot(
     if (recommendedPct > 0 && actualPct > recommendedPct * 1.8) return MuscleStatus.OVER
     if (recommendedPct > 0 && actualPct < recommendedPct * 0.5) return MuscleStatus.UNDER
     return MuscleStatus.BALANCED
+}
+
+/**
+ * Pure function — testable bez DAO. Logika identyczna z StatsRepository.muscleEngagement().
+ */
+fun computeMuscleEngagementFromSnapshot(
+    periodDays: Int,
+    snapshot: StatsSnapshot,
+    now: Long
+): List<MuscleEngagement> {
+    val cutoff = if (periodDays > 0) now - periodDays.toLong() * 24L * 60L * 60L * 1000L else 0L
+    val finished = snapshot.finishedWorkouts.filter { it.startedAt >= cutoff }
+    if (finished.isEmpty()) return emptyList()
+
+    val perMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Pair<Double, Int>>()
+
+    for (w in finished) {
+        val sets = snapshot.completedSetsFor(w.id)
+        for (s in sets) {
+            val ex = snapshot.exerciseForSet(s) ?: continue
+            val vol = s.reps * s.weightKg
+            val (v, c) = perMuscle.getOrDefault(ex.primaryMuscle, 0.0 to 0)
+            perMuscle[ex.primaryMuscle] = (v + vol) to (c + 1)
+        }
+    }
+
+    val total = perMuscle.values.sumOf { it.first }
+    if (total <= 0) return emptyList()
+
+    return perMuscle.entries
+        .map { (muscle, vc) ->
+            MuscleEngagement(
+                muscle = muscle,
+                volumeKg = vc.first,
+                totalSets = vc.second,
+                percentOfTotal = ((vc.first * 100) / total).toInt().coerceIn(0, 100)
+            )
+        }
+        .sortedByDescending { it.volumeKg }
 }
