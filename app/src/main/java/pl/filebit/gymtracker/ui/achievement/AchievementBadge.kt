@@ -143,16 +143,16 @@ fun AchievementBadge(
             )
         )
     }
-    // Outer glow brush — pomarancowy halo wokol medalu (jak w "Legendarny")
-    // Tarcza zajmuje 0-55% radius (0.55 fillMaxSize). Halo w 55%-100% (45% prostranstwa).
-    val glowBrush = remember {
+    // Soft halo wokol tarczy — topi krawedz tarczy z halo tla
+    // Tarcza zajmuje 0-75% radius. Halo widoczny 75%-100% (25% prostranstwa).
+    val softHaloBrush = remember {
         Brush.radialGradient(
             colorStops = arrayOf(
-                0.0f to AccentOrange.copy(alpha = 0.85f),
-                0.30f to AccentOrange.copy(alpha = 0.70f),
-                0.55f to AccentOrange.copy(alpha = 0.50f),  // tuz za krawedzia tarczy
-                0.72f to AccentOrange.copy(alpha = 0.28f),
-                0.88f to AccentOrange.copy(alpha = 0.10f),
+                0.0f to AccentOrange.copy(alpha = 0.65f),
+                0.45f to AccentOrange.copy(alpha = 0.55f),
+                0.70f to AccentOrange.copy(alpha = 0.40f),  // tuz przy krawedzi tarczy
+                0.85f to AccentOrange.copy(alpha = 0.18f),
+                0.95f to AccentOrange.copy(alpha = 0.05f),
                 1.0f to Color.Transparent
             )
         )
@@ -179,22 +179,29 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // OUTER GLOW PRZENIESIONY na poziom AchievementModal (Box overlay).
-        // Tam ma fillMaxSize calego ekranu — halo wystaje poza modal padding.
+        // SOFT HALO wokol tarczy — alpha pulsing, topi krawedz tarczy z halo tla
+        // Box pelnomaksymalny z miekkim brushem; tarcza nakłada sie na centrum
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .graphicsLayer { alpha = glowAlpha.value }
+                .background(softHaloBrush)
+        )
 
-        // TARCZA — 75% z 320dp parent = 240dp (preferowany rozmiar)
+        // TARCZA — 75% z 240dp parent = 180dp.
+        // Border bardzo subtelny (alpha 0.10) zeby NIE tworzyl widocznej krawedzi
         Box(
             modifier = Modifier
                 .fillMaxSize(0.75f)
                 .shadow(
-                    elevation = 24.dp,
+                    elevation = 32.dp,  // mocniejszy shadow → softer fade
                     shape = CircleShape,
                     ambientColor = AccentOrange,
                     spotColor = AccentOrange
                 )
                 .clip(CircleShape)
                 .background(discBrush)
-                .border(1.dp, Color.White.copy(alpha = 0.25f), CircleShape)
+                .border(0.5.dp, Color.White.copy(alpha = 0.12f), CircleShape)
                 .drawWithCache {
                     // Brushes cached — przelicza tylko przy zmianie size, nie co frame
                     val s = size.minDimension

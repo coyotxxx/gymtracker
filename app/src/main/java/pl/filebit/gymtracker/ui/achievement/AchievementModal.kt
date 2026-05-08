@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -101,16 +102,15 @@ private fun AchievementModal(
         cardTranslateY.animateTo(0f, tween(700, easing = AppleEase))
     }
 
-    // Globalny halo — drawWithCache liczy radius z faktycznych wymiarow ekranu.
-    // Radius = 55% wiekszego wymiaru → halo dochodzi do krawedzi pionowych ekranu
-    // (default Brush.radialGradient ma radius = min(w,h)/2 = za maly).
+    // Halo stops — fade do 0 na 75% radius (jak CSS "ellipse 90% 70%")
+    // Bardziej miękki niż wcześniej, intensywniejsze centrum, dłuższy fade.
     val haloStops = remember {
         arrayOf(
-            0.0f to AccentOrange.copy(alpha = 0.55f),
-            0.18f to AccentOrange.copy(alpha = 0.42f),
-            0.35f to AccentOrange.copy(alpha = 0.28f),
-            0.55f to AccentOrange.copy(alpha = 0.14f),
-            0.78f to AccentOrange.copy(alpha = 0.05f),
+            0.0f to AccentOrange.copy(alpha = 0.50f),
+            0.15f to AccentOrange.copy(alpha = 0.35f),
+            0.30f to AccentOrange.copy(alpha = 0.22f),
+            0.50f to AccentOrange.copy(alpha = 0.10f),
+            0.75f to Color.Transparent,
             1.0f to Color.Transparent
         )
     }
@@ -127,23 +127,34 @@ private fun AchievementModal(
                 onClick = onDismiss
             )
     ) {
-        // GLOBAL HALO — drawWithCache z explicit radius = 55% wiekszego wymiaru
-        // Pokrywa wieksza czesc ekranu pionowo (default radius za maly bo min(w,h)/2)
+        // AMBIENT HALO — eliptyczny gradient (90% width × 70% height) jak CSS
+        // ellipse 90% 70%. Sięga rogów ekranu, miękko gaśnie do 100% radius.
+        // Implementacja: drawWithCache rysuje brush na wycinanej oval shape.
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .drawWithCache {
-                    val center = androidx.compose.ui.geometry.Offset(
-                        size.width / 2f, size.height / 2f
-                    )
-                    val maxRadius = maxOf(size.width, size.height) * 0.55f
+                    val cx = size.width / 2f
+                    val cy = size.height / 2f
+                    // Eliptyczne radius — szerszy poziomo, mniej pionowo
+                    val rX = size.width * 0.90f
+                    val rY = size.height * 0.70f
+                    // Brush ma jeden radius — używamy max(rX, rY) i skalujemy w canvas
+                    val maxR = maxOf(rX, rY)
                     val haloBrush = Brush.radialGradient(
                         colorStops = haloStops,
-                        center = center,
-                        radius = maxRadius
+                        center = androidx.compose.ui.geometry.Offset(cx, cy),
+                        radius = maxR
                     )
                     onDrawBehind {
-                        drawRect(haloBrush)
+                        // Scale aby halo było eliptyczne (szerszy poziomo)
+                        scale(
+                            scaleX = rX / maxR,
+                            scaleY = rY / maxR,
+                            pivot = androidx.compose.ui.geometry.Offset(cx, cy)
+                        ) {
+                            drawRect(haloBrush)
+                        }
                     }
                 }
         )
@@ -187,7 +198,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.30",
+                text = "v1.11.31",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
