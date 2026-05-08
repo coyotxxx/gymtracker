@@ -1392,6 +1392,12 @@ private fun TrainingPhaseCard(
         TrainingPhase.NO_DATA -> DarkOnSurfaceVariant to "❓"
     }
     val showDeloadButton = canApplyDeload && status.phase == TrainingPhase.NEEDS_DELOAD
+    // Kontekstowa info-karta (bez akcji) — DELOAD/ACCUM/INTENS to po prostu
+    // info "w jakiej fazie jesteś". Wizualnie odróżnij od kart-z-akcją:
+    // dyskretne tło + subtle border (zamiast accent).
+    val isContextInfo = !showDeloadButton && status.phase != TrainingPhase.NO_DATA
+    val cardBg = if (isContextInfo) DarkOnSurfaceVariant.copy(alpha = 0.06f) else accent.copy(alpha = 0.10f)
+    val cardBorder = if (isContextInfo) DarkOnSurfaceVariant.copy(alpha = 0.20f) else accent.copy(alpha = 0.4f)
     var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     if (showConfirm) {
@@ -1415,9 +1421,9 @@ private fun TrainingPhaseCard(
     androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
         colors = androidx.compose.material3.CardDefaults.cardColors(
-            containerColor = accent.copy(alpha = 0.10f)
+            containerColor = cardBg
         ),
-        border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+        border = BorderStroke(1.dp, cardBorder),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
@@ -1694,10 +1700,18 @@ private fun WhoopRecoveryCard(
         RecoveryZone.ORANGE -> AccentOrange to "Niskie"
         RecoveryZone.RED -> ErrorRed to "Krytyczne"
     }
+    // Pokazuj button gdy AI ma konkretną sugestię — łączymy 3 warunki:
+    // 1. Trwały trend: 5+ dni niski w RED/ORANGE
+    // 2. Pojedynczy CRITICAL factor (np. sen -23%) — silny sygnał, nie czekaj 5 dni
+    // 3. ORANGE od 2+ dni (szybsza eskalacja niż YELLOW)
+    val hasCriticalFactor = score.factors.any { it.severity == RecoveryFactorSeverity.CRITICAL }
     val showDeloadButton = canApplyDeload &&
         score.maturity != DataMaturity.LEARNING &&
-        score.daysBelowThreshold >= 5 &&
-        (score.zone == RecoveryZone.RED || score.zone == RecoveryZone.ORANGE)
+        (
+            (score.daysBelowThreshold >= 5 && (score.zone == RecoveryZone.RED || score.zone == RecoveryZone.ORANGE))
+                || (hasCriticalFactor && (score.zone == RecoveryZone.ORANGE || score.zone == RecoveryZone.YELLOW))
+                || (score.zone == RecoveryZone.ORANGE && score.daysBelowThreshold >= 2)
+        )
     var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     if (showConfirm) {
