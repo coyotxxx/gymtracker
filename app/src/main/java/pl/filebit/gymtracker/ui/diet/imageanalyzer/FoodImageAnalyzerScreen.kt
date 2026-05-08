@@ -413,14 +413,25 @@ private fun slotLabel(mt: MealType): String = when (mt) {
 private fun readImageBytes(context: Context, uri: Uri): ByteArray? = try {
     context.contentResolver.openInputStream(uri)?.use { stream ->
         val raw = stream.readBytes()
-        // Skompresuj jeśli >2 MB (Anthropic limit ~5 MB; mniejsze = szybsze)
-        if (raw.size > 2 * 1024 * 1024) {
-            val bitmap = BitmapFactory.decodeByteArray(raw, 0, raw.size)
-                ?: return@use raw
-            val output = ByteArrayOutputStream()
-            bitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, 80, output)
-            output.toByteArray()
-        } else raw
+        // ZAWSZE dekoduj i enkoduj jako JPEG, niezależnie od źródła:
+        // - rozwiązuje mismatch media_type (PNG/HEIC/WebP wysyłane jako image/jpeg → 400 z Anthropic)
+        // - skaluje long edge do 1568 px (zalecenie Anthropic — większe są i tak downscalowane)
+        // - mniejszy base64 = szybsza analiza
+        val bitmap = BitmapFactory.decodeByteArray(raw, 0, raw.size) ?: return@use raw
+        val maxEdge = 1568
+        val longEdge = maxOf(bitmap.width, bitmap.height)
+        val scaled = if (longEdge > maxEdge) {
+            val ratio = maxEdge.toFloat() / longEdge
+            android.graphics.Bitmap.createScaledBitmap(
+                bitmap,
+                (bitmap.width * ratio).toInt().coerceAtLeast(1),
+                (bitmap.height * ratio).toInt().coerceAtLeast(1),
+                true
+            )
+        } else bitmap
+        val output = ByteArrayOutputStream()
+        scaled.compress(android.graphics.Bitmap.CompressFormat.JPEG, 85, output)
+        output.toByteArray()
     }
 } catch (_: Exception) {
     null
