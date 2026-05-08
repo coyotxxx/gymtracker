@@ -209,81 +209,87 @@ class MuscleRecoveryAnalyzer @Inject constructor(
         )
     }
 
-    /**
-     * v1.11.46 — fast variant z pre-fetched StatsSnapshot.
-     * Logika IDENTYCZNA z analyze().
-     */
-    fun analyzeWithSnapshot(snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot): MuscleRecoveryReport {
-        val now = System.currentTimeMillis()
-        val msPerHour = 3600 * 1000.0
-        val cutoff = now - 7L * 24 * 3600 * 1000
+    /** v1.11.46 — fast variant z pre-fetched StatsSnapshot. */
+    fun analyzeWithSnapshot(snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot): MuscleRecoveryReport =
+        computeMuscleRecoveryFromSnapshot(snapshot, System.currentTimeMillis(), tracked, halfLifeHours, maxFatigueSets)
+}
 
-        val recent = snapshot.finishedWorkouts
-            .filter { it.startedAt >= cutoff }
-            .sortedByDescending { it.startedAt }
+/** Pure function — testowalne bez DAO. Logika identyczna z MuscleRecoveryAnalyzer.analyze(). */
+fun computeMuscleRecoveryFromSnapshot(
+    snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
+    now: Long,
+    tracked: List<MuscleGroup>,
+    halfLifeHours: Map<MuscleGroup, Double>,
+    maxFatigueSets: Double
+): MuscleRecoveryReport {
+    val msPerHour = 3600 * 1000.0
+    val cutoff = now - 7L * 24 * 3600 * 1000
 
-        val statuses = tracked.map { muscle ->
-            var lastSessionMs: Long? = null
-            var lastSets = 0
+    val recent = snapshot.finishedWorkouts
+        .filter { it.startedAt >= cutoff }
+        .sortedByDescending { it.startedAt }
 
-            outer@ for (w in recent) {
-                val sets = snapshot.completedSetsFor(w.id)
-                if (sets.isEmpty()) continue
+    val statuses = tracked.map { muscle ->
+        var lastSessionMs: Long? = null
+        var lastSets = 0
 
-                var setsForMuscle = 0
-                for (s in sets) {
-                    val mg = snapshot.exercisesById[s.exerciseId]?.primaryMuscle ?: MuscleGroup.OTHER
-                    if (mg == muscle) setsForMuscle++
-                }
-                if (setsForMuscle > 0) {
-                    lastSessionMs = w.startedAt
-                    lastSets = setsForMuscle
-                    break@outer
-                }
+        outer@ for (w in recent) {
+            val sets = snapshot.completedSetsFor(w.id)
+            if (sets.isEmpty()) continue
+
+            var setsForMuscle = 0
+            for (s in sets) {
+                val mg = snapshot.exercisesById[s.exerciseId]?.primaryMuscle ?: MuscleGroup.OTHER
+                if (mg == muscle) setsForMuscle++
             }
-
-            if (lastSessionMs == null) {
-                MuscleRecoveryStatus(
-                    muscle = muscle,
-                    recoveryPct = 100,
-                    hoursSinceLastTrained = null,
-                    lastTrainedSets = 0,
-                    recommendation = TrainingRecommendation.TRAIN_HEAVY
-                )
-            } else {
-                val hoursSince = (now - lastSessionMs) / msPerHour
-                val halfLife = halfLifeHours[muscle] ?: 24.0
-                val initialFatigue = min(1.0, lastSets.toDouble() / maxFatigueSets)
-                val decayRate = 0.693 / halfLife
-                val currentFatigue = initialFatigue * exp(-hoursSince * decayRate)
-                val recovery = ((1 - currentFatigue) * 100).toInt().coerceIn(0, 100)
-                val rec = when {
-                    recovery >= 80 -> TrainingRecommendation.TRAIN_HEAVY
-                    recovery >= 60 -> TrainingRecommendation.TRAIN_LIGHT
-                    recovery >= 40 -> TrainingRecommendation.REST
-                    else -> TrainingRecommendation.AVOID
-                }
-                MuscleRecoveryStatus(
-                    muscle = muscle,
-                    recoveryPct = recovery,
-                    hoursSinceLastTrained = hoursSince,
-                    lastTrainedSets = lastSets,
-                    recommendation = rec
-                )
+            if (setsForMuscle > 0) {
+                lastSessionMs = w.startedAt
+                lastSets = setsForMuscle
+                break@outer
             }
         }
 
-        val avgRec = statuses.map { it.recoveryPct }.average().toInt()
-        val fresh = statuses.filter { it.recoveryPct >= 80 }.map { it.muscle }
-        val tired = statuses.filter { it.recoveryPct < 60 }.map { it.muscle }
-
-        return MuscleRecoveryReport(
-            statuses = statuses.sortedByDescending { it.recoveryPct },
-            avgRecoveryPct = avgRec,
-            freshGroups = fresh,
-            tiredGroups = tired
-        )
+        if (lastSessionMs == null) {
+            MuscleRecoveryStatus(
+                muscle = muscle,
+                recoveryPct = 100,
+                hoursSinceLastTrained = null,
+                lastTrainedSets = 0,
+                recommendation = TrainingRecommendation.TRAIN_HEAVY
+            )
+        } else {
+            val hoursSince = (now - lastSessionMs) / msPerHour
+            val halfLife = halfLifeHours[muscle] ?: 24.0
+            val initialFatigue = kotlin.math.min(1.0, lastSets.toDouble() / maxFatigueSets)
+            val decayRate = 0.693 / halfLife
+            val currentFatigue = initialFatigue * kotlin.math.exp(-hoursSince * decayRate)
+            val recovery = ((1 - currentFatigue) * 100).toInt().coerceIn(0, 100)
+            val rec = when {
+                recovery >= 80 -> TrainingRecommendation.TRAIN_HEAVY
+                recovery >= 60 -> TrainingRecommendation.TRAIN_LIGHT
+                recovery >= 40 -> TrainingRecommendation.REST
+                else -> TrainingRecommendation.AVOID
+            }
+            MuscleRecoveryStatus(
+                muscle = muscle,
+                recoveryPct = recovery,
+                hoursSinceLastTrained = hoursSince,
+                lastTrainedSets = lastSets,
+                recommendation = rec
+            )
+        }
     }
+
+    val avgRec = statuses.map { it.recoveryPct }.average().toInt()
+    val fresh = statuses.filter { it.recoveryPct >= 80 }.map { it.muscle }
+    val tired = statuses.filter { it.recoveryPct < 60 }.map { it.muscle }
+
+    return MuscleRecoveryReport(
+        statuses = statuses.sortedByDescending { it.recoveryPct },
+        avgRecoveryPct = avgRec,
+        freshGroups = fresh,
+        tiredGroups = tired
+    )
 }
 
 object MuscleRecoveryPromptHelper {
