@@ -88,6 +88,7 @@ class HomeViewModel @Inject constructor(
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository,
     private val deloadService: pl.filebit.gymtracker.data.repository.DeloadService,
+    private val loadIncreaseService: pl.filebit.gymtracker.data.repository.LoadIncreaseService,
     private val phaseAnalyzer: TrainingPhaseAnalyzer,
     private val healthAnalyzer: HealthInsightAnalyzer,
     private val recoveryScoreCalculator: RecoveryScoreCalculator,
@@ -292,6 +293,39 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             deloadService.cancelWithoutRestore()
             deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    // ===== LOAD INCREASE HANDLERS (ACWR DETRAINING) =====
+
+    /** Aplikuje zwiększenie obciążenia +5% do aktywnego planu. */
+    fun applyLoadIncrease(
+        onApplied: (pl.filebit.gymtracker.data.repository.LoadIncreaseService.ApplyResult?) -> Unit
+    ) {
+        val planId = state.value.todaysPlan?.id
+            ?: state.value.nextPlannedDay?.planId
+            ?: return
+        viewModelScope.launch {
+            val result = loadIncreaseService.apply(planId, factor = 1.05)
+            deloadRefresh.value = System.currentTimeMillis()
+            onApplied(result)
+        }
+    }
+
+    fun dismissLoadIncrease() {
+        viewModelScope.launch {
+            loadIncreaseService.dismiss()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    fun restoreLoadIncrease(
+        onRestored: (pl.filebit.gymtracker.data.repository.LoadIncreaseService.RestoreResult) -> Unit
+    ) {
+        viewModelScope.launch {
+            val result = loadIncreaseService.restore()
+            deloadRefresh.value = System.currentTimeMillis()
+            onRestored(result)
         }
     }
 

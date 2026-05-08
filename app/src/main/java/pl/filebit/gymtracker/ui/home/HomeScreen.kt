@@ -332,6 +332,19 @@ fun HomeScreen(
                                         )
                                     }
                                 }
+                            },
+                            onApplyIncrease = {
+                                vm.applyLoadIncrease { result ->
+                                    scope.launch {
+                                        if (result == null) {
+                                            snackbar.showSnackbar("Najpierw zakończ aktywny deload")
+                                        } else {
+                                            snackbar.showSnackbar(
+                                                "Plan '${result.planName}': ${result.updatedSets} setów × +${((result.factor - 1) * 100).toInt()}%"
+                                            )
+                                        }
+                                    }
+                                }
                             }
                         )
                     }
@@ -1910,30 +1923,51 @@ private fun WhoopRecoveryCard(
 private fun TrainingLoadCard(
     load: TrainingLoad,
     onDismiss: () -> Unit,
-    onApplyDeload: () -> Unit
+    onApplyDeload: () -> Unit,
+    onApplyIncrease: () -> Unit = {}
 ) {
     val (accent, label) = when (load.zone) {
         LoadZone.OPTIMAL -> SuccessGreen to "Optymalne"
-        LoadZone.DETRAINING -> DarkOnSurfaceVariant to "Detraining"
+        LoadZone.DETRAINING -> AccentOrange to "Detraining"
         LoadZone.OVERREACHING -> AccentOrange to "Wysokie"
         LoadZone.RISKY -> ErrorRed to "Ryzyko kontuzji"
         LoadZone.INSUFFICIENT -> DarkOnSurfaceVariant to "Mało danych"
     }
-    val showActionButton = load.zone == LoadZone.RISKY || load.zone == LoadZone.OVERREACHING
-    var showConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val showReduceButton = load.zone == LoadZone.RISKY || load.zone == LoadZone.OVERREACHING
+    val showIncreaseButton = load.zone == LoadZone.DETRAINING
+    var showReduceConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var showIncreaseConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
-    if (showConfirm) {
+    if (showReduceConfirm) {
         androidx.compose.material3.AlertDialog(
-            onDismissRequest = { showConfirm = false },
+            onDismissRequest = { showReduceConfirm = false },
             title = { androidx.compose.material3.Text("Zastosować redukcję obciążenia?", fontWeight = FontWeight.Bold) },
             text = { androidx.compose.material3.Text("ACWR ${"%.2f".format(load.acwr)} sygnalizuje przeciążenie. Algorytm sugeruje -30% obciążenie. Możesz w każdej chwili przywrócić oryginalne wagi.") },
             confirmButton = {
-                androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload() }) {
+                androidx.compose.material3.TextButton(onClick = { showReduceConfirm = false; onApplyDeload() }) {
                     androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
                 }
             },
             dismissButton = {
-                androidx.compose.material3.TextButton(onClick = { showConfirm = false }) {
+                androidx.compose.material3.TextButton(onClick = { showReduceConfirm = false }) {
+                    androidx.compose.material3.Text("Anuluj")
+                }
+            }
+        )
+    }
+
+    if (showIncreaseConfirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showIncreaseConfirm = false },
+            title = { androidx.compose.material3.Text("Zwiększyć obciążenie?", fontWeight = FontWeight.Bold) },
+            text = { androidx.compose.material3.Text("ACWR ${"%.2f".format(load.acwr)} jest niskie (Detraining). Algorytm sugeruje +5% wag w aktywnym planie. Możesz w każdej chwili przywrócić oryginalne wagi.") },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { showIncreaseConfirm = false; onApplyIncrease() }) {
+                    androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showIncreaseConfirm = false }) {
                     androidx.compose.material3.Text("Anuluj")
                 }
             }
@@ -1993,10 +2027,10 @@ private fun TrainingLoadCard(
                 style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
                 color = DarkOnSurface
             )
-            if (showActionButton) {
+            if (showReduceButton) {
                 Spacer(Modifier.height(10.dp))
                 androidx.compose.material3.Button(
-                    onClick = { showConfirm = true },
+                    onClick = { showReduceConfirm = true },
                     modifier = Modifier.fillMaxWidth(),
                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                         containerColor = accent,
@@ -2005,6 +2039,20 @@ private fun TrainingLoadCard(
                     shape = RoundedCornerShape(12.dp)
                 ) {
                     androidx.compose.material3.Text("Zastosuj redukcję obciążenia", fontWeight = FontWeight.Bold)
+                }
+            }
+            if (showIncreaseButton) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = { showIncreaseConfirm = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text("Zwiększ obciążenie (+5% wag)", fontWeight = FontWeight.Bold)
                 }
             }
         }
