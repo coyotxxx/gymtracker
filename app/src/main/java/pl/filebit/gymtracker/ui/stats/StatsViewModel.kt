@@ -14,6 +14,7 @@ import pl.filebit.gymtracker.data.repository.MuscleRecovery
 import pl.filebit.gymtracker.data.repository.OverviewStats
 import pl.filebit.gymtracker.data.repository.PersonalRecordRow
 import pl.filebit.gymtracker.data.repository.StagnationAlert
+import pl.filebit.gymtracker.data.repository.StatsCacheService
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
@@ -46,7 +47,8 @@ enum class VolumePeriod(val weeks: Int, val label: String) {
 class StatsViewModel @Inject constructor(
     private val statsRepo: StatsRepository,
     private val profileRepo: UserProfileRepository,
-    private val volumeService: pl.filebit.gymtracker.data.repository.VolumeService
+    private val volumeService: pl.filebit.gymtracker.data.repository.VolumeService,
+    private val statsCacheService: StatsCacheService
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(StatsUiState())
@@ -74,15 +76,19 @@ class StatsViewModel @Inject constructor(
             val isoDay = (cal.get(java.util.Calendar.DAY_OF_WEEK) - java.util.Calendar.MONDAY + 7) % 7 + 1
             val daysLeft = (7 - isoDay).coerceAtLeast(0)
 
-            // === RÓWNOLEGLE — async × 9 (zamiast sekwencyjnie). ~3-5x szybsze. ===
+            // === v1.11.42: snapshot raz dla 3 fast metod (overview/volumePerWeek/heatmap)
+            // ZACHOWANE bez zmian: prs, recovery, stagn, achievements, muscleD (kolejne refaktory).
+            val snapshot = runCatching { statsCacheService.snapshot() }
+                .getOrDefault(pl.filebit.gymtracker.data.repository.StatsSnapshot.EMPTY)
+
             coroutineScope {
-                val overviewD = async { statsRepo.overview() } // może rzucić — propaguje (jak w oryginale)
-                val vol26D = async { runCatching { statsRepo.volumePerWeek(26) }.getOrDefault(emptyList()) }
+                val overviewD = async { statsRepo.overviewFast(snapshot) }
+                val vol26D = async { runCatching { statsRepo.volumePerWeekFast(26, snapshot) }.getOrDefault(emptyList()) }
                 val muscleD = async { runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList()) }
                 val prsD = async { runCatching { statsRepo.allPersonalRecords() }.getOrDefault(emptyList()) }
                 val recoveryD = async { runCatching { statsRepo.recoveryByMuscle() }.getOrDefault(emptyList()) }
                 val stagnD = async { runCatching { statsRepo.allStagnations() }.getOrDefault(emptyList()) }
-                val heatmapD = async { runCatching { statsRepo.calendarHeatmap(84) }.getOrDefault(emptyMap()) }
+                val heatmapD = async { runCatching { statsRepo.calendarHeatmapFast(84, snapshot) }.getOrDefault(emptyMap()) }
                 val profileD = async { profileRepo.get() }
 
                 val o = overviewD.await()

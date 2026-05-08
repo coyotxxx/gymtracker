@@ -447,6 +447,18 @@ class StatsRepository @Inject constructor(
     fun muscleEngagementFast(periodDays: Int, snapshot: StatsSnapshot): List<MuscleEngagement> =
         computeMuscleEngagementFromSnapshot(periodDays, snapshot, System.currentTimeMillis())
 
+    /** v1.11.42 — overview() z snapshot (zero N+1). */
+    fun overviewFast(snapshot: StatsSnapshot): OverviewStats =
+        computeOverviewFromSnapshot(snapshot, System.currentTimeMillis())
+
+    /** v1.11.42 — volumePerWeek z snapshot. */
+    fun volumePerWeekFast(weeks: Int, snapshot: StatsSnapshot): List<Double> =
+        computeVolumePerWeekFromSnapshot(weeks, snapshot, System.currentTimeMillis())
+
+    /** v1.11.42 — calendarHeatmap z snapshot. */
+    fun calendarHeatmapFast(days: Int, snapshot: StatsSnapshot): Map<Long, Double> =
+        computeCalendarHeatmapFromSnapshot(days, snapshot, System.currentTimeMillis())
+
     suspend fun overview(): OverviewStats {
         val all = workoutDao.observeAllOnce()
         val finished = all.filter { it.finishedAt != null }
@@ -1228,4 +1240,87 @@ fun computeMuscleEngagementFromSnapshot(
             )
         }
         .sortedByDescending { it.volumeKg }
+}
+
+/** Top-level helper — kopia private weekKey z StatsRepository. ISO week. */
+private fun weekKeyForSnapshot(epochMillis: Long): String {
+    val cal = java.util.Calendar.getInstance()
+    cal.timeInMillis = epochMillis
+    cal.firstDayOfWeek = java.util.Calendar.MONDAY
+    cal.minimalDaysInFirstWeek = 4
+    val year = cal.get(java.util.Calendar.YEAR)
+    val week = cal.get(java.util.Calendar.WEEK_OF_YEAR)
+    return "%04d-W%02d".format(year, week)
+}
+
+/**
+ * Pure function — overview z snapshot. Logika identyczna z StatsRepository.overview().
+ */
+fun computeOverviewFromSnapshot(snapshot: StatsSnapshot, now: Long): OverviewStats {
+    val finished = snapshot.finishedWorkouts
+    val totalDuration = finished.sumOf {
+        // Workout.durationMillis to (finishedAt ?: now) - startedAt
+        // Snapshot ma finishedWorkouts (finishedAt != null)
+        (it.finishedAt ?: now) - it.startedAt
+    }
+    var totalVolume = 0.0
+    var totalSets = 0
+    for (w in finished) {
+        val sets = snapshot.completedSetsFor(w.id)
+        totalVolume += sets.sumOf { it.reps * it.weightKg }
+        totalSets += sets.size
+    }
+    val avg = if (finished.isNotEmpty()) totalVolume / finished.size else 0.0
+    val weekAgo = now - 7L * 24L * 60L * 60L * 1000L
+    val monthAgo = now - 30L * 24L * 60L * 60L * 1000L
+    val thisWeek = finished.count { it.startedAt >= weekAgo }
+    val thisMonth = finished.count { it.startedAt >= monthAgo }
+    return OverviewStats(
+        totalWorkouts = finished.size,
+        totalDurationMillis = totalDuration,
+        totalVolumeKg = totalVolume,
+        totalSets = totalSets,
+        avgVolumePerWorkout = avg,
+        workoutsThisWeek = thisWeek,
+        workoutsThisMonth = thisMonth
+    )
+}
+
+/**
+ * Pure function — volumePerWeek z snapshot. Logika identyczna z StatsRepository.volumePerWeek().
+ */
+fun computeVolumePerWeekFromSnapshot(weeks: Int, snapshot: StatsSnapshot, now: Long): List<Double> {
+    val all = snapshot.finishedWorkouts
+    if (all.isEmpty()) return List(weeks) { 0.0 }
+
+    val byWeek = mutableMapOf<String, Double>()
+    for (w in all) {
+        val sets = snapshot.completedSetsFor(w.id)
+        val vol = sets.sumOf { it.reps * it.weightKg }
+        val key = weekKeyForSnapshot(w.startedAt)
+        byWeek[key] = (byWeek[key] ?: 0.0) + vol
+    }
+
+    val result = ArrayList<Double>(weeks)
+    for (i in (weeks - 1) downTo 0) {
+        val key = weekKeyForSnapshot(now - i * 7L * 24L * 60L * 60L * 1000L)
+        result.add(byWeek[key] ?: 0.0)
+    }
+    return result
+}
+
+/**
+ * Pure function — calendarHeatmap z snapshot. Logika identyczna z StatsRepository.calendarHeatmap().
+ */
+fun computeCalendarHeatmapFromSnapshot(
+    days: Int,
+    snapshot: StatsSnapshot,
+    now: Long
+): Map<Long, Double> {
+    val cutoff = now - days * 86_400_000L
+    val workouts = snapshot.finishedWorkouts.filter { it.startedAt >= cutoff }
+    if (workouts.isEmpty()) return emptyMap()
+    val sets = workouts.flatMap { snapshot.completedSetsFor(it.id) }
+    return sets.groupBy { (it.createdAt / 86_400_000L) }
+        .mapValues { (_, list) -> list.sumOf { it.reps * it.weightKg } }
 }
