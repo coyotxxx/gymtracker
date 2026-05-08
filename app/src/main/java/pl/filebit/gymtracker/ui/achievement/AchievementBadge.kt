@@ -143,17 +143,16 @@ fun AchievementBadge(
             )
         )
     }
-    // Outer glow brush — mocna pomarancowa poswiata wokol medalu (na czarnym tle)
-    // Stops dopasowane do faktu ze tarcza zajmuje 0-37% radius (75% diam = 37% radius
-    // od centrum w 320dp box). Glow widoczny w 37%-100% przedzaile.
+    // Outer glow brush — pomarancowy halo wokol medalu (jak w "Legendarny")
+    // Tarcza zajmuje 0-55% radius (0.55 fillMaxSize). Halo w 55%-100% (45% prostranstwa).
     val glowBrush = remember {
         Brush.radialGradient(
             colorStops = arrayOf(
-                0.0f to AccentOrange.copy(alpha = 0.70f),
-                0.30f to AccentOrange.copy(alpha = 0.55f),
-                0.45f to AccentOrange.copy(alpha = 0.40f),
-                0.65f to AccentOrange.copy(alpha = 0.18f),
-                0.85f to AccentOrange.copy(alpha = 0.04f),
+                0.0f to AccentOrange.copy(alpha = 0.85f),
+                0.30f to AccentOrange.copy(alpha = 0.70f),
+                0.55f to AccentOrange.copy(alpha = 0.50f),  // tuz za krawedzia tarczy
+                0.72f to AccentOrange.copy(alpha = 0.28f),
+                0.88f to AccentOrange.copy(alpha = 0.10f),
                 1.0f to Color.Transparent
             )
         )
@@ -189,10 +188,11 @@ fun AchievementBadge(
                 .background(glowBrush)
         )
 
-        // TARCZA — 75% z 320dp parent = 240dp (taki sam jak wczesniej widoczny)
+        // TARCZA — 55% z 320dp parent = 176dp tarcza (mniejsza, jak w "Legendarny")
+        // Wieksze pole dla halo wokol = wiecej widocznego gradientu
         Box(
             modifier = Modifier
-                .fillMaxSize(0.75f)
+                .fillMaxSize(0.55f)
                 .shadow(
                     elevation = 24.dp,
                     shape = CircleShape,
