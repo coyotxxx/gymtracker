@@ -100,6 +100,22 @@ private fun AchievementModal(
         cardTranslateY.animateTo(0f, tween(700, easing = AppleEase))
     }
 
+    // Globalny halo brush — pomarańczowa poświata centrowana na środku ekranu
+    // Fill cały Box overlay = halo może wystawać poza Column padding
+    val globalHaloBrush = remember {
+        Brush.radialGradient(
+            colorStops = arrayOf(
+                0.0f to AccentOrange.copy(alpha = 0.55f),
+                0.10f to AccentOrange.copy(alpha = 0.50f),
+                0.18f to AccentOrange.copy(alpha = 0.40f),
+                0.28f to AccentOrange.copy(alpha = 0.22f),
+                0.40f to AccentOrange.copy(alpha = 0.08f),
+                0.55f to Color.Transparent,
+                1.0f to Color.Transparent
+            )
+        )
+    }
+
     BackHandler(onBack = onDismiss)
     Box(
         modifier = Modifier
@@ -112,7 +128,13 @@ private fun AchievementModal(
                 onClick = onDismiss
             )
     ) {
-        // BreathingBackground USUNIĘTY w v1.11.15 — statyczny scrim zamiast animowanego halo
+        // GLOBAL HALO — fillMaxSize na poziomie Box overlay (cały ekran)
+        // Halo wystaje poza Column padding, widoczny do krawędzi ekranu jak w "Legendarny"
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(globalHaloBrush)
+        )
 
             // Close button (prawy górny)
             IconButton(
@@ -153,7 +175,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.28",
+                text = "v1.11.29",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -185,9 +207,9 @@ private fun AchievementModal(
 
                 AchievementBadge(
                     emoji = achievement.emoji,
-                    modifier = Modifier.size(320.dp)  // 320 = miejsce na halo + 240dp tarcza
+                    modifier = Modifier.size(240.dp)  // halo przeniesiony na poziom modal (cały ekran)
                 )
-                Spacer(Modifier.height(20.dp))
+                Spacer(Modifier.height(36.dp))
 
                 AnimatedTitle(text = achievement.title, delayMs = 700)
                 Spacer(Modifier.height(12.dp))

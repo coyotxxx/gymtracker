@@ -179,20 +179,13 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // OUTER GLOW — pomaranczowa poswiata na pelnym 320dp parent
-        // alpha animowana w lambda → zero recompose
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .graphicsLayer { alpha = glowAlpha.value }
-                .background(glowBrush)
-        )
+        // OUTER GLOW PRZENIESIONY na poziom AchievementModal (Box overlay).
+        // Tam ma fillMaxSize calego ekranu — halo wystaje poza modal padding.
 
-        // TARCZA — 55% z 320dp parent = 176dp tarcza (mniejsza, jak w "Legendarny")
-        // Wieksze pole dla halo wokol = wiecej widocznego gradientu
+        // TARCZA — 75% z 320dp parent = 240dp (preferowany rozmiar)
         Box(
             modifier = Modifier
-                .fillMaxSize(0.55f)
+                .fillMaxSize(0.75f)
                 .shadow(
                     elevation = 24.dp,
                     shape = CircleShape,
