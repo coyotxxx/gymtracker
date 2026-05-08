@@ -376,6 +376,13 @@ class StatsRepository @Inject constructor(
         )
     }
 
+    /**
+     * MuscleAnalysisFast — używa StatsSnapshot zamiast N+1 queries DAO.
+     * Logika identyczna z muscleAnalysis() — test w MuscleAnalysisFastTest.kt.
+     */
+    fun muscleAnalysisFast(periodDays: Int, snapshot: StatsSnapshot): MuscleAnalysisReport =
+        computeMuscleAnalysisFromSnapshot(periodDays, snapshot, System.currentTimeMillis())
+
     private fun computeStatus(
         actualPct: Int,
         recommendedPct: Int,
@@ -1038,7 +1045,7 @@ data class MuscleAnalysisReport(
 )
 
 /** Główne grupy mięśniowe brane pod uwagę w analizie balansu. */
-private val MAIN_MUSCLES = listOf(
+internal val MAIN_MUSCLES = listOf(
     pl.filebit.gymtracker.data.entity.MuscleGroup.BACK,
     pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST,
     pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS,
@@ -1056,7 +1063,7 @@ private val MAIN_MUSCLES = listOf(
  * Bazuje na typowych rekomendacjach hipertroficznych — punkt odniesienia,
  * nie sztywna reguła.
  */
-private val RECOMMENDED_DISTRIBUTION = mapOf(
+internal val RECOMMENDED_DISTRIBUTION = mapOf(
     pl.filebit.gymtracker.data.entity.MuscleGroup.BACK to 22,
     pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS to 18,
     pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST to 16,
@@ -1109,3 +1116,70 @@ data class MuscleRecovery(
     val lastTrainingMillis: Long,
     val daysAgo: Int
 )
+
+/**
+ * Pure function — testable bez DAO. Logika identyczna z StatsRepository.muscleAnalysis().
+ *
+ * Wywoływana przez StatsRepository.muscleAnalysisFast() — `now` przekazywane jako
+ * parameter dla deterministycznych testów.
+ */
+fun computeMuscleAnalysisFromSnapshot(
+    periodDays: Int,
+    snapshot: StatsSnapshot,
+    now: Long
+): MuscleAnalysisReport {
+    val cutoff = if (periodDays > 0) now - periodDays.toLong() * 86_400_000L else 0L
+    val finished = snapshot.finishedWorkouts.filter { it.startedAt >= cutoff }
+
+    val perMuscle = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Triple<Double, Int, Long>>()
+    for (w in finished) {
+        val sets = snapshot.completedSetsFor(w.id)
+        for (s in sets) {
+            val ex = snapshot.exerciseForSet(s) ?: continue
+            val muscle = ex.primaryMuscle
+            val vol = s.reps * s.weightKg
+            val (v, c, lastTs) = perMuscle.getOrDefault(muscle, Triple(0.0, 0, 0L))
+            perMuscle[muscle] = Triple(v + vol, c + 1, maxOf(lastTs, w.startedAt))
+        }
+    }
+
+    val total = perMuscle.values.sumOf { it.first }.coerceAtLeast(0.0001)
+    val analyses = MAIN_MUSCLES.map { muscle ->
+        val (vol, sets, lastTs) = perMuscle[muscle] ?: Triple(0.0, 0, 0L)
+        val actualPct = ((vol * 100.0) / total).toInt().coerceIn(0, 100)
+        val recommendedPct = RECOMMENDED_DISTRIBUTION[muscle] ?: 0
+        val daysSinceLast = if (lastTs > 0) ((now - lastTs) / 86_400_000L).toInt() else null
+        val status = computeMuscleStatusForSnapshot(actualPct, recommendedPct, daysSinceLast)
+        MuscleAnalysis(
+            muscle = muscle,
+            volumeKg = vol,
+            totalSets = sets,
+            actualPercent = actualPct,
+            recommendedPercent = recommendedPct,
+            daysSinceLast = daysSinceLast,
+            status = status
+        )
+    }
+    return MuscleAnalysisReport(
+        periodDays = periodDays,
+        totalVolumeKg = total,
+        analyses = analyses.sortedWith(compareBy({ it.status.priority }, { -it.actualPercent }))
+    )
+}
+
+/**
+ * Top-level kopia logiki StatsRepository.computeStatus() — bo prywatne method
+ * w klasie nie jest dostępne dla top-level computeMuscleAnalysisFromSnapshot.
+ * MUSI być identyczne z private computeStatus() w klasie!
+ */
+private fun computeMuscleStatusForSnapshot(
+    actualPct: Int,
+    recommendedPct: Int,
+    daysSinceLast: Int?
+): MuscleStatus {
+    if (daysSinceLast == null) return MuscleStatus.NEGLECTED
+    if (daysSinceLast > 21) return MuscleStatus.NEGLECTED
+    if (recommendedPct > 0 && actualPct > recommendedPct * 1.8) return MuscleStatus.OVER
+    if (recommendedPct > 0 && actualPct < recommendedPct * 0.5) return MuscleStatus.UNDER
+    return MuscleStatus.BALANCED
+}
