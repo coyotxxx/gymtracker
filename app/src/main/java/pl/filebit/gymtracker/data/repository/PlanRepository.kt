@@ -67,6 +67,9 @@ class PlanRepository @Inject constructor(
 
     fun observeAllPlans(): Flow<List<TrainingPlan>> = planDao.observeAll()
 
+    /** v1.11.50 — bulk fetch wszystkich planow (do uniknięcia N+1 w HistoryViewModel). */
+    suspend fun getAll(): List<TrainingPlan> = planDao.getAll()
+
     suspend fun getPlan(id: Long): TrainingPlan? = planDao.getById(id)
 
     suspend fun upsertPlan(plan: TrainingPlan): Long = planDao.upsert(plan)

@@ -463,6 +463,10 @@ class StatsRepository @Inject constructor(
     fun recoveryByMuscleFast(snapshot: StatsSnapshot): List<MuscleRecovery> =
         computeRecoveryByMuscleFromSnapshot(snapshot, System.currentTimeMillis())
 
+    /** v1.11.50 — detectNewPRs z snapshot (do użycia w HistoryViewModel). */
+    fun detectNewPRsFast(currentWorkoutId: Long, snapshot: StatsSnapshot): List<NewPr> =
+        computeNewPRsFromSnapshot(currentWorkoutId, snapshot) { w, r -> epley1RM(w, r) }
+
     /** v1.11.44 — allPersonalRecords z snapshot. */
     fun allPersonalRecordsFast(snapshot: StatsSnapshot): List<PersonalRecordRow> =
         computeAllPersonalRecordsFromSnapshot(snapshot) { weight, reps -> epley1RM(weight, reps) }
@@ -1450,6 +1454,46 @@ fun computeAllStagnationsFromSnapshot(
                     exerciseName = name,
                     stuckAtKg = firstWeight,
                     workoutsAtSameWeight = threshold
+                )
+            )
+        }
+    }
+    return results
+}
+
+/**
+ * Pure function — detectNewPRs z snapshot.
+ * Logika identyczna z StatsRepository.detectNewPRs().
+ */
+fun computeNewPRsFromSnapshot(
+    currentWorkoutId: Long,
+    snapshot: StatsSnapshot,
+    epley: (Double, Int) -> Double = { w, r -> if (w > 0 && r > 0) w * (1 + r / 30.0) else 0.0 }
+): List<NewPr> {
+    val curSets = snapshot.completedSetsFor(currentWorkoutId)
+    if (curSets.isEmpty()) return emptyList()
+
+    val byExercise = curSets.groupBy { it.exerciseId }
+    val results = mutableListOf<NewPr>()
+
+    // Pre-group: completed sets by exerciseId (raz dla wszystkich exercises)
+    val completedSetsByExercise = snapshot.completedSets.groupBy { it.exerciseId }
+
+    for ((exId, list) in byExercise) {
+        val allCompletedForEx = completedSetsByExercise[exId] ?: continue
+        val previousMax1RM = allCompletedForEx
+            .filter { it.workoutId != currentWorkoutId }
+            .maxOfOrNull { epley(it.weightKg, it.reps) } ?: 0.0
+        val curMax = list.maxOfOrNull { epley(it.weightKg, it.reps) } ?: 0.0
+        if (curMax > previousMax1RM && curMax > 0.0) {
+            val bestSet = list.maxByOrNull { epley(it.weightKg, it.reps) }!!
+            results.add(
+                NewPr(
+                    exerciseId = exId,
+                    weightKg = bestSet.weightKg,
+                    reps = bestSet.reps,
+                    previousBest1RM = previousMax1RM,
+                    new1RM = curMax
                 )
             )
         }
