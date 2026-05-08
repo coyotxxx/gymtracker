@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 318
-        versionName = "1.11.55"
+        versionCode = 319
+        versionName = "1.11.56"
         vectorDrawables { useSupportLibrary = true }
     }
 
@@ -121,6 +121,12 @@ dependencies {
 
     // Lottie (splash animation)
     implementation(libs.lottie.compose)
+
+    // Markwon — markdown dla tekstow od AI (View-based, niezalezne od Compose)
+    implementation(libs.markwon.core)
+    implementation(libs.markwon.ext.tables)
+    implementation(libs.markwon.ext.strikethrough)
+    implementation(libs.markwon.linkify)
 
     // BarcodeScanner (v0.95) — CameraX + ML Kit barcode scanning
     implementation("androidx.camera:camera-core:1.3.4")

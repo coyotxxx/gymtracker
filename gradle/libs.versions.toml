@@ -36,6 +36,9 @@ securityCrypto = "1.1.0-alpha06"
 # Lottie (splash animation)
 lottie = "6.6.0"
 
+# Markwon (markdown for AI text — Android-native, View-based, niezalezne od Compose)
+markwon = "4.6.2"
+
 # Testing
 junit = "4.13.2"
 
@@ -88,6 +91,12 @@ androidx-security-crypto = { group = "androidx.security", name = "security-crypt
 
 # Lottie
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
+
+# Markwon (markdown rendering for AI texts)
+markwon-core = { group = "io.noties.markwon", name = "core", version.ref = "markwon" }
+markwon-ext-tables = { group = "io.noties.markwon", name = "ext-tables", version.ref = "markwon" }
+markwon-ext-strikethrough = { group = "io.noties.markwon", name = "ext-strikethrough", version.ref = "markwon" }
+markwon-linkify = { group = "io.noties.markwon", name = "linkify", version.ref = "markwon" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }

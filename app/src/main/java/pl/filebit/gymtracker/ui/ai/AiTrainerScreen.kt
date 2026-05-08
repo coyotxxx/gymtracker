@@ -538,11 +538,18 @@ private fun MessageBubble(
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
                 SelectionContainer {
-                    Text(
-                        message.text,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = if (isUser) Color.Black else DarkOnSurface
-                    )
+                    if (isUser) {
+                        Text(
+                            message.text,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color.Black
+                        )
+                    } else {
+                        pl.filebit.gymtracker.ui.components.AiMarkdown(
+                            text = message.text,
+                            contentColor = DarkOnSurface
+                        )
+                    }
                 }
                 message.proposal?.let { p ->
                     Spacer(Modifier.height(10.dp))

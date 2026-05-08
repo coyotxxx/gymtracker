@@ -563,7 +563,7 @@ substitutePrompt?.let { sp ->
                                     color = AccentOrange
                                 )
                                 Spacer(Modifier.height(2.dp))
-                                Text(aiText, style = MaterialTheme.typography.bodyMedium)
+                                pl.filebit.gymtracker.ui.components.AiMarkdown(text = aiText)
                             }
                         }
                     }
