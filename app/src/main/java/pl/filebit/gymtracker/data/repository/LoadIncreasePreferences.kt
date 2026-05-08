@@ -48,7 +48,6 @@ data class ActiveLoadIncreaseState(
     val startedAtMs: Long,
     val planId: Long,
     val planName: String,
-    val factor: Double,                    // np. 1.10 (+10%)
-    val originalSetCounts: Map<Long, Int>, // planExerciseId → originalNumberOfSets (jeśli dodaliśmy sety)
-    val addedSetIds: List<Long>            // ID dodanych setów (do usunięcia przy restore)
+    val factor: Double,                    // np. 1.05 (+5%)
+    val originalWeights: Map<Long, Double> // setId → originalWeightKg (prawdziwy snapshot)
 )

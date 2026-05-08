@@ -50,32 +50,25 @@ class LoadIncreaseService @Inject constructor(
                 planId = planId,
                 planName = plan.name,
                 factor = factor,
-                originalSetCounts = originalWeights.mapValues { 1 }, // placeholder dla future "dodaj set"
-                addedSetIds = emptyList()
+                originalWeights = originalWeights
             )
         )
-        // Hack: trzymamy originalWeights w innej mapie do restore — re-use originalSetCounts
-        // jako Map<setId, original_weight_as_int>... ale to traci precyzję. Lepiej osobne pole:
-        // (decyzja na MVP: cofamy poprzez applyFactor — restore mnoży × 1/factor)
         return ApplyResult(updatedCount, factor, plan.name)
     }
 
     /**
-     * Przywróć oryginalne wagi (× 1/factor).
-     * Wywoływane gdy user zmienił zdanie albo po cyklu.
+     * Przywróć oryginalne wagi z snapshot (NIE przez podzielenie, żeby nie zepsuć
+     * gdy user manualnie zmienił wagę po apply).
      */
     suspend fun restore(): RestoreResult {
         val state = prefs.activeIncrease() ?: return RestoreResult(0, "")
         val planExercises = planRepo.getPlanExercises(state.planId)
         var restoredCount = 0
-        val inverse = 1.0 / state.factor
         for (pe in planExercises) {
             val sets = planRepo.getSetsForPlanExercise(pe.id)
             for (set in sets) {
-                val current = set.weightKg ?: continue
-                if (current <= 0) continue
-                // Przywróć poprzez podzielenie przez factor (× 1/1.05 = ÷ 1.05)
-                planRepo.updatePlanSet(set.copy(weightKg = current * inverse))
+                val original = state.originalWeights[set.id] ?: continue
+                planRepo.updatePlanSet(set.copy(weightKg = original))
                 restoredCount++
             }
         }
