@@ -222,6 +222,49 @@ fun AiSettingsScreen(
                 }
             }
 
+            // Saldo / billing — link do panelu providera
+            item {
+                val billingUrl = when (cfg.provider) {
+                    AiProvider.ANTHROPIC -> "https://platform.claude.com/settings/billing"
+                    AiProvider.OPENAI -> "https://platform.openai.com/settings/organization/billing/overview"
+                }
+                val providerName = when (cfg.provider) {
+                    AiProvider.ANTHROPIC -> "Anthropic"
+                    AiProvider.OPENAI -> "OpenAI"
+                }
+                Card(
+                    onClick = { uriHandler.openUri(billingUrl) },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("💳", style = MaterialTheme.typography.titleLarge)
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                "Saldo i kredyty",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                "Sprawdź stan kredytów i doładuj konto $providerName",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Icon(
+                            Icons.Default.OpenInNew,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+
             // Status testu
             state.testResult?.let { result ->
                 item {
