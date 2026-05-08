@@ -198,20 +198,13 @@ private fun QuickAskBubble(m: QuickAskMessage) {
             shape = RoundedCornerShape(12.dp)
         ) {
             SelectionContainer {
-                if (isUser) {
-                    Text(
-                        m.text,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = androidx.compose.ui.graphics.Color.Black,
-                        modifier = Modifier.padding(10.dp)
-                    )
-                } else {
-                    pl.filebit.gymtracker.ui.components.AiMarkdown(
-                        text = m.text,
-                        contentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
-                        modifier = Modifier.padding(10.dp)
-                    )
-                }
+                Text(
+                    m.text,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = if (isUser) androidx.compose.ui.graphics.Color.Black
+                    else pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    modifier = Modifier.padding(10.dp)
+                )
             }
         }
     }

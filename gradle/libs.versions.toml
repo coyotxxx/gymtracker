@@ -36,9 +36,6 @@ securityCrypto = "1.1.0-alpha06"
 # Lottie (splash animation)
 lottie = "6.6.0"
 
-# Markdown renderer (AI text)
-markdownRenderer = "0.35.0"
-
 # Testing
 junit = "4.13.2"
 
@@ -91,9 +88,6 @@ androidx-security-crypto = { group = "androidx.security", name = "security-crypt
 
 # Lottie
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
-
-# Markdown renderer (Material3 styling)
-markdown-renderer-m3 = { group = "com.mikepenz", name = "multiplatform-markdown-renderer-m3", version.ref = "markdownRenderer" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }

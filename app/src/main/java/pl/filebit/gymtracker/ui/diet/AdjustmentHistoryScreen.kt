@@ -159,7 +159,7 @@ private fun AdjustmentRow(adj: DietAdjustment) {
                             ),
                             color = AccentOrange
                         )
-                        pl.filebit.gymtracker.ui.components.AiMarkdown(text = aiText)
+                        Text(aiText, style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }

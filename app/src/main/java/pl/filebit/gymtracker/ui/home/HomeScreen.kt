@@ -1477,9 +1477,10 @@ private fun TrainingPhaseCard(
                 }
             }
             Spacer(Modifier.height(8.dp))
-            pl.filebit.gymtracker.ui.components.AiMarkdown(
-                text = status.recommendation,
-                contentColor = DarkOnSurface
+            androidx.compose.material3.Text(
+                status.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
             )
             if (showDeloadButton) {
                 Spacer(Modifier.height(10.dp))
@@ -1605,9 +1606,10 @@ private fun RecoveryCard(
                 }
             }
             Spacer(Modifier.height(8.dp))
-            pl.filebit.gymtracker.ui.components.AiMarkdown(
-                text = insight.recommendation,
-                contentColor = DarkOnSurface
+            androidx.compose.material3.Text(
+                insight.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
             )
             if (showDeloadButton) {
                 Spacer(Modifier.height(10.dp))
@@ -2155,9 +2157,10 @@ private fun TrainingReadinessCard(
                 }
             }
             Spacer(Modifier.height(6.dp))
-            pl.filebit.gymtracker.ui.components.AiMarkdown(
-                text = readiness.recommendation,
-                contentColor = DarkOnSurface
+            androidx.compose.material3.Text(
+                readiness.recommendation,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
             )
             // Komponenty z procentami
             Spacer(Modifier.height(10.dp))
