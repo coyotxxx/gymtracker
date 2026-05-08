@@ -59,7 +59,10 @@ class StatsViewModel @Inject constructor(
     fun setVolumePeriod(p: VolumePeriod) {
         if (_state.value.muscleVolumePeriod == p) return
         viewModelScope.launch {
-            val report = runCatching { volumeService.reportForWeeks(p.weeks) }.getOrDefault(emptyList())
+            // v1.11.48: snapshot dla fast wariantu
+            val snapshot = runCatching { statsCacheService.snapshot() }
+                .getOrDefault(pl.filebit.gymtracker.data.repository.StatsSnapshot.EMPTY)
+            val report = runCatching { volumeService.reportForWeeksFast(p.weeks, snapshot) }.getOrDefault(emptyList())
             _state.value = _state.value.copy(
                 muscleVolumePeriod = p,
                 muscleVolumeReport = report
@@ -84,7 +87,7 @@ class StatsViewModel @Inject constructor(
             coroutineScope {
                 val overviewD = async { statsRepo.overviewFast(snapshot) }
                 val vol26D = async { runCatching { statsRepo.volumePerWeekFast(26, snapshot) }.getOrDefault(emptyList()) }
-                val muscleD = async { runCatching { volumeService.reportForWeeks(period.weeks) }.getOrDefault(emptyList()) }
+                val muscleD = async { runCatching { volumeService.reportForWeeksFast(period.weeks, snapshot) }.getOrDefault(emptyList()) }
                 val prsD = async { runCatching { statsRepo.allPersonalRecordsFast(snapshot) }.getOrDefault(emptyList()) }
                 val recoveryD = async { runCatching { statsRepo.recoveryByMuscleFast(snapshot) }.getOrDefault(emptyList()) }
                 val stagnD = async { runCatching { statsRepo.allStagnationsFast(snapshot) }.getOrDefault(emptyList()) }

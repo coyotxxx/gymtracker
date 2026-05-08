@@ -67,4 +67,42 @@ class VolumeService @Inject constructor(
         val goal = profileRepo.get().goal
         return reportWeeklyVolume(byMuscleAvg, goal)
     }
+
+    /** v1.11.48 — fast variant z pre-fetched StatsSnapshot. */
+    suspend fun reportForWeeksFast(weeks: Int, snapshot: StatsSnapshot): List<MuscleVolumeReport> {
+        val goal = profileRepo.get().goal
+        return computeMuscleVolumeReportFromSnapshot(weeks, snapshot, System.currentTimeMillis(), goal)
+    }
+}
+
+/**
+ * Pure function — testowalne bez DAO. Logika identyczna z VolumeService.reportForWeeks().
+ * Parametr `now` dla deterministycznych testów. `goal` przekazywany z VolumeService.
+ */
+fun computeMuscleVolumeReportFromSnapshot(
+    weeks: Int,
+    snapshot: StatsSnapshot,
+    now: Long,
+    goal: pl.filebit.gymtracker.data.entity.TrainingGoal
+): List<MuscleVolumeReport> {
+    val tz = TimeZone.currentSystemDefault()
+    val today = kotlinx.datetime.Instant.fromEpochMilliseconds(now).toLocalDateTime(tz).date
+    val daysFromMonday = today.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber
+    val mondayDate = today.minus(daysFromMonday, DateTimeUnit.DAY)
+    val weekStart = mondayDate.atStartOfDayIn(tz).toEpochMilliseconds()
+    val weekEnd = weekStart + 7.days.inWholeMilliseconds
+    val periodStart = weekStart - (weeks - 1) * 7.days.inWholeMilliseconds
+
+    val workouts = snapshot.finishedWorkouts
+        .filter { it.startedAt in periodStart until weekEnd }
+
+    val sets = workouts.flatMap { snapshot.completedSetsFor(it.id) }
+
+    val byMuscleAvg: Map<MuscleGroup, Int> = sets
+        .mapNotNull { snapshot.exercisesById[it.exerciseId]?.primaryMuscle }
+        .groupingBy { it }
+        .eachCount()
+        .mapValues { (_, count) -> count / weeks }
+
+    return reportWeeklyVolume(byMuscleAvg, goal)
 }
