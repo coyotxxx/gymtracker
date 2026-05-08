@@ -211,7 +211,7 @@ class MuscleRecoveryAnalyzer @Inject constructor(
 
     /** v1.11.46 — fast variant z pre-fetched StatsSnapshot. */
     fun analyzeWithSnapshot(snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot): MuscleRecoveryReport =
-        computeMuscleRecoveryFromSnapshot(snapshot, System.currentTimeMillis(), tracked, halfLifeHours, maxFatigueSets)
+        computeMuscleRecoveryFromSnapshot(snapshot, System.currentTimeMillis(), tracked, halfLifeHours, maxFatigueSets.toDouble())
 }
 
 /** Pure function — testowalne bez DAO. Logika identyczna z MuscleRecoveryAnalyzer.analyze(). */
