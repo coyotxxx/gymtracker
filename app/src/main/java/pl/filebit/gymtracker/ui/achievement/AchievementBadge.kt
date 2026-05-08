@@ -143,14 +143,17 @@ fun AchievementBadge(
             )
         )
     }
-    // Outer glow brush — pomarancowa poswiata wokol medalu (na czarnym tle)
+    // Outer glow brush — mocna pomarancowa poswiata wokol medalu (na czarnym tle)
+    // Stops dopasowane do faktu ze tarcza zajmuje 0-37% radius (75% diam = 37% radius
+    // od centrum w 320dp box). Glow widoczny w 37%-100% przedzaile.
     val glowBrush = remember {
         Brush.radialGradient(
             colorStops = arrayOf(
-                0.0f to AccentOrange.copy(alpha = 0.50f),
-                0.35f to AccentOrange.copy(alpha = 0.35f),
-                0.55f to AccentOrange.copy(alpha = 0.18f),
-                0.80f to AccentOrange.copy(alpha = 0.04f),
+                0.0f to AccentOrange.copy(alpha = 0.70f),
+                0.30f to AccentOrange.copy(alpha = 0.55f),
+                0.45f to AccentOrange.copy(alpha = 0.40f),
+                0.65f to AccentOrange.copy(alpha = 0.18f),
+                0.85f to AccentOrange.copy(alpha = 0.04f),
                 1.0f to Color.Transparent
             )
         )
@@ -177,28 +180,19 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
-        // OUTER GLOW — pomaranczowa poswiata wokol medalu
-        // graphicsLayer scale 1.45x = glow wystaje poza parent bounds (po renderowaniu)
+        // OUTER GLOW — pomaranczowa poswiata na pelnym 320dp parent
         // alpha animowana w lambda → zero recompose
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .graphicsLayer {
-                    scaleX = 1.45f
-                    scaleY = 1.45f
-                    alpha = glowAlpha.value
-                }
+                .graphicsLayer { alpha = glowAlpha.value }
                 .background(glowBrush)
         )
 
-        // TARCZA — premium look (lustrowy medal):
-        // - silniejszy shadow (poświata)
-        // - off-center highlight (lustrowy odblask u góry-lewej)
-        // - jaśniejszy inner ring
-        // - pulsing highlight overlay (animowane oddychanie)
+        // TARCZA — 75% z 320dp parent = 240dp (taki sam jak wczesniej widoczny)
         Box(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxSize(0.75f)
                 .shadow(
                     elevation = 24.dp,
                     shape = CircleShape,

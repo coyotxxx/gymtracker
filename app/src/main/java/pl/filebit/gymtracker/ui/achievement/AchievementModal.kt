@@ -153,7 +153,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.26",
+                text = "v1.11.27",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -185,9 +185,9 @@ private fun AchievementModal(
 
                 AchievementBadge(
                     emoji = achievement.emoji,
-                    modifier = Modifier.size(240.dp)
+                    modifier = Modifier.size(320.dp)  // 320 = miejsce na halo + 240dp tarcza
                 )
-                Spacer(Modifier.height(40.dp))
+                Spacer(Modifier.height(20.dp))
 
                 AnimatedTitle(text = achievement.title, delayMs = 700)
                 Spacer(Modifier.height(12.dp))
