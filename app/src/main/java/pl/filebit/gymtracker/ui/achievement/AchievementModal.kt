@@ -181,7 +181,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.32",
+                text = "v1.11.33",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -215,8 +215,8 @@ private fun AchievementModal(
                 AnimatedTitle(text = achievement.title, delayMs = 700)
                 Spacer(Modifier.height(12.dp))
                 AnimatedDescription(text = achievement.description, delayMs = 850)
-                // AnimatedActions (Swietnie + share) USUNIETE w v1.11.32 —
-                // tap-to-dismiss na calym ekranie zastepuje confirm button.
+                Spacer(Modifier.height(28.dp))
+                AnimatedCongrats(delayMs = 1050)
             }
     }
 }
@@ -294,4 +294,15 @@ private fun AnimatedDescription(text: String, delayMs: Int) {
     )
 }
 
-// AnimatedActions USUNIETE w v1.11.32 — tap-to-dismiss na calym ekranie
+@Composable
+private fun AnimatedCongrats(delayMs: Int) {
+    val alphaAnim = rememberFadeInAlpha(delayMs)
+    Text(
+        text = "Świetna robota! 💪",
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Bold,
+        color = AccentOrange,
+        textAlign = TextAlign.Center,
+        modifier = Modifier.graphicsLayer { alpha = alphaAnim.value }
+    )
+}
