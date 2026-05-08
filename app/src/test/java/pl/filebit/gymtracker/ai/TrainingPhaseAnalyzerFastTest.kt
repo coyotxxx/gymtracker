@@ -90,7 +90,7 @@ class TrainingPhaseAnalyzerFastTest {
             stagnatingCount = 3,
             regressingCount = 1,
             deloadRecommended = true,
-            recommendation = "Stagnacja"
+            deloadReason = "Stagnacja"
         )
         val result = computeTrainingPhaseFromSnapshot(snapshot, stagnation, now)
         assertEquals(TrainingPhase.NEEDS_DELOAD, result.phase)
