@@ -35,7 +35,8 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     @Assisted params: WorkerParameters,
     private val profileRepo: UserProfileRepository,
     private val statsRepo: StatsRepository,
-    private val workoutDao: WorkoutDao
+    private val workoutDao: WorkoutDao,
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -62,7 +63,7 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
         } else null
 
         // 3. Partia >7 dni bez treningu
-        val recovery = statsRepo.recoveryByMuscle()
+        val recovery = statsRepo.recoveryByMuscleFast(statsCacheService.snapshot())
         val staleMuscle = recovery
             .filter { it.daysAgo >= 7 }
             .maxByOrNull { it.daysAgo }

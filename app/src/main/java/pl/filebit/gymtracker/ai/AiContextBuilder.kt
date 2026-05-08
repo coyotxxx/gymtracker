@@ -45,7 +45,8 @@ class AiContextBuilder @Inject constructor(
     private val planSetDao: PlanExerciseSetDao,
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
-    private val exerciseDao: ExerciseDao
+    private val exerciseDao: ExerciseDao,
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
 ) {
 
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -77,15 +78,17 @@ class AiContextBuilder @Inject constructor(
     ): String {
         val profile = profileRepo.get()
         val measurements = bodyRepo.getAllAsc().takeLast(15)
-        val overview = statsRepo.overview()
+        // v1.11.45: snapshot raz dla overview/muscleEngagement + workouts data
+        val snapshot = statsCacheService.snapshot()
+        val overview = statsRepo.overviewFast(snapshot)
         val streak = statsRepo.streakInfo()
         val weekProgress = statsRepo.weekProgress(profile.daysPerWeek)
         val achievements = statsRepo.unlockedAchievements(profile.daysPerWeek)
-        val muscle = statsRepo.muscleEngagement(periodDays = 90)
+        val muscle = statsRepo.muscleEngagementFast(periodDays = 90, snapshot = snapshot)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
         val goalProgresses = goalRepo.computeAllActiveProgress()
-        val allExercises = exerciseDao.getAll()
+        val allExercises = snapshot.allExercises  // pre-fetched w snapshot
 
         // Pre-collect plans
         val plansData: List<PlanWithDays> = planDao.getAll().map { plan ->
@@ -104,14 +107,12 @@ class AiContextBuilder @Inject constructor(
             PlanWithDays(plan, daysData)
         }
 
-        // Pre-collect recent workouts
-        val recentWorkouts = workoutDao.observeAllOnce()
-            .filter { it.finishedAt != null }
-            .take(recentWorkoutsLimit)
+        // v1.11.45: Pre-collect recent workouts z snapshot (zero N+1 queries)
+        val recentWorkouts = snapshot.finishedWorkouts.take(recentWorkoutsLimit)
         val workoutsData: List<WorkoutWithExercises> = recentWorkouts.map { w ->
-            val sets = setDao.getForWorkout(w.id)
+            val sets = snapshot.setsByWorkoutId[w.id] ?: emptyList()
             val byExercise = sets.groupBy { it.exerciseId }.map { (exId, list) ->
-                exerciseDao.getById(exId) to list
+                snapshot.exercisesById[exId] to list
             }
             WorkoutWithExercises(w, byExercise)
         }
