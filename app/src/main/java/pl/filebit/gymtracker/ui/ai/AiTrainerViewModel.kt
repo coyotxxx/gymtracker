@@ -251,17 +251,16 @@ class AiTrainerViewModel @Inject constructor(
                 )
             }.getOrElse { "{}" }
 
-            val combined = if (isFirstMessage) {
-                "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\nPytanie/prośba:\n$prompt"
-            } else {
-                prompt
-            }
+            // Kontekst dolaczany do KAZDEJ user message (snapshot statystyk
+            // i planu jest zawsze swiezy) - wczesniej tylko isFirstMessage,
+            // co powodowalo ze AI nie mial dostepu do danych przy 2-N pytaniu
+            val combined = "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\nPytanie/prośba:\n$prompt"
 
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)
             } + AiMessage(AiRole.USER, combined)
 
-            val result = client.chat(cfg, apiMessages)
+            val result = client.chat(cfg, apiMessages, source = "AiTrainer")
             result.fold(
                 onSuccess = { response ->
                     val proposal = planApplier.extractProposal(response)

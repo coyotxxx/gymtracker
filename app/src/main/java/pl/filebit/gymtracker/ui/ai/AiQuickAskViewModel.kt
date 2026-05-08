@@ -61,25 +61,20 @@ class AiQuickAskViewModel @Inject constructor(
             error = null
         )
         viewModelScope.launch {
-            // Kontekst tylko przy pierwszej wiadomości
-            val isFirst = _state.value.messages.size == 1
-            val combined = if (isFirst) {
-                val ctx = runCatching { contextBuilder.buildContextJson(recentWorkoutsLimit = 30) }
-                    .getOrElse { "{}" }
-                buildString {
-                    append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
-                    append("Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\n")
-                    append("Pytanie: $question\n\n")
-                    append("Odpowiedz krótko (max 4-5 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują.")
-                }
-            } else {
-                question
+            // Kontekst dolaczany do KAZDEGO pytania (snapshot zawsze swiezy)
+            val ctx = runCatching { contextBuilder.buildContextJson(recentWorkoutsLimit = 30) }
+                .getOrElse { "{}" }
+            val combined = buildString {
+                append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
+                append("Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\n")
+                append("Pytanie: $question\n\n")
+                append("Odpowiedz krótko (max 4-5 zdań), konkretnie i po polsku. Cytuj liczby z kontekstu jeśli pasują.")
             }
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)
             } + AiMessage(AiRole.USER, combined)
 
-            client.chat(cfg, apiMessages).fold(
+            client.chat(cfg, apiMessages, source = "AiQuickAsk").fold(
                 onSuccess = { response ->
                     _state.value = _state.value.copy(
                         isLoading = false,
