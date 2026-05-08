@@ -96,7 +96,8 @@ class HomeViewModel @Inject constructor(
     private val recoveryCardPrefs: pl.filebit.gymtracker.data.repository.RecoveryCardPrefs,
     private val dismissedCardsPrefs: pl.filebit.gymtracker.data.repository.DismissedCardsPrefs,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
-    private val readinessAnalyzer: TrainingReadinessAnalyzer
+    private val readinessAnalyzer: TrainingReadinessAnalyzer,
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
 ) : ViewModel() {
 
     private val recoveryCardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
@@ -150,16 +151,20 @@ class HomeViewModel @Inject constructor(
         val deloadCard = runCatching { deloadService.cardState() }
             .getOrNull() ?: pl.filebit.gymtracker.data.repository.DeloadCardState.None
 
+        // v1.11.46: snapshot RAZ dla 3 analyzerów (zero N+1)
+        val analyzerSnapshot = runCatching { statsCacheService.snapshot() }
+            .getOrDefault(pl.filebit.gymtracker.data.repository.StatsSnapshot.EMPTY)
+
         // Faza cyklu treningowego — z TrainingPhaseAnalyzer (deterministic)
-        val trainingPhase = runCatching { phaseAnalyzer.analyze() }.getOrNull()
-        // Regeneracja — sen + HRV z Health Connect
+        val trainingPhase = runCatching { phaseAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
+        // Regeneracja — sen + HRV z Health Connect (nie używa StatsSnapshot)
         val healthInsight = runCatching { healthAnalyzer.analyze() }.getOrNull()
-        // v1.7.4 WHOOP-like Recovery Score 0-100 z personal baseline
+        // v1.7.4 WHOOP-like Recovery Score 0-100 z personal baseline (nie używa StatsSnapshot)
         val recoveryScore = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
         // v1.7.4 ACWR — Acute:Chronic Workload Ratio
-        val trainingLoad = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
+        val trainingLoad = runCatching { trainingLoadAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
         // v1.9.0 Recovery per partia + Training Readiness
-        val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
+        val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
         val trainingReadiness = runCatching { readinessAnalyzer.analyze() }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)

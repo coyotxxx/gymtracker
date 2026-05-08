@@ -164,6 +164,103 @@ class TrainingPhaseAnalyzer @Inject constructor(
             )
         }
     }
+
+    /**
+     * v1.11.46 — fast variant z pre-fetched StatsSnapshot.
+     * Logika IDENTYCZNA z analyze().
+     */
+    fun analyzeWithSnapshot(
+        snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
+        stagnationReport: PlanStagnationReport? = null
+    ): TrainingPhaseStatus {
+        val now = System.currentTimeMillis()
+        val cutoff = now - ANALYSIS_WINDOW_WEEKS * 7 * 24 * 3600 * 1000
+
+        val finished = snapshot.finishedWorkouts
+            .filter { it.startedAt >= cutoff }
+            .sortedBy { it.startedAt }
+
+        if (finished.size < 4) {
+            return TrainingPhaseStatus(
+                phase = TrainingPhase.NO_DATA,
+                weeksSinceLastDeload = 0,
+                recommendation = "Trenuj jeszcze 1-2 tygodnie żeby algorytm mógł wykryć fazę cyklu."
+            )
+        }
+
+        val msPerWeek = 7L * 24 * 3600 * 1000
+        val volumeByWeek = mutableMapOf<Int, Double>()
+        for (w in finished) {
+            val weekIdx = ((now - w.startedAt) / msPerWeek).toInt()
+            val workVolume = snapshot.completedSetsFor(w.id).sumOf { it.reps * it.weightKg }
+            volumeByWeek[weekIdx] = (volumeByWeek[weekIdx] ?: 0.0) + workVolume
+        }
+
+        val weeklyVolumes = volumeByWeek.entries.sortedBy { it.key }
+        if (weeklyVolumes.size < 2) {
+            return TrainingPhaseStatus(TrainingPhase.NO_DATA, 0, "Za mało tygodni z treningami.")
+        }
+
+        val median = run {
+            val sorted = weeklyVolumes.map { it.value }.sorted()
+            if (sorted.size % 2 == 1) sorted[sorted.size / 2]
+            else (sorted[sorted.size / 2 - 1] + sorted[sorted.size / 2]) / 2
+        }
+        val deloadThreshold = median * DELOAD_WEEK_VOLUME_THRESHOLD_PCT / 100
+
+        val lastDeloadWeekIdx = weeklyVolumes
+            .firstOrNull { it.value < deloadThreshold && it.value > 0 }
+            ?.key
+        val weeksSinceDeload = lastDeloadWeekIdx ?: weeklyVolumes.last().key + 1
+        val cycleWeek = weeksSinceDeload + 1
+
+        if (stagnationReport != null && stagnationReport.deloadRecommended) {
+            return TrainingPhaseStatus(
+                phase = TrainingPhase.NEEDS_DELOAD,
+                weeksSinceLastDeload = cycleWeek,
+                recommendation = "Algorytm wykrył stagnację (${stagnationReport.stagnatingCount + stagnationReport.regressingCount}/${stagnationReport.totalAnalyzed} ćwiczeń). " +
+                    "Następny tydzień zaplanuj jako deload: -30% volume, -10% obciążenie, RPE ≤7. " +
+                    "Potem wracasz na akumulację (cykl 1)."
+            )
+        }
+
+        if (lastDeloadWeekIdx != null && lastDeloadWeekIdx <= 1) {
+            return TrainingPhaseStatus(
+                phase = TrainingPhase.DELOAD,
+                weeksSinceLastDeload = 0,
+                recommendation = "Bieżący tydzień to deload — niskie volume jest celowe. Po nim akumulacja (3 tygodnie podwyższonego volume)."
+            )
+        }
+
+        if (cycleWeek > MAX_WEEKS_WITHOUT_DELOAD) {
+            return TrainingPhaseStatus(
+                phase = TrainingPhase.NEEDS_DELOAD,
+                weeksSinceLastDeload = cycleWeek,
+                recommendation = "$cycleWeek tygodni bez deloadu — czas na tydzień lekki. " +
+                    "Bez deloadu CNS się akumuluje, intensywność spada."
+            )
+        }
+
+        return when {
+            cycleWeek <= 3 -> TrainingPhaseStatus(
+                phase = TrainingPhase.ACCUMULATION,
+                weeksSinceLastDeload = cycleWeek,
+                recommendation = "Faza akumulacji ($cycleWeek/3): wyższe volume, RPE 7-8. Build phase. " +
+                    "Skup się na ilości pracy — więcej setów, więcej powtórzeń."
+            )
+            cycleWeek <= 6 -> TrainingPhaseStatus(
+                phase = TrainingPhase.INTENSIFICATION,
+                weeksSinceLastDeload = cycleWeek,
+                recommendation = "Faza intensyfikacji (${cycleWeek - 3}/3): niższe volume, RPE 8-9. " +
+                    "Cięższe ciężary, krótsze serie, dłuższe odpoczynki."
+            )
+            else -> TrainingPhaseStatus(
+                phase = TrainingPhase.NEEDS_DELOAD,
+                weeksSinceLastDeload = cycleWeek,
+                recommendation = "Czas na deload."
+            )
+        }
+    }
 }
 
 /** Helper budujący sekcję promptu z fazą cyklu. */

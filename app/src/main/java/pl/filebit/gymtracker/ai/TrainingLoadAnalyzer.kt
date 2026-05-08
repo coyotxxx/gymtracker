@@ -110,4 +110,69 @@ class TrainingLoadAnalyzer @Inject constructor(
             recommendation = rec
         )
     }
+
+    /**
+     * v1.11.46 — fast variant z pre-fetched StatsSnapshot.
+     * Logika IDENTYCZNA z analyze() — tylko źródło danych zmienione.
+     */
+    fun analyzeWithSnapshot(snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot): TrainingLoad {
+        val now = System.currentTimeMillis()
+        val msPerDay = 24L * 3600 * 1000
+
+        val finished = snapshot.finishedWorkouts
+            .filter { it.startedAt >= now - 28 * msPerDay }
+
+        val volumeByDay = mutableMapOf<Int, Double>()
+        for (w in finished) {
+            val daysAgo = ((now - w.startedAt) / msPerDay).toInt().coerceIn(0, 27)
+            val v = snapshot.completedSetsFor(w.id).sumOf { it.reps * it.weightKg }
+            volumeByDay[daysAgo] = (volumeByDay[daysAgo] ?: 0.0) + v
+        }
+
+        val acute7d = (0..6).sumOf { volumeByDay[it] ?: 0.0 }
+        val chronic28d = (0..27).sumOf { volumeByDay[it] ?: 0.0 } / 28.0
+
+        val workoutsIn14d = finished.count { it.startedAt >= now - 14 * msPerDay }
+        val daysOfData = volumeByDay.keys.size
+
+        if (workoutsIn14d < 6) {
+            return TrainingLoad(
+                acuteLoad7d = acute7d,
+                chronicLoad28d = chronic28d,
+                acwr = 0.0,
+                zone = LoadZone.INSUFFICIENT,
+                daysOfData = daysOfData,
+                workoutsCount14d = workoutsIn14d,
+                recommendation = if (workoutsIn14d == 0)
+                    "Brak treningów w 14 dni. Zacznij regularnie (3-4×/tydz) zanim algorytm zacznie analizować obciążenie."
+                else
+                    "Trenujesz $workoutsIn14d×/14d — potrzeba ≥6 do oceny ACWR."
+            )
+        }
+
+        val acwr = if (chronic28d > 0) acute7d / (chronic28d * 7) else 0.0
+        val zone = when {
+            acwr < 0.8 -> LoadZone.DETRAINING
+            acwr <= 1.3 -> LoadZone.OPTIMAL
+            acwr <= 1.5 -> LoadZone.OVERREACHING
+            else -> LoadZone.RISKY
+        }
+        val rec = when (zone) {
+            LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
+            LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
+            LoadZone.OVERREACHING -> "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
+            LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."
+            LoadZone.INSUFFICIENT -> ""
+        }
+
+        return TrainingLoad(
+            acuteLoad7d = acute7d,
+            chronicLoad28d = chronic28d * 7,
+            acwr = acwr,
+            zone = zone,
+            daysOfData = daysOfData,
+            workoutsCount14d = workoutsIn14d,
+            recommendation = rec
+        )
+    }
 }
