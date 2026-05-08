@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -125,34 +124,25 @@ private fun AchievementModal(
                 onClick = onDismiss
             )
     ) {
-        // AMBIENT HALO — eliptyczny gradient (90% width × 70% height) jak CSS
-        // ellipse 90% 70%. Sięga rogów ekranu, miękko gaśnie do 100% radius.
-        // Implementacja: drawWithCache rysuje brush na wycinanej oval shape.
+        // AMBIENT HALO — kołowy radial gradient z DUŻYM radius (sięga rogów ekranu)
+        // BEZ scale (scale w drawScope obcinało rect do 58% szerokości)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .drawWithCache {
                     val cx = size.width / 2f
                     val cy = size.height / 2f
-                    // Eliptyczne radius — szerszy poziomo, mniej pionowo
-                    val rX = size.width * 0.90f
-                    val rY = size.height * 0.70f
-                    // Brush ma jeden radius — używamy max(rX, rY) i skalujemy w canvas
-                    val maxR = maxOf(rX, rY)
+                    // Radius = przekątna połówki = sięga rogów ekranu
+                    val maxR = kotlin.math.sqrt(
+                        (size.width * size.width + size.height * size.height).toDouble()
+                    ).toFloat() / 2f
                     val haloBrush = Brush.radialGradient(
                         colorStops = haloStops,
                         center = androidx.compose.ui.geometry.Offset(cx, cy),
                         radius = maxR
                     )
                     onDrawBehind {
-                        // Scale aby halo było eliptyczne (szerszy poziomo)
-                        scale(
-                            scaleX = rX / maxR,
-                            scaleY = rY / maxR,
-                            pivot = androidx.compose.ui.geometry.Offset(cx, cy)
-                        ) {
-                            drawRect(haloBrush)
-                        }
+                        drawRect(haloBrush)
                     }
                 }
         )
@@ -181,7 +171,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.33",
+                text = "v1.11.34",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
