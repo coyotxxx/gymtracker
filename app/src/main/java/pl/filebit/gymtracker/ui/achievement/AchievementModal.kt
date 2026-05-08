@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -100,19 +101,17 @@ private fun AchievementModal(
         cardTranslateY.animateTo(0f, tween(700, easing = AppleEase))
     }
 
-    // Globalny halo brush — pomarańczowa poświata centrowana na środku ekranu
-    // Fill cały Box overlay = halo może wystawać poza Column padding
-    val globalHaloBrush = remember {
-        Brush.radialGradient(
-            colorStops = arrayOf(
-                0.0f to AccentOrange.copy(alpha = 0.55f),
-                0.10f to AccentOrange.copy(alpha = 0.50f),
-                0.18f to AccentOrange.copy(alpha = 0.40f),
-                0.28f to AccentOrange.copy(alpha = 0.22f),
-                0.40f to AccentOrange.copy(alpha = 0.08f),
-                0.55f to Color.Transparent,
-                1.0f to Color.Transparent
-            )
+    // Globalny halo — drawWithCache liczy radius z faktycznych wymiarow ekranu.
+    // Radius = 55% wiekszego wymiaru → halo dochodzi do krawedzi pionowych ekranu
+    // (default Brush.radialGradient ma radius = min(w,h)/2 = za maly).
+    val haloStops = remember {
+        arrayOf(
+            0.0f to AccentOrange.copy(alpha = 0.55f),
+            0.18f to AccentOrange.copy(alpha = 0.42f),
+            0.35f to AccentOrange.copy(alpha = 0.28f),
+            0.55f to AccentOrange.copy(alpha = 0.14f),
+            0.78f to AccentOrange.copy(alpha = 0.05f),
+            1.0f to Color.Transparent
         )
     }
 
@@ -128,12 +127,25 @@ private fun AchievementModal(
                 onClick = onDismiss
             )
     ) {
-        // GLOBAL HALO — fillMaxSize na poziomie Box overlay (cały ekran)
-        // Halo wystaje poza Column padding, widoczny do krawędzi ekranu jak w "Legendarny"
+        // GLOBAL HALO — drawWithCache z explicit radius = 55% wiekszego wymiaru
+        // Pokrywa wieksza czesc ekranu pionowo (default radius za maly bo min(w,h)/2)
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(globalHaloBrush)
+                .drawWithCache {
+                    val center = androidx.compose.ui.geometry.Offset(
+                        size.width / 2f, size.height / 2f
+                    )
+                    val maxRadius = maxOf(size.width, size.height) * 0.55f
+                    val haloBrush = Brush.radialGradient(
+                        colorStops = haloStops,
+                        center = center,
+                        radius = maxRadius
+                    )
+                    onDrawBehind {
+                        drawRect(haloBrush)
+                    }
+                }
         )
 
             // Close button (prawy górny)
@@ -175,7 +187,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.29",
+                text = "v1.11.30",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
