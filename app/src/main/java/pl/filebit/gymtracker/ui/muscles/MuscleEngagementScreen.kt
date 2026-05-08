@@ -21,6 +21,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import pl.filebit.gymtracker.ui.theme.SelectableChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -66,10 +67,10 @@ fun MuscleEngagementScreen(
             ) {
                 items(EngagementPeriod.entries.size) { idx ->
                     val p = EngagementPeriod.entries[idx]
-                    FilterChip(
+                    SelectableChip(
+                        text = stringResource(p.labelRes),
                         selected = state.period == p,
-                        onClick = { vm.setPeriod(p) },
-                        label = { Text(stringResource(p.labelRes)) }
+                        onClick = { vm.setPeriod(p) }
                     )
                 }
             }

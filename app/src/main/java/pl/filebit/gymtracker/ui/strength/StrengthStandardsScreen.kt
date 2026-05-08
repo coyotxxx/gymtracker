@@ -20,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import pl.filebit.gymtracker.ui.theme.SelectableChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -92,7 +93,11 @@ fun StrengthStandardsScreen(
                             contentPadding = PaddingValues(vertical = 4.dp)
                         ) {
                             items(Gender.entries.toList()) { g ->
-                                FilterChip(
+                                SelectableChip(
+                                    text = when (g) {
+                                        Gender.MALE -> stringResource(R.string.gender_male)
+                                        Gender.FEMALE -> stringResource(R.string.gender_female)
+                                    },
                                     selected = gender == g,
                                     onClick = {
                                         gender = g
@@ -100,12 +105,6 @@ fun StrengthStandardsScreen(
                                             bodyweightText.replace(',', '.').toDoubleOrNull(),
                                             g
                                         )
-                                    },
-                                    label = {
-                                        Text(when (g) {
-                                            Gender.MALE -> stringResource(R.string.gender_male)
-                                            Gender.FEMALE -> stringResource(R.string.gender_female)
-                                        })
                                     }
                                 )
                             }
