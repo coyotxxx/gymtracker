@@ -111,7 +111,6 @@ fun AchievementBadge(
     )
 
     // === Pulsing highlight (subtelne pulsowanie jaśniejszego centrum) ===
-    // alpha animowana w graphicsLayer lambda → zero recompose
     val highlightAlpha = infinite.animateFloat(
         initialValue = 0.0f, targetValue = 0.25f,
         animationSpec = infiniteRepeatable(
@@ -119,6 +118,16 @@ fun AchievementBadge(
             repeatMode = RepeatMode.Reverse
         ),
         label = "highlight"
+    )
+
+    // === Outer glow alpha — subtelne "oddychanie" poswiaty wokol medalu ===
+    val glowAlpha = infinite.animateFloat(
+        initialValue = 0.65f, targetValue = 1.0f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(2800, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "glow"
     )
 
     // === Brushe w remember (zero recreate) ===
@@ -131,6 +140,18 @@ fun AchievementBadge(
                 0.35f to Color(0xFFFFC107),  // jasny pomarańcz
                 0.75f to AccentOrange,        // pełny pomarańcz
                 1.0f to Color(0xFF8B5A00)    // ciemny brąz (krawędź)
+            )
+        )
+    }
+    // Outer glow brush — pomarancowa poswiata wokol medalu (na czarnym tle)
+    val glowBrush = remember {
+        Brush.radialGradient(
+            colorStops = arrayOf(
+                0.0f to AccentOrange.copy(alpha = 0.50f),
+                0.35f to AccentOrange.copy(alpha = 0.35f),
+                0.55f to AccentOrange.copy(alpha = 0.18f),
+                0.80f to AccentOrange.copy(alpha = 0.04f),
+                1.0f to Color.Transparent
             )
         )
     }
@@ -156,6 +177,20 @@ fun AchievementBadge(
             },
         contentAlignment = Alignment.Center
     ) {
+        // OUTER GLOW — pomaranczowa poswiata wokol medalu
+        // graphicsLayer scale 1.45x = glow wystaje poza parent bounds (po renderowaniu)
+        // alpha animowana w lambda → zero recompose
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .graphicsLayer {
+                    scaleX = 1.45f
+                    scaleY = 1.45f
+                    alpha = glowAlpha.value
+                }
+                .background(glowBrush)
+        )
+
         // TARCZA — premium look (lustrowy medal):
         // - silniejszy shadow (poświata)
         // - off-center highlight (lustrowy odblask u góry-lewej)
