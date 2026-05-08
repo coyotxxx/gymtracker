@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.repository.MuscleAnalysisReport
 import pl.filebit.gymtracker.data.repository.MuscleEngagement
+import pl.filebit.gymtracker.data.repository.StatsCacheService
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import javax.inject.Inject
 
@@ -28,7 +29,8 @@ data class MuscleUiState(
 
 @HiltViewModel
 class MuscleEngagementViewModel @Inject constructor(
-    private val statsRepo: StatsRepository
+    private val statsRepo: StatsRepository,
+    private val statsCacheService: StatsCacheService
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(MuscleUiState())
@@ -44,8 +46,11 @@ class MuscleEngagementViewModel @Inject constructor(
     private fun reload() {
         viewModelScope.launch {
             val period = _state.value.period.days
+            // v1.11.40: muscleAnalysis() → muscleAnalysisFast() z pre-fetched snapshot.
+            // Snapshot = 3 bulk queries zamiast 30+ queries w pętli (~570 queries).
+            val snapshot = statsCacheService.snapshot()
             val list = statsRepo.muscleEngagement(period)
-            val analysis = statsRepo.muscleAnalysis(period)
+            val analysis = statsRepo.muscleAnalysisFast(period, snapshot)
             _state.value = _state.value.copy(
                 loading = false,
                 engagement = list,
