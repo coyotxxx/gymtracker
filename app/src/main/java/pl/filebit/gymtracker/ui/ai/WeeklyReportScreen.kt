@@ -494,9 +494,10 @@ private fun ReportCard(
                     stripActionsJsonBlock(report.content)
                 }
                 Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)) {
-                    cleaned.split("\n").forEach { line ->
-                        RenderMarkdownLine(line)
-                    }
+                    pl.filebit.gymtracker.ui.components.AiMarkdown(
+                        text = cleaned,
+                        contentColor = DarkOnSurface
+                    )
                 }
             }
         }
@@ -521,81 +522,3 @@ private fun stripActionsJsonBlock(content: String): String {
     return withoutHeader.trim()
 }
 
-@Composable
-private fun RenderMarkdownLine(line: String) {
-    when {
-        line.startsWith("# ") -> {
-            Spacer(Modifier.height(8.dp))
-            Text(
-                line.removePrefix("# "),
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontWeight = FontWeight.ExtraBold,
-                    fontSize = 18.sp
-                ),
-                color = DarkOnSurface
-            )
-            Spacer(Modifier.height(4.dp))
-        }
-        line.startsWith("## ") -> {
-            Spacer(Modifier.height(10.dp))
-            Text(
-                line.removePrefix("## "),
-                style = MaterialTheme.typography.titleMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp
-                ),
-                color = AccentOrange
-            )
-            Spacer(Modifier.height(4.dp))
-        }
-        line.startsWith("### ") -> {
-            Spacer(Modifier.height(6.dp))
-            Text(
-                line.removePrefix("### "),
-                style = MaterialTheme.typography.titleSmall.copy(
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 13.sp
-                ),
-                color = DarkOnSurface
-            )
-        }
-        line.startsWith("- ") || line.startsWith("• ") -> {
-            Text(
-                "• " + line.removePrefix("- ").removePrefix("• "),
-                style = MaterialTheme.typography.bodyMedium,
-                color = DarkOnSurface,
-                modifier = Modifier.padding(start = 8.dp, top = 2.dp, bottom = 2.dp)
-            )
-        }
-        line.matches(Regex("^\\d+\\..*")) -> {
-            Text(
-                line,
-                style = MaterialTheme.typography.bodyMedium,
-                color = DarkOnSurface,
-                modifier = Modifier.padding(start = 8.dp, top = 2.dp, bottom = 2.dp)
-            )
-        }
-        line.isBlank() -> {
-            Spacer(Modifier.height(4.dp))
-        }
-        line == "---" -> {
-            Spacer(Modifier.height(8.dp))
-            Box(modifier = Modifier
-                .fillMaxWidth()
-                .height(1.dp)
-                .background(DarkOutlineSoft))
-            Spacer(Modifier.height(8.dp))
-        }
-        else -> {
-            val cleaned = line.replace(Regex("\\*\\*([^*]+)\\*\\*"), "$1")
-            Text(
-                cleaned,
-                style = MaterialTheme.typography.bodyMedium.copy(
-                    fontWeight = if (line.contains("**")) FontWeight.SemiBold else FontWeight.Normal
-                ),
-                color = DarkOnSurface,
-                modifier = Modifier.padding(vertical = 2.dp)
-            )
-        }
-    }
-}
