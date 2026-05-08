@@ -22,6 +22,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.core.content.FileProvider
+import java.io.File
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -64,16 +66,48 @@ fun FoodImageAnalyzerScreen(
 
     var imageBytes by remember { mutableStateOf<ByteArray?>(null) }
     var imageBitmap by remember { mutableStateOf<android.graphics.Bitmap?>(null) }
+    var pendingCameraUri by remember { mutableStateOf<Uri?>(null) }
+
+    fun loadFromUri(uri: Uri) {
+        val bytes = readImageBytes(context, uri)
+        if (bytes != null) {
+            imageBytes = bytes
+            imageBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+            vm.reset()
+        }
+    }
 
     val pickImageLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        uri?.let {
-            val bytes = readImageBytes(context, it)
-            if (bytes != null) {
-                imageBytes = bytes
-                imageBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-            }
+    ) { uri: Uri? -> uri?.let { loadFromUri(it) } }
+
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture()
+    ) { success ->
+        if (success) pendingCameraUri?.let { loadFromUri(it) }
+        pendingCameraUri = null
+    }
+
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            val uri = prepareCameraUri(context)
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        }
+    }
+
+    fun launchCamera() {
+        val granted = androidx.core.content.ContextCompat.checkSelfPermission(
+            context, android.Manifest.permission.CAMERA
+        ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+        if (granted) {
+            val uri = prepareCameraUri(context)
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        } else {
+            cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
         }
     }
 
@@ -112,27 +146,45 @@ fun FoodImageAnalyzerScreen(
                             )
                         }
                     } else {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .aspectRatio(1f)
-                                .background(DarkSurfaceVariant, RoundedCornerShape(12.dp))
-                                .clickable { pickImageLauncher.launch("image/*") },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Text("📷", style = MaterialTheme.typography.displayLarge)
-                                Spacer(Modifier.height(8.dp))
-                                Text(
-                                    "Dotknij by wybrać zdjęcie",
-                                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                                    color = DarkOnSurface
-                                )
-                                Text(
-                                    "(galeria lub aparat)",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    color = DarkOnSurfaceVariant
-                                )
+                        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .aspectRatio(1f)
+                                    .background(DarkSurfaceVariant, RoundedCornerShape(12.dp)),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                    Text("📷", style = MaterialTheme.typography.displayLarge)
+                                    Spacer(Modifier.height(8.dp))
+                                    Text(
+                                        "Dodaj zdjęcie posiłku",
+                                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                        color = DarkOnSurface
+                                    )
+                                }
+                            }
+                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                Box(
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .height(48.dp)
+                                        .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                        .clickable { pickImageLauncher.launch("image/*") },
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Text("📁 Galeria", style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+                                }
+                                Box(
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .height(48.dp)
+                                        .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(10.dp))
+                                        .clickable { launchCamera() },
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Text("📸 Aparat", style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold), color = AccentOrange)
+                                }
                             }
                         }
                     }
@@ -141,7 +193,7 @@ fun FoodImageAnalyzerScreen(
                 // Akcje
                 if (imageBytes != null) {
                     item {
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                             Box(
                                 modifier = Modifier
                                     .weight(1f)
@@ -155,11 +207,26 @@ fun FoodImageAnalyzerScreen(
                                     },
                                 contentAlignment = Alignment.Center
                             ) {
-                                Text("📁 Inne zdjęcie", style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+                                Text("📁 Galeria", style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
                             }
                             Box(
                                 modifier = Modifier
-                                    .weight(1.5f)
+                                    .weight(1f)
+                                    .height(44.dp)
+                                    .background(DarkSurfaceVariant, RoundedCornerShape(10.dp))
+                                    .clickable {
+                                        imageBytes = null
+                                        imageBitmap = null
+                                        vm.reset()
+                                        launchCamera()
+                                    },
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text("📸 Aparat", style = MaterialTheme.typography.bodySmall, color = DarkOnSurface)
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .weight(1.6f)
                                     .height(44.dp)
                                     .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(10.dp))
                                     .clickable {
@@ -408,6 +475,17 @@ private fun slotLabel(mt: MealType): String = when (mt) {
     MealType.LUNCH -> "obiadu"
     MealType.DINNER -> "kolacji"
     MealType.SNACK -> "przekąski"
+}
+
+private fun prepareCameraUri(context: Context): Uri {
+    val dir = File(context.cacheDir, "camera_captures").apply { mkdirs() }
+    val file = File(dir, "food_${System.currentTimeMillis()}.jpg")
+    if (!file.exists()) file.createNewFile()
+    return FileProvider.getUriForFile(
+        context,
+        "${context.packageName}.fileprovider",
+        file
+    )
 }
 
 private fun readImageBytes(context: Context, uri: Uri): ByteArray? = try {

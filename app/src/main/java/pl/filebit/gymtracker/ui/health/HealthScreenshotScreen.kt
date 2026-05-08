@@ -1,8 +1,15 @@
 package pl.filebit.gymtracker.ui.health
 
+import android.content.Context
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.core.content.FileProvider
+import java.io.File
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -61,6 +68,8 @@ fun HealthScreenshotScreen(
     val state by vm.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
+    var pendingCameraUri by remember { mutableStateOf<Uri?>(null) }
+
     val pickImagesLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetMultipleContents()
     ) { uris: List<Uri> ->
@@ -77,6 +86,44 @@ fun HealthScreenshotScreen(
         if (images.isNotEmpty()) vm.analyzeImages(images)
     }
 
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture()
+    ) { success ->
+        val uri = pendingCameraUri
+        if (success && uri != null) {
+            try {
+                val bytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
+                if (bytes != null && bytes.isNotEmpty()) {
+                    vm.analyzeImages(listOf(bytes to "image/jpeg"))
+                }
+            } catch (_: Exception) {}
+        }
+        pendingCameraUri = null
+    }
+
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            val uri = prepareHealthCameraUri(context)
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        }
+    }
+
+    fun launchCamera() {
+        val granted = androidx.core.content.ContextCompat.checkSelfPermission(
+            context, android.Manifest.permission.CAMERA
+        ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+        if (granted) {
+            val uri = prepareHealthCameraUri(context)
+            pendingCameraUri = uri
+            cameraLauncher.launch(uri)
+        } else {
+            cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
+        }
+    }
+
     Column(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         ScreenHeader(title = "Skan zdrowotny", onBack = onBack)
 
@@ -89,7 +136,12 @@ fun HealthScreenshotScreen(
 
             when (val s = state) {
                 HealthScreenshotState.Idle -> {
-                    item { PickImageButton(onPick = { pickImagesLauncher.launch("image/*") }) }
+                    item {
+                        PickImageRow(
+                            onPickGallery = { pickImagesLauncher.launch("image/*") },
+                            onTakePhoto = { launchCamera() }
+                        )
+                    }
                     item { ExamplesCard() }
                 }
                 is HealthScreenshotState.Analyzing -> {
@@ -170,20 +222,50 @@ private fun IntroCard() {
 }
 
 @Composable
-private fun PickImageButton(onPick: () -> Unit) {
-    Button(
-        onClick = onPick,
-        modifier = Modifier.fillMaxWidth().height(56.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = AccentOrange,
-            contentColor = Color.White
-        ),
-        shape = RoundedCornerShape(12.dp)
+private fun PickImageRow(onPickGallery: () -> Unit, onTakePhoto: () -> Unit) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Icon(Icons.Filled.AddPhotoAlternate, contentDescription = null)
-        Spacer(Modifier.size(8.dp))
-        Text("Wybierz zrzuty z galerii (1-N)", fontWeight = FontWeight.Bold)
+        Button(
+            onClick = onPickGallery,
+            modifier = Modifier.weight(1f).height(56.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = AccentOrange,
+                contentColor = Color.White
+            ),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Icon(Icons.Filled.AddPhotoAlternate, contentDescription = null)
+            Spacer(Modifier.size(6.dp))
+            Text("Galeria", fontWeight = FontWeight.Bold)
+        }
+        Button(
+            onClick = onTakePhoto,
+            modifier = Modifier.weight(1f).height(56.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = DarkSurface,
+                contentColor = AccentOrange
+            ),
+            shape = RoundedCornerShape(12.dp),
+            border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.6f))
+        ) {
+            Icon(Icons.Filled.PhotoCamera, contentDescription = null)
+            Spacer(Modifier.size(6.dp))
+            Text("Aparat", fontWeight = FontWeight.Bold)
+        }
     }
+}
+
+private fun prepareHealthCameraUri(context: Context): Uri {
+    val dir = File(context.cacheDir, "camera_captures").apply { mkdirs() }
+    val file = File(dir, "health_${System.currentTimeMillis()}.jpg")
+    if (!file.exists()) file.createNewFile()
+    return FileProvider.getUriForFile(
+        context,
+        "${context.packageName}.fileprovider",
+        file
+    )
 }
 
 @Composable
