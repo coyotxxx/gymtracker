@@ -67,8 +67,7 @@ fun AchievementModalHost(
         is AchievementUiState.Showing -> AchievementModal(
             achievement = s.achievement,
             queueRemaining = s.queueRemaining,
-            onDismiss = vm::dismiss,
-            onShare = vm::onShareClick
+            onDismiss = vm::dismiss
         )
         AchievementUiState.Hidden -> Unit
     }
@@ -78,8 +77,7 @@ fun AchievementModalHost(
 private fun AchievementModal(
     achievement: Achievement,
     queueRemaining: Int,
-    onDismiss: () -> Unit,
-    onShare: () -> Unit
+    onDismiss: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
 
@@ -159,22 +157,7 @@ private fun AchievementModal(
                 }
         )
 
-            // Close button (prawy górny)
-            IconButton(
-                onClick = onDismiss,
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .padding(top = 48.dp, end = 16.dp)
-                    .size(36.dp)
-                    .background(Color.White.copy(alpha = 0.08f), CircleShape)
-            ) {
-                Icon(
-                    Icons.Default.Close,
-                    contentDescription = "Zamknij",
-                    tint = DarkOnSurfaceVariant,
-                    modifier = Modifier.size(16.dp)
-                )
-            }
+            // (X close button USUNIETY w v1.11.32 — tap-to-dismiss na calym ekranie)
 
             // Queue indicator (jeśli więcej w kolejce)
             if (queueRemaining > 0) {
@@ -198,7 +181,7 @@ private fun AchievementModal(
 
             // Tag wersji — diagnostic, do weryfikacji że user testuje aktualny APK
             Text(
-                text = "v1.11.31",
+                text = "v1.11.32",
                 style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Normal
@@ -209,18 +192,13 @@ private fun AchievementModal(
                     .padding(bottom = 12.dp, end = 12.dp)
             )
 
-            // Content card — translationY przez graphicsLayer (czytany w lambda → zero recompose)
-            // BEZ scale (scale tworzy offscreen layer = halo)
+            // Content card — translationY przez graphicsLayer
+            // BEZ clickable na Column (tap-to-dismiss na calym ekranie z parent Box)
             Column(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .padding(horizontal = 32.dp)
-                    .graphicsLayer { translationY = cardTranslateY.value }
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null,
-                        onClick = {} // zatrzymuje dismiss przy kliknięciu w content
-                    ),
+                    .graphicsLayer { translationY = cardTranslateY.value },
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 AnimatedLabel(
@@ -237,16 +215,8 @@ private fun AchievementModal(
                 AnimatedTitle(text = achievement.title, delayMs = 700)
                 Spacer(Modifier.height(12.dp))
                 AnimatedDescription(text = achievement.description, delayMs = 850)
-                Spacer(Modifier.height(36.dp))
-
-                AnimatedActions(
-                    onConfirm = onDismiss,
-                    onShare = onShare,
-                    delayMs = 1100,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .widthIn(max = 280.dp)
-                )
+                // AnimatedActions (Swietnie + share) USUNIETE w v1.11.32 —
+                // tap-to-dismiss na calym ekranie zastepuje confirm button.
             }
     }
 }
@@ -324,47 +294,4 @@ private fun AnimatedDescription(text: String, delayMs: Int) {
     )
 }
 
-@Composable
-private fun AnimatedActions(
-    onConfirm: () -> Unit,
-    onShare: () -> Unit,
-    delayMs: Int,
-    modifier: Modifier = Modifier
-) {
-    val alphaAnim = rememberFadeInAlpha(delayMs)
-    Row(
-        modifier = modifier.graphicsLayer { alpha = alphaAnim.value },
-        horizontalArrangement = Arrangement.spacedBy(10.dp)
-    ) {
-        Button(
-            onClick = onConfirm,
-            modifier = Modifier
-                .weight(1f)
-                .height(50.dp),
-            shape = RoundedCornerShape(100.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = AccentOrange,
-                contentColor = DarkBg
-            )
-        ) {
-            Text(
-                "Świetnie!",
-                fontSize = 14.sp,
-                fontWeight = FontWeight.ExtraBold
-            )
-        }
-        IconButton(
-            onClick = onShare,
-            modifier = Modifier
-                .size(50.dp)
-                .background(Color.White.copy(alpha = 0.08f), CircleShape)
-        ) {
-            Icon(
-                Icons.Default.Share,
-                contentDescription = "Udostępnij",
-                tint = DarkOnSurface,
-                modifier = Modifier.size(18.dp)
-            )
-        }
-    }
-}
+// AnimatedActions USUNIETE w v1.11.32 — tap-to-dismiss na calym ekranie

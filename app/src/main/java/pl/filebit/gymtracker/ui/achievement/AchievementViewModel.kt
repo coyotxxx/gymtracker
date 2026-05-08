@@ -89,14 +89,7 @@ class AchievementViewModel @Inject constructor(
             queueRemaining = queue.size
         )
 
-        // Auto-dismiss po 5s
-        viewModelScope.launch {
-            delay(5000)
-            val cur = _uiState.value
-            if (cur is AchievementUiState.Showing && cur.achievement.id == next.id) {
-                dismiss()
-            }
-        }
+        // Auto-dismiss USUNIĘTY w v1.11.32 — modal czeka na tap usera (tap-to-dismiss)
     }
 
     fun onShareClick() {
