@@ -521,12 +521,16 @@ data class PainAreaCount(
 fun isPlanRelatedPrompt(prompt: String): Boolean {
     val lower = prompt.lowercase()
     val keywords = listOf(
-        "plan", "trening na ", "rozpiska", "rozkład",
-        "modyfik", "zmien", "zmień", "popraw plan", "edytuj",
-        "dodaj cwiczenie", "dodaj ćwiczenie", "zamien cwiczenie", "zamień ćwiczenie",
-        "wymien cwiczenie", "wymień ćwiczenie", "usun cwiczenie", "usuń ćwiczenie",
-        "zapropon", "wygeneruj", "stwórz", "stworz",
-        "podziel trening", "podzielic trening", "podzielić trening"
+        // Plan ogolnie
+        "plan", "trening na ", "rozpiska", "rozkład", "split",
+        // Modyfikacje
+        "modyfik", "edytuj",
+        // Akcje na cwiczeniach (standalone — lapie 'zamien przysiad', 'usun wykrok' etc)
+        "dodaj cwiczenie", "dodaj ćwiczenie",
+        "zamien", "zamień", "wymien", "wymień", "usun ", "usuń ",
+        "podziel trening", "podzielic trening", "podzielić trening",
+        // Generowanie
+        "zapropon", "wygeneruj", "stwórz", "stworz", "uloz", "ułóż"
     )
     return keywords.any { it in lower }
 }
