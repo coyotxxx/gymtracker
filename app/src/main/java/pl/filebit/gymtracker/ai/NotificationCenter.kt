@@ -150,7 +150,21 @@ class NotificationCenter @Inject constructor(
             ))
         }
 
+        // v1.11.69: deduplikacja po actionType - max 1 notification per akcja (priorytet
+        // CRITICAL > WARNING > INFO). Wczesniej Recovery + Phase + Stagnation moglyby
+        // wszystkie wyslac APPLY_DELOAD jednoczesnie.
+        val deduplicated = list
+            .groupBy { it.actionType }
+            .flatMap { (action, group) ->
+                if (action == NotificationAction.NONE) {
+                    // NONE moze pojawic sie wielokrotnie (rozne info/warning bez akcji)
+                    group
+                } else {
+                    // Inne actiony: zostaw 1 z najwyzszym severity (CRITICAL=2, WARNING=1, INFO=0)
+                    listOf(group.maxBy { it.severity.ordinal })
+                }
+            }
         // Sortuj: CRITICAL → WARNING → INFO
-        return list.sortedWith(compareBy({ it.severity.ordinal * -1 }, { -it.timestamp }))
+        return deduplicated.sortedWith(compareBy({ it.severity.ordinal * -1 }, { -it.timestamp }))
     }
 }

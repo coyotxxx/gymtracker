@@ -48,7 +48,7 @@ class HealthInsightAnalyzer @Inject constructor(
     private val hcManager: HealthConnectManager,
     private val recoveryLogDao: RecoveryLogDao
 ) {
-    suspend fun analyze(): HealthInsight {
+    suspend fun analyze(currentPhase: TrainingPhase = TrainingPhase.NO_DATA): HealthInsight {
         // 1. Spróbuj Health Connect (Garmin/Polar/Samsung)
         val hcSleep = runCatching { hcManager.readSleepHoursForLastNights(7) }.getOrNull()
         val hcHrv = runCatching { hcManager.readHrvForLastDays(7) }.getOrNull()
@@ -109,13 +109,27 @@ class HealthInsightAnalyzer @Inject constructor(
         val hrvDropPct = if (avgHrv != null && recentHrvAvg != null && avgHrv > 0)
             (avgHrv - recentHrvAvg) / avgHrv * 100 else 0.0
 
+        // v1.11.69: gdy faza cyklu = DELOAD, downgrade ostrzezen DELOAD/REST do LIGHT_VOLUME.
+        // Powod: deload juz JEST zaplanowanym restem - dodatkowy 'Apply deload' z karty
+        // Health bylby redundantny i mogl zniszczyc cykl (-30% × 2 = -60% obciazenia).
+        val isInDeload = currentPhase == TrainingPhase.DELOAD
         // Decyzja w priorytecie: najgorszy sygnał wygrywa.
         val (status, adjustment, msg) = when {
+            poorSleepStreak >= 2 && isInDeload -> Triple(
+                RecoveryStatus.MODERATE,
+                WorkoutAdjustment.LIGHT_VOLUME,
+                "Sen <5h przez ≥2 noce + tydzień deload. Deload juz jest restem - utrzymuj plan, ale priorytetem sen i nawodnienie."
+            )
             poorSleepStreak >= 2 -> Triple(
                 RecoveryStatus.POOR,
                 WorkoutAdjustment.REST_RECOMMENDED,
                 "Sen <5h przez ≥2 noce z ostatnich 3 — regeneracja krytycznie niska. Rozważ dzień rest. " +
                     "Trening na deficycie snu = wyższe ryzyko kontuzji, niższy progres."
+            )
+            hrvDropPct > 15 && isInDeload -> Triple(
+                RecoveryStatus.MODERATE,
+                WorkoutAdjustment.LIGHT_VOLUME,
+                "HRV spadlo ${"%.0f".format(hrvDropPct)}% + tydzień deload. Deload sam zaadresuje CNS - utrzymuj plan deloadowy."
             )
             hrvDropPct > 15 -> Triple(
                 RecoveryStatus.POOR,
