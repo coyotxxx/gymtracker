@@ -87,7 +87,11 @@ class AiContextBuilder @Inject constructor(
 
     suspend fun buildContextJson(
         recentWorkoutsLimit: Int = 5,
-        targetPlanId: Long? = null
+        targetPlanId: Long? = null,
+        // v1.11.62: niezalezna flaga - wstrzyknac biblioteke cwiczen?
+        // true gdy uzytkownik prosi o NOWY plan ('wygeneruj plan') - nie ma
+        // targetPlanId ale potrzebuje znac dostepne cwiczenia. Domyslnie false.
+        includeExerciseLibrary: Boolean = false
     ): String {
         val profile = profileRepo.get()
         val allMeasurements = bodyRepo.getAllAsc()
@@ -441,7 +445,10 @@ class AiContextBuilder @Inject constructor(
 
             // v1.11.58: available_exercises tylko gdy AI generuje/modyfikuje plan
             // (200+ pozycji = ~30 KB samych nazw, bez sensu w kazdej rozmowie)
-            if (targetPlanId != null) {
+            // v1.11.62: rozdzielenie - includeExerciseLibrary niezalezne od targetPlanId,
+            // zeby user proszacy o NOWY plan tez dostal biblioteke (wczesniej:
+            // tylko targetPlanId set => brak biblioteki przy generowaniu nowego planu).
+            if (targetPlanId != null || includeExerciseLibrary) {
                 putJsonArray("available_exercises") {
                     allExercises.forEach { ex ->
                         add(buildJsonObject {

@@ -257,7 +257,10 @@ class AiClientImpl @Inject constructor(
     private fun callAnthropic(config: AiConfig, messages: List<AiMessage>): String {
         val body = buildJsonObject {
             put("model", config.model)
-            put("max_tokens", 4096)
+            // v1.11.62: max_tokens model-aware. Plan 7-dniowy potrzebuje ~8000-9200
+            // tokenow (56 cwiczen × 120 tokenow + opis). Haiku ma limit modelu 8192,
+            // Sonnet/Opus mogą więcej. Zostawiamy zapas dla zlozonych planow.
+            put("max_tokens", maxTokensForModel(config.model))
             put("system", config.systemPrompt)
             put("messages", buildJsonArray {
                 messages.forEach { m ->
@@ -385,6 +388,29 @@ class AiClientImpl @Inject constructor(
                 """.trimIndent()
             code in 500..599 -> "Błąd po stronie serwera. Spróbuj ponownie za chwilę."
             else -> ""
+        }
+    }
+
+    /**
+     * v1.11.62: max_tokens output zaleznie od modelu.
+     * Limity z dokumentacji Anthropic / OpenAI:
+     *  - Claude Haiku 4.5 → 8192 (limit modelu, nie da sie wiecej)
+     *  - Claude Sonnet 4.6 → 64000 (wymaga headera anthropic-beta, default 8192)
+     *  - Claude Opus 4.7 → 32000
+     *  - GPT-5/4o → standardowo 16384
+     *
+     * Dla planu 7-dniowego potrzeba ~8000-9200 tokenow output (56 cwiczen × 120 tokenow + opis).
+     * Haiku starczy ledwo - lepiej Sonnet/Opus. Tu liczy ile daje API jako bezpieczny pulap;
+     * faktyczna odpowiedz moze byc krotsza.
+     */
+    private fun maxTokensForModel(modelId: String): Int {
+        val m = modelId.lowercase()
+        return when {
+            "opus" in m -> 32000
+            "sonnet" in m -> 16384
+            "haiku" in m -> 8192
+            "gpt-5" in m || "gpt-4" in m || "o3" in m -> 16384
+            else -> 8192  // bezpieczny default
         }
     }
 }

@@ -252,7 +252,10 @@ class AiTrainerViewModel @Inject constructor(
 
             val ctx = runCatching {
                 contextBuilder.buildContextJson(
-                    targetPlanId = effectiveTargetPlanId
+                    targetPlanId = effectiveTargetPlanId,
+                    // v1.11.62: gdy user prosi o nowy/modyfikowany plan, AI musi miec
+                    // biblioteke cwiczen (nazwy do uzycia w JSON propozycji)
+                    includeExerciseLibrary = isPlanRelated
                 )
             }.getOrElse { "{}" }
 
