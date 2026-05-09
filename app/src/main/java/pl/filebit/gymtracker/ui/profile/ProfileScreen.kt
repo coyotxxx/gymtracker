@@ -26,6 +26,7 @@ import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Key
@@ -90,6 +91,7 @@ fun ProfileScreen(
     onOpenDiet: () -> Unit,
     onOpenGlossary: () -> Unit,
     onOpenAchievements: () -> Unit = {},
+    onOpenTimeline: () -> Unit = {},
     onRestartOnboarding: () -> Unit = {},
     vm: ProfileViewModel = hiltViewModel()
 ) {
@@ -187,6 +189,14 @@ fun ProfileScreen(
                     title = "Odznaki",
                     subtitle = "Wszystkie zdobyte odznaki",
                     onClick = onOpenAchievements
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Timeline,
+                    title = "Oś czasu",
+                    subtitle = "PR-y, kontuzje, deloady, zmiany planu",
+                    onClick = onOpenTimeline
                 )
             }
 

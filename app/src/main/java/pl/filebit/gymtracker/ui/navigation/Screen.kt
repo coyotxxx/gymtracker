@@ -67,4 +67,5 @@ sealed class Screen(val route: String) {
     object WorkoutDetail : Screen("workout/{workoutId}") {
         fun create(workoutId: Long) = "workout/$workoutId"
     }
+    object EventTimeline : Screen("timeline")
 }
