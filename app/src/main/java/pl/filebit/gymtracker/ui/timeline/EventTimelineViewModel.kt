@@ -29,7 +29,9 @@ data class EventTimelineUiState(
     // v1.11.74: expanded card details (lazy load po tapie)
     val expandedEventId: Long? = null,
     val expandedDetails: ExpandedPrDetails? = null,
-    val isExpanding: Boolean = false
+    val isExpanding: Boolean = false,
+    // v1.11.75: poprzedni PR per event (do highlight chip w collapsed view)
+    val previousPrByEventId: Map<Long, PreviousPr> = emptyMap()
 )
 
 /**
@@ -67,8 +69,33 @@ class EventTimelineViewModel @Inject constructor(
         viewModelScope.launch {
             val all = eventDao.getRecent(limit = 1000)  // 1000 eventów wystarczy dla typowego usera 3 lata+
             val countByType = all.groupBy { it.type }.mapValues { it.value.size }
+            // v1.11.75: dla każdego PR_SET znajdź poprzedni PR tego samego ćwiczenia
+            val previousPrMap = computePreviousPrMap(all)
+            _state.value = _state.value.copy(previousPrByEventId = previousPrMap)
             applyFilter(all, _state.value.filterType, countByType)
         }
+    }
+
+    /**
+     * v1.11.75: dla każdego PR_SET buduje mapę eventId → PreviousPr.
+     * Iteruje po PR-ach pogrupowanych per exerciseId, posortowanych chronologicznie.
+     */
+    private fun computePreviousPrMap(events: List<TrainingEvent>): Map<Long, PreviousPr> {
+        val result = mutableMapOf<Long, PreviousPr>()
+        events.filter { it.type == TrainingEventType.PR_SET }
+            .groupBy { it.exerciseId }
+            .forEach { (_, prs) ->
+                val sorted = prs.sortedBy { it.date }
+                for (i in 1 until sorted.size) {
+                    val current = sorted[i]
+                    val previous = sorted[i - 1]
+                    val pw = previous.weightKg ?: continue
+                    val pr = previous.reps ?: continue
+                    val daysAgo = ((current.date - previous.date) / (24L * 3600_000)).toInt()
+                    result[current.id] = PreviousPr(pw, pr, daysAgo)
+                }
+            }
+        return result
     }
 
     fun setFilter(type: TrainingEventType?) {

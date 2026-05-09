@@ -172,6 +172,7 @@ fun EventTimelineScreen(
                                 isExpanded = state.expandedEventId == event.id,
                                 expandedDetails = if (state.expandedEventId == event.id)
                                     state.expandedDetails else null,
+                                previousPr = state.previousPrByEventId[event.id],
                                 onToggleExpand = { vm.toggleExpand(event.id) }
                             )
                         }
@@ -373,6 +374,7 @@ private fun TimelineItem(
     dayOfWeekFmt: SimpleDateFormat,
     isExpanded: Boolean,
     expandedDetails: ExpandedPrDetails?,
+    previousPr: PreviousPr?,
     onToggleExpand: () -> Unit
 ) {
     val deco = eventDecoration(event)
@@ -407,8 +409,20 @@ private fun TimelineItem(
             Column(modifier = Modifier.padding(12.dp)) {
                 // Header — typ + data + caret
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    val badgeText = buildString {
+                        append(deco.emoji)
+                        append(" ")
+                        append(eventTypeBadge(event.type))
+                        // Dla PR — dodaj "· NAZWA ĆWICZENIA" w headerze
+                        if (event.type == TrainingEventType.PR_SET) {
+                            event.exerciseName?.takeIf { it.isNotBlank() }?.let {
+                                append(" · ")
+                                append(it.uppercase())
+                            }
+                        }
+                    }
                     Text(
-                        "${deco.emoji} ${eventTypeBadge(event.type)}",
+                        badgeText,
                         style = MaterialTheme.typography.labelSmall.copy(
                             fontWeight = FontWeight.Bold,
                             fontSize = 10.sp,
@@ -428,7 +442,7 @@ private fun TimelineItem(
 
                 // Tytuł — różny format dla PR (waga × reps H1) vs reszty (description)
                 if (event.type == TrainingEventType.PR_SET) {
-                    PrCardCollapsedBody(event)
+                    PrCardCollapsedBody(event, previousPr)
                 } else {
                     Text(
                         deco.title,
@@ -474,17 +488,12 @@ private fun TimelineItem(
  *   [140kg → 150kg +10kg]   e1RM 169kg                          ← chip + e1rm
  */
 @Composable
-private fun PrCardCollapsedBody(event: TrainingEvent) {
+private fun PrCardCollapsedBody(event: TrainingEvent, previousPr: PreviousPr?) {
     val w = event.weightKg
     val r = event.reps
     if (w == null || r == null) {
         Text("Nowy PR", color = DarkOnSurface)
         return
-    }
-    val exerciseName = event.exerciseName?.uppercase() ?: ""
-    if (exerciseName.isNotBlank()) {
-        // Już mamy badge ${type} — dodajemy też ćwiczenie w samym headerze byłby duplikat
-        // Format: tytuł podrzędny "NOWY PR · NAZWA"  → robimy to w eventTypeBadge
     }
 
     Text(
@@ -496,12 +505,11 @@ private fun PrCardCollapsedBody(event: TrainingEvent) {
         color = DarkOnSurface
     )
 
-    // Note — life-time PR + poprzedni
-    val noteText = run {
-        val parts = mutableListOf<String>()
-        parts.add("Nowy life-time PR.")
-        if (event.notes.isNotBlank()) parts.add(event.notes)
-        parts.joinToString(" ")
+    // Note — life-time PR + poprzedni rekord (jeśli był)
+    val noteText = if (previousPr != null) {
+        "Nowy life-time PR. Poprzedni: ${formatWeight(previousPr.weightKg)} kg × ${previousPr.reps} (przed ${previousPr.daysAgo} dni)"
+    } else {
+        "Nowy life-time PR."
     }
     Spacer(Modifier.height(2.dp))
     Text(
@@ -513,10 +521,8 @@ private fun PrCardCollapsedBody(event: TrainingEvent) {
     // Highlight chip + e1RM
     Spacer(Modifier.height(8.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
-        // Chip — używamy notes jeśli zawiera "Poprzedni: X kg × Y" do wyciągnięcia delta
-        val previousWeightKg = parsePreviousWeightKg(event.notes)
-        if (previousWeightKg != null && previousWeightKg > 0) {
-            val delta = w - previousWeightKg
+        if (previousPr != null && previousPr.weightKg > 0) {
+            val delta = w - previousPr.weightKg
             val deltaSign = if (delta >= 0) "+" else ""
             Box(
                 modifier = Modifier
@@ -524,7 +530,7 @@ private fun PrCardCollapsedBody(event: TrainingEvent) {
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             ) {
                 Text(
-                    "${formatWeight(previousWeightKg)}kg → ${formatWeight(w)}kg ${deltaSign}${formatWeight(delta)}kg",
+                    "${formatWeight(previousPr.weightKg)}kg → ${formatWeight(w)}kg ${deltaSign}${formatWeight(delta)}kg",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 10.sp
@@ -547,14 +553,6 @@ private fun PrCardCollapsedBody(event: TrainingEvent) {
 private fun formatWeight(w: Double): String {
     return if (w == w.toInt().toDouble()) "${w.toInt()}"
     else "%.1f".format(java.util.Locale.US, w)
-}
-
-/** Wyciąga poprzedni ciężar z notes formatu "Poprzedni: 140 kg × 5 ..." */
-private fun parsePreviousWeightKg(notes: String): Double? {
-    if (notes.isBlank()) return null
-    val regex = Regex("""Poprzedni:\s*(\d+(?:[.,]\d+)?)\s*kg""", RegexOption.IGNORE_CASE)
-    val match = regex.find(notes) ?: return null
-    return match.groupValues[1].replace(",", ".").toDoubleOrNull()
 }
 
 // ============================================================================
