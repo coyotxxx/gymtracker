@@ -116,6 +116,12 @@ class AiContextBuilder @Inject constructor(
         val recentWeekRollups = weeklyRollupDao.getRecent(limit = 4)
         val recentMonthRollups = monthlyRollupDao.getRecent(limit = 6)
         val recentQuarterRollups = quarterlyRollupDao.getRecent(limit = 4)
+        // v1.11.70: interpretation hints (statyczne + dynamiczne na podstawie stanu)
+        val interpretationHints = computeInterpretationHints(
+            weeklyTrend = volumePerWeek12,
+            recentEvents = recentEvents,
+            recentWorkouts = snapshot.finishedWorkouts.take(5)
+        )
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
         val goalProgresses = goalRepo.computeAllActiveProgress()
@@ -414,6 +420,12 @@ class AiContextBuilder @Inject constructor(
                 }
             }
 
+            // v1.11.70: interpretation_hints - wskazowki dla AI jak interpretowac dane
+            // (statyczne reguly + dynamiczne na podstawie aktualnego stanu).
+            putJsonArray("interpretation_hints") {
+                interpretationHints.forEach { add(it) }
+            }
+
             // v1.11.66: historical_summary - prekomputowane rollupy (week/month/quarter).
             // Daje AI obraz dlugoterminowy bez ladowania surowych danych.
             // Total ~2-3 KB pokrywa 1+ rok historii.
@@ -579,6 +591,100 @@ data class PainAreaCount(
     val count: Int,
     val lastOccurrenceMs: Long
 )
+
+/**
+ * v1.11.70: Generuje liste wskazowek interpretacyjnych dla AI.
+ *
+ * Powod: AI dostaje wiele zrodel danych (recent_workouts, weekly_trend, event_log,
+ * historical_summary). Latwo o sprzeczne interpretacje (np. niski volume biezacego
+ * tygodnia myli AI - sugeruje "dodaj tonaz" mimo ze tydzien dopiero sie zaczal lub
+ * jest deload). Te hints prostuja interpretacje.
+ *
+ * Mix:
+ * - Static hints (zawsze) - reguly interpretacyjne dla pol kontekstu
+ * - Dynamic hints (warunkowe) - gdy konkretny stan wymaga uwagi
+ */
+fun computeInterpretationHints(
+    weeklyTrend: List<Double>,             // weekly_volume_trend_12w (last = bieżący)
+    recentEvents: List<pl.filebit.gymtracker.data.entity.TrainingEvent>,
+    recentWorkouts: List<pl.filebit.gymtracker.data.entity.Workout>,
+    nowMs: Long = System.currentTimeMillis()
+): List<String> {
+    val hints = mutableListOf<String>()
+
+    // === STATIC HINTS (zawsze) ===
+    hints.add("weekly_volume_trend_12w[weeksAgo=0] to BIEŻĄCY niezakończony tydzień — nie oceniaj jako deload bo dopiero się zaczął")
+    hints.add("Eventy DELOAD_DETECTED w event_log oznaczają tygodnie celowo z niskim tonażem")
+    hints.add("MuscleRecovery (regeneracja PARTII) i ACWR (TOTAL volume) to różne wymiary — mogą być oba 'wysokie' jednocześnie (partie świeże ALE total tonnage podwyższony). Wtedy: NIE dodawaj sesji, obniż objętość per sesja")
+    hints.add("Plan_history_summary zawiera wszystkie plany (aktywne + zakończone). 'Aktywny' poznasz po nazwie lub fakcie że recent_workouts używają jego ćwiczeń")
+
+    // === DYNAMIC HINTS (warunkowe) ===
+
+    // 1. Bieżący tydzień znacznie niższy niż poprzedni
+    if (weeklyTrend.size >= 2) {
+        val current = weeklyTrend.last()
+        val previous = weeklyTrend[weeklyTrend.size - 2]
+        if (previous > 0 && current < previous * 0.5) {
+            val currentInt = current.toInt()
+            val previousInt = previous.toInt()
+            hints.add("Bieżący tydzień ma volume <50% poprzedniego ($currentInt vs $previousInt kg) — może być deload, brak czasu, lub dopiero początek tygodnia. Nie zakładaj automatycznie deloadu.")
+        }
+    }
+
+    // 2. Niedawny DELOAD_DETECTED event
+    val msPerDay = 24L * 3600 * 1000
+    val mostRecentDeload = recentEvents.firstOrNull {
+        it.type == pl.filebit.gymtracker.data.entity.TrainingEventType.DELOAD_DETECTED
+    }
+    if (mostRecentDeload != null) {
+        val daysAgo = (nowMs - mostRecentDeload.date) / msPerDay
+        if (daysAgo in 0..14) {
+            hints.add("Wykryto DELOAD_DETECTED $daysAgo dni temu — jeśli user pyta o akumulację/intensyfikację, zweryfikuj czy deload się zakończył (>=7 dni od jego daty).")
+        }
+    }
+
+    // 3. Niski wellbeing w ostatnich sesjach
+    val lastThreeWorkouts = recentWorkouts.take(3)
+    val lowWellbeingCount = lastThreeWorkouts.count {
+        it.wellbeingRating != null && it.wellbeingRating!! <= 2
+    }
+    if (lowWellbeingCount >= 2) {
+        hints.add("Wellbeing ≤2 w $lowWellbeingCount z ostatnich 3 sesji — sygnał przemęczenia. Bez względu na inne metryki, sugeruj rest lub lżejszy tydzień.")
+    }
+
+    // 4. Pain area w ostatnich sesjach
+    val recentPainAreas = recentWorkouts.take(5)
+        .mapNotNull { it.painArea }
+        .filter { it.isNotBlank() }
+        .distinct()
+    if (recentPainAreas.isNotEmpty()) {
+        hints.add("Niedawne painArea (z recent_workouts): ${recentPainAreas.joinToString(", ")} — sugeruj alternatywy lub unikaj ćwiczeń obciążających te partie.")
+    }
+
+    // 5. Niedawna kontuzja (INJURY event)
+    val recentInjuries = recentEvents.filter {
+        it.type == pl.filebit.gymtracker.data.entity.TrainingEventType.INJURY &&
+            (nowMs - it.date) / msPerDay <= 30
+    }
+    if (recentInjuries.isNotEmpty()) {
+        val areas = recentInjuries.mapNotNull { it.area }.distinct().take(3)
+        hints.add("Kontuzje w ostatnich 30 dniach: ${areas.joinToString(", ")} — utrzymuj alternatywy bezpieczne dla tych obszarów.")
+    }
+
+    // 6. Ostatni gap_resumed (powrót po przerwie)
+    val recentGap = recentEvents.firstOrNull {
+        it.type == pl.filebit.gymtracker.data.entity.TrainingEventType.GAP_RESUMED
+    }
+    if (recentGap != null) {
+        val daysAgo = (nowMs - recentGap.date) / msPerDay
+        if (daysAgo in 0..7) {
+            val weeks = recentGap.weeksContext ?: 0
+            hints.add("User wrócił z przerwy ${weeks} tyg ($daysAgo dni temu) — pierwsze 1-2 tyg po powrocie obniż obciążenia o 15-20% vs przed-przerwowe.")
+        }
+    }
+
+    return hints
+}
 
 /**
  * v1.11.60: Heurystyka czy uzytkownik pyta o modyfikacje/generowanie planu.

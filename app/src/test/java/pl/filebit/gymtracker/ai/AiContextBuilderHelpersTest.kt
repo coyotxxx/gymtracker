@@ -198,4 +198,136 @@ class AiContextBuilderHelpersTest {
         val kolano = result.areas.first { it.area == "kolano" }
         assertEquals(now - 5 * msPerDay, kolano.lastOccurrenceMs)
     }
+
+    // ============== computeInterpretationHints (v1.11.70) ==============
+
+    private fun event(daysAgo: Long, type: pl.filebit.gymtracker.data.entity.TrainingEventType,
+                      area: String? = null, weeksContext: Int? = null) =
+        pl.filebit.gymtracker.data.entity.TrainingEvent(
+            date = now - daysAgo * msPerDay,
+            type = type,
+            area = area,
+            weeksContext = weeksContext
+        )
+
+    private fun workoutWithFeedback(daysAgo: Long, wellbeing: Int? = null, painArea: String? = null) =
+        pl.filebit.gymtracker.data.entity.Workout(
+            startedAt = now - daysAgo * msPerDay,
+            finishedAt = now - daysAgo * msPerDay + 60 * 60 * 1000L,
+            wellbeingRating = wellbeing,
+            painArea = painArea
+        )
+
+    @Test
+    fun `hints - zawsze zawiera 4 statyczne wskazowki`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = emptyList(),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("hints sa niepuste", result.size >= 4)
+        assertTrue("hint o weeksAgo=0", result.any { it.contains("weeksAgo=0") })
+        assertTrue("hint o DELOAD_DETECTED", result.any { it.contains("DELOAD_DETECTED") })
+        assertTrue("hint o muscleRecovery vs ACWR", result.any { it.contains("MuscleRecovery") })
+    }
+
+    @Test
+    fun `hints - drop biezacego tygodnia ponizej 50 procent generuje hint`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = listOf(30000.0, 32000.0, 35000.0, 33000.0, 38000.0, 5000.0),  // 5000 vs 38000 = 13%
+            recentEvents = emptyList(),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("hint o niskim biezacym tyg",
+            result.any { it.contains("Bieżący tydzień ma volume <50%") })
+    }
+
+    @Test
+    fun `hints - normalny tydzien nie generuje hint o spadku`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = listOf(30000.0, 32000.0, 35000.0, 33000.0, 38000.0, 35000.0),  // wszystko OK
+            recentEvents = emptyList(),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("brak hint o spadku",
+            result.none { it.contains("Bieżący tydzień ma volume <50%") })
+    }
+
+    @Test
+    fun `hints - niedawny DELOAD event w 14d generuje hint`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = listOf(
+                event(daysAgo = 5, type = pl.filebit.gymtracker.data.entity.TrainingEventType.DELOAD_DETECTED)
+            ),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("hint o niedawnym deload",
+            result.any { it.contains("Wykryto DELOAD_DETECTED 5 dni") })
+    }
+
+    @Test
+    fun `hints - niski wellbeing 2 z 3 ostatnich generuje warning`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = emptyList(),
+            recentWorkouts = listOf(
+                workoutWithFeedback(daysAgo = 1, wellbeing = 2),
+                workoutWithFeedback(daysAgo = 3, wellbeing = 1),
+                workoutWithFeedback(daysAgo = 5, wellbeing = 4)
+            ),
+            nowMs = now
+        )
+        assertTrue("hint o niskim wellbeing",
+            result.any { it.contains("Wellbeing ≤2") && it.contains("2 z ostatnich 3") })
+    }
+
+    @Test
+    fun `hints - painArea w recent generuje warning`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = emptyList(),
+            recentWorkouts = listOf(
+                workoutWithFeedback(daysAgo = 1, painArea = "kolano"),
+                workoutWithFeedback(daysAgo = 3, painArea = "bark")
+            ),
+            nowMs = now
+        )
+        assertTrue("hint o painArea",
+            result.any { it.contains("painArea") && it.contains("kolano") && it.contains("bark") })
+    }
+
+    @Test
+    fun `hints - INJURY event w 30d generuje warning`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = listOf(
+                event(daysAgo = 10, type = pl.filebit.gymtracker.data.entity.TrainingEventType.INJURY,
+                    area = "ramie")
+            ),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("hint o kontuzji",
+            result.any { it.contains("Kontuzje w ostatnich 30") && it.contains("ramie") })
+    }
+
+    @Test
+    fun `hints - GAP_RESUMED w 7 dni generuje warning o powrotach`() {
+        val result = computeInterpretationHints(
+            weeklyTrend = emptyList(),
+            recentEvents = listOf(
+                event(daysAgo = 3, type = pl.filebit.gymtracker.data.entity.TrainingEventType.GAP_RESUMED,
+                    weeksContext = 3)
+            ),
+            recentWorkouts = emptyList(),
+            nowMs = now
+        )
+        assertTrue("hint o powrocie",
+            result.any { it.contains("wrócił z przerwy 3 tyg") })
+    }
 }
