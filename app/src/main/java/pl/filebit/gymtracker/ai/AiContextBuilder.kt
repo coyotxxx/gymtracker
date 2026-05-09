@@ -46,7 +46,8 @@ class AiContextBuilder @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
-    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
+    private val trainingEventDao: pl.filebit.gymtracker.data.db.dao.TrainingEventDao
 ) {
 
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -90,6 +91,8 @@ class AiContextBuilder @Inject constructor(
         val volumePerWeek12 = statsRepo.volumePerWeekFast(weeks = 12, snapshot = snapshot)
         val bodyInflections = computeBodyInflections(allMeasurements)
         val painLog90d = computePainLog90d(snapshot.finishedWorkouts)
+        // v1.11.59: event log (PR-y, kontuzje, deloady, zmiany planu, gap_resumed)
+        val recentEvents = trainingEventDao.getRecent(limit = 15)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
         val goalProgresses = goalRepo.computeAllActiveProgress()
@@ -374,6 +377,27 @@ class AiContextBuilder @Inject constructor(
                     add(buildJsonObject {
                         put("weeksAgo", 11 - idx)
                         put("volumeKg", vol)
+                    })
+                }
+            }
+
+            // v1.11.59: event log - kluczowe wydarzenia w cyklu treningowym
+            // (PR-y, kontuzje, deloady, zmiany planu, gap_resumed). To jest "pamiec
+            // epizodyczna" AI - eventy trzymane na zawsze, niezalezne od agregacji
+            // surowych danych w v1.11.60+.
+            putJsonArray("event_log") {
+                recentEvents.forEach { e ->
+                    add(buildJsonObject {
+                        put("date", df.format(Date(e.date)))
+                        put("type", e.type.name)
+                        e.exerciseName?.let { put("exercise", it) }
+                        e.weightKg?.let { put("weightKg", it) }
+                        e.reps?.let { put("reps", it) }
+                        e.e1rmKg?.let { put("e1rmKg", it) }
+                        e.area?.let { put("area", it) }
+                        e.planName?.let { put("planName", it) }
+                        e.weeksContext?.let { put("weeksContext", it) }
+                        if (e.notes.isNotBlank()) put("notes", e.notes)
                     })
                 }
             }

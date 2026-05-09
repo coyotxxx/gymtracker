@@ -14,7 +14,8 @@ import javax.inject.Singleton
 class WorkoutRepository @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
-    private val exerciseDao: ExerciseDao
+    private val exerciseDao: ExerciseDao,
+    private val eventDetectorService: pl.filebit.gymtracker.ai.EventDetectorService
 ) {
     fun observeActive(): Flow<Workout?> = workoutDao.observeActive()
     fun observeAll(): Flow<List<Workout>> = workoutDao.observeAll()
@@ -51,6 +52,8 @@ class WorkoutRepository @Inject constructor(
             return
         }
         workoutDao.update(w.copy(finishedAt = System.currentTimeMillis()))
+        // v1.11.59: detekcja eventów (PR-y, gap_resumed) po finalizacji treningu
+        runCatching { eventDetectorService.onWorkoutFinished(workoutId) }
     }
 
     suspend fun discardActive() {
@@ -88,6 +91,8 @@ class WorkoutRepository @Inject constructor(
                 painNotes = painNotes
             )
         )
+        // v1.11.59: detekcja eventu INJURY (gdy painArea wypełniony)
+        runCatching { eventDetectorService.onPostWorkoutFeedback(workoutId) }
     }
 
     /**

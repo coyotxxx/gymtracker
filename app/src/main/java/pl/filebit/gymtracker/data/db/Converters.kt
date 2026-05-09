@@ -106,4 +106,10 @@ class Converters {
     @TypeConverter fun stringToPerfTrend(s: String): pl.filebit.gymtracker.data.entity.PerformanceTrend =
         runCatching { pl.filebit.gymtracker.data.entity.PerformanceTrend.valueOf(s) }
             .getOrDefault(pl.filebit.gymtracker.data.entity.PerformanceTrend.PROGRESS)
+
+    // v1.11.59 — TrainingEvent
+    @TypeConverter fun trainingEventTypeToString(t: pl.filebit.gymtracker.data.entity.TrainingEventType): String = t.name
+    @TypeConverter fun stringToTrainingEventType(s: String): pl.filebit.gymtracker.data.entity.TrainingEventType =
+        runCatching { pl.filebit.gymtracker.data.entity.TrainingEventType.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.TrainingEventType.PR_SET)
 }
