@@ -126,6 +126,21 @@ fun HomeScreen(
                 )
             }
 
+            // v1.11.71: AI Coach — proaktywna porada na dziś (PRIMARY card)
+            state.coachAdvice?.let { advice ->
+                item {
+                    AiCoachCard(
+                        advice = advice,
+                        onCtaClick = {
+                            when (advice.ctaAction) {
+                                pl.filebit.gymtracker.ai.AdviceCta.OPEN_PLAN -> onSelectPlanTab()
+                                else -> { /* OPEN_BODY_MEASUREMENTS / OPEN_SETTINGS_AI / NONE — no-op (brak directnej nawigacji z Home) */ }
+                            }
+                        }
+                    )
+                }
+            }
+
             // Deload card — 3 stany: Suggestion (Zastosuj/Wyjaśnij/Anuluj),
             // Active (trwa X dni), Active+isFinished (czas wrócić do oryginalnych wag).
             when (val card = state.deloadCard) {
@@ -2278,6 +2293,82 @@ private fun RowScope.ReadinessMini(label: String, value: Int, weight: String) {
             ),
             color = DarkOnSurface
         )
+    }
+}
+
+/**
+ * v1.11.71: AI Coach — proaktywna porada na dziś. Najwyższa karta na Home.
+ * Kolory zależne od severity (GO=zielony, CAUTION=pomarańczowy, REST=czerwony, INFO=niebieski).
+ */
+@androidx.compose.runtime.Composable
+private fun AiCoachCard(
+    advice: pl.filebit.gymtracker.ai.CoachAdvice,
+    onCtaClick: () -> Unit
+) {
+    val accent = when (advice.severity) {
+        pl.filebit.gymtracker.ai.AdviceSeverity.GO -> SuccessGreen
+        pl.filebit.gymtracker.ai.AdviceSeverity.CAUTION -> AccentOrange
+        pl.filebit.gymtracker.ai.AdviceSeverity.REST -> ErrorRed
+        pl.filebit.gymtracker.ai.AdviceSeverity.INFO -> DarkOnSurfaceVariant
+    }
+    val emoji = when (advice.severity) {
+        pl.filebit.gymtracker.ai.AdviceSeverity.GO -> "💪"
+        pl.filebit.gymtracker.ai.AdviceSeverity.CAUTION -> "⚠️"
+        pl.filebit.gymtracker.ai.AdviceSeverity.REST -> "🛌"
+        pl.filebit.gymtracker.ai.AdviceSeverity.INFO -> "ℹ️"
+    }
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.12f)
+        ),
+        border = BorderStroke(1.dp, accent.copy(alpha = 0.45f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                androidx.compose.material3.Text(
+                    "AI COACH",
+                    style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                androidx.compose.material3.Text(emoji, fontSize = 18.sp)
+            }
+            Spacer(Modifier.height(6.dp))
+            androidx.compose.material3.Text(
+                advice.title,
+                style = androidx.compose.material3.MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold
+                ),
+                color = accent
+            )
+            Spacer(Modifier.height(4.dp))
+            androidx.compose.material3.Text(
+                advice.reason,
+                style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                color = DarkOnSurface
+            )
+            if (advice.ctaLabel != null && advice.ctaAction != null
+                && advice.ctaAction != pl.filebit.gymtracker.ai.AdviceCta.NONE) {
+                Spacer(Modifier.height(10.dp))
+                androidx.compose.material3.Button(
+                    onClick = onCtaClick,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text(advice.ctaLabel!!, fontWeight = FontWeight.Bold)
+                }
+            }
+        }
     }
 }
 

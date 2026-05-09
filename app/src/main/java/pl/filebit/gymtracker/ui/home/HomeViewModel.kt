@@ -64,7 +64,8 @@ data class HomeUiState(
     val recoveryCardDismissed: Boolean = false,          // v1.7.5 — user zamknął kartę na dziś
     val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
     val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
-    val dismissedCards: Set<String> = emptySet()         // v1.10 — generyczny dismiss per cardKey
+    val dismissedCards: Set<String> = emptySet(),        // v1.10 — generyczny dismiss per cardKey
+    val coachAdvice: pl.filebit.gymtracker.ai.CoachAdvice? = null  // v1.11.71 — proaktywny AI Coach
 )
 
 data class NextPlannedDay(
@@ -223,6 +224,28 @@ class HomeViewModel @Inject constructor(
                 ((c.get(java.util.Calendar.DAY_OF_WEEK) + 5) % 7) + 1
             }.toSet()
 
+        // v1.11.71: AI Coach — proaktywna porada na dziś. Łączy wszystkie sygnały.
+        val lastFinishedWorkout = recent.firstOrNull { it.finishedAt != null }
+        val coachAdvice = pl.filebit.gymtracker.ai.computeCoachAdvice(
+            phase = currentPhase,
+            readiness = trainingReadiness,
+            health = healthInsight,
+            muscleReport = muscleRecovery,
+            hasTodaysPlan = todaysPlan != null,
+            todaysPlanLabel = todaysPlan?.let { p ->
+                "${p.name}${if (todaysCount > 0) " ($todaysCount ćwiczeń)" else ""}"
+            },
+            nextPlannedDayLabel = nextPlannedDay?.let { n ->
+                val day = when (n.daysFromToday) {
+                    1 -> "jutro"
+                    in 2..7 -> "za ${n.daysFromToday} dni"
+                    else -> "za ponad tydzień"
+                }
+                "Następny trening $day."
+            },
+            lastWorkout = lastFinishedWorkout
+        )
+
         // Stan C: dla aktywnego treningu — czas trwania + progress setów
         val durationMin: Int
         val progressPct: Int
@@ -262,6 +285,7 @@ class HomeViewModel @Inject constructor(
             weekSlots = schedule,
             plansById = plans.associateBy { it.id },
             completedDaysThisWeek = completedDays,
+            coachAdvice = coachAdvice,
             trainingPhase = trainingPhase,
             healthInsight = healthInsight,
             recoveryScore = recoveryScore,
