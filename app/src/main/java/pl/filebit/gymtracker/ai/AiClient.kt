@@ -47,6 +47,22 @@ interface AiClient {
         source: String = "unknown"
     ): Result<String>
 
+    /**
+     * v1.11.67 — chat z możliwością wywoływania narzędzi (Anthropic Tool Use).
+     * AI może w odpowiedzi użyć tool_use bloku zamiast text. Klient wykonuje
+     * tool przez [toolHandler] i zwraca wynik jako kolejną wiadomość. Loop
+     * iteruje aż AI zwróci finalny tekst lub osiągniemy MAX_TOOL_ITERATIONS.
+     *
+     * Dla OpenAI: fallback do zwykłego chat (function calling ma inny format,
+     * implementacja może być dodana w przyszłej wersji).
+     */
+    suspend fun chatWithTools(
+        config: AiConfig,
+        messages: List<AiMessage>,
+        toolHandler: AiToolHandler,
+        source: String = "unknown"
+    ): Result<String>
+
     suspend fun ping(config: AiConfig): Result<Unit>
 }
 
@@ -119,6 +135,28 @@ class AiClientImpl @Inject constructor(
             onFailure = { err ->
                 logCall(source, config, combinedPrompt, "", false, err.message, duration)
             }
+        )
+        result
+    }
+
+    override suspend fun chatWithTools(
+        config: AiConfig,
+        messages: List<AiMessage>,
+        toolHandler: AiToolHandler,
+        source: String
+    ): Result<String> = withContext(Dispatchers.IO) {
+        val startMs = System.currentTimeMillis()
+        val combinedPrompt = messages.joinToString("\n\n") { "[${it.role.name}]\n${it.content}" }
+        val result = runCatching {
+            when (config.provider) {
+                AiProvider.ANTHROPIC -> callAnthropicWithTools(config, messages, toolHandler)
+                AiProvider.OPENAI -> callOpenAi(config, messages)  // fallback bez tools
+            }
+        }
+        val duration = System.currentTimeMillis() - startMs
+        result.fold(
+            onSuccess = { logCall(source, config, combinedPrompt, it, true, null, duration) },
+            onFailure = { logCall(source, config, combinedPrompt, "", false, it.message, duration) }
         )
         result
     }
@@ -252,6 +290,120 @@ class AiClientImpl @Inject constructor(
             val msg = first["message"]?.jsonObject ?: error("Brak message")
             msg["content"]?.jsonPrimitive?.content ?: error("Brak content w message")
         }
+    }
+
+    /**
+     * v1.11.67: chat z tool use, multi-turn loop dla Anthropic.
+     *
+     * Format API: assistant content może być array z text/tool_use blokami.
+     * Klient wykonuje tool i zwraca user message z tool_result blokiem.
+     * Iteruje aż AI zwróci finalny text (stop_reason == "end_turn") lub do MAX.
+     */
+    private suspend fun callAnthropicWithTools(
+        config: AiConfig,
+        initialMessages: List<AiMessage>,
+        toolHandler: AiToolHandler
+    ): String {
+        // Convert AiMessage -> List<JsonObject> w API format. Każda wiadomość ma
+        // content jako string (zwykły tekst). W trakcie loop'u dodajemy
+        // wiadomości z content array (z tool_use / tool_result).
+        val messagesArray = mutableListOf<kotlinx.serialization.json.JsonElement>()
+        initialMessages.forEach { m ->
+            messagesArray.add(buildJsonObject {
+                put("role", if (m.role == AiRole.USER) "user" else "assistant")
+                put("content", m.content)
+            })
+        }
+
+        val maxIterations = 6  // bezpieczna granica multi-turn
+        var iteration = 0
+        while (iteration < maxIterations) {
+            iteration++
+            val body = buildJsonObject {
+                put("model", config.model)
+                put("max_tokens", maxTokensForModel(config.model))
+                put("system", config.systemPrompt)
+                put("tools", AiTools.toolsForApi())
+                put("messages", buildJsonArray { messagesArray.forEach { add(it) } })
+            }.toString()
+
+            val req = Request.Builder()
+                .url("https://api.anthropic.com/v1/messages")
+                .header("x-api-key", sanitizeKey(config.apiKey))
+                .header("anthropic-version", "2023-06-01")
+                .header("content-type", "application/json")
+                .post(body.toRequestBody("application/json".toMediaType()))
+                .build()
+
+            val responseObj = http.newCall(req).execute().use { resp ->
+                val raw = resp.body?.string().orEmpty()
+                if (!resp.isSuccessful) {
+                    throw IllegalStateException("Błąd API (${resp.code}): ${raw.take(500)}")
+                }
+                json.parseToJsonElement(raw).jsonObject
+            }
+
+            val stopReason = responseObj["stop_reason"]?.jsonPrimitive?.content
+            val contentArray = responseObj["content"]?.jsonArray
+                ?: throw IllegalStateException("Brak pola content w odpowiedzi Anthropic")
+
+            if (stopReason == "tool_use") {
+                // AI chce użyć narzędzi - wykonujemy wszystkie tool_use bloki
+                // i zwracamy tool_result jako user message
+                val toolUseBlocks = contentArray.filter {
+                    it.jsonObject["type"]?.jsonPrimitive?.content == "tool_use"
+                }
+                if (toolUseBlocks.isEmpty()) {
+                    // stop_reason=tool_use ale brak tool_use bloków - dziwne, return raw text
+                    return extractText(contentArray)
+                }
+
+                // Dodaj assistant message z całym content array (raw)
+                messagesArray.add(buildJsonObject {
+                    put("role", "assistant")
+                    put("content", contentArray)
+                })
+
+                // Wykonaj każdy tool i zbuduj tool_result content
+                val toolResults = buildJsonArray {
+                    toolUseBlocks.forEach { block ->
+                        val obj = block.jsonObject
+                        val toolName = obj["name"]?.jsonPrimitive?.content ?: ""
+                        val toolUseId = obj["id"]?.jsonPrimitive?.content ?: ""
+                        val toolInput = obj["input"]?.jsonObject ?: buildJsonObject { }
+                        val toolResult = if (toolName in AiTools.TOOL_NAMES) {
+                            runCatching { toolHandler.execute(toolName, toolInput) }
+                                .getOrElse { "{\"error\":\"${it.message?.take(200)}\"}" }
+                        } else {
+                            "{\"error\":\"unknown tool: $toolName\"}"
+                        }
+                        add(buildJsonObject {
+                            put("type", "tool_result")
+                            put("tool_use_id", toolUseId)
+                            put("content", toolResult)
+                        })
+                    }
+                }
+                messagesArray.add(buildJsonObject {
+                    put("role", "user")
+                    put("content", toolResults)
+                })
+                // Continue loop - kolejne wywołanie Anthropic API
+            } else {
+                // end_turn / max_tokens / stop_sequence - finalna odpowiedź
+                return extractText(contentArray)
+            }
+        }
+        throw IllegalStateException("Multi-turn loop przekroczył max iteracji ($maxIterations)")
+    }
+
+    /** Wyciąga połączony tekst z content array (pomija tool_use bloki). */
+    private fun extractText(contentArray: kotlinx.serialization.json.JsonArray): String {
+        return contentArray
+            .filter { it.jsonObject["type"]?.jsonPrimitive?.content == "text" }
+            .mapNotNull { it.jsonObject["text"]?.jsonPrimitive?.content }
+            .joinToString("\n")
+            .ifBlank { "(AI nie zwróciło tekstu)" }
     }
 
     private fun callAnthropic(config: AiConfig, messages: List<AiMessage>): String {

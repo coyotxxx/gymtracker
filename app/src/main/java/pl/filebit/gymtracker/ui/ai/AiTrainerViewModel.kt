@@ -121,7 +121,8 @@ class AiTrainerViewModel @Inject constructor(
     private val planApplier: AiPlanApplier,
     private val chatRepo: AiChatRepository,
     private val planRepo: pl.filebit.gymtracker.data.repository.PlanRepository,
-    private val exerciseRepo: pl.filebit.gymtracker.data.repository.ExerciseRepository
+    private val exerciseRepo: pl.filebit.gymtracker.data.repository.ExerciseRepository,
+    private val toolHandler: pl.filebit.gymtracker.ai.AiToolHandler
 ) : ViewModel() {
 
     private fun toast(text: String) {
@@ -268,7 +269,9 @@ class AiTrainerViewModel @Inject constructor(
                 AiMessage(it.role, it.text)
             } + AiMessage(AiRole.USER, combined)
 
-            val result = client.chat(cfg, apiMessages, source = "AiTrainer")
+            // v1.11.67: chatWithTools - AI moze poprosic o deep dive (get_workouts,
+            // get_events, get_rollups, get_exercise_history, get_body_history)
+            val result = client.chatWithTools(cfg, apiMessages, toolHandler, source = "AiTrainer")
             result.fold(
                 onSuccess = { response ->
                     val proposal = planApplier.extractProposal(response)
