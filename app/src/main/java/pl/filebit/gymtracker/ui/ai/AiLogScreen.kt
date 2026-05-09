@@ -33,6 +33,8 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -306,12 +308,11 @@ private fun AiLogDetailDialog(log: AiLog, onDismiss: () -> Unit) {
 
         // Prompt
         SectionLabel("PROMPT (${log.fullPrompt.length} znaków)")
-        Text(
-            log.fullPrompt,
-            style = MaterialTheme.typography.bodySmall.copy(
-                fontFamily = FontFamily.Monospace, fontSize = 10.sp
-            ),
-            color = DarkOnSurface,
+        // v1.11.58: AndroidView z TextView - Compose Text ucina przy ~250KB,
+        // a prompty AI moga byc duze (kontekst + historia). TextView nie ma limitu.
+        LongTextView(
+            text = log.fullPrompt,
+            colorArgb = DarkOnSurface.toArgb(),
             modifier = Modifier
                 .fillMaxWidth()
                 .background(DarkSurface, RoundedCornerShape(6.dp))
@@ -322,12 +323,9 @@ private fun AiLogDetailDialog(log: AiLog, onDismiss: () -> Unit) {
 
         // Response
         SectionLabel("RESPONSE (${log.fullResponse.length} znaków)")
-        Text(
-            log.fullResponse.ifBlank { "(brak)" },
-            style = MaterialTheme.typography.bodySmall.copy(
-                fontFamily = FontFamily.Monospace, fontSize = 10.sp
-            ),
-            color = if (log.success) DarkOnSurface else ErrorRed,
+        LongTextView(
+            text = log.fullResponse.ifBlank { "(brak)" },
+            colorArgb = (if (log.success) DarkOnSurface else ErrorRed).toArgb(),
             modifier = Modifier
                 .fillMaxWidth()
                 .background(DarkSurface, RoundedCornerShape(6.dp))
@@ -416,4 +414,32 @@ private fun shareText(context: android.content.Context, text: String, subject: S
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
     context.startActivity(chooser)
+}
+
+/**
+ * v1.11.58: Wyswietla dlugi tekst (do ~10MB) bez ucinania.
+ * Compose Text uzywa SpannableString z limitem ~250KB - dla dlugich promptow AI
+ * wpada w problem (ucina renderowanie). Native TextView nie ma takiego limitu.
+ */
+@androidx.compose.runtime.Composable
+private fun LongTextView(
+    text: String,
+    colorArgb: Int,
+    modifier: Modifier = Modifier
+) {
+    AndroidView(
+        modifier = modifier,
+        factory = { ctx ->
+            android.widget.TextView(ctx).apply {
+                setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 10f)
+                typeface = android.graphics.Typeface.MONOSPACE
+                setTextIsSelectable(true)
+                setHorizontallyScrolling(false)
+            }
+        },
+        update = { tv ->
+            tv.setTextColor(colorArgb)
+            tv.text = text
+        }
+    )
 }

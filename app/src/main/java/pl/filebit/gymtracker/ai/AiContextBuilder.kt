@@ -73,11 +73,12 @@ class AiContextBuilder @Inject constructor(
     )
 
     suspend fun buildContextJson(
-        recentWorkoutsLimit: Int = 30,
+        recentWorkoutsLimit: Int = 5,
         targetPlanId: Long? = null
     ): String {
         val profile = profileRepo.get()
-        val measurements = bodyRepo.getAllAsc().takeLast(15)
+        val allMeasurements = bodyRepo.getAllAsc()
+        val measurements = allMeasurements.takeLast(7)
         // v1.11.45: snapshot raz dla overview/muscleEngagement + workouts data
         val snapshot = statsCacheService.snapshot()
         val overview = statsRepo.overviewFast(snapshot)
@@ -85,27 +86,35 @@ class AiContextBuilder @Inject constructor(
         val weekProgress = statsRepo.weekProgress(profile.daysPerWeek)
         val achievements = statsRepo.unlockedAchievements(profile.daysPerWeek)
         val muscle = statsRepo.muscleEngagementFast(periodDays = 90, snapshot = snapshot)
+        // v1.11.58: nowe sekcje analityczne (lekkie - czytane z snapshot)
+        val volumePerWeek12 = statsRepo.volumePerWeekFast(weeks = 12, snapshot = snapshot)
+        val bodyInflections = computeBodyInflections(allMeasurements)
+        val painLog90d = computePainLog90d(snapshot.finishedWorkouts)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
         val goalProgresses = goalRepo.computeAllActiveProgress()
         val allExercises = snapshot.allExercises  // pre-fetched w snapshot
 
-        // Pre-collect plans
-        val plansData: List<PlanWithDays> = planDao.getAll().map { plan ->
-            val days = planExerciseDao.getDaysWithExercises(plan.id)
-            val daysData = days.map { day ->
-                val pes = planExerciseDao.getForPlanAndDay(plan.id, day)
-                val exercisesData = pes.map { pe ->
-                    ExerciseWithSets(
-                        planExercise = pe,
-                        exercise = exerciseDao.getById(pe.exerciseId),
-                        sets = planSetDao.getForPlanExercise(pe.id)
-                    )
+        // v1.11.58: Pre-collect plans — TYLKO targetPlan z pelnymi detalami;
+        // pozostale plany jako summary (nazwa + dni + notes), zeby zmniejszyc prompt
+        val allPlans = planDao.getAll()
+        val plansData: List<PlanWithDays> = if (targetPlanId != null) {
+            allPlans.filter { it.id == targetPlanId }.map { plan ->
+                val days = planExerciseDao.getDaysWithExercises(plan.id)
+                val daysData = days.map { day ->
+                    val pes = planExerciseDao.getForPlanAndDay(plan.id, day)
+                    val exercisesData = pes.map { pe ->
+                        ExerciseWithSets(
+                            planExercise = pe,
+                            exercise = exerciseDao.getById(pe.exerciseId),
+                            sets = planSetDao.getForPlanExercise(pe.id)
+                        )
+                    }
+                    DayWithExercises(day, exercisesData)
                 }
-                DayWithExercises(day, exercisesData)
+                PlanWithDays(plan, daysData)
             }
-            PlanWithDays(plan, daysData)
-        }
+        } else emptyList()
 
         // v1.11.45: Pre-collect recent workouts z snapshot (zero N+1 queries)
         val recentWorkouts = snapshot.finishedWorkouts.take(recentWorkoutsLimit)
@@ -235,43 +244,57 @@ class AiContextBuilder @Inject constructor(
                 }
             }
 
-            putJsonArray("plans") {
-                plansData.forEach { pwd ->
+            // v1.11.58: plans -> tylko summary (nazwy/daty/notes) + opcjonalny target_plan z pelnymi detalami
+            putJsonArray("plan_history_summary") {
+                allPlans.forEach { plan ->
                     add(buildJsonObject {
-                        put("id", pwd.plan.id)
-                        put("name", pwd.plan.name)
-                        put("daysOfWeek", buildJsonArray { pwd.plan.daysOfWeek.forEach { add(it) } })
-                        put("notes", pwd.plan.notes)
-                        put("days", buildJsonArray {
-                            pwd.days.forEach { dwe ->
-                                add(buildJsonObject {
-                                    put("dayOfWeek", dwe.dayOfWeek)
-                                    put("exercises", buildJsonArray {
-                                        dwe.exercises.forEach { ews ->
-                                            add(buildJsonObject {
-                                                put("name", ews.exercise?.name ?: "?")
-                                                put("primaryMuscle", ews.exercise?.primaryMuscle?.name ?: "")
-                                                put("equipment", ews.exercise?.equipment?.name ?: "")
-                                                ews.planExercise.supersetGroup?.let {
-                                                    put("supersetGroup", it)
-                                                }
-                                                put("sets", buildJsonArray {
-                                                    ews.sets.forEach { s ->
-                                                        add(buildJsonObject {
-                                                            put("setNumber", s.setNumber)
-                                                            put("reps", s.reps)
-                                                            s.weightKg?.let { put("weightKg", it) }
-                                                            s.restSeconds?.let { put("restSec", it) }
-                                                        })
-                                                    }
-                                                })
-                                            })
-                                        }
-                                    })
-                                })
-                            }
-                        })
+                        put("id", plan.id)
+                        put("name", plan.name)
+                        put("daysOfWeek", buildJsonArray { plan.daysOfWeek.forEach { add(it) } })
+                        if (plan.notes.isNotBlank()) put("notes", plan.notes)
                     })
+                }
+            }
+            // Pelne detale TYLKO targetPlanId
+            if (plansData.isNotEmpty()) {
+                putJsonArray("target_plan_full") {
+                    plansData.forEach { pwd ->
+                        add(buildJsonObject {
+                            put("id", pwd.plan.id)
+                            put("name", pwd.plan.name)
+                            put("daysOfWeek", buildJsonArray { pwd.plan.daysOfWeek.forEach { add(it) } })
+                            put("notes", pwd.plan.notes)
+                            put("days", buildJsonArray {
+                                pwd.days.forEach { dwe ->
+                                    add(buildJsonObject {
+                                        put("dayOfWeek", dwe.dayOfWeek)
+                                        put("exercises", buildJsonArray {
+                                            dwe.exercises.forEach { ews ->
+                                                add(buildJsonObject {
+                                                    put("name", ews.exercise?.name ?: "?")
+                                                    put("primaryMuscle", ews.exercise?.primaryMuscle?.name ?: "")
+                                                    put("equipment", ews.exercise?.equipment?.name ?: "")
+                                                    ews.planExercise.supersetGroup?.let {
+                                                        put("supersetGroup", it)
+                                                    }
+                                                    put("sets", buildJsonArray {
+                                                        ews.sets.forEach { s ->
+                                                            add(buildJsonObject {
+                                                                put("setNumber", s.setNumber)
+                                                                put("reps", s.reps)
+                                                                s.weightKg?.let { put("weightKg", it) }
+                                                                s.restSeconds?.let { put("restSec", it) }
+                                                            })
+                                                        }
+                                                    })
+                                                })
+                                            }
+                                        })
+                                    })
+                                }
+                            })
+                        })
+                    }
                 }
             }
 
@@ -324,18 +347,158 @@ class AiContextBuilder @Inject constructor(
                 }
             }
 
-            // Lista nazw ćwiczeń z biblioteki - LLM musi je używać dokładnie
-            putJsonArray("available_exercises") {
-                allExercises.forEach { ex ->
+            // v1.11.58: punkty inflexji wagi (zamiast 15 dziennych pomiarow)
+            putJsonObject("body_inflections") {
+                bodyInflections.startWeightKg?.let {
+                    put("startWeightKg", it)
+                    put("startDate", df.format(Date(bodyInflections.startDate!!)))
+                }
+                bodyInflections.minWeightKg?.let {
+                    put("minWeightKg", it)
+                    put("minDate", df.format(Date(bodyInflections.minDate!!)))
+                }
+                bodyInflections.maxWeightKg?.let {
+                    put("maxWeightKg", it)
+                    put("maxDate", df.format(Date(bodyInflections.maxDate!!)))
+                }
+                bodyInflections.currentWeightKg?.let {
+                    put("currentWeightKg", it)
+                    put("currentDate", df.format(Date(bodyInflections.currentDate!!)))
+                }
+                bodyInflections.totalChangeKg?.let { put("totalChangeKg", it) }
+            }
+
+            // v1.11.58: trend objetosci tygodniowej (12 tyg) - dla AI to widzi cykl
+            putJsonArray("weekly_volume_trend_12w") {
+                volumePerWeek12.forEachIndexed { idx, vol ->
                     add(buildJsonObject {
-                        put("name", ex.name)
-                        put("muscle", ex.primaryMuscle.name)
-                        put("equipment", ex.equipment.name)
+                        put("weeksAgo", 11 - idx)
+                        put("volumeKg", vol)
                     })
+                }
+            }
+
+            // v1.11.58: log bolu z 90 dni (zagregowany per area)
+            putJsonObject("pain_log_90d") {
+                put("workoutsWithPain", painLog90d.totalWorkoutsWithPain)
+                put("workoutsAnalyzed", painLog90d.totalWorkoutsAnalyzed)
+                putJsonArray("areas") {
+                    painLog90d.areas.forEach { p ->
+                        add(buildJsonObject {
+                            put("area", p.area)
+                            put("count", p.count)
+                            put("lastOccurrence", df.format(Date(p.lastOccurrenceMs)))
+                        })
+                    }
+                }
+            }
+
+            // v1.11.58: available_exercises tylko gdy AI generuje/modyfikuje plan
+            // (200+ pozycji = ~30 KB samych nazw, bez sensu w kazdej rozmowie)
+            if (targetPlanId != null) {
+                putJsonArray("available_exercises") {
+                    allExercises.forEach { ex ->
+                        add(buildJsonObject {
+                            put("name", ex.name)
+                            put("muscle", ex.primaryMuscle.name)
+                            put("equipment", ex.equipment.name)
+                        })
+                    }
                 }
             }
         }
 
         return pretty.encodeToString(kotlinx.serialization.json.JsonObject.serializer(), obj)
     }
+}
+
+// ============================================================================
+// v1.11.58 — Pure functions dla nowych sekcji kontekstu AI
+// Testowalne bez DI — biora primitives, zwracaja JSON-ready data klasy.
+// ============================================================================
+
+/**
+ * Wynik [computeBodyInflections] — punkty inflexji wagi w calej historii uzytkownika.
+ * Zamiast 15 dziennych pomiarow wystarczy te 4 wartosci do zrozumienia trajektorii.
+ */
+data class BodyInflections(
+    val startWeightKg: Double?,
+    val startDate: Long?,
+    val minWeightKg: Double?,
+    val minDate: Long?,
+    val maxWeightKg: Double?,
+    val maxDate: Long?,
+    val currentWeightKg: Double?,
+    val currentDate: Long?,
+    val totalChangeKg: Double?
+)
+
+/**
+ * Liczy punkty inflexji wagi z calej historii pomiarow.
+ * Zamiast wysylac AI 15 dziennych wpisow - wysylamy 4 kluczowe momenty.
+ */
+fun computeBodyInflections(measurements: List<pl.filebit.gymtracker.data.entity.BodyMeasurement>): BodyInflections {
+    val withWeight = measurements.filter { it.weightKg != null }.sortedBy { it.date }
+    if (withWeight.isEmpty()) {
+        return BodyInflections(null, null, null, null, null, null, null, null, null)
+    }
+    val first = withWeight.first()
+    val last = withWeight.last()
+    val minMeasurement = withWeight.minBy { it.weightKg!! }
+    val maxMeasurement = withWeight.maxBy { it.weightKg!! }
+    return BodyInflections(
+        startWeightKg = first.weightKg,
+        startDate = first.date,
+        minWeightKg = minMeasurement.weightKg,
+        minDate = minMeasurement.date,
+        maxWeightKg = maxMeasurement.weightKg,
+        maxDate = maxMeasurement.date,
+        currentWeightKg = last.weightKg,
+        currentDate = last.date,
+        totalChangeKg = if (first.weightKg != null && last.weightKg != null)
+            last.weightKg - first.weightKg else null
+    )
+}
+
+/**
+ * Wynik [computePainLog90d] — agregat dolegliwosci z ostatnich 90 dni.
+ * Zamiast wysylac AI kazdy painArea osobno - liczymy unique area + frequency.
+ */
+data class PainLogSummary(
+    val totalWorkoutsWithPain: Int,
+    val totalWorkoutsAnalyzed: Int,
+    val areas: List<PainAreaCount>
+)
+
+data class PainAreaCount(
+    val area: String,
+    val count: Int,
+    val lastOccurrenceMs: Long
+)
+
+/**
+ * Liczy log bolu z ostatnich 90 dni - groupowane per area + sortowane po liczbie wystapien.
+ */
+fun computePainLog90d(
+    workouts: List<pl.filebit.gymtracker.data.entity.Workout>,
+    nowMs: Long = System.currentTimeMillis()
+): PainLogSummary {
+    val cutoff = nowMs - 90L * 24 * 60 * 60 * 1000
+    val recent = workouts.filter { it.startedAt >= cutoff && it.finishedAt != null }
+    val withPain = recent.filter { !it.painArea.isNullOrBlank() }
+    val grouped = withPain
+        .groupBy { it.painArea!! }
+        .map { (area, list) ->
+            PainAreaCount(
+                area = area,
+                count = list.size,
+                lastOccurrenceMs = list.maxOf { it.startedAt }
+            )
+        }
+        .sortedByDescending { it.count }
+    return PainLogSummary(
+        totalWorkoutsWithPain = withPain.size,
+        totalWorkoutsAnalyzed = recent.size,
+        areas = grouped
+    )
 }
