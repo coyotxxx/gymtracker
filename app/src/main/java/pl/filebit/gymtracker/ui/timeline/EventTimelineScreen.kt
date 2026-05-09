@@ -22,10 +22,19 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.Canvas
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.SwapVert
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -74,7 +83,34 @@ fun EventTimelineScreen(
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(modifier = Modifier.fillMaxSize()) {
-            ScreenHeader(title = "Oś czasu", onBack = onBack)
+            ScreenHeader(
+                title = "Oś czasu",
+                onBack = onBack,
+                actions = {
+                    // v1.11.74: placeholder Customize — full functionality in v1.11.78
+                    OutlinedButton(
+                        onClick = { /* TODO v1.11.78 */ },
+                        border = BorderStroke(1.dp, AccentOrange.copy(alpha = 0.5f)),
+                        shape = RoundedCornerShape(20.dp),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp)
+                    ) {
+                        Icon(
+                            Icons.Filled.SwapVert,
+                            contentDescription = null,
+                            tint = AccentOrange,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text(
+                            "Customize",
+                            style = MaterialTheme.typography.labelMedium.copy(
+                                fontWeight = FontWeight.Bold
+                            ),
+                            color = AccentOrange
+                        )
+                    }
+                }
+            )
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
@@ -132,7 +168,11 @@ fun EventTimelineScreen(
                             TimelineItem(
                                 event = event,
                                 df = df,
-                                dayOfWeekFmt = dayOfWeekFmt
+                                dayOfWeekFmt = dayOfWeekFmt,
+                                isExpanded = state.expandedEventId == event.id,
+                                expandedDetails = if (state.expandedEventId == event.id)
+                                    state.expandedDetails else null,
+                                onToggleExpand = { vm.toggleExpand(event.id) }
                             )
                         }
                     }
@@ -212,7 +252,7 @@ private fun FilterChips(
             if (count > 0) {
                 item {
                     FilterChip(
-                        label = "${eventTypeShortLabel(type)} ($count)",
+                        label = "${eventTypeEmoji(type)} ${eventTypeShortLabel(type)} ($count)",
                         selected = currentFilter == type,
                         onClick = { onFilterChange(type) }
                     )
@@ -330,13 +370,15 @@ private fun MonthHeader(monthKey: String, isFirst: Boolean) {
 private fun TimelineItem(
     event: TrainingEvent,
     df: SimpleDateFormat,
-    dayOfWeekFmt: SimpleDateFormat
+    dayOfWeekFmt: SimpleDateFormat,
+    isExpanded: Boolean,
+    expandedDetails: ExpandedPrDetails?,
+    onToggleExpand: () -> Unit
 ) {
     val deco = eventDecoration(event)
     Row(modifier = Modifier.height(IntrinsicSize.Min)) {
         // Lewa kolumna — linia ciągła + dot na środku
         Box(modifier = Modifier.width(40.dp).fillMaxHeight()) {
-            // Linia ciągła wzdłuż całego itemu
             Box(
                 modifier = Modifier
                     .width(2.dp)
@@ -344,7 +386,6 @@ private fun TimelineItem(
                     .align(Alignment.TopCenter)
                     .background(DarkOutlineSoft.copy(alpha = 0.5f))
             )
-            // Dot u góry karty (offset top 16dp)
             Box(
                 modifier = Modifier
                     .padding(top = 14.dp)
@@ -353,17 +394,18 @@ private fun TimelineItem(
                     .background(deco.dotColor, CircleShape)
             )
         }
-        // Karta po prawej
+        // Karta po prawej (klikalna — toggle expand)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 4.dp, top = 6.dp, bottom = 6.dp),
+                .padding(start = 4.dp, top = 6.dp, bottom = 6.dp)
+                .clickable { onToggleExpand() },
             colors = CardDefaults.cardColors(containerColor = DarkSurface),
             border = BorderStroke(1.dp, deco.dotColor.copy(alpha = 0.45f)),
             shape = RoundedCornerShape(12.dp)
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
-                // Header — typ + data
+                // Header — typ + data + caret
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         "${deco.emoji} ${eventTypeBadge(event.type)}",
@@ -377,27 +419,309 @@ private fun TimelineItem(
                     )
                     val dayShort = dayOfWeekFmt.format(Date(event.date)).take(2).lowercase()
                     Text(
-                        "${df.format(Date(event.date))} · $dayShort",
+                        "${df.format(Date(event.date))} · $dayShort  ${if (isExpanded) "▲" else "▼"}",
                         style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
                         color = DarkOnSurfaceVariant
                     )
                 }
-                Spacer(Modifier.height(4.dp))
-                // Tytuł główny
-                Text(
-                    deco.title,
-                    style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                    color = DarkOnSurface
-                )
-                // Notatki (jeśli są)
-                if (event.notes.isNotBlank()) {
-                    Spacer(Modifier.height(2.dp))
+                Spacer(Modifier.height(6.dp))
+
+                // Tytuł — różny format dla PR (waga × reps H1) vs reszty (description)
+                if (event.type == TrainingEventType.PR_SET) {
+                    PrCardCollapsedBody(event)
+                } else {
                     Text(
-                        event.notes,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = DarkOnSurfaceVariant
+                        deco.title,
+                        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                        color = DarkOnSurface
                     )
+                    if (event.notes.isNotBlank()) {
+                        Spacer(Modifier.height(2.dp))
+                        Text(
+                            event.notes,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
                 }
+
+                // Sekcja rozwinięta
+                if (isExpanded) {
+                    Spacer(Modifier.height(10.dp))
+                    when (event.type) {
+                        TrainingEventType.PR_SET -> ExpandedPrView(expandedDetails)
+                        else -> {
+                            // Inne typy — placeholder, w v1.11.75-77 dodam expand per typ
+                            Text(
+                                "Szczegóły dla tego typu eventu pojawią się w kolejnych wersjach.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = DarkOnSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * v1.11.74 — collapsed body karty PR.
+ *
+ * Format wzoru:
+ *   150 kg × 5 powtórzeń           ← H1
+ *   Nowy life-time PR. Poprzedni: 140 kg × 5 (przed 38 dni)   ← note
+ *   [140kg → 150kg +10kg]   e1RM 169kg                          ← chip + e1rm
+ */
+@Composable
+private fun PrCardCollapsedBody(event: TrainingEvent) {
+    val w = event.weightKg
+    val r = event.reps
+    if (w == null || r == null) {
+        Text("Nowy PR", color = DarkOnSurface)
+        return
+    }
+    val exerciseName = event.exerciseName?.uppercase() ?: ""
+    if (exerciseName.isNotBlank()) {
+        // Już mamy badge ${type} — dodajemy też ćwiczenie w samym headerze byłby duplikat
+        // Format: tytuł podrzędny "NOWY PR · NAZWA"  → robimy to w eventTypeBadge
+    }
+
+    Text(
+        "${formatWeight(w)} kg × $r powtórzeń",
+        style = MaterialTheme.typography.titleMedium.copy(
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 18.sp
+        ),
+        color = DarkOnSurface
+    )
+
+    // Note — life-time PR + poprzedni
+    val noteText = run {
+        val parts = mutableListOf<String>()
+        parts.add("Nowy life-time PR.")
+        if (event.notes.isNotBlank()) parts.add(event.notes)
+        parts.joinToString(" ")
+    }
+    Spacer(Modifier.height(2.dp))
+    Text(
+        noteText,
+        style = MaterialTheme.typography.bodySmall,
+        color = DarkOnSurfaceVariant
+    )
+
+    // Highlight chip + e1RM
+    Spacer(Modifier.height(8.dp))
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        // Chip — używamy notes jeśli zawiera "Poprzedni: X kg × Y" do wyciągnięcia delta
+        val previousWeightKg = parsePreviousWeightKg(event.notes)
+        if (previousWeightKg != null && previousWeightKg > 0) {
+            val delta = w - previousWeightKg
+            val deltaSign = if (delta >= 0) "+" else ""
+            Box(
+                modifier = Modifier
+                    .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(8.dp))
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
+            ) {
+                Text(
+                    "${formatWeight(previousWeightKg)}kg → ${formatWeight(w)}kg ${deltaSign}${formatWeight(delta)}kg",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 10.sp
+                    ),
+                    color = AccentOrange
+                )
+            }
+            Spacer(Modifier.width(8.dp))
+        }
+        event.e1rmKg?.let { e1 ->
+            Text(
+                "e1RM: ${formatWeight(e1)}kg",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                color = DarkOnSurfaceVariant
+            )
+        }
+    }
+}
+
+private fun formatWeight(w: Double): String {
+    return if (w == w.toInt().toDouble()) "${w.toInt()}"
+    else "%.1f".format(java.util.Locale.US, w)
+}
+
+/** Wyciąga poprzedni ciężar z notes formatu "Poprzedni: 140 kg × 5 ..." */
+private fun parsePreviousWeightKg(notes: String): Double? {
+    if (notes.isBlank()) return null
+    val regex = Regex("""Poprzedni:\s*(\d+(?:[.,]\d+)?)\s*kg""", RegexOption.IGNORE_CASE)
+    val match = regex.find(notes) ?: return null
+    return match.groupValues[1].replace(",", ".").toDoubleOrNull()
+}
+
+// ============================================================================
+// ExpandedPrView — sekcje workout / sety / wykres / buttons
+// ============================================================================
+
+@Composable
+private fun ExpandedPrView(details: ExpandedPrDetails?) {
+    if (details == null) {
+        Box(modifier = Modifier.fillMaxWidth().padding(8.dp), contentAlignment = Alignment.Center) {
+            Text("Ładowanie szczegółów...", style = MaterialTheme.typography.bodySmall, color = DarkOnSurfaceVariant)
+        }
+        return
+    }
+
+    // Sekcja 1 — workout details
+    SectionLabel("WORKOUT W KTÓRYM PADŁ PR")
+    DetailRow("Czas", "${details.workoutDurationMin} min")
+    DetailRow("Łączny tonaż", "${formatWeight(details.totalVolumeKg)} kg")
+    details.wellbeing?.let { w ->
+        val stars = "★".repeat(w.coerceIn(0, 5)) + "☆".repeat((5 - w).coerceIn(0, 5))
+        DetailRow("Wellbeing przed", "$stars ($w/5)", valueColor = SuccessGreen)
+    }
+    details.avgRpe?.let { r ->
+        DetailRow("RPE (sesja)", "%.1f".format(java.util.Locale.US, r))
+    }
+
+    // Sekcja 2 — sety
+    Spacer(Modifier.height(10.dp))
+    SectionLabel("SETY")
+    details.sets.forEachIndexed { idx, s ->
+        SetRow(s, isPr = idx == details.prSetIndex)
+    }
+
+    // Sekcja 3 — wykres trendu
+    if (details.trendPoints.size >= 2) {
+        Spacer(Modifier.height(10.dp))
+        SectionLabel("TREND CIĘŻARU (12 TYG)")
+        TrendLineChart(details.trendPoints)
+    }
+}
+
+@Composable
+private fun SectionLabel(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.labelSmall.copy(
+            fontWeight = FontWeight.Bold,
+            fontSize = 10.sp,
+            letterSpacing = 1.2.sp
+        ),
+        color = DarkOnSurfaceVariant,
+        modifier = Modifier.padding(vertical = 4.dp)
+    )
+}
+
+@Composable
+private fun DetailRow(label: String, value: String, valueColor: Color = DarkOnSurface) {
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(label, style = MaterialTheme.typography.bodySmall, color = DarkOnSurfaceVariant)
+        Text(
+            value,
+            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+            color = valueColor
+        )
+    }
+}
+
+@Composable
+private fun SetRow(s: SetInfo, isPr: Boolean) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 3.dp)
+            .background(
+                if (isPr) AccentOrange.copy(alpha = 0.15f) else Color.Transparent,
+                RoundedCornerShape(6.dp)
+            )
+            .padding(horizontal = 8.dp, vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .size(22.dp)
+                .background(
+                    if (isPr) AccentOrange else DarkOutlineSoft.copy(alpha = 0.4f),
+                    RoundedCornerShape(4.dp)
+                ),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                "${s.setNumber}",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 10.sp
+                ),
+                color = if (isPr) DarkBg else DarkOnSurfaceVariant
+            )
+        }
+        Spacer(Modifier.width(8.dp))
+        Text(
+            "${formatWeight(s.weightKg)} kg × ${s.reps}",
+            style = MaterialTheme.typography.bodySmall,
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+        s.rpe?.let {
+            Text(
+                "RPE $it",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.width(6.dp))
+        }
+        if (isPr) {
+            Text(
+                "⭐ PR",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 10.sp
+                ),
+                color = AccentOrange
+            )
+        }
+    }
+}
+
+@Composable
+private fun TrendLineChart(points: List<TrendPoint>) {
+    if (points.size < 2) return
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(110.dp)
+            .background(DarkBg.copy(alpha = 0.6f), RoundedCornerShape(8.dp))
+            .padding(8.dp)
+    ) {
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            val minY = points.minOf { it.e1rmKg }
+            val maxY = points.maxOf { it.e1rmKg }
+            val rangeY = (maxY - minY).coerceAtLeast(1.0)
+            val w = size.width
+            val h = size.height
+            val n = points.size
+            val stepX = w / (n - 1).coerceAtLeast(1)
+
+            // Linia
+            val path = Path()
+            points.forEachIndexed { idx, p ->
+                val x = idx * stepX
+                val y = (h - ((p.e1rmKg - minY) / rangeY * h).toFloat()).toFloat()
+                if (idx == 0) path.moveTo(x, y) else path.lineTo(x, y)
+            }
+            drawPath(
+                path = path,
+                color = AccentOrange,
+                style = Stroke(width = 3f)
+            )
+
+            // Punkty
+            points.forEachIndexed { idx, p ->
+                val x = idx * stepX
+                val y = (h - ((p.e1rmKg - minY) / rangeY * h).toFloat()).toFloat()
+                drawCircle(color = AccentOrange, radius = 4f, center = Offset(x, y))
             }
         }
     }
@@ -493,4 +817,13 @@ private fun eventTypeShortLabel(type: TrainingEventType): String = when (type) {
     TrainingEventType.INJURY -> "Kontuzje"
     TrainingEventType.GAP_RESUMED -> "Powrót"
     TrainingEventType.CYCLE_MILESTONE -> "Kamienie"
+}
+
+private fun eventTypeEmoji(type: TrainingEventType): String = when (type) {
+    TrainingEventType.PR_SET -> "🏋️"
+    TrainingEventType.PLAN_START, TrainingEventType.PLAN_END, TrainingEventType.PLAN_CHANGE -> "📋"
+    TrainingEventType.DELOAD_DETECTED -> "😴"
+    TrainingEventType.INJURY -> "🩹"
+    TrainingEventType.GAP_RESUMED -> "↩️"
+    TrainingEventType.CYCLE_MILESTONE -> "🎯"
 }
