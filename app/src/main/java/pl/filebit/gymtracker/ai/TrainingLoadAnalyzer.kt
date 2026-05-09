@@ -95,6 +95,7 @@ class TrainingLoadAnalyzer @Inject constructor(
         }
         val rec = when (zone) {
             LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
+            LoadZone.DELOAD_PROPER -> "Deload przebiega prawidłowo — niski tonaż jest celowy (ACWR ${"%.2f".format(acwr)}). Po nim wracasz do akumulacji."
             LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
             LoadZone.OVERREACHING -> "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
             LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."
