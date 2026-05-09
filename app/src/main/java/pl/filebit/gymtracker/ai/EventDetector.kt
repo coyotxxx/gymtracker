@@ -148,7 +148,7 @@ fun detectDeloadFromWeeklyVolumes(
     if (median <= 0.0) return emptyList()
 
     val ratio = current / median
-    if (ratio > 0.60) return emptyList()  // nie deload
+    if (ratio >= 0.60) return emptyList()  // nie deload (granica zgodna z TrainingPhaseAnalyzer)
 
     return listOf(
         TrainingEvent(
