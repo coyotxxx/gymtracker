@@ -23,6 +23,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -397,11 +398,16 @@ private fun TimelineItem(
             )
         }
         // Karta po prawej (klikalna — toggle expand)
+        // v1.11.76: indication=null zeby uniknac wielkiego ripple-okregu z calej karty
+        val interactionSource = remember { MutableInteractionSource() }
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 4.dp, top = 6.dp, bottom = 6.dp)
-                .clickable { onToggleExpand() },
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) { onToggleExpand() },
             colors = CardDefaults.cardColors(containerColor = DarkSurface),
             border = BorderStroke(1.dp, deco.dotColor.copy(alpha = 0.45f)),
             shape = RoundedCornerShape(12.dp)
