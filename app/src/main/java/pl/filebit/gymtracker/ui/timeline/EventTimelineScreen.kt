@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.ui.timeline
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -193,35 +194,68 @@ private fun StatsBar(totalCount: Int, prCount: Int, firstEventDate: Long?) {
     val daysFromFirst = firstEventDate?.let {
         ((System.currentTimeMillis() - it) / (24L * 3600_000)).toInt().coerceAtLeast(0)
     } ?: 0
+    // v1.11.79: zwiekszony padding + outline + separatory pionowe miedzy kaflami
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(DarkSurface, RoundedCornerShape(12.dp))
-            .padding(vertical = 14.dp),
-        horizontalArrangement = Arrangement.SpaceEvenly
+            .background(DarkSurface, RoundedCornerShape(16.dp))
+            .border(
+                BorderStroke(1.dp, DarkOutlineSoft.copy(alpha = 0.4f)),
+                RoundedCornerShape(16.dp)
+            )
+            .padding(vertical = 22.dp)
+            .height(IntrinsicSize.Min),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        StatCell(value = totalCount.toString(), label = "EVENTÓW", color = DarkOnSurface)
-        StatCell(value = prCount.toString(), label = "PR-Y", color = AccentOrange)
-        StatCell(value = daysFromFirst.toString(), label = "DNI OD\nPIERWSZEGO", color = DarkOnSurface)
+        StatCell(
+            value = totalCount.toString(),
+            label = "EVENTÓW",
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+        Box(modifier = Modifier
+            .width(1.dp)
+            .fillMaxHeight()
+            .background(DarkOutlineSoft.copy(alpha = 0.35f)))
+        StatCell(
+            value = prCount.toString(),
+            label = "PR-Y",
+            color = AccentOrange,
+            modifier = Modifier.weight(1f)
+        )
+        Box(modifier = Modifier
+            .width(1.dp)
+            .fillMaxHeight()
+            .background(DarkOutlineSoft.copy(alpha = 0.35f)))
+        StatCell(
+            value = daysFromFirst.toString(),
+            label = "DNI OD\nPIERWSZEGO",
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
     }
 }
 
 @Composable
-private fun StatCell(value: String, label: String, color: Color) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+private fun StatCell(value: String, label: String, color: Color, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Text(
             value,
             style = MaterialTheme.typography.headlineSmall.copy(
                 fontWeight = FontWeight.ExtraBold,
-                fontSize = 22.sp
+                fontSize = 32.sp
             ),
             color = color
         )
+        Spacer(Modifier.height(4.dp))
         Text(
             label,
             style = MaterialTheme.typography.labelSmall.copy(
-                fontSize = 9.sp,
-                fontWeight = FontWeight.Bold,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.SemiBold,
                 letterSpacing = 1.2.sp
             ),
             color = DarkOnSurfaceVariant,
@@ -241,10 +275,12 @@ private fun FilterChips(
     totalCount: Int,
     onFilterChange: (TrainingEventType?) -> Unit
 ) {
-    LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         item {
             FilterChip(
-                label = "Wszystkie ($totalCount)",
+                emoji = null,
+                text = "Wszystkie",
+                count = totalCount,
                 selected = currentFilter == null,
                 onClick = { onFilterChange(null) }
             )
@@ -254,7 +290,9 @@ private fun FilterChips(
             if (count > 0) {
                 item {
                     FilterChip(
-                        label = "${eventTypeEmoji(type)} ${eventTypeShortLabel(type)} ($count)",
+                        emoji = eventTypeEmoji(type),
+                        text = eventTypeShortLabel(type),
+                        count = count,
                         selected = currentFilter == type,
                         onClick = { onFilterChange(type) }
                     )
@@ -265,23 +303,58 @@ private fun FilterChips(
 }
 
 @Composable
-private fun FilterChip(label: String, selected: Boolean, onClick: () -> Unit) {
-    Box(
+private fun FilterChip(
+    emoji: String?,
+    text: String,
+    count: Int,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    // v1.11.79: ksztalt pill z outline + counter w pomaranczowym pill wewnatrz
+    Row(
         modifier = Modifier
-            .background(
-                if (selected) AccentOrange.copy(alpha = 0.20f) else DarkSurface,
-                RoundedCornerShape(20.dp)
+            .background(DarkSurface, RoundedCornerShape(28.dp))
+            .border(
+                BorderStroke(
+                    if (selected) 1.5.dp else 1.dp,
+                    if (selected) AccentOrange else DarkOutlineSoft.copy(alpha = 0.45f)
+                ),
+                RoundedCornerShape(28.dp)
             )
             .clickable { onClick() }
-            .padding(horizontal = 12.dp, vertical = 6.dp)
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
+        if (emoji != null) {
+            Text(emoji, fontSize = 16.sp)
+            Spacer(Modifier.width(8.dp))
+        }
         Text(
-            label,
-            style = MaterialTheme.typography.labelMedium.copy(
-                fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal
+            text,
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
+                fontSize = 15.sp
             ),
-            color = if (selected) AccentOrange else DarkOnSurfaceVariant
+            color = if (selected) AccentOrange else DarkOnSurface
         )
+        Spacer(Modifier.width(8.dp))
+        Box(
+            modifier = Modifier
+                .background(
+                    if (selected) AccentOrange.copy(alpha = 0.25f) else DarkOutlineSoft.copy(alpha = 0.3f),
+                    RoundedCornerShape(12.dp)
+                )
+                .padding(horizontal = 8.dp, vertical = 2.dp)
+        ) {
+            Text(
+                count.toString(),
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 12.sp
+                ),
+                color = if (selected) AccentOrange else DarkOnSurfaceVariant
+            )
+        }
     }
 }
 
@@ -298,20 +371,57 @@ private fun TodayMarker() {
         "lipca", "sierpnia", "września", "października", "listopada", "grudnia"
     )
     val month = polishMonths[today.get(Calendar.MONTH)]
+    // v1.11.79: dopasowanie do wzoru — dot z glow po lewej (na linii timeline) +
+    // pelnowymiarowy banner z pomaranczowym outline po prawej
     Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center
+        modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+        verticalAlignment = Alignment.CenterVertically
     ) {
+        // Lewa kolumna z dot+glow (40dp jak w timeline items)
+        Box(modifier = Modifier.width(40.dp).fillMaxHeight()) {
+            Box(
+                modifier = Modifier
+                    .width(2.dp)
+                    .fillMaxHeight()
+                    .align(Alignment.TopCenter)
+                    .background(DarkOutlineSoft.copy(alpha = 0.5f))
+            )
+            // Glow halo
+            Box(
+                modifier = Modifier
+                    .size(28.dp)
+                    .align(Alignment.Center)
+                    .background(AccentOrange.copy(alpha = 0.18f), CircleShape)
+            )
+            Box(
+                modifier = Modifier
+                    .size(22.dp)
+                    .align(Alignment.Center)
+                    .background(AccentOrange.copy(alpha = 0.35f), CircleShape)
+            )
+            Box(
+                modifier = Modifier
+                    .size(16.dp)
+                    .align(Alignment.Center)
+                    .background(AccentOrange, CircleShape)
+            )
+        }
+        // Banner z pomaranczowym outline
         Box(
             modifier = Modifier
-                .background(AccentOrange.copy(alpha = 0.20f), RoundedCornerShape(20.dp))
-                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .weight(1f)
+                .padding(start = 4.dp, top = 6.dp, bottom = 6.dp)
+                .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(28.dp))
+                .border(BorderStroke(1.5.dp, AccentOrange), RoundedCornerShape(28.dp))
+                .padding(vertical = 14.dp),
+            contentAlignment = Alignment.Center
         ) {
             Text(
-                "DZIŚ · $day $month",
-                style = MaterialTheme.typography.labelMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 1.2.sp
+                "DZIŚ · ${day.toString().uppercase()} ${month.uppercase()}",
+                style = MaterialTheme.typography.titleSmall.copy(
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = 2.sp,
+                    fontSize = 14.sp
                 ),
                 color = AccentOrange
             )
