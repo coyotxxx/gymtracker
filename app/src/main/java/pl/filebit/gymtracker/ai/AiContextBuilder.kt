@@ -47,7 +47,10 @@ class AiContextBuilder @Inject constructor(
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
     private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
-    private val trainingEventDao: pl.filebit.gymtracker.data.db.dao.TrainingEventDao
+    private val trainingEventDao: pl.filebit.gymtracker.data.db.dao.TrainingEventDao,
+    private val weeklyRollupDao: pl.filebit.gymtracker.data.db.dao.WeeklyRollupDao,
+    private val monthlyRollupDao: pl.filebit.gymtracker.data.db.dao.MonthlyRollupDao,
+    private val quarterlyRollupDao: pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao
 ) {
 
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -109,6 +112,10 @@ class AiContextBuilder @Inject constructor(
         val painLog90d = computePainLog90d(snapshot.finishedWorkouts)
         // v1.11.59: event log (PR-y, kontuzje, deloady, zmiany planu, gap_resumed)
         val recentEvents = trainingEventDao.getRecent(limit = 15)
+        // v1.11.66: period rollups - kompresja historii (last 4 weeks / 6 months / 4 quarters)
+        val recentWeekRollups = weeklyRollupDao.getRecent(limit = 4)
+        val recentMonthRollups = monthlyRollupDao.getRecent(limit = 6)
+        val recentQuarterRollups = quarterlyRollupDao.getRecent(limit = 4)
         val strength = strengthRepo.evaluateAll()
         val photos = photoRepo.observeAll().first()
         val goalProgresses = goalRepo.computeAllActiveProgress()
@@ -404,6 +411,50 @@ class AiContextBuilder @Inject constructor(
                         put("weeksAgo", 11 - idx)
                         put("volumeKg", vol)
                     })
+                }
+            }
+
+            // v1.11.66: historical_summary - prekomputowane rollupy (week/month/quarter).
+            // Daje AI obraz dlugoterminowy bez ladowania surowych danych.
+            // Total ~2-3 KB pokrywa 1+ rok historii.
+            putJsonObject("historical_summary") {
+                putJsonArray("weeks") {
+                    recentWeekRollups.forEach { w ->
+                        add(buildJsonObject {
+                            put("weekStart", df.format(Date(w.weekStartMs)))
+                            put("totalVolumeKg", w.totalVolumeKg.roundTo(0))
+                            put("sessions", w.sessionsCount)
+                            put("avgRpe", w.avgRpe.roundTo(1))
+                            w.avgWellbeing?.let { put("avgWellbeing", it.roundTo(1)) }
+                        })
+                    }
+                }
+                putJsonArray("months") {
+                    recentMonthRollups.forEach { m ->
+                        add(buildJsonObject {
+                            put("monthStart", df.format(Date(m.monthStartMs)))
+                            put("totalVolumeKg", m.totalVolumeKg.roundTo(0))
+                            put("sessions", m.sessionsCount)
+                            put("avgRpe", m.avgRpe.roundTo(1))
+                            put("prCount", m.prCount)
+                            put("planChanges", m.planChanges)
+                            put("deloadCount", m.deloadCount)
+                            m.bodyWeightDeltaKg?.let { put("bodyWeightDeltaKg", it.roundTo(1)) }
+                        })
+                    }
+                }
+                putJsonArray("quarters") {
+                    recentQuarterRollups.forEach { q ->
+                        add(buildJsonObject {
+                            put("quarterStart", df.format(Date(q.quarterStartMs)))
+                            put("totalVolumeKg", q.totalVolumeKg.roundTo(0))
+                            put("sessions", q.sessionsCount)
+                            put("prCount", q.prCount)
+                            put("planChanges", q.planChanges)
+                            put("deloadCount", q.deloadCount)
+                            q.bodyWeightDeltaKg?.let { put("bodyWeightDeltaKg", it.roundTo(1)) }
+                        })
+                    }
                 }
             }
 

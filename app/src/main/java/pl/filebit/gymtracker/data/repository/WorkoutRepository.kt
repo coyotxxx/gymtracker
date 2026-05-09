@@ -15,7 +15,8 @@ class WorkoutRepository @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
-    private val eventDetectorService: pl.filebit.gymtracker.ai.EventDetectorService
+    private val eventDetectorService: pl.filebit.gymtracker.ai.EventDetectorService,
+    private val periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService
 ) {
     fun observeActive(): Flow<Workout?> = workoutDao.observeActive()
     fun observeAll(): Flow<List<Workout>> = workoutDao.observeAll()
@@ -54,6 +55,8 @@ class WorkoutRepository @Inject constructor(
         workoutDao.update(w.copy(finishedAt = System.currentTimeMillis()))
         // v1.11.59: detekcja eventów (PR-y, gap_resumed) po finalizacji treningu
         runCatching { eventDetectorService.onWorkoutFinished(workoutId) }
+        // v1.11.66: zamknij zaległe okresy (week/month/quarter) jeśli są
+        runCatching { periodRollupService.closeAllPeriodsIfNeeded() }
     }
 
     suspend fun discardActive() {

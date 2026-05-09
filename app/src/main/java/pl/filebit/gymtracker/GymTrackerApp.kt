@@ -41,6 +41,7 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
     @Inject lateinit var dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
     @Inject lateinit var eventBackfillService: pl.filebit.gymtracker.ai.EventBackfillService
+    @Inject lateinit var periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -71,6 +72,9 @@ class GymTrackerApp : Application(), Configuration.Provider {
             // treningow przy pierwszym starcie po update do v1.11.59+. Idempotentny -
             // jesli juz sa eventy nic nie robi.
             runCatching { eventBackfillService.backfillIfNeeded() }
+            // v1.11.66: zamknij wszystkie zalegle okresy (week/month/quarter).
+            // Idempotentny - rollup raz utworzony nie jest re-computowany.
+            runCatching { periodRollupService.closeAllPeriodsIfNeeded() }
         }
         observeActiveWorkoutForReminder()
     }

@@ -104,9 +104,12 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         MealPrepStep::class,
         MealConsumption::class,
         pl.filebit.gymtracker.data.entity.AiLog::class,
-        pl.filebit.gymtracker.data.entity.TrainingEvent::class
+        pl.filebit.gymtracker.data.entity.TrainingEvent::class,
+        pl.filebit.gymtracker.data.entity.WeeklyRollup::class,
+        pl.filebit.gymtracker.data.entity.MonthlyRollup::class,
+        pl.filebit.gymtracker.data.entity.QuarterlyRollup::class
     ],
-    version = 52,
+    version = 53,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -144,6 +147,9 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun mealConsumptionDao(): MealConsumptionDao
     abstract fun aiLogDao(): pl.filebit.gymtracker.data.db.dao.AiLogDao
     abstract fun trainingEventDao(): pl.filebit.gymtracker.data.db.dao.TrainingEventDao
+    abstract fun weeklyRollupDao(): pl.filebit.gymtracker.data.db.dao.WeeklyRollupDao
+    abstract fun monthlyRollupDao(): pl.filebit.gymtracker.data.db.dao.MonthlyRollupDao
+    abstract fun quarterlyRollupDao(): pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao
 
     companion object {
         const val NAME = "gymtracker.db"
