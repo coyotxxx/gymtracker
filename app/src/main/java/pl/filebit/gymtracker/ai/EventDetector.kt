@@ -125,21 +125,31 @@ fun detectGapResumed(
 }
 
 /**
- * Detekcja deloadu — gdy volume tego tygodnia spadł ≥40% vs ostatnie 4 tyg
- * Z parametrami zgodnymi z TrainingPhaseAnalyzer (mediana 4 tyg, próg 60%).
+ * Detekcja deloadu — gdy volume OSTATNIEGO ZAKOŃCZONEGO tygodnia spadł ≥40%
+ * vs mediana 4 jeszcze starszych tygodni. Próg 60% zgodny z TrainingPhaseAnalyzer.
  *
- * @param weeklyVolumes lista objętości tygodniowej, indeks 0 = najdawniej, indeks last = bieżący tydzień
- * @param currentWeekStartMs początek bieżącego tygodnia (epoch ms) — używane jako date eventu
+ * v1.11.65 fix: bieżący tydzień NIE jest oceniany - jest pomijany. Powód:
+ * niezakończony tydzień ma niski volume bo dopiero się zaczął (1-2 sesje),
+ * NIE bo to deload. Detector nie wie ile jeszcze treningów dojdzie. Dlatego
+ * patrzymy na OSTATNI ZAKOŃCZONY tydzień (weeksAgo=1).
+ *
+ * @param weeklyVolumes lista objętości tygodniowej, indeks 0 = najdawniej,
+ *   indeks last = BIEŻĄCY (niezakończony) tydzień. Potrzeba >=6 elementow.
+ * @param currentWeekStartMs początek bieżącego tygodnia (epoch ms)
+ *   — event będzie datowany na początek POPRZEDNIEGO tygodnia
  */
 fun detectDeloadFromWeeklyVolumes(
     weeklyVolumes: List<Double>,
     currentWeekStartMs: Long
 ): List<TrainingEvent> {
-    if (weeklyVolumes.size < 5) return emptyList()  // potrzebujemy bieżący + 4 poprzednie
+    // potrzebujemy: bieżący (skip) + ostatni zakończony (oceniany) + 4 starsze (mediana) = 6
+    if (weeklyVolumes.size < 6) return emptyList()
 
-    val current = weeklyVolumes.last()
-    val prior4 = weeklyVolumes.dropLast(1).takeLast(4).filter { it > 0.0 }
-    if (prior4.size < 3) return emptyList()  // za mało danych
+    // Pomijamy bieżący niezakończony tydzień
+    val withoutCurrent = weeklyVolumes.dropLast(1)
+    val lastCompleted = withoutCurrent.last()
+    val prior4 = withoutCurrent.dropLast(1).takeLast(4).filter { it > 0.0 }
+    if (prior4.size < 3) return emptyList()  // za mało danych do mediany
 
     val median = prior4.sorted().let { sorted ->
         if (sorted.size % 2 == 1) sorted[sorted.size / 2]
@@ -147,12 +157,13 @@ fun detectDeloadFromWeeklyVolumes(
     }
     if (median <= 0.0) return emptyList()
 
-    val ratio = current / median
+    val ratio = lastCompleted / median
     if (ratio >= 0.60) return emptyList()  // nie deload (granica zgodna z TrainingPhaseAnalyzer)
 
+    val msPerWeek = 7L * 24 * 60 * 60 * 1000
     return listOf(
         TrainingEvent(
-            date = currentWeekStartMs,
+            date = currentWeekStartMs - msPerWeek,  // poniedzialek ostatniego zakonczonego tygodnia
             type = TrainingEventType.DELOAD_DETECTED,
             weeksContext = prior4.size,
             notes = "Volume spadł do ${"%.0f".format(ratio * 100)}% mediany ostatnich ${prior4.size} tyg"

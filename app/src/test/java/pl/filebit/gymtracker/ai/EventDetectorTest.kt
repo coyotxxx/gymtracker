@@ -196,33 +196,43 @@ class EventDetectorTest {
 
     @Test
     fun `DELOAD - normalny tydzień = brak eventu`() {
-        // 4 tyg po 10000, bieżący 11000 → wzrost
-        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 11000.0)
+        // [4 starsze 10000] [last completed 10500] [bieżący niezakonczony 3000]
+        // last completed 10500 vs mediana 10000 = 105% → brak deload
+        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 10500.0, 3000.0)
         assertTrue(detectDeloadFromWeeklyVolumes(volumes, now).isEmpty())
     }
 
     @Test
-    fun `DELOAD - drop do 50 procent = event DELOAD_DETECTED`() {
-        // 4 tyg po 10000, bieżący 5000 (50%)
-        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 5000.0)
+    fun `DELOAD - last completed drop 50 procent = event DELOAD_DETECTED`() {
+        // [4 tyg 10000] [last completed 5000] [bieżący 7000 - irrelevant]
+        // 5000 / 10000 = 50% → deload
+        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 5000.0, 7000.0)
         val result = detectDeloadFromWeeklyVolumes(volumes, now)
         assertEquals(1, result.size)
         assertEquals(TrainingEventType.DELOAD_DETECTED, result[0].type)
+        // event datowany na poniedzialek poprzedniego tygodnia
+        assertEquals(now - 7 * msPerDay, result[0].date)
     }
 
     @Test
-    fun `DELOAD - drop do 60 procent = brak eventu (granica)`() {
-        // 4 tyg po 10000, bieżący 6000 (60%) → granica, nie wykrywa
-        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 6000.0)
-        val result = detectDeloadFromWeeklyVolumes(volumes, now)
-        // ratio = 0.60, > 0.60 = false → bez deload
-        assertTrue(result.isEmpty())
+    fun `DELOAD - 60 procent = granica nie wykrywa`() {
+        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 6000.0, 11000.0)
+        assertTrue(detectDeloadFromWeeklyVolumes(volumes, now).isEmpty())
     }
 
     @Test
-    fun `DELOAD - drop do 59 procent = event`() {
-        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 5900.0)
+    fun `DELOAD - 59 procent = event`() {
+        val volumes = listOf(10000.0, 10000.0, 10000.0, 10000.0, 5900.0, 11000.0)
         val result = detectDeloadFromWeeklyVolumes(volumes, now)
         assertEquals(1, result.size)
+    }
+
+    @Test
+    fun `DELOAD - bieżący niezakończony tydzień nie generuje false positive (regresja v1_11_65)`() {
+        // To byl dokladny case usera: 4 tyg ~33000, last completed 39120 (rosnacy!),
+        // bieżący 9512 (zaczęty - tylko 1-2 sesje). Powinno NIE wykryc deloadu.
+        val volumes = listOf(28811.0, 32711.0, 33387.0, 32845.0, 39120.0, 9512.0)
+        val result = detectDeloadFromWeeklyVolumes(volumes, now)
+        assertTrue("Bieżący tydzien nie powinien wywolywac deload", result.isEmpty())
     }
 }

@@ -80,21 +80,27 @@ class EventDetectorService @Inject constructor(
             Log.d("EventDetector", "Wykryto GAP_RESUMED dla workoutu $workoutId")
         }
 
-        // v1.11.63: DELOAD detection - sprawdz czy ten tydzien to deload vs ostatnie 4
+        // v1.11.65: DELOAD detection - ocenia OSTATNI ZAKOŃCZONY tydzień
+        // (weeksAgo=1) vs 4 jeszcze starsze. Bieżący niezakończony tydzień
+        // jest pomijany (za mało danych zeby ocenic). Potrzebujemy 6 tygodni
+        // historii: bieżący + ostatni zakończony + 4 do mediany.
         runCatching {
             val snapshot = statsCacheService.snapshot()
-            val volumePerWeek5 = statsRepository.volumePerWeekFast(weeks = 5, snapshot = snapshot)
+            val volumePerWeek6 = statsRepository.volumePerWeekFast(weeks = 6, snapshot = snapshot)
+            val currentWeekStart = startOfCurrentWeek()
             val deloadEvents = detectDeloadFromWeeklyVolumes(
-                weeklyVolumes = volumePerWeek5,
-                currentWeekStartMs = startOfCurrentWeek()
+                weeklyVolumes = volumePerWeek6,
+                currentWeekStartMs = currentWeekStart
             )
-            // Anti-duplicate: tylko jeden DELOAD event per tydzien
+            // Anti-duplicate: event jest datowany na poniedziałek POPRZEDNIEGO
+            // (zakończonego) tygodnia - sprawdzamy po tej dacie
+            val msPerWeek = 7L * 24 * 60 * 60 * 1000
+            val lastWeekStart = currentWeekStart - msPerWeek
             val recentDeloads = eventDao.getByType(TrainingEventType.DELOAD_DETECTED, limit = 5)
-            val weekStart = startOfCurrentWeek()
-            val alreadyHasThisWeek = recentDeloads.any { it.date == weekStart }
-            if (deloadEvents.isNotEmpty() && !alreadyHasThisWeek) {
+            val alreadyHasLastWeek = recentDeloads.any { it.date == lastWeekStart }
+            if (deloadEvents.isNotEmpty() && !alreadyHasLastWeek) {
                 eventDao.insertAll(deloadEvents)
-                Log.d("EventDetector", "Wykryto DELOAD_DETECTED dla bieżącego tygodnia")
+                Log.d("EventDetector", "Wykryto DELOAD_DETECTED dla ostatniego zakończonego tygodnia")
             }
         }
     }
