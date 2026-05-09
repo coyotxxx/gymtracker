@@ -6,17 +6,21 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -27,6 +31,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,14 +49,19 @@ import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
 /**
- * v1.11.72 — Event Timeline. Oś czasu wszystkich eventów AI:
- * PR_SET / INJURY / DELOAD_DETECTED / PLAN_START / PLAN_END / GAP_RESUMED / CYCLE_MILESTONE.
+ * v1.11.73 — Event Timeline z vertical line + dot'y per typ.
  *
- * User widzi swój cykl jako linię czasu z kamieniami milowymi.
+ * Layout:
+ *  - Stats bar: 3 kafle (eventów / PR-y / dni od pierwszego)
+ *  - Filter chips: Wszystkie / per typ
+ *  - Marker DZIŚ
+ *  - Vertical timeline: linia po lewej + dot'y + karty po prawej
+ *  - Headers miesięcy ("MAJ 2026")
  */
 @Composable
 fun EventTimelineScreen(
@@ -59,45 +69,71 @@ fun EventTimelineScreen(
     vm: EventTimelineViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
-    val df = remember { SimpleDateFormat("dd.MM.yyyy", Locale("pl")) }
+    val df = remember { SimpleDateFormat("dd.MM", Locale("pl")) }
+    val dayOfWeekFmt = remember { SimpleDateFormat("EEE", Locale("pl")) }
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(modifier = Modifier.fillMaxSize()) {
             ScreenHeader(title = "Oś czasu", onBack = onBack)
 
-            // Filtr po typie
-            FilterChips(
-                currentFilter = state.filterType,
-                countByType = state.countByType,
-                totalCount = state.totalCount,
-                onFilterChange = { vm.setFilter(it) }
-            )
-
-            if (state.filteredEvents.isEmpty()) {
-                Box(
-                    modifier = Modifier.fillMaxSize().padding(32.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        if (state.isLoading) "Ładowanie..." else
-                            "Brak eventów. Eventy pojawią się po treningach (PR-y, kontuzje) " +
-                                "i przy zmianach planu.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = DarkOnSurfaceVariant
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 24.dp),
+                verticalArrangement = Arrangement.spacedBy(0.dp)  // 0dp żeby linie się łączyły
+            ) {
+                // Stats bar
+                item {
+                    StatsBar(
+                        totalCount = state.totalCount,
+                        prCount = state.countByType[TrainingEventType.PR_SET] ?: 0,
+                        firstEventDate = state.allEvents.minByOrNull { it.date }?.date
                     )
+                    Spacer(Modifier.height(12.dp))
                 }
-            } else {
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
-                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    state.groupedByMonth.forEach { (monthKey, events) ->
-                        item(key = "header_$monthKey") {
-                            MonthHeader(monthKey)
+
+                // Filter chips
+                item {
+                    FilterChips(
+                        currentFilter = state.filterType,
+                        countByType = state.countByType,
+                        totalCount = state.totalCount,
+                        onFilterChange = { vm.setFilter(it) }
+                    )
+                    Spacer(Modifier.height(12.dp))
+                }
+
+                // Marker DZIŚ
+                item {
+                    TodayMarker()
+                    Spacer(Modifier.height(8.dp))
+                }
+
+                if (state.filteredEvents.isEmpty()) {
+                    item {
+                        Box(
+                            modifier = Modifier.fillMaxWidth().padding(32.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                if (state.isLoading) "Ładowanie..." else
+                                    "Brak eventów. Eventy pojawią się po treningach (PR-y, kontuzje) " +
+                                        "i przy zmianach planu.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = DarkOnSurfaceVariant
+                            )
                         }
-                        items(events) { event ->
-                            EventCard(event, df)
+                    }
+                } else {
+                    state.groupedByMonth.entries.forEachIndexed { idx, (monthKey, events) ->
+                        item(key = "header_$monthKey") {
+                            MonthHeader(monthKey, isFirst = idx == 0)
+                        }
+                        items(events, key = { e -> "event_${e.id}" }) { event ->
+                            TimelineItem(
+                                event = event,
+                                df = df,
+                                dayOfWeekFmt = dayOfWeekFmt
+                            )
                         }
                     }
                 }
@@ -106,6 +142,56 @@ fun EventTimelineScreen(
     }
 }
 
+// ============================================================================
+// Stats Bar — 3 kafle u góry
+// ============================================================================
+
+@Composable
+private fun StatsBar(totalCount: Int, prCount: Int, firstEventDate: Long?) {
+    val daysFromFirst = firstEventDate?.let {
+        ((System.currentTimeMillis() - it) / (24L * 3600_000)).toInt().coerceAtLeast(0)
+    } ?: 0
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(DarkSurface, RoundedCornerShape(12.dp))
+            .padding(vertical = 14.dp),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        StatCell(value = totalCount.toString(), label = "EVENTÓW", color = DarkOnSurface)
+        StatCell(value = prCount.toString(), label = "PR-Y", color = AccentOrange)
+        StatCell(value = daysFromFirst.toString(), label = "DNI OD\nPIERWSZEGO", color = DarkOnSurface)
+    }
+}
+
+@Composable
+private fun StatCell(value: String, label: String, color: Color) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            value,
+            style = MaterialTheme.typography.headlineSmall.copy(
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = 22.sp
+            ),
+            color = color
+        )
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontSize = 9.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.2.sp
+            ),
+            color = DarkOnSurfaceVariant,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
+    }
+}
+
+// ============================================================================
+// Filter Chips
+// ============================================================================
+
 @Composable
 private fun FilterChips(
     currentFilter: TrainingEventType?,
@@ -113,10 +199,7 @@ private fun FilterChips(
     totalCount: Int,
     onFilterChange: (TrainingEventType?) -> Unit
 ) {
-    LazyRow(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.spacedBy(6.dp)
-    ) {
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         item {
             FilterChip(
                 label = "Wszystkie ($totalCount)",
@@ -129,7 +212,7 @@ private fun FilterChips(
             if (count > 0) {
                 item {
                     FilterChip(
-                        label = "${eventTypeLabel(type)} ($count)",
+                        label = "${eventTypeShortLabel(type)} ($count)",
                         selected = currentFilter == type,
                         onClick = { onFilterChange(type) }
                     )
@@ -160,61 +243,159 @@ private fun FilterChip(label: String, selected: Boolean, onClick: () -> Unit) {
     }
 }
 
+// ============================================================================
+// Today marker — pomarańczowy badge "DZIŚ • DD MIESIĄC"
+// ============================================================================
+
 @Composable
-private fun MonthHeader(monthKey: String) {
+private fun TodayMarker() {
+    val today = remember { Calendar.getInstance() }
+    val day = today.get(Calendar.DAY_OF_MONTH)
+    val polishMonths = listOf(
+        "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+        "lipca", "sierpnia", "września", "października", "listopada", "grudnia"
+    )
+    val month = polishMonths[today.get(Calendar.MONTH)]
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center
+    ) {
+        Box(
+            modifier = Modifier
+                .background(AccentOrange.copy(alpha = 0.20f), RoundedCornerShape(20.dp))
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+        ) {
+            Text(
+                "DZIŚ · $day $month",
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.2.sp
+                ),
+                color = AccentOrange
+            )
+        }
+    }
+}
+
+// ============================================================================
+// Month header — "MAJ 2026" z kontynuowaną linią timeline
+// ============================================================================
+
+@Composable
+private fun MonthHeader(monthKey: String, isFirst: Boolean) {
     val parts = monthKey.split("-")
     val polishMonths = listOf(
-        "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec",
-        "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"
+        "STYCZEŃ", "LUTY", "MARZEC", "KWIECIEŃ", "MAJ", "CZERWIEC",
+        "LIPIEC", "SIERPIEŃ", "WRZESIEŃ", "PAŹDZIERNIK", "LISTOPAD", "GRUDZIEŃ"
     )
     val label = if (parts.size == 2) {
         val month = parts[1].toIntOrNull()?.let { polishMonths.getOrNull(it - 1) } ?: parts[1]
-        "${month.replaceFirstChar { it.uppercase() }} ${parts[0]}"
+        "$month ${parts[0]}"
     } else monthKey
-    Text(
-        label,
-        style = MaterialTheme.typography.labelMedium.copy(
-            fontWeight = FontWeight.ExtraBold,
-            letterSpacing = 1.4.sp,
-            fontSize = 11.sp
-        ),
-        color = AccentOrange,
-        modifier = Modifier.padding(top = 8.dp, bottom = 2.dp)
-    )
+
+    Row(modifier = Modifier.height(32.dp)) {
+        // Lewa kolumna z linią (kontynuowana ale bez dot'a)
+        Box(modifier = Modifier.width(40.dp).fillMaxHeight()) {
+            if (!isFirst) {
+                Box(
+                    modifier = Modifier
+                        .width(2.dp)
+                        .fillMaxHeight()
+                        .align(Alignment.TopCenter)
+                        .background(DarkOutlineSoft.copy(alpha = 0.5f))
+                )
+            }
+        }
+        // Header tekst
+        Text(
+            label,
+            style = MaterialTheme.typography.labelMedium.copy(
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.4.sp,
+                fontSize = 11.sp
+            ),
+            color = DarkOnSurfaceVariant,
+            modifier = Modifier
+                .padding(top = 8.dp, start = 4.dp)
+                .align(Alignment.CenterVertically)
+        )
+    }
 }
 
+// ============================================================================
+// Timeline item — Row [linia+dot] + [karta]
+// ============================================================================
+
 @Composable
-private fun EventCard(event: TrainingEvent, df: SimpleDateFormat) {
-    val (emoji, color, title) = eventDecoration(event)
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, color.copy(alpha = 0.40f)),
-        shape = RoundedCornerShape(12.dp)
-    ) {
-        Row(
-            modifier = Modifier.padding(12.dp),
-            verticalAlignment = Alignment.Top
+private fun TimelineItem(
+    event: TrainingEvent,
+    df: SimpleDateFormat,
+    dayOfWeekFmt: SimpleDateFormat
+) {
+    val deco = eventDecoration(event)
+    Row(modifier = Modifier.height(IntrinsicSize.Min)) {
+        // Lewa kolumna — linia ciągła + dot na środku
+        Box(modifier = Modifier.width(40.dp).fillMaxHeight()) {
+            // Linia ciągła wzdłuż całego itemu
+            Box(
+                modifier = Modifier
+                    .width(2.dp)
+                    .fillMaxHeight()
+                    .align(Alignment.TopCenter)
+                    .background(DarkOutlineSoft.copy(alpha = 0.5f))
+            )
+            // Dot u góry karty (offset top 16dp)
+            Box(
+                modifier = Modifier
+                    .padding(top = 14.dp)
+                    .size(14.dp)
+                    .align(Alignment.TopCenter)
+                    .background(deco.dotColor, CircleShape)
+            )
+        }
+        // Karta po prawej
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 4.dp, top = 6.dp, bottom = 6.dp),
+            colors = CardDefaults.cardColors(containerColor = DarkSurface),
+            border = BorderStroke(1.dp, deco.dotColor.copy(alpha = 0.45f)),
+            shape = RoundedCornerShape(12.dp)
         ) {
-            Text(emoji, fontSize = 24.sp, modifier = Modifier.padding(end = 12.dp, top = 2.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Column(modifier = Modifier.padding(12.dp)) {
+                // Header — typ + data
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "${deco.emoji} ${eventTypeBadge(event.type)}",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 10.sp,
+                            letterSpacing = 1.2.sp
+                        ),
+                        color = deco.dotColor,
+                        modifier = Modifier.weight(1f)
+                    )
+                    val dayShort = dayOfWeekFmt.format(Date(event.date)).take(2).lowercase()
+                    Text(
+                        "${df.format(Date(event.date))} · $dayShort",
+                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                        color = DarkOnSurfaceVariant
+                    )
+                }
+                Spacer(Modifier.height(4.dp))
+                // Tytuł główny
                 Text(
-                    title,
+                    deco.title,
                     style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                    color = color
+                    color = DarkOnSurface
                 )
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    df.format(Date(event.date)),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
+                // Notatki (jeśli są)
                 if (event.notes.isNotBlank()) {
-                    Spacer(Modifier.height(4.dp))
+                    Spacer(Modifier.height(2.dp))
                     Text(
                         event.notes,
                         style = MaterialTheme.typography.bodySmall,
-                        color = DarkOnSurface
+                        color = DarkOnSurfaceVariant
                     )
                 }
             }
@@ -222,60 +403,94 @@ private fun EventCard(event: TrainingEvent, df: SimpleDateFormat) {
     }
 }
 
-private fun eventTypeLabel(type: TrainingEventType): String = when (type) {
-    TrainingEventType.PR_SET -> "PR-y"
-    TrainingEventType.PLAN_START -> "Plan start"
-    TrainingEventType.PLAN_END -> "Plan end"
-    TrainingEventType.PLAN_CHANGE -> "Zmiana planu"
-    TrainingEventType.DELOAD_DETECTED -> "Deload"
-    TrainingEventType.INJURY -> "Kontuzje"
-    TrainingEventType.GAP_RESUMED -> "Powrót"
-    TrainingEventType.CYCLE_MILESTONE -> "Kamień milowy"
-}
+// ============================================================================
+// Helpery: dekoracja eventu (kolor / emoji / tytuł / krótka etykieta)
+// ============================================================================
 
-private fun eventDecoration(event: TrainingEvent): Triple<String, androidx.compose.ui.graphics.Color, String> {
+private data class EventDeco(
+    val emoji: String,
+    val dotColor: Color,
+    val title: String
+)
+
+// Kolory dot'ów per typ — distinct, łatwe do rozpoznania
+private val ColorDeloadPurple = Color(0xFFB47AE0)   // jasny fiolet
+private val ColorPlanBlue = Color(0xFF5BA0E0)        // jasny niebieski
+private val ColorMilestoneGreen = SuccessGreen
+private val ColorPrOrange = AccentOrange
+private val ColorInjuryRed = ErrorRed
+private val ColorGapGray = DarkOnSurfaceVariant
+
+private fun eventDecoration(event: TrainingEvent): EventDeco {
     return when (event.type) {
-        TrainingEventType.PR_SET -> Triple(
-            "🏆",
-            SuccessGreen,
-            "PR ${event.exerciseName ?: "?"}: ${event.weightKg ?: 0} kg × ${event.reps ?: 0}" +
-                (event.e1rmKg?.let { " (e1RM ${"%.1f".format(java.util.Locale.US, it)})" } ?: "")
+        TrainingEventType.PR_SET -> EventDeco(
+            emoji = "🏆",
+            dotColor = ColorPrOrange,
+            title = run {
+                val name = event.exerciseName ?: "?"
+                val w = event.weightKg
+                val r = event.reps
+                val e1 = event.e1rmKg
+                if (w != null && r != null) {
+                    "NOWY PR · ${name.uppercase()}\n$w kg × $r" +
+                        (e1?.let { " · e1RM ${"%.1f".format(java.util.Locale.US, it)} kg" } ?: "")
+                } else "Nowy PR: $name"
+            }
         )
-        TrainingEventType.PLAN_START -> Triple(
-            "🚀",
-            AccentOrange,
-            "Plan rozpoczęty: ${event.planName ?: "?"}"
+        TrainingEventType.PLAN_START -> EventDeco(
+            emoji = "🚀",
+            dotColor = ColorPlanBlue,
+            title = "Plan rozpoczęty: ${event.planName ?: "?"}"
         )
-        TrainingEventType.PLAN_END -> Triple(
-            "🏁",
-            DarkOnSurfaceVariant,
-            "Plan zakończony: ${event.planName ?: "?"}"
+        TrainingEventType.PLAN_END -> EventDeco(
+            emoji = "🏁",
+            dotColor = ColorPlanBlue,
+            title = "Plan zakończony: ${event.planName ?: "?"}"
         )
-        TrainingEventType.PLAN_CHANGE -> Triple(
-            "🔄",
-            AccentOrange,
-            "Zmiana planu: ${event.planName ?: "?"}"
+        TrainingEventType.PLAN_CHANGE -> EventDeco(
+            emoji = "🔄",
+            dotColor = ColorPlanBlue,
+            title = "Zmiana planu: ${event.planName ?: "?"}"
         )
-        TrainingEventType.DELOAD_DETECTED -> Triple(
-            "🔋",
-            AccentOrange,
-            "Deload wykryty${event.weeksContext?.let { " (${it} tyg cyklu)" } ?: ""}"
+        TrainingEventType.DELOAD_DETECTED -> EventDeco(
+            emoji = "🔋",
+            dotColor = ColorDeloadPurple,
+            title = "Tydzień deload" + (event.weeksContext?.let { " (${it} tyg cyklu)" } ?: "")
         )
-        TrainingEventType.INJURY -> Triple(
-            "🩹",
-            ErrorRed,
-            "Kontuzja: ${event.area ?: "?"}"
+        TrainingEventType.INJURY -> EventDeco(
+            emoji = "🩹",
+            dotColor = ColorInjuryRed,
+            title = "Kontuzja: ${event.area ?: "?"}"
         )
-        TrainingEventType.GAP_RESUMED -> Triple(
-            "↩️",
-            DarkOnSurfaceVariant,
-            "Powrót po przerwie${event.weeksContext?.let { " ${it} tyg" } ?: ""}"
+        TrainingEventType.GAP_RESUMED -> EventDeco(
+            emoji = "↩️",
+            dotColor = ColorGapGray,
+            title = "Powrót po przerwie" + (event.weeksContext?.let { " ${it} tyg" } ?: "")
         )
-        TrainingEventType.CYCLE_MILESTONE -> Triple(
-            "🎯",
-            SuccessGreen,
-            "Kamień milowy cyklu"
+        TrainingEventType.CYCLE_MILESTONE -> EventDeco(
+            emoji = "🎯",
+            dotColor = ColorMilestoneGreen,
+            title = "Kamień milowy cyklu"
         )
     }
 }
 
+private fun eventTypeBadge(type: TrainingEventType): String = when (type) {
+    TrainingEventType.PR_SET -> "NOWY PR"
+    TrainingEventType.PLAN_START -> "PLAN START"
+    TrainingEventType.PLAN_END -> "PLAN KONIEC"
+    TrainingEventType.PLAN_CHANGE -> "ZMIANA PLANU"
+    TrainingEventType.DELOAD_DETECTED -> "DELOAD"
+    TrainingEventType.INJURY -> "KONTUZJA"
+    TrainingEventType.GAP_RESUMED -> "POWRÓT"
+    TrainingEventType.CYCLE_MILESTONE -> "KAMIEŃ MILOWY"
+}
+
+private fun eventTypeShortLabel(type: TrainingEventType): String = when (type) {
+    TrainingEventType.PR_SET -> "PR-y"
+    TrainingEventType.PLAN_START, TrainingEventType.PLAN_END, TrainingEventType.PLAN_CHANGE -> "Plan"
+    TrainingEventType.DELOAD_DETECTED -> "Deload"
+    TrainingEventType.INJURY -> "Kontuzje"
+    TrainingEventType.GAP_RESUMED -> "Powrót"
+    TrainingEventType.CYCLE_MILESTONE -> "Kamienie"
+}
