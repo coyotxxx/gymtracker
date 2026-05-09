@@ -132,6 +132,62 @@ class AiContextBuilderHelpersTest {
         assertEquals("lokiec", result.areas[2].area)  // 1x
     }
 
+    // ============== isPlanRelatedPrompt ==============
+
+    @Test
+    fun `isPlan - pytania analizujace progres = false`() {
+        val prompts = listOf(
+            "zrób analizę progresu z ostatnich 8 tygodni",
+            "jak idzie mój bench press",
+            "czy są dysbalanse mięśniowe",
+            "jak wygląda moja objętość treningowa",
+            "ile zrobiłem w tym tygodniu",
+            "co o mnie myślisz jako trener",
+            "kiedy ostatnio pobiłem PR",
+            "dlaczego boli mnie kolano",
+            "jaki jest mój e1RM na bench"
+        )
+        prompts.forEach { p ->
+            assertTrue("'$p' nie powinien byc plan-related", !isPlanRelatedPrompt(p))
+        }
+    }
+
+    @Test
+    fun `isPlan - pytania o modyfikacje planu = true`() {
+        val prompts = listOf(
+            "zmień mi plan",
+            "modyfikuj plan PPL",
+            "dodaj ćwiczenie do poniedziałku",
+            "zamień przysiad na suwnicę",
+            "wymień ćwiczenie",
+            "usuń wykrok z planu",
+            "zaproponuj nowy plan",
+            "wygeneruj plan na masę",
+            "stwórz plan 4-dniowy",
+            "popraw plan żeby było mniej nóg"
+        )
+        prompts.forEach { p ->
+            assertTrue("'$p' powinien byc plan-related", isPlanRelatedPrompt(p))
+        }
+    }
+
+    @Test
+    fun `isPlan - case insensitive`() {
+        assertTrue(isPlanRelatedPrompt("ZMIEŃ MI PLAN"))
+        assertTrue(isPlanRelatedPrompt("Zaproponuj Plan"))
+        assertTrue(isPlanRelatedPrompt("Wygeneruj NOWY PLAN"))
+    }
+
+    @Test
+    fun `isPlan - pytania ogolne bez slow planu = false`() {
+        // np. quick ask z ekranu statystyk
+        assertTrue(!isPlanRelatedPrompt("co tu widzę"))
+        assertTrue(!isPlanRelatedPrompt("jak interpretować te liczby"))
+        assertTrue(!isPlanRelatedPrompt("co mogę poprawić w technice"))
+        assertTrue(!isPlanRelatedPrompt("ile białka dziennie"))
+        assertTrue(!isPlanRelatedPrompt("kiedy zrobić deload"))
+    }
+
     @Test
     fun `painLog - lastOccurrence to najnowszy trening dla danego area`() {
         val result = computePainLog90d(listOf(

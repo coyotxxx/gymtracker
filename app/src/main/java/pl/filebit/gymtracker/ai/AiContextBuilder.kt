@@ -162,10 +162,11 @@ class AiContextBuilder @Inject constructor(
 
             putJsonObject("stats_overview") {
                 put("totalWorkouts", overview.totalWorkouts)
-                put("totalVolumeKg", overview.totalVolumeKg)
+                // v1.11.60: zaokraglenia float (zamiast 281542.5000000002)
+                put("totalVolumeKg", "%.0f".format(overview.totalVolumeKg).toDouble())
                 put("totalSets", overview.totalSets)
-                put("totalDurationMs", overview.totalDurationMillis)
-                put("avgVolumePerWorkout", overview.avgVolumePerWorkout)
+                put("totalDurationMin", overview.totalDurationMillis / 60_000)
+                put("avgVolumePerWorkout", "%.0f".format(overview.avgVolumePerWorkout).toDouble())
                 put("workoutsThisWeek", overview.workoutsThisWeek)
                 put("workoutsThisMonth", overview.workoutsThisMonth)
                 put("currentStreakWeeks", streak.current)
@@ -174,13 +175,13 @@ class AiContextBuilder @Inject constructor(
                 put("weekProgressTarget", weekProgress.target)
             }
 
-            putJsonArray("achievements") {
-                achievements.filter { it.unlocked }.forEach { a ->
-                    add(buildJsonObject {
-                        put("id", a.id)
-                        put("title", a.title)
-                        put("description", a.description)
-                    })
+            // v1.11.60: achievements -> compact summary (zamiast 25 obiektow z pelnym opisem)
+            putJsonObject("achievements_summary") {
+                val unlocked = achievements.filter { it.unlocked }
+                put("unlockedCount", unlocked.size)
+                put("totalCount", achievements.size)
+                putJsonArray("latestIds") {
+                    unlocked.takeLast(5).forEach { add(it.id) }
                 }
             }
 
@@ -188,7 +189,7 @@ class AiContextBuilder @Inject constructor(
                 muscle.forEach { m ->
                     add(buildJsonObject {
                         put("muscle", m.muscle.name)
-                        put("volumeKg", m.volumeKg)
+                        put("volumeKg", "%.0f".format(m.volumeKg).toDouble())
                         put("totalSets", m.totalSets)
                         put("percentOfTotal", m.percentOfTotal)
                     })
@@ -239,10 +240,10 @@ class AiContextBuilder @Inject constructor(
                 strength.filter { it.hasData }.forEach { ev ->
                     add(buildJsonObject {
                         put("exercise", ev.exercise?.name ?: ev.standard.exerciseNamePrefix)
-                        put("estimated1RMKg", ev.current1RMKg)
-                        put("ratioPerBodyweight", ev.ratio)
+                        put("estimated1RMKg", "%.1f".format(ev.current1RMKg).toDouble())
+                        put("ratioPerBodyweight", "%.2f".format(ev.ratio).toDouble())
                         put("level", ev.level.name)
-                        ev.nextLevelKg?.let { put("kgToNextLevel", it) }
+                        ev.nextLevelKg?.let { put("kgToNextLevel", "%.1f".format(it).toDouble()) }
                     })
                 }
             }
@@ -301,44 +302,53 @@ class AiContextBuilder @Inject constructor(
                 }
             }
 
+            // v1.11.60: kompresja recent_workouts - tylko zakonczone treningi,
+            // tylko ukonczone sety, bez WARMUP, pomijaj null/default pola
             putJsonArray("recent_workouts") {
-                workoutsData.forEach { wwe ->
-                    add(buildJsonObject {
-                        put("id", wwe.workout.id)
-                        put("startedAt", dfTime.format(Date(wwe.workout.startedAt)))
-                        wwe.workout.finishedAt?.let { put("finishedAt", dfTime.format(Date(it))) }
-                        put(
-                            "durationMin",
-                            ((wwe.workout.finishedAt ?: wwe.workout.startedAt) - wwe.workout.startedAt) / 60_000
-                        )
-                        if (wwe.workout.notes.isNotBlank()) put("notes", wwe.workout.notes)
-                        // Post-workout feedback (v0.82.0+): wellbeing 1-5, ból
-                        wwe.workout.wellbeingRating?.let { put("wellbeing", it) }
-                        wwe.workout.painArea?.let { put("painArea", it) }
-                        wwe.workout.painNotes?.let { put("painNotes", it) }
-                        put("exercises", buildJsonArray {
-                            wwe.byExercise.forEach { (ex, list) ->
-                                add(buildJsonObject {
-                                    put("name", ex?.name ?: "?")
-                                    put("sets", buildJsonArray {
-                                        list.sortedBy { it.setNumber }.forEach { s ->
-                                            add(buildJsonObject {
-                                                put("setNumber", s.setNumber)
-                                                put("setType", s.setType.name)
-                                                put("reps", s.reps)
-                                                put("weightKg", s.weightKg)
-                                                put("isCompleted", s.isCompleted)
-                                                s.rpe?.let { put("rpe", it) }
-                                                s.rir?.let { put("rir", it) }
-                                                s.tempo?.let { put("tempo", it) }
-                                            })
-                                        }
+                workoutsData
+                    .filter { it.workout.finishedAt != null }
+                    .forEach { wwe ->
+                        add(buildJsonObject {
+                            put("id", wwe.workout.id)
+                            put("startedAt", dfTime.format(Date(wwe.workout.startedAt)))
+                            wwe.workout.finishedAt?.let { put("finishedAt", dfTime.format(Date(it))) }
+                            put(
+                                "durationMin",
+                                ((wwe.workout.finishedAt ?: wwe.workout.startedAt) - wwe.workout.startedAt) / 60_000
+                            )
+                            if (wwe.workout.notes.isNotBlank()) put("notes", wwe.workout.notes)
+                            wwe.workout.wellbeingRating?.let { put("wellbeing", it) }
+                            wwe.workout.painArea?.let { put("painArea", it) }
+                            wwe.workout.painNotes?.let { put("painNotes", it) }
+                            put("exercises", buildJsonArray {
+                                wwe.byExercise.forEach { (ex, list) ->
+                                    val completedSets = list
+                                        .filter { it.isCompleted && it.setType != pl.filebit.gymtracker.data.entity.SetType.WARMUP }
+                                    if (completedSets.isEmpty()) return@forEach
+                                    add(buildJsonObject {
+                                        put("name", ex?.name ?: "?")
+                                        put("sets", buildJsonArray {
+                                            completedSets.sortedBy { it.setNumber }.forEach { s ->
+                                                add(buildJsonObject {
+                                                    put("setNumber", s.setNumber)
+                                                    if (s.setType != pl.filebit.gymtracker.data.entity.SetType.NORMAL) {
+                                                        put("setType", s.setType.name)
+                                                    }
+                                                    put("reps", s.reps)
+                                                    if (s.weightKg > 0.0) {
+                                                        put("weightKg", "%.1f".format(s.weightKg).toDouble())
+                                                    }
+                                                    s.rpe?.let { put("rpe", it) }
+                                                    s.rir?.let { put("rir", it) }
+                                                    s.tempo?.let { put("tempo", it) }
+                                                })
+                                            }
+                                        })
                                     })
-                                })
-                            }
+                                }
+                            })
                         })
-                    })
-                }
+                    }
             }
 
             putJsonArray("progress_photos") {
@@ -499,6 +509,27 @@ data class PainAreaCount(
     val count: Int,
     val lastOccurrenceMs: Long
 )
+
+/**
+ * v1.11.60: Heurystyka czy uzytkownik pyta o modyfikacje/generowanie planu.
+ * Jezeli TAK -> AI dostaje pelny plan + biblioteke cwiczen w kontekscie.
+ * Jezeli NIE -> tylko plan_history_summary (bez detali, bez biblioteki).
+ *
+ * Bez tego: kazde pytanie wstrzykuje 200+ KB pelnego planu i listy cwiczen,
+ * mimo ze pytanie nie dotyczy planu (np. analiza progresu).
+ */
+fun isPlanRelatedPrompt(prompt: String): Boolean {
+    val lower = prompt.lowercase()
+    val keywords = listOf(
+        "plan", "trening na ", "rozpiska", "rozkład",
+        "modyfik", "zmien", "zmień", "popraw plan", "edytuj",
+        "dodaj cwiczenie", "dodaj ćwiczenie", "zamien cwiczenie", "zamień ćwiczenie",
+        "wymien cwiczenie", "wymień ćwiczenie", "usun cwiczenie", "usuń ćwiczenie",
+        "zapropon", "wygeneruj", "stwórz", "stworz",
+        "podziel trening", "podzielic trening", "podzielić trening"
+    )
+    return keywords.any { it in lower }
+}
 
 /**
  * Liczy log bolu z ostatnich 90 dni - groupowane per area + sortowane po liczbie wystapien.

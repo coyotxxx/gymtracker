@@ -244,10 +244,15 @@ class AiTrainerViewModel @Inject constructor(
                 }
             )
 
+            // v1.11.60: heurystyka - czy uzytkownik faktycznie pyta o modyfikacje planu?
+            // Jezeli NIE - nie wstrzykujemy pelnego planu i biblioteki cwiczen do kontekstu
+            // (te dane sa duze: 100-200 KB, niepotrzebne dla pytan o analize/progres).
+            val isPlanRelated = pl.filebit.gymtracker.ai.isPlanRelatedPrompt(prompt)
+            val effectiveTargetPlanId = if (isPlanRelated) _state.value.targetPlanId else null
+
             val ctx = runCatching {
                 contextBuilder.buildContextJson(
-                    recentWorkoutsLimit = 30,
-                    targetPlanId = _state.value.targetPlanId
+                    targetPlanId = effectiveTargetPlanId
                 )
             }.getOrElse { "{}" }
 

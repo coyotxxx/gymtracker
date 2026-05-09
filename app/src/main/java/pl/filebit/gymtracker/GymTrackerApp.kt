@@ -40,6 +40,7 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var proactiveAiScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
     @Inject lateinit var dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
     @Inject lateinit var dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
+    @Inject lateinit var eventBackfillService: pl.filebit.gymtracker.ai.EventBackfillService
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -66,6 +67,10 @@ class GymTrackerApp : Application(), Configuration.Provider {
             } else {
                 dietAdjustmentScheduler.cancel()
             }
+            // v1.11.60: backfill historycznych eventow (PR/INJURY/GAP) z istniejacych
+            // treningow przy pierwszym starcie po update do v1.11.59+. Idempotentny -
+            // jesli juz sa eventy nic nie robi.
+            runCatching { eventBackfillService.backfillIfNeeded() }
         }
         observeActiveWorkoutForReminder()
     }

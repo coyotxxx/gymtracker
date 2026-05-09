@@ -62,7 +62,9 @@ class AiQuickAskViewModel @Inject constructor(
         )
         viewModelScope.launch {
             // Kontekst dolaczany do KAZDEGO pytania (snapshot zawsze swiezy)
-            val ctx = runCatching { contextBuilder.buildContextJson(recentWorkoutsLimit = 30) }
+            // v1.11.60: QuickAsk to mini-pytania o ekran - nie potrzebuje pelnego planu/biblioteki.
+            // targetPlanId NIE ustawiany (default null), recentWorkoutsLimit z default (5).
+            val ctx = runCatching { contextBuilder.buildContextJson() }
                 .getOrElse { "{}" }
             val combined = buildString {
                 append("Aktualnie jestem na ekranie aplikacji: **${_state.value.screenLabel}**.\n\n")
