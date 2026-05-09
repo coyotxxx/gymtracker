@@ -380,7 +380,7 @@ private fun TimelineItem(
 ) {
     val deco = eventDecoration(event)
     Row(modifier = Modifier.height(IntrinsicSize.Min)) {
-        // Lewa kolumna — linia ciągła + dot na środku
+        // Lewa kolumna — linia ciągła + dot z glow na środku
         Box(modifier = Modifier.width(40.dp).fillMaxHeight()) {
             Box(
                 modifier = Modifier
@@ -388,6 +388,21 @@ private fun TimelineItem(
                     .fillMaxHeight()
                     .align(Alignment.TopCenter)
                     .background(DarkOutlineSoft.copy(alpha = 0.5f))
+            )
+            // v1.11.78: glow halo wokol dot'a (3 warstwy z malejaca alpha)
+            Box(
+                modifier = Modifier
+                    .padding(top = 10.dp)
+                    .size(22.dp)
+                    .align(Alignment.TopCenter)
+                    .background(deco.dotColor.copy(alpha = 0.18f), CircleShape)
+            )
+            Box(
+                modifier = Modifier
+                    .padding(top = 12.dp)
+                    .size(18.dp)
+                    .align(Alignment.TopCenter)
+                    .background(deco.dotColor.copy(alpha = 0.35f), CircleShape)
             )
             Box(
                 modifier = Modifier
@@ -397,7 +412,7 @@ private fun TimelineItem(
                     .background(deco.dotColor, CircleShape)
             )
         }
-        // Karta po prawej (klikalna — toggle expand)
+        // Karta po prawej z lewym akcentem koloru (4dp pasek)
         // v1.11.76: indication=null zeby uniknac wielkiego ripple-okregu z calej karty
         val interactionSource = remember { MutableInteractionSource() }
         Card(
@@ -409,9 +424,16 @@ private fun TimelineItem(
                     indication = null
                 ) { onToggleExpand() },
             colors = CardDefaults.cardColors(containerColor = DarkSurface),
-            border = BorderStroke(1.dp, deco.dotColor.copy(alpha = 0.45f)),
             shape = RoundedCornerShape(12.dp)
         ) {
+            Row(modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min)) {
+                // Lewy akcent koloru (4dp pasek)
+                Box(
+                    modifier = Modifier
+                        .width(4.dp)
+                        .fillMaxHeight()
+                        .background(deco.dotColor)
+                )
             Column(modifier = Modifier.padding(12.dp)) {
                 // Header — typ + data + caret
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -471,7 +493,7 @@ private fun TimelineItem(
                     when (event.type) {
                         TrainingEventType.PR_SET -> ExpandedPrView(expandedDetails)
                         else -> {
-                            // Inne typy — placeholder, w v1.11.75-77 dodam expand per typ
+                            // Inne typy — placeholder, w v1.11.78-80 dodam expand per typ
                             Text(
                                 "Szczegóły dla tego typu eventu pojawią się w kolejnych wersjach.",
                                 style = MaterialTheme.typography.bodySmall,
@@ -480,9 +502,10 @@ private fun TimelineItem(
                         }
                     }
                 }
-            }
-        }
-    }
+            }  // Column
+            }  // Row (akcent + content)
+        }  // Card
+    }  // Outer Row
 }
 
 /**
