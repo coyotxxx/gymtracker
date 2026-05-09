@@ -72,6 +72,9 @@ class GymTrackerApp : Application(), Configuration.Provider {
             // treningow przy pierwszym starcie po update do v1.11.59+. Idempotentny -
             // jesli juz sa eventy nic nie robi.
             runCatching { eventBackfillService.backfillIfNeeded() }
+            // v1.11.77: backfill DELOAD i CYCLE_MILESTONE (idempotentne)
+            runCatching { eventBackfillService.backfillDeloadsIfNeeded() }
+            runCatching { eventBackfillService.backfillMilestonesIfNeeded() }
             // v1.11.66: zamknij wszystkie zalegle okresy (week/month/quarter).
             // Idempotentny - rollup raz utworzony nie jest re-computowany.
             runCatching { periodRollupService.closeAllPeriodsIfNeeded() }
