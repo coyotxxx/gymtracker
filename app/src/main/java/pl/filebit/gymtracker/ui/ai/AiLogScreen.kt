@@ -22,6 +22,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.ContentCopy
+import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -99,6 +100,15 @@ fun AiLogScreen(
                 modifier = Modifier.weight(1f)
             )
             if (logs.isNotEmpty()) {
+                IconButton(onClick = {
+                    val text = formatAllLogs(logs)
+                    val ts = java.text.SimpleDateFormat("yyyyMMdd_HHmmss", java.util.Locale.US).format(java.util.Date())
+                    val path = saveToDownloads(context, text, "ai_logs_all_$ts")
+                    val msg = if (path != null) "Zapisano: $path" else "Błąd zapisu pliku"
+                    android.widget.Toast.makeText(context, msg, android.widget.Toast.LENGTH_LONG).show()
+                }) {
+                    Icon(Icons.Default.Download, contentDescription = "Zapisz do Pobranych", tint = AccentOrange)
+                }
                 IconButton(onClick = {
                     val text = formatAllLogs(logs)
                     shareText(context, text, "Logi AI GymTracker — ${logs.size} wpisów")
@@ -288,6 +298,16 @@ private fun AiLogDetailDialog(log: AiLog, onDismiss: () -> Unit) {
                 Spacer(Modifier.width(4.dp))
                 Text("Udostępnij", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
+            TextButton(onClick = {
+                val ts = java.text.SimpleDateFormat("yyyyMMdd_HHmmss", java.util.Locale.US).format(java.util.Date())
+                val path = saveToDownloads(context, formatLog(log), "ai_log_${log.service}_$ts")
+                val msg = if (path != null) "Zapisano: $path" else "Błąd zapisu"
+                android.widget.Toast.makeText(context, msg, android.widget.Toast.LENGTH_LONG).show()
+            }) {
+                Icon(Icons.Default.Download, contentDescription = null, tint = AccentOrange, modifier = Modifier.size(16.dp))
+                Spacer(Modifier.width(4.dp))
+                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
+            }
             TextButton(onClick = onDismiss) {
                 Text("Zamknij", color = DarkOnSurfaceVariant)
             }
@@ -404,16 +424,84 @@ private fun formatAllLogs(logs: List<AiLog>): String {
     return sb.toString()
 }
 
+/**
+ * v1.11.64: Share przez FileProvider URI - EXTRA_TEXT mial limit (~100-500 KB
+ * w docelowych aplikacjach: Gmail, Messenger ucinaja). Zapis do pliku + URI
+ * przekazane przez EXTRA_STREAM = bez limitu. Dziala dla logow do ~10 MB.
+ */
 private fun shareText(context: android.content.Context, text: String, subject: String) {
-    val intent = Intent(Intent.ACTION_SEND).apply {
-        type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, subject)
-        putExtra(Intent.EXTRA_TEXT, text)
+    runCatching {
+        val safeName = subject.replace(Regex("[^a-zA-Z0-9_-]"), "_").take(60)
+        val dir = java.io.File(context.cacheDir, "ai_logs").apply { mkdirs() }
+        val file = java.io.File(dir, "$safeName.txt")
+        file.writeText(text, Charsets.UTF_8)
+        val uri = androidx.core.content.FileProvider.getUriForFile(
+            context, "${context.packageName}.fileprovider", file
+        )
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_STREAM, uri)
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
+        val chooser = Intent.createChooser(intent, "Udostępnij log AI").apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(chooser)
+    }.onFailure {
+        // Fallback do EXTRA_TEXT (z limitami) gdyby FileProvider zawiodlo
+        val fallback = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        context.startActivity(Intent.createChooser(fallback, "Udostępnij log AI").apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        })
     }
-    val chooser = Intent.createChooser(intent, "Udostępnij log AI").apply {
-        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    }
-    context.startActivity(chooser)
+}
+
+/**
+ * v1.11.64: Zapisz pelny log do publicznego Downloads. User otworzy w File
+ * Manager → Pobrane i mozesz przeslac plik dowolna metoda.
+ *
+ * Android 10+ (Q+): MediaStore.Downloads (scoped storage)
+ * Android 9 i nizej: Environment.DIRECTORY_DOWNLOADS
+ */
+private fun saveToDownloads(
+    context: android.content.Context,
+    text: String,
+    fileName: String
+): String? {
+    return runCatching {
+        val safeName = fileName.replace(Regex("[^a-zA-Z0-9_.-]"), "_") + ".txt"
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+            val resolver = context.contentResolver
+            val values = android.content.ContentValues().apply {
+                put(android.provider.MediaStore.Downloads.DISPLAY_NAME, safeName)
+                put(android.provider.MediaStore.Downloads.MIME_TYPE, "text/plain")
+                put(android.provider.MediaStore.Downloads.RELATIVE_PATH,
+                    android.os.Environment.DIRECTORY_DOWNLOADS + "/GymTracker")
+            }
+            val uri = resolver.insert(
+                android.provider.MediaStore.Downloads.EXTERNAL_CONTENT_URI,
+                values
+            ) ?: return null
+            resolver.openOutputStream(uri)?.use { it.write(text.toByteArray(Charsets.UTF_8)) }
+            "Pobrane/GymTracker/$safeName"
+        } else {
+            @Suppress("DEPRECATION")
+            val dir = java.io.File(
+                android.os.Environment.getExternalStoragePublicDirectory(
+                    android.os.Environment.DIRECTORY_DOWNLOADS
+                ),
+                "GymTracker"
+            ).apply { mkdirs() }
+            val file = java.io.File(dir, safeName)
+            file.writeText(text, Charsets.UTF_8)
+            file.absolutePath
+        }
+    }.getOrNull()
 }
 
 /**
