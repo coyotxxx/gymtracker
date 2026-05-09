@@ -51,19 +51,20 @@ class AiContextBuilderHelpersTest {
     }
 
     @Test
-    fun `bodyInflections - cykl redukcji 80 - 75 - 78 - 76`() {
-        // Zamierzona kolejnosc dat: 100 dni temu (start 80), 50 dni temu (min 75), 20 dni temu (max 78), 0 dni temu (now 76)
+    fun `bodyInflections - 4 rozne punkty start min max current`() {
+        // Scenariusz testujacy wszystkie 4 wartosci jako rozne:
+        // 100 dni temu (start 75) -> 50 dni temu (max 80) -> 20 dni temu (78) -> teraz (current 73, min)
         val result = computeBodyInflections(listOf(
-            bm(100, 80.0),
-            bm(50, 75.0),
+            bm(100, 75.0),
+            bm(50, 80.0),
             bm(20, 78.0),
-            bm(0, 76.0)
+            bm(0, 73.0)
         ))
-        assertEquals(80.0, result.startWeightKg!!, 0.001)
-        assertEquals(75.0, result.minWeightKg!!, 0.001)
-        assertEquals(78.0, result.maxWeightKg!!, 0.001)
-        assertEquals(76.0, result.currentWeightKg!!, 0.001)
-        assertEquals(-4.0, result.totalChangeKg!!, 0.001)  // 76 - 80 = -4 (redukcja)
+        assertEquals(75.0, result.startWeightKg!!, 0.001)
+        assertEquals(73.0, result.minWeightKg!!, 0.001)
+        assertEquals(80.0, result.maxWeightKg!!, 0.001)
+        assertEquals(73.0, result.currentWeightKg!!, 0.001)
+        assertEquals(-2.0, result.totalChangeKg!!, 0.001)  // 73 - 75 = -2
     }
 
     @Test
