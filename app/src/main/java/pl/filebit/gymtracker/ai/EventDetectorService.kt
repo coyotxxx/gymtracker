@@ -26,7 +26,9 @@ class EventDetectorService @Inject constructor(
     private val workoutDao: WorkoutDao,
     private val setDao: WorkoutSetDao,
     private val exerciseDao: ExerciseDao,
-    private val eventDao: TrainingEventDao
+    private val eventDao: TrainingEventDao,
+    private val statsRepository: pl.filebit.gymtracker.data.repository.StatsRepository,
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
 ) {
 
     /**
@@ -77,6 +79,69 @@ class EventDetectorService @Inject constructor(
             eventDao.insertAll(gapEvents)
             Log.d("EventDetector", "Wykryto GAP_RESUMED dla workoutu $workoutId")
         }
+
+        // v1.11.63: DELOAD detection - sprawdz czy ten tydzien to deload vs ostatnie 4
+        runCatching {
+            val snapshot = statsCacheService.snapshot()
+            val volumePerWeek5 = statsRepository.volumePerWeekFast(weeks = 5, snapshot = snapshot)
+            val deloadEvents = detectDeloadFromWeeklyVolumes(
+                weeklyVolumes = volumePerWeek5,
+                currentWeekStartMs = startOfCurrentWeek()
+            )
+            // Anti-duplicate: tylko jeden DELOAD event per tydzien
+            val recentDeloads = eventDao.getByType(TrainingEventType.DELOAD_DETECTED, limit = 5)
+            val weekStart = startOfCurrentWeek()
+            val alreadyHasThisWeek = recentDeloads.any { it.date == weekStart }
+            if (deloadEvents.isNotEmpty() && !alreadyHasThisWeek) {
+                eventDao.insertAll(deloadEvents)
+                Log.d("EventDetector", "Wykryto DELOAD_DETECTED dla bieżącego tygodnia")
+            }
+        }
+    }
+
+    /** Poniedzialek bieżącego tygodnia o 00:00 (epoch ms). */
+    private fun startOfCurrentWeek(): Long {
+        val cal = java.util.Calendar.getInstance()
+        cal.firstDayOfWeek = java.util.Calendar.MONDAY
+        cal.set(java.util.Calendar.DAY_OF_WEEK, java.util.Calendar.MONDAY)
+        cal.set(java.util.Calendar.HOUR_OF_DAY, 0)
+        cal.set(java.util.Calendar.MINUTE, 0)
+        cal.set(java.util.Calendar.SECOND, 0)
+        cal.set(java.util.Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
+    }
+
+    /**
+     * v1.11.63: Wywoływane po stworzeniu nowego planu (PlanRepository.upsertPlan
+     * gdy id=0 przed insert).
+     */
+    suspend fun onPlanCreated(planId: Long, planName: String) {
+        eventDao.insert(
+            pl.filebit.gymtracker.data.entity.TrainingEvent(
+                date = System.currentTimeMillis(),
+                type = pl.filebit.gymtracker.data.entity.TrainingEventType.PLAN_START,
+                planId = planId,
+                planName = planName,
+                notes = "Aktywowano plan: $planName"
+            )
+        )
+        Log.d("EventDetector", "PLAN_START event dla planId=$planId ($planName)")
+    }
+
+    /**
+     * v1.11.63: Wywoływane po usunięciu planu.
+     */
+    suspend fun onPlanDeleted(planId: Long, planName: String) {
+        eventDao.insert(
+            pl.filebit.gymtracker.data.entity.TrainingEvent(
+                date = System.currentTimeMillis(),
+                type = pl.filebit.gymtracker.data.entity.TrainingEventType.PLAN_END,
+                planId = planId,
+                planName = planName,
+                notes = "Zakończono plan: $planName"
+            )
+        )
+        Log.d("EventDetector", "PLAN_END event dla planId=$planId ($planName)")
     }
 
     /**

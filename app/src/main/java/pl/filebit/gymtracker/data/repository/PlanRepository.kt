@@ -16,7 +16,8 @@ class PlanRepository @Inject constructor(
     private val planDao: TrainingPlanDao,
     private val planExerciseDao: PlanExerciseDao,
     private val planExerciseSetDao: PlanExerciseSetDao,
-    private val weeklyOverrideDao: pl.filebit.gymtracker.data.db.dao.WeeklyPlanOverrideDao
+    private val weeklyOverrideDao: pl.filebit.gymtracker.data.db.dao.WeeklyPlanOverrideDao,
+    private val eventDetectorService: pl.filebit.gymtracker.ai.EventDetectorService
 ) {
 
     /**
@@ -72,13 +73,33 @@ class PlanRepository @Inject constructor(
 
     suspend fun getPlan(id: Long): TrainingPlan? = planDao.getById(id)
 
-    suspend fun upsertPlan(plan: TrainingPlan): Long = planDao.upsert(plan)
+    suspend fun upsertPlan(plan: TrainingPlan): Long {
+        val isNew = plan.id == 0L
+        val resultId = planDao.upsert(plan)
+        // v1.11.63: PLAN_START event tylko dla NOWYCH planow (insert, nie update)
+        if (isNew) {
+            runCatching {
+                eventDetectorService.onPlanCreated(resultId, plan.copy(id = resultId).name)
+            }
+        }
+        return resultId
+    }
 
     suspend fun updatePlan(plan: TrainingPlan) = planDao.update(plan)
 
-    suspend fun deletePlan(plan: TrainingPlan) = planDao.delete(plan)
+    suspend fun deletePlan(plan: TrainingPlan) {
+        planDao.delete(plan)
+        // v1.11.63: PLAN_END event po usunieciu planu
+        runCatching { eventDetectorService.onPlanDeleted(plan.id, plan.name) }
+    }
 
-    suspend fun deletePlanById(id: Long) = planDao.deleteById(id)
+    suspend fun deletePlanById(id: Long) {
+        val plan = planDao.getById(id)
+        planDao.deleteById(id)
+        if (plan != null) {
+            runCatching { eventDetectorService.onPlanDeleted(plan.id, plan.name) }
+        }
+    }
 
     fun observePlanExercises(planId: Long): Flow<List<PlanExercise>> =
         planExerciseDao.observeForPlan(planId)
