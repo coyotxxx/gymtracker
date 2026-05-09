@@ -54,6 +54,18 @@ class AiContextBuilder @Inject constructor(
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
     private val pretty = Json { prettyPrint = true; encodeDefaults = true }
 
+    /**
+     * v1.11.61: bezpieczne zaokraglenie - locale-free.
+     * Powod: '%.1f'.format(x) na polskim Androidzie zwraca '1,5' (przecinek)
+     * -> .toDouble() rzuca NumberFormatException -> caly buildContextJson
+     * pada -> kontekst dla AI = '{}' (krytyczny bug v1.11.60).
+     */
+    private fun Double.roundTo(decimals: Int): Double {
+        if (this.isNaN() || this.isInfinite()) return 0.0
+        val factor = Math.pow(10.0, decimals.toDouble())
+        return Math.round(this * factor) / factor
+    }
+
     private data class PlanWithDays(
         val plan: TrainingPlan,
         val days: List<DayWithExercises>
@@ -163,10 +175,10 @@ class AiContextBuilder @Inject constructor(
             putJsonObject("stats_overview") {
                 put("totalWorkouts", overview.totalWorkouts)
                 // v1.11.60: zaokraglenia float (zamiast 281542.5000000002)
-                put("totalVolumeKg", "%.0f".format(overview.totalVolumeKg).toDouble())
+                put("totalVolumeKg", overview.totalVolumeKg.roundTo(0))
                 put("totalSets", overview.totalSets)
                 put("totalDurationMin", overview.totalDurationMillis / 60_000)
-                put("avgVolumePerWorkout", "%.0f".format(overview.avgVolumePerWorkout).toDouble())
+                put("avgVolumePerWorkout", overview.avgVolumePerWorkout.roundTo(0))
                 put("workoutsThisWeek", overview.workoutsThisWeek)
                 put("workoutsThisMonth", overview.workoutsThisMonth)
                 put("currentStreakWeeks", streak.current)
@@ -189,7 +201,7 @@ class AiContextBuilder @Inject constructor(
                 muscle.forEach { m ->
                     add(buildJsonObject {
                         put("muscle", m.muscle.name)
-                        put("volumeKg", "%.0f".format(m.volumeKg).toDouble())
+                        put("volumeKg", m.volumeKg.roundTo(0))
                         put("totalSets", m.totalSets)
                         put("percentOfTotal", m.percentOfTotal)
                     })
@@ -240,10 +252,10 @@ class AiContextBuilder @Inject constructor(
                 strength.filter { it.hasData }.forEach { ev ->
                     add(buildJsonObject {
                         put("exercise", ev.exercise?.name ?: ev.standard.exerciseNamePrefix)
-                        put("estimated1RMKg", "%.1f".format(ev.current1RMKg).toDouble())
-                        put("ratioPerBodyweight", "%.2f".format(ev.ratio).toDouble())
+                        put("estimated1RMKg", ev.current1RMKg.roundTo(1))
+                        put("ratioPerBodyweight", ev.ratio.roundTo(2))
                         put("level", ev.level.name)
-                        ev.nextLevelKg?.let { put("kgToNextLevel", "%.1f".format(it).toDouble()) }
+                        ev.nextLevelKg?.let { put("kgToNextLevel", it.roundTo(1)) }
                     })
                 }
             }
@@ -336,7 +348,7 @@ class AiContextBuilder @Inject constructor(
                                                     }
                                                     put("reps", s.reps)
                                                     if (s.weightKg > 0.0) {
-                                                        put("weightKg", "%.1f".format(s.weightKg).toDouble())
+                                                        put("weightKg", s.weightKg.roundTo(1))
                                                     }
                                                     s.rpe?.let { put("rpe", it) }
                                                     s.rir?.let { put("rir", it) }
