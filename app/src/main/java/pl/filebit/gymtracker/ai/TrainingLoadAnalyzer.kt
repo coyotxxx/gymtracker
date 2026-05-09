@@ -32,11 +32,12 @@ data class TrainingLoad(
 }
 
 enum class LoadZone {
-    DETRAINING,   // <0.8
-    OPTIMAL,      // 0.8-1.3
-    OVERREACHING, // 1.3-1.5
-    RISKY,        // >1.5
-    INSUFFICIENT  // za mało treningów żeby liczyć
+    DETRAINING,    // <0.8 — zwykła detrenowanie (np. zaniedbanie, choroba)
+    DELOAD_PROPER, // <0.8 ALE faza cyklu = DELOAD → niski tonaż jest CELOWY i POPRAWNY
+    OPTIMAL,       // 0.8-1.3
+    OVERREACHING,  // 1.3-1.5
+    RISKY,         // >1.5
+    INSUFFICIENT   // za mało treningów żeby liczyć
 }
 
 @Singleton
@@ -112,14 +113,17 @@ class TrainingLoadAnalyzer @Inject constructor(
     }
 
     /** v1.11.46 — fast variant z pre-fetched StatsSnapshot. */
-    fun analyzeWithSnapshot(snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot): TrainingLoad =
-        computeTrainingLoadFromSnapshot(snapshot, System.currentTimeMillis())
+    fun analyzeWithSnapshot(
+        snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
+        currentPhase: TrainingPhase = TrainingPhase.NO_DATA
+    ): TrainingLoad = computeTrainingLoadFromSnapshot(snapshot, System.currentTimeMillis(), currentPhase)
 }
 
 /** Pure function — testowalne bez DAO. Logika IDENTYCZNA z TrainingLoadAnalyzer.analyze(). */
 fun computeTrainingLoadFromSnapshot(
     snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
-    now: Long
+    now: Long,
+    currentPhase: TrainingPhase = TrainingPhase.NO_DATA
 ): TrainingLoad {
     val msPerDay = 24L * 3600 * 1000
 
@@ -155,7 +159,10 @@ fun computeTrainingLoadFromSnapshot(
     }
 
     val acwr = if (chronic28d > 0) acute7d / (chronic28d * 7) else 0.0
+    // v1.11.68: gdy phase=DELOAD i acwr<0.8 → niski tonaż jest CELOWY (zone=DELOAD_PROPER)
+    // zamiast DETRAINING (które sugerowałoby "dodaj objętość" przeciwko zaplanowanemu deloadowi).
     val zone = when {
+        acwr < 0.8 && currentPhase == TrainingPhase.DELOAD -> LoadZone.DELOAD_PROPER
         acwr < 0.8 -> LoadZone.DETRAINING
         acwr <= 1.3 -> LoadZone.OPTIMAL
         acwr <= 1.5 -> LoadZone.OVERREACHING
@@ -163,6 +170,7 @@ fun computeTrainingLoadFromSnapshot(
     }
     val rec = when (zone) {
         LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
+        LoadZone.DELOAD_PROPER -> "Deload przebiega prawidłowo — niski tonaż jest celowy (ACWR ${"%.2f".format(acwr)}). Po nim wracasz do akumulacji."
         LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
         LoadZone.OVERREACHING -> "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
         LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."

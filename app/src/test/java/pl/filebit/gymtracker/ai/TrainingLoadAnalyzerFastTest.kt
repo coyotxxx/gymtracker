@@ -124,4 +124,34 @@ class TrainingLoadAnalyzerFastTest {
         // Tylko 6 finished workouts liczonych, active = ignorowany
         assertEquals(6, result.workoutsCount14d)
     }
+
+    // ============== v1.11.68: phase-aware DELOAD_PROPER ==============
+
+    @Test
+    fun `acwr poniżej 0_8 i phase=DELOAD = zone DELOAD_PROPER zamiast DETRAINING`() {
+        // 4 tyg cieżkie sesje (~1000 vol/dzien) + tydzień deload (1 sesja malutka)
+        val workouts = (0..27 step 2).map { d ->
+            workout((d + 1L), daysAgo = (d + 7).toLong())  // 14 sesji w 14-28 dni temu
+        } + workout(100L, daysAgo = 3)  // pojedyncza sesja w 7d
+        val ex = listOf(ex(10))
+        val sets = workouts.mapIndexed { i, w ->
+            val volume = if (w.id == 100L) 50.0 else 1000.0
+            set(wid = w.id, exId = 10, reps = 10, weight = volume / 10).copy(id = (i + 500L))
+        }
+        val snapshot = StatsSnapshot.from(workouts, ex, sets)
+
+        // Bez phase = DETRAINING
+        val resultNoPhase = computeTrainingLoadFromSnapshot(snapshot, now,
+            pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA)
+        // Z phase=DELOAD = DELOAD_PROPER
+        val resultDeload = computeTrainingLoadFromSnapshot(snapshot, now,
+            pl.filebit.gymtracker.ai.TrainingPhase.DELOAD)
+
+        // ACWR powinien byc ten sam, ale zone i recommendation rozne
+        if (resultNoPhase.zone == LoadZone.DETRAINING) {
+            assertEquals(LoadZone.DELOAD_PROPER, resultDeload.zone)
+            assertTrue("DELOAD_PROPER recommendation o deload",
+                resultDeload.recommendation.contains("Deload przebiega prawidłowo"))
+        }
+    }
 }

@@ -46,7 +46,7 @@ class TrainingReadinessAnalyzer @Inject constructor(
     private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer
 ) {
-    suspend fun analyze(): TrainingReadiness {
+    suspend fun analyze(currentPhase: TrainingPhase = TrainingPhase.NO_DATA): TrainingReadiness {
         val recovery = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
         val load = runCatching { trainingLoadAnalyzer.analyze() }.getOrNull()
         val muscle = runCatching { muscleRecoveryAnalyzer.analyze() }.getOrNull()
@@ -55,7 +55,11 @@ class TrainingReadinessAnalyzer @Inject constructor(
         val muscleAvg = muscle?.avgRecoveryPct ?: 80
 
         // LoadFactor: ACWR optimum 0.8-1.3 → 100; im dalej tym mniej
-        val loadFactor = if (load != null && load.isReliable) {
+        // v1.11.68: gdy phase=DELOAD niski ACWR jest CELOWY → loadFactor neutralny (80)
+        // żeby Readiness nie penalizował za zaplanowany niski tonaż.
+        val loadFactor = if (currentPhase == TrainingPhase.DELOAD) {
+            80   // deload jest oczekiwany, nie kara
+        } else if (load != null && load.isReliable) {
             when {
                 load.acwr in 0.8..1.3 -> 100
                 load.acwr in 0.7..1.5 -> 80
@@ -74,7 +78,8 @@ class TrainingReadinessAnalyzer @Inject constructor(
         }
 
         // Inteligentna rekomendacja — bazuje na tym co najbardziej obniża score
-        val rec = buildRecommendation(zone, recoveryScore, loadFactor, muscleAvg, muscle)
+        // v1.11.68: gdy phase=DELOAD, rekomendacja świadoma (nie sugeruje "zastosuj deload")
+        val rec = buildRecommendation(zone, recoveryScore, loadFactor, muscleAvg, muscle, currentPhase)
 
         return TrainingReadiness(
             score = score,
@@ -92,29 +97,44 @@ class TrainingReadinessAnalyzer @Inject constructor(
         recovery: Int,
         load: Int,
         muscle: Int,
-        muscleReport: MuscleRecoveryReport?
-    ): String = when (zone) {
-        ReadinessZone.PEAK -> {
-            val freshList = muscleReport?.freshGroups?.take(3)
-                ?.joinToString(", ") { it.name.lowercase() } ?: ""
-            "Jesteś gotowy na ciężki trening. ${if (freshList.isNotEmpty()) "Najświeższe partie: $freshList." else ""}"
+        muscleReport: MuscleRecoveryReport?,
+        currentPhase: TrainingPhase = TrainingPhase.NO_DATA
+    ): String {
+        // v1.11.68: gdy faza cyklu = DELOAD, dostosowane rekomendacje. Nie sugerujemy
+        // "zastosuj deload" bo user JUŻ jest w deloadzie.
+        if (currentPhase == TrainingPhase.DELOAD) {
+            return when (zone) {
+                ReadinessZone.PEAK, ReadinessZone.GOOD ->
+                    "Tydzień deload — utrzymuj niskie volume i RPE 6-7. Po deloadzie wracasz do akumulacji z większą energią."
+                ReadinessZone.MODERATE ->
+                    "Tydzień deload — niskie volume celowe. Skupiaj się na technice i regeneracji, nie próbuj zwiększać obciążenia."
+                ReadinessZone.REST ->
+                    "Tydzień deload + niska regeneracja — odpuść dziś trening. Sen i odżywianie priorytetem."
+            }
         }
-        ReadinessZone.GOOD -> {
-            "Dobra forma — trenuj zgodnie z planem. Wszystkie systemy w normie."
-        }
-        ReadinessZone.MODERATE -> {
-            // Znajdź najsłabszy komponent
-            val weakest = listOf(
-                "regeneracja (sen/HRV)" to recovery,
-                "obciążenie treningowe (ACWR)" to load,
-                "regeneracja mięśni" to muscle
-            ).minByOrNull { it.second }
-            "Umiarkowana gotowość. Najbardziej obniża: ${weakest?.first ?: "?"} (${weakest?.second ?: 0}/100). " +
-                "Trenuj łagodnie, RPE 7, krótsze sesje."
-        }
-        ReadinessZone.REST -> {
-            "Niska gotowość — wszystkie systemy sygnalizują zmęczenie. Dziś rest lub bardzo lekkie cardio Z1. " +
-                "Po regeneracji wracaj na pełen plan."
+        return when (zone) {
+            ReadinessZone.PEAK -> {
+                val freshList = muscleReport?.freshGroups?.take(3)
+                    ?.joinToString(", ") { it.name.lowercase() } ?: ""
+                "Jesteś gotowy na ciężki trening. ${if (freshList.isNotEmpty()) "Najświeższe partie: $freshList." else ""}"
+            }
+            ReadinessZone.GOOD -> {
+                "Dobra forma — trenuj zgodnie z planem. Wszystkie systemy w normie."
+            }
+            ReadinessZone.MODERATE -> {
+                // Znajdź najsłabszy komponent
+                val weakest = listOf(
+                    "regeneracja (sen/HRV)" to recovery,
+                    "obciążenie treningowe (ACWR)" to load,
+                    "regeneracja mięśni" to muscle
+                ).minByOrNull { it.second }
+                "Umiarkowana gotowość. Najbardziej obniża: ${weakest?.first ?: "?"} (${weakest?.second ?: 0}/100). " +
+                    "Trenuj łagodnie, RPE 7, krótsze sesje."
+            }
+            ReadinessZone.REST -> {
+                "Niska gotowość — wszystkie systemy sygnalizują zmęczenie. Dziś rest lub bardzo lekkie cardio Z1. " +
+                    "Po regeneracji wracaj na pełen plan."
+            }
         }
     }
 }

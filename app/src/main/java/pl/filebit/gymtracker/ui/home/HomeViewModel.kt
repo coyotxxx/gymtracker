@@ -157,15 +157,20 @@ class HomeViewModel @Inject constructor(
 
         // Faza cyklu treningowego — z TrainingPhaseAnalyzer (deterministic)
         val trainingPhase = runCatching { phaseAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
+        // v1.11.68: faza cyklu jest passthrough do innych analyzerów - żeby ich
+        // konkluzje były spójne (np. ACWR <0.8 podczas deloadu = OK, nie "dodaj").
+        val currentPhase = trainingPhase?.phase ?: TrainingPhase.NO_DATA
         // Regeneracja — sen + HRV z Health Connect (nie używa StatsSnapshot)
         val healthInsight = runCatching { healthAnalyzer.analyze() }.getOrNull()
         // v1.7.4 WHOOP-like Recovery Score 0-100 z personal baseline (nie używa StatsSnapshot)
         val recoveryScore = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
-        // v1.7.4 ACWR — Acute:Chronic Workload Ratio
-        val trainingLoad = runCatching { trainingLoadAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
-        // v1.9.0 Recovery per partia + Training Readiness
+        // v1.7.4 ACWR — Acute:Chronic Workload Ratio (v1.11.68: phase-aware)
+        val trainingLoad = runCatching {
+            trainingLoadAnalyzer.analyzeWithSnapshot(analyzerSnapshot, currentPhase)
+        }.getOrNull()
+        // v1.9.0 Recovery per partia + Training Readiness (v1.11.68: phase-aware)
         val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
-        val trainingReadiness = runCatching { readinessAnalyzer.analyze() }.getOrNull()
+        val trainingReadiness = runCatching { readinessAnalyzer.analyze(currentPhase) }.getOrNull()
 
         // Stan B: Next planned day — używa effective schedule (z overrides)
         val nextPlannedDay: NextPlannedDay? = if (todaysPlan == null) {

@@ -248,10 +248,14 @@ fun HomeScreen(
                 val readinessDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS in state.dismissedCards
                 if (readiness.maturity != DataMaturity.LEARNING && !readinessDismissed) {
                     item {
+                        // v1.11.68: gdy faza cyklu = DELOAD, blokujemy przycisk "Zastosuj deload"
+                        // (user juz jest w deloadzie, nie ma sensu nakladac kolejnego)
+                        val phaseIsDeload = state.trainingPhase?.phase ==
+                            pl.filebit.gymtracker.ai.TrainingPhase.DELOAD
                         TrainingReadinessCard(
                             readiness = readiness,
                             muscleReport = state.muscleRecovery,
-                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            canApplyDeload = vm.activePlanIdForDeload() != null && !phaseIsDeload,
                             onApplyDeload = { severity ->
                                 vm.applyDeload(severity) { result ->
                                     scope.launch {
@@ -1926,12 +1930,14 @@ private fun TrainingLoadCard(
 ) {
     val (accent, label) = when (load.zone) {
         LoadZone.OPTIMAL -> SuccessGreen to "Optymalne"
+        LoadZone.DELOAD_PROPER -> SuccessGreen to "Deload (prawidłowy)"
         LoadZone.DETRAINING -> AccentOrange to "Detraining"
         LoadZone.OVERREACHING -> AccentOrange to "Wysokie"
         LoadZone.RISKY -> ErrorRed to "Ryzyko kontuzji"
         LoadZone.INSUFFICIENT -> DarkOnSurfaceVariant to "Mało danych"
     }
     val showReduceButton = load.zone == LoadZone.RISKY || load.zone == LoadZone.OVERREACHING
+    // v1.11.68: nie pokazuj "zwiększ obciążenie" gdy zone=DELOAD_PROPER (faza deload aktywna)
     val showIncreaseButton = load.zone == LoadZone.DETRAINING
     var showReduceConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
     var showIncreaseConfirm by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
