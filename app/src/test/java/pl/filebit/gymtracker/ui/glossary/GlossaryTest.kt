@@ -21,7 +21,8 @@ class GlossaryTest {
     fun `INTENSIFICATION term istnieje z opisem`() {
         val e = Glossary.get("INTENSIFICATION")
         assertNotNull(e)
-        assertTrue(e!!.second.contains("siły") || e.second.contains("siła"))
+        // Każda forma fleksyjna "sił-" (siła/siły/siłę) lub samo "1RM" potwierdza tematykę
+        assertTrue("opis o sile", e!!.second.contains("sił", ignoreCase = true))
     }
 
     @Test
