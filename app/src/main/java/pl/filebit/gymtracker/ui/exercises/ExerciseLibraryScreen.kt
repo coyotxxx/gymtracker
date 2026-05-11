@@ -380,13 +380,5 @@ private fun ExerciseRow(
     }
 }
 
-// v1.20.1 — usunięto duplikat MuscleGroup.displayName(); używamy z entity/Exercise.kt
-
-private fun Equipment.displayName(): String = when (this) {
-    Equipment.BARBELL -> "Sztanga"
-    Equipment.DUMBBELLS -> "Hantle"
-    Equipment.MACHINE -> "Maszyna"
-    Equipment.CABLE -> "Wyciąg"
-    Equipment.BODYWEIGHT -> "Ciężar ciała"
-    Equipment.OTHER -> "Inne"
-}
+// v1.20.2 — usunięto duplikaty MuscleGroup.displayName() i Equipment.displayName();
+// używamy method z entity/Exercise.kt (enum class).

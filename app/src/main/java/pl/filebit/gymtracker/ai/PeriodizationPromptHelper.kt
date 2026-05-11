@@ -84,14 +84,11 @@ object PeriodizationPromptHelper {
         }
     }
 
-    /** Polskie etykiety dla MesocyclePhase. */
-    fun phaseLabelPl(phase: MesocyclePhase): String = when (phase) {
-        MesocyclePhase.ACCUMULATION -> "Akumulacja"
-        MesocyclePhase.INTENSIFICATION -> "Intensyfikacja"
-        MesocyclePhase.DELOAD -> "Deload"
-        MesocyclePhase.PEAKING -> "Peaking"
-        MesocyclePhase.RECOVERY -> "Recovery"
-    }
+    /**
+     * v1.20.2 — delegate do enum MesocyclePhase.labelPl() (single source of truth).
+     * Zachowane jako helper dla callerów używających object-style API.
+     */
+    fun phaseLabelPl(phase: MesocyclePhase): String = phase.labelPl()
 
     private fun formatDate(ms: Long): String {
         val cal = java.util.Calendar.getInstance().apply { timeInMillis = ms }

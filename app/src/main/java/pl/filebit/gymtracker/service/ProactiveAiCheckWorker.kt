@@ -15,7 +15,6 @@ import pl.filebit.gymtracker.MainActivity
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
-import pl.filebit.gymtracker.data.entity.SetType
 
 /**
  * Codzienny check AI — sprawdza recovery/stagnacje/ból z ostatnich treningów

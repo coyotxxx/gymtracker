@@ -33,14 +33,8 @@ fun MesocyclePhase.emoji(): String = when (this) {
     MesocyclePhase.RECOVERY -> "🌱"
 }
 
-/** Polski label fazy (dla user-facing UI). */
-fun MesocyclePhase.labelPl(): String = when (this) {
-    MesocyclePhase.ACCUMULATION -> "Akumulacja"
-    MesocyclePhase.INTENSIFICATION -> "Intensyfikacja"
-    MesocyclePhase.DELOAD -> "Deload"
-    MesocyclePhase.PEAKING -> "Peaking"
-    MesocyclePhase.RECOVERY -> "Recovery"
-}
+// v1.20.2 — labelPl() przeniesiony do enum MesocyclePhase w data/entity/TrainingMesocycle.kt
+// (single source of truth). Tutaj zostają tylko UI-specific helpers: color, emoji, shortDesc, shortLabelPl.
 
 /** Krótki opis fazy (dla tooltipów / sublabel). */
 fun MesocyclePhase.shortDesc(): String = when (this) {

@@ -28,7 +28,17 @@ enum class MuscleGroup {
 }
 
 enum class Equipment {
-    BARBELL, DUMBBELLS, MACHINE, CABLE, BODYWEIGHT, OTHER
+    BARBELL, DUMBBELLS, MACHINE, CABLE, BODYWEIGHT, OTHER;
+
+    /** v1.20.2 — polski label sprzętu (centralizacja, zamiast duplikatów w UI screens). */
+    fun displayName(): String = when (this) {
+        BARBELL -> "Sztanga"
+        DUMBBELLS -> "Hantle"
+        MACHINE -> "Maszyna"
+        CABLE -> "Wyciąg"
+        BODYWEIGHT -> "Ciężar ciała"
+        OTHER -> "Inne"
+    }
 }
 
 /**
