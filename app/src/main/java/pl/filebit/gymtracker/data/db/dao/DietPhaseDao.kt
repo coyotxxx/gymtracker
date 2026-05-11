@@ -41,6 +41,17 @@ interface DietPhaseDao {
     """)
     suspend fun getLastCut(): DietPhase?
 
+    /**
+     * v1.17.0 — startDateMs ostatniego REFEED_DAY (do reguły auto_refeed_heavy_day:
+     * REFEED tylko ≥7 dni od poprzedniego).
+     */
+    @Query("""
+        SELECT startDateMs FROM diet_phases
+        WHERE type = 'REFEED_DAY'
+        ORDER BY startDateMs DESC LIMIT 1
+    """)
+    suspend fun getLastRefeedStartMs(): Long?
+
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(phase: DietPhase): Long
 

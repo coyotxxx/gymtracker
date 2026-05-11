@@ -2,6 +2,8 @@ package pl.filebit.gymtracker.data.repository
 
 import pl.filebit.gymtracker.data.entity.DietPhase
 import pl.filebit.gymtracker.data.entity.DietPhaseType
+import pl.filebit.gymtracker.data.entity.MesocyclePhase
+import pl.filebit.gymtracker.data.entity.TrainingMesocycle
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.util.WeightTrend
 import javax.inject.Inject
@@ -45,9 +47,16 @@ data class PhaseSuggestion(
  *
  * 3. **REFEED_DAY** (średnie):
  *    aktywna CUT + wysoki głód + niska energia + (dziś dzień nóg LUB dziś ciężki trening) →
- *    sugeruj 1 dzień +300 kcal głównie z węgli
+ *    sugeruj 1 dzień +300/+400/+150 kcal (zależnie od fazy treningowej) głównie z węgli
+ *
+ * 4. **AUTO_REFEED_HEAVY_DAY** (v1.17.0, średnie):
+ *    aktywna CUT ≥ 14 dni + dziś heavy training + ≥7 dni od ostatniego REFEED →
+ *    proaktywnie sugeruj REFEED przed wypaleniem (nie czeka na sygnały głodu)
  *
  * Jeśli nic nie pasuje → PhaseSuggestion.NONE.
+ *
+ * v1.17.0: dodano `trainingMesocycle` — sync z fazą treningu (INTENSIFICATION zwiększa REFEED,
+ * DELOAD redukuje). Dodano `daysSinceLastRefeed` dla reguły 4.
  */
 @Singleton
 class PhaseManager @Inject constructor() {
@@ -60,7 +69,9 @@ class PhaseManager @Inject constructor() {
         weightTrend: WeightTrend,
         adherenceKcalPct: Int,
         recovery: RecoverySnapshot,
-        isTodayHeavyTraining: Boolean = false
+        isTodayHeavyTraining: Boolean = false,
+        trainingMesocycle: TrainingMesocycle? = null,
+        daysSinceLastRefeed: Int? = null
     ): PhaseSuggestion {
         val now = System.currentTimeMillis()
         val cutDurationDays = if (currentPhase?.type == DietPhaseType.CUT) {
@@ -110,20 +121,22 @@ class PhaseManager @Inject constructor() {
             }
         }
 
-        // === Reguła 3: REFEED_DAY (jeden dzień +300 kcal) ===
+        // === Reguła 3: REFEED_DAY na sygnał (jeden dzień, kcal zależne od fazy treningu) ===
         if (weightGoalType == WeightGoalType.CUT && recovery.hasEnoughData) {
             val needsRefeed = recovery.highHunger && recovery.lowEnergy
             if (needsRefeed || (recovery.highHunger && isTodayHeavyTraining)) {
+                val (kcalBonus, phaseNote) = refeedKcalForPhase(trainingMesocycle)
                 return PhaseSuggestion(
                     proposedType = DietPhaseType.REFEED_DAY,
                     durationDays = 1,
-                    kcalAdjustment = 300,
+                    kcalAdjustment = kcalBonus,
                     reason = "cut_refeed_signal",
                     explanation = buildString {
                         append("Sygnały: głód wysoki")
                         if (recovery.lowEnergy) append(" + energia niska")
                         if (isTodayHeavyTraining) append(" + ciężki trening dziś")
-                        append(". Proponuję 1 dzień refeed (+300 kcal, głównie węgle: ryż/owsianka/owoce). ")
+                        if (phaseNote.isNotEmpty()) append(" (").append(phaseNote).append(")")
+                        append(". Proponuję 1 dzień refeed (+$kcalBonus kcal, głównie węgle: ryż/owsianka/owoce). ")
                         append("Odbuduje glikogen, leptynę. Jutro wracamy do bazowych kcal.")
                     },
                     isStrong = false
@@ -131,6 +144,52 @@ class PhaseManager @Inject constructor() {
             }
         }
 
+        // === Reguła 4 (v1.17.0): AUTO_REFEED w heavy day po długim cucie ===
+        // Proaktywny refeed bez czekania na sygnały głodu — gdy CUT ≥ 14d, dziś heavy + ≥7d od ostatniego refeed.
+        if (weightGoalType == WeightGoalType.CUT
+            && cutDurationDays >= 14
+            && isTodayHeavyTraining
+            && (daysSinceLastRefeed == null || daysSinceLastRefeed >= 7)
+        ) {
+            val (kcalBonus, phaseNote) = refeedKcalForPhase(trainingMesocycle)
+            val daysText = daysSinceLastRefeed?.let { "$it dni od ostatniego refeed" } ?: "brak wcześniejszego refeed"
+            return PhaseSuggestion(
+                proposedType = DietPhaseType.REFEED_DAY,
+                durationDays = 1,
+                kcalAdjustment = kcalBonus,
+                reason = "auto_refeed_heavy_day",
+                explanation = buildString {
+                    append("Dziś ciężki trening, cut trwa $cutDurationDays dni, $daysText.")
+                    if (phaseNote.isNotEmpty()) append(" Faza treningu: $phaseNote.")
+                    append(" Proponuję proaktywny refeed (+$kcalBonus kcal z węgli) — odbuduje glikogen przed kolejnym tygodniem treningu. ")
+                    append("Bez sygnałów wypalenia, profilaktycznie.")
+                },
+                isStrong = false
+            )
+        }
+
         return PhaseSuggestion.NONE
+    }
+
+    /**
+     * Phase-aware kcal bonus dla REFEED_DAY:
+     *  - INTENSIFICATION → +400 (więcej węgli przed ciężkim trening)
+     *  - ACCUMULATION    → +300 (status quo — średnia objętość)
+     *  - DELOAD          → +150 (lżejszy, redukowane potrzeby)
+     *  - PEAKING         → +400 (pełny glikogen do maksów)
+     *  - RECOVERY        → +100 (minimum, regeneracja)
+     *  - brak mesocyklu  → +300 (backward compat)
+     *
+     * Zwraca (kcal, opisFazy).
+     */
+    private fun refeedKcalForPhase(mesocycle: TrainingMesocycle?): Pair<Int, String> {
+        if (mesocycle == null || !mesocycle.isActive) return 300 to ""
+        return when (mesocycle.phase) {
+            MesocyclePhase.INTENSIFICATION -> 400 to "intensyfikacja tyg ${mesocycle.weekInPhase}/${mesocycle.phaseLengthWeeks}"
+            MesocyclePhase.ACCUMULATION -> 300 to "akumulacja tyg ${mesocycle.weekInPhase}/${mesocycle.phaseLengthWeeks}"
+            MesocyclePhase.DELOAD -> 150 to "deload"
+            MesocyclePhase.PEAKING -> 400 to "peaking tyg ${mesocycle.weekInPhase}/${mesocycle.phaseLengthWeeks}"
+            MesocyclePhase.RECOVERY -> 100 to "recovery"
+        }
     }
 }

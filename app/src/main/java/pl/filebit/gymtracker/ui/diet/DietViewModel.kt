@@ -119,7 +119,8 @@ class DietViewModel @Inject constructor(
     private val consumptionRepo: pl.filebit.gymtracker.data.repository.MealConsumptionRepository,
     val quickComposeService: pl.filebit.gymtracker.data.repository.QuickComposeService,
     private val cardioKcalEstimator: pl.filebit.gymtracker.data.repository.CardioKcalEstimator,
-    private val bodyMeasurementDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
+    private val bodyMeasurementDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
 ) : ViewModel() {
 
     // === MEAL CONSUMPTION STATUS ===
@@ -420,14 +421,25 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             val profile = profileRepo.get()
             val current = phaseRepo.getCurrent()
-            // Waga przy starcie cut — uproszczenie: jeśli mamy DietPhase typu CUT, jego startDate
-            // to moment rozpoczęcia. Bierzemy aktualną wagę profile (precyzja: 1 punkt zamiast 2).
-            // Pełniejsza implementacja wymagałaby BodyMeasurement w startDate.
             val cutStartWeight = profile.bodyweightKg
             val recoveryLogs = recoveryRepo.getLast7Days()
             val recovery = recoveryAnalyzer.analyze(recoveryLogs)
             val adherence = adherenceCalc.avgAdherenceLastDays(14).avgKcalPct
             val trend = pl.filebit.gymtracker.util.WeightTrend.NO_DATA
+
+            // v1.17.0 — FIX K2: czytaj prawdziwą intensywność dziś z TrainingDietBridge zamiast `false`.
+            // ensureForToday() wykonywany w init{}; tu tylko read.
+            val todaySummary = runCatching { trainingDietBridge.getForDate(System.currentTimeMillis()) }.getOrNull()
+            val heavyToday = todaySummary?.intensityScore == pl.filebit.gymtracker.data.entity.IntensityScore.HEAVY
+
+            // Aktywny mesocykl treningowy — phase-aware REFEED kcal (INTENSIFICATION→+400, DELOAD→+150).
+            val mesocycle = runCatching { mesoDao.getActive() }.getOrNull()
+
+            // Ile dni od ostatniego REFEED_DAY (dla reguły 4 auto_refeed_heavy_day).
+            val lastRefeedAt = runCatching { phaseRepo.getLastEndedRefeedStartMs() }.getOrNull()
+            val daysSinceLastRefeed = lastRefeedAt?.let {
+                ((System.currentTimeMillis() - it) / (24L * 3600 * 1000)).toInt()
+            }
 
             val suggestion = phaseManager.suggest(
                 currentPhase = current,
@@ -437,7 +449,9 @@ class DietViewModel @Inject constructor(
                 weightTrend = trend,
                 adherenceKcalPct = adherence,
                 recovery = recovery,
-                isTodayHeavyTraining = false
+                isTodayHeavyTraining = heavyToday,
+                trainingMesocycle = mesocycle,
+                daysSinceLastRefeed = daysSinceLastRefeed
             )
             if (suggestion.proposedType != null) {
                 _phaseSuggestion.value = suggestion
@@ -453,6 +467,11 @@ class DietViewModel @Inject constructor(
             val end = if (s.durationDays > 0) {
                 now + s.durationDays * 24L * 3600 * 1000
             } else null
+            // v1.17.0 — linkage do aktywnego mesocyklu + JSON snapshot fazy (audit trail).
+            val mesocycle = runCatching { mesoDao.getActive() }.getOrNull()
+            val snapshot = mesocycle?.let {
+                """{"phase":"${it.phase.name}","weekInPhase":${it.weekInPhase},"phaseLengthWeeks":${it.phaseLengthWeeks},"targetRpe":${it.targetRpe}}"""
+            }
             phaseRepo.startPhase(pl.filebit.gymtracker.data.entity.DietPhase(
                 type = type,
                 startDateMs = now,
@@ -460,7 +479,9 @@ class DietViewModel @Inject constructor(
                 kcalAdjustment = s.kcalAdjustment,
                 reason = s.reason,
                 createdBySystem = true,
-                accepted = true
+                accepted = true,
+                linkedTrainingMesocycleId = mesocycle?.id,
+                trainingPhaseSnapshot = snapshot
             ))
             _currentPhase.value = phaseRepo.getCurrent()
             _phaseSuggestion.value = null
@@ -558,11 +579,14 @@ class DietViewModel @Inject constructor(
         // Cel z Calculator
         val profile = profileRepo.get()
         val weight = profile.bodyweightKg ?: 75.0
+        // v1.17.0 — FIX K3: czytaj prawdziwy fakt treningu + czas z TrainingDietBridge.
+        val summary = runCatching { trainingDietBridge.getForDate(date) }.getOrNull()
         val goal = hydrationCalc.computeTarget(
             weightKg = weight,
-            hadTrainingToday = false, // TODO: integracja z TrainingDietBridge
+            hadTrainingToday = summary?.isTrainingDay == true,
             proteinGramsToday = 0.0,
-            usesCreatine = false
+            usesCreatine = false,
+            trainingDurationMin = summary?.durationMinutes?.takeIf { it > 0 }
         )
         _hydrationGoal.value = goal.totalMl
     }

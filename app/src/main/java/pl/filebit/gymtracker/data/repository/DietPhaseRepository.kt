@@ -21,6 +21,9 @@ class DietPhaseRepository @Inject constructor(
 
     suspend fun getLastCut(): DietPhase? = dao.getLastCut()
 
+    /** v1.17.0 — startDateMs ostatniego REFEED_DAY (lub null gdy brak). */
+    suspend fun getLastEndedRefeedStartMs(): Long? = dao.getLastRefeedStartMs()
+
     /**
      * Rozpoczyna nową fazę. Zamyka aktualną (jeśli istnieje) ustawiając endDateMs.
      * Zwraca id nowej fazy.

@@ -99,4 +99,86 @@ class HydrationCalculatorTest {
         assertTrue(goal.explanation.contains("kreatyna"))
         assertTrue(goal.explanation.contains("temp"))
     }
+
+    // === v1.17.0 — trainingDurationMin (phase-aware) ===
+
+    @Test
+    fun `short workout under 15min = 0ml bonus`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 10
+        )
+        assertEquals(0, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `short workout 30min = 300ml`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 30
+        )
+        assertEquals(300, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `standard workout 60min = 500ml`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 60
+        )
+        assertEquals(500, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `long workout 90min = 750ml`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 90
+        )
+        assertEquals(750, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `very long workout 120min = 1000ml`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 120
+        )
+        assertEquals(1000, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `null durationMin with hadTraining = backward compat 500ml`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = null
+        )
+        assertEquals(500, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `durationMin without hadTraining = 0`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = false,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 60
+        )
+        assertEquals(0, goal.workoutBonusMl)
+    }
+
+    @Test
+    fun `90min explanation contains minutes`() {
+        val goal = calc.computeTarget(
+            weightKg = 80.0, hadTrainingToday = true,
+            proteinGramsToday = 100.0, usesCreatine = false,
+            trainingDurationMin = 90
+        )
+        assertTrue("explanation should contain 90 min", goal.explanation.contains("90 min"))
+    }
 }
