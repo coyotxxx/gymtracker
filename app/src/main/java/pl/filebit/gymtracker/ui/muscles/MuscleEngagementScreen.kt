@@ -383,17 +383,4 @@ private fun MuscleStatus.tint(): Color = when (this) {
     MuscleStatus.OVER -> StatusColor.OVER
 }
 
-private fun MuscleGroup.displayName(): String = when (this) {
-    MuscleGroup.CHEST -> "Klatka piersiowa"
-    MuscleGroup.BACK -> "Plecy"
-    MuscleGroup.SHOULDERS -> "Barki"
-    MuscleGroup.BICEPS -> "Biceps"
-    MuscleGroup.TRICEPS -> "Triceps"
-    MuscleGroup.QUADS -> "Czworogłowe (uda)"
-    MuscleGroup.HAMSTRINGS -> "Dwugłowe (uda)"
-    MuscleGroup.GLUTES -> "Pośladki"
-    MuscleGroup.CALVES -> "Łydki"
-    MuscleGroup.CORE -> "Brzuch / core"
-    MuscleGroup.CARDIO -> "Cardio"
-    MuscleGroup.OTHER -> "Inne"
-}
+// v1.20.1 — usunięto duplikat displayName(); używamy MuscleGroup.displayName() z entity/Exercise.kt

@@ -50,3 +50,15 @@ fun MesocyclePhase.shortDesc(): String = when (this) {
     MesocyclePhase.PEAKING -> "Test maksów"
     MesocyclePhase.RECOVERY -> "Pełna regeneracja"
 }
+
+/**
+ * v1.20.1 — krótki skrót dla badges / pill UI (max 6 znaków).
+ * Centralizacja zamiast hardcoded w HistoryScreen.
+ */
+fun MesocyclePhase.shortLabelPl(): String = when (this) {
+    MesocyclePhase.ACCUMULATION -> "AKUM"
+    MesocyclePhase.INTENSIFICATION -> "INTEN"
+    MesocyclePhase.DELOAD -> "DELOAD"
+    MesocyclePhase.PEAKING -> "PEAK"
+    MesocyclePhase.RECOVERY -> "REGEN"
+}

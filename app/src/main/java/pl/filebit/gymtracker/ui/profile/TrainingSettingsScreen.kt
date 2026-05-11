@@ -267,36 +267,50 @@ fun TrainingSettingsScreen(
                 )
             }
 
-            // v1.19.0 — Periodyzacja
+            // v1.19.0 — Periodyzacja (v1.20.1: flat layout zamiast nested cards)
             item {
                 TsSectionCard(
                     title = "Periodyzacja",
                     subtitle = "Preferencje cyklu treningowego (mesocykl + deload)."
                 ) {
-                    TsNumberFieldCard(
+                    Spacer(Modifier.height(8.dp))
+                    PeriodizationNumberField(
                         label = "Długość cyklu (tygodni)",
                         value = periodization.mesocycleWeeks,
                         range = pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MIN_CYCLE_WEEKS..
                             pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MAX_CYCLE_WEEKS,
                         onChange = { vm.setMesocycleWeeks(it) }
                     )
-                    Spacer(Modifier.height(8.dp))
-                    TsNumberFieldCard(
+                    Spacer(Modifier.height(10.dp))
+                    PeriodizationNumberField(
                         label = "Długość deloadu (dni)",
                         value = periodization.deloadDays,
                         range = pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MIN_DELOAD_DAYS..
                             pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MAX_DELOAD_DAYS,
                         onChange = { vm.setDeloadDays(it) }
                     )
-                    Spacer(Modifier.height(8.dp))
-                    TsToggleSection(
-                        title = "Auto-deload",
-                        label = "Algorytm decyduje",
-                        explain = "Algorytm proponuje deload przy stagnacji ≥30% ćwiczeń lub gdy " +
-                            "ACWR > 1.5 przez 2 tyg. Można wyłączyć i decydować manualnie.",
-                        checked = periodization.autoDeloadEnabled,
-                        onChange = { vm.setAutoDeloadEnabled(it) }
-                    )
+                    Spacer(Modifier.height(12.dp))
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Switch(
+                            checked = periodization.autoDeloadEnabled,
+                            onCheckedChange = { vm.setAutoDeloadEnabled(it) }
+                        )
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                "Auto-deload (algorytm decyduje)",
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.SemiBold,
+                                color = DarkOnSurface
+                            )
+                            Text(
+                                "Algorytm proponuje deload przy stagnacji ≥30% ćwiczeń lub gdy " +
+                                    "ACWR > 1.5 przez 2 tyg.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = DarkOnSurfaceVariant
+                            )
+                        }
+                    }
                 }
             }
 
@@ -334,6 +348,41 @@ private fun TsSectionCard(
             Spacer(Modifier.height(12.dp))
             content()
         }
+    }
+}
+
+/**
+ * v1.20.1 — inline number field bez własnego Card (do użycia wewnątrz TsSectionCard,
+ * unika podwójnej ramki).
+ */
+@Composable
+private fun PeriodizationNumberField(
+    label: String,
+    value: Int,
+    range: IntRange,
+    onChange: (Int) -> Unit
+) {
+    var text by remember(value) { mutableStateOf(value.toString()) }
+    Column {
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.Medium,
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.height(4.dp))
+        OutlinedTextField(
+            value = text,
+            onValueChange = { v ->
+                text = v.filter { it.isDigit() }
+                text.toIntOrNull()?.let { n ->
+                    if (n in range) onChange(n)
+                }
+            },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 

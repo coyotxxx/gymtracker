@@ -283,20 +283,7 @@ private fun PickerExerciseRow(
     }
 }
 
-private fun MuscleGroup.displayName(): String = when (this) {
-    MuscleGroup.CHEST -> "Klatka"
-    MuscleGroup.BACK -> "Plecy"
-    MuscleGroup.SHOULDERS -> "Barki"
-    MuscleGroup.BICEPS -> "Biceps"
-    MuscleGroup.TRICEPS -> "Triceps"
-    MuscleGroup.QUADS -> "Czworogłowe"
-    MuscleGroup.HAMSTRINGS -> "Dwugłowe"
-    MuscleGroup.GLUTES -> "Pośladki"
-    MuscleGroup.CALVES -> "Łydki"
-    MuscleGroup.CORE -> "Brzuch"
-    MuscleGroup.CARDIO -> "Cardio"
-    MuscleGroup.OTHER -> "Inne"
-}
+// v1.20.1 — usunięto duplikat MuscleGroup.displayName(); używamy z entity/Exercise.kt
 
 private fun Equipment.displayName(): String = when (this) {
     Equipment.BARBELL -> "Sztanga"

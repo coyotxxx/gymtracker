@@ -2456,15 +2456,30 @@ private fun AiProposalCard(
     var showReasoningDialog by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
     val accent = pl.filebit.gymtracker.ui.theme.AccentOrange
 
-    // Parsuj recommended_next_phase z aiDecisionJson do wyświetlenia label'a
-    val phaseLabel = androidx.compose.runtime.remember(decision.aiDecisionJson) {
+    // v1.20.1 — parsuj aiDecisionJson, obsłuż 3 typy akcji:
+    //  TRANSITION_PHASE / PROPOSE_DELOAD / propose_periodization_action → "Zmiana fazy: <X>"
+    //  SCHEDULE_NEXT_CYCLE → "Plan cyklu: N tyg, M faz (cel: GOAL)"
+    val (headerLabel, phaseLabel) = androidx.compose.runtime.remember(decision.aiDecisionJson) {
         runCatching {
             val obj = kotlinx.serialization.json.Json.parseToJsonElement(decision.aiDecisionJson) as kotlinx.serialization.json.JsonObject
-            val phaseStr = (obj["recommended_next_phase"] as? kotlinx.serialization.json.JsonPrimitive)?.content
-                ?: return@runCatching "—"
-            val phase = pl.filebit.gymtracker.data.entity.MesocyclePhase.valueOf(phaseStr)
-            pl.filebit.gymtracker.ai.PeriodizationPromptHelper.phaseLabelPl(phase)
-        }.getOrDefault("—")
+            val action = (obj["action"] as? kotlinx.serialization.json.JsonPrimitive)?.content ?: ""
+            if (action == "SCHEDULE_NEXT_CYCLE") {
+                val totalWeeks = (obj["total_weeks"] as? kotlinx.serialization.json.JsonPrimitive)?.content?.toIntOrNull() ?: 0
+                val phasesJson = (obj["phases_json"] as? kotlinx.serialization.json.JsonPrimitive)?.content ?: "[]"
+                val phaseCount = runCatching {
+                    (kotlinx.serialization.json.Json.parseToJsonElement(phasesJson) as kotlinx.serialization.json.JsonArray).size
+                }.getOrDefault(0)
+                val goal = (obj["goal"] as? kotlinx.serialization.json.JsonPrimitive)?.content ?: ""
+                "Plan cyklu" to "$totalWeeks tyg · $phaseCount faz" + if (goal.isNotBlank()) " · $goal" else ""
+            } else {
+                val phaseStr = (obj["recommended_next_phase"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                val phaseDisplay = if (phaseStr != null) {
+                    val phase = pl.filebit.gymtracker.data.entity.MesocyclePhase.valueOf(phaseStr)
+                    pl.filebit.gymtracker.ai.PeriodizationPromptHelper.phaseLabelPl(phase)
+                } else "—"
+                "Zmiana fazy cyklu" to phaseDisplay
+            }
+        }.getOrDefault("Propozycja AI" to "—")
     }
 
     if (showReasoningDialog) {
@@ -2516,7 +2531,7 @@ private fun AiProposalCard(
                         color = accent
                     )
                     androidx.compose.material3.Text(
-                        "Zmiana fazy cyklu: $phaseLabel",
+                        "$headerLabel: $phaseLabel",
                         style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
                             fontWeight = FontWeight.ExtraBold
                         ),

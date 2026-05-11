@@ -54,8 +54,9 @@ import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
-import pl.filebit.gymtracker.ui.periodization.color as phaseColor
-import pl.filebit.gymtracker.ui.periodization.emoji as phaseEmoji
+import pl.filebit.gymtracker.ui.periodization.color
+import pl.filebit.gymtracker.ui.periodization.emoji
+import pl.filebit.gymtracker.ui.periodization.shortLabelPl
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -303,8 +304,7 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
  */
 @Composable
 private fun PhaseBadge(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase) {
-    val color = phase.phaseColor()
-    val emoji = phase.phaseEmoji()
+    val color = phase.color()
     Box(
         modifier = Modifier
             .border(1.dp, color.copy(alpha = 0.55f), RoundedCornerShape(50))
@@ -312,10 +312,10 @@ private fun PhaseBadge(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase) 
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(emoji, style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp))
+            Text(phase.emoji(), style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp))
             Spacer(Modifier.size(4.dp))
             Text(
-                phaseShortLabel(phase),
+                phase.shortLabelPl(),
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontSize = 10.sp,
                     fontWeight = FontWeight.Bold,
@@ -326,15 +326,6 @@ private fun PhaseBadge(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase) 
         }
     }
 }
-
-private fun phaseShortLabel(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase): String =
-    when (phase) {
-        pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION -> "AKUM"
-        pl.filebit.gymtracker.data.entity.MesocyclePhase.INTENSIFICATION -> "INTEN"
-        pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD -> "DELOAD"
-        pl.filebit.gymtracker.data.entity.MesocyclePhase.PEAKING -> "PEAK"
-        pl.filebit.gymtracker.data.entity.MesocyclePhase.RECOVERY -> "REGEN"
-    }
 
 @Composable
 private fun PrBadge() {
