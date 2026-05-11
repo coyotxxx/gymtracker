@@ -74,8 +74,13 @@ class UpdateRepository @Inject constructor(
 
         val releases = json.decodeFromString<List<GhRelease>>(body)
 
+        // v1.22.2 FIX: GitHub releases API sortuje po created_at DESC, ale wydania
+        // mogą mieć created_at w przeszłości (np. odziedziczone z istniejącego draftu/taga).
+        // Sortujemy ręcznie po publishedAt DESC żeby "najnowszy" znaczyło "ostatnio opublikowany",
+        // nie "ostatnio utworzony jako draft".
         val latest = releases
             .filter { !it.draft }
+            .sortedByDescending { it.publishedAt.orEmpty() }
             .firstOrNull { rel -> rel.assets.any { it.name.endsWith(".apk") } }
             ?: return@withContext null   // brak żadnego releasu z APK = legitnie 'brak update'
 
