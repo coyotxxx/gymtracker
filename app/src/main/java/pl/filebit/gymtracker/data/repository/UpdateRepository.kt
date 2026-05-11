@@ -58,7 +58,7 @@ class UpdateRepository @Inject constructor(
      */
     suspend fun checkForUpdate(): UpdateInfo? = kotlinx.coroutines.withContext(Dispatchers.IO) {
         val req = Request.Builder()
-            .url("https://api.github.com/repos/coyotxxx/gymtracker/releases?per_page=10")
+            .url("https://api.github.com/repos/coyotxxx/gymtracker/releases?per_page=50")
             .header("Accept", "application/vnd.github+json")
             .header("User-Agent", "GymTracker-Android")
             .build()
