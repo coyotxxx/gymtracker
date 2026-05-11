@@ -42,12 +42,17 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao,
     private val aiClient: pl.filebit.gymtracker.ai.AiClient,
     private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
-    private val aiToolHandler: pl.filebit.gymtracker.ai.AiToolHandler
+    private val aiToolHandler: pl.filebit.gymtracker.ai.AiToolHandler,
+    // v1.18.0 — auto-cleanup AiLog (>30 dni)
+    private val aiLogRepository: pl.filebit.gymtracker.data.repository.AiLogRepository
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
         val profile = profileRepo.get()
         if (!profile.aiProactiveChecksEnabled) return Result.success()
+
+        // v1.18.0 — auto-cleanup starszych niż 30 dni logów AI (chroni rozmiar DB).
+        runCatching { aiLogRepository.deleteOlderThanDays(30) }
 
         // 1. Sprawdź ostatnie treningi pod kątem powtarzającego się bólu
         val recent = workoutDao.observeAllOnce()

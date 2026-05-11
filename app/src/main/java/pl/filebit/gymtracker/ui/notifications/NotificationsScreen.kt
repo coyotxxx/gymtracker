@@ -210,5 +210,6 @@ private fun actionLabel(action: NotificationAction): String = when (action) {
     NotificationAction.ADD_WEIGHT -> "Dodaj pomiar wagi →"
     NotificationAction.SEND_HEALTH_SCREEN -> "Wyślij zrzut z zegarka →"
     NotificationAction.START_WORKOUT -> "Rozpocznij trening →"
+    NotificationAction.OPEN_PERIODIZATION_PLAN -> "Otwórz plan cyklu →"
     NotificationAction.NONE -> ""
 }

@@ -35,7 +35,8 @@ enum class NotificationAction {
     AUDIT_PLAN,            // klik → /plans/X audyt
     ADD_WEIGHT,            // klik → measurements
     SEND_HEALTH_SCREEN,    // klik → health/screenshot
-    START_WORKOUT          // klik → start treningu
+    START_WORKOUT,         // klik → start treningu
+    OPEN_PERIODIZATION_PLAN // v1.18.0 — klik → ekran "Plan cyklu"
 }
 
 @Singleton
@@ -44,7 +45,9 @@ class NotificationCenter @Inject constructor(
     private val trainingLoadAnalyzer: TrainingLoadAnalyzer,
     private val phaseAnalyzer: TrainingPhaseAnalyzer,
     private val workoutDao: WorkoutDao,
-    private val bodyDao: BodyMeasurementDao
+    private val bodyDao: BodyMeasurementDao,
+    // v1.18.0 — alert "deload kończy się za X dni"
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
 ) {
     suspend fun computeNotifications(): List<AppNotification> {
         val list = mutableListOf<AppNotification>()
@@ -121,6 +124,26 @@ class NotificationCenter @Inject constructor(
                 message = "${phase.weeksSinceLastDeload} tyg bez deloadu. Tydzień lekki pozwoli CNS się zregenerować.",
                 actionType = NotificationAction.APPLY_DELOAD
             ))
+        }
+
+        // === v1.18.0 — Deload kończy się za ≤3 dni ===
+        val activeMeso = runCatching { mesoDao.getActive() }.getOrNull()
+        if (activeMeso != null && activeMeso.phase == pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD) {
+            val daysToEnd = activeMeso.daysRemaining(now)
+            if (daysToEnd in 0..3) {
+                val dayWord = when (daysToEnd) {
+                    0 -> "kończy się dziś"
+                    1 -> "kończy się jutro"
+                    else -> "kończy się za $daysToEnd dni"
+                }
+                list.add(AppNotification(
+                    id = "deload_ending_soon",
+                    severity = NotificationSeverity.INFO,
+                    title = "🔋 Deload $dayWord",
+                    message = "Przygotuj plan akumulacji — AI zaproponuje konkrety w karcie 'AI Trener proponuje'.",
+                    actionType = NotificationAction.OPEN_PERIODIZATION_PLAN
+                ))
+            }
         }
 
         // === Brak treningów >5 dni ===

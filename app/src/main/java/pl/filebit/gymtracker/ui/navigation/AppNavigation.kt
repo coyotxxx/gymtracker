@@ -543,6 +543,10 @@ fun AppNavigation(
                             pl.filebit.gymtracker.ai.NotificationAction.START_WORKOUT -> {
                                 navController.popBackStack()
                             }
+                            pl.filebit.gymtracker.ai.NotificationAction.OPEN_PERIODIZATION_PLAN -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.PeriodizationPlan.route)
+                            }
                             pl.filebit.gymtracker.ai.NotificationAction.NONE -> { /* no-op */ }
                         }
                     }

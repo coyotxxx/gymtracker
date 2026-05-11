@@ -42,7 +42,11 @@ object AchievementDefinitions {
         squatMaxKg: Double,
         deadliftMaxKg: Double,
         ohpMaxKg: Double,
-        bodyweightKg: Double
+        bodyweightKg: Double,
+        // v1.18.0 — PERIODIZATION
+        completedCycles: Long = 0,
+        deloadsExecuted: Long = 0,
+        phasesCompleted: Long = 0
     ): List<AchievementDef> {
         val list = mutableListOf<AchievementDef>()
 
@@ -207,6 +211,18 @@ object AchievementDefinitions {
                 "Strzelec", "Zrealizuj 3 cele", 3, achievedGoalsCount),
             AchievementDef("goal_10",    "🎖️", AchievementCategory.GOALS, AchievementLevel.GOLD,
                 "Mistrz celów", "Zrealizuj 10 celów", 10, achievedGoalsCount)
+        )
+
+        // ===== v1.18.0 — PERIODYZACJA =====
+        list += listOf(
+            AchievementDef("cycle_complete_1", "🔄", AchievementCategory.PERIODIZATION, AchievementLevel.BRONZE,
+                "Pierwszy cykl", "Ukończ pierwszy mesocykl", 1, completedCycles),
+            AchievementDef("cycle_complete_5", "🎯", AchievementCategory.PERIODIZATION, AchievementLevel.SILVER,
+                "Periodyzator", "Ukończ 5 mesocykli", 5, completedCycles),
+            AchievementDef("deload_master_5", "🛌", AchievementCategory.PERIODIZATION, AchievementLevel.SILVER,
+                "Mistrz regeneracji", "Wykonaj 5 zaplanowanych deloadów", 5, deloadsExecuted),
+            AchievementDef("phases_all_4", "🌟", AchievementCategory.PERIODIZATION, AchievementLevel.GOLD,
+                "Cztery fazy", "Zalicz 4 różne fazy mesocyklu", 4, phasesCompleted)
         )
 
         return list

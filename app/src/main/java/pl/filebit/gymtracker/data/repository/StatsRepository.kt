@@ -35,7 +35,9 @@ class StatsRepository @Inject constructor(
     private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
     private val goalDao: pl.filebit.gymtracker.data.db.dao.GoalDao,
     private val unlockedDao: pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao,
-    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao
+    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao,
+    // v1.18.0 — achievements PERIODIZATION (completed cycles, deloads, distinct phases)
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
 ) {
 
     /**
@@ -222,6 +224,17 @@ class StatsRepository @Inject constructor(
         val ohpMax = bestWeightFor("Wyciskanie żołnierskie")
         val bw = currentBodyweight ?: 0.0
 
+        // v1.18.0 — PERIODIZATION metrics z TrainingMesocycle
+        val allMesocycles = runCatching { mesoDao.getRecent(limit = 200) }.getOrNull().orEmpty()
+        val completed = allMesocycles.filter {
+            it.status == pl.filebit.gymtracker.data.entity.MesocycleStatus.COMPLETED
+        }
+        val completedCycles = completed.size.toLong()
+        val deloadsExecuted = completed.count {
+            it.phase == pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD
+        }.toLong()
+        val phasesCompleted = completed.map { it.phase }.distinct().size.toLong()
+
         val all = AchievementDefinitions.all(
             workoutsCount = o.totalWorkouts.toLong(),
             totalVolume = o.totalVolumeKg.toLong(),
@@ -243,7 +256,10 @@ class StatsRepository @Inject constructor(
             squatMaxKg = squatMax,
             deadliftMaxKg = deadliftMax,
             ohpMaxKg = ohpMax,
-            bodyweightKg = bw
+            bodyweightKg = bw,
+            completedCycles = completedCycles,
+            deloadsExecuted = deloadsExecuted,
+            phasesCompleted = phasesCompleted
         )
 
         // Persyst odblokowania
@@ -1039,6 +1055,7 @@ enum class AchievementCategory(val labelPl: String, val emoji: String) {
     EXPLORATION("Eksploracja", "🧭"),
     BODY("Sylwetka", "📏"),
     GOALS("Cele", "🎯"),
+    PERIODIZATION("Periodyzacja", "🔄"), // v1.18.0
     GENERAL("Ogólne", "✨")
 }
 

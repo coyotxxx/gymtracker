@@ -31,6 +31,11 @@ object AiTools {
         add(toolGetExerciseHistory())
         add(toolGetBodyHistory())
         add(toolProposePeriodizationAction())  // v1.15.0
+        // v1.18.0 — rozszerzone tools periodyzacyjne
+        add(toolProposeDeload())
+        add(toolTransitionPhase())
+        add(toolScheduleNextCycle())
+        add(toolGetPendingDecisions())
     }
 
     /** Lista nazw narzędzi (do walidacji w handlerze). */
@@ -40,7 +45,12 @@ object AiTools {
         "get_rollups",
         "get_exercise_history",
         "get_body_history",
-        "propose_periodization_action"  // v1.15.0
+        "propose_periodization_action",  // v1.15.0
+        // v1.18.0
+        "propose_deload",
+        "transition_phase",
+        "schedule_next_cycle",
+        "get_pending_decisions"
     )
 
     /**
@@ -193,6 +203,166 @@ object AiTools {
                 }
             }
             putJsonArray("required") { add("exercise_name") }
+        }
+    }
+
+    // === v1.18.0 — rozszerzone tools periodyzacyjne ===
+
+    /**
+     * Propose deload — konkretna konfiguracja: data startu, długość, redukcja volume/intensity.
+     * Tool RO — zapisuje PendingPeriodizationDecision (status=PENDING), user akceptuje przez UI.
+     */
+    private fun toolProposeDeload(): JsonObject = buildJsonObject {
+        put("name", "propose_deload")
+        put("description", """
+            Zaproponuj konkretny tydzień deloadu dla użytkownika. Tool zapisuje propozycję jako
+            PendingPeriodizationDecision (status=PENDING) — user explicit akceptuje przez UI
+            ("AI TRENER PROPONUJE" karta na Home). NIE wykonuje akcji bezpośrednio.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("reason") {
+                    put("type", "string")
+                    put("description", "Powód deloadu: high_acwr / stagnation / low_recovery / max_weeks_without_deload / user_request")
+                }
+                putJsonObject("start_date") {
+                    put("type", "string")
+                    put("description", "Data startu deloadu YYYY-MM-DD")
+                }
+                putJsonObject("duration_days") {
+                    put("type", "integer")
+                    put("description", "Długość deloadu w dniach (4-14, typowo 7)")
+                }
+                putJsonObject("volume_reduction_pct") {
+                    put("type", "number")
+                    put("description", "Redukcja objętości jako frakcja 0.2-0.5 (np. 0.4 = -40%)")
+                }
+                putJsonObject("intensity_reduction_pct") {
+                    put("type", "number")
+                    put("description", "Redukcja intensywności jako frakcja 0.0-0.2 (np. 0.10 = -10% ciężaru). Opcjonalne.")
+                }
+                putJsonObject("reasoning") {
+                    put("type", "string")
+                    put("description", "Uzasadnienie dla usera po polsku (cytuj liczby z kontekstu).")
+                }
+            }
+            putJsonArray("required") {
+                add("reason")
+                add("start_date")
+                add("duration_days")
+                add("volume_reduction_pct")
+                add("reasoning")
+            }
+        }
+    }
+
+    /**
+     * Transition phase — przejście do następnej fazy mesocyklu.
+     * Tool RO — zapisuje PendingPeriodizationDecision.
+     */
+    private fun toolTransitionPhase(): JsonObject = buildJsonObject {
+        put("name", "transition_phase")
+        put("description", """
+            Zaproponuj przejście do nowej fazy mesocyklu (np. po deloadzie → akumulacja).
+            Zapisuje propozycję jako PendingPeriodizationDecision. User akceptuje przez UI.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("from_phase") {
+                    put("type", "string")
+                    put("description", "Obecna faza: ACCUMULATION / INTENSIFICATION / DELOAD / PEAKING / RECOVERY")
+                }
+                putJsonObject("to_phase") {
+                    put("type", "string")
+                    put("description", "Docelowa faza: ACCUMULATION / INTENSIFICATION / DELOAD / PEAKING / RECOVERY")
+                }
+                putJsonObject("start_date") {
+                    put("type", "string")
+                    put("description", "Data startu nowej fazy YYYY-MM-DD")
+                }
+                putJsonObject("duration_weeks") {
+                    put("type", "integer")
+                    put("description", "Długość nowej fazy w tygodniach (1-6)")
+                }
+                putJsonObject("confidence") {
+                    put("type", "number")
+                    put("description", "Pewność 0.0-1.0")
+                }
+                putJsonObject("reasoning") {
+                    put("type", "string")
+                    put("description", "Uzasadnienie po polsku")
+                }
+            }
+            putJsonArray("required") {
+                add("from_phase"); add("to_phase"); add("start_date"); add("duration_weeks")
+                add("confidence"); add("reasoning")
+            }
+        }
+    }
+
+    /**
+     * Schedule next cycle — kompletny plan 4-12 tyg z fazami sekwencyjnie.
+     */
+    private fun toolScheduleNextCycle(): JsonObject = buildJsonObject {
+        put("name", "schedule_next_cycle")
+        put("description", """
+            Zaplanuj cały następny cykl 4-12 tygodni z fazami (akumulacja → intensyfikacja → deload).
+            Tworzy listę PendingPeriodizationDecision (po jednej per faza) ze status=PENDING.
+            User widzi propozycję na Home i akceptuje całość lub odrzuca.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("start_date") {
+                    put("type", "string")
+                    put("description", "Data startu pierwszej fazy YYYY-MM-DD")
+                }
+                putJsonObject("phases") {
+                    put("type", "array")
+                    put("description", "Lista faz w kolejności. Każda: {phase, duration_weeks}. Min 2, max 5.")
+                    putJsonObject("items") {
+                        put("type", "object")
+                        putJsonObject("properties") {
+                            putJsonObject("phase") {
+                                put("type", "string")
+                                put("description", "ACCUMULATION / INTENSIFICATION / DELOAD / PEAKING / RECOVERY")
+                            }
+                            putJsonObject("duration_weeks") {
+                                put("type", "integer")
+                                put("description", "Długość fazy 1-6")
+                            }
+                        }
+                        putJsonArray("required") { add("phase"); add("duration_weeks") }
+                    }
+                }
+                putJsonObject("goal") {
+                    put("type", "string")
+                    put("description", "Cel cyklu: HYPERTROPHY / STRENGTH / PEAK / RECOVERY (do uzasadnienia)")
+                }
+                putJsonObject("reasoning") {
+                    put("type", "string")
+                    put("description", "Uzasadnienie planu po polsku — dlaczego ta sekwencja/długości")
+                }
+            }
+            putJsonArray("required") { add("start_date"); add("phases"); add("goal"); add("reasoning") }
+        }
+    }
+
+    /**
+     * Get pending decisions — pobierz wszystkie oczekujące propozycje (status=PENDING).
+     * Read-only — AI może sprawdzić co już zaproponowano przed nową propozycją.
+     */
+    private fun toolGetPendingDecisions(): JsonObject = buildJsonObject {
+        put("name", "get_pending_decisions")
+        put("description", """
+            Pobierz wszystkie oczekujące propozycje periodyzacji (PendingPeriodizationDecision
+            ze status=PENDING). Użyj zanim utworzysz nową propozycję — żeby nie duplikować.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {}
         }
     }
 
