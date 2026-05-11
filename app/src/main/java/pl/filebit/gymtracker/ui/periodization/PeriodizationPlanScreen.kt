@@ -34,11 +34,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import pl.filebit.gymtracker.ui.components.ScreenHeader
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 /**
  * v1.16.0 — Ekran "Plan cyklu" pokazujący historię mezo-cykli + aktywny cykl.
