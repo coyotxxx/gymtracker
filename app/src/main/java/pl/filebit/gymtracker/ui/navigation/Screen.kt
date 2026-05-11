@@ -43,6 +43,8 @@ sealed class Screen(val route: String) {
     object Glossary : Screen("glossary")
     // v1.16.0 — ekran "Plan cyklu" (oś czasu mezo-cykli)
     object PeriodizationPlan : Screen("periodization/plan")
+    // v1.21.0 — ukryty ekran Debug (5×click w stopkę wersji)
+    object Debug : Screen("debug")
     object Diet : Screen("diet")
     object DietOnboarding : Screen("diet/onboarding")
     object DietAdherenceReport : Screen("diet/adherence")

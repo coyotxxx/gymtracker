@@ -92,6 +92,7 @@ fun ProfileScreen(
     onOpenGlossary: () -> Unit,
     onOpenPeriodizationPlan: () -> Unit = {},  // v1.16.0
     onOpenAchievements: () -> Unit = {},
+    onOpenDebug: () -> Unit = {},              // v1.21.0 — ukryty ekran (5×click w stopkę)
     onRestartOnboarding: () -> Unit = {},
     vm: ProfileViewModel = hiltViewModel()
 ) {
@@ -279,7 +280,7 @@ fun ProfileScreen(
 
             item {
                 Spacer(Modifier.height(16.dp))
-                AppVersionFooter()
+                AppVersionFooter(onSecretReached = onOpenDebug)
             }
         }
         SnackbarHost(
@@ -488,7 +489,7 @@ private fun EditNameDialog(
 }
 
 @Composable
-private fun AppVersionFooter() {
+private fun AppVersionFooter(onSecretReached: () -> Unit = {}) {
     val context = androidx.compose.ui.platform.LocalContext.current
     val version = remember {
         runCatching {
@@ -496,9 +497,20 @@ private fun AppVersionFooter() {
             info.versionName ?: "?"
         }.getOrDefault("?")
     }
+    // 5×szybki klik (≤2s między) → otwórz ukryty ekran Debug
+    var taps by remember { mutableStateOf(0) }
+    var lastTapMs by remember { mutableStateOf(0L) }
     Text(
         text = "GymTracker v$version",
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().clickable {
+            val now = System.currentTimeMillis()
+            taps = if (now - lastTapMs > 2000L) 1 else taps + 1
+            lastTapMs = now
+            if (taps >= 5) {
+                taps = 0
+                onSecretReached()
+            }
+        },
         style = MaterialTheme.typography.labelSmall,
         color = DarkOnSurfaceVariant,
         textAlign = androidx.compose.ui.text.style.TextAlign.Center

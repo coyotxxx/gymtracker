@@ -368,6 +368,7 @@ fun AppNavigation(
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
                     onOpenPeriodizationPlan = { navController.navigate(Screen.PeriodizationPlan.route) },  // v1.16.0
+                    onOpenDebug = { navController.navigate(Screen.Debug.route) },
                     onRestartOnboarding = {
                         // KOLEJNOŚĆ: navigate najpierw, potem mark — analogicznie
                         // do callbacków z wizardu. Zmiana state w ShellVM po
@@ -554,6 +555,11 @@ fun AppNavigation(
             }
             composable(Screen.Goals.route) {
                 GoalsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.Debug.route) {
+                pl.filebit.gymtracker.ui.debug.DebugScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.Glossary.route) {
                 GlossaryScreen(onBack = { navController.popBackStack() })
