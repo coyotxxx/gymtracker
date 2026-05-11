@@ -112,4 +112,47 @@ class Converters {
     @TypeConverter fun stringToTrainingEventType(s: String): pl.filebit.gymtracker.data.entity.TrainingEventType =
         runCatching { pl.filebit.gymtracker.data.entity.TrainingEventType.valueOf(s) }
             .getOrDefault(pl.filebit.gymtracker.data.entity.TrainingEventType.PR_SET)
+
+    // v1.13.0 — TrainingMesocycle (entity fundamentu periodyzacji)
+    @TypeConverter fun mesocyclePhaseToString(p: pl.filebit.gymtracker.data.entity.MesocyclePhase): String = p.name
+    @TypeConverter fun stringToMesocyclePhase(s: String): pl.filebit.gymtracker.data.entity.MesocyclePhase =
+        runCatching { pl.filebit.gymtracker.data.entity.MesocyclePhase.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION)
+
+    @TypeConverter fun mesocycleStatusToString(s: pl.filebit.gymtracker.data.entity.MesocycleStatus): String = s.name
+    @TypeConverter fun stringToMesocycleStatus(s: String): pl.filebit.gymtracker.data.entity.MesocycleStatus =
+        runCatching { pl.filebit.gymtracker.data.entity.MesocycleStatus.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.MesocycleStatus.PLANNED)
+
+    // v1.13.0 — brakujące konwertery wykryte w audycie 2026-05-10
+    // (wcześniej Room używał implicit getOrDefault co maskowało potencjalne błędy parsowania)
+    @TypeConverter fun dietPhaseTypeToString(t: pl.filebit.gymtracker.data.entity.DietPhaseType): String = t.name
+    @TypeConverter fun stringToDietPhaseType(s: String): pl.filebit.gymtracker.data.entity.DietPhaseType =
+        runCatching { pl.filebit.gymtracker.data.entity.DietPhaseType.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE)
+
+    @TypeConverter fun mealConsumptionStatusToString(s: pl.filebit.gymtracker.data.entity.MealConsumptionStatus): String = s.name
+    @TypeConverter fun stringToMealConsumptionStatus(s: String): pl.filebit.gymtracker.data.entity.MealConsumptionStatus =
+        runCatching { pl.filebit.gymtracker.data.entity.MealConsumptionStatus.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED)
+
+    @TypeConverter fun hydrationSourceToString(h: pl.filebit.gymtracker.data.entity.HydrationSource): String = h.name
+    @TypeConverter fun stringToHydrationSource(s: String): pl.filebit.gymtracker.data.entity.HydrationSource =
+        runCatching { pl.filebit.gymtracker.data.entity.HydrationSource.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.HydrationSource.WATER)
+
+    @TypeConverter fun activitySourceToString(a: pl.filebit.gymtracker.data.entity.ActivitySource): String = a.name
+    @TypeConverter fun stringToActivitySource(s: String): pl.filebit.gymtracker.data.entity.ActivitySource =
+        runCatching { pl.filebit.gymtracker.data.entity.ActivitySource.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.ActivitySource.MANUAL)
+
+    @TypeConverter fun mealPrepActionTypeToString(a: pl.filebit.gymtracker.data.entity.MealPrepActionType): String = a.name
+    @TypeConverter fun stringToMealPrepActionType(s: String): pl.filebit.gymtracker.data.entity.MealPrepActionType =
+        runCatching { pl.filebit.gymtracker.data.entity.MealPrepActionType.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.MealPrepActionType.OTHER)
+
+    @TypeConverter fun workoutContextToString(w: pl.filebit.gymtracker.data.entity.WorkoutContext): String = w.name
+    @TypeConverter fun stringToWorkoutContext(s: String): pl.filebit.gymtracker.data.entity.WorkoutContext =
+        runCatching { pl.filebit.gymtracker.data.entity.WorkoutContext.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.WorkoutContext.NORMAL)
 }
