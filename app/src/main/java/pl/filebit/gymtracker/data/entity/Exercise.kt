@@ -6,7 +6,25 @@ import androidx.room.PrimaryKey
 enum class MuscleGroup {
     CHEST, BACK, SHOULDERS, BICEPS, TRICEPS,
     QUADS, HAMSTRINGS, GLUTES, CALVES,
-    CORE, CARDIO, OTHER
+    CORE, CARDIO, OTHER;
+
+    /**
+     * v1.19.0 — polski label grupy mięśniowej (centralny — zamiast duplikatów w wielu miejscach).
+     */
+    fun displayName(): String = when (this) {
+        CHEST -> "Klatka"
+        BACK -> "Plecy"
+        SHOULDERS -> "Barki"
+        BICEPS -> "Biceps"
+        TRICEPS -> "Triceps"
+        QUADS -> "Czworogłowe"
+        HAMSTRINGS -> "Dwugłowe"
+        GLUTES -> "Pośladki"
+        CALVES -> "Łydki"
+        CORE -> "Brzuch"
+        CARDIO -> "Cardio"
+        OTHER -> "Inne"
+    }
 }
 
 enum class Equipment {

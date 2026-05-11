@@ -91,7 +91,7 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
                 "DELOAD"
             )
             staleMuscle != null -> Triple(
-                "💪 ${muscleLabel(staleMuscle.muscle)} bez treningu ${staleMuscle.daysAgo} dni",
+                "💪 ${staleMuscle.muscle.displayName()} bez treningu ${staleMuscle.daysAgo} dni",
                 "Czas wrócić — kliknij by AI zaproponowało dzisiejszą sesję.",
                 "TODAY"
             )
@@ -163,22 +163,6 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
         // Sprawdzamy czy są nowe pending (worker mógł też nie zapisać jeśli AI nie użył toola).
         return result.isSuccess && pendingDecisionDao.countPending() > 0
     }
-
-    private fun muscleLabel(muscle: pl.filebit.gymtracker.data.entity.MuscleGroup): String =
-        when (muscle) {
-            pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST -> "Klatka"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.BACK -> "Plecy"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS -> "Barki"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS -> "Biceps"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS -> "Triceps"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS -> "Czworogłowe"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS -> "Dwugłowe"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES -> "Pośladki"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES -> "Łydki"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.CORE -> "Brzuch"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO -> "Cardio"
-            pl.filebit.gymtracker.data.entity.MuscleGroup.OTHER -> "Inne"
-        }
 
     private fun notify(title: String, body: String, deepLinkAction: String) {
         val ctx = applicationContext

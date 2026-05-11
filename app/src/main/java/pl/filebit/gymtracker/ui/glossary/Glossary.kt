@@ -126,7 +126,61 @@ object Glossary {
             "Najczęściej używany wzór do szacowania 1RM:\n\n" +
             "1RM = waga × (1 + powt. / 30)\n\n" +
             "Sprawdza się dobrze do ~10 powt. — powyżej tego niedoszacowuje. Dla wysokich " +
-            "powt. lepszy Brzycki.")
+            "powt. lepszy Brzycki."),
+
+        // v1.19.0 — terminy periodyzacji
+        "MESOCYCLE" to ("Mesocykl (4-6 tygodni)" to
+            "Okres treningowy z jasnym celem — akumulacja, intensyfikacja, deload lub peaking. " +
+            "Klasyczna struktura periodyzacji liniowej:\n\n" +
+            "• Akumulacja 2-4 tyg → Intensyfikacja 2-4 tyg → Deload 1 tydz\n\n" +
+            "Wiele mesocykli składa się w makrocykl (sezon 12-24 tyg). Aplikacja śledzi aktywny " +
+            "mesocykl na karcie 'Faza cyklu' i 'Plan cyklu'."),
+
+        "MICROCYCLE" to ("Mikrocykl (tydzień)" to
+            "Pojedynczy tydzień treningowy z 3-5 sesjami. Najmniejsza jednostka planowania.\n\n" +
+            "W ramach jednego mezocyklu wszystkie mikrocykle mają podobną intensywność i objętość " +
+            "z progresją tydzień-do-tygodnia (np. +2.5kg w głównych liftach)."),
+
+        "ACCUMULATION" to ("Akumulacja (budowanie objętości)" to
+            "Faza mesocyklu nastawiona na hipertrofię i wytrzymałość mięśniową.\n\n" +
+            "• Powt: 8-12 (czasem 15-20)\n" +
+            "• RPE: 6-8 (zostawiasz 2-4 powt. w zapasie)\n" +
+            "• Pauzy: 60-90s\n" +
+            "• Sets: więcej niż w intensyfikacji (więcej objętości całkowitej)\n\n" +
+            "Plateau po 4 tyg jest normalne — to sygnał do przejścia w intensyfikację lub deload."),
+
+        "INTENSIFICATION" to ("Intensyfikacja (budowanie siły)" to
+            "Faza mesocyklu nastawiona na max siłę i 1RM.\n\n" +
+            "• Powt: 3-6 (czasem 1-2)\n" +
+            "• RPE: 8-9 (1-2 powt. w zapasie)\n" +
+            "• Pauzy: 3-5 minut (pełna regeneracja)\n" +
+            "• Sets: mniej niż w akumulacji, ale cięższe ciężary\n\n" +
+            "Naturalne kontynuowanie po akumulacji — wykorzystujesz zbudowaną bazę objętościową."),
+
+        "PEAKING" to ("Peaking (faza testowa)" to
+            "Krótka faza (1-2 tyg) przed sprawdzaniem 1RM lub zawodami.\n\n" +
+            "• Powt: 1-3, RPE 9-10\n" +
+            "• Pauzy: bardzo długie (3-8 min)\n" +
+            "• Volume: niski (np. 50-60% normalnego)\n\n" +
+            "Cel: pełne odświeżenie CNS, super-kompensacja, sprawdzenie progresji z poprzednich " +
+            "8-12 tyg pracy. Po peakingu zazwyczaj recovery lub nowy mesocykl."),
+
+        "ACWR" to ("ACWR (Acute:Chronic Workload Ratio)" to
+            "Stosunek objętości 7-dniowej (acute) do średniej 28-dniowej (chronic).\n\n" +
+            "ACWR = volume_7d / avg_volume_28d\n\n" +
+            "• <0.8 — undertraining (ryzyko detraining)\n" +
+            "• 0.8-1.3 — sweet spot (optymalne obciążenie)\n" +
+            "• 1.3-1.5 — overreaching (uważaj)\n" +
+            "• >1.5 — wysokie ryzyko kontuzji\n\n" +
+            "Aplikacja pokazuje ACWR w karcie 'Obciążenie' i alertuje gdy wskaźnik wpada w strefę " +
+            "ryzyka. Bazuje na badaniach Tim Gabbett (sport science)."),
+
+        "WILKS" to ("Wilks Score" to
+            "Formuła znormalizowana do porównywania siły między różnymi wagami ciała w trójboju " +
+            "siłowym. Im wyższy score, tym większa relatywna siła.\n\n" +
+            "Wilks = total_kg × współczynnik(bw, gender)\n\n" +
+            "Pozwala uczciwie porównać atletów: 200kg total przy 75kg vs 250kg total przy 110kg. " +
+            "Wartości referencyjne: 300+ początkujący, 400+ średnio-zaawansowany, 500+ zawodnik.")
     )
 
     fun get(key: String): Pair<String, String>? = ENTRIES[key]

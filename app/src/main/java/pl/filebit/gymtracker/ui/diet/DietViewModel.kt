@@ -683,13 +683,6 @@ class DietViewModel @Inject constructor(
     }
 
     /**
-     * Lista nazw potraw z ostatnio wygenerowanego planu AI — do oceny przez usera.
-     * Czyszczone po użyciu (consumeAiPlanRatingPrompt).
-     */
-    private val _aiPlanRatingPrompt = MutableStateFlow<List<Pair<MealType, String>>>(emptyList())
-    val aiPlanRatingPrompt: StateFlow<List<Pair<MealType, String>>> = _aiPlanRatingPrompt.asStateFlow()
-
-    /**
      * Pełne recipe per slot z ostatniego planu AI (z instrukcjami).
      * Używane do "Pokaż przepis" w MealGroupCard. Transient — żyje od generacji do
      * wygenerowania nowego planu lub zamknięcia VM.
@@ -707,10 +700,6 @@ class DietViewModel @Inject constructor(
         viewModelScope.launch {
             runCatching { mealFeedbackRepo.rate(displayName, rating, tags, notes) }
         }
-    }
-
-    fun consumeAiPlanRatingPrompt() {
-        _aiPlanRatingPrompt.value = emptyList()
     }
 
     /**

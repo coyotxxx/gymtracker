@@ -54,6 +54,8 @@ import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.util.formatDuration
 import pl.filebit.gymtracker.util.formatWeight
+import pl.filebit.gymtracker.ui.periodization.color as phaseColor
+import pl.filebit.gymtracker.ui.periodization.emoji as phaseEmoji
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -272,6 +274,11 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
                     ),
                     modifier = Modifier.weight(1f)
                 )
+                // v1.19.0 — PhaseBadge przed PR (jeśli trening trafił w aktywny mesocykl)
+                item.mesocyclePhase?.let { phase ->
+                    PhaseBadge(phase)
+                    Spacer(Modifier.size(6.dp))
+                }
                 if (item.hasPR) {
                     PrBadge()
                 }
@@ -289,6 +296,45 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
         }
     }
 }
+
+/**
+ * v1.19.0 — odznaka fazy mesocyklu obok daty treningu w historii.
+ * Style: rounded pill z kolorem fazy + emoji + skrót.
+ */
+@Composable
+private fun PhaseBadge(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase) {
+    val color = phase.phaseColor()
+    val emoji = phase.phaseEmoji()
+    Box(
+        modifier = Modifier
+            .border(1.dp, color.copy(alpha = 0.55f), RoundedCornerShape(50))
+            .background(color.copy(alpha = 0.14f), RoundedCornerShape(50))
+            .padding(horizontal = 8.dp, vertical = 3.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(emoji, style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp))
+            Spacer(Modifier.size(4.dp))
+            Text(
+                phaseShortLabel(phase),
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.4.sp
+                ),
+                color = color
+            )
+        }
+    }
+}
+
+private fun phaseShortLabel(phase: pl.filebit.gymtracker.data.entity.MesocyclePhase): String =
+    when (phase) {
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION -> "AKUM"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.INTENSIFICATION -> "INTEN"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD -> "DELOAD"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.PEAKING -> "PEAK"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.RECOVERY -> "REGEN"
+    }
 
 @Composable
 private fun PrBadge() {

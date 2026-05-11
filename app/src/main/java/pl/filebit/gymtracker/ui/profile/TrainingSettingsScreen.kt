@@ -63,6 +63,7 @@ fun TrainingSettingsScreen(
     vm: ProfileViewModel = hiltViewModel()
 ) {
     val profile by vm.profile.collectAsStateWithLifecycle()
+    val periodization by vm.periodization.collectAsStateWithLifecycle()
     var draft by remember(profile) { mutableStateOf(profile) }
 
     LaunchedEffect(profile) { draft = profile }
@@ -264,6 +265,39 @@ fun TrainingSettingsScreen(
                     checked = draft.flashOnTimerEnd,
                     onChange = { draft = draft.copy(flashOnTimerEnd = it) }
                 )
+            }
+
+            // v1.19.0 — Periodyzacja
+            item {
+                TsSectionCard(
+                    title = "Periodyzacja",
+                    subtitle = "Preferencje cyklu treningowego (mesocykl + deload)."
+                ) {
+                    TsNumberFieldCard(
+                        label = "Długość cyklu (tygodni)",
+                        value = periodization.mesocycleWeeks,
+                        range = pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MIN_CYCLE_WEEKS..
+                            pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MAX_CYCLE_WEEKS,
+                        onChange = { vm.setMesocycleWeeks(it) }
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    TsNumberFieldCard(
+                        label = "Długość deloadu (dni)",
+                        value = periodization.deloadDays,
+                        range = pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MIN_DELOAD_DAYS..
+                            pl.filebit.gymtracker.data.repository.PeriodizationPreferences.MAX_DELOAD_DAYS,
+                        onChange = { vm.setDeloadDays(it) }
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    TsToggleSection(
+                        title = "Auto-deload",
+                        label = "Algorytm decyduje",
+                        explain = "Algorytm proponuje deload przy stagnacji ≥30% ćwiczeń lub gdy " +
+                            "ACWR > 1.5 przez 2 tyg. Można wyłączyć i decydować manualnie.",
+                        checked = periodization.autoDeloadEnabled,
+                        onChange = { vm.setAutoDeloadEnabled(it) }
+                    )
+                }
             }
 
         }
