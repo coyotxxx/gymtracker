@@ -39,7 +39,9 @@ class LoadIncreaseService @Inject constructor(
                 val original = set.weightKg ?: continue
                 if (original <= 0) continue
                 originalWeights[set.id] = original
-                planRepo.updatePlanSet(set.copy(weightKg = original * factor))
+                // v1.20.3: zaokrąglenie do 2.5kg (standardowe talerze) zamiast 80×1.05=84.0
+                val newWeight = roundToPlateStep(original * factor)
+                planRepo.updatePlanSet(set.copy(weightKg = newWeight))
                 updatedCount++
             }
         }
@@ -85,6 +87,15 @@ class LoadIncreaseService @Inject constructor(
     }
 
     fun isActive(): Boolean = prefs.activeIncrease() != null
+
+    /**
+     * v1.20.3 — zaokrąglenie wagi do najbliższych 2.5kg (standardowe talerze siłowni).
+     * Dla <2.5kg (lekkie hantle) — krok 0.5kg.
+     */
+    private fun roundToPlateStep(kg: Double): Double {
+        if (kg < 2.5) return (kotlin.math.round(kg * 2) / 2)
+        return kotlin.math.round(kg / 2.5) * 2.5
+    }
 
     fun dismissedRecently(graceDays: Long = 7): Boolean {
         val dismissedAt = prefs.dismissedAtMs()

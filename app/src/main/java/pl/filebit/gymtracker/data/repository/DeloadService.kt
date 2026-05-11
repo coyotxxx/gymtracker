@@ -98,8 +98,20 @@ class DeloadService @Inject constructor(
     /**
      * Zastosuj deload do planu: zmniejsz wszystkie wagi × factor (0.9 lub 0.8),
      * zapisz snapshot oryginalnych wag żeby restore() mogło je przywrócić.
+     *
+     * v1.20.3 GUARD: jeśli już istnieje aktywny deload → NIE re-aplikuj.
+     * Wcześniej powtórne kliknięcie "Zastosuj" mnożyło wagi factor² lub factor³
+     * (np. 80kg × 0.81 × 0.81 × 0.80 = 41.99) i nadpisywało originalWeights (utrata snapshot).
+     *
+     * v1.20.3 ROUNDING: nowa waga zaokrąglana do najbliższych 2.5kg.
      */
     suspend fun apply(planId: Long, severity: DeloadSeverity): ApplyResult {
+        // GUARD: nie pozwól na podwójne zastosowanie
+        prefs.activeDeload()?.let { existing ->
+            val planName = planRepo.getPlan(existing.planId)?.name ?: ""
+            return ApplyResult(0, existing.factor, planName, alreadyActive = true)
+        }
+
         val factor = when (severity) {
             DeloadSeverity.HIGH -> 0.80
             DeloadSeverity.MED -> 0.90
@@ -116,7 +128,9 @@ class DeloadService @Inject constructor(
                 val original = set.weightKg ?: continue
                 if (original <= 0) continue
                 originalWeights[set.id] = original
-                planRepo.updatePlanSet(set.copy(weightKg = original * factor))
+                // v1.20.3: zaokrąglenie do 2.5kg żeby uniknąć wag typu 41.99 w UI
+                val newWeight = roundToPlateStep(original * factor)
+                planRepo.updatePlanSet(set.copy(weightKg = newWeight))
                 updatedCount++
             }
         }
@@ -131,6 +145,16 @@ class DeloadService @Inject constructor(
             )
         )
         return ApplyResult(updatedCount, factor, plan.name)
+    }
+
+    /**
+     * v1.20.3 — zaokrąglenie wagi do najbliższych 2.5kg (standardowe talerze siłowni).
+     * 41.99 → 42.5, 26.244 → 27.5, 12.59 → 12.5.
+     * Dla wag <2.5kg (np. hantle 1kg) — zaokrąglenie do 0.5kg.
+     */
+    private fun roundToPlateStep(kg: Double): Double {
+        if (kg < 2.5) return (kotlin.math.round(kg * 2) / 2)  // 0.5kg step
+        return kotlin.math.round(kg / 2.5) * 2.5
     }
 
     /**
@@ -152,6 +176,47 @@ class DeloadService @Inject constructor(
         return RestoreResult(restoredCount, state.planName)
     }
 
+    /**
+     * v1.20.3 — naprawa wag po cumulative apply bug.
+     * Jeśli wykryto że current weights ≠ originalWeights × factor (z tolerancją 0.1kg)
+     * → restore z snapshot + jednorazowy re-apply z zaokrągleniem.
+     *
+     * Zwraca true jeśli naprawiono.
+     */
+    suspend fun repairWeightsIfCorrupted(): Boolean {
+        val state = prefs.activeDeload() ?: return false
+        if (state.originalWeights.isEmpty()) return false
+
+        val planExercises = planRepo.getPlanExercises(state.planId)
+        var corruptedFound = false
+        for (pe in planExercises) {
+            val sets = planRepo.getSetsForPlanExercise(pe.id)
+            for (set in sets) {
+                val original = state.originalWeights[set.id] ?: continue
+                val current = set.weightKg ?: continue
+                val expected = roundToPlateStep(original * state.factor)
+                if (kotlin.math.abs(current - expected) > 0.1) {
+                    corruptedFound = true
+                    break
+                }
+            }
+            if (corruptedFound) break
+        }
+
+        if (!corruptedFound) return false
+
+        // Restore + jednorazowy reapply z zaokrągleniem
+        for (pe in planExercises) {
+            val sets = planRepo.getSetsForPlanExercise(pe.id)
+            for (set in sets) {
+                val original = state.originalWeights[set.id] ?: continue
+                val newWeight = roundToPlateStep(original * state.factor)
+                planRepo.updatePlanSet(set.copy(weightKg = newWeight))
+            }
+        }
+        return true
+    }
+
     fun dismiss() {
         prefs.setDismissedNow()
     }
@@ -161,6 +226,11 @@ class DeloadService @Inject constructor(
         prefs.clearActiveDeload()
     }
 
-    data class ApplyResult(val updatedSets: Int, val factor: Double, val planName: String)
+    data class ApplyResult(
+        val updatedSets: Int,
+        val factor: Double,
+        val planName: String,
+        val alreadyActive: Boolean = false
+    )
     data class RestoreResult(val restoredSets: Int, val planName: String)
 }

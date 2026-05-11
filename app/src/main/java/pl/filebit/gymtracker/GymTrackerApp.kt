@@ -44,6 +44,8 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var periodizationOrchestrator: pl.filebit.gymtracker.data.repository.PeriodizationOrchestrator
     // v1.14.1: zunifikowane reschedule (single source of truth, używane też przez BootCompletedReceiver)
     @Inject lateinit var workerRescheduler: pl.filebit.gymtracker.service.WorkerRescheduler
+    // v1.20.3: naprawa wag po cumulative deload bug (np. 41.99 zamiast 42.5)
+    @Inject lateinit var deloadService: pl.filebit.gymtracker.data.repository.DeloadService
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -76,6 +78,9 @@ class GymTrackerApp : Application(), Configuration.Provider {
             // v1.14.0: utrzymaj aktywny mezo-cykl. Jesli brak — tworzy z computed phase.
             // Jesli plannedEnd minal — zwraca TransitionDue (UI pokaze propozycje).
             runCatching { periodizationOrchestrator.pulse() }
+            // v1.20.3: napraw wagi planu po cumulative deload bug (np. 41.99 zamiast 42.5).
+            // Idempotentny — działa tylko gdy aktywny deload + wykryje korupcję.
+            runCatching { deloadService.repairWeightsIfCorrupted() }
         }
         observeActiveWorkoutForReminder()
     }
