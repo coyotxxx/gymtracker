@@ -36,7 +36,10 @@ class AiToolHandler @Inject constructor(
     private val eventDao: TrainingEventDao,
     private val weeklyDao: WeeklyRollupDao,
     private val monthlyDao: MonthlyRollupDao,
-    private val quarterlyDao: QuarterlyRollupDao
+    private val quarterlyDao: QuarterlyRollupDao,
+    // v1.15.0: propose_periodization_action tool
+    private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao,
+    private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -58,8 +61,73 @@ class AiToolHandler @Inject constructor(
             "get_rollups" -> execGetRollups(input)
             "get_exercise_history" -> execGetExerciseHistory(input)
             "get_body_history" -> execGetBodyHistory(input)
+            "propose_periodization_action" -> execProposePeriodizationAction(input)  // v1.15.0
             else -> "{\"error\":\"Unknown tool: $toolName\"}"
         }
+    }
+
+    /**
+     * v1.15.0 — zapisuje propozycję AI jako PendingPeriodizationDecision (status=PENDING).
+     * NIE wykonuje akcji w bazie — user musi explicit zaakceptować przez UI.
+     */
+    private suspend fun execProposePeriodizationAction(input: JsonObject): String {
+        val action = input["action"]?.jsonPrimitive?.content
+            ?: return """{"error":"missing action"}"""
+        val recommendedPhase = input["recommended_next_phase"]?.jsonPrimitive?.content
+            ?: return """{"error":"missing recommended_next_phase"}"""
+        val plannedStartStr = input["planned_start_date"]?.jsonPrimitive?.content
+            ?: return """{"error":"missing planned_start_date"}"""
+        val durationWeeks = input["planned_duration_weeks"]?.jsonPrimitive?.content?.toIntOrNull()
+            ?: return """{"error":"missing or invalid planned_duration_weeks"}"""
+        val confidence = input["confidence"]?.jsonPrimitive?.content?.toDoubleOrNull()
+            ?: return """{"error":"missing or invalid confidence"}"""
+        val reasoning = input["reasoning"]?.jsonPrimitive?.content
+            ?: return """{"error":"missing reasoning"}"""
+        val volumeMod = input["volume_modifier"]?.jsonPrimitive?.content?.toDoubleOrNull()
+        val intensityMod = input["intensity_modifier"]?.jsonPrimitive?.content?.toDoubleOrNull()
+
+        // Validate phase
+        val phase = runCatching {
+            pl.filebit.gymtracker.data.entity.MesocyclePhase.valueOf(recommendedPhase)
+        }.getOrNull() ?: return """{"error":"invalid phase: $recommendedPhase"}"""
+
+        // Validate date
+        val plannedStartMs = runCatching { df.parse(plannedStartStr)!!.time }.getOrNull()
+            ?: return """{"error":"invalid planned_start_date format (expected YYYY-MM-DD)"}"""
+
+        val currentMeso = mesoDao.getActive()
+            ?: return """{"error":"no active mesocycle — cannot propose transition"}"""
+
+        // Algorithm proposal JSON (z computed PeriodizationOrchestrator — może być pominięte jeśli
+        // tool wywołany manualnie z AiTrainer; w ProactiveAiCheckWorker będzie passed jako kontekst)
+        val algorithmProposalJson = """{"fromPhase":"${currentMeso.phase}","plannedStartFromAlgorithm":${currentMeso.plannedEndDateMs}}"""
+
+        val aiDecisionJson = buildJsonObject {
+            put("action", action)
+            put("recommended_next_phase", recommendedPhase)
+            put("planned_start_date", plannedStartStr)
+            put("planned_duration_weeks", durationWeeks)
+            put("confidence", confidence)
+            volumeMod?.let { put("volume_modifier", it) }
+            intensityMod?.let { put("intensity_modifier", it) }
+        }.toString()
+
+        val decision = pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision(
+            currentMesoId = currentMeso.id,
+            algorithmProposalJson = algorithmProposalJson,
+            aiDecisionJson = aiDecisionJson,
+            aiReasoning = reasoning,
+            confidence = confidence.coerceIn(0.0, 1.0),
+            status = pl.filebit.gymtracker.data.entity.DecisionStatus.PENDING
+        )
+        val id = pendingDecisionDao.upsert(decision)
+
+        return buildJsonObject {
+            put("success", true)
+            put("decision_id", id)
+            put("status", "PENDING")
+            put("message", "Propozycja zapisana. User zobaczy na Home (karta 'AI TRENER PROPONUJE') i może [Zastosuj] lub [Odrzuć].")
+        }.toString()
     }
 
     private suspend fun execGetWorkouts(input: JsonObject): String {

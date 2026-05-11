@@ -36,7 +36,13 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
     private val profileRepo: UserProfileRepository,
     private val statsRepo: StatsRepository,
     private val workoutDao: WorkoutDao,
-    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
+    // v1.15.0: 4. reguła — periodyzacja z AI
+    private val periodizationOrchestrator: pl.filebit.gymtracker.data.repository.PeriodizationOrchestrator,
+    private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao,
+    private val aiClient: pl.filebit.gymtracker.ai.AiClient,
+    private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
+    private val aiToolHandler: pl.filebit.gymtracker.ai.AiToolHandler
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -84,11 +90,73 @@ class ProactiveAiCheckWorker @AssistedInject constructor(
                 "Czas wrócić — kliknij by AI zaproponowało dzisiejszą sesję.",
                 "TODAY"
             )
-            else -> return Result.success()  // brak sygnału — milczymy
+            else -> {
+                // v1.15.0 — 4. reguła: AI proaktywnie decyduje o cyklu periodyzacyjnym
+                if (checkPeriodizationDecision()) {
+                    // Jeśli AI zapisał PendingDecision — wyślij dedykowaną notyfikację
+                    Triple(
+                        "🤖 AI Trener ma propozycję",
+                        "Faza cyklu wymaga decyzji. Otwórz Home → karta 'AI TRENER PROPONUJE'.",
+                        "PERIODIZATION"
+                    )
+                } else {
+                    return Result.success()  // brak sygnału — milczymy
+                }
+            }
         }
 
         notify(title, body, prompt)
         return Result.success()
+    }
+
+    /**
+     * v1.15.0 — sprawdź czy `PeriodizationOrchestrator.pulse()` zwraca TransitionDue.
+     * Jeśli TAK, pyta AI (chatWithTools) — AI używa toola `propose_periodization_action`
+     * który zapisuje PendingPeriodizationDecision (status=PENDING). User zobaczy na Home.
+     *
+     * @return true jeśli zapisano nową propozycję (= wyślij notyfikację)
+     */
+    private suspend fun checkPeriodizationDecision(): Boolean {
+        // Anti-spam: jeśli już są PENDING decyzje, nie pytaj AI znowu
+        if (pendingDecisionDao.countPending() > 0) return false
+
+        // Czy AI skonfigurowane?
+        val aiConfig = aiPrefs.load()
+        if (!aiConfig.isConnected) return false
+
+        // Sprawdź state z orchestrator
+        val state = runCatching { periodizationOrchestrator.pulse() }.getOrNull() ?: return false
+        val transitionDue = state as? pl.filebit.gymtracker.data.repository.PeriodizationState.TransitionDue
+            ?: return false
+
+        // Pytaj AI o decyzję
+        val promptSection = pl.filebit.gymtracker.ai.PeriodizationPromptHelper.toPromptSection(
+            meso = transitionDue.current,
+            algorithmProposal = transitionDue.proposal
+        )
+        val userMessage = buildString {
+            append("Twoje zadanie: ocenić propozycję periodyzacyjną algorytmu i zaproponować konkretną decyzję dla mnie.\n")
+            append(promptSection)
+            append("\nObowiązkowo użyj toola `propose_periodization_action` z konkretnymi parametrami — bez tego decyzja nie zostanie zapisana w bazie i nie zobaczę jej na Home.")
+        }
+
+        val result = runCatching {
+            aiClient.chatWithTools(
+                config = aiConfig,
+                messages = listOf(
+                    pl.filebit.gymtracker.ai.AiMessage(
+                        role = pl.filebit.gymtracker.ai.AiRole.USER,
+                        content = userMessage
+                    )
+                ),
+                toolHandler = aiToolHandler,
+                source = "ProactiveAi_periodization"
+            )
+        }.getOrNull() ?: return false
+
+        // AiToolHandler.execProposePeriodizationAction zapisał PendingDecision do bazy.
+        // Sprawdzamy czy są nowe pending (worker mógł też nie zapisać jeśli AI nie użył toola).
+        return result.isSuccess && pendingDecisionDao.countPending() > 0
     }
 
     private fun muscleLabel(muscle: pl.filebit.gymtracker.data.entity.MuscleGroup): String =

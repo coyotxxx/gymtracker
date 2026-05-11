@@ -257,6 +257,38 @@ object AppModule {
         }
     }
 
+    /**
+     * Migracja 54→55 (v1.15.0 / audit 2026-05-10):
+     * Dodaje entity PendingPeriodizationDecision — audit trail decyzji AI o cyklu.
+     * AI proponuje, user widzi w karcie "AI TRENER PROPONUJE", explicit Apply/Modify/Dismiss.
+     *
+     * ADDITIVE — tylko CREATE TABLE, brak ALTER → bezpieczne dla istniejących wierszy.
+     * Lekcja z v1.13.0: nowe pola wymagają entity match. Tu pole NIE jest dodawane do
+     * istniejących tabel — tylko nowa tabela, więc nie ma ryzyka schema mismatch.
+     */
+    private val MIGRATION_54_55 = object : Migration(54, 55) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `pending_periodization_decisions` (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `createdAt` INTEGER NOT NULL,
+                    `currentMesoId` INTEGER NOT NULL,
+                    `algorithmProposalJson` TEXT NOT NULL,
+                    `aiDecisionJson` TEXT NOT NULL,
+                    `aiReasoning` TEXT NOT NULL,
+                    `confidence` REAL NOT NULL,
+                    `status` TEXT NOT NULL DEFAULT 'PENDING',
+                    `resolvedAt` INTEGER,
+                    `resolvedAction` TEXT
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_pending_periodization_decisions_status` ON `pending_periodization_decisions` (`status`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_pending_periodization_decisions_createdAt` ON `pending_periodization_decisions` (`createdAt`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -266,7 +298,8 @@ object AppModule {
                 MIGRATION_50_51,
                 MIGRATION_51_52,
                 MIGRATION_52_53,
-                MIGRATION_53_54
+                MIGRATION_53_54,
+                MIGRATION_54_55
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
@@ -318,6 +351,7 @@ object AppModule {
     @Provides fun provideMonthlyRollupDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MonthlyRollupDao = db.monthlyRollupDao()
     @Provides fun provideQuarterlyRollupDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao = db.quarterlyRollupDao()
     @Provides fun provideTrainingMesocycleDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao = db.trainingMesocycleDao()
+    @Provides fun providePendingPeriodizationDecisionDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao = db.pendingPeriodizationDecisionDao()
 
     @Provides
     @Singleton

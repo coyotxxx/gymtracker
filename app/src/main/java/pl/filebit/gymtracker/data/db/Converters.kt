@@ -155,4 +155,10 @@ class Converters {
     @TypeConverter fun stringToWorkoutContext(s: String): pl.filebit.gymtracker.data.entity.WorkoutContext =
         runCatching { pl.filebit.gymtracker.data.entity.WorkoutContext.valueOf(s) }
             .getOrDefault(pl.filebit.gymtracker.data.entity.WorkoutContext.NORMAL)
+
+    // v1.15.0 — PendingPeriodizationDecision
+    @TypeConverter fun decisionStatusToString(d: pl.filebit.gymtracker.data.entity.DecisionStatus): String = d.name
+    @TypeConverter fun stringToDecisionStatus(s: String): pl.filebit.gymtracker.data.entity.DecisionStatus =
+        runCatching { pl.filebit.gymtracker.data.entity.DecisionStatus.valueOf(s) }
+            .getOrDefault(pl.filebit.gymtracker.data.entity.DecisionStatus.PENDING)
 }

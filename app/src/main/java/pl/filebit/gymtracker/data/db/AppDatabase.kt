@@ -108,9 +108,10 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.WeeklyRollup::class,
         pl.filebit.gymtracker.data.entity.MonthlyRollup::class,
         pl.filebit.gymtracker.data.entity.QuarterlyRollup::class,
-        pl.filebit.gymtracker.data.entity.TrainingMesocycle::class
+        pl.filebit.gymtracker.data.entity.TrainingMesocycle::class,
+        pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision::class
     ],
-    version = 54,
+    version = 55,
     // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
     exportSchema = true
 )
@@ -153,6 +154,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun monthlyRollupDao(): pl.filebit.gymtracker.data.db.dao.MonthlyRollupDao
     abstract fun quarterlyRollupDao(): pl.filebit.gymtracker.data.db.dao.QuarterlyRollupDao
     abstract fun trainingMesocycleDao(): pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
+    abstract fun pendingPeriodizationDecisionDao(): pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao
 
     companion object {
         const val NAME = "gymtracker.db"

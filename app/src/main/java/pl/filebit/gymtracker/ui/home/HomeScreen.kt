@@ -126,6 +126,25 @@ fun HomeScreen(
                 )
             }
 
+            // v1.15.0: karta "AI TRENER PROPONUJE" — gdy są pending decisions.
+            // Wyświetlane NA TOP (above Deload Card) bo to wymaga decyzji usera.
+            state.pendingDecisions.firstOrNull()?.let { decision ->
+                item {
+                    AiProposalCard(
+                        decision = decision,
+                        onAccept = {
+                            vm.acceptPendingDecision(decision.id) { msg ->
+                                scope.launch { snackbar.showSnackbar(msg) }
+                            }
+                        },
+                        onDismiss = {
+                            vm.dismissPendingDecision(decision.id)
+                            scope.launch { snackbar.showSnackbar("Propozycja odrzucona") }
+                        }
+                    )
+                }
+            }
+
             // Deload card — 3 stany: Suggestion (Zastosuj/Wyjaśnij/Anuluj),
             // Active (trwa X dni), Active+isFinished (czas wrócić do oryginalnych wag).
             when (val card = state.deloadCard) {
@@ -2411,6 +2430,155 @@ private fun RowScope.ReadinessMini(label: String, value: Int, weight: String) {
             ),
             color = DarkOnSurface
         )
+    }
+}
+
+/**
+ * v1.15.0 — karta "AI TRENER PROPONUJE" pokazywana NA TOP Home gdy są pending decisions.
+ *
+ * Workflow:
+ *  1. `ProactiveAiCheckWorker` (lub manual call AI) → tool `propose_periodization_action`
+ *     zapisuje `PendingPeriodizationDecision` (status=PENDING).
+ *  2. `HomeViewModel` obserwuje `pendingDecisionDao.observePending()` → state.pendingDecisions
+ *  3. Ta karta renderuje pierwszą pending decision (najczęściej jest tylko jedna).
+ *  4. [Zastosuj] → orchestrator.applyTransition + markAccepted
+ *  5. [Pomiń] → markDismissed (status zmienia się, karta znika z observePending)
+ *  6. [Wyjaśnij] → dialog z aiReasoning (markdown)
+ *
+ * Visual: AccentOrange accent (kluczowa akcja), gradient bg, AI emoji.
+ */
+@androidx.compose.runtime.Composable
+private fun AiProposalCard(
+    decision: pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision,
+    onAccept: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    var showReasoningDialog by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val accent = pl.filebit.gymtracker.ui.theme.AccentOrange
+
+    // Parsuj recommended_next_phase z aiDecisionJson do wyświetlenia label'a
+    val phaseLabel = androidx.compose.runtime.remember(decision.aiDecisionJson) {
+        runCatching {
+            val obj = kotlinx.serialization.json.Json.parseToJsonElement(decision.aiDecisionJson) as kotlinx.serialization.json.JsonObject
+            val phaseStr = (obj["recommended_next_phase"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                ?: return@runCatching "—"
+            val phase = pl.filebit.gymtracker.data.entity.MesocyclePhase.valueOf(phaseStr)
+            pl.filebit.gymtracker.ai.PeriodizationPromptHelper.phaseLabelPl(phase)
+        }.getOrDefault("—")
+    }
+
+    if (showReasoningDialog) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showReasoningDialog = false },
+            title = {
+                androidx.compose.material3.Text(
+                    "🤖 Uzasadnienie AI",
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                pl.filebit.gymtracker.ui.components.AiMarkdown(
+                    text = decision.aiReasoning,
+                    contentColor = DarkOnSurface
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { showReasoningDialog = false }) {
+                    androidx.compose.material3.Text("Zamknij", color = accent, fontWeight = FontWeight.Bold)
+                }
+            }
+        )
+    }
+
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = accent.copy(alpha = 0.14f)
+        ),
+        border = BorderStroke(1.5.dp, accent.copy(alpha = 0.55f)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                androidx.compose.material3.Text(
+                    "🤖",
+                    style = androidx.compose.material3.MaterialTheme.typography.titleLarge
+                )
+                Spacer(Modifier.width(10.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    androidx.compose.material3.Text(
+                        "AI TRENER PROPONUJE",
+                        style = androidx.compose.material3.MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.4.sp
+                        ),
+                        color = accent
+                    )
+                    androidx.compose.material3.Text(
+                        "Zmiana fazy cyklu: $phaseLabel",
+                        style = androidx.compose.material3.MaterialTheme.typography.bodyLarge.copy(
+                            fontWeight = FontWeight.ExtraBold
+                        ),
+                        color = DarkOnSurface
+                    )
+                }
+                androidx.compose.material3.IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    androidx.compose.material3.Icon(
+                        androidx.compose.material.icons.Icons.Filled.Close,
+                        contentDescription = "Pomiń",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            // Reasoning preview (max 4 linie)
+            androidx.compose.material3.Text(
+                text = decision.aiReasoning,
+                style = androidx.compose.material3.MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface,
+                maxLines = 4,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+            )
+            Spacer(Modifier.height(4.dp))
+            androidx.compose.material3.Text(
+                "Pewność: ${(decision.confidence * 100).toInt()}%",
+                style = androidx.compose.material3.MaterialTheme.typography.labelSmall,
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(12.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                androidx.compose.material3.Button(
+                    onClick = onAccept,
+                    modifier = Modifier.weight(1.5f),
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = accent,
+                        contentColor = androidx.compose.ui.graphics.Color.White
+                    ),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text("Zastosuj", fontWeight = FontWeight.Bold)
+                }
+                androidx.compose.material3.OutlinedButton(
+                    onClick = { showReasoningDialog = true },
+                    modifier = Modifier.weight(1f),
+                    colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                        contentColor = accent
+                    ),
+                    border = BorderStroke(1.dp, accent.copy(alpha = 0.55f)),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    androidx.compose.material3.Text("Wyjaśnij", fontSize = 13.sp)
+                }
+            }
+        }
     }
 }
 

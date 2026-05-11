@@ -29,8 +29,10 @@ import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
+import pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao
 import pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
 import pl.filebit.gymtracker.data.entity.MesocyclePhase
+import pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision
 import pl.filebit.gymtracker.data.entity.TrainingMesocycle
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
@@ -70,7 +72,8 @@ data class HomeUiState(
     val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
     val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
     val dismissedCards: Set<String> = emptySet(),        // v1.10 — generyczny dismiss per cardKey
-    val periodizationState: PeriodizationState = PeriodizationState.NoData  // v1.14.0 — datowany mesocykl
+    val periodizationState: PeriodizationState = PeriodizationState.NoData,  // v1.14.0 — datowany mesocykl
+    val pendingDecisions: List<PendingPeriodizationDecision> = emptyList()    // v1.15.0 — AI propozycje
 )
 
 data class NextPlannedDay(
@@ -106,7 +109,8 @@ class HomeViewModel @Inject constructor(
     private val readinessAnalyzer: TrainingReadinessAnalyzer,
     private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
     private val mesoDao: TrainingMesocycleDao,
-    private val periodizationOrchestrator: PeriodizationOrchestrator
+    private val periodizationOrchestrator: PeriodizationOrchestrator,
+    private val pendingDecisionDao: PendingPeriodizationDecisionDao  // v1.15.0
 ) : ViewModel() {
 
     init {
@@ -123,19 +127,30 @@ class HomeViewModel @Inject constructor(
     // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
     private val deloadRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
 
-    // v1.14.0: combine has typed overloads up to arity 5. Wrapping 2 flows w jedno żeby
+    // v1.14.0/v1.15.0: combine has typed overloads up to arity 5. Wrapping 4 flows w jedno żeby
     // zostać w typowanym combine (zamiast vararg z Flow<*> i castów).
-    private val triggersAndMeso = combine(deloadRefresh, recoveryCardRefresh, mesoDao.observeActive()) {
-        d, rc, m -> Triple(d, rc, m)
-    }
+    private data class SecondaryFlows(
+        val deloadTrigger: Long,
+        val recoveryTrigger: Long,
+        val activeMeso: TrainingMesocycle?,
+        val pendingDecisions: List<PendingPeriodizationDecision>
+    )
+
+    private val secondaryFlows = combine(
+        deloadRefresh,
+        recoveryCardRefresh,
+        mesoDao.observeActive(),
+        pendingDecisionDao.observePending()
+    ) { d, rc, m, pd -> SecondaryFlows(d, rc, m, pd) }
 
     val state: StateFlow<HomeUiState> = combine(
         workoutRepo.observeActive(),
         workoutRepo.observeRecent(4),
         planRepo.observeAllPlans(),
-        triggersAndMeso
-    ) { active, recent, plans, triggers ->
-        val activeMeso: TrainingMesocycle? = triggers.third
+        secondaryFlows
+    ) { active, recent, plans, secondary ->
+        val activeMeso: TrainingMesocycle? = secondary.activeMeso
+        val pendingDecisions: List<PendingPeriodizationDecision> = secondary.pendingDecisions
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
@@ -318,7 +333,8 @@ class HomeViewModel @Inject constructor(
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD
             ).filter { dismissedCardsPrefs.isDismissedToday(it) }.toSet(),
-            periodizationState = periodizationState
+            periodizationState = periodizationState,
+            pendingDecisions = pendingDecisions  // v1.15.0
         )
     }.stateIn(
         scope = viewModelScope,
@@ -462,6 +478,67 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             runCatching { periodizationOrchestrator.extendCurrentPhase(mesoId, addWeeks) }
             onDone()
+        }
+    }
+
+    /**
+     * v1.15.0 — user kliknął [Zastosuj] w karcie "AI TRENER PROPONUJE".
+     * Parsuje AI decision JSON, wykonuje orchestrator.applyTransition + markAccepted.
+     */
+    fun acceptPendingDecision(decisionId: Long, onDone: (String) -> Unit = {}) {
+        viewModelScope.launch {
+            runCatching {
+                val decision = pendingDecisionDao.getById(decisionId)
+                    ?: throw IllegalStateException("Decyzja nie istnieje")
+
+                // Parsuj AI decision JSON żeby wyciągnąć parametry
+                val jsonObj = kotlinx.serialization.json.Json.parseToJsonElement(decision.aiDecisionJson) as? kotlinx.serialization.json.JsonObject
+                    ?: throw IllegalStateException("Niepoprawny JSON decyzji AI")
+
+                val phaseStr = (jsonObj["recommended_next_phase"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    ?: throw IllegalStateException("Brak recommended_next_phase")
+                val phase = MesocyclePhase.valueOf(phaseStr)
+
+                val startDateStr = (jsonObj["planned_start_date"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    ?: throw IllegalStateException("Brak planned_start_date")
+                val df = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
+                val plannedStartMs = df.parse(startDateStr)?.time
+                    ?: throw IllegalStateException("Niepoprawna data: $startDateStr")
+
+                val durationWeeks = (jsonObj["planned_duration_weeks"] as? kotlinx.serialization.json.JsonPrimitive)
+                    ?.content?.toIntOrNull() ?: 3
+
+                // fromPhase = obecna faza aktywnego mesocyklu (z bazy, nie z JSON-a)
+                val currentMeso = mesoDao.getActive()
+                    ?: throw IllegalStateException("Brak aktywnego mesocyklu")
+
+                val proposal = pl.filebit.gymtracker.data.repository.TransitionProposal(
+                    fromPhase = currentMeso.phase,
+                    recommendedNext = phase,
+                    plannedStartDate = plannedStartMs,
+                    plannedDurationWeeks = durationWeeks,
+                    reasoning = decision.aiReasoning,
+                    confidence = decision.confidence
+                )
+                periodizationOrchestrator.applyTransition(
+                    proposal = proposal,
+                    currentMesoId = decision.currentMesoId,
+                    aiDecision = decision.aiReasoning.take(200)
+                )
+                pendingDecisionDao.markAccepted(decisionId, System.currentTimeMillis())
+                onDone("Faza zmieniona na ${pl.filebit.gymtracker.ai.PeriodizationPromptHelper.phaseLabelPl(phase)}")
+            }.onFailure {
+                onDone("Błąd: ${it.message}")
+            }
+        }
+    }
+
+    /**
+     * v1.15.0 — user kliknął X / "Pomiń" w karcie. Nie zmienia cyklu, tylko ukrywa propozycję.
+     */
+    fun dismissPendingDecision(decisionId: Long) {
+        viewModelScope.launch {
+            pendingDecisionDao.markDismissed(decisionId, System.currentTimeMillis())
         }
     }
 

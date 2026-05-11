@@ -30,6 +30,7 @@ object AiTools {
         add(toolGetRollups())
         add(toolGetExerciseHistory())
         add(toolGetBodyHistory())
+        add(toolProposePeriodizationAction())  // v1.15.0
     }
 
     /** Lista nazw narzędzi (do walidacji w handlerze). */
@@ -38,8 +39,78 @@ object AiTools {
         "get_events",
         "get_rollups",
         "get_exercise_history",
-        "get_body_history"
+        "get_body_history",
+        "propose_periodization_action"  // v1.15.0
     )
+
+    /**
+     * v1.15.0 — AI proponuje konkretną akcję periodyzacyjną.
+     *
+     * **Bezpieczeństwo:** Tool RO — NIE modyfikuje bazy bezpośrednio. Zapisuje
+     * PendingPeriodizationDecision ze status=PENDING. User MUSI explicit zaakceptować
+     * przez UI ("AI TRENER PROPONUJE" karta na Home → button [Zastosuj]).
+     *
+     * Używany przez:
+     *  - `ProactiveAiCheckWorker` gdy `PeriodizationOrchestrator.pulse()` zwraca TransitionDue
+     *  - `AiTrainerScreen` gdy user pyta "co teraz?" w kontekście cyklu
+     */
+    private fun toolProposePeriodizationAction(): JsonObject = buildJsonObject {
+        put("name", "propose_periodization_action")
+        put("description", """
+            Zaproponuj konkretną akcję periodyzacyjną (przejście fazy mesocyklu) na podstawie
+            sygnałów: bieżący mesocykl (faza, weekInPhase, dni do końca), algorithm proposal
+            (recommendedNext, plannedStartDate), stagnation report, RPE trend, sen/HRV.
+
+            Tool NIE wykonuje akcji — tylko zapisuje propozycję jako PendingPeriodizationDecision
+            (status=PENDING) widoczną dla usera w karcie "AI TRENER PROPONUJE" na Home.
+            User explicit akceptuje przez [Zastosuj].
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("action") {
+                    put("type", "string")
+                    put("description", "Typ akcji: ACCEPT_ALGORITHM (zgódź się z algorytmem), SHIFT_START (przesuń datę startu), MODIFY_PARAMS (zmień volume/intensity), REJECT (odrzuć - zostań na obecnej fazie jeszcze)")
+                }
+                putJsonObject("recommended_next_phase") {
+                    put("type", "string")
+                    put("description", "Docelowa faza: ACCUMULATION, INTENSIFICATION, DELOAD, PEAKING, RECOVERY")
+                }
+                putJsonObject("planned_start_date") {
+                    put("type", "string")
+                    put("description", "Planowany start nowej fazy w formacie YYYY-MM-DD")
+                }
+                putJsonObject("planned_duration_weeks") {
+                    put("type", "integer")
+                    put("description", "Długość nowej fazy w tygodniach (1-6)")
+                }
+                putJsonObject("volume_modifier") {
+                    put("type", "number")
+                    put("description", "Optional: nadpisz default volume scale dla nowej fazy (0.5-1.2)")
+                }
+                putJsonObject("intensity_modifier") {
+                    put("type", "number")
+                    put("description", "Optional: nadpisz default intensity scale dla nowej fazy (0.7-1.15)")
+                }
+                putJsonObject("confidence") {
+                    put("type", "number")
+                    put("description", "Pewność decyzji 0.0-1.0. Wyższa gdy zgadzasz się z algorytmem + masz dobre dane (sen/HRV).")
+                }
+                putJsonObject("reasoning") {
+                    put("type", "string")
+                    put("description", "Szczegółowe uzasadnienie dla usera (wyświetlone w karcie 'Wyjaśnij więcej'). Cytuj liczby z kontekstu (RPE, sen, stagnacja). Po polsku.")
+                }
+            }
+            putJsonArray("required") {
+                add("action")
+                add("recommended_next_phase")
+                add("planned_start_date")
+                add("planned_duration_weeks")
+                add("confidence")
+                add("reasoning")
+            }
+        }
+    }
 
     private fun toolGetWorkouts(): JsonObject = buildJsonObject {
         put("name", "get_workouts")
