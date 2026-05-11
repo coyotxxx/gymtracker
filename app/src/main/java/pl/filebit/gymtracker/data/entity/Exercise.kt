@@ -42,7 +42,15 @@ enum class MetricType {
     DURATION_WEIGHT     // czas + ciężar (farmer's walk, plank z obciążeniem)
 }
 
-@Entity(tableName = "exercises")
+@Entity(
+    tableName = "exercises",
+    indices = [
+        // v1.20.0 — indices dla wyszukiwań w bibliotece ćwiczeń (Exercises screen, AI filter).
+        androidx.room.Index("name"),
+        androidx.room.Index("primaryMuscle"),
+        androidx.room.Index("isFavorite")
+    ]
+)
 data class Exercise(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String,

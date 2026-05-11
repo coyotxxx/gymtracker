@@ -289,6 +289,25 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.20.0 — ADDITIVE migration: CREATE INDEX dla wyszukiwań w bibliotece ćwiczeń i diecie.
+     * Wszystkie indices dodawane przez `CREATE INDEX IF NOT EXISTS` — idempotentne, bezpieczne
+     * dla danych usera (żadne ALTER TABLE / DROP / data manipulation).
+     */
+    private val MIGRATION_55_56 = object : Migration(55, 56) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            // Exercise — search po nazwie (Library), filter po muscle, ulubione w AI generatorze
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_exercises_name` ON `exercises` (`name`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_exercises_primaryMuscle` ON `exercises` (`primaryMuscle`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_exercises_isFavorite` ON `exercises` (`isFavorite`)")
+            // FoodProduct — search po nazwie (Diet picker), filter category, ulubione, barcode lookup
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_food_products_name` ON `food_products` (`name`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_food_products_category` ON `food_products` (`category`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_food_products_isFavorite` ON `food_products` (`isFavorite`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_food_products_barcode` ON `food_products` (`barcode`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -299,7 +318,8 @@ object AppModule {
                 MIGRATION_51_52,
                 MIGRATION_52_53,
                 MIGRATION_53_54,
-                MIGRATION_54_55
+                MIGRATION_54_55,
+                MIGRATION_55_56
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

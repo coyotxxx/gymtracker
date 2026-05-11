@@ -17,7 +17,16 @@ enum class FoodCategory {
  * Produkt spożywczy — pozycja na liście. Makro per 100g.
  * Seed startowy ~50 z xlsx Macieja + USDA/typowe wartości.
  */
-@Entity(tableName = "food_products")
+@Entity(
+    tableName = "food_products",
+    indices = [
+        // v1.20.0 — index dla wyszukiwania po nazwie (DietScreen search).
+        androidx.room.Index("name"),
+        androidx.room.Index("category"),
+        androidx.room.Index("isFavorite"),
+        androidx.room.Index("barcode")
+    ]
+)
 data class FoodProduct(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String,

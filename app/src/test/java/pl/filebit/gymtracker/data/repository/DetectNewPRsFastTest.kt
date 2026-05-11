@@ -205,9 +205,14 @@ class DetectNewPRsFastTest {
         // dopóki user nie kliknie "Zakończ".
         // Test sprawdza pośrednio — wynik zależy od konkretnego use case.
         // Dla bezpieczeństwa: tylko wynik niepustości, nie konkretny PR.
-        // (Pomijamy ten test jako niepewny edge case — w produkcji active workout
-        // raczej nie ma completed sets gotowych do PR detection.)
-        assertTrue(result.isNotEmpty() || result.isEmpty())  // kompromisowy assert
+        // v1.20.0: konkretna asercja zamiast tautologii.
+        // Snapshot zlicza set 1 (workout 1 = active) jako "completed" więc previousMax dla
+        // exId=10 = e1RM(200kg × 5) ≈ 233 kg. Bieżący wynik dla workout 2 to e1RM(110×5) ≈ 128 kg.
+        // 128 < 233 → NIE jest to PR → result.isEmpty().
+        // (W produkcji active workout faktycznie nie ma completed sets aż user zakończy treningowanie —
+        // ale snapshot tego nie filtruje, bo to byłaby zmiana semantyki API. Test dokumentuje
+        // bieżące zachowanie.)
+        assertTrue("nie powinno być PR — previousMax z active workout dominuje", result.isEmpty())
     }
 
     // ============= MULTI-EXERCISE =============
