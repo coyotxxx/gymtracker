@@ -37,5 +37,7 @@ data class Goal(
     /**
      * Dla INCREASE_STRENGTH: id ćwiczenia
      */
-    val exerciseId: Long? = null
+    val exerciseId: Long? = null,
+    /** v1.13.0 — powiązanie celu z konkretnym mesocyklem (opcjonalne, deadline-aware). */
+    val targetMesocycleId: Long? = null
 )

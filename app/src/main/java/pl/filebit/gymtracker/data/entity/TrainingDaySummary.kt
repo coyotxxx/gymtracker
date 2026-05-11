@@ -39,7 +39,10 @@ enum class PerformanceTrend {
  */
 @Entity(
     tableName = "training_day_summary",
-    indices = [Index(value = ["dateMs"], unique = true)]
+    indices = [
+        Index(value = ["dateMs"], unique = true),
+        Index(value = ["mesocycleId"])
+    ]
 )
 data class TrainingDaySummary(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -67,7 +70,9 @@ data class TrainingDaySummary(
     val performanceTrend: PerformanceTrend = PerformanceTrend.PROGRESS,
     /** 1-10. Z DeloadDetector + RPE × frekwencja ostatnich dni. */
     val fatigueScore: Int = 5,
-    val computedAt: Long = System.currentTimeMillis()
+    val computedAt: Long = System.currentTimeMillis(),
+    /** v1.13.0 — powiązanie z TrainingMesocycle (nullable, fundament periodyzacji). */
+    val mesocycleId: Long? = null
 ) {
     fun parsedMuscleGroups(): List<String> =
         trainedMuscleGroupsCsv.split(",").map { it.trim() }.filter { it.isNotBlank() }

@@ -26,7 +26,12 @@ enum class DietPhaseType {
  */
 @Entity(
     tableName = "diet_phases",
-    indices = [Index("startDateMs"), Index("endDateMs"), Index("createdAt")]
+    indices = [
+        Index("startDateMs"),
+        Index("endDateMs"),
+        Index("createdAt"),
+        Index("linkedTrainingMesocycleId")
+    ]
 )
 data class DietPhase(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -44,7 +49,11 @@ data class DietPhase(
     /** True = user zaakceptował (lub start automatu). */
     val accepted: Boolean = true,
     val notes: String = "",
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+    /** v1.13.0 — powiązanie z aktywnym TrainingMesocycle (gdy dieta sync z fazą treningu). */
+    val linkedTrainingMesocycleId: Long? = null,
+    /** v1.13.0 — JSON snapshot fazy treningu (faza/weekInPhase/targetRpe) gdy dieta startowała. */
+    val trainingPhaseSnapshot: String? = null
 ) {
     fun isActiveAt(timestampMs: Long): Boolean =
         timestampMs >= startDateMs && (endDateMs == null || timestampMs < endDateMs)
