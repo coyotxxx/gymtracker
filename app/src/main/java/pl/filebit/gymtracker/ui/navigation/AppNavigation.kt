@@ -108,10 +108,25 @@ private val tabs = listOf(
 )
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(
+    /** v1.14.1: route do nawigacji po splash (z intent.extras push notifikacji). null = pozostań na Home. */
+    initialNavigation: String? = null,
+    /** v1.14.1: callback gdy initialNavigation został skonsumowany. */
+    onInitialNavigationConsumed: () -> Unit = {}
+) {
     val navController = rememberNavController()
     val backStack by navController.currentBackStackEntryAsState()
     val currentRoute = backStack?.destination?.route
+
+    // v1.14.1: po splash nawiguj do initialNavigation jeśli ustawione (z push z workerów).
+    // Konsumuj raz — onConsumed reset na null żeby kolejny recompose nie nawigował znowu.
+    LaunchedEffect(initialNavigation) {
+        val route = initialNavigation
+        if (!route.isNullOrBlank()) {
+            navController.navigate(route)
+            onInitialNavigationConsumed()
+        }
+    }
 
     // Bottom nav widoczny też na ekranach aktywnego treningu — user może
     // przeglądać aplikację bez konieczności kończenia treningu.

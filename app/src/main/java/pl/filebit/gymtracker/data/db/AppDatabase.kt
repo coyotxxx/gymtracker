@@ -111,7 +111,8 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.TrainingMesocycle::class
     ],
     version = 54,
-    exportSchema = false
+    // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
+    exportSchema = true
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {

@@ -41,6 +41,8 @@ markwon = "4.6.2"
 
 # Testing
 junit = "4.13.2"
+androidxTestExtJunit = "1.2.1"
+androidxTestRunner = "1.6.2"
 
 [libraries]
 # Core
@@ -100,6 +102,10 @@ markwon-linkify = { group = "io.noties.markwon", name = "linkify", version.ref =
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+# androidTest dla MigrationTestHelper (v1.14.1)
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

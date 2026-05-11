@@ -37,13 +37,13 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var workoutRepo: WorkoutRepository
     @Inject lateinit var profileRepo: UserProfileRepository
     @Inject lateinit var unfinishedScheduler: UnfinishedWorkoutScheduler
-    @Inject lateinit var proactiveAiScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler
-    @Inject lateinit var dietAdjustmentScheduler: pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
     @Inject lateinit var dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
     @Inject lateinit var eventBackfillService: pl.filebit.gymtracker.ai.EventBackfillService
     @Inject lateinit var periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService
     @Inject lateinit var mesocycleBackfillService: pl.filebit.gymtracker.data.repository.MesocycleBackfillService
     @Inject lateinit var periodizationOrchestrator: pl.filebit.gymtracker.data.repository.PeriodizationOrchestrator
+    // v1.14.1: zunifikowane reschedule (single source of truth, używane też przez BootCompletedReceiver)
+    @Inject lateinit var workerRescheduler: pl.filebit.gymtracker.service.WorkerRescheduler
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -60,16 +60,9 @@ class GymTrackerApp : Application(), Configuration.Provider {
             exerciseSeeder.seedIfEmpty()
             foodProductSeeder.seedIfEmpty()
             recipeSeeder.seedIfEmpty()
-            // Reschedule proactive AI check przy starcie aplikacji (np. po update)
-            val profile = profileRepo.get()
-            if (profile.aiProactiveChecksEnabled) {
-                proactiveAiScheduler.schedulePeriodic()
-            }
-            if (dietPrefs.load().autoCheckAdjustments) {
-                dietAdjustmentScheduler.schedulePeriodic()
-            } else {
-                dietAdjustmentScheduler.cancel()
-            }
+            // v1.14.1: zunifikowane reschedule (WorkerRescheduler — single source of truth,
+            // używane też przez BootCompletedReceiver). Wcześniej logika była zduplikowana.
+            workerRescheduler.rescheduleAll(profileRepo.get(), dietPrefs.load())
             // v1.11.60: backfill historycznych eventow (PR/INJURY/GAP) z istniejacych
             // treningow przy pierwszym starcie po update do v1.11.59+. Idempotentny -
             // jesli juz sa eventy nic nie robi.

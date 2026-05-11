@@ -15,9 +15,11 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 348
-        versionName = "1.14.0"
+        versionCode = 349
+        versionName = "1.14.1"
         vectorDrawables { useSupportLibrary = true }
+        // v1.14.1: androidTest infra dla MigrationTestHelper
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -70,6 +72,13 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+// v1.14.1: eksportuj Room schema JSON do app/schemas/ (per version DB).
+// Wymagane dla MigrationTestHelper żeby walidować że migracja produkuje schemat
+// matching @Entity definicji. Bez tego v1.13.0 schema mismatch crash mógłby się powtórzyć.
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
 }
 
 dependencies {
@@ -142,4 +151,12 @@ dependencies {
 
     // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
     testImplementation(libs.junit)
+
+    // androidTest — Room migration testing (v1.14.1)
+    // Wymaga emulatora / urządzenia — uruchamiane przez ./gradlew :app:connectedDebugAndroidTest
+    // CI obecnie tylko :app:testDebugUnitTest (bo brak emulatora w GitHub Actions).
+    // Testy lokalne na fizycznym urządzeniu / emulatorze.
+    androidTestImplementation(libs.room.testing)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.runner)
 }

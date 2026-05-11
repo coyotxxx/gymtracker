@@ -16,6 +16,10 @@
     <!-- Auto-update z GitHub Releases -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
+    <!-- v1.14.1: BootCompletedReceiver — reschedule periodic workery po restarcie urządzenia.
+         Bez tego ProactiveAiCheck i DietAutoAdjustment przestają działać po reboot. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <!-- Camera — robienie zdjęć progresu + skaner kodów (v0.95) -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
@@ -81,6 +85,19 @@
         <receiver
             android:name=".service.MealStatusReceiver"
             android:exported="false" />
+
+        <!-- v1.14.1: BootCompletedReceiver — wskrzesza workery po reboot urządzenia.
+             Słucha BOOT_COMPLETED + variants dla OEM-ów (Xiaomi/HTC quickboot). -->
+        <receiver
+            android:name=".service.BootCompletedReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
 
         <!-- FileProvider dla aparatu — share URI dla TakePicture -->
         <provider
