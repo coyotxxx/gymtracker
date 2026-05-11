@@ -24,6 +24,7 @@ import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CloudUpload
+import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.FitnessCenter
@@ -89,6 +90,7 @@ fun ProfileScreen(
     onOpenGoals: () -> Unit,
     onOpenDiet: () -> Unit,
     onOpenGlossary: () -> Unit,
+    onOpenPeriodizationPlan: () -> Unit = {},  // v1.16.0
     onOpenAchievements: () -> Unit = {},
     onRestartOnboarding: () -> Unit = {},
     vm: ProfileViewModel = hiltViewModel()
@@ -147,6 +149,15 @@ fun ProfileScreen(
                     title = stringResource(R.string.stats_title),
                     subtitle = "Wykresy, mapa mięśni, standardy siłowe, PR",
                     onClick = onOpenStats
+                )
+            }
+            // v1.16.0 — Plan cyklu (oś czasu mezo-cykli)
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Timeline,
+                    title = "Plan cyklu",
+                    subtitle = "Mezocykle: aktywna faza + historia",
+                    onClick = onOpenPeriodizationPlan
                 )
             }
             item {

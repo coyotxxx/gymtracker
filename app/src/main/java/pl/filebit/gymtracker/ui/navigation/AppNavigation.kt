@@ -367,6 +367,7 @@ fun AppNavigation(
                     onOpenDiet = { navController.navigate(Screen.Diet.route) },
                     onOpenGlossary = { navController.navigate(Screen.Glossary.route) },
                     onOpenAchievements = { navController.navigate(Screen.Achievements.route) },
+                    onOpenPeriodizationPlan = { navController.navigate(Screen.PeriodizationPlan.route) },  // v1.16.0
                     onRestartOnboarding = {
                         // KOLEJNOŚĆ: navigate najpierw, potem mark — analogicznie
                         // do callbacków z wizardu. Zmiana state w ShellVM po
@@ -552,6 +553,12 @@ fun AppNavigation(
             }
             composable(Screen.Glossary.route) {
                 GlossaryScreen(onBack = { navController.popBackStack() })
+            }
+            // v1.16.0 — ekran "Plan cyklu" (oś czasu mezo-cykli)
+            composable(Screen.PeriodizationPlan.route) {
+                pl.filebit.gymtracker.ui.periodization.PeriodizationPlanScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.Diet.route) {
                 pl.filebit.gymtracker.ui.diet.DietScreen(

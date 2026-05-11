@@ -21,6 +21,15 @@ val SuccessGreen = Color(0xFF4CAF7B)
 val ErrorRed = Color(0xFFE05B5B)
 val InfoBlue = Color(0xFF6FA8E0)
 
+// v1.16.0 — Periodization phase colors
+// Konsystentne między ekranem "Plan cyklu" a kartami na Home.
+// Każda faza ma swój ton: niebieski/budowanie, pomarańczowy/siła, zielony/regeneracja, fiolet/peak.
+val AccumulationBlue = Color(0xFF4A90E2)
+val IntensificationOrange = Color(0xFFFF9800)
+val DeloadGreen = Color(0xFF66BB6A)
+val PeakingPurple = Color(0xFF9C27B0)
+val RecoveryTeal = Color(0xFF26A69A)
+
 // Light theme (fallback)
 val LightBg = Color(0xFFFAFAFC)
 val LightSurface = Color(0xFFFFFFFF)

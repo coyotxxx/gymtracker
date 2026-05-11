@@ -41,6 +41,8 @@ sealed class Screen(val route: String) {
     object TrainingSettings : Screen("settings/training")
     object Goals : Screen("goals")
     object Glossary : Screen("glossary")
+    // v1.16.0 — ekran "Plan cyklu" (oś czasu mezo-cykli)
+    object PeriodizationPlan : Screen("periodization/plan")
     object Diet : Screen("diet")
     object DietOnboarding : Screen("diet/onboarding")
     object DietAdherenceReport : Screen("diet/adherence")
