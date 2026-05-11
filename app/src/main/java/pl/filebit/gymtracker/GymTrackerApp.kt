@@ -42,6 +42,8 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var dietPrefs: pl.filebit.gymtracker.data.repository.DietPreferences
     @Inject lateinit var eventBackfillService: pl.filebit.gymtracker.ai.EventBackfillService
     @Inject lateinit var periodRollupService: pl.filebit.gymtracker.ai.PeriodRollupService
+    @Inject lateinit var mesocycleBackfillService: pl.filebit.gymtracker.data.repository.MesocycleBackfillService
+    @Inject lateinit var periodizationOrchestrator: pl.filebit.gymtracker.data.repository.PeriodizationOrchestrator
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -75,6 +77,12 @@ class GymTrackerApp : Application(), Configuration.Provider {
             // v1.11.66: zamknij wszystkie zalegle okresy (week/month/quarter).
             // Idempotentny - rollup raz utworzony nie jest re-computowany.
             runCatching { periodRollupService.closeAllPeriodsIfNeeded() }
+            // v1.13.0: jednorazowa rekonstrukcja historii mezo-cykli z TrainingEvent
+            // DELOAD_DETECTED + workoutow ostatnich 12 tyg. Idempotentny.
+            runCatching { mesocycleBackfillService.backfillFromHistory() }
+            // v1.14.0: utrzymaj aktywny mezo-cykl. Jesli brak — tworzy z computed phase.
+            // Jesli plannedEnd minal — zwraca TransitionDue (UI pokaze propozycje).
+            runCatching { periodizationOrchestrator.pulse() }
         }
         observeActiveWorkoutForReminder()
     }

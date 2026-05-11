@@ -29,8 +29,13 @@ import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.ai.TrainingPhase
 import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
 import pl.filebit.gymtracker.ai.TrainingPhaseStatus
+import pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
+import pl.filebit.gymtracker.data.entity.MesocyclePhase
+import pl.filebit.gymtracker.data.entity.TrainingMesocycle
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.Workout
+import pl.filebit.gymtracker.data.repository.PeriodizationOrchestrator
+import pl.filebit.gymtracker.data.repository.PeriodizationState
 import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
@@ -64,7 +69,8 @@ data class HomeUiState(
     val recoveryCardDismissed: Boolean = false,          // v1.7.5 — user zamknął kartę na dziś
     val trainingReadiness: TrainingReadiness? = null,   // v1.9.0 — kompozyt
     val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
-    val dismissedCards: Set<String> = emptySet()         // v1.10 — generyczny dismiss per cardKey
+    val dismissedCards: Set<String> = emptySet(),        // v1.10 — generyczny dismiss per cardKey
+    val periodizationState: PeriodizationState = PeriodizationState.NoData  // v1.14.0 — datowany mesocykl
 )
 
 data class NextPlannedDay(
@@ -98,8 +104,18 @@ class HomeViewModel @Inject constructor(
     private val dismissedCardsPrefs: pl.filebit.gymtracker.data.repository.DismissedCardsPrefs,
     private val muscleRecoveryAnalyzer: MuscleRecoveryAnalyzer,
     private val readinessAnalyzer: TrainingReadinessAnalyzer,
-    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService
+    private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
+    private val mesoDao: TrainingMesocycleDao,
+    private val periodizationOrchestrator: PeriodizationOrchestrator
 ) : ViewModel() {
+
+    init {
+        // v1.14.0: utrzymaj aktywny mesocykl przy wejściu na Home (idempotentne).
+        // Tworzy initial cykl gdy brak + updateuje weekInPhase.
+        viewModelScope.launch {
+            runCatching { periodizationOrchestrator.pulse() }
+        }
+    }
 
     private val recoveryCardRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
 
@@ -107,13 +123,19 @@ class HomeViewModel @Inject constructor(
     // Bez tego SharedPrefs się zmienia ale combine() nie wie o tym — kafel zostaje na ekranie.
     private val deloadRefresh = kotlinx.coroutines.flow.MutableStateFlow(0L)
 
+    // v1.14.0: combine has typed overloads up to arity 5. Wrapping 2 flows w jedno żeby
+    // zostać w typowanym combine (zamiast vararg z Flow<*> i castów).
+    private val triggersAndMeso = combine(deloadRefresh, recoveryCardRefresh, mesoDao.observeActive()) {
+        d, rc, m -> Triple(d, rc, m)
+    }
+
     val state: StateFlow<HomeUiState> = combine(
         workoutRepo.observeActive(),
         workoutRepo.observeRecent(4),
         planRepo.observeAllPlans(),
-        deloadRefresh,
-        recoveryCardRefresh
-    ) { active, recent, plans, _, _ ->
+        triggersAndMeso
+    ) { active, recent, plans, triggers ->
+        val activeMeso: TrainingMesocycle? = triggers.third
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
@@ -223,6 +245,27 @@ class HomeViewModel @Inject constructor(
                 ((c.get(java.util.Calendar.DAY_OF_WEEK) + 5) % 7) + 1
             }.toSet()
 
+        // v1.14.0: mapuj aktywny mesocykl na PeriodizationState (bez wywoływania orchestrator.pulse —
+        // to robi się w init {} oraz w GymTrackerApp.onCreate, tutaj tylko read-only).
+        val now = System.currentTimeMillis()
+        val periodizationState: PeriodizationState = activeMeso?.let { m ->
+            if (now >= m.plannedEndDateMs) {
+                // plannedEnd minął — pokażemy "transition due" gdy w pulse() zostanie
+                // wygenerowany proposal. Na razie pokazuję Active z daysRemaining=0.
+                PeriodizationState.Active(
+                    meso = m,
+                    daysElapsed = m.daysSinceStart(now),
+                    daysRemaining = 0
+                )
+            } else {
+                PeriodizationState.Active(
+                    meso = m,
+                    daysElapsed = m.daysSinceStart(now),
+                    daysRemaining = m.daysRemaining(now)
+                )
+            }
+        } ?: PeriodizationState.NoData
+
         // Stan C: dla aktywnego treningu — czas trwania + progress setów
         val durationMin: Int
         val progressPct: Int
@@ -274,7 +317,8 @@ class HomeViewModel @Inject constructor(
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS,
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD
-            ).filter { dismissedCardsPrefs.isDismissedToday(it) }.toSet()
+            ).filter { dismissedCardsPrefs.isDismissedToday(it) }.toSet(),
+            periodizationState = periodizationState
         )
     }.stateIn(
         scope = viewModelScope,
@@ -393,6 +437,47 @@ class HomeViewModel @Inject constructor(
     fun dismissCard(cardKey: String) {
         dismissedCardsPrefs.dismissToday(cardKey)
         recoveryCardRefresh.value = System.currentTimeMillis()
+    }
+
+    /**
+     * v1.14.0 — zakończ bieżący deload wcześniej.
+     * Wywoływane z przycisku "Zakończ wcześniej" w TrainingPhaseCard.
+     * Zamyka deload + tworzy nowy cykl ACCUMULATION. mesoDao.observeActive emituje
+     * automatycznie, UI się odświeży.
+     */
+    fun endDeloadEarly(onDone: () -> Unit = {}) {
+        val mesoId = (state.value.periodizationState as? PeriodizationState.Active)?.meso?.id ?: return
+        viewModelScope.launch {
+            runCatching { periodizationOrchestrator.endDeloadEarly(mesoId) }
+            onDone()
+        }
+    }
+
+    /**
+     * v1.14.0 — przedłuż bieżącą fazę o N tygodni.
+     * Wywoływane z przycisku "Przedłuż o tydzień" w TrainingPhaseCard.
+     */
+    fun extendCurrentMesoPhase(addWeeks: Int = 1, onDone: () -> Unit = {}) {
+        val mesoId = (state.value.periodizationState as? PeriodizationState.Active)?.meso?.id ?: return
+        viewModelScope.launch {
+            runCatching { periodizationOrchestrator.extendCurrentPhase(mesoId, addWeeks) }
+            onDone()
+        }
+    }
+
+    /**
+     * v1.14.0 — unified check czy mogę aplikować deload TERAZ.
+     * Naprawia inkonsystencję: TrainingReadinessCard (z `phaseIsDeload`),
+     * WhoopRecoveryCard i TrainingLoadCard miały różne checki. Teraz jedno źródło prawdy.
+     */
+    fun canApplyDeloadNow(): Boolean {
+        val phase = state.value.trainingPhase?.phase
+        val mesoState = state.value.periodizationState
+        val mesoPhase = (mesoState as? PeriodizationState.Active)?.meso?.phase
+        return activePlanIdForDeload() != null &&
+                phase != TrainingPhase.DELOAD &&
+                phase != TrainingPhase.NEEDS_DELOAD &&
+                mesoPhase != MesocyclePhase.DELOAD
     }
 
     /**

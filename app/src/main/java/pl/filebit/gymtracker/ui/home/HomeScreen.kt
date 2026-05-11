@@ -248,14 +248,12 @@ fun HomeScreen(
                 val readinessDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.READINESS in state.dismissedCards
                 if (readiness.maturity != DataMaturity.LEARNING && !readinessDismissed) {
                     item {
-                        // v1.11.68: gdy faza cyklu = DELOAD, blokujemy przycisk "Zastosuj deload"
-                        // (user juz jest w deloadzie, nie ma sensu nakladac kolejnego)
-                        val phaseIsDeload = state.trainingPhase?.phase ==
-                            pl.filebit.gymtracker.ai.TrainingPhase.DELOAD
+                        // v1.14.0: unified canApplyDeloadNow zastępuje 3 osobne checki w kartach.
+                        // Sprawdza i TrainingPhase, i aktywny mesocykl (MesocyclePhase.DELOAD).
                         TrainingReadinessCard(
                             readiness = readiness,
                             muscleReport = state.muscleRecovery,
-                            canApplyDeload = vm.activePlanIdForDeload() != null && !phaseIsDeload,
+                            canApplyDeload = vm.canApplyDeloadNow(),
                             onApplyDeload = { severity ->
                                 vm.applyDeload(severity) { result ->
                                     scope.launch {
@@ -280,7 +278,7 @@ fun HomeScreen(
                     item {
                         TrainingPhaseCard(
                             status = phase,
-                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            canApplyDeload = vm.canApplyDeloadNow(),  // v1.14.0: unified check
                             onApplyDeload = {
                                 vm.applyDeload(pl.filebit.gymtracker.util.DeloadSeverity.HIGH) { result ->
                                     scope.launch {
@@ -292,6 +290,17 @@ fun HomeScreen(
                             },
                             onDismiss = {
                                 vm.dismissCard(pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE)
+                            },
+                            periodizationState = state.periodizationState,  // v1.14.0
+                            onEndDeloadEarly = {
+                                vm.endDeloadEarly {
+                                    scope.launch { snackbar.showSnackbar("Deload zakończony — start akumulacji") }
+                                }
+                            },
+                            onExtendPhase = {
+                                vm.extendCurrentMesoPhase(addWeeks = 1) {
+                                    scope.launch { snackbar.showSnackbar("Faza przedłużona o tydzień") }
+                                }
                             }
                         )
                     }
@@ -304,7 +313,7 @@ fun HomeScreen(
                     item {
                         WhoopRecoveryCard(
                             score = score,
-                            canApplyDeload = vm.activePlanIdForDeload() != null,
+                            canApplyDeload = vm.canApplyDeloadNow(),  // v1.14.0: unified
                             onApplyDeload = {
                                 vm.applyScoreBasedDeload(score) { result ->
                                     scope.launch {
@@ -1399,7 +1408,12 @@ private fun TrainingPhaseCard(
     status: TrainingPhaseStatus,
     canApplyDeload: Boolean,
     onApplyDeload: () -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    // v1.14.0: countdown z datowanego TrainingMesocycle (jeśli istnieje active)
+    periodizationState: pl.filebit.gymtracker.data.repository.PeriodizationState =
+        pl.filebit.gymtracker.data.repository.PeriodizationState.NoData,
+    onEndDeloadEarly: () -> Unit = {},
+    onExtendPhase: () -> Unit = {}
 ) {
     val (accent, emoji) = when (status.phase) {
         TrainingPhase.ACCUMULATION -> SuccessGreen to "📈"
@@ -1485,6 +1499,19 @@ private fun TrainingPhaseCard(
                 text = status.recommendation,
                 contentColor = DarkOnSurface
             )
+
+            // v1.14.0: countdown z datowanego TrainingMesocycle.
+            val activeMeso = (periodizationState as? pl.filebit.gymtracker.data.repository.PeriodizationState.Active)
+            if (activeMeso != null) {
+                Spacer(Modifier.height(12.dp))
+                MesocycleCountdownBlock(
+                    state = activeMeso,
+                    accent = accent,
+                    onEndDeloadEarly = onEndDeloadEarly,
+                    onExtendPhase = onExtendPhase
+                )
+            }
+
             if (showDeloadButton) {
                 Spacer(Modifier.height(10.dp))
                 androidx.compose.material3.Button(
@@ -1497,6 +1524,112 @@ private fun TrainingPhaseCard(
                     shape = RoundedCornerShape(12.dp)
                 ) {
                     androidx.compose.material3.Text("Zastosuj deload (-30%)", fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+    }
+}
+
+/**
+ * v1.14.0 — sub-blok TrainingPhaseCard pokazujący countdown datowanego mesocyklu.
+ *
+ * Dla DELOAD: "Dzień X z 7" + "Akumulacja od pn DD.MM" + [Zakończ wcześniej] [Przedłuż].
+ * Dla pozostałych faz: "Tydzień X z Y" + "Kolejna faza: ... od DD.MM" (bez akcji).
+ *
+ * Rozwiązanie luki ze screenshota Macieja: karta wcześniej była statyczna —
+ * teraz pokazuje konkretne daty i co dalej.
+ */
+@androidx.compose.runtime.Composable
+private fun MesocycleCountdownBlock(
+    state: pl.filebit.gymtracker.data.repository.PeriodizationState.Active,
+    accent: androidx.compose.ui.graphics.Color,
+    onEndDeloadEarly: () -> Unit,
+    onExtendPhase: () -> Unit
+) {
+    val meso = state.meso
+    val isDeload = meso.phase == pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD
+    val dayLabel = "Dzień ${state.daysElapsed + 1} z ${meso.totalDaysPlanned}"
+    val endDateFmt = java.text.SimpleDateFormat("d MMMM", java.util.Locale("pl", "PL")).format(java.util.Date(meso.plannedEndDateMs))
+    val nextPhaseLabel = when (meso.phase) {
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION -> "Intensyfikacja"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.INTENSIFICATION -> "Deload"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD -> "Akumulacja"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.PEAKING -> "Deload"
+        pl.filebit.gymtracker.data.entity.MesocyclePhase.RECOVERY -> "Akumulacja"
+    }
+    androidx.compose.foundation.layout.Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(accent.copy(alpha = 0.08f), RoundedCornerShape(10.dp))
+            .border(1.dp, accent.copy(alpha = 0.30f), RoundedCornerShape(10.dp))
+            .padding(horizontal = 12.dp, vertical = 10.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    dayLabel,
+                    style = MaterialTheme.typography.bodyMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    ),
+                    color = accent
+                )
+                Text(
+                    "${state.daysRemaining} ${if (state.daysRemaining == 1) "dzień" else "dni"} zostało",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Spacer(Modifier.height(6.dp))
+            androidx.compose.material3.LinearProgressIndicator(
+                progress = { (state.progressPct / 100f).coerceIn(0f, 1f) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(4.dp),
+                color = accent,
+                trackColor = accent.copy(alpha = 0.20f)
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                "$nextPhaseLabel od $endDateFmt",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                color = DarkOnSurfaceVariant
+            )
+
+            if (isDeload) {
+                Spacer(Modifier.height(10.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    androidx.compose.material3.OutlinedButton(
+                        onClick = onEndDeloadEarly,
+                        modifier = Modifier.weight(1f),
+                        colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                            contentColor = accent
+                        ),
+                        border = BorderStroke(1.dp, accent.copy(alpha = 0.6f)),
+                        shape = RoundedCornerShape(10.dp),
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 8.dp)
+                    ) {
+                        Text("Zakończ wcześniej", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                    }
+                    androidx.compose.material3.OutlinedButton(
+                        onClick = onExtendPhase,
+                        modifier = Modifier.weight(1f),
+                        colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                            contentColor = DarkOnSurfaceVariant
+                        ),
+                        border = BorderStroke(1.dp, DarkOnSurfaceVariant.copy(alpha = 0.4f)),
+                        shape = RoundedCornerShape(10.dp),
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 8.dp)
+                    ) {
+                        Text("Przedłuż o tydzień", fontSize = 12.sp)
+                    }
                 }
             }
         }
