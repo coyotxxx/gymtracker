@@ -92,6 +92,31 @@ fun DebugScreen(
                 )
             }
             item {
+                Spacer(Modifier.height(16.dp))
+                SectionHeader("Test deload guard (v1.22.0)")
+            }
+            item {
+                DebugAction(
+                    title = "1. Setup plan testowy",
+                    subtitle = "Tworzy plan DEBUG_DELOAD_TEST z 3 setami × 80kg",
+                    onClick = vm::setupDeloadTestPlan
+                )
+            }
+            item {
+                DebugAction(
+                    title = "2. Apply deload HIGH (factor 0.8)",
+                    subtitle = "Klikaj kilka razy — guard powinien zwracać alreadyActive=true od 2. wywołania",
+                    onClick = vm::applyTestDeload
+                )
+            }
+            item {
+                DebugAction(
+                    title = "3. Reset (cancel deload + del plan)",
+                    subtitle = "Po teście — przywróć stan początkowy",
+                    onClick = vm::resetDeloadTest
+                )
+            }
+            item {
                 Spacer(Modifier.height(8.dp))
                 if (status.isNotBlank()) {
                     StatusBox(text = status)
@@ -99,6 +124,17 @@ fun DebugScreen(
             }
         }
     }
+}
+
+@Composable
+private fun SectionHeader(text: String) {
+    Text(
+        text = text.uppercase(),
+        color = AccentOrange,
+        fontWeight = FontWeight.Bold,
+        style = MaterialTheme.typography.labelMedium,
+        modifier = Modifier.padding(start = 4.dp)
+    )
 }
 
 @Composable

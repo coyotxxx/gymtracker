@@ -25,8 +25,15 @@ import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import pl.filebit.gymtracker.data.db.AppDatabase
+import pl.filebit.gymtracker.data.db.dao.ExerciseDao
+import pl.filebit.gymtracker.data.entity.PlanExercise
+import pl.filebit.gymtracker.data.entity.PlanExerciseSet
+import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.repository.DeloadPreferences
+import pl.filebit.gymtracker.data.repository.DeloadService
 import pl.filebit.gymtracker.data.repository.LoadIncreasePreferences
+import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.util.DeloadSeverity
 import java.io.File
 import java.io.FileInputStream
 import java.text.SimpleDateFormat
@@ -34,12 +41,18 @@ import java.util.Date
 import java.util.Locale
 import javax.inject.Inject
 
+private const val DELOAD_TEST_PLAN_NAME = "DEBUG_DELOAD_TEST"
+private const val DELOAD_TEST_WEIGHT_KG = 80.0
+
 @HiltViewModel
 class DebugViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val db: AppDatabase,
     private val deloadPrefs: DeloadPreferences,
-    private val loadIncreasePrefs: LoadIncreasePreferences
+    private val loadIncreasePrefs: LoadIncreasePreferences,
+    private val planRepo: PlanRepository,
+    private val deloadService: DeloadService,
+    private val exerciseDao: ExerciseDao
 ) : ViewModel() {
 
     private val _status = MutableStateFlow("")
@@ -57,6 +70,86 @@ class DebugViewModel @Inject constructor(
         runCatching { withContext(Dispatchers.IO) { writeDbToDownloads() } }
             .onSuccess { _status.value = "✓ Zapisano: $it" }
             .onFailure { _status.value = "✗ Błąd: ${it.message}" }
+    }
+
+    fun setupDeloadTestPlan() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { createDeloadTestPlan() } }
+            .onSuccess { (planId, sets) -> _status.value = "✓ Plan ID=$planId · sety=$sets z ${DELOAD_TEST_WEIGHT_KG}kg" }
+            .onFailure { _status.value = "✗ Błąd setup: ${it.message}" }
+    }
+
+    fun applyTestDeload() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { applyTestDeloadHigh() } }
+            .onSuccess { _status.value = it }
+            .onFailure { _status.value = "✗ Błąd apply: ${it.message}" }
+    }
+
+    fun resetDeloadTest() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { resetDeloadTestData() } }
+            .onSuccess { _status.value = "✓ Reset OK: $it" }
+            .onFailure { _status.value = "✗ Błąd reset: ${it.message}" }
+    }
+
+    private suspend fun createDeloadTestPlan(): Pair<Long, Int> {
+        // Reset jeśli istnieje
+        planRepo.getAll().firstOrNull { it.name == DELOAD_TEST_PLAN_NAME }
+            ?.let { planRepo.deletePlanById(it.id) }
+        deloadPrefs.clearActiveDeload()
+
+        // Stwórz plan
+        val planId = planRepo.upsertPlan(
+            TrainingPlan(name = DELOAD_TEST_PLAN_NAME, daysOfWeek = listOf(1))
+        )
+
+        // Pobierz pierwsze 1 ćwiczenie z seed (193 ćw. po seedowaniu)
+        val exercises = exerciseDao.getAll().take(1)
+        if (exercises.isEmpty()) error("Brak ćwiczeń w bazie (seed nie odpalił?)")
+
+        var totalSets = 0
+        exercises.forEachIndexed { idx, ex ->
+            val peId = planRepo.upsertPlanExercise(
+                PlanExercise(planId = planId, exerciseId = ex.id, dayOfWeek = 1, orderIndex = idx)
+            )
+            // 3 sety z weight 80kg
+            repeat(3) { setIdx ->
+                planRepo.upsertPlanSet(
+                    PlanExerciseSet(
+                        planExerciseId = peId,
+                        setNumber = setIdx + 1,
+                        reps = 8,
+                        weightKg = DELOAD_TEST_WEIGHT_KG
+                    )
+                )
+                totalSets++
+            }
+        }
+        return planId to totalSets
+    }
+
+    private suspend fun applyTestDeloadHigh(): String {
+        val plan = planRepo.getAll().firstOrNull { it.name == DELOAD_TEST_PLAN_NAME }
+            ?: return "✗ Brak planu — najpierw Setup"
+        val result = deloadService.apply(plan.id, DeloadSeverity.HIGH)
+
+        // Po apply odczytaj aktualne wagi
+        val weights = mutableListOf<Double>()
+        planRepo.getPlanExercises(plan.id).forEach { pe ->
+            planRepo.getSetsForPlanExercise(pe.id).forEach { s ->
+                s.weightKg?.let { weights.add(it) }
+            }
+        }
+        val weightsStr = weights.joinToString(",") { "%.2f".format(it) }
+        return "apply: updated=${result.updatedSets} factor=${result.factor} alreadyActive=${result.alreadyActive} | wagi=[$weightsStr]"
+    }
+
+    private suspend fun resetDeloadTestData(): String {
+        deloadService.cancelWithoutRestore()
+        val plan = planRepo.getAll().firstOrNull { it.name == DELOAD_TEST_PLAN_NAME }
+        if (plan != null) {
+            planRepo.deletePlanById(plan.id)
+            return "skasowano plan ID=${plan.id} + active deload"
+        }
+        return "brak planu test, active deload skasowany"
     }
 
     fun copyJsonToClipboard() = viewModelScope.launch {
@@ -197,11 +290,11 @@ class DebugViewModel @Inject constructor(
             runCatching {
                 helper.query(
                     """
-                    SELECT pe.id, pe.exerciseId, e.name, pe.dayOfWeek, pe.position
+                    SELECT pe.id, pe.exerciseId, e.name, pe.dayOfWeek, pe.orderIndex
                     FROM plan_exercises pe
                     LEFT JOIN exercises e ON e.id = pe.exerciseId
                     WHERE pe.planId = ?
-                    ORDER BY pe.dayOfWeek, pe.position
+                    ORDER BY pe.dayOfWeek, pe.orderIndex
                     """.trimIndent(),
                     arrayOf(planId)
                 ).use { c ->
