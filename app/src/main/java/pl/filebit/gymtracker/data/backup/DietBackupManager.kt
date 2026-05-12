@@ -91,7 +91,13 @@ data class AdherenceLogDto(
     val targetKcal: Int, val actualKcal: Int, val kcalAdherencePct: Int,
     val targetProteinG: Int, val actualProteinG: Int, val proteinAdherencePct: Int,
     val targetCarbsG: Int, val actualCarbsG: Int,
-    val targetFatG: Int, val actualFatG: Int
+    val targetFatG: Int, val actualFatG: Int,
+    // v1.24.5: pola wymagane przez AdherenceCalculator (wcześniej brakowały → "Próba: 0 dni")
+    val mealsLoggedCount: Int = 0,
+    val mealsPlannedCount: Int = 0,
+    val wasTrainingPlanned: Boolean = false,
+    val wasTrainingDone: Boolean = false,
+    val notes: String = ""
 )
 
 @Serializable
@@ -351,7 +357,12 @@ class DietBackupManager @Inject constructor(
                     carbsAdherencePct = if (dto.targetCarbsG > 0) (dto.actualCarbsG * 100 / dto.targetCarbsG) else 0,
                     targetFatG = dto.targetFatG,
                     actualFatG = dto.actualFatG,
-                    fatAdherencePct = if (dto.targetFatG > 0) (dto.actualFatG * 100 / dto.targetFatG) else 0
+                    fatAdherencePct = if (dto.targetFatG > 0) (dto.actualFatG * 100 / dto.targetFatG) else 0,
+                    mealsLoggedCount = dto.mealsLoggedCount,
+                    mealsPlannedCount = dto.mealsPlannedCount,
+                    wasTrainingPlanned = dto.wasTrainingPlanned,
+                    wasTrainingDone = dto.wasTrainingDone,
+                    notes = dto.notes
                 )
             )
             adherenceImported++
@@ -440,7 +451,10 @@ class DietBackupManager @Inject constructor(
         targetKcal = targetKcal, actualKcal = actualKcal, kcalAdherencePct = kcalAdherencePct,
         targetProteinG = targetProteinG, actualProteinG = actualProteinG, proteinAdherencePct = proteinAdherencePct,
         targetCarbsG = targetCarbsG, actualCarbsG = actualCarbsG,
-        targetFatG = targetFatG, actualFatG = actualFatG
+        targetFatG = targetFatG, actualFatG = actualFatG,
+        mealsLoggedCount = mealsLoggedCount, mealsPlannedCount = mealsPlannedCount,
+        wasTrainingPlanned = wasTrainingPlanned, wasTrainingDone = wasTrainingDone,
+        notes = notes
     )
 
     private fun DietAdjustment.toDto() = DietAdjustmentDto(

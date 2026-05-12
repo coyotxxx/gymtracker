@@ -101,10 +101,12 @@ class AdherenceCalculator @Inject constructor(
 
     /**
      * Średnia zgodność z N dni — wskaźnik dla CalorieAdjustmentEngine.
-     * Bierzemy tylko dni z mealsLoggedCount >= 1 (pomiń puste dni).
+     * Bierzemy dni gdzie cokolwiek zostało zalogowane (mealsLoggedCount lub actualKcal).
+     * v1.24.5: dodano `actualKcal > 0` żeby backup z aplikacji innej (np. zaimportowane
+     * z innego źródła bez liczników meal entries) nadal liczył się jako "z zalogowaną dietą".
      */
     suspend fun avgAdherenceLastDays(days: Int): AdherenceSummary {
-        val logs = dao.getRecent(days).filter { it.mealsLoggedCount > 0 }
+        val logs = dao.getRecent(days).filter { it.mealsLoggedCount > 0 || it.actualKcal > 0 }
         if (logs.isEmpty()) return AdherenceSummary()
         return AdherenceSummary(
             sampleDays = logs.size,
