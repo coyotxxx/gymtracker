@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 387
-        versionName = "1.24.17"
+        versionCode = 388
+        versionName = "1.24.18"
         vectorDrawables { useSupportLibrary = true }
         // v1.14.1: androidTest infra dla MigrationTestHelper
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

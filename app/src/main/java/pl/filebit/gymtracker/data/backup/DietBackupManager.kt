@@ -222,6 +222,24 @@ class DietBackupManager @Inject constructor(
         )
     }
 
+    /**
+     * v1.24.18: mapuj `goalType` z backupu na enum DietGoalType. Akceptuje także
+     * wartości z `UserProfile.weightGoalType` (CUT/BULK/MAINTAIN/NONE) — zdarza
+     * się w scenariuszach testowych i starszych eksportach gdzie wpisywano
+     * niespójną nazwę.
+     */
+    private fun parseGoalType(raw: String): pl.filebit.gymtracker.data.entity.DietGoalType {
+        val type = pl.filebit.gymtracker.data.entity.DietGoalType
+        return runCatching { type.valueOf(raw) }.getOrElse {
+            when (raw.uppercase()) {
+                "CUT", "LOSE_WEIGHT", "DEFICIT" -> type.FAT_LOSS
+                "BULK", "GAIN_MASS", "SURPLUS" -> type.MUSCLE_GAIN
+                "MAINTAIN", "NONE", "" -> type.MAINTAIN
+                else -> type.MAINTAIN
+            }
+        }
+    }
+
     private suspend fun applyAll(backup: DietBackup): ImportSummary {
         var customProductsImported = 0
         var mealsImported = 0
@@ -237,7 +255,7 @@ class DietBackupManager @Inject constructor(
                 ageYears = dto.ageYears, heightCm = dto.heightCm,
                 activityLevel = runCatching { pl.filebit.gymtracker.data.entity.ActivityLevel.valueOf(dto.activityLevel) }.getOrDefault(pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE),
                 avgStepsPerDay = dto.avgStepsPerDay,
-                goalType = runCatching { pl.filebit.gymtracker.data.entity.DietGoalType.valueOf(dto.goalType) }.getOrDefault(pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN),
+                goalType = parseGoalType(dto.goalType),
                 paceKgPerWeek = dto.paceKgPerWeek,
                 customDeficitKcal = dto.customDeficitKcal,
                 dietPreference = runCatching { pl.filebit.gymtracker.data.entity.DietPreference.valueOf(dto.dietPreference) }.getOrDefault(pl.filebit.gymtracker.data.entity.DietPreference.STANDARD),

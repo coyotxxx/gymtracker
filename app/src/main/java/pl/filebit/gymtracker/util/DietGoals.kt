@@ -100,12 +100,29 @@ fun computeDailyGoal(
     }
 
     // === KROK 2: Adjustment per cel ===
-    val defaultDeficit = when (profile.weightGoalType) {
+    // v1.24.18: system SAM wylicza deficyt z paceKgPerWeek (z dietProfile)
+    // gdy customDeficit nie jest podany. Filozofia: trener mówi userowi
+    // ile jeść — user wybiera tylko TEMPO (z dietProfile.paceKgPerWeek).
+    // 1 kg ≈ 7700 kcal → deficyt = pace × 7700 / 7 dni.
+    //
+    // Fallback defaults gdy nie ma dietProfile (przed onboardingiem diety):
+    // CUT = -500 (klasyczna 0.5 kg/tydz), BULK = +300 (lean bulk).
+    val autoDeficitFromPace: Int? = dietProfile?.paceKgPerWeek?.let { pace ->
+        // pace > 0 zawsze (z entity). Sign zależy od weightGoalType.
+        when (profile.weightGoalType) {
+            WeightGoalType.CUT -> -(pace * 7700.0 / 7.0).toInt()
+            WeightGoalType.BULK -> (pace * 7700.0 / 7.0).toInt()
+            else -> 0
+        }
+    }
+    val defaultDeficit = autoDeficitFromPace ?: when (profile.weightGoalType) {
         WeightGoalType.CUT -> -500          // klasyczna redukcja (~0.5 kg/tydz)
         WeightGoalType.BULK -> 300           // umiarkowana nadwyżka (~0.3 kg/tydz)
         WeightGoalType.MAINTAIN -> 0
         WeightGoalType.NONE -> 0
     }
+    // v1.24.18: customDeficit user-override; jeśli null, używamy auto-deficytu
+    // wyliczonego z paceKgPerWeek (lub fallback default).
     val effectiveDeficit = customDeficit ?: defaultDeficit
     val deficitLabel = when {
         effectiveDeficit == 0 -> "Brak (utrzymanie wagi)"
