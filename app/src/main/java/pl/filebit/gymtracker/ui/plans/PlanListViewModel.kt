@@ -74,10 +74,25 @@ class PlanListViewModel @Inject constructor(
         _aiGenState.value = AiPlanGenState.Idle
     }
 
-    /** Plan ID aktywnego treningu (jeśli z planu) — używane do badge "AKTYWNY". */
-    val activePlanId: StateFlow<Long?> = workoutRepo.observeActive()
+    /**
+     * v1.24.12: Plan ID z którego trwa AKTUALNY workout (jeśli user ma rozpoczęty).
+     * UI używa do oznaczenia "TRENING TRWA" — zostawia poprzednią semantykę.
+     */
+    val activeWorkoutPlanId: StateFlow<Long?> = workoutRepo.observeActive()
         .map { it?.fromPlanId }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
+    /** v1.24.12: domyślny aktywny plan z bazy (TrainingPlan.isActive). */
+    val activePlanId: StateFlow<Long?> = planRepo.observeActivePlan()
+        .map { it?.id }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
+    /** v1.24.12: ustaw plan jako aktywny (jeden plan w danej chwili). */
+    fun setAsActivePlan(planId: Long) {
+        viewModelScope.launch {
+            planRepo.setActivePlan(planId)
+        }
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val plans: StateFlow<List<PlanListItem>> = planRepo.observeAllPlans()

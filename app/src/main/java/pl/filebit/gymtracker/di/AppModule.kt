@@ -308,6 +308,26 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.24.12 — ADDITIVE: TrainingPlan.isActive (jeden user, jeden aktywny plan).
+     * Schema dodaje kolumnę z DEFAULT 0. Backfill: najnowszy plan (max createdAt)
+     * staje się aktywnym — żeby user który ma już plany nie obudził się z brakiem
+     * "aktywnego" po update.
+     */
+    private val MIGRATION_56_57 = object : Migration(56, 57) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `training_plans` ADD COLUMN `isActive` INTEGER NOT NULL DEFAULT 0")
+            // Backfill: oznacz najnowszy plan jako aktywny (jeśli istnieje)
+            db.execSQL(
+                """
+                UPDATE `training_plans`
+                SET `isActive` = 1
+                WHERE `id` = (SELECT `id` FROM `training_plans` ORDER BY `createdAt` DESC LIMIT 1)
+                """.trimIndent()
+            )
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -319,7 +339,8 @@ object AppModule {
                 MIGRATION_52_53,
                 MIGRATION_53_54,
                 MIGRATION_54_55,
-                MIGRATION_55_56
+                MIGRATION_55_56,
+                MIGRATION_56_57
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

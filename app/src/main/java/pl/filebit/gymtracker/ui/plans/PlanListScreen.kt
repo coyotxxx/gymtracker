@@ -77,6 +77,7 @@ fun PlanListScreen(
 ) {
     val plans by vm.plans.collectAsStateWithLifecycle()
     val activePlanId by vm.activePlanId.collectAsStateWithLifecycle()
+    val activeWorkoutPlanId by vm.activeWorkoutPlanId.collectAsStateWithLifecycle()
     val aiGenState by vm.aiGenState.collectAsStateWithLifecycle()
     var dayPickerForPlan by remember { mutableStateOf<PlanListItem?>(null) }
     var newMenuOpen by remember { mutableStateOf(false) }
@@ -142,10 +143,12 @@ fun PlanListScreen(
                     PlanCard(
                         item = item,
                         isActive = item.plan.id == activePlanId,
+                        isWorkoutInProgress = item.plan.id == activeWorkoutPlanId,
                         onEdit = { onEditPlan(item.plan.id) },
                         onStart = { dayPickerForPlan = item },
                         onDuplicate = { vm.duplicatePlan(item.plan.id) { newId -> onEditPlan(newId) } },
-                        onDelete = { showDeleteDialog = item.plan.id }
+                        onDelete = { showDeleteDialog = item.plan.id },
+                        onSetActive = { vm.setAsActivePlan(item.plan.id) }
                     )
                 }
             }
@@ -351,10 +354,12 @@ private fun AiPlanGenDialog(
 private fun PlanCard(
     item: PlanListItem,
     isActive: Boolean,
+    isWorkoutInProgress: Boolean = false,
     onEdit: () -> Unit,
     onStart: () -> Unit,
     onDuplicate: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
+    onSetActive: () -> Unit = {}
 ) {
     var menuOpen by remember { mutableStateOf(false) }
     Card(
@@ -384,7 +389,10 @@ private fun PlanCard(
                     maxLines = 1,
                     modifier = Modifier.weight(1f)
                 )
-                if (isActive) {
+                if (isWorkoutInProgress) {
+                    Spacer(Modifier.width(6.dp))
+                    WorkoutInProgressBadge()
+                } else if (isActive) {
                     Spacer(Modifier.width(6.dp))
                     ActiveBadge()
                 }
@@ -412,6 +420,15 @@ private fun PlanCard(
                             },
                             onClick = { menuOpen = false; onEdit() }
                         )
+                        if (!isActive) {
+                            DropdownMenuItem(
+                                text = { Text("Ustaw jako aktywny") },
+                                leadingIcon = {
+                                    Icon(Icons.Default.CheckCircle, contentDescription = null)
+                                },
+                                onClick = { menuOpen = false; onSetActive() }
+                            )
+                        }
                         DropdownMenuItem(
                             text = { Text(stringResource(R.string.plans_duplicate)) },
                             leadingIcon = { Icon(Icons.Default.ContentCopy, contentDescription = null) },
@@ -738,6 +755,7 @@ private fun AiBadge(modifier: Modifier = Modifier) {
 
 @Composable
 private fun ActiveBadge(modifier: Modifier = Modifier) {
+    // v1.24.12: badge "AKTYWNY" — domyślny plan z bazy (TrainingPlan.isActive=true)
     Row(
         modifier = modifier
             .background(
@@ -764,6 +782,40 @@ private fun ActiveBadge(modifier: Modifier = Modifier) {
                 fontSize = 10.sp
             ),
             color = pl.filebit.gymtracker.ui.theme.SuccessGreen
+        )
+    }
+}
+
+/** v1.24.12: badge "TRENING TRWA" — workout w toku z tego planu. Inny od ActiveBadge
+ *  (akcent, nie zielony) — informuje o stanie tranzytywnym (kiedyś się skończy). */
+@Composable
+private fun WorkoutInProgressBadge(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .background(
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f),
+                shape = RoundedCornerShape(50)
+            )
+            .padding(horizontal = 8.dp, vertical = 3.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .size(6.dp)
+                .background(
+                    pl.filebit.gymtracker.ui.theme.AccentOrange,
+                    shape = RoundedCornerShape(50)
+                )
+        )
+        Spacer(Modifier.width(5.dp))
+        Text(
+            "TRENING TRWA",
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.6.sp,
+                fontSize = 10.sp
+            ),
+            color = pl.filebit.gymtracker.ui.theme.AccentOrange
         )
     }
 }

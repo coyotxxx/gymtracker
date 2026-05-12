@@ -32,4 +32,18 @@ interface TrainingPlanDao {
 
     @Query("DELETE FROM training_plans WHERE id = :id")
     suspend fun deleteById(id: Long)
+
+    // === v1.24.12: isActive — jeden user, jeden aktywny plan ===
+
+    @Query("SELECT * FROM training_plans WHERE isActive = 1 LIMIT 1")
+    suspend fun getActive(): TrainingPlan?
+
+    @Query("SELECT * FROM training_plans WHERE isActive = 1 LIMIT 1")
+    fun observeActive(): Flow<TrainingPlan?>
+
+    @Query("UPDATE training_plans SET isActive = 0")
+    suspend fun clearActive()
+
+    @Query("UPDATE training_plans SET isActive = 1 WHERE id = :id")
+    suspend fun markActive(id: Long)
 }

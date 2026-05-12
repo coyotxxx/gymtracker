@@ -155,10 +155,22 @@ class HomeViewModel @Inject constructor(
         val isoDay = Clock.System.todayIn(TimeZone.currentSystemDefault()).dayOfWeek.isoDayNumber
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
+        // v1.24.12: aktywny plan z bazy (TrainingPlan.isActive). Gdy istnieje,
+        // filtrujemy slot wybór do TEGO planu — żeby przy 2+ planach nie był
+        // pokazywany random (firstOrNull). Filozofia: jeden user, jeden aktywny plan.
+        val activePlanFromDb = plans.firstOrNull { it.isActive }
+        fun pickSlot(slots: List<pl.filebit.gymtracker.util.ScheduleSlot>?): pl.filebit.gymtracker.util.ScheduleSlot? {
+            if (slots.isNullOrEmpty()) return null
+            return if (activePlanFromDb != null) {
+                slots.firstOrNull { it.planId == activePlanFromDb.id } ?: slots.first()
+            } else {
+                slots.first()
+            }
+        }
         var todaysPlan: pl.filebit.gymtracker.data.entity.TrainingPlan? = null
         var todaysCount = 0
         var todaysSourceDay = isoDay
-        schedule[isoDay]?.firstOrNull()?.let { slot ->
+        pickSlot(schedule[isoDay])?.let { slot ->
             val plan = plans.firstOrNull { it.id == slot.planId }
             if (plan != null) {
                 val exes = planRepo.getPlanExercisesForDay(plan.id, slot.sourceDayOfWeek)
@@ -236,7 +248,7 @@ class HomeViewModel @Inject constructor(
             var found: NextPlannedDay? = null
             for (offset in 1..7) {
                 val targetDay = ((isoDay - 1 + offset) % 7) + 1
-                val slot = schedule[targetDay]?.firstOrNull()
+                val slot = pickSlot(schedule[targetDay])
                 if (slot != null) {
                     val plan = plans.firstOrNull { it.id == slot.planId }
                     if (plan != null) {

@@ -395,6 +395,21 @@ class BackupImporter @Inject constructor(
             runCatching { mesocycleBackfillService.backfillFromHistory() }
         }
 
+        // v1.24.12: po imporcie planów ustaw najnowszy jako aktywny — żeby
+        // user nie został z brakiem aktywnego planu (filozofia: jeden user,
+        // jeden aktywny stan). Idempotentne (no-op gdy ktoś już aktywny).
+        if (data.plans.isNotEmpty()) {
+            runCatching {
+                if (planDao.getActive() == null) {
+                    val newest = planDao.getAll().maxByOrNull { it.createdAt }
+                    if (newest != null) {
+                        planDao.clearActive()
+                        planDao.markActive(newest.id)
+                    }
+                }
+            }
+        }
+
         return BackupImportResult(
             workouts = data.workouts.size,
             plans = data.plans.size,

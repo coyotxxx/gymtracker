@@ -73,6 +73,20 @@ class PlanRepository @Inject constructor(
 
     suspend fun getPlan(id: Long): TrainingPlan? = planDao.getById(id)
 
+    // === v1.24.12: aktywny plan (filozofia jeden user, jeden aktywny stan) ===
+
+    /** Plan oznaczony jako aktywny (isActive=true). Null gdy user nie ma żadnego. */
+    suspend fun getActivePlan(): TrainingPlan? = planDao.getActive()
+
+    /** Reactive observe aktywnego planu — Home/PlanList nasłuchują zmian. */
+    fun observeActivePlan(): Flow<TrainingPlan?> = planDao.observeActive()
+
+    /** Atomowo ustawia plan jako jedyny aktywny (zeruje innym isActive). */
+    suspend fun setActivePlan(planId: Long) {
+        planDao.clearActive()
+        planDao.markActive(planId)
+    }
+
     suspend fun upsertPlan(plan: TrainingPlan): Long {
         val isNew = plan.id == 0L
         val resultId = planDao.upsert(plan)
@@ -81,6 +95,11 @@ class PlanRepository @Inject constructor(
             runCatching {
                 eventDetectorService.onPlanCreated(resultId, plan.copy(id = resultId).name)
             }
+            // v1.24.12: jeśli to pierwszy plan w bazie (lub żaden nie był aktywny),
+            // ustaw nowy jako aktywny — żeby user nie zostawał z pustym stanem.
+            if (planDao.getActive() == null) {
+                setActivePlan(resultId)
+            }
         }
         return resultId
     }
@@ -88,17 +107,28 @@ class PlanRepository @Inject constructor(
     suspend fun updatePlan(plan: TrainingPlan) = planDao.update(plan)
 
     suspend fun deletePlan(plan: TrainingPlan) {
+        val wasActive = plan.isActive
         planDao.delete(plan)
         // v1.11.63: PLAN_END event po usunieciu planu
         runCatching { eventDetectorService.onPlanDeleted(plan.id, plan.name) }
+        // v1.24.12: jeśli usunęliśmy aktywny plan, promuj najnowszy pozostały
+        if (wasActive) promoteNewestAsActive()
     }
 
     suspend fun deletePlanById(id: Long) {
         val plan = planDao.getById(id)
+        val wasActive = plan?.isActive == true
         planDao.deleteById(id)
         if (plan != null) {
             runCatching { eventDetectorService.onPlanDeleted(plan.id, plan.name) }
         }
+        if (wasActive) promoteNewestAsActive()
+    }
+
+    /** v1.24.12: po usunięciu aktywnego planu wybierz najnowszy z pozostałych. */
+    private suspend fun promoteNewestAsActive() {
+        val newest = planDao.getAll().maxByOrNull { it.createdAt } ?: return
+        setActivePlan(newest.id)
     }
 
     fun observePlanExercises(planId: Long): Flow<List<PlanExercise>> =
