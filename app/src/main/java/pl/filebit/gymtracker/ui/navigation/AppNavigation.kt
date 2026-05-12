@@ -257,9 +257,12 @@ fun AppNavigation(
             composable(Screen.Onboarding.route) {
                 pl.filebit.gymtracker.ui.onboarding.OnboardingScreen(
                     onCompleted = {
-                        // KOLEJNOŚĆ: navigate najpierw, potem mark — żeby zmiana state
-                        // w ShellVM nie wywołała przedwczesnego LaunchedEffect.
-                        navController.navigate(Screen.Home.route) {
+                        // v1.24.21: po kreatorze → Plany (nie Home).
+                        // Filozofia: user właśnie powiedział czym jest, czego chce,
+                        // jaki ma sprzęt i ile dni. Następna logiczna akcja to
+                        // wybrać/wygenerować plan. Pusty Home z BRAK PLANU NA DZIŚ
+                        // zostawia usera z dezorientacją 'co dalej?'.
+                        navController.navigate(Screen.Plans.route) {
                             popUpTo(Screen.Onboarding.route) { inclusive = true }
                         }
                         workoutShellVm.markOnboardingDone()

@@ -98,6 +98,18 @@ fun OnboardingScreen(
                 modifier = Modifier.offset(y = (-20).dp)
             )
             Spacer(Modifier.height(4.dp))
+            // v1.24.21: dodany tekstowy progress label nad dots — user widzi
+            // ile zostało ekranów (wcześniej tylko same dots — łatwo przeoczyć).
+            Text(
+                "Krok ${page + 1} z $TOTAL_PAGES",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    letterSpacing = 1.0.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(8.dp))
             // Progress dots
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 repeat(TOTAL_PAGES) { idx ->
@@ -115,14 +127,23 @@ fun OnboardingScreen(
 
             Spacer(Modifier.height(28.dp))
 
+            // v1.24.21: reorganizacja kolejności — Identity → Cele → Możliwości → Dieta.
+            // Filozofia: naturalna historia 'kim jestem → co chcę → jak mogę'.
+            //
+            // STARA: imię → dane → cel-treningu → dni/czas/waga → cel-wagi → sprzęt → akt → dieta
+            // NOWA:  imię → dane+waga → cel-wagi → cel-treningu → dni+czas → sprzęt → akt → dieta
             when (page) {
+                // === IDENTITY ===
                 0 -> WelcomePage(state, vm::setName)
-                1 -> AgeHeightGenderPage(state, vm::setGender, vm::setAge, vm::setHeight)
-                2 -> GoalExperiencePage(state, vm::setGoal, vm::setExperience, vm::setGender)
-                3 -> DaysSessionWeightPage(state, vm::setDaysPerWeek, vm::setSessionMinutes, vm::setBodyweight)
-                4 -> WeightGoalPage(state, vm::setWeightGoalType, vm::setTargetWeight)
+                1 -> AgeHeightGenderPage(state, vm::setGender, vm::setAge, vm::setHeight, vm::setBodyweight)
+                // === CELE ===
+                2 -> WeightGoalPage(state, vm::setWeightGoalType, vm::setTargetWeight)
+                3 -> GoalExperiencePage(state, vm::setGoal, vm::setExperience, vm::setGender)
+                // === MOŻLIWOŚCI ===
+                4 -> DaysSessionPage(state, vm::setDaysPerWeek, vm::setSessionMinutes)
                 5 -> EquipmentPage(state, vm::setEquipment)
                 6 -> ActivityLevelPage(state, vm::setActivityLevel)
+                // === DIETA ===
                 7 -> DietProfilePage(
                     state = state,
                     onSetWantsDietProfile = vm::setWantsDietProfile,
@@ -211,6 +232,11 @@ private fun WelcomePage(
     state: OnboardingUiState,
     onNameChange: (String) -> Unit
 ) {
+    // v1.24.21: WelcomePage zawsze "Cześć!" (z wykrzyknikiem). Wcześniej
+    // gdy user pominął imię, summary pokazywało "Cześć," z przecinkiem
+    // wisiącym — wyglądało jak błąd. Tu poprawione na poziomie WelcomePage,
+    // ale głównie wpływa na nagłówki innych ekranów które wymagały
+    // displayName.
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             "Cześć!",
@@ -269,12 +295,13 @@ private fun GoalExperiencePage(
 }
 
 @Composable
-private fun DaysSessionWeightPage(
+private fun DaysSessionPage(
     state: OnboardingUiState,
     onDays: (Int) -> Unit,
-    onSession: (Int) -> Unit,
-    onWeight: (Double?) -> Unit
+    onSession: (Int) -> Unit
 ) {
+    // v1.24.21: waga ciała przeniesiona do AgeHeightGenderPage (Twoje dane).
+    // Tu zostają TYLKO parametry treningu (dni + czas sesji).
     Column(modifier = Modifier.fillMaxWidth()) {
         SectionLabel("Ile dni w tygodniu chcesz trenować?")
         Spacer(Modifier.height(8.dp))
@@ -302,29 +329,6 @@ private fun DaysSessionWeightPage(
                 )
             }
         }
-
-        Spacer(Modifier.height(20.dp))
-        SectionLabel("Waga ciała (kg, opcjonalnie)")
-        Spacer(Modifier.height(4.dp))
-        Text(
-            "Pomaga w obliczaniu poziomów siły (np. ławka 1.25× wagi ciała)",
-            style = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp),
-            color = DarkOnSurfaceVariant
-        )
-        Spacer(Modifier.height(8.dp))
-        var weightText by remember { mutableStateOf(state.bodyweightKg?.toString() ?: "") }
-        OutlinedTextField(
-            value = weightText,
-            onValueChange = { v ->
-                weightText = v.filter { it.isDigit() || it == '.' || it == ',' }
-                onWeight(weightText.replace(',', '.').toDoubleOrNull())
-            },
-            label = { Text("np. 75", color = DarkOnSurfaceVariant) },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
-        )
     }
 }
 
@@ -334,6 +338,30 @@ private fun WeightGoalPage(
     onWeightGoalType: (WeightGoalType) -> Unit,
     onTargetWeight: (Double?) -> Unit
 ) {
+    // v1.24.21: pole 'Docelowa waga' ZAWSZE widoczne (disabled gdy NONE/MAINTAIN).
+    // Wcześniej pojawiało się dynamicznie po wyborze CUT/BULK — user łatwo myślał
+    // że klik się nie zarejestrował.
+    // + walidacja target vs bodyweight — ostrzeżenie gdy kierunek się nie zgadza.
+    val isCutOrBulk = state.weightGoalType == WeightGoalType.CUT ||
+        state.weightGoalType == WeightGoalType.BULK
+    val direction = state.weightGoalType  // null-safe direction
+    val target = state.targetWeightKg
+    val current = state.bodyweightKg
+
+    // Walidacja: target vs current weight musi być zgodny z kierunkiem
+    val validationError: String? = when {
+        !isCutOrBulk || target == null || current == null -> null
+        direction == WeightGoalType.CUT && target >= current ->
+            "Cel: SCHUDNĄĆ, ale docelowa waga ($target kg) nie jest mniejsza od aktualnej ($current kg)."
+        direction == WeightGoalType.BULK && target <= current ->
+            "Cel: PRZYBRAĆ, ale docelowa waga ($target kg) nie jest większa od aktualnej ($current kg)."
+        direction == WeightGoalType.CUT && (current - target) > 30 ->
+            "Bardzo ambitny cel (−${(current - target).toInt()} kg). Lepiej rozłożyć w 2-3 etapy."
+        direction == WeightGoalType.BULK && (target - current) > 20 ->
+            "Bardzo ambitny cel (+${(target - current).toInt()} kg). Lepiej rozłożyć w 2-3 etapy."
+        else -> null
+    }
+
     Column(modifier = Modifier.fillMaxWidth()) {
         SectionLabel("Co chcesz osiągnąć z wagą ciała?")
         Spacer(Modifier.height(4.dp))
@@ -350,26 +378,44 @@ private fun WeightGoalPage(
             ChoicePill("Utrzymanie", state.weightGoalType == WeightGoalType.MAINTAIN) { onWeightGoalType(WeightGoalType.MAINTAIN) }
         }
 
-        if (state.weightGoalType == WeightGoalType.CUT || state.weightGoalType == WeightGoalType.BULK) {
-            Spacer(Modifier.height(20.dp))
-            SectionLabel("Docelowa waga (kg)")
-            Spacer(Modifier.height(8.dp))
-            var targetText by remember(state.weightGoalType) {
-                mutableStateOf(state.targetWeightKg?.toString() ?: "")
-            }
-            OutlinedTextField(
-                value = targetText,
-                onValueChange = { v ->
-                    targetText = v.filter { it.isDigit() || it == '.' || it == ',' }
-                    onTargetWeight(targetText.replace(',', '.').toDoubleOrNull())
-                },
-                label = { Text("np. ${if (state.weightGoalType == WeightGoalType.CUT) "75" else "85"}", color = DarkOnSurfaceVariant) },
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp),
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
-            )
+        Spacer(Modifier.height(20.dp))
+        SectionLabel("Docelowa waga (kg)")
+        Spacer(Modifier.height(8.dp))
+        var targetText by remember(state.weightGoalType) {
+            mutableStateOf(state.targetWeightKg?.toString() ?: "")
         }
+        OutlinedTextField(
+            value = targetText,
+            onValueChange = { v ->
+                targetText = v.filter { it.isDigit() || it == '.' || it == ',' }
+                onTargetWeight(targetText.replace(',', '.').toDoubleOrNull())
+            },
+            label = {
+                Text(
+                    when (state.weightGoalType) {
+                        WeightGoalType.CUT -> "Docelowa waga (np. 75)"
+                        WeightGoalType.BULK -> "Docelowa waga (np. 85)"
+                        else -> "Docelowa waga — wybierz Redukcja/Masa powyżej"
+                    },
+                    color = DarkOnSurfaceVariant
+                )
+            },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp),
+            singleLine = true,
+            enabled = isCutOrBulk,   // disabled gdy NONE/MAINTAIN — wciąż widoczne ale szare
+            isError = validationError != null,
+            supportingText = validationError?.let {
+                {
+                    Text(
+                        it,
+                        color = androidx.compose.ui.graphics.Color(0xFFFFB74D),  // pomarańczowy warning
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
+        )
     }
 }
 
@@ -543,22 +589,25 @@ private fun AgeHeightGenderPage(
     state: OnboardingUiState,
     onGenderChange: (pl.filebit.gymtracker.data.entity.Gender) -> Unit,
     onAgeChange: (Int?) -> Unit,
-    onHeightChange: (Int?) -> Unit
+    onHeightChange: (Int?) -> Unit,
+    onWeightChange: (Double?) -> Unit
 ) {
+    // v1.24.21: dodana waga ciała (przeniesiona z DaysSessionWeightPage),
+    // żeby wszystkie dane "kim jestem" były w jednym miejscu. Płeć bez emoji.
     StepCard(title = "Twoje dane", subtitle = "Potrzebne do dokładnego obliczenia zapotrzebowania kalorycznego (BMR)") {
-        // Płeć
+        // Płeć — bez emoji ♂♀ (klasyczne label czytelniejsze)
         Text("Płeć", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold), color = DarkOnSurface)
         Spacer(Modifier.height(6.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             ChoiceChipRow(
                 selected = state.gender == pl.filebit.gymtracker.data.entity.Gender.MALE,
-                text = "♂ Mężczyzna",
+                text = "Mężczyzna",
                 onClick = { onGenderChange(pl.filebit.gymtracker.data.entity.Gender.MALE) },
                 modifier = Modifier.weight(1f)
             )
             ChoiceChipRow(
                 selected = state.gender == pl.filebit.gymtracker.data.entity.Gender.FEMALE,
-                text = "♀ Kobieta",
+                text = "Kobieta",
                 onClick = { onGenderChange(pl.filebit.gymtracker.data.entity.Gender.FEMALE) },
                 modifier = Modifier.weight(1f)
             )
@@ -617,6 +666,35 @@ private fun AgeHeightGenderPage(
                 val h = state.heightCm
                 if (h != null && (h < 140 || h > 220)) {
                     Text("Wzrost powinien być w zakresie 140-220 cm", color = androidx.compose.ui.graphics.Color.Red)
+                }
+            }
+        )
+
+        Spacer(Modifier.height(8.dp))
+
+        // v1.24.21: waga ciała przeniesiona z DaysSessionWeightPage — wszystkie
+        // dane "kim jestem" w jednym miejscu (płeć, wiek, wzrost, waga).
+        var weightText by remember(state.bodyweightKg) {
+            androidx.compose.runtime.mutableStateOf(state.bodyweightKg?.toString() ?: "")
+        }
+        OutlinedTextField(
+            value = weightText,
+            onValueChange = { v ->
+                val cleaned = v.filter { it.isDigit() || it == '.' || it == ',' }.take(5)
+                weightText = cleaned
+                onWeightChange(cleaned.replace(',', '.').toDoubleOrNull())
+            },
+            label = { Text("Waga ciała (kg)") },
+            placeholder = { Text("np. 75", color = DarkOnSurfaceVariant) },
+            keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Decimal),
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true,
+            colors = onboardingTextFieldColors(),
+            isError = state.bodyweightKg != null && (state.bodyweightKg < 30.0 || state.bodyweightKg > 250.0),
+            supportingText = {
+                val w = state.bodyweightKg
+                if (w != null && (w < 30.0 || w > 250.0)) {
+                    Text("Waga powinna być w zakresie 30-250 kg", color = androidx.compose.ui.graphics.Color.Red)
                 }
             }
         )
@@ -699,6 +777,24 @@ private fun ActivityLevelPage(
     onChange: (pl.filebit.gymtracker.data.entity.ActivityLevel) -> Unit
 ) {
     StepCard(title = "Aktywność POZA treningiem", subtitle = "Praca, codzienne życie, chodzenie. Bez treningów na siłowni.") {
+        // v1.24.21: tooltip wyjaśniający że treningi z 'Dni/tydzień' są
+        // doliczane OSOBNO. Wcześniej user nie wiedział czy 'Lekko aktywny ×1.375'
+        // już zawiera jego 4 dni treningu = ryzyko podwójnego liczenia kcal.
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(AccentOrange.copy(alpha = 0.08f), RoundedCornerShape(8.dp))
+                .border(1.dp, AccentOrange.copy(alpha = 0.30f), RoundedCornerShape(8.dp))
+                .padding(10.dp)
+        ) {
+            Text(
+                "ℹ️ System osobno dolicza Twoje treningi z 'Dni/tydzień' (×30 kcal/dzień). " +
+                    "Tu wybierz poziom dla aktywności POZA siłownią — żeby nie liczyć dwa razy.",
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp),
+                color = DarkOnSurface
+            )
+        }
+        Spacer(Modifier.height(12.dp))
         val all = pl.filebit.gymtracker.data.entity.ActivityLevel.values()
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             all.forEach { lvl ->

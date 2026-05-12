@@ -604,7 +604,9 @@ private fun GreetingHeader(
         // żeby długie imiona/etykiety nie zawijały layoutu na 2 linie.
         Row(verticalAlignment = Alignment.Bottom) {
             Text(
-                if (displayName.isBlank()) "Cześć" else "Cześć,",
+                // v1.24.21: "Cześć!" gdy bez imienia (zamiast "Cześć" bez znaku).
+                // Z przecinkiem tylko gdy imię jest — wtedy: "Cześć, Maciek".
+                if (displayName.isBlank()) "Cześć!" else "Cześć,",
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontSize = 26.sp,
                     fontWeight = FontWeight.ExtraBold,
