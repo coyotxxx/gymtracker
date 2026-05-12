@@ -35,6 +35,7 @@ import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -1185,10 +1186,13 @@ private fun DeloadSuggestionCard(
             .fillMaxWidth()
             .background(color.copy(alpha = bgAlpha), RoundedCornerShape(16.dp))
             .border(1.dp, color.copy(alpha = borderAlpha), RoundedCornerShape(16.dp))
-            .padding(16.dp)
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
     ) {
         Column {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Icon(
                     Icons.Default.Warning,
                     contentDescription = null,
@@ -1198,6 +1202,7 @@ private fun DeloadSuggestionCard(
                 Spacer(Modifier.width(8.dp))
                 Text(
                     severityLabel,
+                    modifier = Modifier.weight(1f),
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 11.sp,
@@ -1205,8 +1210,19 @@ private fun DeloadSuggestionCard(
                     ),
                     color = color
                 )
+                IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(4.dp))
             Text(
                 recommendation.reason,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
@@ -1281,10 +1297,13 @@ private fun ActiveInjuryCard(
             .fillMaxWidth()
             .background(color.copy(alpha = bgAlpha), RoundedCornerShape(16.dp))
             .border(1.dp, color.copy(alpha = 0.45f), RoundedCornerShape(16.dp))
-            .padding(16.dp)
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
     ) {
         Column {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Icon(
                     Icons.Default.Warning,
                     contentDescription = null,
@@ -1294,6 +1313,7 @@ private fun ActiveInjuryCard(
                 Spacer(Modifier.width(8.dp))
                 Text(
                     severityLabel,
+                    modifier = Modifier.weight(1f),
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 11.sp,
@@ -1301,27 +1321,25 @@ private fun ActiveInjuryCard(
                     ),
                     color = color
                 )
+                IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(4.dp))
             Text(
                 recommendation.reason,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface
+                color = DarkOnSurface,
+                modifier = Modifier.padding(end = 8.dp)
             )
-            Spacer(Modifier.height(12.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.End
-            ) {
-                androidx.compose.material3.TextButton(
-                    onClick = onDismiss,
-                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
-                        contentColor = DarkOnSurfaceVariant
-                    )
-                ) {
-                    Text("Rozumiem", fontSize = 13.sp)
-                }
-            }
         }
     }
 }
@@ -1342,10 +1360,13 @@ private fun ReturnAfterBreakCard(
             .fillMaxWidth()
             .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
             .border(1.dp, color.copy(alpha = 0.35f), RoundedCornerShape(16.dp))
-            .padding(16.dp)
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
     ) {
         Column {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Text(
                     "↻",
                     color = color,
@@ -1355,6 +1376,7 @@ private fun ReturnAfterBreakCard(
                 Spacer(Modifier.width(8.dp))
                 Text(
                     severityLabel,
+                    modifier = Modifier.weight(1f),
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 11.sp,
@@ -1362,27 +1384,25 @@ private fun ReturnAfterBreakCard(
                     ),
                     color = color
                 )
+                IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(4.dp))
             Text(
                 recommendation.reason,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
-                color = DarkOnSurface
+                color = DarkOnSurface,
+                modifier = Modifier.padding(end = 8.dp)
             )
-            Spacer(Modifier.height(12.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.End
-            ) {
-                androidx.compose.material3.TextButton(
-                    onClick = onDismiss,
-                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
-                        contentColor = DarkOnSurfaceVariant
-                    )
-                ) {
-                    Text("Rozumiem", fontSize = 13.sp)
-                }
-            }
         }
     }
 }
