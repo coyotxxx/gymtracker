@@ -52,7 +52,8 @@ class DebugViewModel @Inject constructor(
     private val loadIncreasePrefs: LoadIncreasePreferences,
     private val planRepo: PlanRepository,
     private val deloadService: DeloadService,
-    private val exerciseDao: ExerciseDao
+    private val exerciseDao: ExerciseDao,
+    private val backupImporter: pl.filebit.gymtracker.data.backup.BackupImporter
 ) : ViewModel() {
 
     private val _status = MutableStateFlow("")
@@ -88,6 +89,50 @@ class DebugViewModel @Inject constructor(
         runCatching { withContext(Dispatchers.IO) { resetDeloadTestData() } }
             .onSuccess { _status.value = "✓ Reset OK: $it" }
             .onFailure { _status.value = "✗ Błąd reset: ${it.message}" }
+    }
+
+    /**
+     * 1-klik import scenariusza testowego z /sdcard/Download/import.json
+     * (lub /sdcard/Download/GymTracker/import.json jako fallback).
+     * Zastępuje 5+ tapowy flow: Profil → scroll → Backup → Importuj → file picker.
+     */
+    fun importFromDownloads() = viewModelScope.launch {
+        runCatching { withContext(Dispatchers.IO) { runImportFromDownloads() } }
+            .onSuccess { _status.value = "✓ $it" }
+            .onFailure { _status.value = "✗ Błąd importu: ${it.message}" }
+    }
+
+    private suspend fun runImportFromDownloads(): String {
+        // 1) Najpierw spróbuj prywatnego app-scope Downloads (bez permission)
+        //    Wymaga adb push do /sdcard/Android/data/pl.filebit.gymtracker.debug/files/Download/import.json
+        val appDownloads = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+        if (appDownloads != null) {
+            val appFile = File(appDownloads, "import.json")
+            if (appFile.exists() && appFile.isFile) {
+                val result = backupImporter.importFromFile(appFile)
+                return "(app-scope): ${result.toUserMessage()}"
+            }
+        }
+
+        // 2) Fallback: MediaStore.Downloads (public Downloads, scoped storage compliant)
+        val uri = findDownloadInMediaStore("import.json")
+            ?: error("Brak pliku — wgraj 'import.json' do /sdcard/Download/ albo /sdcard/Android/data/pl.filebit.gymtracker.debug/files/Download/")
+        val result = backupImporter.importFromUri(uri)
+        return "(MediaStore): ${result.toUserMessage()}"
+    }
+
+    private fun findDownloadInMediaStore(filename: String): android.net.Uri? {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) return null
+        val collection = MediaStore.Downloads.EXTERNAL_CONTENT_URI
+        val projection = arrayOf(MediaStore.Downloads._ID)
+        val selection = "${MediaStore.Downloads.DISPLAY_NAME} = ?"
+        val args = arrayOf(filename)
+        return context.contentResolver.query(collection, projection, selection, args, null)?.use { c ->
+            if (c.moveToFirst()) {
+                val id = c.getLong(0)
+                android.content.ContentUris.withAppendedId(collection, id)
+            } else null
+        }
     }
 
     private suspend fun createDeloadTestPlan(): Pair<Long, Int> {

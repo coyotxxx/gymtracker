@@ -93,6 +93,17 @@ fun DebugScreen(
             }
             item {
                 Spacer(Modifier.height(16.dp))
+                SectionHeader("Import scenariusza testowego (v1.23.0)")
+            }
+            item {
+                DebugAction(
+                    title = "Importuj 'import.json'",
+                    subtitle = "1-klik — szuka pliku w /sdcard/Android/data/.../files/Download/ (app-scope, bez permission) albo /sdcard/Download/ (MediaStore). Wystarczy adb push.",
+                    onClick = vm::importFromDownloads
+                )
+            }
+            item {
+                Spacer(Modifier.height(16.dp))
                 SectionHeader("Test deload guard (v1.22.0)")
             }
             item {
