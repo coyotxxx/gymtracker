@@ -34,15 +34,31 @@ class HomeAlertNotifier @Inject constructor(
     /**
      * Wywoływane przez HomeViewModel po obliczeniu cardState.
      * Wysyła notyfikację jeśli alert jest nowy lub się zmienił.
+     * Anuluje notyfikacje dla typów które już nie są aktywne.
      */
     fun maybeNotify(cardState: DeloadCardState) {
-        val (type, title, body, hash) = describe(cardState) ?: return
-        val lastHash = prefs.lastNotifiedHash(type)
-        if (lastHash == hash) return  // Bez zmian — nie spamuj
-
-        sendNotification(type, title, body)
-        prefs.setLastNotifiedHash(type, hash)
+        val current = describe(cardState)
+        // Anuluj notyfikacje dla wszystkich typów INNYCH niż obecny (alert znikł
+        // lub zmienił typ → stara notyfikacja w shade nieaktualna)
+        val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        AlertType.values().forEach { type ->
+            if (current?.type != type) {
+                nm.cancel(notificationId(type))
+                // Reset hash żeby notyfikacja mogła się pojawić ponownie
+                // gdy alert wróci (inaczej anti-spam by zablokował)
+                if (prefs.lastNotifiedHash(type) != null) {
+                    prefs.setLastNotifiedHash(type, "")
+                }
+            }
+        }
+        if (current == null) return  // Brak aktywnego alertu
+        val lastHash = prefs.lastNotifiedHash(current.type)
+        if (lastHash == current.hash) return  // Bez zmian — nie spamuj
+        sendNotification(current.type, current.title, current.body)
+        prefs.setLastNotifiedHash(current.type, current.hash)
     }
+
+    private fun notificationId(type: AlertType): Int = type.ordinal + NOTIFICATION_ID_BASE
 
     private fun describe(cardState: DeloadCardState): NotificationContent? = when (cardState) {
         is DeloadCardState.ActiveInjury -> {
@@ -82,7 +98,7 @@ class HomeAlertNotifier @Inject constructor(
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         }
         val pi = PendingIntent.getActivity(
-            ctx, type.ordinal + NOTIFICATION_ID_BASE, openIntent,
+            ctx, notificationId(type), openIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
         )
@@ -96,7 +112,7 @@ class HomeAlertNotifier @Inject constructor(
             .setAutoCancel(true)
             .build()
         val nm = ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        nm.notify(type.ordinal + NOTIFICATION_ID_BASE, notification)
+        nm.notify(notificationId(type), notification)
     }
 
     private data class NotificationContent(
