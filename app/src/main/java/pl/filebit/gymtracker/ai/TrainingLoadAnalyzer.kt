@@ -34,7 +34,8 @@ data class TrainingLoad(
 enum class LoadZone {
     DETRAINING,    // <0.8 — zwykła detrenowanie (np. zaniedbanie, choroba)
     DELOAD_PROPER, // <0.8 ALE faza cyklu = DELOAD → niski tonaż jest CELOWY i POPRAWNY
-    OPTIMAL,       // 0.8-1.3
+    OPTIMAL,       // 0.8-1.3 — stała objętość, brak sygnałów problemu
+    STABLE_BUT_FATIGUED, // v1.24.2: 0.8-1.3 ALE inny analyzer wykrył ból/przemęczenie/przerwę
     OVERREACHING,  // 1.3-1.5
     RISKY,         // >1.5
     INSUFFICIENT   // za mało treningów żeby liczyć
@@ -97,6 +98,7 @@ class TrainingLoadAnalyzer @Inject constructor(
             LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
             LoadZone.DELOAD_PROPER -> "Deload przebiega prawidłowo — niski tonaż jest celowy (ACWR ${"%.2f".format(acwr)}). Po nim wracasz do akumulacji."
             LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
+            LoadZone.STABLE_BUT_FATIGUED -> "Stała objętość (ACWR ${"%.2f".format(acwr)}) — ale wykryto inne sygnały (patrz alert wyżej). ACWR mierzy ZMIANĘ tonażu, nie absolutne obciążenie. Aktualnie posłuchaj alertu, nie ACWR."
             LoadZone.OVERREACHING -> "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
             LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."
             LoadZone.INSUFFICIENT -> ""  // nie powinniśmy tu dotrzeć
@@ -116,15 +118,24 @@ class TrainingLoadAnalyzer @Inject constructor(
     /** v1.11.46 — fast variant z pre-fetched StatsSnapshot. */
     fun analyzeWithSnapshot(
         snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
-        currentPhase: TrainingPhase = TrainingPhase.NO_DATA
-    ): TrainingLoad = computeTrainingLoadFromSnapshot(snapshot, System.currentTimeMillis(), currentPhase)
+        currentPhase: TrainingPhase = TrainingPhase.NO_DATA,
+        hasGlobalAlert: Boolean = false
+    ): TrainingLoad = computeTrainingLoadFromSnapshot(
+        snapshot, System.currentTimeMillis(), currentPhase, hasGlobalAlert
+    )
 }
 
 /** Pure function — testowalne bez DAO. Logika IDENTYCZNA z TrainingLoadAnalyzer.analyze(). */
 fun computeTrainingLoadFromSnapshot(
     snapshot: pl.filebit.gymtracker.data.repository.StatsSnapshot,
     now: Long,
-    currentPhase: TrainingPhase = TrainingPhase.NO_DATA
+    currentPhase: TrainingPhase = TrainingPhase.NO_DATA,
+    /**
+     * v1.24.2: gdy true (inny analyzer wykrył ból/przerwę/deload), zone=OPTIMAL
+     * jest klasyfikowane jako STABLE_BUT_FATIGUED — rekomendacja odzwierciedla że
+     * stała objętość nie znaczy "wszystko OK" gdy są inne sygnały.
+     */
+    hasGlobalAlert: Boolean = false
 ): TrainingLoad {
     val msPerDay = 24L * 3600 * 1000
 
@@ -165,7 +176,10 @@ fun computeTrainingLoadFromSnapshot(
     val zone = when {
         acwr < 0.8 && currentPhase == TrainingPhase.DELOAD -> LoadZone.DELOAD_PROPER
         acwr < 0.8 -> LoadZone.DETRAINING
-        acwr <= 1.3 -> LoadZone.OPTIMAL
+        // v1.24.2: gdy aplikacja sygnalizuje deload/ból/powrót (hasGlobalAlert=true),
+        // OPTIMAL z ACWR ~1.0 to NIE "niskie ryzyko". To stała objętość przy
+        // sygnałach przemęczenia — uniwersalna sprzeczność komunikatów.
+        acwr <= 1.3 -> if (hasGlobalAlert) LoadZone.STABLE_BUT_FATIGUED else LoadZone.OPTIMAL
         acwr <= 1.5 -> LoadZone.OVERREACHING
         else -> LoadZone.RISKY
     }
@@ -173,6 +187,7 @@ fun computeTrainingLoadFromSnapshot(
         LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
         LoadZone.DELOAD_PROPER -> "Deload przebiega prawidłowo — niski tonaż jest celowy (ACWR ${"%.2f".format(acwr)}). Po nim wracasz do akumulacji."
         LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
+        LoadZone.STABLE_BUT_FATIGUED -> "Stała objętość (ACWR ${"%.2f".format(acwr)}) — ale wykryto inne sygnały (patrz alert wyżej). ACWR mierzy ZMIANĘ tonażu, nie absolutne obciążenie. Aktualnie posłuchaj alertu, nie ACWR."
         LoadZone.OVERREACHING -> "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
         LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."
         LoadZone.INSUFFICIENT -> ""

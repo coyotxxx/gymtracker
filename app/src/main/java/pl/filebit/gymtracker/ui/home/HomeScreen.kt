@@ -2245,6 +2245,7 @@ private fun TrainingLoadCard(
     val (accent, label) = when (load.zone) {
         LoadZone.OPTIMAL -> SuccessGreen to "Optymalne"
         LoadZone.DELOAD_PROPER -> SuccessGreen to "Deload (prawidłowy)"
+        LoadZone.STABLE_BUT_FATIGUED -> AccentOrange to "Stała objętość, ale przemęczenie"
         LoadZone.DETRAINING -> AccentOrange to "Detraining"
         LoadZone.OVERREACHING -> AccentOrange to "Wysokie"
         LoadZone.RISKY -> ErrorRed to "Ryzyko kontuzji"

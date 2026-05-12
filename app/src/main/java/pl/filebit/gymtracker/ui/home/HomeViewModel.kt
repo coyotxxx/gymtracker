@@ -206,9 +206,12 @@ class HomeViewModel @Inject constructor(
         val healthInsight = runCatching { healthAnalyzer.analyze(currentPhase) }.getOrNull()
         // v1.7.4 WHOOP-like Recovery Score 0-100 z personal baseline (nie używa StatsSnapshot)
         val recoveryScore = runCatching { recoveryScoreCalculator.calculate() }.getOrNull()
-        // v1.7.4 ACWR — Acute:Chronic Workload Ratio (v1.11.68: phase-aware)
+        // v1.7.4 ACWR — Acute:Chronic Workload Ratio (v1.11.68: phase-aware,
+        // v1.24.2: hasGlobalAlert — żeby Sweet spot nie myliło gdy aktywny inny alert)
+        val hasGlobalAlert = deloadCard !is pl.filebit.gymtracker.data.repository.DeloadCardState.None &&
+            deloadCard !is pl.filebit.gymtracker.data.repository.DeloadCardState.Active
         val trainingLoad = runCatching {
-            trainingLoadAnalyzer.analyzeWithSnapshot(analyzerSnapshot, currentPhase)
+            trainingLoadAnalyzer.analyzeWithSnapshot(analyzerSnapshot, currentPhase, hasGlobalAlert)
         }.getOrNull()
         // v1.9.0 Recovery per partia + Training Readiness (v1.11.68: phase-aware)
         val muscleRecovery = runCatching { muscleRecoveryAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
