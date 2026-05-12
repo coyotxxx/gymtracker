@@ -600,7 +600,8 @@ private fun GreetingHeader(
             color = DarkOnSurfaceVariant
         )
         Spacer(Modifier.height(4.dp))
-        // "Cześć[, Maciej]" — imię w żółci
+        // "Cześć[, Maciej]" — imię w żółci. v1.24.16: maxLines=1+ellipsis na imieniu,
+        // żeby długie imiona/etykiety nie zawijały layoutu na 2 linie.
         Row(verticalAlignment = Alignment.Bottom) {
             Text(
                 if (displayName.isBlank()) "Cześć" else "Cześć,",
@@ -620,7 +621,10 @@ private fun GreetingHeader(
                         fontWeight = FontWeight.ExtraBold,
                         letterSpacing = (-0.4).sp
                     ),
-                    color = AccentOrange
+                    color = AccentOrange,
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    modifier = Modifier.weight(1f, fill = false)
                 )
             }
         }
@@ -1524,18 +1528,28 @@ private fun DeloadActiveBanner(
     val pctOff = ((1.0 - active.state.factor) * 100).toInt()
     var showDialog by remember { mutableStateOf(false) }
 
+    // v1.24.16: tło z DarkSurface zamiast tinted akcent — żeby banner zlewał się
+    // wizualnie z resztą ciemnego Home. Akcent zostaje na ikonie + tekście + linku.
     androidx.compose.foundation.layout.Box(
         modifier = androidx.compose.ui.Modifier
             .fillMaxWidth()
-            .background(color.copy(alpha = 0.06f), RoundedCornerShape(10.dp))
-            .padding(horizontal = 12.dp, vertical = 8.dp)
+            .background(pl.filebit.gymtracker.ui.theme.DarkSurface, RoundedCornerShape(10.dp))
+            .padding(start = 12.dp, end = 4.dp, top = 8.dp, bottom = 8.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth()
         ) {
+            // mała pionowa linia akcent po lewej zamiast pełnego tinta
+            androidx.compose.foundation.layout.Box(
+                modifier = Modifier
+                    .width(3.dp)
+                    .height(20.dp)
+                    .background(color, RoundedCornerShape(2.dp))
+            )
+            Spacer(Modifier.width(10.dp))
             Text("💤", fontSize = 14.sp)
-            Spacer(Modifier.width(8.dp))
+            Spacer(Modifier.width(6.dp))
             Text(
                 "DELOAD · −$pctOff% · ${active.daysRemaining} ${if (active.daysRemaining == 1) "dzień" else "dni"}",
                 style = MaterialTheme.typography.labelMedium.copy(
@@ -1680,8 +1694,10 @@ private fun DayOffHeroCard(
                         .clickable(onClick = onWeekPlan),
                     contentAlignment = Alignment.Center
                 ) {
+                    // v1.24.16: "Plan tyg." → "Tydzień" — krócej i czytelniej,
+                    // bez niejednoznacznego skrótu.
                     Text(
-                        "Plan tyg.",
+                        "Tydzień",
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.SemiBold,
                             fontSize = 14.sp
