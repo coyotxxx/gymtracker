@@ -209,7 +209,10 @@ class OnboardingViewModel @Inject constructor(
             )
             runCatching { dietProfileRepo.save(newDietProfile) }
 
-            // Cele
+            // Cele — v1.24.11: jeden user, jedno źródło prawdy. Jeśli istnieje
+            // aktywny Goal tego samego typu, aktualizuj jego targetValue do
+            // wartości z wizarda (inaczej UserProfile.targetWeightKg=75 byłoby
+            // niespójne z Goal.targetValue=70 z poprzedniej sesji).
             if (s.bodyweightKg != null && s.targetWeightKg != null && s.bodyweightKg > 0) {
                 val goalType = when (s.weightGoalType) {
                     WeightGoalType.CUT -> GoalType.LOSE_WEIGHT
@@ -217,14 +220,14 @@ class OnboardingViewModel @Inject constructor(
                     else -> null
                 }
                 if (goalType != null) {
+                    val now = System.currentTimeMillis()
+                    val threeMonths = 90L * 24 * 60 * 60 * 1000
+                    val title = if (goalType == GoalType.LOSE_WEIGHT)
+                        "Schudnąć do ${s.targetWeightKg} kg"
+                    else
+                        "Przybrać do ${s.targetWeightKg} kg"
                     val existing = goalRepo.getActive().firstOrNull { it.type == goalType }
                     if (existing == null) {
-                        val now = System.currentTimeMillis()
-                        val threeMonths = 90L * 24 * 60 * 60 * 1000
-                        val title = if (goalType == GoalType.LOSE_WEIGHT)
-                            "Schudnąć do ${s.targetWeightKg} kg"
-                        else
-                            "Przybrać do ${s.targetWeightKg} kg"
                         goalRepo.upsert(
                             Goal(
                                 type = goalType,
@@ -235,6 +238,13 @@ class OnboardingViewModel @Inject constructor(
                                 targetValue = s.targetWeightKg,
                                 startDate = now,
                                 deadline = now + threeMonths
+                            )
+                        )
+                    } else if (existing.targetValue != s.targetWeightKg) {
+                        goalRepo.upsert(
+                            existing.copy(
+                                targetValue = s.targetWeightKg,
+                                title = title
                             )
                         )
                     }

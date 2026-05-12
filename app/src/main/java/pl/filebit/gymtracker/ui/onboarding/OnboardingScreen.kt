@@ -242,8 +242,11 @@ private fun GoalExperiencePage(
     state: OnboardingUiState,
     onGoal: (TrainingGoal) -> Unit,
     onExperience: (ExperienceLevel) -> Unit,
-    onGender: (Gender) -> Unit
+    @Suppress("UNUSED_PARAMETER") onGender: (Gender) -> Unit
 ) {
+    // v1.24.11: usunięto blok "Płeć (do standardów siłowych)" — duplikat pytania
+    // z AgeHeightGenderPage. state.gender to pojedyncze pole singletonu, więc
+    // pytanie 2× łamało zasadę "jeden user, jedno źródło prawdy" i myliło usera.
     Column(horizontalAlignment = Alignment.Start, modifier = Modifier.fillMaxWidth()) {
         SectionLabel("Twój cel treningowy")
         Spacer(Modifier.height(8.dp))
@@ -261,13 +264,6 @@ private fun GoalExperiencePage(
             ChoicePill("Początkujący (< 1 rok)", state.experience == ExperienceLevel.BEGINNER) { onExperience(ExperienceLevel.BEGINNER) }
             ChoicePill("Średniozaawansowany (1-3 lata)", state.experience == ExperienceLevel.INTERMEDIATE) { onExperience(ExperienceLevel.INTERMEDIATE) }
             ChoicePill("Zaawansowany (3+ lat)", state.experience == ExperienceLevel.ADVANCED) { onExperience(ExperienceLevel.ADVANCED) }
-        }
-        Spacer(Modifier.height(20.dp))
-        SectionLabel("Płeć (do standardów siłowych)")
-        Spacer(Modifier.height(8.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            ChoicePill("Mężczyzna", state.gender == Gender.MALE, modifier = Modifier.weight(1f)) { onGender(Gender.MALE) }
-            ChoicePill("Kobieta", state.gender == Gender.FEMALE, modifier = Modifier.weight(1f)) { onGender(Gender.FEMALE) }
         }
     }
 }
