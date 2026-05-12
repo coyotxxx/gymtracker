@@ -817,6 +817,12 @@ class StatsRepository @Inject constructor(
     /**
      * Stagnacja: dla każdego ćwiczenia w bieżącym treningu sprawdź czy max waga
      * w ostatnich 3+ treningach nie urosła (jest dokładnie taka sama).
+     *
+     * FIX v1.23.1: dodatkowo wymagamy by w ostatnich 3-5 treningach przed lastN
+     * waga była **taka sama lub WYŻSZA**. Inaczej "ostatnie 3 z tą samą wagą"
+     * to po prostu **świeży awans** (np. 80→82.5kg w obrębie 1 tygodnia 3×/tydz),
+     * nie stagnacja. To bug: liniowa progresja "+2.5kg/tydz" wyglądała jak
+     * stagnacja na każdym świeżym poziomie.
      */
     suspend fun detectStagnation(currentWorkoutId: Long, threshold: Int = 3): List<StagnationAlert> {
         val curSets = setDao.getForWorkout(currentWorkoutId)
@@ -836,7 +842,8 @@ class StatsRepository @Inject constructor(
                 .filter { it.isCompleted && it.setType != SetType.WARMUP && it.workoutId in finishedIds.keys }
             if (allSets.isEmpty()) continue
 
-            // Pogrupuj per workout, weź max wagę i datę startu
+            // Pogrupuj per workout, weź max wagę i datę startu.
+            // Window: threshold + 3 żeby móc sprawdzić "czy waga rosła niedawno"
             val perWorkoutMaxWeight = allSets.groupBy { it.workoutId }
                 .map { (wid, list) ->
                     val w = finishedIds[wid]!!
@@ -844,7 +851,7 @@ class StatsRepository @Inject constructor(
                 }
                 .sortedByDescending { it.first }   // od najnowszych
                 .map { it.second }
-                .take(threshold + 1)
+                .take(threshold + 3)
 
             if (perWorkoutMaxWeight.size < threshold) continue
 
@@ -853,17 +860,23 @@ class StatsRepository @Inject constructor(
             val firstWeight = lastN.first()
             if (firstWeight <= 0) continue
             val allEqual = lastN.all { it == firstWeight }
-            if (allEqual) {
-                val name = exerciseDao.getById(exId)?.name ?: "?"
-                results.add(
-                    StagnationAlert(
-                        exerciseId = exId,
-                        exerciseName = name,
-                        stuckAtKg = firstWeight,
-                        workoutsAtSameWeight = threshold
-                    )
+            if (!allEqual) continue
+
+            // FIX: sprawdź czy treningi PRZED lastN miały niższą wagę.
+            // Jeśli tak → user właśnie awansował, to nie stagnacja.
+            val priorWeights = perWorkoutMaxWeight.drop(threshold)
+            val recentlyAdvanced = priorWeights.any { it in 0.001..(firstWeight - 0.001) }
+            if (recentlyAdvanced) continue
+
+            val name = exerciseDao.getById(exId)?.name ?: "?"
+            results.add(
+                StagnationAlert(
+                    exerciseId = exId,
+                    exerciseName = name,
+                    stuckAtKg = firstWeight,
+                    workoutsAtSameWeight = threshold
                 )
-            }
+            )
         }
         return results
     }
