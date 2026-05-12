@@ -194,7 +194,10 @@ private fun MesocycleCard(
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface
             )
-            if (emphasized && ui.progressPct > 0) {
+            // v1.24.9: ukryj progress bar dla expired cykli — dateRangeText
+                // już mówi "przeterminowany X dni", a status badge "ZAKOŃCZ CYKL".
+                // Pokazywanie "100% — zostało..." obok byłoby redundantne i mylące.
+            if (emphasized && ui.progressPct > 0 && !ui.isExpiredActive) {
                 Spacer(Modifier.height(8.dp))
                 LinearProgressIndicator(
                     progress = { ui.progressPct / 100f },
@@ -210,6 +213,15 @@ private fun MesocycleCard(
                     "${ui.progressPct}% — zostało ${ui.daysRemainingLabel}",
                     style = MaterialTheme.typography.labelSmall,
                     color = DarkOnSurfaceVariant
+                )
+            }
+            if (emphasized && ui.isExpiredActive) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    ui.daysRemainingLabel,   // "Zakończ i wybierz kolejny cykl"
+                    style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                    color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                    fontWeight = FontWeight.Bold
                 )
             }
             if (ui.notes.isNotBlank() && emphasized) {

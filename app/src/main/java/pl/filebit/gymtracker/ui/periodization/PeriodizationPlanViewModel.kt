@@ -23,13 +23,16 @@ import javax.inject.Inject
 data class MesocycleCardUi(
     val id: Long,
     val phase: MesocyclePhase,
-    val statusLabel: String,       // "TRWA" / "UKOŃCZONY" / "POMINIĘTY"
+    val statusLabel: String,       // "TRWA" / "UKOŃCZONY" / "POMINIĘTY" / "ZAKOŃCZ CYKL"
     val statusColor: Color,
     val subtitle: String,          // "Tydzień 2/3 — 5 dni zostało" lub "3 tyg zakończony"
     val dateRangeText: String,     // "12.05 — 02.06" lub "Start: 12.05 (trwa)"
     val progressPct: Int,          // 0-100 (tylko dla ACTIVE)
     val daysRemainingLabel: String,// "5 dni" / "1 dzień"
-    val notes: String              // z entity.notes
+    val notes: String,             // z entity.notes
+    /** v1.24.9: TRUE gdy cykl jest status=ACTIVE w bazie ale data końca minęła.
+     *  UI ukrywa wiersz "X% — zostało" (zbędne dla zakończonego cyklu). */
+    val isExpiredActive: Boolean = false
 )
 
 data class PeriodizationPlanUiState(
@@ -86,33 +89,48 @@ internal fun mapToCardUi(
         df.format(java.util.Date(it))
     }
 
-    val (statusLabel, statusColor) = when (meso.status) {
-        MesocycleStatus.ACTIVE -> "TRWA" to AccentOrange
-        MesocycleStatus.COMPLETED -> "UKOŃCZONY" to SuccessGreen
-        MesocycleStatus.SKIPPED -> "POMINIĘTY" to DarkOnSurfaceVariant
-        MesocycleStatus.PLANNED -> "PLANOWANY" to DarkOnSurfaceVariant
-    }
-
     val daysRemaining = meso.daysRemaining(nowMs)
     val daysElapsed = meso.daysSinceStart(nowMs)
     val totalDays = meso.totalDaysPlanned
-    val progressPct = if (meso.status == MesocycleStatus.ACTIVE && totalDays > 0) {
+
+    // v1.24.9: wykryj "expired ACTIVE" — cykl jest STATUS=ACTIVE w bazie ale
+    // planowana data końca minęła. Bez tego UI pokazywało "TRWA · 100% · 0 dni
+    // zostało" mimo że cykl skończył się tygodnie temu (komunikat sprzeczny).
+    //
+    // daysRemaining() ma coerceAtLeast(0), więc używamy raw obliczenia żeby pokazać
+    // "przeterminowany X dni" — inaczej zawsze byłoby 0.
+    val rawDaysToEnd = ((meso.plannedEndDateMs - nowMs) / (24L * 3600 * 1000)).toInt()
+    val isExpiredActive = meso.status == MesocycleStatus.ACTIVE && rawDaysToEnd < 0
+    val overdueDays = if (isExpiredActive) -rawDaysToEnd else 0
+
+    val (statusLabel, statusColor) = when {
+        isExpiredActive -> "ZAKOŃCZ CYKL" to AccentOrange  // wymaga akcji
+        meso.status == MesocycleStatus.ACTIVE -> "TRWA" to AccentOrange
+        meso.status == MesocycleStatus.COMPLETED -> "UKOŃCZONY" to SuccessGreen
+        meso.status == MesocycleStatus.SKIPPED -> "POMINIĘTY" to DarkOnSurfaceVariant
+        meso.status == MesocycleStatus.PLANNED -> "PLANOWANY" to DarkOnSurfaceVariant
+        else -> "—" to DarkOnSurfaceVariant
+    }
+
+    val progressPct = if (meso.status == MesocycleStatus.ACTIVE && !isExpiredActive && totalDays > 0) {
         ((daysElapsed.toDouble() / totalDays) * 100).toInt().coerceIn(0, 100)
     } else 100
 
-    val subtitle = when (meso.status) {
-        MesocycleStatus.ACTIVE -> "Tydzień ${meso.weekInPhase}/${meso.phaseLengthWeeks} • ${meso.phase.shortDesc()}"
-        MesocycleStatus.COMPLETED -> "${meso.phaseLengthWeeks} tyg • ${meso.phase.shortDesc()}"
+    val subtitle = when {
+        isExpiredActive -> "Cykl ${meso.phaseLengthWeeks} tyg zakończony • ${meso.phase.shortDesc()}"
+        meso.status == MesocycleStatus.ACTIVE -> "Tydzień ${meso.weekInPhase}/${meso.phaseLengthWeeks} • ${meso.phase.shortDesc()}"
+        meso.status == MesocycleStatus.COMPLETED -> "${meso.phaseLengthWeeks} tyg • ${meso.phase.shortDesc()}"
         else -> meso.phase.shortDesc()
     }
 
-    val dateRangeText = if (meso.status == MesocycleStatus.ACTIVE) {
-        "Start: $startStr → planowany koniec: $endStr"
-    } else {
-        "$startStr — $endStr"
+    val dateRangeText = when {
+        isExpiredActive -> "Start: $startStr → planowano: $endStr (przeterminowany $overdueDays dni)"
+        meso.status == MesocycleStatus.ACTIVE -> "Start: $startStr → planowany koniec: $endStr"
+        else -> "$startStr — $endStr"
     }
 
     val daysRemainingLabel = when {
+        isExpiredActive -> "Zakończ i wybierz kolejny cykl"  // pełny tekst, NIE samo "wymaga zakończenia" (które dawało dziwne "zostało wymaga zakończenia")
         daysRemaining == 1 -> "1 dzień"
         daysRemaining in 2..4 -> "$daysRemaining dni"
         else -> "$daysRemaining dni"
@@ -127,6 +145,7 @@ internal fun mapToCardUi(
         dateRangeText = dateRangeText,
         progressPct = progressPct,
         daysRemainingLabel = daysRemainingLabel,
-        notes = meso.notes
+        notes = meso.notes,
+        isExpiredActive = isExpiredActive
     )
 }
