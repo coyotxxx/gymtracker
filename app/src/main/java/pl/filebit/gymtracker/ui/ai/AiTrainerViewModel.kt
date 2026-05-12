@@ -51,7 +51,9 @@ data class AiTrainerUiState(
     // od AI traktujemy jako modyfikacje danego planu (Replace/Copy zamiast nowy)
     val targetPlanId: Long? = null,
     val availablePlans: List<pl.filebit.gymtracker.data.entity.TrainingPlan> = emptyList(),
-    val improvementPreview: pl.filebit.gymtracker.ai.AiPlanProposal? = null
+    val improvementPreview: pl.filebit.gymtracker.ai.AiPlanProposal? = null,
+    /** Ostatnia wysłana wiadomość USER — używana przez retry() gdy AI failuje. */
+    val lastUserPrompt: String? = null
 ) {
     /** Ostatnia wiadomość ASSISTANT z planem, której jeszcze nie zastosowano. */
     val pendingProposalMessage: ChatMessage?
@@ -223,10 +225,12 @@ class AiTrainerViewModel @Inject constructor(
             messages = _state.value.messages + userMsgUi,
             isLoading = true,
             error = null,
-            planAppliedId = null
+            planAppliedId = null,
+            lastUserPrompt = prompt
         )
 
         viewModelScope.launch {
+            try {
             val convId = ensureConversation(titleHint = if (isFirstMessage) prompt else null)
 
             val savedUserId = chatRepo.addMessage(
@@ -300,7 +304,26 @@ class AiTrainerViewModel @Inject constructor(
                     )
                 }
             )
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                throw e
+            } catch (e: Throwable) {
+                _state.value = _state.value.copy(
+                    isLoading = false,
+                    error = "Nieoczekiwany błąd: ${e.message?.take(200) ?: e.javaClass.simpleName}"
+                )
+            }
         }
+    }
+
+    fun retry() {
+        val prompt = _state.value.lastUserPrompt ?: return
+        if (_state.value.isLoading) return
+        // Usuń orphan USER msg z UI (zostanie ponownie dodana przez sendInternal)
+        _state.value = _state.value.copy(
+            messages = _state.value.messages.dropLastWhile { it.role == AiRole.USER },
+            error = null
+        )
+        sendInternal(prompt)
     }
 
     private suspend fun ensureConversation(titleHint: String?): Long {

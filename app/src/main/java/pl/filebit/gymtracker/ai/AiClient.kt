@@ -1,7 +1,9 @@
 package pl.filebit.gymtracker.ai
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeout
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
@@ -80,6 +82,14 @@ class AiClientImpl @Inject constructor(
 
     private val json = Json { ignoreUnknownKeys = true }
 
+    private fun mapTimeoutToFriendly(err: Throwable): Throwable =
+        if (err is TimeoutCancellationException) {
+            IllegalStateException(
+                "Timeout: AI nie odpowiedziała w ciągu ${CHAT_TIMEOUT_MS / 1000}s. " +
+                "Spróbuj ponownie lub zadaj krótsze pytanie."
+            )
+        } else err
+
     /** Zapisuje wywołanie AI do bazy jeśli logging enabled. */
     private suspend fun logCall(
         source: String,
@@ -122,11 +132,13 @@ class AiClientImpl @Inject constructor(
         val startMs = System.currentTimeMillis()
         val combinedPrompt = messages.joinToString("\n\n") { "[${it.role.name}]\n${it.content}" }
         val result = runCatching {
-            when (config.provider) {
-                AiProvider.ANTHROPIC -> callAnthropic(config, messages)
-                AiProvider.OPENAI -> callOpenAi(config, messages)
+            withTimeout(CHAT_TIMEOUT_MS) {
+                when (config.provider) {
+                    AiProvider.ANTHROPIC -> callAnthropic(config, messages)
+                    AiProvider.OPENAI -> callOpenAi(config, messages)
+                }
             }
-        }
+        }.mapError(::mapTimeoutToFriendly)
         val duration = System.currentTimeMillis() - startMs
         result.fold(
             onSuccess = { response ->
@@ -148,11 +160,13 @@ class AiClientImpl @Inject constructor(
         val startMs = System.currentTimeMillis()
         val combinedPrompt = messages.joinToString("\n\n") { "[${it.role.name}]\n${it.content}" }
         val result = runCatching {
-            when (config.provider) {
-                AiProvider.ANTHROPIC -> callAnthropicWithTools(config, messages, toolHandler)
-                AiProvider.OPENAI -> callOpenAi(config, messages)  // fallback bez tools
+            withTimeout(CHAT_TIMEOUT_MS) {
+                when (config.provider) {
+                    AiProvider.ANTHROPIC -> callAnthropicWithTools(config, messages, toolHandler)
+                    AiProvider.OPENAI -> callOpenAi(config, messages)  // fallback bez tools
+                }
             }
-        }
+        }.mapError(::mapTimeoutToFriendly)
         val duration = System.currentTimeMillis() - startMs
         result.fold(
             onSuccess = { logCall(source, config, combinedPrompt, it, true, null, duration) },
@@ -565,4 +579,13 @@ class AiClientImpl @Inject constructor(
             else -> 8192  // bezpieczny default
         }
     }
+
+    companion object {
+        /** Twardy limit całego flow chat (multi-turn z tool_use). Po przekroczeniu Result.failure z user-friendly msg. */
+        const val CHAT_TIMEOUT_MS = 180_000L
+    }
 }
+
+/** Mapuje Throwable w Result.failure. Pozwala zamienić wewnętrzny błąd na user-friendly bez fold/recover boilerplate. */
+private inline fun <T> Result<T>.mapError(transform: (Throwable) -> Throwable): Result<T> =
+    fold(onSuccess = { Result.success(it) }, onFailure = { Result.failure(transform(it)) })

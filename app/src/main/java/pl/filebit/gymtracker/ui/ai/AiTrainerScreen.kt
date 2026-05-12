@@ -220,17 +220,37 @@ fun AiTrainerScreen(
                         .padding(8.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)
                 ) {
-                    Row(
-                        modifier = Modifier.padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    Column(modifier = Modifier.padding(12.dp)) {
                         Text(
                             "❌ $err",
-                            modifier = Modifier.weight(1f),
                             color = MaterialTheme.colorScheme.onErrorContainer
                         )
-                        IconButton(onClick = vm::clearError) {
-                            Icon(Icons.Default.Check, contentDescription = null)
+                        if (state.lastUserPrompt != null) {
+                            Spacer(Modifier.height(8.dp))
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.End
+                            ) {
+                                TextButton(onClick = vm::clearError) {
+                                    Text("Zamknij")
+                                }
+                                Spacer(Modifier.size(8.dp))
+                                TextButton(
+                                    onClick = vm::retry,
+                                    enabled = !state.isLoading
+                                ) {
+                                    Text("Spróbuj ponownie")
+                                }
+                            }
+                        } else {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.End
+                            ) {
+                                IconButton(onClick = vm::clearError) {
+                                    Icon(Icons.Default.Check, contentDescription = null)
+                                }
+                            }
                         }
                     }
                 }
