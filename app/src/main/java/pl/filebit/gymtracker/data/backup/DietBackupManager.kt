@@ -229,13 +229,18 @@ class DietBackupManager @Inject constructor(
      * niespójną nazwę.
      */
     private fun parseGoalType(raw: String): pl.filebit.gymtracker.data.entity.DietGoalType {
-        val type = pl.filebit.gymtracker.data.entity.DietGoalType
-        return runCatching { type.valueOf(raw) }.getOrElse {
+        return runCatching {
+            pl.filebit.gymtracker.data.entity.DietGoalType.valueOf(raw)
+        }.getOrElse {
             when (raw.uppercase()) {
-                "CUT", "LOSE_WEIGHT", "DEFICIT" -> type.FAT_LOSS
-                "BULK", "GAIN_MASS", "SURPLUS" -> type.MUSCLE_GAIN
-                "MAINTAIN", "NONE", "" -> type.MAINTAIN
-                else -> type.MAINTAIN
+                "CUT", "LOSE_WEIGHT", "DEFICIT" ->
+                    pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS
+                "BULK", "GAIN_MASS", "SURPLUS" ->
+                    pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN
+                "MAINTAIN", "NONE", "" ->
+                    pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN
+                else ->
+                    pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN
             }
         }
     }
