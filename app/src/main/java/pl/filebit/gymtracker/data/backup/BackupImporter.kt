@@ -63,7 +63,10 @@ class BackupImporter @Inject constructor(
     private val db: AppDatabase,
     private val aiPrefs: AiPreferences,
     private val exerciseSeeder: pl.filebit.gymtracker.data.seed.ExerciseSeeder,
-    private val dietBackupManager: DietBackupManager
+    private val dietBackupManager: DietBackupManager,
+    // v1.24.7: po imporcie odpal backfill mesocykli (zalecenie aplikacji
+    // "utworzy się gdy ≥4 treningi" w realu nie działa bez tego wywołania)
+    private val mesocycleBackfillService: pl.filebit.gymtracker.data.repository.MesocycleBackfillService
 ) {
     private val json = Json { ignoreUnknownKeys = true; prettyPrint = true }
 
@@ -383,6 +386,13 @@ class BackupImporter @Inject constructor(
                     applied = m.applied, createdAt = m.createdAt
                 )
             )
+        }
+
+        // v1.24.7: spróbuj utworzyć mesocykle z importowanej historii treningowej.
+        // Idempotentne (no-op gdy mesoDao.count() > 0). Bez tego aplikacja po imporcie
+        // mówi "Brak mesocykli — utworzy się gdy ≥4 treningi" mimo że są treningi.
+        if (data.workouts.isNotEmpty()) {
+            runCatching { mesocycleBackfillService.backfillFromHistory() }
         }
 
         return BackupImportResult(
