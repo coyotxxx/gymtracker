@@ -329,12 +329,76 @@ class DietBackupManager @Inject constructor(
             ))
         }
 
+        // v1.24.4: import adherenceLogs / dietAdjustments / fastingWindows (wcześniej pominięte — utrata danych przy eksport/import)
+        var adherenceImported = 0
+        var adjustmentsImported = 0
+        var fastingImported = 0
+
+        // 8. AdherenceLogs
+        val adherenceDao = db.adherenceLogDao()
+        for (dto in backup.adherenceLogs) {
+            adherenceDao.upsert(
+                pl.filebit.gymtracker.data.entity.AdherenceLog(
+                    dateMs = dto.dateMs,
+                    targetKcal = dto.targetKcal,
+                    actualKcal = dto.actualKcal,
+                    kcalAdherencePct = dto.kcalAdherencePct,
+                    targetProteinG = dto.targetProteinG,
+                    actualProteinG = dto.actualProteinG,
+                    proteinAdherencePct = dto.proteinAdherencePct,
+                    targetCarbsG = dto.targetCarbsG,
+                    actualCarbsG = dto.actualCarbsG,
+                    carbsAdherencePct = if (dto.targetCarbsG > 0) (dto.actualCarbsG * 100 / dto.targetCarbsG) else 0,
+                    targetFatG = dto.targetFatG,
+                    actualFatG = dto.actualFatG,
+                    fatAdherencePct = if (dto.targetFatG > 0) (dto.actualFatG * 100 / dto.targetFatG) else 0
+                )
+            )
+            adherenceImported++
+        }
+
+        // 9. DietAdjustments
+        val adjustmentDao = db.dietAdjustmentDao()
+        for (dto in backup.dietAdjustments) {
+            adjustmentDao.insert(
+                pl.filebit.gymtracker.data.entity.DietAdjustment(
+                    dateMs = dto.dateMs,
+                    oldKcal = dto.oldKcal,
+                    newKcal = dto.newKcal,
+                    actionCode = dto.actionCode,
+                    reason = dto.reason,
+                    engineExplanation = dto.engineExplanation,
+                    aiExplanation = dto.aiExplanation,
+                    confidence = dto.confidence,
+                    applied = dto.applied,
+                    dismissed = dto.dismissed
+                )
+            )
+            adjustmentsImported++
+        }
+
+        // 10. FastingWindows
+        val fastingDao = db.fastingWindowDao()
+        for (dto in backup.fastingWindows) {
+            fastingDao.upsert(
+                pl.filebit.gymtracker.data.entity.FastingWindow(
+                    eatingStartMs = dto.eatingStartMs,
+                    eatingEndMs = dto.eatingEndMs,
+                    plannedEatingHours = dto.plannedEatingHours
+                )
+            )
+            fastingImported++
+        }
+
         return ImportSummary(
             customProductsImported = customProductsImported,
             mealsImported = mealsImported,
             feedbackImported = feedbackImported,
             hydrationImported = hydrationImported,
-            recoveryImported = recoveryImported
+            recoveryImported = recoveryImported,
+            adherenceImported = adherenceImported,
+            adjustmentsImported = adjustmentsImported,
+            fastingImported = fastingImported
         )
     }
 
@@ -405,8 +469,20 @@ data class ImportSummary(
     val mealsImported: Int,
     val feedbackImported: Int,
     val hydrationImported: Int,
-    val recoveryImported: Int
+    val recoveryImported: Int,
+    // v1.24.4 — wcześniej pomijane (utrata danych)
+    val adherenceImported: Int = 0,
+    val adjustmentsImported: Int = 0,
+    val fastingImported: Int = 0
 ) {
-    fun toUserMessage(): String =
-        "Zaimportowano: $customProductsImported produktów własnych, $mealsImported posiłków, $feedbackImported ocen, $hydrationImported wpisów wody, $recoveryImported wpisów regeneracji."
+    fun toUserMessage(): String = buildString {
+        append("Zaimportowano: $customProductsImported produktów własnych, $mealsImported posiłków")
+        if (feedbackImported > 0) append(", $feedbackImported ocen")
+        if (hydrationImported > 0) append(", $hydrationImported wpisów wody")
+        if (recoveryImported > 0) append(", $recoveryImported wpisów regeneracji")
+        if (adherenceImported > 0) append(", $adherenceImported zapisów adherence")
+        if (adjustmentsImported > 0) append(", $adjustmentsImported korekt diety")
+        if (fastingImported > 0) append(", $fastingImported okien IF")
+        append(".")
+    }
 }
