@@ -75,19 +75,27 @@ class DeloadService @Inject constructor(
             )
         }
         val now = System.currentTimeMillis()
-        val dismissedAt = prefs.dismissedAtMs()
-        if (dismissedAt > 0 && now - dismissedAt < DISMISS_GRACE_DAYS * 24 * 3600 * 1000) {
-            return DeloadCardState.None
-        }
+        val graceMs = DISMISS_GRACE_DAYS * 24 * 3600 * 1000
         // PRIORYTET (od najwyższego):
         // 1. ActiveInjury — ból to inny sygnał niż przetrenowanie/przerwa
         // 2. ReturnAfterBreak — wysokie RPE po przerwie ≠ deload
         // 3. Suggestion (deload klasyczny)
-        checkActiveInjury()?.let { return DeloadCardState.ActiveInjury(it) }
-        checkReturnAfterBreak()?.let { return DeloadCardState.ReturnAfterBreak(it) }
+        // Per-type dismiss (v1.24.0): X-owanie jednego alertu nie blokuje innych typów.
+        checkActiveInjury()?.let {
+            val d = prefs.dismissedAtMs(AlertType.ACTIVE_INJURY)
+            if (d == 0L || now - d >= graceMs) return DeloadCardState.ActiveInjury(it)
+        }
+        checkReturnAfterBreak()?.let {
+            val d = prefs.dismissedAtMs(AlertType.RETURN_AFTER_BREAK)
+            if (d == 0L || now - d >= graceMs) return DeloadCardState.ReturnAfterBreak(it)
+        }
 
         val rec = checkRecommendation()
-        return if (rec != null) DeloadCardState.Suggestion(rec) else DeloadCardState.None
+        if (rec != null) {
+            val d = prefs.dismissedAtMs(AlertType.DELOAD_SUGGESTION)
+            if (d == 0L || now - d >= graceMs) return DeloadCardState.Suggestion(rec)
+        }
+        return DeloadCardState.None
     }
 
     /** Pure detection — używana też przez legacy code. */
@@ -289,8 +297,14 @@ class DeloadService @Inject constructor(
         return true
     }
 
+    /** Legacy dismiss (tylko global flag). Używaj `dismiss(type)` — per-type. */
     fun dismiss() {
         prefs.setDismissedNow()
+    }
+
+    /** v1.24.0: per-type dismiss — zamknięcie jednego alertu nie blokuje innych. */
+    fun dismiss(type: AlertType) {
+        prefs.setDismissedNow(type)
     }
 
     /** Anuluj aktywny deload bez restore (np. user zmienił plan). */

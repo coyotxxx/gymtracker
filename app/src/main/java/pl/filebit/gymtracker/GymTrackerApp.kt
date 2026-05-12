@@ -177,6 +177,17 @@ class GymTrackerApp : Application(), Configuration.Provider {
                     setShowBadge(true)
                 }
             )
+            // v1.24.0 — natychmiastowe alerty Home (ból, powrót po przerwie, deload)
+            nm.createNotificationChannel(
+                NotificationChannel(
+                    pl.filebit.gymtracker.service.HomeAlertNotifier.CHANNEL_ID,
+                    "Alerty trenera",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = "Ostrzeżenia w czasie rzeczywistym: wykryty ból, powrót po przerwie, sugestia deload."
+                    setShowBadge(true)
+                }
+            )
             nm.createNotificationChannel(
                 NotificationChannel(
                     pl.filebit.gymtracker.service.DietAutoAdjustmentWorker.CHANNEL_ID,

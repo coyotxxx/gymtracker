@@ -110,7 +110,8 @@ class HomeViewModel @Inject constructor(
     private val statsCacheService: pl.filebit.gymtracker.data.repository.StatsCacheService,
     private val mesoDao: TrainingMesocycleDao,
     private val periodizationOrchestrator: PeriodizationOrchestrator,
-    private val pendingDecisionDao: PendingPeriodizationDecisionDao  // v1.15.0
+    private val pendingDecisionDao: PendingPeriodizationDecisionDao,  // v1.15.0
+    private val homeAlertNotifier: pl.filebit.gymtracker.service.HomeAlertNotifier  // v1.24.0
 ) : ViewModel() {
 
     init {
@@ -188,6 +189,9 @@ class HomeViewModel @Inject constructor(
 
         val deloadCard = runCatching { deloadService.cardState() }
             .getOrNull() ?: pl.filebit.gymtracker.data.repository.DeloadCardState.None
+        // v1.24.0: wyślij notyfikację gdy alert się pojawia / zmienia
+        // (anti-spam przez hash w SharedPreferences — nie powtórzymy tej samej)
+        runCatching { homeAlertNotifier.maybeNotify(deloadCard) }
 
         // v1.11.46: snapshot RAZ dla 3 analyzerów (zero N+1)
         val analyzerSnapshot = runCatching { statsCacheService.snapshot() }
@@ -362,6 +366,14 @@ class HomeViewModel @Inject constructor(
     fun dismissDeload() {
         viewModelScope.launch {
             deloadService.dismiss()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    /** v1.24.0: zamknięcie konkretnego typu alertu — nie blokuje innych typów. */
+    fun dismissAlert(type: pl.filebit.gymtracker.data.repository.AlertType) {
+        viewModelScope.launch {
+            deloadService.dismiss(type)
             deloadRefresh.value = System.currentTimeMillis()
         }
     }

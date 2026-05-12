@@ -164,7 +164,7 @@ fun HomeScreen(
                                 }
                             },
                             onExplain = { showDeloadExplain = card.recommendation },
-                            onDismiss = { vm.dismissDeload() }
+                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.DELOAD_SUGGESTION) }
                         )
                     }
                 }
@@ -189,7 +189,7 @@ fun HomeScreen(
                     item {
                         ReturnAfterBreakCard(
                             recommendation = card.recommendation,
-                            onDismiss = { vm.dismissDeload() }
+                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.RETURN_AFTER_BREAK) }
                         )
                     }
                 }
@@ -197,7 +197,7 @@ fun HomeScreen(
                     item {
                         ActiveInjuryCard(
                             recommendation = card.recommendation,
-                            onDismiss = { vm.dismissDeload() }
+                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.ACTIVE_INJURY) }
                         )
                     }
                 }
