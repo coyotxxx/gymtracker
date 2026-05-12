@@ -212,7 +212,7 @@ object CalorieAdjustmentEngine {
             )
         }
 
-        // 3. Stagnacja + adherence wysokie + treningi wykonane → obniż
+        // 3. Stagnacja 14-dni + adherence wysokie + treningi wykonane → obniż
         if (trend.isStagnationLikely && highAdherence && workoutsPct >= 80) {
             return AdjustmentDecision(
                 action = AdjustmentAction.DECREASE_KCAL,
@@ -223,6 +223,23 @@ object CalorieAdjustmentEngine {
                     "Zgodność z dietą: ${adherence.avgKcalPct}%, treningi: ${adherence.workoutsDone}/${adherence.workoutsPlanned}. " +
                     "Wszystko wykonujesz dobrze, ale waga stoi — czas na małą korektę. Obniżam o 150 kcal.",
                 confidence = Confidence.HIGH
+            )
+        }
+
+        // 3b. v1.24.20: WCZESNY plateau 7-dni + high adherence → lekka korekta lub
+        // wait-and-see. Sygnał Macieja: 'po 7 dniach bez efektów' powinno reagować
+        // wcześniej niż 14-dniowy stagnationLikely.
+        if (trend.isEarlyPlateau && !trend.isStagnationLikely && highAdherence && workoutsPct >= 80) {
+            return AdjustmentDecision(
+                action = AdjustmentAction.DECREASE_KCAL,
+                kcalDeltaProposed = -100,
+                newKcal = currentKcal - 100,
+                reason = "cut_early_plateau_7d",
+                explanation = "Waga w ostatnich 7 dniach praktycznie stoi (${trend.daysWithoutProgress} dni bez zmiany ≥0.2 kg). " +
+                    "Zgodność z dietą ${adherence.avgKcalPct}%, treningi ${adherence.workoutsDone}/${adherence.workoutsPlanned} — wszystko OK, ale plan się 'zatyka'. " +
+                    "Mała korekta −100 kcal teraz, żeby nie czekać 2 tygodnie. Jeśli waga ruszy w ciągu 4-5 dni — wracamy do poprzedniej.",
+                confidence = Confidence.MEDIUM,
+                warnings = listOf("Wczesny sygnał — jeśli to tylko retencja wody (sól/stres), waga ruszy sama bez korekty.")
             )
         }
 
