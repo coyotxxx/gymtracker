@@ -11,25 +11,31 @@ package pl.filebit.gymtracker.util
  * Pure function — nie zależy od DB. Wrapper w DeloadService dostarcza dane.
  *
  * @param avgRpe14d średnie RPE ze wszystkich roboczych setów w ostatnich 14 dniach
+ * @param sessionsLast14d liczba ukończonych treningów w ostatnich 14 dniach
+ *   (gdy <3, RPE-based reguły nie odpalają — za mało próbek aby ufać średniej)
  * @param sessionsLast35d liczba ukończonych treningów w ostatnich 35 dniach
  * @param stagnationCount liczba ćwiczeń ze stagnacją 3+ treningów
  * @return rekomendacja deloadu (poziom + uzasadnienie) lub null gdy nie trzeba
  */
 fun detectDeloadNeed(
     avgRpe14d: Double?,
+    sessionsLast14d: Int,
     sessionsLast35d: Int,
     stagnationCount: Int = 0
 ): DeloadRecommendation? {
+    // Minimum próbek aby ufać średniej RPE: 3 sesje w ciągu 14 dni
+    val hasReliableRpe = sessionsLast14d >= 3 && avgRpe14d != null
+
     // Reguła 1: HIGH — ciężkie 14 dni + dużo sesji w cyklu
-    if (avgRpe14d != null && avgRpe14d >= 8.5 && sessionsLast35d >= 15) {
+    if (hasReliableRpe && avgRpe14d!! >= 8.5 && sessionsLast35d >= 15) {
         return DeloadRecommendation(
             severity = DeloadSeverity.HIGH,
             reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} " +
                 "przy $sessionsLast35d sesjach w 35 dni. Mocno zakumulowane zmęczenie — czas na deload."
         )
     }
-    // Reguła 2: MED — wysokie RPE niezależnie od liczby sesji
-    if (avgRpe14d != null && avgRpe14d >= 9.0) {
+    // Reguła 2: MED — wysokie RPE niezależnie od liczby sesji (ale wymagaj N=3)
+    if (hasReliableRpe && avgRpe14d!! >= 9.0) {
         return DeloadRecommendation(
             severity = DeloadSeverity.MED,
             reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} (bardzo wysokie). " +
@@ -45,7 +51,7 @@ fun detectDeloadNeed(
         )
     }
     // Reguła 4: LOW — długi cykl bez przerwy
-    if (sessionsLast35d >= 18 && avgRpe14d != null && avgRpe14d >= 7.5) {
+    if (hasReliableRpe && sessionsLast35d >= 18 && avgRpe14d!! >= 7.5) {
         return DeloadRecommendation(
             severity = DeloadSeverity.LOW,
             reason = "$sessionsLast35d sesji w 35 dniach z RPE ${"%.1f".format(avgRpe14d)}. " +
@@ -61,3 +67,68 @@ data class DeloadRecommendation(
 )
 
 enum class DeloadSeverity { LOW, MED, HIGH }
+
+/**
+ * Detekcja powrotu po przerwie treningowej.
+ *
+ * Wykrywa sytuację: user trenował regularnie, potem przerwa ≥7 dni, teraz wraca.
+ * To NIE jest deload — to potrzeba ostrożnego restartu (organism out of training shape,
+ * fascia/CNS odzwyczajone od bodźca, ryzyko kontuzji przy próbie "kontynuować od ostatniej sesji").
+ *
+ * Logika ma PRIORYTET wyższy niż deload — pojedynczy workout z RPE 10
+ * po przerwie 14 dni to nie "przetrenowanie", tylko szok powrotu.
+ *
+ * @param sessionsLast14d liczba treningów w ostatnich 14 dniach
+ * @param sessionsLast35d liczba treningów w ostatnich 35 dniach (włącznie z 14d)
+ * @param daysSinceLastWorkout ile dni temu był ostatni workout
+ * @return rekomendacja powrotu lub null gdy nie wykryto przerwy
+ */
+fun detectReturnAfterBreak(
+    sessionsLast14d: Int,
+    sessionsLast35d: Int,
+    daysSinceLastWorkout: Int?
+): ReturnAfterBreakRecommendation? {
+    // Wymagamy historii regularnego treningu (przynajmniej 6 sesji w 35 dni przed przerwą)
+    val sessionsBeforeRecent = sessionsLast35d - sessionsLast14d
+    if (sessionsBeforeRecent < 6) return null  // user nie był regularny, nie ma "powrotu"
+
+    // Wymagamy przerwy: aktywnie <2 sesje w 14 dni
+    if (sessionsLast14d > 2) return null
+
+    // Wymagamy że user właśnie wrócił (1 trening w ostatnich 7 dniach)
+    // lub że ma >= 7 dni przerwy ale jeszcze nie trenował
+    val daysSince = daysSinceLastWorkout ?: return null
+
+    return when {
+        // Aktualna przerwa >14 dni i NIE było żadnego treningu w 14d
+        daysSince >= 14 && sessionsLast14d == 0 -> ReturnAfterBreakRecommendation(
+            breakDays = daysSince,
+            severity = ReturnSeverity.LONG_BREAK,
+            reason = "Wykryto przerwę $daysSince dni od ostatniego treningu. " +
+                "Po dłuższej przerwie zacznij od 75-80% poprzednich wag i stopniowo wracaj " +
+                "(1-2 tygodnie). Twoje ciało potrzebuje czasu na readaptację."
+        )
+        // Wróciłeś świeżo: 1 trening w 14d, przerwa była 7-14 dni
+        sessionsLast14d in 1..2 && daysSince <= 7 -> ReturnAfterBreakRecommendation(
+            breakDays = (14 - sessionsLast14d).coerceAtLeast(7),  // estymata przerwy przed powrotem
+            severity = ReturnSeverity.SHORT_BREAK,
+            reason = "Wróciłeś po przerwie. Po >7 dniach bez treningu obniż wagi o ~15% " +
+                "na 1-2 tygodnie — to NIE deload (przetrenowanie), tylko ostrożny restart. " +
+                "Wysokie RPE po powrocie jest normalne, nie oznacza że jesteś słaby."
+        )
+        else -> null
+    }
+}
+
+data class ReturnAfterBreakRecommendation(
+    val breakDays: Int,
+    val severity: ReturnSeverity,
+    val reason: String
+)
+
+enum class ReturnSeverity {
+    /** 7-13 dni przerwy — krótki restart (~-15% na 1 tydz). */
+    SHORT_BREAK,
+    /** ≥14 dni przerwy — długi restart (~-20-25% na 2 tyg). */
+    LONG_BREAK
+}

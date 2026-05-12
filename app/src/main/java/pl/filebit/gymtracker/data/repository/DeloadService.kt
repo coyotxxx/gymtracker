@@ -5,7 +5,9 @@ import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.util.DeloadRecommendation
 import pl.filebit.gymtracker.util.DeloadSeverity
+import pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation
 import pl.filebit.gymtracker.util.detectDeloadNeed
+import pl.filebit.gymtracker.util.detectReturnAfterBreak
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -24,6 +26,12 @@ sealed class DeloadCardState {
 
     /** Sugestia deload — pokazujemy alert z buttonami Zastosuj/Wyjaśnij/Anuluj. */
     data class Suggestion(val recommendation: DeloadRecommendation) : DeloadCardState()
+
+    /**
+     * Wykryto powrót po przerwie — pokazujemy alert "POWRÓT PO PRZERWIE" zamiast deloadu.
+     * Inna ikonografia i komunikat: NIE przetrenowanie, tylko ostrożny restart.
+     */
+    data class ReturnAfterBreak(val recommendation: ReturnAfterBreakRecommendation) : DeloadCardState()
 
     /** Brak alertu — kafel ukryty. */
     object None : DeloadCardState()
@@ -62,6 +70,11 @@ class DeloadService @Inject constructor(
         if (dismissedAt > 0 && now - dismissedAt < DISMISS_GRACE_DAYS * 24 * 3600 * 1000) {
             return DeloadCardState.None
         }
+        // PRIORYTET: powrót po przerwie > deload. Wysokie RPE po przerwie to nie
+        // przetrenowanie — błędna kategoryzacja pchałaby usera w deload zamiast
+        // ostrożnego restartu.
+        checkReturnAfterBreak()?.let { return DeloadCardState.ReturnAfterBreak(it) }
+
         val rec = checkRecommendation()
         return if (rec != null) DeloadCardState.Suggestion(rec) else DeloadCardState.None
     }
@@ -70,11 +83,39 @@ class DeloadService @Inject constructor(
     suspend fun check(): DeloadRecommendation? = checkRecommendation()
 
     private suspend fun checkRecommendation(): DeloadRecommendation? {
+        val ctx = buildDetectionContext()
+        return detectDeloadNeed(
+            avgRpe14d = ctx.avgRpe14d,
+            sessionsLast14d = ctx.sessions14d,
+            sessionsLast35d = ctx.sessions35d,
+            stagnationCount = ctx.stagnationCount
+        )
+    }
+
+    private suspend fun checkReturnAfterBreak(): ReturnAfterBreakRecommendation? {
+        val ctx = buildDetectionContext()
+        return detectReturnAfterBreak(
+            sessionsLast14d = ctx.sessions14d,
+            sessionsLast35d = ctx.sessions35d,
+            daysSinceLastWorkout = ctx.daysSinceLastWorkout
+        )
+    }
+
+    private data class DetectionContext(
+        val avgRpe14d: Double?,
+        val sessions14d: Int,
+        val sessions35d: Int,
+        val stagnationCount: Int,
+        val daysSinceLastWorkout: Int?
+    )
+
+    private suspend fun buildDetectionContext(): DetectionContext {
         val now = System.currentTimeMillis()
         val ms14d = 14L * 24 * 60 * 60 * 1000
         val ms35d = 35L * 24 * 60 * 60 * 1000
 
         val finishedWorkouts = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val sessions14d = finishedWorkouts.count { it.startedAt >= now - ms14d }
         val sessions35d = finishedWorkouts.count { it.startedAt >= now - ms35d }
         val recent14dWorkouts = finishedWorkouts.filter { it.startedAt >= now - ms14d }
         val rpeValues = recent14dWorkouts.flatMap { w ->
@@ -83,15 +124,20 @@ class DeloadService @Inject constructor(
                 .mapNotNull { it.rpe }
         }
         val avgRpe14d = rpeValues.takeIf { it.isNotEmpty() }?.let { it.average() }
-        val lastWorkoutId = finishedWorkouts.maxByOrNull { it.startedAt }?.id
-        val stagnationCount = lastWorkoutId?.let { id ->
+        val lastWorkout = finishedWorkouts.maxByOrNull { it.startedAt }
+        val daysSinceLastWorkout = lastWorkout?.let {
+            ((now - it.startedAt) / (24L * 3600 * 1000)).toInt()
+        }
+        val stagnationCount = lastWorkout?.id?.let { id ->
             statsRepo.detectStagnation(id, threshold = 3).size
         } ?: 0
 
-        return detectDeloadNeed(
+        return DetectionContext(
             avgRpe14d = avgRpe14d,
-            sessionsLast35d = sessions35d,
-            stagnationCount = stagnationCount
+            sessions14d = sessions14d,
+            sessions35d = sessions35d,
+            stagnationCount = stagnationCount,
+            daysSinceLastWorkout = daysSinceLastWorkout
         )
     }
 

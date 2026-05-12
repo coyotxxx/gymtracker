@@ -184,6 +184,14 @@ fun HomeScreen(
                         )
                     }
                 }
+                is pl.filebit.gymtracker.data.repository.DeloadCardState.ReturnAfterBreak -> {
+                    item {
+                        ReturnAfterBreakCard(
+                            recommendation = card.recommendation,
+                            onDismiss = { vm.dismissDeload() }
+                        )
+                    }
+                }
                 pl.filebit.gymtracker.data.repository.DeloadCardState.None -> Unit
             }
 
@@ -1240,6 +1248,67 @@ private fun DeloadSuggestionCard(
                     style = MaterialTheme.typography.labelSmall,
                     color = DarkOnSurfaceVariant
                 )
+            }
+        }
+    }
+}
+
+@Composable
+private fun ReturnAfterBreakCard(
+    recommendation: pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation,
+    onDismiss: () -> Unit
+) {
+    // Niebieski "refresh" — to NIE deload (warning), to ostrożny restart (informacja).
+    val color = androidx.compose.ui.graphics.Color(0xFF4A90E2)
+    val severityLabel = when (recommendation.severity) {
+        pl.filebit.gymtracker.util.ReturnSeverity.LONG_BREAK -> "POWRÓT PO DŁUŻSZEJ PRZERWIE"
+        pl.filebit.gymtracker.util.ReturnSeverity.SHORT_BREAK -> "POWRÓT PO PRZERWIE"
+    }
+    androidx.compose.foundation.layout.Box(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
+            .border(1.dp, color.copy(alpha = 0.35f), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    "↻",
+                    color = color,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    severityLabel,
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                recommendation.reason,
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(12.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                androidx.compose.material3.TextButton(
+                    onClick = onDismiss,
+                    colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
+                        contentColor = DarkOnSurfaceVariant
+                    )
+                ) {
+                    Text("Rozumiem", fontSize = 13.sp)
+                }
             }
         }
     }
