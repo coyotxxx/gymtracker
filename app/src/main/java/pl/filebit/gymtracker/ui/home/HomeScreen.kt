@@ -170,19 +170,37 @@ fun HomeScreen(
                 }
                 is pl.filebit.gymtracker.data.repository.DeloadCardState.Active -> {
                     item {
-                        DeloadActiveCard(
-                            active = card,
-                            onRestore = {
-                                vm.restoreDeload { result ->
-                                    scope.launch {
-                                        snackbar.showSnackbar(
-                                            "Plan '${result.planName}' wrócił do oryginalnych wag (${result.restoredSets} setów)"
-                                        )
+                        // v1.24.15: w toku → kompaktowy banner (status, nie alert).
+                        // Zakończony → duża karta z CTA "Przywróć plan" (decyzja do podjęcia).
+                        if (card.isFinished) {
+                            DeloadActiveCard(
+                                active = card,
+                                onRestore = {
+                                    vm.restoreDeload { result ->
+                                        scope.launch {
+                                            snackbar.showSnackbar(
+                                                "Plan '${result.planName}' wrócił do oryginalnych wag (${result.restoredSets} setów)"
+                                            )
+                                        }
                                     }
-                                }
-                            },
-                            onCancel = { vm.cancelDeloadWithoutRestore() }
-                        )
+                                },
+                                onCancel = { vm.cancelDeloadWithoutRestore() }
+                            )
+                        } else {
+                            DeloadActiveBanner(
+                                active = card,
+                                onManageRestore = {
+                                    vm.restoreDeload { result ->
+                                        scope.launch {
+                                            snackbar.showSnackbar(
+                                                "Plan '${result.planName}' wrócił do oryginalnych wag (${result.restoredSets} setów)"
+                                            )
+                                        }
+                                    }
+                                },
+                                onManageCancel = { vm.cancelDeloadWithoutRestore() }
+                            )
+                        }
                     }
                 }
                 is pl.filebit.gymtracker.data.repository.DeloadCardState.ReturnAfterBreak -> {
@@ -1483,6 +1501,102 @@ private fun DeloadActiveCard(
                 }
             }
         }
+    }
+}
+
+/**
+ * v1.24.15 — kompaktowy banner deloadu W TOKU (status, nie alert).
+ *
+ * Filozofia: decyzja o deloadzie podjęta. Nie pytamy o nią codziennie.
+ * Pasek informuje "jesteś w deloadzie", a "Wróć teraz" przeniesione
+ * do dyskretnego dialogu pod tappable "Zarządzaj".
+ *
+ * Dla stanu isFinished używamy duża karta DeloadActiveCard — wtedy
+ * realnie wymaga decyzji "wrócić do oryginalnych wag?".
+ */
+@Composable
+private fun DeloadActiveBanner(
+    active: pl.filebit.gymtracker.data.repository.DeloadCardState.Active,
+    onManageRestore: () -> Unit,
+    onManageCancel: () -> Unit
+) {
+    val color = pl.filebit.gymtracker.ui.theme.AccentOrange
+    val pctOff = ((1.0 - active.state.factor) * 100).toInt()
+    var showDialog by remember { mutableStateOf(false) }
+
+    androidx.compose.foundation.layout.Box(
+        modifier = androidx.compose.ui.Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.06f), RoundedCornerShape(10.dp))
+            .padding(horizontal = 12.dp, vertical = 8.dp)
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("💤", fontSize = 14.sp)
+            Spacer(Modifier.width(8.dp))
+            Text(
+                "DELOAD · −$pctOff% · ${active.daysRemaining} ${if (active.daysRemaining == 1) "dzień" else "dni"}",
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 12.sp,
+                    letterSpacing = 0.4.sp
+                ),
+                color = color,
+                modifier = Modifier.weight(1f)
+            )
+            androidx.compose.material3.TextButton(
+                onClick = { showDialog = true },
+                colors = androidx.compose.material3.ButtonDefaults.textButtonColors(
+                    contentColor = color
+                ),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                    horizontal = 8.dp, vertical = 0.dp
+                )
+            ) {
+                Text(
+                    "Zarządzaj",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+        }
+    }
+
+    if (showDialog) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showDialog = false },
+            title = { Text("Deload w toku") },
+            text = {
+                Text(
+                    "Plan '${active.state.planName}' z wagami −$pctOff%. " +
+                        "Pozostało ${active.daysRemaining} ${if (active.daysRemaining == 1) "dzień" else "dni"} lżejszego treningu.\n\n" +
+                        "Możesz wrócić wcześniej do oryginalnych wag jeśli czujesz się gotowy."
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(
+                    onClick = {
+                        showDialog = false
+                        onManageRestore()
+                    }
+                ) {
+                    Text("↩ Wróć teraz", color = color, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(
+                    onClick = {
+                        showDialog = false
+                        onManageCancel()
+                    }
+                ) {
+                    Text("Zamknij deload bez przywracania", color = DarkOnSurfaceVariant)
+                }
+            },
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        )
     }
 }
 
