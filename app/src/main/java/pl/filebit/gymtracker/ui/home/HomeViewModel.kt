@@ -156,13 +156,15 @@ class HomeViewModel @Inject constructor(
         // Effective schedule = oryginalne dni planów + overrides per-tygodniowe
         val schedule = runCatching { planRepo.getEffectiveScheduleForCurrentWeek() }.getOrDefault(emptyMap())
         // v1.24.12: aktywny plan z bazy (TrainingPlan.isActive). Gdy istnieje,
-        // filtrujemy slot wybór do TEGO planu — żeby przy 2+ planach nie był
-        // pokazywany random (firstOrNull). Filozofia: jeden user, jeden aktywny plan.
+        // bierzemy slot WYŁĄCZNIE z tego planu — żeby przy 2+ planach Home nie
+        // chwytał innego planu (filozofia: jeden user, jeden aktywny plan).
+        // Bez aktywnego planu (np. po wipe) fallback do firstOrNull żeby nie
+        // pokazać pustego ekranu.
         val activePlanFromDb = plans.firstOrNull { it.isActive }
         fun pickSlot(slots: List<pl.filebit.gymtracker.util.ScheduleSlot>?): pl.filebit.gymtracker.util.ScheduleSlot? {
             if (slots.isNullOrEmpty()) return null
             return if (activePlanFromDb != null) {
-                slots.firstOrNull { it.planId == activePlanFromDb.id } ?: slots.first()
+                slots.firstOrNull { it.planId == activePlanFromDb.id }
             } else {
                 slots.first()
             }
