@@ -581,8 +581,15 @@ class AiClientImpl @Inject constructor(
     }
 
     companion object {
-        /** Twardy limit całego flow chat (multi-turn z tool_use). Po przekroczeniu Result.failure z user-friendly msg. */
-        const val CHAT_TIMEOUT_MS = 180_000L
+        /**
+         * Twardy limit całego flow chat (multi-turn z tool_use). Po przekroczeniu
+         * Result.failure z user-friendly msg.
+         *
+         * v1.24.8: 180s → 240s (4 min). ZAPROPONUJ PLAN dla pełnego tygodnia
+         * (5-7 dni × 5-8 ćwiczeń × 3-5 setów + tool calls) może wymagać >3 min
+         * na Opus model. Maciej testował — timeout strzelał przed odpowiedzią.
+         */
+        const val CHAT_TIMEOUT_MS = 240_000L
     }
 }
 
