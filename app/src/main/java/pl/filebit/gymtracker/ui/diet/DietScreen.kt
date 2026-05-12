@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.ui.diet
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,13 +24,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SwapHoriz
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -99,6 +103,8 @@ fun DietScreen(
     val consumptions by vm.consumptions.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
+    val volatilityReport by vm.volatilityReport.collectAsStateWithLifecycle()
+    val volatilityDismissed by vm.volatilityDismissed.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
     val showDamageControlDialog by vm.showDamageControlDialog.collectAsStateWithLifecycle()
     val damageControlResult by vm.damageControlResult.collectAsStateWithLifecycle()
@@ -223,6 +229,18 @@ fun DietScreen(
                         onScanner = onOpenBarcodeScanner,
                         onFotoAi = onOpenFoodImageAnalyzer
                     )
+                }
+
+                // v1.24.6: alert wahań kcal (cheat day + niedojadanie w 7 dni)
+                volatilityReport?.let { report ->
+                    if (!volatilityDismissed) {
+                        item {
+                            DietVolatilityCard(
+                                report = report,
+                                onDismiss = { vm.dismissVolatility() }
+                            )
+                        }
+                    }
                 }
 
                 // 5. Sekcje posiłków — domyślnie ROZWINIĘTE + status (PLANNED/CONSUMED/SKIPPED)
@@ -1580,4 +1598,69 @@ internal fun isCurrentSlot(timeLabel: String): Boolean {
     val nowMinutes = nowHour * 60 + nowMinute
     val diff = nowMinutes - slotMinutes
     return diff in -30..90
+}
+
+/**
+ * v1.24.6: alert wahań kcal (cheat day + niedojadanie w 7 dniach).
+ *
+ * Pomarańczowa karta na DietScreen (przed sekcjami posiłków).
+ * Pokazuje konkretne daty + procent celu + edukacyjny komunikat.
+ * X w prawym górnym rogu — dismiss na 7 dni.
+ */
+@Composable
+private fun DietVolatilityCard(
+    report: pl.filebit.gymtracker.data.repository.DietVolatilityReport,
+    onDismiss: () -> Unit
+) {
+    val color = pl.filebit.gymtracker.ui.theme.AccentOrange
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.13f), RoundedCornerShape(16.dp))
+            .border(BorderStroke(1.dp, color.copy(alpha = 0.4f)), RoundedCornerShape(16.dp))
+            .padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 16.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    Icons.Default.Warning,
+                    contentDescription = null,
+                    tint = color,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "MOCNE WAHANIA KCAL",
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color
+                )
+                IconButton(
+                    onClick = onDismiss,
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.height(4.dp))
+            Text(
+                report.toUserMessage(),
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+        }
+    }
 }

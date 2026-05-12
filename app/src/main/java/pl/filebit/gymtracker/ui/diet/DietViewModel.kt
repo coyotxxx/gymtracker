@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.FoodCategory
@@ -79,7 +80,11 @@ data class DietUiState(
     val categoryFilter: FoodCategory? = null,
     val filteredProducts: List<FoodProduct> = emptyList(),
     val config: DietConfig = DietConfig(),
-    val perMealKcal: Int = 0          // cel kcal podzielony przez liczbę posiłków
+    val perMealKcal: Int = 0,         // cel kcal podzielony przez liczbę posiłków
+    /** v1.24.6: alert wahań kcal (cheat day + niedojadanie). Null = brak wahań. */
+    val volatilityReport: pl.filebit.gymtracker.data.repository.DietVolatilityReport? = null,
+    /** v1.24.6: czy user X-uje alert wahań (anti-spam na 7 dni). */
+    val volatilityDismissed: Boolean = false
 )
 
 sealed class AiPlanState {
@@ -112,6 +117,7 @@ class DietViewModel @Inject constructor(
     private val phaseRepo: pl.filebit.gymtracker.data.repository.DietPhaseRepository,
     private val phaseManager: pl.filebit.gymtracker.data.repository.PhaseManager,
     private val recoveryAnalyzer: pl.filebit.gymtracker.data.repository.RecoveryAnalyzer,
+    private val dietVolatilityAnalyzer: pl.filebit.gymtracker.data.repository.DietVolatilityAnalyzer,
     private val emergencyMealGen: pl.filebit.gymtracker.ai.EmergencyMealGenerator,
     private val damageControl: pl.filebit.gymtracker.data.repository.DamageControl,
     private val healthConnect: pl.filebit.gymtracker.data.health.HealthConnectManager,
@@ -408,6 +414,27 @@ class DietViewModel @Inject constructor(
             )
             _damageControlResult.value = res
         }
+    }
+
+    // === DIET VOLATILITY (v1.24.6) ===
+    private val _volatilityReport = MutableStateFlow<pl.filebit.gymtracker.data.repository.DietVolatilityReport?>(null)
+    val volatilityReport: StateFlow<pl.filebit.gymtracker.data.repository.DietVolatilityReport?> = _volatilityReport.asStateFlow()
+
+    private val _volatilityDismissedAt = MutableStateFlow(0L)
+    val volatilityDismissed: StateFlow<Boolean> = _volatilityDismissedAt
+        .map { dismissedAt ->
+            dismissedAt > 0 && (System.currentTimeMillis() - dismissedAt) < 7L * 24 * 3600 * 1000
+        }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    fun refreshVolatility() {
+        viewModelScope.launch {
+            _volatilityReport.value = runCatching { dietVolatilityAnalyzer.analyze() }.getOrNull()
+        }
+    }
+
+    fun dismissVolatility() {
+        _volatilityDismissedAt.value = System.currentTimeMillis()
     }
 
     // === DIET PHASE ===
@@ -806,6 +833,8 @@ class DietViewModel @Inject constructor(
             runCatching { refreshSteps() }
             // Refresh diet phase
             runCatching { refreshCurrentPhase() }
+            // v1.24.6: Refresh volatility report (cheat day + niedojadanie wykrycie)
+            runCatching { refreshVolatility() }
             // Refresh Health Connect availability + steps
             runCatching { refreshHealthConnect() }
             runCatching { refreshConsumptions() }
