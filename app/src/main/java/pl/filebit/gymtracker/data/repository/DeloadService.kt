@@ -3,9 +3,12 @@ package pl.filebit.gymtracker.data.repository
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.SetType
+import pl.filebit.gymtracker.util.ActiveInjuryRecommendation
 import pl.filebit.gymtracker.util.DeloadRecommendation
 import pl.filebit.gymtracker.util.DeloadSeverity
 import pl.filebit.gymtracker.util.ReturnAfterBreakRecommendation
+import pl.filebit.gymtracker.util.WorkoutPainSnapshot
+import pl.filebit.gymtracker.util.detectActiveInjury
 import pl.filebit.gymtracker.util.detectDeloadNeed
 import pl.filebit.gymtracker.util.detectReturnAfterBreak
 import javax.inject.Inject
@@ -32,6 +35,12 @@ sealed class DeloadCardState {
      * Inna ikonografia i komunikat: NIE przetrenowanie, tylko ostrożny restart.
      */
     data class ReturnAfterBreak(val recommendation: ReturnAfterBreakRecommendation) : DeloadCardState()
+
+    /**
+     * Wykryto aktywną kontuzję (painArea w ostatnich workoutach).
+     * Priorytet wyższy niż deload — ból to inny sygnał niż przetrenowanie.
+     */
+    data class ActiveInjury(val recommendation: ActiveInjuryRecommendation) : DeloadCardState()
 
     /** Brak alertu — kafel ukryty. */
     object None : DeloadCardState()
@@ -70,9 +79,11 @@ class DeloadService @Inject constructor(
         if (dismissedAt > 0 && now - dismissedAt < DISMISS_GRACE_DAYS * 24 * 3600 * 1000) {
             return DeloadCardState.None
         }
-        // PRIORYTET: powrót po przerwie > deload. Wysokie RPE po przerwie to nie
-        // przetrenowanie — błędna kategoryzacja pchałaby usera w deload zamiast
-        // ostrożnego restartu.
+        // PRIORYTET (od najwyższego):
+        // 1. ActiveInjury — ból to inny sygnał niż przetrenowanie/przerwa
+        // 2. ReturnAfterBreak — wysokie RPE po przerwie ≠ deload
+        // 3. Suggestion (deload klasyczny)
+        checkActiveInjury()?.let { return DeloadCardState.ActiveInjury(it) }
         checkReturnAfterBreak()?.let { return DeloadCardState.ReturnAfterBreak(it) }
 
         val rec = checkRecommendation()
@@ -99,6 +110,21 @@ class DeloadService @Inject constructor(
             sessionsLast35d = ctx.sessions35d,
             daysSinceLastWorkout = ctx.daysSinceLastWorkout
         )
+    }
+
+    private suspend fun checkActiveInjury(): ActiveInjuryRecommendation? {
+        val now = System.currentTimeMillis()
+        val ms14d = 14L * 24 * 60 * 60 * 1000
+        val workouts14d = workoutDao.observeAllOnce()
+            .filter { it.finishedAt != null && it.startedAt >= now - ms14d }
+            .map {
+                WorkoutPainSnapshot(
+                    daysAgo = ((now - it.startedAt) / (24L * 3600 * 1000)).toInt(),
+                    painArea = it.painArea,
+                    wellbeingRating = it.wellbeingRating
+                )
+            }
+        return detectActiveInjury(workouts14d)
     }
 
     private data class DetectionContext(

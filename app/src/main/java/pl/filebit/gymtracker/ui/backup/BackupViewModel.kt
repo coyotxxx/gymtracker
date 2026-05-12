@@ -101,7 +101,11 @@ data class WorkoutDto(
     val fromPlanId: Long? = null,
     val fromDayOfWeek: Int? = null,
     val aiSummary: String? = null,
-    val aiSummaryGeneratedAt: Long? = null
+    val aiSummaryGeneratedAt: Long? = null,
+    // v1.23.2: post-workout feedback (wellbeing + painArea + painNotes)
+    val wellbeingRating: Int? = null,
+    val painArea: String? = null,
+    val painNotes: String? = null
 )
 
 @Serializable
@@ -276,7 +280,8 @@ class BackupViewModel @Inject constructor(
                     workouts = allWorkouts.map {
                         WorkoutDto(it.id, it.startedAt, it.finishedAt, it.notes,
                             it.fromPlanId, it.fromDayOfWeek,
-                            it.aiSummary, it.aiSummaryGeneratedAt)
+                            it.aiSummary, it.aiSummaryGeneratedAt,
+                            it.wellbeingRating, it.painArea, it.painNotes)
                     },
                     sets = allSets.map {
                         SetDto(

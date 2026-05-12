@@ -132,3 +132,82 @@ enum class ReturnSeverity {
     /** ≥14 dni przerwy — długi restart (~-20-25% na 2 tyg). */
     LONG_BREAK
 }
+
+/**
+ * Detekcja aktywnej kontuzji.
+ *
+ * Wykrywa: user notował painArea w ostatnich 14 dniach (1+ workout z bólem).
+ * Priorytet WYŻSZY niż deload — ból to większy sygnał niż wysokie RPE
+ * (high RPE z bólem to nie przetrenowanie, tylko kompensacja kontuzji).
+ *
+ * @param workoutsLast14d lista workoutów z 14d (z painArea / wellbeingRating)
+ * @return rekomendacja kontuzji lub null
+ */
+data class WorkoutPainSnapshot(
+    val daysAgo: Int,
+    val painArea: String?,
+    val wellbeingRating: Int?
+)
+
+fun detectActiveInjury(workoutsLast14d: List<WorkoutPainSnapshot>): ActiveInjuryRecommendation? {
+    val withPain = workoutsLast14d.filter { !it.painArea.isNullOrBlank() }
+    if (withPain.isEmpty()) return null
+
+    // Grupuj po partii — pokaż partię z największą liczbą notowań
+    val byArea = withPain.groupBy { it.painArea!! }
+    val (area, occurrences) = byArea.maxBy { it.value.size }
+    val daysSinceLast = occurrences.minOf { it.daysAgo }
+    val lowestWellbeing = occurrences.mapNotNull { it.wellbeingRating }.minOrNull()
+
+    val severity = when {
+        occurrences.size >= 2 || (lowestWellbeing != null && lowestWellbeing <= 2) -> InjurySeverity.PERSISTENT
+        else -> InjurySeverity.FLAG
+    }
+
+    val reason = when (severity) {
+        InjurySeverity.PERSISTENT ->
+            "Notowałeś ból w partii ${area.toDisplay()} w ${occurrences.size} ostatnich treningach " +
+                "(najświeższy: $daysSinceLast dni temu" +
+                (lowestWellbeing?.let { ", wellbeing $it/5" } ?: "") + "). " +
+                "Zanim pójdziesz dalej — odpuść ćwiczenia angażujące tę partię na 5-7 dni i rozważ konsultację z fizjoterapeutą. " +
+                "To NIE jest przetrenowanie — to sygnał kontuzji."
+        InjurySeverity.FLAG ->
+            "Notowałeś ból w partii ${area.toDisplay()} ($daysSinceLast dni temu). " +
+                "Obserwuj — jeśli ból wraca w kolejnym treningu, zmniejsz obciążenie tej partii o 30-50% " +
+                "lub zastąp ćwiczenia alternatywami bez bólu."
+    }
+
+    return ActiveInjuryRecommendation(
+        painArea = area,
+        occurrences = occurrences.size,
+        daysSinceLast = daysSinceLast,
+        severity = severity,
+        reason = reason
+    )
+}
+
+private fun String.toDisplay(): String = when (this.uppercase()) {
+    "CHEST" -> "klatka"
+    "BACK" -> "plecy"
+    "LEGS" -> "nogi"
+    "SHOULDERS" -> "barki"
+    "ARMS" -> "ręce"
+    "CORE" -> "core"
+    "GLUTES" -> "pośladki"
+    else -> this.lowercase()
+}
+
+data class ActiveInjuryRecommendation(
+    val painArea: String,
+    val occurrences: Int,
+    val daysSinceLast: Int,
+    val severity: InjurySeverity,
+    val reason: String
+)
+
+enum class InjurySeverity {
+    /** 1 notowanie + wellbeing OK — obserwuj. */
+    FLAG,
+    /** ≥2 notowania lub wellbeing ≤2 — odpuść / fizjoterapeuta. */
+    PERSISTENT
+}

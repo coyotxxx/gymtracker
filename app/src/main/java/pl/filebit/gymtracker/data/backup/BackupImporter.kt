@@ -26,6 +26,7 @@ import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
+import pl.filebit.gymtracker.ai.detectInjuryFromWorkout
 import pl.filebit.gymtracker.ui.backup.BackupData
 import java.io.File
 import java.util.zip.ZipInputStream
@@ -226,17 +227,26 @@ class BackupImporter @Inject constructor(
             if (existing != null) exerciseIdMap[oldId] = oldId
         }
 
-        // Workouts + sets
+        // Workouts + sets + automatyczna detekcja INJURY z painArea (v1.23.2)
+        val eventDao = db.trainingEventDao()
         for (w in data.workouts) {
-            wDao.insert(
-                Workout(
-                    id = w.id, startedAt = w.startedAt, finishedAt = w.finishedAt,
-                    fromPlanId = w.fromPlanId, fromDayOfWeek = w.fromDayOfWeek,
-                    notes = w.notes,
-                    aiSummary = w.aiSummary,
-                    aiSummaryGeneratedAt = w.aiSummaryGeneratedAt
-                )
+            val workout = Workout(
+                id = w.id, startedAt = w.startedAt, finishedAt = w.finishedAt,
+                fromPlanId = w.fromPlanId, fromDayOfWeek = w.fromDayOfWeek,
+                notes = w.notes,
+                aiSummary = w.aiSummary,
+                aiSummaryGeneratedAt = w.aiSummaryGeneratedAt,
+                wellbeingRating = w.wellbeingRating,
+                painArea = w.painArea,
+                painNotes = w.painNotes
             )
+            wDao.insert(workout)
+            // Auto-utwórz INJURY event jeśli workout ma painArea (analogicznie do
+            // EventDetectorService.onPostWorkoutFeedback w prawdziwym UI flow).
+            // Bez tego: zaimportowane workouty z bólem nie wyzwalają detekcji kontuzji.
+            if (!workout.painArea.isNullOrBlank()) {
+                eventDao.insertAll(detectInjuryFromWorkout(workout))
+            }
         }
         var skippedSets = 0
         for (s in data.sets) {
