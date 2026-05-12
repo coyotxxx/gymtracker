@@ -100,22 +100,40 @@ fun computeDailyGoal(
     }
 
     // === KROK 2: Adjustment per cel ===
-    // v1.24.18: system SAM wylicza deficyt z paceKgPerWeek (z dietProfile)
-    // gdy customDeficit nie jest podany. Filozofia: trener mówi userowi
-    // ile jeść — user wybiera tylko TEMPO (z dietProfile.paceKgPerWeek).
-    // 1 kg ≈ 7700 kcal → deficyt = pace × 7700 / 7 dni.
+    // v1.24.19: system SAM wylicza deficyt/surplus dla WSZYSTKICH 8 typów
+    // z DietGoalType (jeśli dietProfile istnieje). Filozofia Macieja:
+    // "system sam wylicza odpowiednią kaloryczność do każdego typu".
     //
-    // Fallback defaults gdy nie ma dietProfile (przed onboardingiem diety):
-    // CUT = -500 (klasyczna 0.5 kg/tydz), BULK = +300 (lean bulk).
-    val autoDeficitFromPace: Int? = dietProfile?.paceKgPerWeek?.let { pace ->
-        // pace > 0 zawsze (z entity). Sign zależy od weightGoalType.
-        when (profile.weightGoalType) {
-            WeightGoalType.CUT -> -(pace * 7700.0 / 7.0).toInt()
-            WeightGoalType.BULK -> (pace * 7700.0 / 7.0).toInt()
-            else -> 0
+    // 1 kg ≈ 7700 kcal → tempo (pace × 7700 / 7) dotyczy tylko typów wagowych
+    // (FAT_LOSS, MUSCLE_GAIN). RECOMP/STRENGTH itp. mają stałe adjustmenty
+    // bazujące na zasadach z literatury treningowej (Helms, ISSN, RP).
+    //
+    // Fallback gdy brak dietProfile: UserProfile.weightGoalType (CUT/BULK).
+    val autoDeficitFromDiet: Int? = dietProfile?.let { dp ->
+        val paceKcal = (dp.paceKgPerWeek * 7700.0 / 7.0).toInt()
+        when (dp.goalType) {
+            // Wagowe cele: deficyt/surplus z paceKgPerWeek
+            pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS -> -paceKcal
+            pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN -> paceKcal
+            // Rekompozycja: mały deficyt (~-300 kcal). Cel: trzymanie wagi
+            // bez wzrostu tkanki tłuszczowej, jednoczesny wzrost mięśni.
+            // Najczęściej dla advanced lifterów lub powracających po przerwie.
+            pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP -> -300
+            // Utrzymanie: zero adjustment
+            pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN -> 0
+            // Siła: lekki surplus (~+150-200 kcal) dla regeneracji systemu
+            // nerwowego i utrzymania siły. Bez agresywnej masy mięśniowej.
+            pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> 200
+            // Wytrzymałość: utrzymanie + dużo węgli (makro). Kcal neutralne.
+            pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> 0
+            // Zdrowie: utrzymanie, focus na jakość (nie kcal).
+            pl.filebit.gymtracker.data.entity.DietGoalType.HEALTH -> 0
+            // Event prep: agresywny deficyt z paceKgPerWeek (przygotowanie
+            // do zawodów/sesji zdjęciowej — szybciej niż FAT_LOSS).
+            pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP -> -paceKcal
         }
     }
-    val defaultDeficit = autoDeficitFromPace ?: when (profile.weightGoalType) {
+    val defaultDeficit = autoDeficitFromDiet ?: when (profile.weightGoalType) {
         WeightGoalType.CUT -> -500          // klasyczna redukcja (~0.5 kg/tydz)
         WeightGoalType.BULK -> 300           // umiarkowana nadwyżka (~0.3 kg/tydz)
         WeightGoalType.MAINTAIN -> 0
@@ -148,9 +166,26 @@ fun computeDailyGoal(
     val finalKcal = manualKcalOverride ?: rawKcal
 
     // === KROK 4: Makro per cel ===
-    // Strategia: białko najwyższy priorytet (chroni masę), tłuszcz min 0.6 g/kg
-    // dla zdrowia hormonalnego, węgle = reszta. Wartości oparte o Helms / RP / ISSN.
-    val (proteinPerKg, fatPerKg) = when (profile.weightGoalType) {
+    // v1.24.19: makro per DietGoalType (8 typów, szczegółowe), fallback do
+    // UserProfile.weightGoalType (4 typy). Białko najwyższy priorytet
+    // (chroni masę mięśniową), tłuszcz min 0.6 g/kg dla zdrowia hormonalnego,
+    // węgle = reszta. Wartości oparte o Helms / RP / ISSN.
+    val (proteinPerKg, fatPerKg) = dietProfile?.let { dp ->
+        when (dp.goalType) {
+            // Wysokie białko (oszczędza masę w deficycie/przy reżimie)
+            pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS -> 2.2 to 0.8
+            pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP -> 2.4 to 0.7  // jeszcze wyższe białko, niższe tłuszcze
+            pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP -> 2.2 to 0.9      // wysokie białko (kluczowe dla recomp)
+            // Średnie/niższe białko (na nadwyżce/utrzymaniu nie potrzeba tak dużo)
+            pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN -> 1.8 to 1.0
+            pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> 2.0 to 1.0   // siła + lean bulk
+            // Balans
+            pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN -> 2.0 to 1.0
+            pl.filebit.gymtracker.data.entity.DietGoalType.HEALTH -> 1.6 to 1.0      // mniej restrykcyjne (jakość > ilość)
+            // Wytrzymałość: niższe białko, więcej węgli
+            pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> 1.6 to 0.9
+        }
+    } ?: when (profile.weightGoalType) {
         WeightGoalType.CUT -> 2.2 to 0.8       // wysokie białko, niskie tłuszcze, oszczędne węgle
         WeightGoalType.BULK -> 1.8 to 1.0      // niższe białko (mniej potrzebne na nadwyżce), więcej węgli
         WeightGoalType.MAINTAIN -> 2.0 to 1.0  // balans
