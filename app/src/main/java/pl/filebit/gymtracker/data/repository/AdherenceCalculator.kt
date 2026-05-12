@@ -25,7 +25,8 @@ class AdherenceCalculator @Inject constructor(
     private val dietProfileRepo: UserDietProfileRepository,
     private val trainingDietBridge: TrainingDietBridge,
     private val bodyDao: pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao,
-    private val dao: AdherenceLogDao
+    private val dao: AdherenceLogDao,
+    private val consumptionRepo: MealConsumptionRepository
 ) {
 
     /** Policz adherence dla podanego dnia + zapisz do AdherenceLog. */
@@ -44,19 +45,30 @@ class AdherenceCalculator @Inject constructor(
         )
 
         // Faktyczne spożycie z MealEntries
+        // v1.24.14: respektuj MealConsumptionStatus.SKIPPED — posiłek pominięty
+        // świadomie przez usera NIE liczy się jako spożyty. Filozofia: jeśli user
+        // mówi "nie zjadłem", system wierzy i pokazuje to w adherence.
         val meals = dietRepo.getMealsForDate(start)
+        val consumptions = runCatching { consumptionRepo.getForDate(start) }.getOrDefault(emptyList())
+        val skippedTypes = consumptions
+            .filter { it.status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED }
+            .map { it.mealType }
+            .toSet()
         val products = dietRepo.observeAllProducts().first().associateBy { it.id }
         var actualKcal = 0.0
         var actualProtein = 0.0
         var actualCarbs = 0.0
         var actualFat = 0.0
+        var countedMeals = 0
         for (m in meals) {
+            if (m.mealType in skippedTypes) continue   // pomijaj SKIPPED
             val p = products[m.productId] ?: continue
             val factor = m.grams / 100.0
             actualKcal += p.kcalPer100g * factor
             actualProtein += p.proteinPer100g * factor
             actualCarbs += p.carbsPer100g * factor
             actualFat += p.fatPer100g * factor
+            countedMeals++
         }
 
         // Trening — z TrainingDaySummary
@@ -80,7 +92,8 @@ class AdherenceCalculator @Inject constructor(
                 targetFatG = goal.fatG,
                 actualFatG = actualFat.roundToInt(),
                 fatAdherencePct = pct(actualFat, goal.fatG.toDouble()),
-                mealsLoggedCount = meals.size,
+                // v1.24.14: liczymy posiłki które user faktycznie zjadł (nie pominął)
+                mealsLoggedCount = countedMeals,
                 mealsPlannedCount = config.mealsPerDay,
                 wasTrainingPlanned = wasTrainingPlanned,
                 wasTrainingDone = wasTrainingDone

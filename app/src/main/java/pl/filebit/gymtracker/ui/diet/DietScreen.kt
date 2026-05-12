@@ -740,6 +740,19 @@ private fun DayHeroCard(
                 style = MaterialTheme.typography.bodySmall,
                 color = DarkOnSurfaceVariant
             )
+            // v1.24.14: licznik potwierdzonych posiłków — daje sygnał czy
+            // user oznacza status (✓/✗). SKIPPED nie wlicza się w kcal totals.
+            if (state.mealsTotal > 0) {
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    "Potwierdzone: ${state.mealsConfirmed}/${state.mealsTotal} posiłków",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    color = if (state.mealsConfirmed == state.mealsTotal) SuccessGreen else DarkOnSurfaceVariant
+                )
+            }
             Spacer(Modifier.height(8.dp))
             LinearProgressIndicator(
                 progress = { progress },

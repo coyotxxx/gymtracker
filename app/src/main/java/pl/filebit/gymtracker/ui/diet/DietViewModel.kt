@@ -49,7 +49,11 @@ data class MealGroup(
     val totals: DayTotals,
     /** Godzina posiłku z DietConfig (np. "12:00"). Pusty gdy slot nieaktywny. */
     val timeLabel: String = "",
-    val customLabel: String = ""    // np. "Drugie śniadanie" gdy 4 posiłki
+    val customLabel: String = "",   // np. "Drugie śniadanie" gdy 4 posiłki
+    /** v1.24.14: status z meal_consumptions (PLANNED/CONSUMED/SKIPPED).
+     *  Wpływa na sumowanie kcal — SKIPPED nie liczy się w totals. */
+    val consumptionStatus: pl.filebit.gymtracker.data.entity.MealConsumptionStatus =
+        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
 )
 
 data class DietUiState(
@@ -73,7 +77,12 @@ data class DietUiState(
             carbsCalculation = ""
         )
     ),
+    /** v1.24.14: SPOŻYTE — sumuje tylko grupy ze statusem != SKIPPED.
+     *  CONSUMED i PLANNED liczą się jako "co user zjadł / co zaplanował na dziś". */
     val totals: DayTotals = DayTotals(),
+    /** v1.24.14: licznik posiłków potwierdzonych (CONSUMED) z całkowitej liczby. */
+    val mealsConfirmed: Int = 0,
+    val mealsTotal: Int = 0,
     val groups: List<MealGroup> = emptyList(),
     val productsAll: List<FoodProduct> = emptyList(),
     val searchQuery: String = "",
@@ -871,8 +880,9 @@ class DietViewModel @Inject constructor(
                 val config = t.config
                 combine(
                     repo.observeMealsForDate(dateMs),
-                    repo.observeAllProducts()
-                ) { meals, allProducts ->
+                    repo.observeAllProducts(),
+                    _consumptions
+                ) { meals, allProducts, consumptionMap ->
                     val productMap = allProducts.associateBy { it.id }
                     val withMacros = meals.mapNotNull { e ->
                         productMap[e.productId]?.let { p -> e.macrosFor(p) }
@@ -899,16 +909,29 @@ class DietViewModel @Inject constructor(
                             entries = entries,
                             totals = tot,
                             timeLabel = mealHours.getOrNull(idx)?.let { cfg.formatTime(it) } ?: "",
-                            customLabel = labelForSlot(idx + 1, cfg.mealsPerDay)
+                            customLabel = labelForSlot(idx + 1, cfg.mealsPerDay),
+                            consumptionStatus = consumptionMap[type]
+                                ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                         )
                     }
-                    val totals = groups.fold(DayTotals()) { acc, g ->
+                    // v1.24.14: SKIPPED posiłki NIE liczą się w totals dnia.
+                    // Filozofia: user mówi "pominąłem" → system to respektuje (nie liczy kcal).
+                    // PLANNED+CONSUMED traktujemy jako "planowane do zjedzenia / zjedzone".
+                    val countingGroups = groups.filter {
+                        it.consumptionStatus != pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED
+                    }
+                    val totals = countingGroups.fold(DayTotals()) { acc, g ->
                         DayTotals(
                             acc.kcal + g.totals.kcal,
                             acc.protein + g.totals.protein,
                             acc.carbs + g.totals.carbs,
                             acc.fat + g.totals.fat
                         )
+                    }
+                    val mealsTotal = groups.count { it.entries.isNotEmpty() }
+                    val mealsConfirmed = groups.count {
+                        it.consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED &&
+                            it.entries.isNotEmpty()
                     }
 
                     val profile = runCatching { profileRepo.get() }.getOrNull()
@@ -943,6 +966,8 @@ class DietViewModel @Inject constructor(
                         dateMs = dateMs,
                         goal = goal,
                         totals = totals,
+                        mealsConfirmed = mealsConfirmed,
+                        mealsTotal = mealsTotal,
                         groups = groups,
                         productsAll = allProducts,
                         searchQuery = query,
