@@ -29,47 +29,46 @@ class AiSettingsViewModel @Inject constructor(
     private val _state = MutableStateFlow(AiSettingsUiState(config = prefs.load()))
     val state: StateFlow<AiSettingsUiState> = _state.asStateFlow()
 
+    // v1.24.17: każda zmiana ustawień AI auto-save'uje do prefs. Bez tego user
+    // wpisuje klucz, wychodzi z ekranu i klucz znika (znalezione w symulacji
+    // — 'Save button łatwo ominąć'). Save button zostaje jako redundant
+    // confirmation ale nie jest już wymagany.
+    private fun persistConfig(newConfig: AiConfig) {
+        _state.value = _state.value.copy(
+            config = newConfig,
+            testResult = null,
+            saved = true
+        )
+        viewModelScope.launch {
+            prefs.save(newConfig)
+        }
+    }
+
     fun setProvider(p: AiProvider) {
         val cur = _state.value.config
-        _state.value = _state.value.copy(
-            config = cur.copy(
+        persistConfig(
+            cur.copy(
                 provider = p,
                 model = if (p == AiProvider.ANTHROPIC) AiConfig.DEFAULT_ANTHROPIC
                 else AiConfig.DEFAULT_OPENAI
-            ),
-            testResult = null,
-            saved = false
+            )
         )
     }
 
     fun setApiKey(key: String) {
-        _state.value = _state.value.copy(
-            config = _state.value.config.copy(apiKey = key),
-            testResult = null,
-            saved = false
-        )
+        persistConfig(_state.value.config.copy(apiKey = key))
     }
 
     fun setModel(model: String) {
-        _state.value = _state.value.copy(
-            config = _state.value.config.copy(model = model),
-            testResult = null,
-            saved = false
-        )
+        persistConfig(_state.value.config.copy(model = model))
     }
 
     fun setSystemPrompt(prompt: String) {
-        _state.value = _state.value.copy(
-            config = _state.value.config.copy(systemPrompt = prompt),
-            saved = false
-        )
+        persistConfig(_state.value.config.copy(systemPrompt = prompt))
     }
 
     fun resetSystemPrompt() {
-        _state.value = _state.value.copy(
-            config = _state.value.config.copy(systemPrompt = AiConfig.DEFAULT_SYSTEM_PROMPT),
-            saved = false
-        )
+        persistConfig(_state.value.config.copy(systemPrompt = AiConfig.DEFAULT_SYSTEM_PROMPT))
     }
 
     fun save() {

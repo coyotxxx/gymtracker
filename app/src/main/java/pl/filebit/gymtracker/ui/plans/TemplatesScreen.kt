@@ -8,11 +8,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -64,20 +65,24 @@ fun TemplatesScreen(
                 title = stringResource(R.string.templates_title),
                 onBack = onBack
             )
-            // Filtr po celu
+            // Filtr po celu — v1.24.17: FlowRow zamiast LazyRow,
+            // żeby wszystkie chipsy były widoczne bez scroll horyzontalnego
+            // (test ujawnił że 'Hipertrofia' chip był poza ekranem).
             FilterSectionLabel("Cel")
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            @OptIn(ExperimentalLayoutApi::class)
+            FlowRow(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
-                item {
-                    SelectableChip(
-                        text = "Wszystkie",
-                        selected = goalFilter == null,
-                        onClick = { goalFilter = null }
-                    )
-                }
-                items(PlanGoalCategory.entries.toList()) { cat ->
+                SelectableChip(
+                    text = "Wszystkie",
+                    selected = goalFilter == null,
+                    onClick = { goalFilter = null }
+                )
+                PlanGoalCategory.entries.forEach { cat ->
                     SelectableChip(
                         text = "${cat.emoji} ${cat.labelPl}",
                         selected = goalFilter == cat,
@@ -88,20 +93,22 @@ fun TemplatesScreen(
 
             Spacer(Modifier.height(10.dp))
 
-            // Filtr częstotliwości
+            // Filtr częstotliwości — v1.24.17: FlowRow (spójność z filtrem celu)
             FilterSectionLabel("Częstotliwość")
-            LazyRow(
-                contentPadding = PaddingValues(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            @OptIn(ExperimentalLayoutApi::class)
+            FlowRow(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
-                item {
-                    SelectableChip(
-                        text = "Wszystkie",
-                        selected = freqFilter == null,
-                        onClick = { freqFilter = null }
-                    )
-                }
-                items(listOf(2, 3, 4, 5, 6)) { days ->
+                SelectableChip(
+                    text = "Wszystkie",
+                    selected = freqFilter == null,
+                    onClick = { freqFilter = null }
+                )
+                listOf(2, 3, 4, 5, 6).forEach { days ->
                     SelectableChip(
                         text = "${days}× / tydz",
                         selected = freqFilter == days,

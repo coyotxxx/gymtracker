@@ -26,8 +26,16 @@ class AiConversationsViewModel @Inject constructor(
     aiPrefs: AiPreferences
 ) : ViewModel() {
 
-    /** Etykieta modelu pokazywana w nagłówku ("GPT-4o", "Claude Sonnet"…). */
-    val modelLabel: String = run {
+    /** v1.24.17: czy klucz API jest skonfigurowany (spójność z AI Trener screen).
+     *  Filozofia: jeden źródło prawdy o stanie konfiguracji AI. */
+    val hasApiKey: Boolean = aiPrefs.load().apiKey.isNotBlank()
+
+    /** Etykieta modelu pokazywana w nagłówku ("GPT-4o", "Claude Sonnet"…).
+     *  v1.24.17: gdy brak klucza, pokazuje "BRAK KLUCZA" — nie "Claude Opus"
+     *  jakby było skonfigurowane. */
+    val modelLabel: String = if (!hasApiKey) {
+        "BRAK KLUCZA"
+    } else run {
         val model = aiPrefs.load().model.lowercase()
         when {
             model.isBlank() -> aiPrefs.load().provider.name
