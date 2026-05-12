@@ -455,6 +455,14 @@ private fun PlanCard(
                 style = MaterialTheme.typography.bodyMedium,
                 color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
+            // v1.24.22: data utworzenia planu — pomaga rozróżniać plany
+            // (zwłaszcza po duplikacji lub gdy user ma kilka wersji).
+            Spacer(Modifier.height(2.dp))
+            Text(
+                "Utworzono: ${formatPlanCreatedDate(item.plan.createdAt)}",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
             Spacer(Modifier.height(14.dp))
             // Dolny rząd: liczba ćwiczeń (mono) + Start CTA
             Row(
@@ -720,6 +728,23 @@ private fun formatDays(days: List<Int>): String {
     if (days.isEmpty()) return stringResource(R.string.plan_no_schedule)
     val labels = days.sorted().mapNotNull { dayShortLabel(it) }
     return labels.joinToString(", ")
+}
+
+/**
+ * v1.24.22: data utworzenia planu — format "5 maj 2026" lub "Dziś"/"Wczoraj"
+ * dla bardzo świeżych planów. Pomaga user'owi rozróżniać plany po wieku.
+ */
+private fun formatPlanCreatedDate(createdAtMs: Long): String {
+    val now = System.currentTimeMillis()
+    val diffMs = now - createdAtMs
+    val dayMs = 24L * 3600 * 1000
+    return when {
+        diffMs < dayMs -> "dziś"
+        diffMs < 2 * dayMs -> "wczoraj"
+        diffMs < 7 * dayMs -> "${(diffMs / dayMs).toInt()} dni temu"
+        else -> java.text.SimpleDateFormat("d MMM yyyy", java.util.Locale("pl", "PL"))
+            .format(java.util.Date(createdAtMs))
+    }
 }
 
 @Composable
