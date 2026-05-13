@@ -3,6 +3,7 @@ package pl.filebit.gymtracker.data.repository
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.SetType
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.util.ActiveInjuryRecommendation
 import pl.filebit.gymtracker.util.DeloadRecommendation
 import pl.filebit.gymtracker.util.DeloadSeverity
@@ -56,7 +57,8 @@ class DeloadService @Inject constructor(
     private val setDao: WorkoutSetDao,
     private val statsRepo: StatsRepository,
     private val planRepo: PlanRepository,
-    private val prefs: DeloadPreferences
+    private val prefs: DeloadPreferences,
+    private val profileRepo: UserProfileRepository
 ) {
     /**
      * Aktualny stan kafla na Home — Active > Suggestion > None.
@@ -107,7 +109,8 @@ class DeloadService @Inject constructor(
             avgRpe14d = ctx.avgRpe14d,
             sessionsLast14d = ctx.sessions14d,
             sessionsLast35d = ctx.sessions35d,
-            stagnationCount = ctx.stagnationCount
+            stagnationCount = ctx.stagnationCount,
+            userWeightGoal = ctx.weightGoalType
         )
     }
 
@@ -140,7 +143,8 @@ class DeloadService @Inject constructor(
         val sessions14d: Int,
         val sessions35d: Int,
         val stagnationCount: Int,
-        val daysSinceLastWorkout: Int?
+        val daysSinceLastWorkout: Int?,
+        val weightGoalType: WeightGoalType?
     )
 
     private suspend fun buildDetectionContext(): DetectionContext {
@@ -165,13 +169,15 @@ class DeloadService @Inject constructor(
         val stagnationCount = lastWorkout?.id?.let { id ->
             statsRepo.detectStagnation(id, threshold = 3).size
         } ?: 0
+        val weightGoalType = runCatching { profileRepo.get().weightGoalType }.getOrNull()
 
         return DetectionContext(
             avgRpe14d = avgRpe14d,
             sessions14d = sessions14d,
             sessions35d = sessions35d,
             stagnationCount = stagnationCount,
-            daysSinceLastWorkout = daysSinceLastWorkout
+            daysSinceLastWorkout = daysSinceLastWorkout,
+            weightGoalType = weightGoalType
         )
     }
 

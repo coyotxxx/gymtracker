@@ -1,5 +1,7 @@
 package pl.filebit.gymtracker.util
 
+import pl.filebit.gymtracker.data.entity.WeightGoalType
+
 /**
  * Detekcja potrzeby deloadu (lżejszego tygodnia regeneracyjnego).
  *
@@ -8,6 +10,12 @@ package pl.filebit.gymtracker.util
  *  - Średnie RPE rosnące z tygodnia na tydzień = oznaka kumulującego zmęczenia
  *  - Stagnacja na wagach = sygnał że organizm potrzebuje regeneracji
  *
+ * v1.24.41 goal-aware: gdy user jest na CUT, wysokie RPE jest naturalne
+ * (deficyt kaloryczny = niższa wydolność). Klasyczny deload (-10% wagi) nie
+ * rozwiąże problemu — zmęczenie wynika z energetyki, nie objętości. Zamiast
+ * tego algorytm sugeruje refeed/diet break: 1-2 dni na maintenance kcal,
+ * bez zmiany wag treningowych.
+ *
  * Pure function — nie zależy od DB. Wrapper w DeloadService dostarcza dane.
  *
  * @param avgRpe14d średnie RPE ze wszystkich roboczych setów w ostatnich 14 dniach
@@ -15,32 +23,57 @@ package pl.filebit.gymtracker.util
  *   (gdy <3, RPE-based reguły nie odpalają — za mało próbek aby ufać średniej)
  * @param sessionsLast35d liczba ukończonych treningów w ostatnich 35 dniach
  * @param stagnationCount liczba ćwiczeń ze stagnacją 3+ treningów
+ * @param userWeightGoal cel wagowy z UserProfile — dla CUT przełącza reguły
+ *   HIGH/MED na sugestię refeedu zamiast redukcji obciążenia.
  * @return rekomendacja deloadu (poziom + uzasadnienie) lub null gdy nie trzeba
  */
 fun detectDeloadNeed(
     avgRpe14d: Double?,
     sessionsLast14d: Int,
     sessionsLast35d: Int,
-    stagnationCount: Int = 0
+    stagnationCount: Int = 0,
+    userWeightGoal: WeightGoalType? = null
 ): DeloadRecommendation? {
     // Minimum próbek aby ufać średniej RPE: 3 sesje w ciągu 14 dni
     val hasReliableRpe = sessionsLast14d >= 3 && avgRpe14d != null
+    val isCut = userWeightGoal == WeightGoalType.CUT
 
     // Reguła 1: HIGH — ciężkie 14 dni + dużo sesji w cyklu
     if (hasReliableRpe && avgRpe14d!! >= 8.5 && sessionsLast35d >= 15) {
-        return DeloadRecommendation(
-            severity = DeloadSeverity.HIGH,
-            reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} " +
-                "przy $sessionsLast35d sesjach w 35 dni. Mocno zakumulowane zmęczenie — czas na deload."
-        )
+        return if (isCut) {
+            DeloadRecommendation(
+                severity = DeloadSeverity.HIGH,
+                reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} " +
+                    "przy $sessionsLast35d sesjach. Jesteś na redukcji — wysokie RPE jest naturalne " +
+                    "(deficyt = mniej energii). Zamiast obniżać wagi, daj sobie 1-2 dni refeedu " +
+                    "(kcal na maintenance, więcej węgli). Trening zostaje bez zmian.",
+                recommendsDietBreak = true
+            )
+        } else {
+            DeloadRecommendation(
+                severity = DeloadSeverity.HIGH,
+                reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} " +
+                    "przy $sessionsLast35d sesjach w 35 dni. Mocno zakumulowane zmęczenie — czas na deload."
+            )
+        }
     }
     // Reguła 2: MED — wysokie RPE niezależnie od liczby sesji (ale wymagaj N=3)
     if (hasReliableRpe && avgRpe14d!! >= 9.0) {
-        return DeloadRecommendation(
-            severity = DeloadSeverity.MED,
-            reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} (bardzo wysokie). " +
-                "Zalecany lżejszy tydzień (waga −10%, reps tak samo)."
-        )
+        return if (isCut) {
+            DeloadRecommendation(
+                severity = DeloadSeverity.MED,
+                reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} (bardzo wysokie). " +
+                    "Na redukcji to często sygnał wyczerpania glikogenu, nie przetrenowania. " +
+                    "Zaplanuj refeed 1-2 dni na maintenance kcal — siła wróci bez zmiany wag.",
+                recommendsDietBreak = true
+            )
+        } else {
+            DeloadRecommendation(
+                severity = DeloadSeverity.MED,
+                reason = "Średnie RPE z ostatnich 14 dni: ${"%.1f".format(avgRpe14d)} (bardzo wysokie). " +
+                    "Zalecany lżejszy tydzień (waga −10%, reps tak samo)."
+            )
+        }
     }
     // Reguła 3: MED — wiele stagnacji jednocześnie
     if (stagnationCount >= 3) {
@@ -63,7 +96,13 @@ fun detectDeloadNeed(
 
 data class DeloadRecommendation(
     val severity: DeloadSeverity,
-    val reason: String
+    val reason: String,
+    /**
+     * v1.24.41: dla usera na CUT klasyczny deload (-10% wagi) nie pomoże —
+     * zmęczenie pochodzi z deficytu kalorycznego. Flaga sygnalizuje UI że
+     * zamiast "Zastosuj redukcję wag" pokazać "Zaplanuj refeed".
+     */
+    val recommendsDietBreak: Boolean = false
 )
 
 enum class DeloadSeverity { LOW, MED, HIGH }

@@ -100,6 +100,7 @@ fun HomeScreen(
     onOpenAchievements: () -> Unit = {},
     onOpenHistory: () -> Unit = {},
     onOpenHealthScreenshot: () -> Unit = {},
+    onOpenDiet: () -> Unit = {},   // v1.24.41: CTA refeed dla CUT prowadzi do zakładki Dieta
     vm: HomeViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
@@ -179,7 +180,9 @@ fun HomeScreen(
                             },
                             onExplain = { showDeloadExplain = card.recommendation },
                             onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.DELOAD_SUGGESTION) },
-                            onPickPlan = onSelectPlanTab
+                            onPickPlan = onSelectPlanTab,
+                            // v1.24.41: dla CUT → CTA prowadzi do zakładki Dieta (refeed) zamiast obniżki wag
+                            onPlanRefeed = onOpenDiet
                         )
                     }
                 }
@@ -1210,8 +1213,11 @@ private fun DeloadSuggestionCard(
     onApply: () -> Unit,
     onExplain: () -> Unit,
     onDismiss: () -> Unit,
-    onPickPlan: () -> Unit = {}
+    onPickPlan: () -> Unit = {},
+    /** v1.24.41: CTA dla CUT — prowadzi do zakładki Dieta na zaplanowanie refeedu. */
+    onPlanRefeed: () -> Unit = {}
 ) {
+    val isRefeed = recommendation.recommendsDietBreak
     val color = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> pl.filebit.gymtracker.ui.theme.ErrorRed
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> pl.filebit.gymtracker.ui.theme.AccentOrange
@@ -1227,10 +1233,12 @@ private fun DeloadSuggestionCard(
         pl.filebit.gymtracker.util.DeloadSeverity.MED -> 0.40f
         pl.filebit.gymtracker.util.DeloadSeverity.LOW -> 0.30f
     }
-    val severityLabel = when (recommendation.severity) {
-        pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
-        pl.filebit.gymtracker.util.DeloadSeverity.MED -> "DELOAD ZALECANY"
-        pl.filebit.gymtracker.util.DeloadSeverity.LOW -> "ROZWAŻ DELOAD"
+    val severityLabel = when {
+        // v1.24.41: dla CUT alert mówi o refeedzie, nie o deloadzie wag
+        isRefeed -> "REFEED ZALECANY"
+        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
+        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.MED -> "DELOAD ZALECANY"
+        else -> "ROZWAŻ DELOAD"
     }
     androidx.compose.foundation.layout.Box(
         modifier = androidx.compose.ui.Modifier
@@ -1284,10 +1292,25 @@ private fun DeloadSuggestionCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
+                // v1.24.41 refeed branch: dla CUT klasyczny deload (-10% wag) nie
+                // pomoże — zmęczenie wynika z deficytu kcal. CTA prowadzi do Diety.
+                // Wagi w planie zostawiamy nietknięte.
                 // v1.24.34 fix Bug #3 (raport SYM 3tyg): gdy brak planu, zamiast
                 // wyszarzonego "Zastosuj" pokaż enabled "Wybierz plan" — CTA prowadzi
                 // usera do działania zamiast zostawiać alert bez wyjścia.
-                if (canApply) {
+                if (isRefeed) {
+                    androidx.compose.material3.Button(
+                        onClick = onPlanRefeed,
+                        modifier = Modifier.weight(1f),
+                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                            containerColor = color,
+                            contentColor = Color.Black
+                        ),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("🍽 Zaplanuj refeed", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                    }
+                } else if (canApply) {
                     androidx.compose.material3.Button(
                         onClick = onApply,
                         modifier = Modifier.weight(1f),
@@ -1332,7 +1355,7 @@ private fun DeloadSuggestionCard(
                     Text("Anuluj", fontSize = 13.sp)
                 }
             }
-            if (!canApply) {
+            if (!canApply && !isRefeed) {
                 Spacer(Modifier.height(4.dp))
                 Text(
                     "Brak aktywnego planu — wybierz plan, a system automatycznie obniży obciążenia.",

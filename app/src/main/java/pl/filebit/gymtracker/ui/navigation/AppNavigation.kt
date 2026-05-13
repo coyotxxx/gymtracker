@@ -311,7 +311,9 @@ fun AppNavigation(
                             restoreState = true
                         }
                     },
-                    onOpenHealthScreenshot = { navController.navigate(Screen.HealthScreenshot.route) }
+                    onOpenHealthScreenshot = { navController.navigate(Screen.HealthScreenshot.route) },
+                    // v1.24.41: CTA "Zaplanuj refeed" w karcie REFEED ZALECANY (CUT user)
+                    onOpenDiet = { navController.navigate(Screen.Diet.route) }
                 )
             }
             composable(Screen.History.route) {

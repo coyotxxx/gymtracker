@@ -70,6 +70,15 @@ fun DebugScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             item { InfoCard() }
+            // v1.24.41: Importuj na samej górze — emulator ma broken scrolling przy LazyColumn,
+            // a Import to najczęstsza akcja przy debugowaniu scenariuszy E2E.
+            item {
+                DebugAction(
+                    title = "Importuj 'import.json'",
+                    subtitle = "1-klik — szuka pliku w /sdcard/Android/data/.../files/Download/ (app-scope, bez permission) albo /sdcard/Download/ (MediaStore). Wystarczy adb push.",
+                    onClick = vm::importFromDownloads
+                )
+            }
             item {
                 DebugAction(
                     title = "Eksportuj JSON → Downloads",
@@ -89,17 +98,6 @@ fun DebugScreen(
                     title = "Eksportuj pełną bazę SQL",
                     subtitle = "Plik .db do otwarcia w SQLite browser",
                     onClick = vm::exportDbToDownloads
-                )
-            }
-            item {
-                Spacer(Modifier.height(16.dp))
-                SectionHeader("Import scenariusza testowego (v1.23.0)")
-            }
-            item {
-                DebugAction(
-                    title = "Importuj 'import.json'",
-                    subtitle = "1-klik — szuka pliku w /sdcard/Android/data/.../files/Download/ (app-scope, bez permission) albo /sdcard/Download/ (MediaStore). Wystarczy adb push.",
-                    onClick = vm::importFromDownloads
                 )
             }
             item {
