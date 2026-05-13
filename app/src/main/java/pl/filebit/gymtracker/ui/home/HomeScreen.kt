@@ -1115,7 +1115,14 @@ private fun RecentWorkoutCard(item: RecentWorkoutItem, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        // v1.24.35 fix Bug #6 (raport SYM 3tyg): Card(onClick=...) interactive variant
+        // nadpisuje LocalContentColor wartością wyciszoną → wszystkie wartości MiniStat
+        // (1:00:00, 200kg, 6 setów) były niewidoczne na ciemnym tle. Explicit
+        // contentColor = DarkOnSurface przywraca białe wartości.
+        colors = CardDefaults.cardColors(
+            containerColor = DarkSurface,
+            contentColor = DarkOnSurface
+        ),
         border = BorderStroke(1.dp, DarkOutlineSoft),
         shape = RoundedCornerShape(18.dp)
     ) {
