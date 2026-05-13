@@ -45,6 +45,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
@@ -674,6 +675,12 @@ private fun DayHeroCard(
     val kcalNow = state.totals.kcal.roundToInt()
     val kcalGoal = state.goal.kcal
     val progress = if (kcalGoal > 0) (kcalNow.toFloat() / kcalGoal).coerceIn(0f, 1f) else 0f
+    val kcalRemaining = (kcalGoal - kcalNow).coerceAtLeast(0)
+    val mealsLeft = (state.mealsTotal - state.mealsConfirmed).coerceAtLeast(0)
+    val windowStart = state.config.windowStartHour
+    val windowEnd = state.config.windowEndHour()
+    // v1.24.27 redesign: kcal accentowy (żółty) gdy zaczął jeść; szary gdy 0.
+    val kcalColor = if (kcalNow > 0) AccentOrange else DarkOnSurface
 
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -682,9 +689,10 @@ private fun DayHeroCard(
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
+            // v1.24.27: nagłówek "DZIŚ · 12:00-20:00" + zębatka po prawej
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "DZIŚ",
+                    "DZIŚ · %02d:00–%02d:00".format(windowStart, windowEnd),
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
@@ -708,7 +716,8 @@ private fun DayHeroCard(
                     )
                 }
             }
-            Spacer(Modifier.height(6.dp))
+            Spacer(Modifier.height(8.dp))
+            // Liczba kcal — duża, kolor akcentowy gdy >0
             Row(
                 verticalAlignment = Alignment.Bottom,
                 modifier = Modifier.clickable(onClick = onShowBreakdown)
@@ -717,7 +726,7 @@ private fun DayHeroCard(
                     "$kcalNow",
                     fontSize = 44.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = DarkOnSurface,
+                    color = kcalColor,
                     letterSpacing = (-1).sp
                 )
                 Text(
@@ -735,133 +744,209 @@ private fun DayHeroCard(
                     modifier = Modifier.padding(bottom = 12.dp)
                 )
             }
-            // Konfig wiersz: "${meals} posiłki w oknie 12:00 - 20:00 · ${perMealKcal} kcal/posiłek"
-            Spacer(Modifier.height(2.dp))
+            // v1.24.27: kontekstowa info pod liczbą — "Zostało X kcal · N posiłków do końca dnia"
+            Spacer(Modifier.height(4.dp))
             Text(
-                "${state.config.mealsPerDay} posiłki · okno %02d:00-%02d:00 · %d kcal/posiłek".format(
-                    state.config.windowStartHour,
-                    state.config.windowEndHour(),
-                    state.perMealKcal
-                ),
-                style = MaterialTheme.typography.bodySmall,
+                buildString {
+                    append("Zostało: $kcalRemaining kcal")
+                    if (mealsLeft > 0) {
+                        append(" · $mealsLeft ")
+                        append(if (mealsLeft == 1) "posiłek do końca dnia" else "posiłki do końca dnia")
+                    }
+                },
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
                 color = DarkOnSurfaceVariant
             )
-            // v1.24.14: licznik potwierdzonych posiłków — daje sygnał czy
-            // user oznacza status (✓/✗). SKIPPED nie wlicza się w kcal totals.
-            if (state.mealsTotal > 0) {
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    "Potwierdzone: ${state.mealsConfirmed}/${state.mealsTotal} posiłków",
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.SemiBold
-                    ),
-                    color = if (state.mealsConfirmed == state.mealsTotal) SuccessGreen else DarkOnSurfaceVariant
-                )
-            }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
+            // Pasek postępu kcal
             LinearProgressIndicator(
                 progress = { progress },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(6.dp),
+                    .height(6.dp)
+                    .clip(RoundedCornerShape(3.dp)),
                 color = AccentOrange,
                 trackColor = DarkSurfaceVariant
             )
 
             Spacer(Modifier.height(16.dp))
 
-            // Makro pierścienie
-            Row(horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()) {
-                MacroRing(
-                    label = "Białko",
+            // v1.24.27: Makro w prostokątach z mini-paskiem (zamiast pierścieni)
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                MacroBar(
+                    label = "BIAŁKO",
                     current = state.totals.protein,
                     goal = state.goal.proteinG.toDouble(),
-                    color = AccentOrange
+                    color = AccentOrange,
+                    modifier = Modifier.weight(1f)
                 )
-                MacroRing(
-                    label = "Węgle",
+                MacroBar(
+                    label = "WĘGLE",
                     current = state.totals.carbs,
                     goal = state.goal.carbsG.toDouble(),
-                    color = SuccessGreen
+                    color = SuccessGreen,
+                    modifier = Modifier.weight(1f)
                 )
-                MacroRing(
-                    label = "Tłuszcz",
+                MacroBar(
+                    label = "TŁUSZCZ",
                     current = state.totals.fat,
                     goal = state.goal.fatG.toDouble(),
-                    color = Color(0xFFFFB74D)
+                    color = Color(0xFFFFB74D),
+                    modifier = Modifier.weight(1f)
                 )
             }
 
             Spacer(Modifier.height(14.dp))
 
-            // Button "Wygeneruj plan AI" — woła DietAiService
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(44.dp)
-                    .background(AccentOrange.copy(alpha = if (aiLoading) 0.05f else 0.15f), RoundedCornerShape(12.dp))
-                    .clickable(enabled = !aiLoading, onClick = onGenerateAi),
-                contentAlignment = Alignment.Center
+            // v1.24.27: krótszy "Plan dnia AI" + "Kompozytor" zgodnie z mockupem
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth()
             ) {
-                if (aiLoading) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        androidx.compose.material3.CircularProgressIndicator(
-                            modifier = Modifier.size(16.dp),
-                            color = AccentOrange,
-                            strokeWidth = 2.dp
+                // Plan dnia AI (żółty wypełniony)
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(44.dp)
+                        .background(
+                            AccentOrange.copy(alpha = if (aiLoading) 0.05f else 1.0f),
+                            RoundedCornerShape(12.dp)
                         )
-                        Spacer(Modifier.width(10.dp))
-                        Text(
-                            "AI układa Twój dzień…",
-                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                            color = AccentOrange
-                        )
+                        .clickable(enabled = !aiLoading, onClick = onGenerateAi),
+                    contentAlignment = Alignment.Center
+                ) {
+                    if (aiLoading) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            androidx.compose.material3.CircularProgressIndicator(
+                                modifier = Modifier.size(16.dp),
+                                color = AccentOrange,
+                                strokeWidth = 2.dp
+                            )
+                            Spacer(Modifier.width(8.dp))
+                            Text(
+                                "AI układa…",
+                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                color = AccentOrange,
+                                fontSize = 13.sp
+                            )
+                        }
+                    } else {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.AutoAwesome,
+                                contentDescription = null,
+                                tint = Color.Black,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(Modifier.width(6.dp))
+                            Text(
+                                "Plan dnia AI",
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.sp
+                                ),
+                                color = Color.Black
+                            )
+                        }
                     }
-                } else {
+                }
+                // Kompozytor (zielony outline)
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(44.dp)
+                        .background(SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(12.dp))
+                        .border(1.dp, SuccessGreen.copy(alpha = 0.55f), RoundedCornerShape(12.dp))
+                        .clickable(onClick = onQuickCompose),
+                    contentAlignment = Alignment.Center
+                ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            Icons.Default.AutoAwesome,
-                            contentDescription = null,
-                            tint = AccentOrange,
-                            modifier = Modifier.size(18.dp)
-                        )
-                        Spacer(Modifier.width(8.dp))
+                        Text("🥗", style = MaterialTheme.typography.bodyMedium)
+                        Spacer(Modifier.width(6.dp))
                         Text(
-                            "Wygeneruj plan dnia AI",
+                            "Kompozytor",
                             style = MaterialTheme.typography.bodyMedium.copy(
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 13.sp
                             ),
-                            color = AccentOrange
+                            color = SuccessGreen
                         )
                     }
                 }
             }
+        }
+    }
+}
 
-            Spacer(Modifier.height(8.dp))
+/**
+ * v1.24.27: nowy MacroBar zastępujący MacroRing (donut).
+ * Prostokąt z labelem, wartością i poziomym paskiem postępu.
+ * Layout: "LABEL    /goal" (header) + "94 g" (value) + cienki poziomy pasek.
+ */
+@Composable
+private fun MacroBar(
+    label: String,
+    current: Double,
+    goal: Double,
+    color: Color,
+    modifier: Modifier = Modifier
+) {
+    val currentRounded = current.roundToInt()
+    val goalRounded = goal.roundToInt()
+    val pct = if (goal > 0) (current / goal).coerceIn(0.0, 1.0).toFloat() else 0f
 
-            // Button "Quick Compose" — szybki kompozytor (filozofia wymienników Macieja)
-            Box(
+    Box(
+        modifier = modifier
+            .background(DarkSurfaceVariant.copy(alpha = 0.35f), RoundedCornerShape(12.dp))
+            .padding(10.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    label,
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.0.sp
+                    ),
+                    color = color,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    "/${goalRounded}g",
+                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                    color = DarkOnSurfaceVariant
+                )
+            }
+            Spacer(Modifier.height(4.dp))
+            Row(verticalAlignment = Alignment.Bottom) {
+                Text(
+                    "$currentRounded",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = DarkOnSurface,
+                    letterSpacing = (-0.4).sp
+                )
+                Text(
+                    "g",
+                    fontSize = 11.sp,
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.padding(bottom = 3.dp)
+                )
+            }
+            Spacer(Modifier.height(6.dp))
+            LinearProgressIndicator(
+                progress = { pct },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(40.dp)
-                    .background(SuccessGreen.copy(alpha = 0.12f), RoundedCornerShape(12.dp))
-                    .clickable(onClick = onQuickCompose),
-                contentAlignment = Alignment.Center
-            ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        "🥗",
-                        style = MaterialTheme.typography.bodyMedium
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        "Skomponuj posiłek (1B + 1W + 1T)",
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                        color = SuccessGreen
-                    )
-                }
-            }
+                    .height(3.dp)
+                    .clip(RoundedCornerShape(2.dp)),
+                color = color,
+                trackColor = DarkSurfaceVariant
+            )
         }
     }
 }
