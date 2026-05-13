@@ -178,7 +178,8 @@ fun HomeScreen(
                                 }
                             },
                             onExplain = { showDeloadExplain = card.recommendation },
-                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.DELOAD_SUGGESTION) }
+                            onDismiss = { vm.dismissAlert(pl.filebit.gymtracker.data.repository.AlertType.DELOAD_SUGGESTION) },
+                            onPickPlan = onSelectPlanTab
                         )
                     }
                 }
@@ -1197,7 +1198,8 @@ private fun DeloadSuggestionCard(
     canApply: Boolean,
     onApply: () -> Unit,
     onExplain: () -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    onPickPlan: () -> Unit = {}
 ) {
     val color = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> pl.filebit.gymtracker.ui.theme.ErrorRed
@@ -1271,17 +1273,33 @@ private fun DeloadSuggestionCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                androidx.compose.material3.Button(
-                    onClick = onApply,
-                    enabled = canApply,
-                    modifier = Modifier.weight(1f),
-                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                        containerColor = color,
-                        contentColor = Color.Black
-                    ),
-                    shape = RoundedCornerShape(10.dp)
-                ) {
-                    Text("✓ Zastosuj", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                // v1.24.34 fix Bug #3 (raport SYM 3tyg): gdy brak planu, zamiast
+                // wyszarzonego "Zastosuj" pokaż enabled "Wybierz plan" — CTA prowadzi
+                // usera do działania zamiast zostawiać alert bez wyjścia.
+                if (canApply) {
+                    androidx.compose.material3.Button(
+                        onClick = onApply,
+                        modifier = Modifier.weight(1f),
+                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                            containerColor = color,
+                            contentColor = Color.Black
+                        ),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("✓ Zastosuj", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                    }
+                } else {
+                    androidx.compose.material3.Button(
+                        onClick = onPickPlan,
+                        modifier = Modifier.weight(1f),
+                        colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                            containerColor = color,
+                            contentColor = Color.Black
+                        ),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("📋 Wybierz plan", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                    }
                 }
                 androidx.compose.material3.OutlinedButton(
                     onClick = onExplain,
@@ -1306,7 +1324,7 @@ private fun DeloadSuggestionCard(
             if (!canApply) {
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    "Brak aktywnego planu — Zastosuj wymaga planu z wagami.",
+                    "Brak aktywnego planu — wybierz plan, a system automatycznie obniży obciążenia.",
                     style = MaterialTheme.typography.labelSmall,
                     color = DarkOnSurfaceVariant
                 )
@@ -2039,8 +2057,13 @@ private fun TrainingPhaseCard(
             )
 
             // v1.14.0: countdown z datowanego TrainingMesocycle.
+            // v1.24.34 fix Bug #2 (raport SYM 3tyg): gdy alert NEEDS_DELOAD aktywny,
+            // ukryj countdown poprzedniej fazy (Intensyfikacja/Akumulacja) — była sprzeczność
+            // "deload teraz" + "Intensyfikacja (1/3)". User widzi alert + przycisk
+            // 'Zastosuj deload'; po zastosowaniu meso.phase=DELOAD i countdown wróci.
             val activeMeso = (periodizationState as? pl.filebit.gymtracker.data.repository.PeriodizationState.Active)
-            if (activeMeso != null) {
+            val suppressCountdown = status.phase == TrainingPhase.NEEDS_DELOAD
+            if (activeMeso != null && !suppressCountdown) {
                 Spacer(Modifier.height(12.dp))
                 MesocycleCountdownBlock(
                     state = activeMeso,
