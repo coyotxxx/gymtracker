@@ -244,14 +244,27 @@ fun DietScreen(
                     }
                 }
 
-                // 5. Sekcje posiłków — domyślnie ROZWINIĘTE + status (PLANNED/CONSUMED/SKIPPED)
+                // 5. Sekcje posiłków — auto-expand wg stanu (v1.24.27).
+                // Maciej: 'posiłek który oczekuje na zjedzenie zawsze otwarty,
+                // zjedzony zamknięty, nie zjedzony zamknięty'.
                 items(state.groups.size) { idx ->
                     val group = state.groups[idx]
-                    // Domyślnie expanded=true; user może kliknąć by zwinąć
-                    val expanded = expandedSlots[group.type] ?: true
                     val targetKcal = state.perMealKcal
                     val status = consumptions[group.type]
                         ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
+                    val isCurrent = isCurrentSlot(group.timeLabel) &&
+                        status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
+                    // Domyślny stan ekspand wg statusu:
+                    // - CONSUMED → collapsed (historia)
+                    // - SKIPPED → collapsed (świadoma decyzja)
+                    // - PLANNED + isCurrent → expanded (TERAZ czeka)
+                    // - PLANNED + późniejsze → collapsed (cel ale nie teraz)
+                    val defaultExpanded = when (status) {
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> false
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED -> isCurrent
+                    }
+                    val expanded = expandedSlots[group.type] ?: defaultExpanded
                     MealGroupCard(
                         group = group,
                         targetKcalPerMeal = targetKcal,
@@ -259,8 +272,7 @@ fun DietScreen(
                         onToggleExpanded = { expandedSlots[group.type] = !expanded },
                         consumptionStatus = status,
                         onCycleStatus = { vm.cycleConsumption(group.type) },
-                        isCurrent = isCurrentSlot(group.timeLabel) &&
-                            status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED,
+                        isCurrent = isCurrent,
                         onAdd = { addMealForType = group.type },
                         onDelete = { id -> vm.deleteMeal(id) },
                         onSwap = { e -> vm.openSubstitutes(e.entry, e.product) },
