@@ -138,22 +138,26 @@ class DietOnboardingViewModel @Inject constructor(
         WeightGoalType.NONE -> DietGoalType.MAINTAIN
     }
 
+    // v1.24.24 CRITICAL fix: pace ZAWSZE positive (jak prędkość).
+    // Kierunek (deficyt/surplus) determinowany przez goalType w computeDailyGoal.
+    // Wcześniej FAT_LOSS dawał -0.5 → computeDailyGoal robił -(-0.5) = surplus +550
+    // zamiast -550. User wybierał Redukcja, dostawał surplus. Krytyczny bug.
     private fun defaultPaceFor(user: UserProfile): Double = when (user.weightGoalType) {
-        WeightGoalType.CUT -> -0.5
+        WeightGoalType.CUT -> 0.5
         WeightGoalType.BULK -> 0.3
         WeightGoalType.MAINTAIN -> 0.0
         WeightGoalType.NONE -> 0.0
     }
 
     private fun defaultPaceForType(g: DietGoalType): Double = when (g) {
-        DietGoalType.FAT_LOSS -> -0.5
+        DietGoalType.FAT_LOSS -> 0.5
         DietGoalType.MUSCLE_GAIN -> 0.3
         DietGoalType.RECOMP -> 0.0
         DietGoalType.MAINTAIN -> 0.0
-        DietGoalType.STRENGTH -> 0.1
+        DietGoalType.STRENGTH -> 0.0   // v1.24.23: strength = maintenance (zmiana z 0.1)
         DietGoalType.ENDURANCE -> 0.0
         DietGoalType.HEALTH -> 0.0
-        DietGoalType.EVENT_PREP -> -0.3
+        DietGoalType.EVENT_PREP -> 0.3  // positive (był -0.3) — sign z FAT_LOSS-like logic
     }
 
     private fun labelForUserGoal(g: WeightGoalType): String = when (g) {

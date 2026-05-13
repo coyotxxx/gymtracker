@@ -113,7 +113,10 @@ fun computeDailyGoal(
     //
     // Fallback gdy brak dietProfile: UserProfile.weightGoalType (CUT/BULK).
     val autoDeficitFromDiet: Int? = dietProfile?.let { dp ->
-        val paceKcal = (dp.paceKgPerWeek * 7700.0 / 7.0).toInt()
+        // v1.24.24 CRITICAL fix: abs(pace) — DietOnboarding zapisywał pace negative
+        // dla CUT (-0.5), nowa konwencja v1.24.19 oczekuje positive (kierunek z goalType).
+        // Bez abs() Maciej dostawał +550 surplus zamiast -550 deficyt (cel 2949 vs oczekiwane 2029).
+        val paceKcal = (kotlin.math.abs(dp.paceKgPerWeek) * 7700.0 / 7.0).toInt()
         when (dp.goalType) {
             // Wagowe cele: deficyt/surplus z paceKgPerWeek
             pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS -> -paceKcal

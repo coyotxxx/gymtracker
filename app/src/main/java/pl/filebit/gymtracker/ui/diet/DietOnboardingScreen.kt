@@ -254,24 +254,35 @@ private fun StepGoal(state: DietOnboardingState, vm: DietOnboardingViewModel) {
         }
 
         Spacer(Modifier.height(8.dp))
+        // v1.24.24: pace zawsze positive (magnitude). Kierunek (redukcja/surplus)
+        // wynika z goalType. Slider 0..1.5 kg/tydz. Label dostosowany do typu.
+        val absPace = kotlin.math.abs(state.paceKgPerWeek)
+        val isLossGoal = state.goalType == DietGoalType.FAT_LOSS ||
+            state.goalType == DietGoalType.EVENT_PREP
+        val isGainGoal = state.goalType == DietGoalType.MUSCLE_GAIN
         FieldLabel(
             "Tempo zmiany wagi",
-            "${if (state.paceKgPerWeek > 0) "+" else ""}${"%.2f".format(state.paceKgPerWeek)} kg/tydzień"
+            when {
+                isLossGoal -> "−%.2f kg/tydzień (chudniesz)".format(absPace)
+                isGainGoal -> "+%.2f kg/tydzień (przybierasz)".format(absPace)
+                else -> "%.2f kg/tydzień".format(absPace)
+            }
         )
         Slider(
-            value = state.paceKgPerWeek.toFloat(),
+            value = absPace.toFloat(),
             onValueChange = { vm.setPace((it * 100).toInt() / 100.0) },
-            valueRange = -1.5f..1.0f,
+            valueRange = 0.0f..1.5f,
             colors = SliderDefaults.colors(thumbColor = AccentOrange, activeTrackColor = AccentOrange)
         )
         Text(
             when {
-                state.paceKgPerWeek <= -1.0 -> "⚠ Agresywny — ryzyko utraty masy mięśniowej"
-                state.paceKgPerWeek <= -0.5 -> "Klasyczna redukcja"
-                state.paceKgPerWeek < 0 -> "Łagodna redukcja — chroni mięśnie"
-                state.paceKgPerWeek == 0.0 -> "Utrzymanie / rekompozycja"
-                state.paceKgPerWeek <= 0.3 -> "Lean bulk — minimalny tłuszcz"
-                else -> "Większy zysk masy + tłuszcz"
+                absPace >= 1.0 && isLossGoal -> "⚠ Agresywny — ryzyko utraty masy mięśniowej"
+                absPace >= 0.5 && isLossGoal -> "Klasyczna redukcja"
+                absPace > 0 && isLossGoal -> "Łagodna redukcja — chroni mięśnie"
+                absPace == 0.0 -> "Utrzymanie / rekompozycja"
+                absPace <= 0.3 && isGainGoal -> "Lean bulk — minimalny tłuszcz"
+                isGainGoal -> "Większy zysk masy + tłuszcz"
+                else -> "Tempo nie dotyczy tego celu"
             },
             style = MaterialTheme.typography.bodySmall,
             color = AccentOrange
