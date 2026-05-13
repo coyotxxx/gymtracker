@@ -131,11 +131,25 @@ class DietOnboardingViewModel @Inject constructor(
         }
     }
 
+    // v1.24.37 fix Bug #8 (retest SYM): mapGoalFromUser uwzględnia teraz też TrainingGoal
+    // gdy weightGoalType=NONE (po pominięciu wizarda treningu user może mieć tylko
+    // TrainingGoal ustawione — wizard "Pomiń" zostawia weightGoalType=NONE).
+    // Skutek bez fixu: krok 1 kreatora pokazywał "Cel treningu: Redukcja" (z TrainingGoal),
+    // ale krok 4 default = "Utrzymanie" (bo mapGoalFromUser brał weightGoalType=NONE).
+    // User klikał Dalej → dostawał dietę MAINTAIN sprzeczną z treningiem CUT.
     private fun mapGoalFromUser(user: UserProfile): DietGoalType = when (user.weightGoalType) {
         WeightGoalType.CUT -> DietGoalType.FAT_LOSS
         WeightGoalType.BULK -> DietGoalType.MUSCLE_GAIN
         WeightGoalType.MAINTAIN -> DietGoalType.MAINTAIN
-        WeightGoalType.NONE -> DietGoalType.MAINTAIN
+        WeightGoalType.NONE -> mapFromTrainingGoal(user.goal)
+    }
+
+    private fun mapFromTrainingGoal(goal: pl.filebit.gymtracker.data.entity.TrainingGoal): DietGoalType = when (goal) {
+        pl.filebit.gymtracker.data.entity.TrainingGoal.HYPERTROPHY -> DietGoalType.MUSCLE_GAIN
+        pl.filebit.gymtracker.data.entity.TrainingGoal.STRENGTH -> DietGoalType.STRENGTH
+        pl.filebit.gymtracker.data.entity.TrainingGoal.MIX -> DietGoalType.MAINTAIN
+        pl.filebit.gymtracker.data.entity.TrainingGoal.GENERAL_FITNESS -> DietGoalType.MAINTAIN
+        pl.filebit.gymtracker.data.entity.TrainingGoal.CARDIO_LIFTING -> DietGoalType.ENDURANCE
     }
 
     // v1.24.24 CRITICAL fix: pace ZAWSZE positive (jak prędkość).
@@ -146,7 +160,8 @@ class DietOnboardingViewModel @Inject constructor(
         WeightGoalType.CUT -> 0.5
         WeightGoalType.BULK -> 0.3
         WeightGoalType.MAINTAIN -> 0.0
-        WeightGoalType.NONE -> 0.0
+        // v1.24.37: dla NONE pobierz pace z mapped DietGoalType (spójnie z mapGoalFromUser)
+        WeightGoalType.NONE -> defaultPaceForType(mapFromTrainingGoal(user.goal))
     }
 
     private fun defaultPaceForType(g: DietGoalType): Double = when (g) {
