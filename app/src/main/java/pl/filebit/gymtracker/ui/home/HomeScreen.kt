@@ -1614,10 +1614,14 @@ private fun GoalAchievedCard(
                 }
             }
             Spacer(Modifier.height(10.dp))
-            Text(
+            val journey = if (result.daysToAchieve > 0) {
                 "Z ${"%.1f".format(result.startWeight)} → ${"%.1f".format(result.currentWeight)} kg " +
-                    "($direction${"%.1f".format(deltaKg)} kg w ${result.daysToAchieve} dni). " +
-                    "Trzymasz target od ${result.stableDays} dni — gratulacje!",
+                    "($direction${"%.1f".format(deltaKg)} kg w ${result.daysToAchieve} dni). "
+            } else {
+                "Waga ${"%.1f".format(result.currentWeight)} kg — cel utrzymany. "
+            }
+            Text(
+                journey + "Trzymasz target od ${result.stableDays} dni — gratulacje!",
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
                 color = DarkOnSurface
             )
