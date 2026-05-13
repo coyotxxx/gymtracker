@@ -173,6 +173,10 @@ fun computeTrainingLoadFromSnapshot(
     // zamiast DETRAINING (które sugerowałoby "dodaj objętość" przeciwko zaplanowanemu deloadowi).
     val zone = when {
         acwr < 0.8 && currentPhase == TrainingPhase.DELOAD -> LoadZone.DELOAD_PROPER
+        // v1.24.39: gdy aktywny alert deload/kontuzja, niski ACWR NIE oznacza
+        // "dodaj objętości" — alert ma priorytet (DELOAD ZALECANY z RPE/stagnacji
+        // + ACWR "dodaj objętości" = sprzeczność, narusza feedback_no_contradicting).
+        acwr < 0.8 && hasGlobalAlert -> LoadZone.OVERREACHING
         acwr < 0.8 -> LoadZone.DETRAINING
         // v1.24.3: gdy aktywny alert (RPE+sessions wysokie / ból / powrót),
         // stała objętość 0.8-1.3 ACWR to FAKTYCZNIE overreaching — ACWR jako ratio
@@ -186,10 +190,14 @@ fun computeTrainingLoadFromSnapshot(
         LoadZone.DETRAINING -> "Obciążenie 7d niższe niż twoja zwykła średnia. Możesz dodać objętości — np. 1 dodatkowy trening lub +10% setów."
         LoadZone.DELOAD_PROPER -> "Deload przebiega prawidłowo — niski tonaż jest celowy (ACWR ${"%.2f".format(acwr)}). Po nim wracasz do akumulacji."
         LoadZone.OPTIMAL -> "Sweet spot — ACWR ${"%.2f".format(acwr)}. Niskie ryzyko kontuzji, optymalna progresja. Trzymaj plan."
-        LoadZone.OVERREACHING -> if (acwr <= 1.3)
-            "Tonaż 7d wysoki (${workoutsIn14d}×/14d, ACWR ${"%.2f".format(acwr)} stała). Sygnały przemęczenia — rozważ lżejszy tydzień."
-        else
-            "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
+        LoadZone.OVERREACHING -> when {
+            acwr < 0.8 ->
+                "Obciążenie 7d niskie (ACWR ${"%.2f".format(acwr)}), ale aktywny alert deload/kontuzji — posłuchaj go zamiast dodawać objętość."
+            acwr <= 1.3 ->
+                "Tonaż 7d wysoki (${workoutsIn14d}×/14d, ACWR ${"%.2f".format(acwr)} stała). Sygnały przemęczenia — rozważ lżejszy tydzień."
+            else ->
+                "Tonaż 7d podwyższony — ACWR ${"%.2f".format(acwr)}. Uwaga: możliwe przemęczenie. Rozważ lżejszy tydzień."
+        }
         LoadZone.RISKY -> "Niebezpieczna strefa — ACWR ${"%.2f".format(acwr)}. Wysokie ryzyko kontuzji. Konieczna redukcja: -20% objętości."
         LoadZone.INSUFFICIENT -> ""
     }

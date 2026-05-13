@@ -154,4 +154,33 @@ class TrainingLoadAnalyzerFastTest {
                 resultDeload.recommendation.contains("Deload przebiega prawidłowo"))
         }
     }
+
+    // ============== v1.24.39: acwr<0.8 + hasGlobalAlert = OVERREACHING (nie DETRAINING) ==============
+
+    @Test
+    fun `acwr poniżej 0_8 z aktywnym alertem deload = OVERREACHING zamiast DETRAINING (fix sprzeczności)`() {
+        // Scenariusz: niskie obciążenie 7d (ACWR <0.8), ale aktywny alert DELOAD ZALECANY
+        // (np. ze stagnacji albo RPE). Bez mappingu komunikat brzmi "dodaj objętości" co
+        // jest sprzeczne z aktywnym alertem.
+        val workouts = (0..27 step 2).map { d ->
+            workout((d + 1L), daysAgo = (d + 7).toLong())
+        } + workout(100L, daysAgo = 3)
+        val ex = listOf(ex(10))
+        val sets = workouts.mapIndexed { i, w ->
+            val volume = if (w.id == 100L) 50.0 else 1000.0
+            set(wid = w.id, exId = 10, reps = 10, weight = volume / 10).copy(id = (i + 500L))
+        }
+        val snapshot = StatsSnapshot.from(workouts, ex, sets)
+
+        val withAlert = computeTrainingLoadFromSnapshot(snapshot, now,
+            pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA, hasGlobalAlert = true)
+        val withoutAlert = computeTrainingLoadFromSnapshot(snapshot, now,
+            pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA, hasGlobalAlert = false)
+
+        assertTrue("ACWR powinno być <0.8 w tym snapshocie", withAlert.acwr < 0.8)
+        assertEquals(LoadZone.OVERREACHING, withAlert.zone)
+        assertEquals(LoadZone.DETRAINING, withoutAlert.zone)
+        assertTrue("Rekomendacja musi wspominać o alercie zamiast 'dodaj objętości'",
+            withAlert.recommendation.contains("posłuchaj"))
+    }
 }
