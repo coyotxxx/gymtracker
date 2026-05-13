@@ -262,15 +262,14 @@ fun DietScreen(
                         ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
                     val isCurrent = isCurrentSlot(group.timeLabel) &&
                         status == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
-                    // Domyślny stan ekspand wg statusu:
+                    // Domyślny stan ekspand wg statusu (zasada Macieja v1.24.32):
                     // - CONSUMED → collapsed (historia)
                     // - SKIPPED → collapsed (świadoma decyzja)
-                    // - PLANNED + isCurrent → expanded (TERAZ czeka)
-                    // - PLANNED + późniejsze → collapsed (cel ale nie teraz)
+                    // - PLANNED → expanded (zarówno bieżące jak i przyszłe sloty)
                     val defaultExpanded = when (status) {
                         pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED -> false
                         pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED -> false
-                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED -> isCurrent
+                        pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED -> true
                     }
                     val expanded = expandedSlots[group.type] ?: defaultExpanded
                     MealGroupCard(
