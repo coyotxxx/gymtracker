@@ -162,12 +162,25 @@ class TrainingLoadAnalyzerFastTest {
         // Scenariusz: niskie obciążenie 7d (ACWR <0.8), ale aktywny alert DELOAD ZALECANY
         // (np. ze stagnacji albo RPE). Bez mappingu komunikat brzmi "dodaj objętości" co
         // jest sprzeczne z aktywnym alertem.
-        val workouts = (0..27 step 2).map { d ->
-            workout((d + 1L), daysAgo = (d + 7).toLong())
-        } + workout(100L, daysAgo = 3)
+        // - workoutsIn14d >= 6 (wymóg INSUFFICIENT guard) → 7 sesji w ostatnich 14 dni
+        // - 7d (daysAgo 0-6): tylko 2 sesje × małe volume → niskie acute
+        // - 21d wstecz (daysAgo 7-27): 7 sesji × duże volume → wysokie chronic
+        val recent7d = listOf(
+            workout(1L, daysAgo = 1L),
+            workout(2L, daysAgo = 5L),
+        )
+        val recent14d = listOf(
+            workout(3L, daysAgo = 8L),
+            workout(4L, daysAgo = 10L),
+            workout(5L, daysAgo = 11L),
+            workout(6L, daysAgo = 12L),
+            workout(7L, daysAgo = 13L),
+        )
+        val older = (8..14).map { i -> workout(i.toLong(), daysAgo = (10L + i)) }
+        val workouts = recent7d + recent14d + older
         val ex = listOf(ex(10))
         val sets = workouts.mapIndexed { i, w ->
-            val volume = if (w.id == 100L) 50.0 else 1000.0
+            val volume = if (w.id in 1L..2L) 100.0 else 1500.0
             set(wid = w.id, exId = 10, reps = 10, weight = volume / 10).copy(id = (i + 500L))
         }
         val snapshot = StatsSnapshot.from(workouts, ex, sets)
@@ -177,7 +190,8 @@ class TrainingLoadAnalyzerFastTest {
         val withoutAlert = computeTrainingLoadFromSnapshot(snapshot, now,
             pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA, hasGlobalAlert = false)
 
-        assertTrue("ACWR powinno być <0.8 w tym snapshocie", withAlert.acwr < 0.8)
+        assertTrue("acwr w teście = ${withAlert.acwr}, zone = ${withAlert.zone}",
+            withAlert.acwr < 0.8 && withAlert.zone != LoadZone.INSUFFICIENT)
         assertEquals(LoadZone.OVERREACHING, withAlert.zone)
         assertEquals(LoadZone.DETRAINING, withoutAlert.zone)
         assertTrue("Rekomendacja musi wspominać o alercie zamiast 'dodaj objętości'",

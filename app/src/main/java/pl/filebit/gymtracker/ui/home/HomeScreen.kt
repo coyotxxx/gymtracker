@@ -343,7 +343,11 @@ fun HomeScreen(
             // Faza cyklu treningowego (computed z TrainingPhaseAnalyzer)
             state.trainingPhase?.let { phase ->
                 val phaseDismissed = pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.PHASE in state.dismissedCards
-                if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA && !phaseDismissed) {
+                // v1.24.40: ukryj fazę z NEEDS_DELOAD jeśli osobna karta DELOAD ZALECANY/ROZWAŻ DELOAD
+                // już to mówi — duplikat z 2 systemów (DeloadService + TrainingPhaseAnalyzer) zaśmieca Home.
+                val duplicatesDeloadAlert = phase.phase == pl.filebit.gymtracker.ai.TrainingPhase.NEEDS_DELOAD &&
+                    state.deloadCard is pl.filebit.gymtracker.data.repository.DeloadCardState.Suggestion
+                if (phase.phase != pl.filebit.gymtracker.ai.TrainingPhase.NO_DATA && !phaseDismissed && !duplicatesDeloadAlert) {
                     item {
                         TrainingPhaseCard(
                             status = phase,
