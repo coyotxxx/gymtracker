@@ -1038,13 +1038,20 @@ private fun MealGroupCard(
 ) {
     val isConsumed = consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.CONSUMED
     val isSkipped = consumptionStatus == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.SKIPPED
+    // Border per status (mockup Macieja):
+    // CONSUMED → zielony (zjedzone), isCurrent → pomarańczowy (TERAZ),
+    // SKIPPED → bez ramki / wyciszone, PLANNED → DarkOutlineSoft.
+    val borderColor = when {
+        isConsumed -> SuccessGreen.copy(alpha = 0.5f)
+        isCurrent -> AccentOrange.copy(alpha = 0.55f)
+        isSkipped -> DarkOutlineSoft.copy(alpha = 0.4f)
+        else -> DarkOutlineSoft
+    }
+    val borderWidth = if (isConsumed || isCurrent) 1.5.dp else 1.dp
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(
-            1.dp,
-            if (isCurrent) AccentOrange.copy(alpha = 0.4f) else DarkOutlineSoft
-        ),
+        border = BorderStroke(borderWidth, borderColor),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
@@ -1123,6 +1130,13 @@ private fun MealGroupCard(
                 Column(horizontalAlignment = Alignment.End) {
                     val kcal = group.totals.kcal.roundToInt()
                     val target = targetKcalPerMeal
+                    // Kolor kcal per status: CONSUMED zielony (sukces),
+                    // SKIPPED wyciszony (świadoma decyzja), PLANNED pomarańczowy (cel).
+                    val kcalColor = when {
+                        isConsumed -> SuccessGreen
+                        isSkipped -> DarkOnSurfaceVariant
+                        else -> AccentOrange
+                    }
                     Row(verticalAlignment = Alignment.Bottom) {
                         Text(
                             "$kcal",
@@ -1130,7 +1144,7 @@ private fun MealGroupCard(
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Monospace
                             ),
-                            color = AccentOrange
+                            color = kcalColor
                         )
                         if (target > 0) {
                             Text(
@@ -1149,43 +1163,67 @@ private fun MealGroupCard(
                     )
                 }
             }
-            // Mini-summary ZAWSZE widoczne: "X produktów · B58 · W67 · T12"
-            if (group.entries.isNotEmpty()) {
+            // Subtitle ZAWSZE widoczne (mockup Macieja):
+            //   - z entries → "X produktów · B57 · W105 · T16"
+            //   - bez entries + PLANNED → "Planowana · cel X kcal"
+            //   - bez entries + SKIPPED → "Pominięto"
+            //   - bez entries + CONSUMED (edge) → ukryj
+            val hasEntries = group.entries.isNotEmpty()
+            val showSubtitle = hasEntries || !isConsumed
+            if (showSubtitle) {
                 Spacer(Modifier.height(6.dp))
                 HorizontalDivider(color = DarkOutlineSoft.copy(alpha = 0.3f), thickness = 1.dp)
                 Spacer(Modifier.height(6.dp))
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
+                if (hasEntries) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            "${group.entries.size} ${if (group.entries.size == 1) "produkt" else "produktów"}",
+                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
+                            color = DarkOnSurface
+                        )
+                        Text(
+                            "B ${group.totals.protein.roundToInt()}",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
+                            ),
+                            color = AccentOrange
+                        )
+                        Text("·", color = DarkOnSurfaceVariant)
+                        Text(
+                            "W ${group.totals.carbs.roundToInt()}",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
+                            ),
+                            color = SuccessGreen
+                        )
+                        Text("·", color = DarkOnSurfaceVariant)
+                        Text(
+                            "T ${group.totals.fat.roundToInt()}",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
+                            ),
+                            color = Color(0xFFFFB74D)
+                        )
+                    }
+                } else {
+                    // Empty meal — pokaż status: "Planowana · cel X kcal" lub "Pominięto"
+                    val subtitleText = if (isSkipped) {
+                        "Pominięto"
+                    } else if (targetKcalPerMeal > 0) {
+                        "Planowana · cel $targetKcalPerMeal kcal"
+                    } else {
+                        "Planowana"
+                    }
                     Text(
-                        "${group.entries.size} ${if (group.entries.size == 1) "produkt" else "produktów"}",
-                        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
-                        color = DarkOnSurface
-                    )
-                    Text(
-                        "B ${group.totals.protein.roundToInt()}",
+                        subtitleText,
                         style = MaterialTheme.typography.labelSmall.copy(
                             fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
                         ),
-                        color = AccentOrange
-                    )
-                    Text("·", color = DarkOnSurfaceVariant)
-                    Text(
-                        "W ${group.totals.carbs.roundToInt()}",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
-                        ),
-                        color = SuccessGreen
-                    )
-                    Text("·", color = DarkOnSurfaceVariant)
-                    Text(
-                        "T ${group.totals.fat.roundToInt()}",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold
-                        ),
-                        color = Color(0xFFFFB74D)
+                        color = DarkOnSurfaceVariant
                     )
                 }
             }
