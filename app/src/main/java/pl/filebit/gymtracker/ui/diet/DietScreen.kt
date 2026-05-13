@@ -291,6 +291,7 @@ fun DietScreen(
     }
 
     if (showSettings) {
+        val currentDietProfile by vm.dietProfileFlow.collectAsStateWithLifecycle()
         DietSettingsDialog(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
@@ -298,6 +299,11 @@ fun DietScreen(
             onEditWeeklyKcal = { showWeeklyKcal = true },
             onHealthConnectEnableRequest = { vm.startHealthConnectEnableFlow() },
             onHealthConnectDisable = { vm.toggleHealthConnectSync(false) },
+            // v1.24.25: szybka edycja profilu (cel + tempo + aktywność)
+            currentDietProfile = currentDietProfile,
+            onSaveDietProfile = { goalType, pace, activity ->
+                vm.saveDietProfileQuick(goalType, pace, activity)
+            },
             onDismiss = { showSettings = false }
         )
     }

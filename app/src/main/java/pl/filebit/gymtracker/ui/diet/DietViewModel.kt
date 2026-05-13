@@ -1117,6 +1117,50 @@ class DietViewModel @Inject constructor(
         }
     }
 
+    /**
+     * v1.24.25: szybka edycja głównych pól DietProfile (cel + tempo + aktywność)
+     * bez wymogu pełnego onboardingu. Filozofia Macieja: 'user nie wie że musi
+     * czegoś szukać'. Z DietSettingsDialog (Dieta → ⚙) jednym save zmienia
+     * profil i kcal/makro recalc'uje natychmiast.
+     */
+    /**
+     * v1.24.25: reactive flow profilu dietetycznego — odświeża się po
+     * saveDietProfileQuick (DietSettingsDialog czyta go żeby ustawić initial state).
+     */
+    private val _dietProfileTick = MutableStateFlow(0)
+    val dietProfileFlow: StateFlow<pl.filebit.gymtracker.data.entity.UserDietProfile?> =
+        _dietProfileTick
+            .map { dietProfileRepo.get() }
+            .stateIn(viewModelScope, kotlinx.coroutines.flow.SharingStarted.WhileSubscribed(5_000), null)
+
+    fun saveDietProfileQuick(
+        goalType: pl.filebit.gymtracker.data.entity.DietGoalType,
+        paceKgPerWeek: Double,
+        activityLevel: pl.filebit.gymtracker.data.entity.ActivityLevel
+    ) {
+        viewModelScope.launch {
+            val current = dietProfileRepo.get() ?: return@launch
+            val updated = current.copy(
+                goalType = goalType,
+                paceKgPerWeek = kotlin.math.abs(paceKgPerWeek),  // defensive abs
+                activityLevel = activityLevel,
+                updatedAt = System.currentTimeMillis()
+            )
+            dietProfileRepo.save(updated)
+            // Wybudź dietProfileFlow + zforsuj recompute karty DZIŚ.
+            _dietProfileTick.value = _dietProfileTick.value + 1
+            // DietViewModel.state combine nie obserwuje user_diet_profile bezpośrednio
+            // (tylko meals + products + consumptions + dietPrefs). Trzeba zforsować
+            // recompute przez zmianę dietPrefs (touch updatedAt) ALBO po prostu
+            // zmianę _selectedDateMs — co przeładuje combine.
+            val current = _selectedDateMs.value
+            _selectedDateMs.value = current  // re-emit żeby triggernąć recompute
+            // Bezpieczniej: forced reload przez krótki nudge na DietConfig
+            val cfg = dietPrefs.load()
+            dietPrefs.save(cfg.copy())  // touch updatedAt
+        }
+    }
+
     fun rescheduleReminders() {
         viewModelScope.launch { reminderScheduler.rescheduleAll(dietPrefs.load()) }
     }

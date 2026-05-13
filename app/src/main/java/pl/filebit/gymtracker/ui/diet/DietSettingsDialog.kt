@@ -50,6 +50,14 @@ fun DietSettingsDialog(
     onEditWeeklyKcal: () -> Unit = {},
     onHealthConnectEnableRequest: () -> Unit = {},
     onHealthConnectDisable: () -> Unit = {},
+    // v1.24.25: szybka edycja profilu (cel + tempo + aktywność) w dialogu —
+    // bez wymogu przechodzenia całego DietOnboarding wizard od nowa.
+    currentDietProfile: pl.filebit.gymtracker.data.entity.UserDietProfile? = null,
+    onSaveDietProfile: (
+        pl.filebit.gymtracker.data.entity.DietGoalType,
+        Double,
+        pl.filebit.gymtracker.data.entity.ActivityLevel
+    ) -> Unit = { _, _, _ -> },
     onDismiss: () -> Unit
 ) {
     var meals by remember { mutableStateOf(initial.mealsPerDay) }
@@ -58,6 +66,22 @@ fun DietSettingsDialog(
     var reminders by remember { mutableStateOf(initial.mealRemindersEnabled) }
     var autoCheck by remember { mutableStateOf(initial.autoCheckAdjustments) }
     var hcSync by remember { mutableStateOf(initial.healthConnectSyncEnabled) }
+    // v1.24.25: state dla profilu dietetycznego
+    var goalType by remember {
+        mutableStateOf(
+            currentDietProfile?.goalType
+                ?: pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN
+        )
+    }
+    var paceKgPerWeek by remember {
+        mutableStateOf(currentDietProfile?.paceKgPerWeek?.let { kotlin.math.abs(it) } ?: 0.5)
+    }
+    var activityLevel by remember {
+        mutableStateOf(
+            currentDietProfile?.activityLevel
+                ?: pl.filebit.gymtracker.data.entity.ActivityLevel.LIGHT
+        )
+    }
 
     val previewConfig = initial.copy(
         mealsPerDay = meals,
@@ -76,12 +100,87 @@ fun DietSettingsDialog(
             TextButton(onClick = onDismiss) {
                 Text("Anuluj", color = DarkOnSurfaceVariant)
             }
-            TextButton(onClick = { onSave(previewConfig); onDismiss() }) {
+            TextButton(onClick = {
+                // v1.24.25: save zarówno DietConfig (preferences) jak i DietProfile (cel/tempo/aktywność)
+                onSave(previewConfig)
+                if (currentDietProfile != null) {
+                    onSaveDietProfile(goalType, paceKgPerWeek, activityLevel)
+                }
+                onDismiss()
+            }) {
                 Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
         },
         bodyArrangement = Arrangement.spacedBy(14.dp)
     ) {
+                // === v1.24.25: PROFIL DIETETYCZNY (cel + tempo + aktywność) ===
+                // Filozofia: user widzi najważniejsze ustawienia diety na górze.
+                // Bez tej sekcji trzeba było przechodzić cały 6-stopniowy DietOnboarding.
+                if (currentDietProfile != null) {
+                    // Cel diety
+                    SettingSection("Cel diety") {
+                        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            items(pl.filebit.gymtracker.data.entity.DietGoalType.entries.toList()) { gt ->
+                                SelectableChip(
+                                    text = dietGoalLabel(gt),
+                                    selected = goalType == gt,
+                                    onClick = { goalType = gt }
+                                )
+                            }
+                        }
+                        Text(
+                            dietGoalDescription(goalType),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+
+                    // Tempo (slider) — tylko dla typów wagowych
+                    val isPaceRelevant = goalType == pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS ||
+                        goalType == pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN ||
+                        goalType == pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP
+                    val isLoss = goalType == pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS ||
+                        goalType == pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP
+                    if (isPaceRelevant) {
+                        val sign = if (isLoss) "−" else "+"
+                        SettingSection("Tempo: $sign${"%.2f".format(paceKgPerWeek)} kg/tydz") {
+                            Slider(
+                                value = paceKgPerWeek.toFloat(),
+                                onValueChange = { paceKgPerWeek = (it * 100).toInt() / 100.0 },
+                                valueRange = 0.0f..1.5f,
+                                colors = SliderDefaults.colors(
+                                    thumbColor = AccentOrange,
+                                    activeTrackColor = AccentOrange
+                                )
+                            )
+                            Text(
+                                paceDescription(paceKgPerWeek, isLoss),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = AccentOrange
+                            )
+                        }
+                    }
+
+                    // Aktywność POZA treningiem
+                    SettingSection("Aktywność POZA treningiem") {
+                        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            items(pl.filebit.gymtracker.data.entity.ActivityLevel.entries.toList()) { lvl ->
+                                SelectableChip(
+                                    text = activityLabel(lvl),
+                                    selected = activityLevel == lvl,
+                                    onClick = { activityLevel = lvl }
+                                )
+                            }
+                        }
+                        Text(
+                            "Liczy się TYLKO aktywność poza siłownią. Treningi są doliczane osobno (×30 kcal/dzień).",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = DarkOnSurfaceVariant
+                        )
+                    }
+                    Spacer(Modifier.height(8.dp))
+                }
+
                 // Liczba posiłków
                 SettingSection("Liczba posiłków: $meals") {
                     Slider(
@@ -290,4 +389,46 @@ private fun SettingSection(label: String, content: @Composable () -> Unit) {
         Spacer(Modifier.padding(top = 4.dp))
         content()
     }
+}
+
+// v1.24.25: helper labels dla profilu dietetycznego
+private fun dietGoalLabel(g: pl.filebit.gymtracker.data.entity.DietGoalType): String = when (g) {
+    pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS -> "Redukcja"
+    pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN -> "Masa"
+    pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP -> "Recomp"
+    pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN -> "Utrzymanie"
+    pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> "Siła"
+    pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> "Wytrzymałość"
+    pl.filebit.gymtracker.data.entity.DietGoalType.HEALTH -> "Zdrowie"
+    pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP -> "Event prep"
+}
+
+private fun dietGoalDescription(g: pl.filebit.gymtracker.data.entity.DietGoalType): String = when (g) {
+    pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS -> "Redukcja tkanki tłuszczowej (deficyt z tempa)"
+    pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN -> "Budowa masy mięśniowej (surplus z tempa)"
+    pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP -> "Lekki deficyt −300 kcal — chudniesz na tłuszczu, budujesz mięśnie"
+    pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN -> "Utrzymanie wagi (kcal = TDEE)"
+    pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> "Maintenance + dużo węgli (regeneracja CNS)"
+    pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> "+100 kcal + min 5 g/kg węgli (glikogen)"
+    pl.filebit.gymtracker.data.entity.DietGoalType.HEALTH -> "Maintenance + focus na jakość"
+    pl.filebit.gymtracker.data.entity.DietGoalType.EVENT_PREP -> "Agresywna redukcja przed zawodami/sesją"
+}
+
+private fun paceDescription(pace: Double, isLoss: Boolean): String {
+    if (pace == 0.0) return "Brak zmiany wagi"
+    val direction = if (isLoss) "redukcji" else "przyrostu"
+    return when {
+        pace >= 1.0 && isLoss -> "⚠ Agresywne tempo — ryzyko utraty mięśni"
+        pace >= 0.5 -> "Klasyczne tempo $direction (zdrowe)"
+        pace > 0 -> "Łagodne tempo $direction (ochrona masy mięśniowej)"
+        else -> "Brak"
+    }
+}
+
+private fun activityLabel(a: pl.filebit.gymtracker.data.entity.ActivityLevel): String = when (a) {
+    pl.filebit.gymtracker.data.entity.ActivityLevel.SEDENTARY -> "Siedzący"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.LIGHT -> "Lekko aktywny"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE -> "Umiarkowanie"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.VERY_ACTIVE -> "Bardzo aktywny"
+    pl.filebit.gymtracker.data.entity.ActivityLevel.EXTREME -> "Ekstremalnie"
 }
