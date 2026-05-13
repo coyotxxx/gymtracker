@@ -1139,25 +1139,20 @@ class DietViewModel @Inject constructor(
         activityLevel: pl.filebit.gymtracker.data.entity.ActivityLevel
     ) {
         viewModelScope.launch {
-            val current = dietProfileRepo.get() ?: return@launch
-            val updated = current.copy(
+            val currentProfile = dietProfileRepo.get() ?: return@launch
+            val updated = currentProfile.copy(
                 goalType = goalType,
                 paceKgPerWeek = kotlin.math.abs(paceKgPerWeek),  // defensive abs
                 activityLevel = activityLevel,
                 updatedAt = System.currentTimeMillis()
             )
             dietProfileRepo.save(updated)
-            // Wybudź dietProfileFlow + zforsuj recompute karty DZIŚ.
+            // Wybudź dietProfileFlow (dla DietSettingsDialog initial state).
             _dietProfileTick.value = _dietProfileTick.value + 1
-            // DietViewModel.state combine nie obserwuje user_diet_profile bezpośrednio
-            // (tylko meals + products + consumptions + dietPrefs). Trzeba zforsować
-            // recompute przez zmianę dietPrefs (touch updatedAt) ALBO po prostu
-            // zmianę _selectedDateMs — co przeładuje combine.
-            val current = _selectedDateMs.value
-            _selectedDateMs.value = current  // re-emit żeby triggernąć recompute
-            // Bezpieczniej: forced reload przez krótki nudge na DietConfig
+            // Force recompute karty DZIŚ — touch dietPrefs.updatedAt żeby
+            // combine() w state-flow zauważył zmianę.
             val cfg = dietPrefs.load()
-            dietPrefs.save(cfg.copy())  // touch updatedAt
+            dietPrefs.save(cfg.copy())
         }
     }
 
