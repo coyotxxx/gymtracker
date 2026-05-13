@@ -1413,7 +1413,11 @@ private fun formatHydrationGoalCompact(ml: Int): String {
 private fun formatStepsCompact(steps: Int): String {
     if (steps < 1000) return "$steps"
     val k = steps / 1000.0
-    return if (k >= 10) "${k.toInt()}k" else "%.1fk".format(k).replace(",", ".")
+    return when {
+        k >= 10 -> "${k.toInt()}k"
+        k == k.toInt().toDouble() -> "${k.toInt()}k"  // całkowite bez '.0' (mockup: '8k')
+        else -> "%.1fk".format(k).replace(",", ".")
+    }
 }
 
 /**
