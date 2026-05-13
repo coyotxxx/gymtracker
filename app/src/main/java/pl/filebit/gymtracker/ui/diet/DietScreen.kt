@@ -191,13 +191,21 @@ fun DietScreen(
             ) {
                 // 1. Hero — kcal goal + makro pierścienie + settings + AI generator
                 item {
+                    // v1.24.30: liczba PLANNED slotów = posiłki do końca dnia
+                    // (CONSUMED/SKIPPED nie liczymy).
+                    val mealsRemainingTotal = state.groups.count { group ->
+                        val st = consumptions[group.type]
+                            ?: pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
+                        st == pl.filebit.gymtracker.data.entity.MealConsumptionStatus.PLANNED
+                    }
                     DayHeroCard(
                         state = state,
                         aiLoading = aiState is pl.filebit.gymtracker.ui.diet.AiPlanState.Loading,
                         onSettings = { showSettings = true },
                         onShowBreakdown = { showGoalBreakdown = true },
                         onGenerateAi = { showStylePicker = true },
-                        onQuickCompose = { showQuickCompose = true }
+                        onQuickCompose = { showQuickCompose = true },
+                        mealsRemainingTotal = mealsRemainingTotal
                     )
                 }
 
@@ -682,13 +690,15 @@ private fun DayHeroCard(
     onSettings: () -> Unit,
     onShowBreakdown: () -> Unit,
     onGenerateAi: () -> Unit,
-    onQuickCompose: () -> Unit = {}
+    onQuickCompose: () -> Unit = {},
+    mealsRemainingTotal: Int = 0
 ) {
     val kcalNow = state.totals.kcal.roundToInt()
     val kcalGoal = state.goal.kcal
     val progress = if (kcalGoal > 0) (kcalNow.toFloat() / kcalGoal).coerceIn(0f, 1f) else 0f
     val kcalRemaining = (kcalGoal - kcalNow).coerceAtLeast(0)
-    val mealsLeft = (state.mealsTotal - state.mealsConfirmed).coerceAtLeast(0)
+    // v1.24.30: mealsLeft = PLANNED sloty do zjedzenia (mockup: "1 posiłek do końca dnia").
+    val mealsLeft = mealsRemainingTotal
     val windowStart = state.config.windowStartHour
     val windowEnd = state.config.windowEndHour()
     // v1.24.27 redesign: kcal accentowy (żółty) gdy zaczął jeść; szary gdy 0.
@@ -1387,6 +1397,25 @@ internal fun mealTypeLabel(t: MealType): String = when (t) {
 
 // === NOWE KOMPONENTY (v0.99 reorganizacja) ===
 
+// v1.24.30: helpery formatowania kompaktowego (mockup Macieja: "1.3k", "2.6L", "5.2k", "8k").
+private fun formatHydrationCompact(ml: Int): String {
+    if (ml < 1000) return "$ml"
+    val l = ml / 1000.0
+    return if (l >= 10) "${l.toInt()}k" else "%.1fk".format(l).replace(",", ".")
+}
+
+private fun formatHydrationGoalCompact(ml: Int): String {
+    if (ml < 1000) return "${ml}ml"
+    val l = ml / 1000.0
+    return if (l == l.toInt().toDouble()) "${l.toInt()}L" else "%.1fL".format(l).replace(",", ".")
+}
+
+private fun formatStepsCompact(steps: Int): String {
+    if (steps < 1000) return "$steps"
+    val k = steps / 1000.0
+    return if (k >= 10) "${k.toInt()}k" else "%.1fk".format(k).replace(",", ".")
+}
+
 /**
  * 3 mini kafelki w jednym wierszu: Woda / Kroki / Regeneracja.
  * Compact format — minimum miejsca, max info.
@@ -1419,10 +1448,11 @@ private fun MiniTilesRow(
                     ),
                     color = AccentOrange
                 )
+                // v1.24.30: format kompaktowy "1.3k / 2.6L" wg mockupu.
                 Text(
-                    "$hydrationToday / $hydrationGoal ml",
+                    "${formatHydrationCompact(hydrationToday)} / ${formatHydrationGoalCompact(hydrationGoal)}",
                     style = MaterialTheme.typography.labelMedium.copy(
-                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 11.sp
+                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 13.sp
                     ),
                     color = DarkOnSurface
                 )
@@ -1475,10 +1505,13 @@ private fun MiniTilesRow(
                         )
                     }
                 }
+                // v1.24.30: format kompaktowy "5.2k / 8k" wg mockupu.
+                val stepsGoal = 8000
                 Text(
-                    if (stepsToday > 0) "$stepsToday" else "— brak",
+                    if (stepsToday > 0) "${formatStepsCompact(stepsToday)} / ${formatStepsCompact(stepsGoal)}"
+                    else "— / ${formatStepsCompact(stepsGoal)}",
                     style = MaterialTheme.typography.labelMedium.copy(
-                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 11.sp
+                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 13.sp
                     ),
                     color = DarkOnSurface
                 )
@@ -1583,7 +1616,10 @@ private fun PhaseRibbon(
 }
 
 /**
- * Header sekcji "Posiłki" z 3 ikonami akcji po prawej (Awaryjny / Skaner / Foto AI).
+ * Header sekcji "Posiłki" + wiersz 3 szerokich tile narzędzi pod tytułem (mockup Macieja):
+ *  - 🚨 Awaryjny (czerwony outline)
+ *  - 🔍 Skaner
+ *  - 📷 Foto AI
  */
 @Composable
 private fun PosilkiHeader(
@@ -1591,47 +1627,73 @@ private fun PosilkiHeader(
     onScanner: () -> Unit,
     onFotoAi: () -> Unit
 ) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
+    Column(modifier = Modifier.fillMaxWidth()) {
         Text(
             "Posiłki",
             style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-            color = DarkOnSurface,
-            modifier = Modifier.weight(1f)
+            color = DarkOnSurface
         )
-        // Awaryjny
-        Box(
-            modifier = Modifier
-                .size(36.dp)
-                .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(8.dp))
-                .clickable(onClick = onEmergency),
-            contentAlignment = Alignment.Center
+        Spacer(Modifier.height(8.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Text("🚨", style = MaterialTheme.typography.titleMedium)
+            PosilkiToolTile(
+                emoji = "🚨",
+                label = "Awaryjny",
+                emphasized = true,
+                onClick = onEmergency,
+                modifier = Modifier.weight(1f)
+            )
+            PosilkiToolTile(
+                emoji = "🔍",
+                label = "Skaner",
+                emphasized = false,
+                onClick = onScanner,
+                modifier = Modifier.weight(1f)
+            )
+            PosilkiToolTile(
+                emoji = "📷",
+                label = "Foto AI",
+                emphasized = false,
+                onClick = onFotoAi,
+                modifier = Modifier.weight(1f)
+            )
         }
-        Spacer(Modifier.width(6.dp))
-        // Skaner
-        Box(
-            modifier = Modifier
-                .size(36.dp)
-                .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
-                .clickable(onClick = onScanner),
-            contentAlignment = Alignment.Center
-        ) {
-            Text("🔍", style = MaterialTheme.typography.titleMedium)
-        }
-        Spacer(Modifier.width(6.dp))
-        // Foto AI
-        Box(
-            modifier = Modifier
-                .size(36.dp)
-                .background(DarkSurfaceVariant, RoundedCornerShape(8.dp))
-                .clickable(onClick = onFotoAi),
-            contentAlignment = Alignment.Center
-        ) {
-            Text("📷", style = MaterialTheme.typography.titleMedium)
+    }
+}
+
+@Composable
+private fun PosilkiToolTile(
+    emoji: String,
+    label: String,
+    emphasized: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val emergencyRed = Color(0xFFE53935)
+    val bgColor = if (emphasized) emergencyRed.copy(alpha = 0.10f) else DarkSurface
+    val borderColor = if (emphasized) emergencyRed.copy(alpha = 0.55f) else DarkOutlineSoft
+    val textColor = if (emphasized) emergencyRed else DarkOnSurface
+    Box(
+        modifier = modifier
+            .height(52.dp)
+            .background(bgColor, RoundedCornerShape(12.dp))
+            .border(1.dp, borderColor, RoundedCornerShape(12.dp))
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(emoji, style = MaterialTheme.typography.titleMedium)
+            Spacer(Modifier.width(8.dp))
+            Text(
+                label,
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 13.sp
+                ),
+                color = textColor
+            )
         }
     }
 }
