@@ -65,10 +65,13 @@ fun computeDailyGoal(
     // === KROK 1: TDEE (Total Daily Energy Expenditure) ===
     val tdee: Int
     val tdeeFormula: String
+    // v1.24.23 fix #2: BMR estimate dla SafetyGuard floor (kcal nigdy < BMR).
+    var bmrEstimate: Int? = null
     if (dietProfile != null) {
         // Pełen Mifflin-St Jeor — najdokładniejszy wzór
         val maleConst = if (profile.gender == Gender.MALE) 5.0 else -161.0
         val bmr = 10.0 * weight + 6.25 * dietProfile.heightCm - 5.0 * dietProfile.ageYears + maleConst
+        bmrEstimate = bmr.toInt()
         val activityMult = when (dietProfile.activityLevel) {
             ActivityLevel.SEDENTARY -> 1.2
             ActivityLevel.LIGHT -> 1.375
@@ -121,11 +124,17 @@ fun computeDailyGoal(
             pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP -> -300
             // Utrzymanie: zero adjustment
             pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN -> 0
-            // Siła: lekki surplus (~+150-200 kcal) dla regeneracji systemu
-            // nerwowego i utrzymania siły. Bez agresywnej masy mięśniowej.
-            pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> 200
-            // Wytrzymałość: utrzymanie + dużo węgli (makro). Kcal neutralne.
-            pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> 0
+            // v1.24.23 fix #5: Siła = maintenance (zamiast +200).
+            // Powerlifters/strength athletes (ISSN, RP) zazwyczaj jedzą AT MAINTENANCE
+            // z dużą ilością węgli dla CNS recovery — surplus nie pomaga siłą,
+            // a dodaje niepotrzebny tłuszcz. Wzrost siły = NEURAL adaptation,
+            // nie hipertrofia. Dla budowania masy + siły jest MUSCLE_GAIN.
+            pl.filebit.gymtracker.data.entity.DietGoalType.STRENGTH -> 0
+            // v1.24.23 fix #4: Wytrzymałość = +100 kcal (lekki surplus).
+            // ISSN: endurance athletes potrzebują dodatkowych kcal dla regeneracji
+            // długich sesji. Plus w makro forsujemy min 5 g/kg węgli — kluczowe
+            // dla glikogenu mięśniowego.
+            pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE -> 100
             // Zdrowie: utrzymanie, focus na jakość (nie kcal).
             pl.filebit.gymtracker.data.entity.DietGoalType.HEALTH -> 0
             // Event prep: agresywny deficyt z paceKgPerWeek (przygotowanie
@@ -198,7 +207,7 @@ fun computeDailyGoal(
     val warnings = mutableListOf<String>()
     var wasCapped = false
 
-    val kcalResult = SafetyGuard.validateKcal(finalKcal, profile, weight)
+    val kcalResult = SafetyGuard.validateKcal(finalKcal, profile, weight, bmrEstimate)
     val safeKcal = if (kcalResult is SafetyResult.Block) {
         wasCapped = true
         warnings += kcalResult.message
@@ -208,7 +217,7 @@ fun computeDailyGoal(
         finalKcal
     }
 
-    val proteinResult = SafetyGuard.validateProtein(rawProteinG, weight)
+    val proteinResult = SafetyGuard.validateProtein(rawProteinG, weight, profile.daysPerWeek)
     val safeProteinG = if (proteinResult is SafetyResult.Block) {
         wasCapped = true
         warnings += proteinResult.message
@@ -232,11 +241,36 @@ fun computeDailyGoal(
     val rateResult = SafetyGuard.validateDeficitRate(weeklyKgChange)
     rateResult.warningMessage?.let { warnings += it }
 
+    // v1.24.23 fix #4: dla ENDURANCE wymuszamy min 5 g/kg węgli (ISSN).
+    // Strategia: jeśli "reszta" daje mniej niż 5g/kg, podnoszę carbs i zmniejszam
+    // tłuszcz (bo białko jest zafiksowane wysoko dla ochrony masy).
+    val isEndurance = dietProfile?.goalType ==
+        pl.filebit.gymtracker.data.entity.DietGoalType.ENDURANCE
     val proteinKcal = safeProteinG * 4
-    val fatKcal = safeFatG * 9
-    val carbsKcal = (safeKcal - proteinKcal - fatKcal).coerceAtLeast(0)
-    val carbsG = carbsKcal / 4
-    val carbsCalc = "($safeKcal - $proteinKcal - $fatKcal) / 4 = ${carbsG}g"
+    val (finalFatG, carbsG, carbsCalc) = if (isEndurance) {
+        val minCarbsG = (weight * 5.0).toInt()  // 5 g/kg węgli minimum
+        val minCarbsKcal = minCarbsG * 4
+        val remainingKcal = safeKcal - proteinKcal - minCarbsKcal
+        val maxFatGFromKcal = (remainingKcal / 9).coerceAtLeast(0)
+        // Jeśli wymuszone carbs zostawiają zbyt mało dla tłuszczu (<min 0.6 g/kg),
+        // dodaj tłuszcz minimum, nawet kosztem carbs.
+        val fatMin = (weight * 0.6).toInt()
+        if (maxFatGFromKcal < fatMin) {
+            // Krytyczne: tłuszcz minimum, carbs = reszta
+            val carbsKcal = (safeKcal - proteinKcal - fatMin * 9).coerceAtLeast(0)
+            val c = carbsKcal / 4
+            Triple(fatMin, c, "ENDURANCE (carbs=reszta gdy tłuszcz<min): " +
+                "($safeKcal − $proteinKcal − ${fatMin * 9}) / 4 = ${c}g")
+        } else {
+            Triple(maxFatGFromKcal, minCarbsG,
+                "ENDURANCE (carbs ≥5g/kg=${minCarbsG}g, tłuszcz=reszta): ${maxFatGFromKcal}g tłuszcz")
+        }
+    } else {
+        val fatKcal = safeFatG * 9
+        val carbsKcal = (safeKcal - proteinKcal - fatKcal).coerceAtLeast(0)
+        val c = carbsKcal / 4
+        Triple(safeFatG, c, "($safeKcal - $proteinKcal - $fatKcal) / 4 = ${c}g")
+    }
 
     // Medical flags
     val medicalFlags = MedicalFlagger.analyze(profile, dietProfile, weight)
@@ -245,7 +279,7 @@ fun computeDailyGoal(
         kcal = safeKcal,
         proteinG = safeProteinG,
         carbsG = carbsG,
-        fatG = safeFatG,
+        fatG = finalFatG,
         safetyWarnings = warnings,
         medicalFlags = medicalFlags,
         wasCapped = wasCapped,
@@ -258,7 +292,9 @@ fun computeDailyGoal(
             deficitLabel = deficitLabel,
             isManualOverride = manualKcalOverride != null,
             proteinPerKg = proteinPerKg,
-            fatPerKg = fatPerKg,
+            // v1.24.23: dla ENDURANCE tłuszcz mógł być przeliczony (carbs floor wymusza),
+            // pokażmy faktyczną wartość per kg dla breakdown.
+            fatPerKg = if (isEndurance && weight > 0) finalFatG / weight else fatPerKg,
             carbsCalculation = carbsCalc
         )
     )

@@ -71,6 +71,20 @@ class AutoAdjustmentService @Inject constructor(
         val baselineSteps = dietProfile?.avgStepsPerDay ?: 0
         val neat = neatAnalyzer.analyze(recentSteps, baselineSteps)
 
+        // v1.24.23 fix #1: Diet break detection.
+        // cutDurationDays = od dietProfile.onboardingCompletedAt (lub 0 jeśli brak).
+        // daysSinceLastRefeed = od ostatniego DietAdjustment z actionCode=REFEED_DAY.
+        val nowMs = System.currentTimeMillis()
+        val dayMs = 24L * 3600 * 1000
+        val cutDurationDays = dietProfile?.onboardingCompletedAt?.let { start ->
+            ((nowMs - start) / dayMs).toInt().coerceAtLeast(0)
+        } ?: 0
+        val recentAdjustments = runCatching { adjustmentDao.getRecent(20) }.getOrDefault(emptyList())
+        val daysSinceLastRefeed = recentAdjustments
+            .firstOrNull { it.actionCode == "REFEED_DAY" && it.applied }
+            ?.let { ((nowMs - it.dateMs) / dayMs).toInt().coerceAtLeast(0) }
+            ?: 999
+
         // Silnik regułowy z pełnym kontekstem
         val raw = CalorieAdjustmentEngine.analyze(
             profile = profile,
@@ -80,12 +94,19 @@ class AutoAdjustmentService @Inject constructor(
             adherence7d = adherence7,
             recovery = recovery,
             hydrationAdherencePct = hydrationAdherence,
-            neat = neat
+            neat = neat,
+            cutDurationDays = cutDurationDays,
+            daysSinceLastRefeed = daysSinceLastRefeed
         )
 
-        // SafetyGuard cap
+        // SafetyGuard cap — v1.24.23: przekazujemy BMR z dietProfile (jeśli dostępne)
+        // żeby min kcal floor uwzględnił najmniejszą bezpieczną wartość dla tego usera.
+        val bmrForGuard = dietProfile?.let { dp ->
+            val maleConst = if (profile.gender == pl.filebit.gymtracker.data.entity.Gender.MALE) 5.0 else -161.0
+            (10.0 * weight + 6.25 * dp.heightCm - 5.0 * dp.ageYears + maleConst).toInt()
+        }
         if (raw.action == AdjustmentAction.DECREASE_KCAL || raw.action == AdjustmentAction.INCREASE_KCAL) {
-            val safetyResult = SafetyGuard.validateKcal(raw.newKcal, profile, weight)
+            val safetyResult = SafetyGuard.validateKcal(raw.newKcal, profile, weight, bmrForGuard)
             if (safetyResult is SafetyResult.Block) {
                 return raw.copy(
                     action = AdjustmentAction.HOLD,

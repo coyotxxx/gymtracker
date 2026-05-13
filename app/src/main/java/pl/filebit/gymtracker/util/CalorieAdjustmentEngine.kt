@@ -59,7 +59,12 @@ object CalorieAdjustmentEngine {
         adherence7d: AdherenceSummary,
         recovery: RecoverySnapshot = RecoverySnapshot.EMPTY,
         hydrationAdherencePct: Int = 100,
-        neat: NeatSnapshot = NeatSnapshot.EMPTY
+        neat: NeatSnapshot = NeatSnapshot.EMPTY,
+        /** v1.24.23: liczba dni od początku obecnego CUT (z dietProfile.onboardingCompletedAt).
+         *  ≥56 dni + brak ostatniego refeed → propose diet break (ISSN/Helms). */
+        cutDurationDays: Int = 0,
+        /** v1.24.23: dni od ostatniego REFEED_DAY/diet break. Domyślnie 999 (brak). */
+        daysSinceLastRefeed: Int = 999
     ): AdjustmentDecision {
 
         // === Brak danych → poczekaj ===
@@ -160,7 +165,7 @@ object CalorieAdjustmentEngine {
         } else 100
 
         return when (profile.weightGoalType) {
-            WeightGoalType.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct)
+            WeightGoalType.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct, cutDurationDays, daysSinceLastRefeed)
             WeightGoalType.BULK -> analyzeBulk(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct)
             WeightGoalType.MAINTAIN -> analyzeMaintain(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence)
             WeightGoalType.NONE -> AdjustmentDecision(
@@ -180,8 +185,43 @@ object CalorieAdjustmentEngine {
         adherence: AdherenceSummary,
         highAdherence: Boolean,
         lowAdherence: Boolean,
-        workoutsPct: Int
+        workoutsPct: Int,
+        cutDurationDays: Int = 0,
+        daysSinceLastRefeed: Int = 999
     ): AdjustmentDecision {
+
+        // v1.24.23 fix #1: Diet break automatyczny po 8 tyg CUT.
+        // ISSN/Helms/RP: długi cut (>8 tyg) bez refeed/diet break = utrata
+        // mięśni, spadek leptyny, metabolic adaptation. Refeed na 7-14 dni
+        // do maintenance kcal odbudowuje hormony, zmniejsza zmęczenie psychiczne.
+        //
+        // Warunki proposal:
+        // - cutDurationDays ≥ 56 (8 tyg)
+        // - daysSinceLastRefeed ≥ 21 (od ostatniego break minęły 3 tyg)
+        // - adherence wysokie (user trzymał plan — break ma sens, gdy plan działał)
+        // - waga spadła (jeśli stoi/rośnie, najpierw inny adjustment)
+        val cutWeeks = cutDurationDays / 7
+        val weightDropped = trend.direction == TrendDirection.FALLING ||
+            (trend.avg14Days != null && trend.avg28Days != null && trend.avg14Days < trend.avg28Days)
+        if (cutDurationDays >= 56 &&
+            daysSinceLastRefeed >= 21 &&
+            highAdherence &&
+            weightDropped &&
+            !trend.isFastLoss) {
+            val maintenanceKcal = currentKcal + 500  // przybliżenie: deficyt ~500 → +500 = maintenance
+            return AdjustmentDecision(
+                action = AdjustmentAction.REFEED_DAY,
+                kcalDeltaProposed = +500,
+                newKcal = maintenanceKcal,
+                reason = "cut_diet_break_8w",
+                explanation = "Już $cutWeeks tyg na redukcji — czas na 'diet break' (7-14 dni). " +
+                    "Wróć do maintenance (~$maintenanceKcal kcal), żeby odbudować leptynę, " +
+                    "zatrzymać metabolic adaptation i odpocząć psychicznie. " +
+                    "Badania (Helms, ISSN): cykliczne diet breaks zachowują mięśnie i przyspieszają długoterminową redukcję.",
+                confidence = Confidence.HIGH,
+                warnings = listOf("Po 7-14 dniach maintenance wracaj do tych samych kcal co teraz — silnik wykryje nowy stan i ponownie zaproponuje korekty.")
+            )
+        }
 
         // 1. Spadek za szybki — chronimy mięśnie
         if (trend.isFastLoss) {

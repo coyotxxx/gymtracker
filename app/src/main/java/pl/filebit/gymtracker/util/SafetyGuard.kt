@@ -15,15 +15,34 @@ import pl.filebit.gymtracker.data.entity.UserProfile
  */
 object SafetyGuard {
 
-    /** Minimalne kcal — RMR + minimum aktywności życiowej. */
-    fun minKcal(profile: UserProfile): Int =
-        if (profile.gender == Gender.FEMALE) 1200 else 1500
+    /**
+     * v1.24.23 fix #2: minimum kcal = max(absolute floor, BMR).
+     * ISSN/RP: nigdy nie schodzić poniżej BMR (~1500-1900 dla mężczyzn).
+     * Wcześniej stałe 1500/1200 było pod BMR dla ciężkich userów (90kg M → BMR ~1900).
+     *
+     * @param bmrEstimate najświeższe oszacowanie BMR (z dietProfile lub null).
+     *                    Null → fallback absolute floor.
+     */
+    fun minKcal(profile: UserProfile, bmrEstimate: Int? = null): Int {
+        val absoluteFloor = if (profile.gender == Gender.FEMALE) 1200 else 1500
+        return if (bmrEstimate != null) maxOf(absoluteFloor, bmrEstimate)
+        else absoluteFloor
+    }
 
     /** Maksymalne kcal — bez sensu jeść więcej (efekty: rozstrój żołądka, niepotrzebny tłuszcz). */
     fun maxKcal(weightKg: Double): Int = (weightKg * 60).toInt()
 
-    /** Min białko — ochrona masy mięśniowej. */
-    fun minProteinG(weightKg: Double): Int = (weightKg * 0.8).toInt()
+    /**
+     * v1.24.23 fix #3: min białko = 1.4 g/kg dla AKTYWNYCH userów (≥3 dni treningu/tydz),
+     * 0.8 g/kg dla sedentary (WHO standard).
+     *
+     * ISSN 2017: 1.4-2.0 g/kg dla sportowców jako MINIMUM (nie cel).
+     * Wcześniej 0.8 g/kg było za niskie dla aktywnych — capping schodził za nisko.
+     */
+    fun minProteinG(weightKg: Double, daysPerWeek: Int = 0): Int {
+        val perKg = if (daysPerWeek >= 3) 1.4 else 0.8
+        return (weightKg * perKg).toInt()
+    }
     /** Max białko — przekroczenie nie daje korzyści, obciąża nerki przy diecie wysokobiałkowej. */
     fun maxProteinG(weightKg: Double): Int = (weightKg * 3.0).toInt()
 
@@ -41,13 +60,14 @@ object SafetyGuard {
      * - Warn — działa ale ryzyko (np. agresywny deficyt)
      * - Block — wartość niebezpieczna, użyj capped
      */
-    fun validateKcal(target: Int, profile: UserProfile, weightKg: Double): SafetyResult {
-        val min = minKcal(profile)
+    fun validateKcal(target: Int, profile: UserProfile, weightKg: Double, bmrEstimate: Int? = null): SafetyResult {
+        val min = minKcal(profile, bmrEstimate)
         val max = maxKcal(weightKg)
         return when {
             target < min -> SafetyResult.Block(
                 message = "Cel $target kcal poniżej bezpiecznego minimum ($min kcal). " +
-                    "Zbyt niskie kalorie powodują utratę masy mięśniowej, problemy hormonalne, spadek energii.",
+                    "Zbyt niskie kalorie powodują utratę masy mięśniowej, problemy hormonalne, spadek energii." +
+                    (if (bmrEstimate != null && min == bmrEstimate) " Limit = Twoje BMR ($bmrEstimate kcal)." else ""),
                 cappedValue = min
             )
             target > max -> SafetyResult.Warn(
@@ -57,8 +77,8 @@ object SafetyGuard {
         }
     }
 
-    fun validateProtein(g: Int, weightKg: Double): SafetyResult {
-        val min = minProteinG(weightKg)
+    fun validateProtein(g: Int, weightKg: Double, daysPerWeek: Int = 0): SafetyResult {
+        val min = minProteinG(weightKg, daysPerWeek)
         val max = maxProteinG(weightKg)
         return when {
             g < min -> SafetyResult.Block(
