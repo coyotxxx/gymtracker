@@ -396,11 +396,16 @@ class BackupViewModel @Inject constructor(
         }
     }
 
-    fun import(uri: Uri) {
+    /**
+     * v1.24.36 fix Bug #5+#7 (raport SYM 3tyg): replaceMode=true wyczyści wszystkie
+     * tabele przed importem (jak `wipeAll` + import). Bez tego kolejne importy
+     * kumulują dane → fałszywie wysokie streaki i mieszanie z innych okresów.
+     */
+    fun import(uri: Uri, replaceMode: Boolean = false) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 try {
-                    runImport(uri)
+                    runImport(uri, replaceMode)
                 } catch (e: Exception) {
                     android.util.Log.e("BackupVM", "Import failed", e)
                     val msg = when {
@@ -419,9 +424,18 @@ class BackupViewModel @Inject constructor(
         }
     }
 
-    private suspend fun runImport(uri: Uri) {
+    private suspend fun runImport(uri: Uri, replaceMode: Boolean) {
+        if (replaceMode) {
+            db.clearAllTables()
+            aiPrefs.clear()
+            exerciseSeeder.seedIfEmpty()
+        }
         val result = backupImporter.importFromUri(uri)
-        _status.value = result.toUserMessage()
+        _status.value = if (replaceMode) {
+            "Zastąpiono dane. ${result.toUserMessage()}"
+        } else {
+            result.toUserMessage()
+        }
     }
 
 

@@ -83,6 +83,9 @@ fun BackupScreen(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
     var showWipeDialog by remember { mutableStateOf(false) }
+    // v1.24.36: replaceMode w Backup screen — fix Bug #5+#7 (raport SYM 3tyg).
+    // Gdy on → przed importem db.clearAllTables(), żadnej kumulacji danych.
+    var replaceMode by remember { mutableStateOf(false) }
 
     LaunchedEffect(status) {
         status?.let {
@@ -97,7 +100,7 @@ fun BackupScreen(
     ) { uri -> uri?.let { vm.export(it, includeApiKey) } }
     val importLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument()
-    ) { uri -> uri?.let { vm.import(it) } }
+    ) { uri -> uri?.let { vm.import(it, replaceMode = replaceMode) } }
     val csvLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument("text/csv")
     ) { uri -> uri?.let { vm.exportCsv(it) } }
@@ -176,6 +179,36 @@ fun BackupScreen(
                     title = "Import danych",
                     subtitle = "Wczytaj plik backupu (ZIP od v0.58 lub starszy JSON)."
                 ) {
+                    // v1.24.36: Switch "Zastąp dane" — gdy on, import czyści bazę przed
+                    // wczytaniem (fix kumulacji z raportu SYM 3tyg).
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                "Zastąp istniejące dane",
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    fontWeight = FontWeight.SemiBold
+                                ),
+                                color = if (replaceMode) ErrorRed else DarkOnSurface
+                            )
+                            Text(
+                                if (replaceMode) {
+                                    "Wszystkie obecne treningi, plany, pomiary zostaną SKASOWANE przed importem."
+                                } else {
+                                    "OFF: dane z pliku dodadzą się do obecnych (może powodować duplikaty / fałszywe streaki)."
+                                },
+                                style = MaterialTheme.typography.labelSmall,
+                                color = DarkOnSurfaceVariant
+                            )
+                        }
+                        Switch(
+                            checked = replaceMode,
+                            onCheckedChange = { replaceMode = it }
+                        )
+                    }
+                    Spacer(Modifier.height(12.dp))
                     OutlinedActionButton(
                         text = stringResource(R.string.backup_import),
                         icon = Icons.Default.FileUpload,
