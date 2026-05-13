@@ -55,8 +55,13 @@ class PeriodizationOrchestrator @Inject constructor(
             u
         } else active
 
+        // v1.24.33 fix Bug #1 (raport SYM 3tyg): transition po przekroczeniu
+        // totalDaysPlanned zamiast wyłącznie po plannedEndDateMs. Powód: integer
+        // division `daysSinceStart` może równać się totalDaysPlanned mimo `nowMs <
+        // plannedEndDateMs` o kilka godzin. Bez tego UI pokazywało "Dzień 22 z 21".
         // Sprawdź czy nie pora na transition
-        if (nowMs >= active.plannedEndDateMs) {
+        val cycleOver = nowMs >= active.plannedEndDateMs || daysSinceStart >= active.totalDaysPlanned
+        if (cycleOver) {
             val stagnation = runCatching { stagnationAnalyzer.analyzeAllRecent() }.getOrNull()
             val proposal = recommendNextPhase(
                 currentMeso = updated,

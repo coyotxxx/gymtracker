@@ -2086,7 +2086,16 @@ private fun MesocycleCountdownBlock(
 ) {
     val meso = state.meso
     val isDeload = meso.phase == pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD
-    val dayLabel = "Dzień ${state.daysElapsed + 1} z ${meso.totalDaysPlanned}"
+    // v1.24.33 fix Bug #1: clamp dayShown żeby nigdy nie pokazywać "Dzień 22 z 21".
+    // Sprzeczność z raportu SYM 3tyg — jeśli daysElapsed przekracza totalDaysPlanned,
+    // pokaż na max wartość fazy. Stan przekroczony oznaczy się przez daysRemaining=0.
+    val dayShown = (state.daysElapsed + 1).coerceAtMost(meso.totalDaysPlanned)
+    val cycleEnded = state.daysRemaining == 0
+    val dayLabel = if (cycleEnded) {
+        "Cykl zakończony"
+    } else {
+        "Dzień $dayShown z ${meso.totalDaysPlanned}"
+    }
     val endDateFmt = java.text.SimpleDateFormat("d MMMM", java.util.Locale("pl", "PL")).format(java.util.Date(meso.plannedEndDateMs))
     val nextPhaseLabel = when (meso.phase) {
         pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION -> "Intensyfikacja"
@@ -2116,11 +2125,19 @@ private fun MesocycleCountdownBlock(
                     ),
                     color = accent
                 )
-                Text(
-                    "${state.daysRemaining} ${if (state.daysRemaining == 1) "dzień" else "dni"} zostało",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = DarkOnSurfaceVariant
-                )
+                if (!cycleEnded) {
+                    Text(
+                        "${state.daysRemaining} ${if (state.daysRemaining == 1) "dzień" else "dni"} zostało",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = DarkOnSurfaceVariant
+                    )
+                } else {
+                    Text(
+                        "→ $nextPhaseLabel",
+                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
+                        color = accent
+                    )
+                }
             }
             Spacer(Modifier.height(6.dp))
             androidx.compose.material3.LinearProgressIndicator(
@@ -2132,8 +2149,14 @@ private fun MesocycleCountdownBlock(
                 trackColor = accent.copy(alpha = 0.20f)
             )
             Spacer(Modifier.height(8.dp))
+            // v1.24.33 fix Bug #1: gdy cykl się skończył, pokazuj "Czas na transition"
+            // zamiast 'Intensyfikacja od 13 maja' (sugestia że NIC SIĘ NIE DZIEJE — bug)
             Text(
-                "$nextPhaseLabel od $endDateFmt",
+                if (cycleEnded) {
+                    "Czas na nową fazę — czeka na decyzję"
+                } else {
+                    "$nextPhaseLabel od $endDateFmt"
+                },
                 style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp),
                 color = DarkOnSurfaceVariant
             )
