@@ -146,6 +146,20 @@ fun HomeScreen(
                 }
             }
 
+            // v1.24.26: Karta osiągnięcia celu wagi. Pokazuje się gdy user
+            // trzyma target ≥7 dni i nie zareagował jeszcze. 4 akcje co dalej.
+            state.goalAchievement?.let { achievement ->
+                item {
+                    GoalAchievedCard(
+                        result = achievement,
+                        onMaintain = { vm.onGoalAchievedMaintain() },
+                        onContinueCut = { newTarget -> vm.onGoalAchievedContinueCut(newTarget) },
+                        onSwitchToBulk = { newTarget -> vm.onGoalAchievedSwitchToBulk(newTarget) },
+                        onDismiss = { vm.onGoalAchievedDismiss() }
+                    )
+                }
+            }
+
             // Deload card — 3 stany: Suggestion (Zastosuj/Wyjaśnij/Anuluj),
             // Active (trwa X dni), Active+isFinished (czas wrócić do oryginalnych wag).
             when (val card = state.deloadCard) {
@@ -1520,6 +1534,217 @@ private fun DeloadActiveCard(
  * Dla stanu isFinished używamy duża karta DeloadActiveCard — wtedy
  * realnie wymaga decyzji "wrócić do oryginalnych wag?".
  */
+/**
+ * v1.24.26 — Karta osiągnięcia celu wagi.
+ *
+ * Pokazuje się gdy user trzyma target ≥7 dni (stabilność wagi).
+ * 4 akcje:
+ * - Utrzymaj (1-tap, przełącza na MAINTAIN)
+ * - Schudnij dalej (dialog z nowym targetem niższym)
+ * - Przejdź na masę (dialog z nowym targetem wyższym, BULK)
+ * - Zamknij (X — ukryj kartę, decyzja później)
+ */
+@Composable
+private fun GoalAchievedCard(
+    result: pl.filebit.gymtracker.data.repository.GoalAchievementResult,
+    onMaintain: () -> Unit,
+    onContinueCut: (Double) -> Unit,
+    onSwitchToBulk: (Double) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var showContinueCutDialog by remember { mutableStateOf(false) }
+    var showSwitchBulkDialog by remember { mutableStateOf(false) }
+    val color = SuccessGreen
+    val deltaKg = kotlin.math.abs(result.currentWeight - result.startWeight)
+    val direction = if (result.direction == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT) "−" else "+"
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color.copy(alpha = 0.12f), RoundedCornerShape(16.dp))
+            .border(1.5.dp, color.copy(alpha = 0.55f), RoundedCornerShape(16.dp))
+            .padding(16.dp)
+    ) {
+        Column {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("🎉", fontSize = 22.sp)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    "OSIĄGNĄŁEŚ CEL!",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = color,
+                    modifier = Modifier.weight(1f)
+                )
+                IconButton(onClick = onDismiss, modifier = Modifier.size(24.dp)) {
+                    Icon(
+                        Icons.Default.Close,
+                        contentDescription = "Zamknij",
+                        tint = DarkOnSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            Text(
+                "Z ${"%.1f".format(result.startWeight)} → ${"%.1f".format(result.currentWeight)} kg " +
+                    "($direction${"%.1f".format(deltaKg)} kg w ${result.daysToAchieve} dni). " +
+                    "Trzymasz target od ${result.stableDays} dni — gratulacje!",
+                style = MaterialTheme.typography.bodyMedium.copy(fontSize = 13.sp),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                "Co dalej?",
+                style = MaterialTheme.typography.labelLarge.copy(
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 13.sp
+                ),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(10.dp))
+
+            // Akcja 1: Utrzymaj (1-tap, primary)
+            androidx.compose.material3.Button(
+                onClick = onMaintain,
+                modifier = Modifier.fillMaxWidth(),
+                colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                    containerColor = color,
+                    contentColor = androidx.compose.ui.graphics.Color.Black
+                ),
+                shape = RoundedCornerShape(10.dp)
+            ) {
+                Text("✓ Utrzymaj wagę — przejdź na maintenance", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+            }
+
+            Spacer(Modifier.height(6.dp))
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                // Akcja 2: Schudnij dalej (gdy CUT)
+                if (result.direction == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT) {
+                    androidx.compose.material3.OutlinedButton(
+                        onClick = { showContinueCutDialog = true },
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("Schudnij dalej", fontSize = 12.sp)
+                    }
+                }
+                // Akcja 3: Przejdź na masę
+                androidx.compose.material3.OutlinedButton(
+                    onClick = { showSwitchBulkDialog = true },
+                    modifier = Modifier.weight(1f),
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text(
+                        if (result.direction == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT)
+                            "Przejdź na masę" else "Schudnij teraz",
+                        fontSize = 12.sp
+                    )
+                }
+            }
+        }
+    }
+
+    // Dialog: nowy target dla "Schudnij dalej"
+    if (showContinueCutDialog) {
+        var newTargetText by remember {
+            mutableStateOf("%.1f".format(result.currentWeight - 2.0))
+        }
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showContinueCutDialog = false },
+            title = { Text("Nowy cel redukcji") },
+            text = {
+                Column {
+                    Text("Aktualnie: ${"%.1f".format(result.currentWeight)} kg")
+                    Spacer(Modifier.height(8.dp))
+                    androidx.compose.material3.OutlinedTextField(
+                        value = newTargetText,
+                        onValueChange = { newTargetText = it.filter { c -> c.isDigit() || c == '.' || c == ',' } },
+                        label = { Text("Nowy target (kg)") },
+                        singleLine = true,
+                        keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
+                            keyboardType = androidx.compose.ui.text.input.KeyboardType.Decimal
+                        )
+                    )
+                }
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(
+                    onClick = {
+                        val t = newTargetText.replace(',', '.').toDoubleOrNull()
+                        if (t != null && t < result.currentWeight) {
+                            onContinueCut(t)
+                        }
+                        showContinueCutDialog = false
+                    }
+                ) { Text("Zapisz", fontWeight = FontWeight.Bold, color = SuccessGreen) }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showContinueCutDialog = false }) {
+                    Text("Anuluj", color = DarkOnSurfaceVariant)
+                }
+            },
+            containerColor = DarkSurface
+        )
+    }
+
+    // Dialog: nowy target dla "Przejdź na masę" (CUT→BULK) lub "Schudnij" (BULK→CUT)
+    if (showSwitchBulkDialog) {
+        val defaultTarget = if (result.direction == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT)
+            result.currentWeight + 5.0 else result.currentWeight - 3.0
+        var newTargetText by remember { mutableStateOf("%.1f".format(defaultTarget)) }
+        val isSwitchToBulk = result.direction == pl.filebit.gymtracker.data.entity.WeightGoalType.CUT
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { showSwitchBulkDialog = false },
+            title = { Text(if (isSwitchToBulk) "Przejdź na budowanie masy" else "Schudnij") },
+            text = {
+                Column {
+                    Text("Aktualnie: ${"%.1f".format(result.currentWeight)} kg")
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        if (isSwitchToBulk)
+                            "System przełączy się na BULK (+0.3 kg/tydz). Białko obniży się do 1.8 g/kg."
+                        else "System przełączy się na FAT_LOSS (−0.5 kg/tydz). Białko podniesie się do 2.2 g/kg.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = DarkOnSurfaceVariant
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    androidx.compose.material3.OutlinedTextField(
+                        value = newTargetText,
+                        onValueChange = { newTargetText = it.filter { c -> c.isDigit() || c == '.' || c == ',' } },
+                        label = { Text("Nowy target (kg)") },
+                        singleLine = true,
+                        keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
+                            keyboardType = androidx.compose.ui.text.input.KeyboardType.Decimal
+                        )
+                    )
+                }
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(
+                    onClick = {
+                        val t = newTargetText.replace(',', '.').toDoubleOrNull()
+                        if (t != null) {
+                            if (isSwitchToBulk && t > result.currentWeight) onSwitchToBulk(t)
+                            else if (!isSwitchToBulk && t < result.currentWeight) onContinueCut(t)
+                        }
+                        showSwitchBulkDialog = false
+                    }
+                ) { Text("Zapisz", fontWeight = FontWeight.Bold, color = pl.filebit.gymtracker.ui.theme.AccentOrange) }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { showSwitchBulkDialog = false }) {
+                    Text("Anuluj", color = DarkOnSurfaceVariant)
+                }
+            },
+            containerColor = DarkSurface
+        )
+    }
+}
+
 @Composable
 private fun DeloadActiveBanner(
     active: pl.filebit.gymtracker.data.repository.DeloadCardState.Active,

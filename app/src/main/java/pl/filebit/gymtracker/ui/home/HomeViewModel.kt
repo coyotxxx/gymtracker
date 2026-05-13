@@ -6,6 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
@@ -73,7 +74,9 @@ data class HomeUiState(
     val muscleRecovery: MuscleRecoveryReport? = null,   // v1.9.0 — per partia
     val dismissedCards: Set<String> = emptySet(),        // v1.10 — generyczny dismiss per cardKey
     val periodizationState: PeriodizationState = PeriodizationState.NoData,  // v1.14.0 — datowany mesocykl
-    val pendingDecisions: List<PendingPeriodizationDecision> = emptyList()    // v1.15.0 — AI propozycje
+    val pendingDecisions: List<PendingPeriodizationDecision> = emptyList(),    // v1.15.0 — AI propozycje
+    // v1.24.26: osiągnięcie celu wagi — karta proaktywna gdy waga w target ≥7 dni.
+    val goalAchievement: pl.filebit.gymtracker.data.repository.GoalAchievementResult? = null
 )
 
 data class NextPlannedDay(
@@ -111,7 +114,10 @@ class HomeViewModel @Inject constructor(
     private val mesoDao: TrainingMesocycleDao,
     private val periodizationOrchestrator: PeriodizationOrchestrator,
     private val pendingDecisionDao: PendingPeriodizationDecisionDao,  // v1.15.0
-    private val homeAlertNotifier: pl.filebit.gymtracker.service.HomeAlertNotifier  // v1.24.0
+    private val homeAlertNotifier: pl.filebit.gymtracker.service.HomeAlertNotifier,  // v1.24.0
+    private val goalAchievementService: pl.filebit.gymtracker.data.repository.GoalAchievementService,  // v1.24.26
+    private val goalRepo: pl.filebit.gymtracker.data.repository.GoalRepository,  // v1.24.26
+    private val dietProfileRepo: pl.filebit.gymtracker.data.repository.UserDietProfileRepository  // v1.24.26
 ) : ViewModel() {
 
     init {
@@ -322,6 +328,16 @@ class HomeViewModel @Inject constructor(
             currentSetLabel = ""
         }
 
+        // v1.24.26: detekcja osiągnięcia celu wagi. Pokazujemy gdy user
+        // trzyma target ≥7 dni i nie zareagował już (Goal.achieved=false).
+        val goalAchievement = runCatching {
+            profile?.let { p ->
+                val result = goalAchievementService.checkAchieved(p)
+                if (result != null && result.isReached &&
+                    !goalAchievementService.isGoalDismissedByUser(p)) result else null
+            }
+        }.getOrNull()
+
         HomeUiState(
             displayName = profile?.displayName.orEmpty(),
             activeWorkout = active,
@@ -355,7 +371,8 @@ class HomeViewModel @Inject constructor(
                 pl.filebit.gymtracker.data.repository.DismissedCardsPrefs.CardKeys.LOAD
             ).filter { dismissedCardsPrefs.isDismissedToday(it) }.toSet(),
             periodizationState = periodizationState,
-            pendingDecisions = pendingDecisions  // v1.15.0
+            pendingDecisions = pendingDecisions,  // v1.15.0
+            goalAchievement = goalAchievement  // v1.24.26
         )
     }.stateIn(
         scope = viewModelScope,
@@ -385,6 +402,94 @@ class HomeViewModel @Inject constructor(
             deloadService.dismiss()
             deloadRefresh.value = System.currentTimeMillis()
         }
+    }
+
+    // === v1.24.26: AKCJE PO OSIĄGNIĘCIU CELU WAGI ===
+    // User osiągnął target (np. 87→75 kg). System pyta "co dalej?".
+    // Filozofia: nie zostawiaj usera w nieokreślonym stanie po sukcesie.
+
+    /** Utrzymuj wagę — kontynuuj na tej co teraz. */
+    fun onGoalAchievedMaintain() {
+        viewModelScope.launch {
+            val profile = profileRepo.get()
+            val currentWeight = profile.bodyweightKg ?: 75.0
+            profileRepo.save(
+                profile.copy(
+                    weightGoalType = pl.filebit.gymtracker.data.entity.WeightGoalType.MAINTAIN,
+                    targetWeightKg = currentWeight
+                )
+            )
+            dietProfileRepo.get()?.let { dp ->
+                dietProfileRepo.save(
+                    dp.copy(
+                        goalType = pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN,
+                        paceKgPerWeek = 0.0,
+                        updatedAt = System.currentTimeMillis()
+                    )
+                )
+            }
+            markAchievedGoalsDone()
+            deloadRefresh.value = System.currentTimeMillis()  // force state recompute
+        }
+    }
+
+    /** Przejdź na masę — wpisz nowy target wyższy + zmień goalType BULK. */
+    fun onGoalAchievedSwitchToBulk(newTargetKg: Double) {
+        viewModelScope.launch {
+            val profile = profileRepo.get()
+            profileRepo.save(
+                profile.copy(
+                    weightGoalType = pl.filebit.gymtracker.data.entity.WeightGoalType.BULK,
+                    targetWeightKg = newTargetKg
+                )
+            )
+            dietProfileRepo.get()?.let { dp ->
+                dietProfileRepo.save(
+                    dp.copy(
+                        goalType = pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN,
+                        paceKgPerWeek = 0.3,  // lean bulk default
+                        updatedAt = System.currentTimeMillis()
+                    )
+                )
+            }
+            markAchievedGoalsDone()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    /** Schudnij dalej — nowy niższy target. */
+    fun onGoalAchievedContinueCut(newTargetKg: Double) {
+        viewModelScope.launch {
+            val profile = profileRepo.get()
+            profileRepo.save(profile.copy(targetWeightKg = newTargetKg))
+            markAchievedGoalsDone()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    /** X close — user nie chce decydować teraz, ukryj kartę. */
+    fun onGoalAchievedDismiss() {
+        viewModelScope.launch {
+            markAchievedGoalsDone()
+            deloadRefresh.value = System.currentTimeMillis()
+        }
+    }
+
+    private suspend fun markAchievedGoalsDone() {
+        val profile = profileRepo.get()
+        val relevantType = when (profile.weightGoalType) {
+            pl.filebit.gymtracker.data.entity.WeightGoalType.CUT ->
+                pl.filebit.gymtracker.data.entity.GoalType.LOSE_WEIGHT
+            pl.filebit.gymtracker.data.entity.WeightGoalType.BULK ->
+                pl.filebit.gymtracker.data.entity.GoalType.GAIN_MASS
+            else -> return
+        }
+        val now = System.currentTimeMillis()
+        goalRepo.observeAll().first()
+            .filter { it.type == relevantType && !it.achieved }
+            .forEach { g ->
+                goalRepo.upsert(g.copy(achieved = true, achievedAt = now))
+            }
     }
 
     /** v1.24.0: zamknięcie konkretnego typu alertu — nie blokuje innych typów. */
