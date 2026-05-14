@@ -540,6 +540,7 @@ private fun DeloadExplainDialog(
     recommendation: pl.filebit.gymtracker.util.DeloadRecommendation,
     onDismiss: () -> Unit
 ) {
+    val isRefeed = recommendation.recommendsDietBreak
     val pctOff = when (recommendation.severity) {
         pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> 20
         else -> 10
@@ -547,14 +548,27 @@ private fun DeloadExplainDialog(
     androidx.compose.material3.AlertDialog(
         onDismissRequest = onDismiss,
         title = {
-            Text("Co to jest deload?", fontWeight = FontWeight.Bold)
+            // v1.24.44 fix Bug E2E: dla CUT user'a tytuł i treść były skopiowane
+            // z deloadu klasycznego — sprzeczne z kartą "REFEED ZALECANY" gdzie
+            // trening zostaje BEZ zmian. Teraz osobne treści dla obu wariantów.
+            Text(
+                if (isRefeed) "Co to jest refeed?" else "Co to jest deload?",
+                fontWeight = FontWeight.Bold
+            )
         },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(
-                    "Deload to lżejszy tydzień regeneracyjny — zmniejszasz wagi o $pctOff% " +
-                        "ale zachowujesz ten sam plan. Pozwala mięśniom i CNS odpocząć po cyklu " +
-                        "intensywnego treningu, żeby wrócić silniejszym.",
+                    if (isRefeed) {
+                        "Refeed to 1-2 dni z kaloriami na maintenance (zamiast deficytu) i większą ilością " +
+                            "węglowodanów. Uzupełnia glikogen w mięśniach, daje psychologiczną przerwę " +
+                            "od restrykcji, ale NIE niweczy redukcji. Trening zostaje bez zmian — " +
+                            "obniżamy tylko kuchnię, nie wagi w planie."
+                    } else {
+                        "Deload to lżejszy tydzień regeneracyjny — zmniejszasz wagi o $pctOff% " +
+                            "ale zachowujesz ten sam plan. Pozwala mięśniom i CNS odpocząć po cyklu " +
+                            "intensywnego treningu, żeby wrócić silniejszym."
+                    },
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
@@ -568,16 +582,23 @@ private fun DeloadExplainDialog(
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    "Co zrobi 'Zastosuj'",
+                    if (isRefeed) "Co się stanie po 'Zaplanuj refeed'" else "Co zrobi 'Zastosuj'",
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                     color = pl.filebit.gymtracker.ui.theme.AccentOrange
                 )
                 Text(
-                    "Wszystkie wagi w aktywnym planie zmniejszą się o $pctOff% (np. 75 kg → " +
-                        "${"%.1f".format(75.0 * (1 - pctOff / 100.0))} kg). " +
-                        "Po 7 dniach apka przypomni żeby wrócić do oryginalnych wag — " +
-                        "snapshot zachowa je dokładnie.",
+                    if (isRefeed) {
+                        "Przejdziesz do zakładki Dieta, gdzie zaplanujesz 1-2 dni " +
+                            "z kaloriami na poziomie maintenance (≈+400-500 kcal vs target) " +
+                            "i większą porcją węgli. Trening w planie nie zmienia się — " +
+                            "wagi i sety zostają jak są. Po refeedzie wracasz do deficytu."
+                    } else {
+                        "Wszystkie wagi w aktywnym planie zmniejszą się o $pctOff% (np. 75 kg → " +
+                            "${"%.1f".format(75.0 * (1 - pctOff / 100.0))} kg). " +
+                            "Po 7 dniach apka przypomni żeby wrócić do oryginalnych wag — " +
+                            "snapshot zachowa je dokładnie."
+                    },
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
@@ -587,8 +608,14 @@ private fun DeloadExplainDialog(
                     color = pl.filebit.gymtracker.ui.theme.AccentOrange
                 )
                 Text(
-                    "Możesz też zrobić tydzień całkowitej przerwy bez treningu — efekt podobny. " +
-                        "Albo zignorować — wrócę z sugestią za tydzień jeśli warunki nadal aktualne.",
+                    if (isRefeed) {
+                        "Możesz przejść na tydzień maintenance (diet break) — dłuższe odpoczęcie " +
+                            "od deficytu, bardziej zauważalny efekt. Albo zignorować — wrócę z " +
+                            "sugestią za tydzień jeśli warunki nadal aktualne."
+                    } else {
+                        "Możesz też zrobić tydzień całkowitej przerwy bez treningu — efekt podobny. " +
+                            "Albo zignorować — wrócę z sugestią za tydzień jeśli warunki nadal aktualne."
+                    },
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
