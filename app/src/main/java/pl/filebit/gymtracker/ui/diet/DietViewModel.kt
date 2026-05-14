@@ -453,6 +453,19 @@ class DietViewModel @Inject constructor(
     private val _phaseSuggestion = MutableStateFlow<pl.filebit.gymtracker.data.repository.PhaseSuggestion?>(null)
     val phaseSuggestion: StateFlow<pl.filebit.gymtracker.data.repository.PhaseSuggestion?> = _phaseSuggestion.asStateFlow()
 
+    /**
+     * v1.24.47 fix E2E Bug #4: one-shot snackbar message po SPRAWDŹ gdy brak sugestii.
+     * Wcześniej checkPhaseSuggestion() ustawiał state TYLKO gdy proposedType != null —
+     * user klikał i nic się nie działo (cisza). Teraz brak sugestii → snackbar
+     * z wyjaśnieniem (explanation) zamiast ciszy.
+     */
+    private val _phaseCheckMessage = MutableStateFlow<String?>(null)
+    val phaseCheckMessage: StateFlow<String?> = _phaseCheckMessage.asStateFlow()
+
+    fun consumePhaseCheckMessage() {
+        _phaseCheckMessage.value = null
+    }
+
     fun checkPhaseSuggestion() {
         viewModelScope.launch {
             val profile = profileRepo.get()
@@ -491,6 +504,10 @@ class DietViewModel @Inject constructor(
             )
             if (suggestion.proposedType != null) {
                 _phaseSuggestion.value = suggestion
+            } else {
+                // v1.24.47: zamiast ciszy — pokaż wyjaśnienie w snackbar.
+                _phaseCheckMessage.value = suggestion.explanation.takeIf { it.isNotBlank() }
+                    ?: "Brak sugestii fazy diety. Wpisuj kalorie + adherence przez 7-14 dni i sprawdź ponownie."
             }
         }
     }

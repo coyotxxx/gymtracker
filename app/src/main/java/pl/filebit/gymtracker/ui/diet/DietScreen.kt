@@ -104,6 +104,7 @@ fun DietScreen(
     val consumptions by vm.consumptions.collectAsStateWithLifecycle()
     val currentPhase by vm.currentPhase.collectAsStateWithLifecycle()
     val phaseSuggestion by vm.phaseSuggestion.collectAsStateWithLifecycle()
+    val phaseCheckMessage by vm.phaseCheckMessage.collectAsStateWithLifecycle()
     val volatilityReport by vm.volatilityReport.collectAsStateWithLifecycle()
     val volatilityDismissed by vm.volatilityDismissed.collectAsStateWithLifecycle()
     val showEmergencyDialog by vm.showEmergencyDialog.collectAsStateWithLifecycle()
@@ -434,6 +435,20 @@ substitutePrompt?.let { sp ->
             suggestion = s,
             onAccept = { vm.acceptPhaseSuggestion() },
             onDismiss = { vm.dismissPhaseSuggestion() }
+        )
+    }
+
+    // v1.24.47 fix E2E Bug #4: feedback po SPRAWDŹ gdy brak sugestii fazy diety.
+    phaseCheckMessage?.let { msg ->
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { vm.consumePhaseCheckMessage() },
+            title = { Text("🎯 Sprawdzenie fazy diety", fontWeight = FontWeight.Bold) },
+            text = { Text(msg) },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { vm.consumePhaseCheckMessage() }) {
+                    Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
+                }
+            }
         )
     }
 
