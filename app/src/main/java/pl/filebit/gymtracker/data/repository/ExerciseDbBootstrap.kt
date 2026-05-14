@@ -141,6 +141,22 @@ class ExerciseDbBootstrap @Inject constructor(
             val ids = dao.insertAll(newExercises)
             importedCount = ids.count { it > 0 }
         }
+
+        // v1.25.5: Backfill polskich instrukcji dla istniejących ćwiczeń ze starszych
+        // bootstrap'ów (z czasów przed cache PL), które już mają externalId ale nie
+        // dostały instructionsPlJson — wcześniej Etap A pomijał je przez filter
+        // externalId == null.
+        var backfilledPl = 0
+        for (ex in dao.getAll()) {
+            if (ex.externalId == null) continue
+            if (!ex.instructionsPlJson.isNullOrBlank()) continue
+            val plData = plMap[ex.externalId] ?: continue
+            val steps = plData.instructionsPl.takeIf { it.isNotEmpty() } ?: continue
+            val json = serializeInstructions(steps) ?: continue
+            dao.updateInstructionsPl(ex.id, json)
+            backfilledPl++
+        }
+
         return matchedCount to importedCount
     }
 
