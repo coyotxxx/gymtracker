@@ -217,8 +217,34 @@ class HomeViewModel @Inject constructor(
         val analyzerSnapshot = runCatching { statsCacheService.snapshot() }
             .getOrDefault(pl.filebit.gymtracker.data.repository.StatsSnapshot.EMPTY)
 
-        // Faza cyklu treningowego — z TrainingPhaseAnalyzer (deterministic)
-        val trainingPhase = runCatching { phaseAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
+        // Faza cyklu treningowego.
+        // v1.24.45 fix E2E Bug #2: priorytet aktywny mesocykl (Plan cyklu) > heurystyka analyzera.
+        // Bez tego Home pokazywał "Intensyfikacja 1/3" gdy Plan cyklu miał "Akumulacja 3/3"
+        // — dwa różne źródła prawdy. Po backfillu mesocycle istnieje, więc prawda jest tam.
+        val mesoBasedPhase = secondary.activeMeso?.let { meso ->
+            val mappedPhase = when (meso.phase) {
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.ACCUMULATION -> TrainingPhase.ACCUMULATION
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.INTENSIFICATION -> TrainingPhase.INTENSIFICATION
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.DELOAD -> TrainingPhase.DELOAD
+                // PEAKING/RECOVERY — mapuj na INTENSIFICATION/DELOAD jako najbliższe odpowiedniki UI
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.PEAKING -> TrainingPhase.INTENSIFICATION
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.RECOVERY -> TrainingPhase.DELOAD
+            }
+            // polishLabel używa weeksSinceLastDeload jako tygodnia w cyklu —
+            // dla INTENSIFICATION odejmuje 3 (akumulacja=1-3, intens=4-6).
+            val weeksField = when (meso.phase) {
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.INTENSIFICATION -> meso.weekInPhase + 3
+                pl.filebit.gymtracker.data.entity.MesocyclePhase.PEAKING -> meso.weekInPhase + 3
+                else -> meso.weekInPhase
+            }
+            pl.filebit.gymtracker.ai.TrainingPhaseStatus(
+                phase = mappedPhase,
+                weeksSinceLastDeload = weeksField,
+                recommendation = "Faza z aktywnego mesocyklu (zobacz Plan cyklu)."
+            )
+        }
+        val heuristicPhase = runCatching { phaseAnalyzer.analyzeWithSnapshot(analyzerSnapshot) }.getOrNull()
+        val trainingPhase = mesoBasedPhase ?: heuristicPhase
         // v1.11.68: faza cyklu jest passthrough do innych analyzerów - żeby ich
         // konkluzje były spójne (np. ACWR <0.8 podczas deloadu = OK, nie "dodaj").
         val currentPhase = trainingPhase?.phase ?: TrainingPhase.NO_DATA

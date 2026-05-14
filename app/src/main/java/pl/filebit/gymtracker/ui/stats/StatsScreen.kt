@@ -116,9 +116,17 @@ fun StatsScreen(
                     StatTile(
                         value = formatVolumeShort(state.volumeWeek),
                         suffix = "kg",
-                        label = if (state.volumeWeekDelta != 0.0)
-                            "Vol. tygodnia ${if (state.volumeWeekDelta >= 0) "+" else ""}${"%.0f".format(state.volumeWeekDelta)}%"
-                        else "Vol. tygodnia",
+                        // v1.24.45: gdy tydzień w toku, delta=0 (niemiarodajna),
+                        // pokaż kontekst "(N/7 dni)" zamiast pustego label.
+                        label = when {
+                            state.volumeWeekDelta != 0.0 ->
+                                "Vol. tygodnia ${if (state.volumeWeekDelta >= 0) "+" else ""}${"%.0f".format(state.volumeWeekDelta)}%"
+                            state.daysToWeekEnd > 0 -> {
+                                val daysElapsed = 7 - state.daysToWeekEnd
+                                "Vol. tygodnia ($daysElapsed/7 dni)"
+                            }
+                            else -> "Vol. tygodnia"
+                        },
                         valueColor = DarkOnSurface,
                         modifier = Modifier.weight(1f)
                     )

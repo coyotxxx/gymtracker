@@ -105,7 +105,12 @@ class StatsViewModel @Inject constructor(
                 val vol8 = vol26.takeLast(8)
                 val volWeek = vol26.lastOrNull() ?: 0.0
                 val volPrev = vol26.dropLast(1).lastOrNull() ?: 0.0
-                val delta = if (volPrev > 0) ((volWeek - volPrev) / volPrev * 100.0) else 0.0
+                // v1.24.45 fix E2E #2: w niedokończonym tygodniu delta vs poprzedni
+                // pełen tydzień jest niemiarodajne (np. środa = 3/7 dni → -50%
+                // wygląda jak alarm a to tylko nieukończony tydzień). Pokazujemy
+                // delta TYLKO gdy tydzień się skończył (daysLeft == 0). Inaczej
+                // user widzi w label "(N/7 dni)" jako kontekst.
+                val delta = if (daysLeft == 0 && volPrev > 0) ((volWeek - volPrev) / volPrev * 100.0) else 0.0
                 val avgDuration = if (o.totalWorkouts > 0) o.totalDurationMillis / o.totalWorkouts else 0L
 
                 _state.value = StatsUiState(
