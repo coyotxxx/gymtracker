@@ -52,13 +52,14 @@ class PlanListViewModel @Inject constructor(
         data class Error(val message: String) : AiPlanGenState()
     }
 
-    fun generateAiPlan(daysPerWeek: Int, favoritesOnly: Boolean) {
+    fun generateAiPlan(daysPerWeek: Int, favoritesOnly: Boolean, userNotes: String? = null) {
         if (_aiGenState.value is AiPlanGenState.Loading) return
         _aiGenState.value = AiPlanGenState.Loading
         viewModelScope.launch {
             val result = workoutPlanAi.generate(
                 daysPerWeek = daysPerWeek,
-                favoritesOnly = favoritesOnly
+                favoritesOnly = favoritesOnly,
+                userNotes = userNotes
             )
             _aiGenState.value = result.fold(
                 onSuccess = { r ->

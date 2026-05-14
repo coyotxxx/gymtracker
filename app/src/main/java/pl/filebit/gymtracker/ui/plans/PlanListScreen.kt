@@ -12,7 +12,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
@@ -192,10 +195,10 @@ fun PlanListScreen(
     }
 
     if (showAiGenDialog) {
-        AiPlanGenDialog(
+        AiPlanGenSheet(
             isLoading = aiGenState is PlanListViewModel.AiPlanGenState.Loading,
-            onGenerate = { days, favOnly ->
-                vm.generateAiPlan(days, favOnly)
+            onGenerate = { days, favOnly, notes ->
+                vm.generateAiPlan(days, favOnly, notes.takeIf { it.isNotBlank() })
             },
             onDismiss = { showAiGenDialog = false }
         )
@@ -261,94 +264,159 @@ fun PlanListScreen(
     }
 }
 
+/**
+ * v1.26.0 — bottom sheet zamiast AlertDialog. Dodane pole "Twoje uwagi do AI"
+ * (np. "dodaj cardio 2× w tyg", "mam mniej czasu w środy"). AI uwzględnia
+ * uwagi jeśli sensowne, ale nie narusza zasad metodologicznych.
+ */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
-private fun AiPlanGenDialog(
+private fun AiPlanGenSheet(
     isLoading: Boolean,
-    onGenerate: (daysPerWeek: Int, favoritesOnly: Boolean) -> Unit,
+    onGenerate: (daysPerWeek: Int, favoritesOnly: Boolean, userNotes: String) -> Unit,
     onDismiss: () -> Unit
 ) {
     var days by remember { mutableStateOf(4) }
     var favOnly by remember { mutableStateOf(true) }
+    var notes by remember { mutableStateOf("") }
+    val sheetState = androidx.compose.material3.rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("✨ Generuj plan AI", fontWeight = FontWeight.Bold) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                Text(
-                    "AI ułoży plan z Twoich ulubionych ćwiczeń + dostępnego sprzętu.",
-                    style = MaterialTheme.typography.bodyMedium
-                )
+    androidx.compose.material3.ModalBottomSheet(
+        onDismissRequest = { if (!isLoading) onDismiss() },
+        sheetState = sheetState,
+        containerColor = pl.filebit.gymtracker.ui.theme.DarkBg,
+        contentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 20.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(14.dp)
+        ) {
+            Text(
+                "✨ Generuj plan AI",
+                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold)
+            )
+            Text(
+                "AI ułoży plan z Twoich ulubionych ćwiczeń + dostępnego sprzętu z uwzględnieniem celu, doświadczenia, regeneracji i historii.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
 
-                Text("Liczba dni treningowych:", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold))
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    listOf(2, 3, 4, 5, 6).forEach { d ->
-                        val sel = days == d
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(40.dp)
-                                .background(
-                                    if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.2f)
-                                    else pl.filebit.gymtracker.ui.theme.DarkSurface,
-                                    RoundedCornerShape(8.dp)
-                                )
-                                .clickable { days = d },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "$d dni",
-                                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                                color = if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange
-                                       else pl.filebit.gymtracker.ui.theme.DarkOnSurface
+            // Liczba dni
+            Text(
+                "Liczba dni treningowych",
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold)
+            )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf(2, 3, 4, 5, 6).forEach { d ->
+                    val sel = days == d
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(44.dp)
+                            .background(
+                                if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.2f)
+                                else pl.filebit.gymtracker.ui.theme.DarkSurface,
+                                RoundedCornerShape(10.dp)
                             )
-                        }
-                    }
-                }
-
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    androidx.compose.material3.Switch(
-                        checked = favOnly,
-                        onCheckedChange = { favOnly = it }
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Column {
-                        Text("Tylko ulubione (❤)", fontWeight = FontWeight.SemiBold)
+                            .clickable(enabled = !isLoading) { days = d },
+                        contentAlignment = Alignment.Center
+                    ) {
                         Text(
-                            if (favOnly) "Plan z Twoich ulubionych ćwiczeń"
-                            else "Plan z całej bazy",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                            "$d dni",
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                            color = if (sel) pl.filebit.gymtracker.ui.theme.AccentOrange
+                                    else pl.filebit.gymtracker.ui.theme.DarkOnSurface
                         )
                     }
                 }
+            }
 
-                if (isLoading) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        androidx.compose.material3.CircularProgressIndicator(
-                            modifier = Modifier.size(16.dp),
-                            strokeWidth = 2.dp
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Text("Generuję plan...", style = MaterialTheme.typography.bodySmall)
-                    }
+            // Tylko ulubione
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                androidx.compose.material3.Switch(
+                    checked = favOnly,
+                    onCheckedChange = { favOnly = it },
+                    enabled = !isLoading
+                )
+                Spacer(Modifier.width(10.dp))
+                Column {
+                    Text("Tylko ulubione (❤)", fontWeight = FontWeight.SemiBold)
+                    Text(
+                        if (favOnly) "Plan z Twoich ulubionych ćwiczeń"
+                        else "Plan z całej bazy",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+                    )
                 }
             }
-        },
-        confirmButton = {
-            TextButton(
-                onClick = { onGenerate(days, favOnly) },
-                enabled = !isLoading
+
+            // v1.26.0 — pole uwag do AI
+            Text(
+                "Twoje uwagi do AI (opcjonalnie)",
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold)
+            )
+            androidx.compose.material3.OutlinedTextField(
+                value = notes,
+                onValueChange = { if (it.length <= 500) notes = it },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 96.dp),
+                placeholder = {
+                    Text(
+                        "Np. dodaj 2× cardio w tygodniu, mam mniej czasu w środy (40 min), unikaj martwego ciągu, dłuższe przerwy na klatce…",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                },
+                enabled = !isLoading,
+                maxLines = 6,
+                supportingText = {
+                    Text(
+                        "${notes.length}/500 znaków • AI uwzględni jeśli sensowne",
+                        style = MaterialTheme.typography.labelSmall
+                    )
+                }
+            )
+
+            // Loading
+            if (isLoading) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    androidx.compose.material3.CircularProgressIndicator(
+                        modifier = Modifier.size(18.dp),
+                        strokeWidth = 2.dp,
+                        color = pl.filebit.gymtracker.ui.theme.AccentOrange
+                    )
+                    Spacer(Modifier.width(10.dp))
+                    Text("Generuję plan… (do ~60s)", style = MaterialTheme.typography.bodyMedium)
+                }
+            }
+
+            // Akcje
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
+                horizontalArrangement = Arrangement.End
             ) {
-                Text("✨ Generuj", fontWeight = FontWeight.Bold)
+                TextButton(onClick = onDismiss, enabled = !isLoading) {
+                    Text("Anuluj")
+                }
+                Spacer(Modifier.width(8.dp))
+                androidx.compose.material3.Button(
+                    onClick = { onGenerate(days, favOnly, notes) },
+                    enabled = !isLoading,
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                        contentColor = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+                    )
+                ) {
+                    Text("✨ Generuj", fontWeight = FontWeight.Bold)
+                }
             }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss, enabled = !isLoading) {
-                Text("Anuluj")
-            }
+
+            Spacer(Modifier.height(8.dp))
         }
-    )
+    }
 }
 
 @Composable

@@ -62,7 +62,8 @@ class WorkoutPlanAiService @Inject constructor(
     suspend fun generate(
         daysPerWeek: Int = 4,
         favoritesOnly: Boolean = true,
-        planName: String? = null
+        planName: String? = null,
+        userNotes: String? = null
     ): Result<GeneratedPlanResult> = runCatching {
         val cfg = prefs.load()
         val all = exerciseRepo.observeAll().first()
@@ -90,7 +91,7 @@ class WorkoutPlanAiService @Inject constructor(
 
         if (cfg.isConnected) {
             // Spróbuj AI; jeśli się nie uda → fallback z KONKRETNYM błędem
-            val aiResult = runCatching { generateWithAi(daysPerWeek, favoritesOnly, planName, cfg, profile, pool) }
+            val aiResult = runCatching { generateWithAi(daysPerWeek, favoritesOnly, planName, cfg, profile, pool, userNotes) }
             aiResult.getOrNull()?.let { return@runCatching it }
             val errMsg = aiResult.exceptionOrNull()?.message ?: "nieznany błąd AI"
             Log.e("WorkoutPlanAi", "AI generation failed: $errMsg", aiResult.exceptionOrNull())
@@ -137,7 +138,8 @@ class WorkoutPlanAiService @Inject constructor(
         planName: String?,
         cfg: AiConfig,
         profile: UserProfile,
-        pool: List<Exercise>
+        pool: List<Exercise>,
+        userNotes: String? = null
     ): GeneratedPlanResult {
         val warnings = mutableListOf<String>()
 
@@ -229,6 +231,14 @@ class WorkoutPlanAiService @Inject constructor(
                 4 -> append("  - Pn: UPPER | Wt: LOWER | Czw: UPPER | Pt: LOWER\n")
                 5 -> append("  - Pn: PUSH | Wt: PULL | Śr: LEGS | Pt: UPPER | Sob: LOWER\n")
                 6 -> append("  - Pn-Sb: Push/Pull/Legs × 2 (advanced)\n")
+            }
+
+            // v1.26.0: UWAGI UŻYTKOWNIKA — wolny tekst od usera (cardio, czas, kontuzje, preferencje)
+            // AI ma je UWZGLĘDNIĆ jeśli sensowne, ale NIE NARUSZAĆ zasad metodologicznych.
+            if (!userNotes.isNullOrBlank()) {
+                append("\n=== UWAGI UŻYTKOWNIKA (zastosuj jeśli sensowne — w innym wypadku zignoruj) ===\n")
+                append(userNotes.trim().take(800))
+                append("\n")
             }
 
             // POOL ĆWICZEŃ
