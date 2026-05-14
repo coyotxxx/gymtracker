@@ -3,12 +3,16 @@ package pl.filebit.gymtracker.data.repository
 import pl.filebit.gymtracker.data.db.dao.TrainingEventDao
 import pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao
 import pl.filebit.gymtracker.data.db.dao.WorkoutDao
+import pl.filebit.gymtracker.data.db.dao.WorkoutSetDao
 import pl.filebit.gymtracker.data.entity.MesocyclePhase
 import pl.filebit.gymtracker.data.entity.MesocycleStatus
+import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.TrainingEvent
 import pl.filebit.gymtracker.data.entity.TrainingEventType
 import pl.filebit.gymtracker.data.entity.TrainingMesocycle
 import pl.filebit.gymtracker.data.entity.Workout
+import pl.filebit.gymtracker.util.WeekRpeSnapshot
+import pl.filebit.gymtracker.util.detectDeloadWeeks
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -31,7 +35,8 @@ import javax.inject.Singleton
 class MesocycleBackfillService @Inject constructor(
     private val mesoDao: TrainingMesocycleDao,
     private val eventDao: TrainingEventDao,
-    private val workoutDao: WorkoutDao
+    private val workoutDao: WorkoutDao,
+    private val setDao: WorkoutSetDao
 ) {
     /**
      * Główne entry point.
@@ -56,8 +61,17 @@ class MesocycleBackfillService @Inject constructor(
 
         if (finishedWorkouts.isEmpty()) return 0
 
-        val deloadEvents = eventDao.getByType(TrainingEventType.DELOAD_DETECTED, limit = 50)
+        val manualDeloadEvents = eventDao.getByType(TrainingEventType.DELOAD_DETECTED, limit = 50)
             .filter { it.date >= cutoffMs }
+
+        // v1.24.43: auto-detekcja deload weeks z RPE patterns (wave loading bez
+        // ręcznego DELOAD_DETECTED event). Budujemy weekly snapshots i wykrywamy
+        // tygodnie z RPE >=2 pkt niższym od sąsiednich.
+        val autoDeloadEvents = detectAutoDeloads(finishedWorkouts, cutoffMs, nowMs)
+
+        // Merge + deduplikacja: jeśli auto-detected tydzień jest blisko (≤4 dni)
+        // manualnego eventa, preferujemy manualny (user wie najlepiej).
+        val deloadEvents = mergeDeloadEvents(manualDeloadEvents, autoDeloadEvents)
             .sortedBy { it.date }
 
         // 3. Rekonstrukcja cykli — podziel timeline na boundaries z deloadów
@@ -70,6 +84,87 @@ class MesocycleBackfillService @Inject constructor(
         // 4. Zapisz do bazy
         cycles.forEach { mesoDao.upsert(it) }
         return cycles.size
+    }
+
+    /**
+     * v1.24.43: zbuduj weekly RPE snapshots z workoutów i wywołaj detector.
+     * Zwraca syntetyczne TrainingEvent listę (id=0, nie zapisywane do DB —
+     * tylko jako sygnał dla reconstructMesocycles).
+     */
+    private suspend fun detectAutoDeloads(
+        workouts: List<Workout>,
+        cutoffMs: Long,
+        nowMs: Long
+    ): List<TrainingEvent> {
+        if (workouts.size < 21) return emptyList()  // potrzebujemy min ~3 tyg historii
+
+        // Grupuj po tygodniach (ISO week start = poniedziałek)
+        val weekMs = 7L * 24 * 60 * 60 * 1000
+        // Ustal start pierwszego tygodnia jako poniedziałek tygodnia pierwszego workoutu
+        val firstMonday = mondayStartOfWeek(workouts.first().startedAt)
+        val lastMonday = mondayStartOfWeek(nowMs)
+        val snapshots = mutableListOf<WeekRpeSnapshot>()
+        var weekStart = firstMonday
+        while (weekStart <= lastMonday) {
+            val weekEnd = weekStart + weekMs
+            val weekWorkouts = workouts.filter { it.startedAt in weekStart until weekEnd }
+            val rpes = weekWorkouts.flatMap { w ->
+                setDao.getForWorkout(w.id)
+                    .filter { it.isCompleted && it.setType != SetType.WARMUP }
+                    .mapNotNull { it.rpe }
+            }
+            snapshots += WeekRpeSnapshot(
+                weekStartMs = weekStart,
+                avgRpe = rpes.takeIf { it.isNotEmpty() }?.average(),
+                sessionCount = weekWorkouts.size
+            )
+            weekStart += weekMs
+        }
+
+        val detected = detectDeloadWeeks(snapshots)
+        return detected.map { d ->
+            TrainingEvent(
+                id = 0,
+                type = TrainingEventType.DELOAD_DETECTED,
+                date = d.weekStartMs + (weekMs / 2),  // środek tygodnia
+                notes = "auto-detect: avgRpe=${"%.1f".format(d.avgRpe)} confidence=${"%.2f".format(d.confidence)}"
+            )
+        }
+    }
+
+    /**
+     * Merge ręczne + auto-detected deload events. Dla każdego auto-eventa
+     * sprawdź czy w okolicy (±4 dni) jest manualny event — jeśli tak, pomiń
+     * auto (manualny ma pierwszeństwo).
+     */
+    private fun mergeDeloadEvents(
+        manual: List<TrainingEvent>,
+        auto: List<TrainingEvent>
+    ): List<TrainingEvent> {
+        val maxDistanceMs = 4L * 24 * 60 * 60 * 1000  // 4 dni
+        val merged = manual.toMutableList()
+        for (a in auto) {
+            val hasNearbyManual = manual.any { m -> kotlin.math.abs(m.date - a.date) <= maxDistanceMs }
+            if (!hasNearbyManual) merged += a
+        }
+        return merged
+    }
+
+    /** Znajdź poniedziałek (00:00) tygodnia zawierającego dany timestamp. */
+    private fun mondayStartOfWeek(timestampMs: Long): Long {
+        val cal = java.util.Calendar.getInstance().apply {
+            timeInMillis = timestampMs
+            firstDayOfWeek = java.util.Calendar.MONDAY
+            set(java.util.Calendar.HOUR_OF_DAY, 0)
+            set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0)
+            set(java.util.Calendar.MILLISECOND, 0)
+            // Cofnij się do poniedziałku
+            while (get(java.util.Calendar.DAY_OF_WEEK) != java.util.Calendar.MONDAY) {
+                add(java.util.Calendar.DAY_OF_MONTH, -1)
+            }
+        }
+        return cal.timeInMillis
     }
 }
 

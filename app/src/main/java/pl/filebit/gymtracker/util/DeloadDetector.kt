@@ -263,3 +263,74 @@ enum class InjurySeverity {
     /** ≥2 notowania lub wellbeing ≤2 — odpuść / fizjoterapeuta. */
     PERSISTENT
 }
+
+/**
+ * Snapshot tygodnia treningowego do auto-detekcji deload week.
+ *
+ * @param weekStartMs początek tygodnia (timestamp)
+ * @param avgRpe średnie RPE z roboczych setów (null gdy brak setów lub brak RPE)
+ * @param sessionCount liczba treningów w tygodniu
+ */
+data class WeekRpeSnapshot(
+    val weekStartMs: Long,
+    val avgRpe: Double?,
+    val sessionCount: Int
+)
+
+/**
+ * Wykryty tydzień-deload (auto).
+ *
+ * @param weekStartMs początek tygodnia
+ * @param avgRpe średnie RPE tygodnia
+ * @param confidence 0.0-1.0 — pewność detekcji bazująca na różnicy RPE
+ *   z sąsiednimi tygodniami (większa różnica = większa pewność)
+ */
+data class DetectedDeloadWeek(
+    val weekStartMs: Long,
+    val avgRpe: Double,
+    val confidence: Double
+)
+
+/**
+ * Auto-detekcja tygodni deload z historii treningu (wave loading, RPE patterns).
+ *
+ * Filozofia: zaawansowani trenujący robią wave loading (intensify → intensify → deload)
+ * ale niekoniecznie wrzucają DELOAD_DETECTED event. Bez auto-detekcji
+ * MesocycleBackfillService nie wykrywał tych tygodni i tworzył jeden długi
+ * cykl akumulacji.
+ *
+ * Algorytm:
+ *  - Tygodnie ze średnim RPE >= 2 punkty niższym od ŚREDNIEJ z sąsiadów (N-1, N+1)
+ *    = prawdopodobny deload (wave loading: 8 → 8.5 → 6 → 8 → 8.5 → 6...)
+ *  - Wymagamy że tydzień ma min 1 sesję (inaczej nie wiemy)
+ *  - Confidence = clamp((differenceFromNeighbors - 2.0) / 2.0, 0.0, 1.0)
+ *    (różnica 2.0 = confidence 0.0, różnica 4.0 = confidence 1.0)
+ *
+ * Pure function — testowalna bez DB.
+ *
+ * @param weeks lista tygodni posortowana po `weekStartMs` rosnąco
+ * @return wykryte tygodnie-deload (może być pusta lista)
+ */
+fun detectDeloadWeeks(weeks: List<WeekRpeSnapshot>): List<DetectedDeloadWeek> {
+    if (weeks.size < 3) return emptyList()  // potrzebujemy N-1, N, N+1
+    val result = mutableListOf<DetectedDeloadWeek>()
+    for (i in 1 until weeks.size - 1) {
+        val prev = weeks[i - 1]
+        val curr = weeks[i]
+        val next = weeks[i + 1]
+        if (curr.sessionCount == 0) continue
+        if (curr.avgRpe == null || prev.avgRpe == null || next.avgRpe == null) continue
+        val neighborAvg = (prev.avgRpe + next.avgRpe) / 2.0
+        val diff = neighborAvg - curr.avgRpe
+        if (diff >= 2.0) {
+            val confidence = ((diff - 2.0) / 2.0).coerceIn(0.0, 1.0)
+            result += DetectedDeloadWeek(
+                weekStartMs = curr.weekStartMs,
+                avgRpe = curr.avgRpe,
+                confidence = confidence
+            )
+        }
+    }
+    return result
+}
+
