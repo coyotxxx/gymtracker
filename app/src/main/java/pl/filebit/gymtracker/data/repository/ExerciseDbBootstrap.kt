@@ -157,6 +157,34 @@ class ExerciseDbBootstrap @Inject constructor(
             backfilledPl++
         }
 
+        // v1.25.6: Re-match po kanonicznym katalogu (CANONICAL_PL_MATCH). Jeśli
+        // ćwiczenie ma externalId które różni się od katalogu (typowo: w v1.25.0 fuzzy
+        // przypisało "push-up" do "Pompki na poręczach (dipy)" zamiast "chest dip"),
+        // zamień na poprawne ID + przepisz wszystkie pola z ExerciseDB.
+        val entriesById = entries.associateBy { it.exerciseId }
+        var rematchedCount = 0
+        for (ex in dao.getAll()) {
+            if (ex.externalId == null) continue
+            val canonicalId = CANONICAL_PL_MATCH[normalize(ex.name)] ?: continue
+            if (canonicalId == ex.externalId) continue  // już dobrze
+            val newEntry = entriesById[canonicalId] ?: continue
+            val plData = plMap[canonicalId]
+            dao.forceReplaceExerciseDbMatch(
+                id = ex.id,
+                externalId = newEntry.exerciseId,
+                gifUrl = newEntry.gifUrl,
+                instructionsEnJson = serializeInstructions(newEntry.instructions),
+                instructionsPlJson = plData?.instructionsPl
+                    ?.takeIf { it.isNotEmpty() }
+                    ?.let { serializeInstructions(it) },
+                targetMusclesCsv = newEntry.targetMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                secondaryMusclesCsv = newEntry.secondaryMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                equipmentDbCsv = newEntry.equipments.joinToString(",").takeIf { it.isNotBlank() },
+                bodyPartCsv = newEntry.bodyParts.joinToString(",").takeIf { it.isNotBlank() }
+            )
+            rematchedCount++
+        }
+
         return matchedCount to importedCount
     }
 
@@ -251,7 +279,15 @@ class ExerciseDbBootstrap @Inject constructor(
         plMuscle: MuscleGroup,
         entries: List<ExerciseDbEntry>
     ): ExerciseDbEntry? {
-        val plTokens = normalize(plName).split(" ").filter { it.isNotBlank() }.toSet()
+        // v1.25.6 — krok 0: DIRECT match z kanonicznego katalogu
+        val normalized = normalize(plName)
+        val canonical = CANONICAL_PL_MATCH[normalized]
+        if (canonical != null) {
+            val entry = entries.firstOrNull { it.exerciseId == canonical }
+            if (entry != null) return entry
+        }
+
+        val plTokens = normalized.split(" ").filter { it.isNotBlank() }.toSet()
         val plKeywords = plToEnKeywords(plTokens)
 
         // Filter by MuscleGroup hint — bodyParts/targetMuscles → MuscleGroup mapping
@@ -302,7 +338,95 @@ class ExerciseDbBootstrap @Inject constructor(
     }
 
     companion object {
-        private const val MATCH_THRESHOLD = 0.4  // Jaccard >= 40% → match
+        private const val MATCH_THRESHOLD = 0.55  // v1.25.6: zaostrzony próg (było 0.4)
+
+        /**
+         * v1.25.6: kanoniczny katalog mapowań PL→exerciseId. Klucze to znormalizowane
+         * polskie nazwy (lowercase, ASCII, bez znaków specjalnych). DIRECT match nie
+         * używa fuzzy — gwarantuje poprawne dopasowanie dla popularnych ćwiczeń.
+         *
+         * Tu trafiają nazwy które fuzzy myli (np. "Pompki na poręczach (dipy)" →
+         * push-up zamiast chest dip). Listę poszerzaj gdy widzisz błędny match.
+         */
+        private val CANONICAL_PL_MATCH = mapOf(
+            // Pompki / dipy
+            "pompki" to "I4hDWkc",                          // push-up
+            "pompki na kolanach" to "ZOuKWir",              // kneeling push-up
+            "pompki na poreczach" to "9WTm7dq",             // chest dip
+            "pompki na poreczach (dipy)" to "9WTm7dq",      // chest dip
+            "pompki na poreczach dipy" to "9WTm7dq",
+            "dipy" to "9WTm7dq",                            // chest dip
+            "dipy na poreczach" to "9WTm7dq",
+            // Wyciskania klatka
+            "wyciskanie sztangi" to "EIeI8Vf",              // barbell bench press
+            "wyciskanie sztangi na lawce poziomej" to "EIeI8Vf",
+            "wyciskanie sztangi na lawce skosnej" to "3TZduzM",  // incline
+            "wyciskanie hantli" to "SpYC0Kp",               // dumbbell bench press
+            "wyciskanie hantli na lawce poziomej" to "SpYC0Kp",
+            "wyciskanie hantli na lawce skosnej" to "ns0SIbU",
+            "wyciskanie hantli siedzac" to "znQUdHY",       // seated shoulder press
+            "wyciskanie hantli nad glowe siedzac" to "znQUdHY",
+            "wyciskanie nad glowe" to "A6wtbuL",            // dumbbell standing overhead press
+            // Suwnica / leg press / przysiad
+            "suwnica" to "10Z2DXU",                         // sled 45° leg press
+            "suwnica (leg press)" to "10Z2DXU",
+            "suwnica leg press" to "10Z2DXU",
+            "leg press" to "10Z2DXU",
+            "przysiad" to "qXTaZnJ",                        // barbell full squat
+            "przysiad ze sztanga" to "qXTaZnJ",
+            "przysiady" to "qXTaZnJ",
+            "przysiady ze sztanga" to "qXTaZnJ",
+            // Martwy ciąg
+            "martwy ciag" to "ila4NZS",                     // barbell deadlift
+            "martwy ciag ze sztanga" to "ila4NZS",
+            "martwy ciag na prostych nogach" to "wQ2c4XD", // romanian deadlift
+            "rumunski martwy ciag" to "wQ2c4XD",
+            // Podciąganie
+            "podciaganie" to "lBDjFxJ",                     // pull-up
+            "podciaganie nachwytem" to "lBDjFxJ",
+            "podciaganie podchwytem" to "T2mxWqc",          // chin-up
+            "podciaganie na drazku" to "lBDjFxJ",
+            // Biceps
+            "uginanie ramion" to "25GPyDY",                 // barbell curl
+            "uginanie ramion ze sztanga" to "25GPyDY",
+            "uginanie ramion z hantlami" to "NbVPDMW",      // dumbbell biceps curl
+            "uginania na biceps" to "25GPyDY",
+            "biceps curl" to "NbVPDMW",
+            // Triceps
+            "prostowanie ramion" to "3ZflifB",              // cable pushdown
+            "prostowanie ramion na wyciagu" to "3ZflifB",
+            "scinanie wyciagu" to "3ZflifB",
+            "wyciskanie francuskie" to "iZop9xO",           // barbell lying triceps extension
+            "francuskie ze sztanga" to "iZop9xO",
+            // Plecy
+            "wioslowanie" to "eZyBC3j",                     // barbell bent over row
+            "wioslowanie sztanga" to "eZyBC3j",
+            "wioslowanie ze sztanga" to "eZyBC3j",
+            "wioslowanie hantla" to "BJ0Hz5L",              // dumbbell bent over row
+            "wioslowanie hantlem w opadzie" to "BJ0Hz5L",
+            // Klatka — rozpiętki
+            "rozpietki" to "yz9nUhF",                       // dumbbell fly
+            "rozpietki hantlami" to "yz9nUhF",
+            "rozpietki w opadzie" to "8DiFDVA",             // dumbbell rear fly
+            // Barki
+            "wznosy bokiem" to "DsgkuIt",                   // dumbbell lateral raise
+            "wzosy bokiem" to "DsgkuIt",                    // typo z xlsx
+            "wznosy bokiem z hantlami" to "DsgkuIt",
+            "wznosy bokiem ze sztangielkami" to "DsgkuIt",
+            "wznosy w przod" to "3eGE2JC",                  // dumbbell front raise
+            "wznosy w przod ze sztangielkami" to "3eGE2JC",
+            // Nogi
+            "wykroki" to "RRWFUcw",                         // dumbbell lunge
+            "wykroki z hantlami" to "RRWFUcw",
+            "wykroki ze sztangielkami" to "RRWFUcw",
+            "uginanie nog" to "17lJ1kr",                    // lever lying leg curl
+            "uginanie nog lezac" to "17lJ1kr",
+            "prostowanie nog" to "my33uHU",                 // lever leg extension
+            "prostowanie nog siedzac" to "my33uHU",
+            "wspiecia" to "8ozhUIZ",                        // barbell standing calf raise
+            "wspiecia na palce" to "8ozhUIZ",
+            "good morning" to "XlZ4lAC"                     // barbell good morning
+        )
 
         // Mapping polskich słów keyword'owych na angielskie (popularne ćwiczenia)
         private val PL_EN_MAP = mapOf(
@@ -355,6 +479,18 @@ class ExerciseDbBootstrap @Inject constructor(
             "pompki" to setOf("pushup", "push", "up"),
             "deska" to setOf("plank"),
             "brzuszki" to setOf("crunch", "situp"),
+            // v1.25.6: dipy + poręcze (wcześniej brak — dlatego push-up wygrywało)
+            "dip" to setOf("dip", "dips"),
+            "dipy" to setOf("dip", "dips"),
+            "porecz" to setOf("parallel", "bars"),
+            "poreczach" to setOf("parallel", "bars"),
+            "poreczy" to setOf("parallel", "bars"),
+            "francuskie" to setOf("triceps", "extension", "lying"),
+            "scinanie" to setOf("pushdown"),
+            "suwnica" to setOf("leg", "press", "sled"),
+            "wspiecia" to setOf("calf", "raise"),
+            "rumunski" to setOf("romanian"),
+            "biceps" to setOf("biceps", "curl"),
             // Partie ciała
             "klatki" to setOf("chest"),
             "klatka" to setOf("chest"),

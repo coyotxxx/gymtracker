@@ -24,4 +24,7 @@ class ExerciseRepository @Inject constructor(
 
     suspend fun setAvoided(id: Long, avoided: Boolean) = dao.setAvoided(id, avoided)
     suspend fun getAvoided(): List<Exercise> = dao.getAvoided()
+
+    /** v1.25.6: user widzi błędny GIF/instrukcje → jednym tapem odłącza ExerciseDB. */
+    suspend fun detachFromExerciseDb(id: Long) = dao.detachFromExerciseDb(id)
 }

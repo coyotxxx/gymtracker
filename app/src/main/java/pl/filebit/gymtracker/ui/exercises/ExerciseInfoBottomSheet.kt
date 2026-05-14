@@ -13,13 +13,20 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -219,6 +226,44 @@ fun ExerciseInfoBottomSheet(
                         exercise.description,
                         style = MaterialTheme.typography.bodyMedium.copy(lineHeight = 22.sp),
                         color = DarkOnSurface
+                    )
+                }
+            }
+
+            // v1.25.6: safety net — gdy fuzzy match z bootstrap'u przypisał błędny GIF
+            // (np. "Pompki na poręczach (dipy)" dostały push-up zamiast chest dip)
+            // user widzi że nie pasuje i jednym tapem odłącza dane z bazy.
+            if (exercise.externalId != null) {
+                Spacer(Modifier.height(8.dp))
+                val viewModel: ExerciseInfoViewModel = hiltViewModel()
+                var showConfirm by remember { mutableStateOf(false) }
+                OutlinedButton(
+                    onClick = { showConfirm = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Niepoprawne dopasowanie? Odłącz GIF i instrukcje")
+                }
+                if (showConfirm) {
+                    AlertDialog(
+                        onDismissRequest = { showConfirm = false },
+                        title = { Text("Odłączyć dane z bazy?") },
+                        text = {
+                            Text(
+                                "GIF, instrukcje i informacje o mięśniach/sprzęcie z ExerciseDB " +
+                                "zostaną usunięte dla ćwiczenia \"${exercise.name}\". " +
+                                "Twoje ustawienia (nazwa, mięsień, sprzęt, ulubione, historia treningów) " +
+                                "zostaną zachowane."
+                            )
+                        },
+                        confirmButton = {
+                            TextButton(onClick = {
+                                viewModel.detach(exercise.id) { onDismiss() }
+                                showConfirm = false
+                            }) { Text("Odłącz") }
+                        },
+                        dismissButton = {
+                            TextButton(onClick = { showConfirm = false }) { Text("Anuluj") }
+                        }
                     )
                 }
             }
