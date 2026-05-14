@@ -130,25 +130,6 @@ interface ExerciseDao {
     )
 
     /**
-     * v1.25.6: odłączenie ćwiczenia od ExerciseDB — przywraca ćwiczenie do
-     * stanu user-only (nazwa, mięsień, sprzęt — zachowane; GIF/instrukcje/
-     * externalId/CSV — wyczyszczone). User klika gdy widzi błędny GIF.
-     */
-    @Query("""
-        UPDATE exercises
-        SET externalId = NULL,
-            gifUrl = NULL,
-            instructionsEnJson = NULL,
-            instructionsPlJson = NULL,
-            targetMusclesCsv = NULL,
-            secondaryMusclesCsv = NULL,
-            equipmentDbCsv = NULL,
-            bodyPartCsv = NULL
-        WHERE id = :id
-    """)
-    suspend fun detachFromExerciseDb(id: Long)
-
-    /**
      * v1.25.7: re-link FK referencji z duplicate exercise na kanoniczne ID.
      * Po przepięciu wszystkich FK można bezpiecznie usunąć duplikat.
      * Cztery tabele odwołują się do exercises.id:
