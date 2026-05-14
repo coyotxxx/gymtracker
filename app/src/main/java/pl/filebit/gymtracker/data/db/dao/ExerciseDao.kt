@@ -148,14 +148,6 @@ interface ExerciseDao {
     """)
     suspend fun detachFromExerciseDb(id: Long)
 
-    /** v1.25.7: lookup po externalId (do alias remap'u). */
-    @Query("SELECT * FROM exercises WHERE externalId = :externalId LIMIT 1")
-    suspend fun findByExternalId(externalId: String): Exercise?
-
-    /** v1.25.7: tylko update externalId (do remap'u gdy ID się zmieniło w ExerciseDB). */
-    @Query("UPDATE exercises SET externalId = :newExternalId WHERE id = :id")
-    suspend fun updateExternalId(id: Long, newExternalId: String)
-
     /**
      * v1.25.7: re-link FK referencji z duplicate exercise na kanoniczne ID.
      * Po przepięciu wszystkich FK można bezpiecznie usunąć duplikat.
