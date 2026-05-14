@@ -9,8 +9,11 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.PeriodizationPreferences
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import javax.inject.Inject
 
@@ -25,7 +28,8 @@ data class PeriodizationUiPrefs(
 class ProfileViewModel @Inject constructor(
     private val repo: UserProfileRepository,
     private val proactiveScheduler: pl.filebit.gymtracker.service.ProactiveAiCheckScheduler,
-    private val periodizationPrefs: PeriodizationPreferences
+    private val periodizationPrefs: PeriodizationPreferences,
+    private val dietProfileRepo: UserDietProfileRepository
 ) : ViewModel() {
 
     val profile: StateFlow<UserProfile> = repo.observe()
@@ -63,6 +67,30 @@ class ProfileViewModel @Inject constructor(
             if (before.aiProactiveChecksEnabled != profile.aiProactiveChecksEnabled) {
                 if (profile.aiProactiveChecksEnabled) proactiveScheduler.schedulePeriodic()
                 else proactiveScheduler.cancel()
+            }
+            // v1.24.49 fix E2E Bug #6: jeśli user zmienił weightGoalType w
+            // Ustawieniach treningu → zsynchronizuj UserDietProfile.goalType.
+            // Bez tego dieta miała stary target kcal (np. deficit dla CUT) mimo
+            // że profile treningu to MAINTAIN — dwa źródła prawdy o tym samym celu.
+            if (before.weightGoalType != profile.weightGoalType) {
+                val mappedDietGoal = when (profile.weightGoalType) {
+                    WeightGoalType.CUT -> DietGoalType.FAT_LOSS
+                    WeightGoalType.BULK -> DietGoalType.MUSCLE_GAIN
+                    WeightGoalType.MAINTAIN -> DietGoalType.MAINTAIN
+                    WeightGoalType.NONE -> DietGoalType.MAINTAIN
+                }
+                runCatching {
+                    dietProfileRepo.get()?.let { dp ->
+                        if (dp.goalType != mappedDietGoal) {
+                            dietProfileRepo.save(
+                                dp.copy(
+                                    goalType = mappedDietGoal,
+                                    updatedAt = System.currentTimeMillis()
+                                )
+                            )
+                        }
+                    }
+                }
             }
             onDone()
         }
