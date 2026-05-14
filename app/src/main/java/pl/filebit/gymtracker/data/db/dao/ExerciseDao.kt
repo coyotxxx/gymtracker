@@ -63,4 +63,41 @@ interface ExerciseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(exercise: Exercise): Long
+
+    // v1.25.0 — ExerciseDB integration
+    @Query("SELECT * FROM exercises WHERE externalId = :externalId LIMIT 1")
+    suspend fun findByExternalId(externalId: String): Exercise?
+
+    @Query("SELECT COUNT(*) FROM exercises WHERE externalId IS NOT NULL")
+    suspend fun countWithExternalId(): Int
+
+    /**
+     * Update fields z ExerciseDB (po fuzzy match). NIE nadpisujemy user fields
+     * (name, primaryMuscle, equipment, isFavorite, isAvoided, isCustom, notes).
+     */
+    @Query("""
+        UPDATE exercises
+        SET externalId = :externalId,
+            gifUrl = :gifUrl,
+            instructionsEnJson = :instructionsEnJson,
+            targetMusclesCsv = :targetMusclesCsv,
+            secondaryMusclesCsv = :secondaryMusclesCsv,
+            equipmentDbCsv = :equipmentDbCsv,
+            bodyPartCsv = :bodyPartCsv
+        WHERE id = :id AND externalId IS NULL
+    """)
+    suspend fun applyExerciseDbMatch(
+        id: Long,
+        externalId: String,
+        gifUrl: String?,
+        instructionsEnJson: String?,
+        targetMusclesCsv: String?,
+        secondaryMusclesCsv: String?,
+        equipmentDbCsv: String?,
+        bodyPartCsv: String?
+    )
+
+    /** Update polskich instrukcji (AI cache po tłumaczeniu). */
+    @Query("UPDATE exercises SET instructionsPlJson = :pl WHERE id = :id")
+    suspend fun updateInstructionsPl(id: Long, pl: String)
 }

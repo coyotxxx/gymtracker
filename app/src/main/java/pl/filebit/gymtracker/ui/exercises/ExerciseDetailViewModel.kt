@@ -24,7 +24,8 @@ data class ExerciseDetailUiState(
     val pr: ExercisePr? = null,
     val progression: List<ExerciseProgressionPoint> = emptyList(),
     val history: List<WorkoutSet> = emptyList(),
-    val trend: ExerciseTrend? = null
+    val trend: ExerciseTrend? = null,
+    val translating: Boolean = false  // v1.25.0: AI tłumaczy instructionsEn → PL
 )
 
 @HiltViewModel
@@ -32,8 +33,91 @@ class ExerciseDetailViewModel @Inject constructor(
     private val exerciseRepo: ExerciseRepository,
     private val statsRepo: StatsRepository,
     private val stagnationAnalyzer: StagnationAnalyzer,
+    // v1.25.0: AI dla tłumaczeń EN→PL ExerciseDB instructions
+    private val aiClient: pl.filebit.gymtracker.ai.AiClient,
+    private val aiPrefs: pl.filebit.gymtracker.ai.AiPreferences,
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
+
+    private val _translationError = MutableStateFlow<String?>(null)
+    val translationError: StateFlow<String?> = _translationError.asStateFlow()
+
+    fun clearTranslationError() { _translationError.value = null }
+
+    private fun setTranslating(b: Boolean) {
+        _state.value = _state.value.copy(translating = b)
+    }
+
+    /**
+     * v1.25.0 — AI tłumaczy `instructionsEnJson` → polski + zapisuje cache do
+     * `instructionsPlJson`. Wynik = lista kroków PL. Pierwsza wizyta = wywołanie API,
+     * kolejne = z DB cache (offline).
+     */
+    fun translateInstructionsToPl() {
+        val ex = _state.value.exercise ?: return
+        val enJson = ex.instructionsEnJson ?: return
+        if (_state.value.translating) return
+        viewModelScope.launch {
+            setTranslating(true)
+            _translationError.value = null
+            try {
+                val cfg = aiPrefs.load()
+                if (!cfg.isConnected) {
+                    _translationError.value = "Wpisz klucz API w Profil → Połączenie AI"
+                    return@launch
+                }
+                val enSteps = kotlinx.serialization.json.Json
+                    .parseToJsonElement(enJson)
+                    .let { it as? kotlinx.serialization.json.JsonArray }
+                    ?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+                    .orEmpty()
+                val prompt = buildString {
+                    append("Przetłumacz na polski instrukcje wykonania ćwiczenia '${ex.name}'. ")
+                    append("Każdy krok osobno, naturalnym polskim treningowym językiem (RPE, technika, sygnały).\n\n")
+                    append("Zwróć JSON list ze stepami (bez prefixu 'Step:N', sam tekst kroku):\n")
+                    append("```json\n[\"krok 1...\", \"krok 2...\", ...]\n```\n\n")
+                    append("Oryginał EN:\n")
+                    enSteps.forEachIndexed { i, s -> append("${i + 1}. $s\n") }
+                }
+                val result = aiClient.chat(
+                    config = cfg,
+                    messages = listOf(
+                        pl.filebit.gymtracker.ai.AiMessage(
+                            pl.filebit.gymtracker.ai.AiRole.USER,
+                            prompt
+                        )
+                    ),
+                    source = "ExerciseTranslate"
+                )
+                result.fold(
+                    onSuccess = { response ->
+                        // Wyodrębnij JSON list z odpowiedzi (może być wrapped w ```json ... ```)
+                        val jsonMatch = Regex("\\[[\\s\\S]+?\\]").find(response)?.value
+                        val plJson = jsonMatch ?: response
+                        // Walidacja: czy parsable jako JsonArray
+                        runCatching {
+                            val parsed = kotlinx.serialization.json.Json.parseToJsonElement(plJson)
+                            if (parsed !is kotlinx.serialization.json.JsonArray) {
+                                throw IllegalArgumentException("not array")
+                            }
+                            exerciseDao.updateInstructionsPl(ex.id, plJson)
+                            _state.value = _state.value.copy(
+                                exercise = ex.copy(instructionsPlJson = plJson)
+                            )
+                        }.onFailure {
+                            _translationError.value = "AI zwróciło nieprawidłowy format, spróbuj ponownie."
+                        }
+                    },
+                    onFailure = { err ->
+                        _translationError.value = err.message ?: "Błąd AI"
+                    }
+                )
+            } finally {
+                setTranslating(false)
+            }
+        }
+    }
 
     private val exerciseId: Long = savedStateHandle.get<Long>("exerciseId") ?: 0L
 

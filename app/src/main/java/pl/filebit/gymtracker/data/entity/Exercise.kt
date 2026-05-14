@@ -58,7 +58,9 @@ enum class MetricType {
         // v1.20.0 — indices dla wyszukiwań w bibliotece ćwiczeń (Exercises screen, AI filter).
         androidx.room.Index("name"),
         androidx.room.Index("primaryMuscle"),
-        androidx.room.Index("isFavorite")
+        androidx.room.Index("isFavorite"),
+        // v1.25.0 — index dla externalId (ExerciseDB lookup po fuzzy match)
+        androidx.room.Index("externalId")
     ]
 )
 data class Exercise(
@@ -74,5 +76,22 @@ data class Exercise(
     /** Ulubione ćwiczenie usera — AI używa do priorytetyzacji w generowanym planie. */
     val isFavorite: Boolean = false,
     /** Ćwiczenie do unikania — AI nie wstawi go do nowego planu (np. boli kolano przy wykrokach). */
-    val isAvoided: Boolean = false
+    val isAvoided: Boolean = false,
+    // v1.25.0 — ExerciseDB integration (MIT licensed, 1500 ćwiczeń z GIFami z CDN)
+    /** ID ćwiczenia w ExerciseDB (np. "trmte8s"). null = custom/legacy bez matchu. */
+    val externalId: String? = null,
+    /** URL GIF animacji wykonania ćwiczenia (CDN, lazy-load przez Coil). */
+    val gifUrl: String? = null,
+    /** Instrukcje techniki po angielsku, JSON list ["Step:1 ...", "Step:2 ..."]. */
+    val instructionsEnJson: String? = null,
+    /** Polskie tłumaczenie AI (cache, generowane on-demand po BYOK key). */
+    val instructionsPlJson: String? = null,
+    /** Mięśnie docelowe z ExerciseDB (CSV, np. "traps,shoulders"). */
+    val targetMusclesCsv: String? = null,
+    /** Mięśnie drugorzędne (CSV). */
+    val secondaryMusclesCsv: String? = null,
+    /** Sprzęt z ExerciseDB (CSV, np. "barbell" — bogatsze niż enum Equipment). */
+    val equipmentDbCsv: String? = null,
+    /** Partia ciała z ExerciseDB (np. "chest", "neck"). */
+    val bodyPartCsv: String? = null
 )

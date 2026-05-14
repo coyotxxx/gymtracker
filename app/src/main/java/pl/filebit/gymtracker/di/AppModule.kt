@@ -328,6 +328,27 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.25.0 (audit 2026-05-14): ExerciseDB integracja — 1500 ćwiczeń z GIFami z CDN.
+     * Dodaje 8 nowych kolumn do `exercises` + index na `externalId` dla szybkiego lookupu.
+     * Bootstrap przy starcie wczyta `assets/exercisedb_v1.json` i fuzzy-zmatchuje
+     * istniejące ćwiczenia z bazą EN — nadpisując externalId/gifUrl/instructions.
+     * Istniejące dane usera (name, primaryMuscle, equipment, isFavorite, isAvoided) zostają.
+     */
+    private val MIGRATION_57_58 = object : Migration(57, 58) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `externalId` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `gifUrl` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `instructionsEnJson` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `instructionsPlJson` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `targetMusclesCsv` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `secondaryMusclesCsv` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `equipmentDbCsv` TEXT")
+            db.execSQL("ALTER TABLE `exercises` ADD COLUMN `bodyPartCsv` TEXT")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_exercises_externalId` ON `exercises` (`externalId`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -340,7 +361,8 @@ object AppModule {
                 MIGRATION_53_54,
                 MIGRATION_54_55,
                 MIGRATION_55_56,
-                MIGRATION_56_57
+                MIGRATION_56_57,
+                MIGRATION_57_58
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

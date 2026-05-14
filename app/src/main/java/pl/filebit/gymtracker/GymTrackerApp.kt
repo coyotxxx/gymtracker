@@ -28,7 +28,20 @@ import java.util.Locale
 import javax.inject.Inject
 
 @HiltAndroidApp
-class GymTrackerApp : Application(), Configuration.Provider {
+class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImageLoader.Factory {
+
+    /**
+     * v1.25.0 — Coil 3 ImageLoader z GIF decoderem + cache na dysku.
+     * Wymagane dla GIFów ExerciseDB z CDN static.exercisedb.dev.
+     */
+    override fun newImageLoader(context: coil3.PlatformContext): coil3.ImageLoader {
+        return coil3.ImageLoader.Builder(context)
+            .components {
+                add(coil3.gif.GifDecoder.Factory())
+                add(coil3.network.okhttp.OkHttpNetworkFetcherFactory())
+            }
+            .build()
+    }
 
     @Inject lateinit var exerciseSeeder: ExerciseSeeder
     @Inject lateinit var foodProductSeeder: pl.filebit.gymtracker.data.seed.FoodProductSeeder
@@ -46,6 +59,8 @@ class GymTrackerApp : Application(), Configuration.Provider {
     @Inject lateinit var workerRescheduler: pl.filebit.gymtracker.service.WorkerRescheduler
     // v1.20.3: naprawa wag po cumulative deload bug (np. 41.99 zamiast 42.5)
     @Inject lateinit var deloadService: pl.filebit.gymtracker.data.repository.DeloadService
+    // v1.25.0: ExerciseDB integration — 1500 ćwiczeń z GIFami, MIT licensed
+    @Inject lateinit var exerciseDbBootstrap: pl.filebit.gymtracker.data.repository.ExerciseDbBootstrap
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -81,6 +96,9 @@ class GymTrackerApp : Application(), Configuration.Provider {
             // v1.20.3: napraw wagi planu po cumulative deload bug (np. 41.99 zamiast 42.5).
             // Idempotentny — działa tylko gdy aktywny deload + wykryje korupcję.
             runCatching { deloadService.repairWeightsIfCorrupted() }
+            // v1.25.0: fuzzy match istniejących ćwiczeń z ExerciseDB (1500 ćw + GIFy).
+            // Idempotentny — pomija gdy >50% ćwiczeń już zmatchowane.
+            runCatching { exerciseDbBootstrap.bootstrap() }
         }
         observeActiveWorkoutForReminder()
     }

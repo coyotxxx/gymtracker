@@ -102,6 +102,34 @@ fun ExerciseDetailScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            // v1.25.0: GIF animacja wykonania (ExerciseDB CDN)
+            if (!ex.gifUrl.isNullOrBlank()) {
+                item { ExerciseGifCard(gifUrl = ex.gifUrl) }
+            }
+            // v1.25.0: Technika krok po kroku (PL z AI cache, EN fallback)
+            if (!ex.instructionsEnJson.isNullOrBlank() || !ex.instructionsPlJson.isNullOrBlank()) {
+                item {
+                    ExerciseInstructionsCard(
+                        instructionsPlJson = ex.instructionsPlJson,
+                        instructionsEnJson = ex.instructionsEnJson,
+                        translating = state.translating,
+                        onTranslate = { vm.translateInstructionsToPl() }
+                    )
+                }
+            }
+            // v1.25.0: Mięśnie i sprzęt z ExerciseDB (dokładniejsze niż enum)
+            if (!ex.targetMusclesCsv.isNullOrBlank() ||
+                !ex.secondaryMusclesCsv.isNullOrBlank() ||
+                !ex.equipmentDbCsv.isNullOrBlank()
+            ) {
+                item {
+                    ExerciseMusclesEquipmentCard(
+                        targetMuscles = ex.targetMusclesCsv?.split(",").orEmpty(),
+                        secondaryMuscles = ex.secondaryMusclesCsv?.split(",").orEmpty(),
+                        equipment = ex.equipmentDbCsv?.split(",").orEmpty()
+                    )
+                }
+            }
             // Przycisk "Zapytaj AI o to ćwiczenie"
             item {
                 AskAiAboutExerciseRow(
@@ -548,6 +576,206 @@ private fun PreferenceChip(
 }
 
 
+
+/**
+ * v1.25.0 — GIF animacja wykonania ćwiczenia z CDN ExerciseDB (Coil 3 + GifDecoder).
+ * Cloudflare-cache'owane, Coil disk-cache po pierwszym wyświetleniu (offline).
+ */
+@Composable
+private fun ExerciseGifCard(gifUrl: String) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Text(
+                "ANIMACJA WYKONANIA",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.4.sp
+                ),
+                color = DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(10.dp))
+            coil3.compose.AsyncImage(
+                model = gifUrl,
+                contentDescription = "Animacja ćwiczenia",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(280.dp)
+                    .background(DarkBg, RoundedCornerShape(12.dp)),
+                contentScale = androidx.compose.ui.layout.ContentScale.Fit
+            )
+        }
+    }
+}
+
+/**
+ * v1.25.0 — Technika krok po kroku. PL z AI cache jeśli istnieje, inaczej EN fallback +
+ * przycisk "Tłumacz AI". Po tłumaczeniu cache w `instructionsPlJson` (offline next time).
+ */
+@Composable
+private fun ExerciseInstructionsCard(
+    instructionsPlJson: String?,
+    instructionsEnJson: String?,
+    translating: Boolean,
+    onTranslate: () -> Unit
+) {
+    // v1.25.0: parsuj JSON list jako JsonArray (prostsze niż ListSerializer<String>)
+    val plSteps: List<String> = remember(instructionsPlJson) {
+        runCatching {
+            instructionsPlJson?.let { json ->
+                val arr = kotlinx.serialization.json.Json.parseToJsonElement(json)
+                    as? kotlinx.serialization.json.JsonArray
+                arr?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+            }
+        }.getOrNull().orEmpty()
+    }
+    val enSteps: List<String> = remember(instructionsEnJson) {
+        runCatching {
+            instructionsEnJson?.let { json ->
+                val arr = kotlinx.serialization.json.Json.parseToJsonElement(json)
+                    as? kotlinx.serialization.json.JsonArray
+                arr?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+            }
+        }.getOrNull().orEmpty()
+    }
+    val showPl = plSteps.isNotEmpty()
+    val steps = if (showPl) plSteps else enSteps.map { it.removePrefix("Step:").trimStart { it.isDigit() || it == ' ' } }
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    "TECHNIKA KROK PO KROKU" + if (!showPl && enSteps.isNotEmpty()) " (EN)" else "",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                if (!showPl && enSteps.isNotEmpty()) {
+                    if (translating) {
+                        Text(
+                            "Tłumaczę...",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = AccentOrange
+                        )
+                    } else {
+                        TextButton(onClick = onTranslate) {
+                            Icon(
+                                Icons.Default.AutoAwesome,
+                                contentDescription = null,
+                                tint = AccentOrange,
+                                modifier = Modifier.size(14.dp)
+                            )
+                            Spacer(Modifier.size(4.dp))
+                            Text(
+                                "Tłumacz AI",
+                                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
+                                color = AccentOrange
+                            )
+                        }
+                    }
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            steps.forEachIndexed { idx, step ->
+                Row(verticalAlignment = Alignment.Top) {
+                    Text(
+                        "${idx + 1}.",
+                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                        color = AccentOrange,
+                        modifier = Modifier.size(width = 24.dp, height = 22.dp)
+                    )
+                    Text(
+                        step.trim(),
+                        style = MaterialTheme.typography.bodyMedium.copy(lineHeight = 20.sp),
+                        color = DarkOnSurface
+                    )
+                }
+                if (idx < steps.lastIndex) Spacer(Modifier.height(6.dp))
+            }
+        }
+    }
+}
+
+/**
+ * v1.25.0 — Mięśnie docelowe + drugorzędne + sprzęt z ExerciseDB.
+ * Dokładniejsze niż lokalne enum MuscleGroup/Equipment (np. "pectorals", "rotator cuff").
+ */
+@Composable
+private fun ExerciseMusclesEquipmentCard(
+    targetMuscles: List<String>,
+    secondaryMuscles: List<String>,
+    equipment: List<String>
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, DarkOutlineSoft),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            if (targetMuscles.isNotEmpty()) {
+                Text(
+                    "🎯 GŁÓWNE MIĘŚNIE",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    targetMuscles.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(10.dp))
+            }
+            if (secondaryMuscles.isNotEmpty()) {
+                Text(
+                    "💪 MIĘŚNIE DRUGORZĘDNE",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    secondaryMuscles.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(10.dp))
+            }
+            if (equipment.isNotEmpty()) {
+                Text(
+                    "🛠 SPRZĘT",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.4.sp
+                    ),
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    equipment.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = DarkOnSurface
+                )
+            }
+        }
+    }
+}
 
 @Composable
 private fun ProgressionStatusCard(trend: ExerciseTrend) {

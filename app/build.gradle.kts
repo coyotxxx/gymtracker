@@ -15,8 +15,8 @@ android {
         applicationId = "pl.filebit.gymtracker"
         minSdk = 29
         targetSdk = 35
-        versionCode = 420
-        versionName = "1.24.50"
+        versionCode = 500
+        versionName = "1.25.0"
         vectorDrawables { useSupportLibrary = true }
         // v1.14.1: androidTest infra dla MigrationTestHelper
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -116,8 +116,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.datetime)
 
-    // Coil (na przyszłość — obrazki ćwiczeń)
+    // Coil (obrazki ćwiczeń + GIFy ExerciseDB v1.25.0)
     implementation(libs.coil.compose)
+    implementation(libs.coil.gif)
+    implementation(libs.coil.network.okhttp)
 
     // WorkManager + Hilt
     implementation(libs.androidx.work.runtime.ktx)
