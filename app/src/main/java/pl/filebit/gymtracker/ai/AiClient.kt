@@ -14,6 +14,7 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
+import kotlinx.serialization.json.putJsonObject
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -25,6 +26,14 @@ import javax.inject.Singleton
 enum class AiRole { USER, ASSISTANT }
 
 data class AiMessage(val role: AiRole, val content: String)
+
+/**
+ * v1.25.3 — sentinel oddzielający stable context (cached) od dynamic (fresh)
+ * w prompt caching Anthropic. Stosowany w AiTrainerViewModel.combined między
+ * stałą biblioteką ćw + profile (TOP, cached ephemeral 5min) a recent_workouts
+ * + pytaniem (BOTTOM, fresh). Top-level żeby był łatwo dostępny z innych pakietów.
+ */
+const val CACHE_BREAKPOINT_MARKER = "<<<CACHE_BREAKPOINT>>>"
 
 interface AiClient {
     /**
@@ -321,11 +330,14 @@ class AiClientImpl @Inject constructor(
         // Convert AiMessage -> List<JsonObject> w API format. Każda wiadomość ma
         // content jako string (zwykły tekst). W trakcie loop'u dodajemy
         // wiadomości z content array (z tool_use / tool_result).
+        // v1.25.3: prompt caching — last user message ma marker <<<CACHE_BREAKPOINT>>>
+        // rozdzielający stable (biblioteka ćw + profile) od dynamic (recent + pytanie).
         val messagesArray = mutableListOf<kotlinx.serialization.json.JsonElement>()
-        initialMessages.forEach { m ->
+        val lastUserIdx = initialMessages.indexOfLast { it.role == AiRole.USER }
+        initialMessages.forEachIndexed { idx, m ->
             messagesArray.add(buildJsonObject {
                 put("role", if (m.role == AiRole.USER) "user" else "assistant")
-                put("content", m.content)
+                put("content", buildContentArrayWithCacheBreak(m.content, applyCache = idx == lastUserIdx))
             })
         }
 
@@ -428,11 +440,17 @@ class AiClientImpl @Inject constructor(
             // Sonnet/Opus mogą więcej. Zostawiamy zapas dla zlozonych planow.
             put("max_tokens", maxTokensForModel(config.model))
             put("system", config.systemPrompt)
+            // v1.25.3: prompt caching — last user message zawiera marker
+            // <<<CACHE_BREAKPOINT>>> rozdzielający stable context (biblioteka ćwiczeń,
+            // user profile) od dynamic (recent_workouts, pytanie). Stable cached
+            // ephemeral 5min, koszt cache read ≈ 10% standardowego input.
             put("messages", buildJsonArray {
-                messages.forEach { m ->
+                val lastUserIdx = messages.indexOfLast { it.role == AiRole.USER }
+                messages.forEachIndexed { idx, m ->
                     add(buildJsonObject {
                         put("role", if (m.role == AiRole.USER) "user" else "assistant")
-                        put("content", m.content)
+                        // Cache_control tylko na OSTATNIEJ user message (przy aktywnym pytaniu)
+                        put("content", buildContentArrayWithCacheBreak(m.content, applyCache = idx == lastUserIdx))
                     })
                 }
             })
@@ -590,6 +608,49 @@ class AiClientImpl @Inject constructor(
          * na Opus model. Maciej testował — timeout strzelał przed odpowiedzią.
          */
         const val CHAT_TIMEOUT_MS = 240_000L
+    }
+
+    /**
+     * v1.25.3 — buduje content array dla Anthropic API z opcjonalnym cache_control.
+     * Jeśli content zawiera CACHE_BREAKPOINT_MARKER i applyCache=true → dwa text blocks:
+     *   - Block 1 (stable, cache_control:ephemeral)
+     *   - Block 2 (dynamic, no cache)
+     * Inaczej: jeden zwykły text block.
+     *
+     * Anthropic min cache size: 1024 tokens dla Opus/Sonnet, 2048 dla Haiku.
+     * Mniejszy block jest po prostu nie cached (no error).
+     */
+    private fun buildContentArrayWithCacheBreak(
+        content: String,
+        applyCache: Boolean
+    ): kotlinx.serialization.json.JsonArray {
+        val marker = pl.filebit.gymtracker.ai.CACHE_BREAKPOINT_MARKER
+        if (!applyCache || !content.contains(marker)) {
+            return buildJsonArray {
+                add(buildJsonObject {
+                    put("type", "text")
+                    put("text", content)
+                })
+            }
+        }
+        val parts = content.split(marker, limit = 2)
+        val stable = parts[0].trimEnd()
+        val dynamic = parts.getOrNull(1)?.trimStart() ?: ""
+        return buildJsonArray {
+            add(buildJsonObject {
+                put("type", "text")
+                put("text", stable)
+                putJsonObject("cache_control") {
+                    put("type", "ephemeral")
+                }
+            })
+            if (dynamic.isNotEmpty()) {
+                add(buildJsonObject {
+                    put("type", "text")
+                    put("text", dynamic)
+                })
+            }
+        }
     }
 }
 

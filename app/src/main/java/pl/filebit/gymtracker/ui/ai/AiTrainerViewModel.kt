@@ -287,7 +287,12 @@ class AiTrainerViewModel @Inject constructor(
             // Kontekst dolaczany do KAZDEJ user message (snapshot statystyk
             // i planu jest zawsze swiezy) - wczesniej tylko isFirstMessage,
             // co powodowalo ze AI nie mial dostepu do danych przy 2-N pytaniu
-            val combined = "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\nPytanie/prośba:\n$prompt"
+            // v1.25.3 prompt caching: marker CACHE_BREAKPOINT rozdziela stable
+            // (biblioteka ćw + profile, cacheable ephemeral 5min) od dynamic
+            // (recent_workouts, pytanie). Cache read = 10% kosztu vs standard input.
+            val combined = "Dane użytkownika (kontekst):\n```json\n$ctx\n```\n\n" +
+                "${pl.filebit.gymtracker.ai.CACHE_BREAKPOINT_MARKER}\n\n" +
+                "Pytanie/prośba:\n$prompt"
 
             val apiMessages = _state.value.messages.dropLast(1).map {
                 AiMessage(it.role, it.text)

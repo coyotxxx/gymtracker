@@ -511,16 +511,54 @@ class AiContextBuilder @Inject constructor(
             // v1.11.62: rozdzielenie - includeExerciseLibrary niezalezne od targetPlanId,
             // zeby user proszacy o NOWY plan tez dostal biblioteke (wczesniej:
             // tylko targetPlanId set => brak biblioteki przy generowaniu nowego planu).
+            // v1.25.2: smart filter + CSV format. Po imporcie 1500 ćw z ExerciseDB
+            // pełna biblioteka = ~30k tokenów per call. Filter redukuje do ~5-10k:
+            //   1. Pomiń isAvoided=true (user wprost zaznaczył "unikam")
+            //   2. Jeśli UserProfile.availableEquipmentCsv niepusta — tylko z tym sprzętem
+            //   3. Sort: favorites first, alfabetycznie reszta
+            //   4. Limit 500 (AI nie potrzebuje 1500 do dobrego planu)
+            //   5. Format CSV pipe-separated zamiast JSON array (50% mniej tokenów)
             if (targetPlanId != null || includeExerciseLibrary) {
-                putJsonArray("available_exercises") {
-                    allExercises.forEach { ex ->
-                        add(buildJsonObject {
-                            put("name", ex.name)
-                            put("muscle", ex.primaryMuscle.name)
-                            put("equipment", ex.equipment.name)
-                        })
+                val availableEquipment = profile.availableEquipmentCsv
+                    .split(",")
+                    .map { it.trim().uppercase() }
+                    .filter { it.isNotBlank() }
+                    .toSet()
+                // v1.25.3 koszt-aware default: jeśli user oznaczył ≥10 ulubionych,
+                // domyślnie używaj TYLKO ich (drastyczna redukcja kosztów AI).
+                // Inaczej (mało ulubionych albo brak) — pełna biblioteka z filtrem.
+                val favoritesCount = allExercises.count { it.isFavorite && !it.isAvoided }
+                val useFavoritesOnly = favoritesCount >= 10
+                val baseSequence = allExercises.asSequence()
+                    .filter { !it.isAvoided }
+                    .filter { !useFavoritesOnly || it.isFavorite }
+                val filtered = baseSequence
+                    .filter {
+                        availableEquipment.isEmpty() ||
+                            it.equipment.name in availableEquipment ||
+                            it.equipment.name == "BODYWEIGHT"  // bodyweight zawsze dostępne
                     }
-                }
+                    .sortedWith(compareByDescending<pl.filebit.gymtracker.data.entity.Exercise> { it.isFavorite }
+                        .thenBy { it.name.lowercase() })
+                    .take(500)
+                    .toList()
+                put(
+                    "exercise_library_mode",
+                    if (useFavoritesOnly)
+                        "favorites_only ($favoritesCount ulubionych — user oznaczył wystarczająco)"
+                    else
+                        "full_filtered (mało ulubionych — używamy pełnej biblioteki z filtrem)"
+                )
+                put("available_exercises_format", "csv: name|muscle|equipment (pipe-separated)")
+                val csv = buildString {
+                    filtered.forEach { ex ->
+                        append(ex.name).append('|')
+                            .append(ex.primaryMuscle.name).append('|')
+                            .append(ex.equipment.name).append('\n')
+                    }
+                }.trimEnd('\n')
+                put("available_exercises_csv", csv)
+                put("available_exercises_count", filtered.size)
             }
         }
 
