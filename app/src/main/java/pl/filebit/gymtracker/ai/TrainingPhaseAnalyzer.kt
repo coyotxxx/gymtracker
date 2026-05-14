@@ -33,8 +33,9 @@ data class TrainingPhaseStatus(
     val polishLabel: String get() = when (phase) {
         TrainingPhase.ACCUMULATION -> "Akumulacja (tydzień $weeksSinceLastDeload/3)"
         TrainingPhase.INTENSIFICATION -> "Intensyfikacja (tydzień ${weeksSinceLastDeload - 3}/3)"
-        TrainingPhase.DELOAD -> "Deload"
-        TrainingPhase.NEEDS_DELOAD -> "Czas na deload"
+        // v1.24.50: PL "Tydzień lżejszy" zamiast "Deload" (Glossary zachowuje EN)
+        TrainingPhase.DELOAD -> "Tydzień lżejszy"
+        TrainingPhase.NEEDS_DELOAD -> "Czas na lżejszy tydzień"
         TrainingPhase.NO_DATA -> "Za mało danych"
     }
 }

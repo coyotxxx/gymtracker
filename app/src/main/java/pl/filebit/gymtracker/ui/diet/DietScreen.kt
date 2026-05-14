@@ -572,9 +572,9 @@ substitutePrompt?.let { sp ->
             pl.filebit.gymtracker.util.AdjustmentAction.HOLD -> "✓ Trzymaj plan"
             pl.filebit.gymtracker.util.AdjustmentAction.DECREASE_KCAL -> "↓ Sugestia: obniż kcal"
             pl.filebit.gymtracker.util.AdjustmentAction.INCREASE_KCAL -> "↑ Sugestia: dodaj kcal"
-            pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: deload"
+            pl.filebit.gymtracker.util.AdjustmentAction.DELOAD -> "🔄 Sugestia: lżejszy tydzień"
             pl.filebit.gymtracker.util.AdjustmentAction.SIMPLIFY_PLAN -> "🛠 Uprość plan"
-            pl.filebit.gymtracker.util.AdjustmentAction.REFEED_DAY -> "🍝 Refeed day (+kcal)"
+            pl.filebit.gymtracker.util.AdjustmentAction.REFEED_DAY -> "🍝 Dzień doładowania (+kcal)"
             pl.filebit.gymtracker.util.AdjustmentAction.NEEDS_MORE_DATA -> "📊 Brak danych"
         }
         ScrollableDialogShell(
@@ -1609,15 +1609,16 @@ private fun PhaseRibbon(
                 modifier = Modifier.weight(1f)
             )
         } else {
-            val emoji = when (currentPhase.type) {
-                pl.filebit.gymtracker.data.entity.DietPhaseType.CUT -> "↘️"
-                pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE -> "⏸"
-                pl.filebit.gymtracker.data.entity.DietPhaseType.BULK -> "↗️"
-                pl.filebit.gymtracker.data.entity.DietPhaseType.REFEED_DAY -> "🍝"
-                pl.filebit.gymtracker.data.entity.DietPhaseType.DIET_BREAK -> "🛑"
+            // v1.24.50: emoji + polski label fazy (anglicyzm enum.name nie wyświetlamy)
+            val (emoji, labelPl) = when (currentPhase.type) {
+                pl.filebit.gymtracker.data.entity.DietPhaseType.CUT -> "↘️" to "Redukcja"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.MAINTENANCE -> "⏸" to "Utrzymanie"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.BULK -> "↗️" to "Budowanie masy"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.REFEED_DAY -> "🍝" to "Doładowanie"
+                pl.filebit.gymtracker.data.entity.DietPhaseType.DIET_BREAK -> "🛑" to "Przerwa w diecie"
             }
             Text(
-                "$emoji ${currentPhase.type.name} · ${currentPhase.durationDays()} dni",
+                "$emoji $labelPl · ${currentPhase.durationDays()} dni",
                 style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
                 color = DarkOnSurface,
                 modifier = Modifier.weight(1f)
@@ -1785,7 +1786,7 @@ private fun NarzedziaSection(
                     Spacer(Modifier.height(8.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         ToolButton("🛒", "Zakupy", Modifier.weight(1f), onZakupy)
-                        ToolButton("🍱", "Meal prep", Modifier.weight(1f), onMealPrep)
+                        ToolButton("🍱", "Na zapas", Modifier.weight(1f), onMealPrep)
                     }
                     Spacer(Modifier.height(8.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

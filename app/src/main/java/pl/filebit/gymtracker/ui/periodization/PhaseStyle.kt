@@ -50,9 +50,10 @@ fun MesocyclePhase.shortDesc(): String = when (this) {
  * Centralizacja zamiast hardcoded w HistoryScreen.
  */
 fun MesocyclePhase.shortLabelPl(): String = when (this) {
+    // v1.24.50: PEAK / DELOAD → polskie skróty
     MesocyclePhase.ACCUMULATION -> "AKUM"
     MesocyclePhase.INTENSIFICATION -> "INTEN"
-    MesocyclePhase.DELOAD -> "DELOAD"
-    MesocyclePhase.PEAKING -> "PEAK"
+    MesocyclePhase.DELOAD -> "LŻEJ"      // tydzień lżejszy / regeneracyjny
+    MesocyclePhase.PEAKING -> "SZCZYT"   // peaking
     MesocyclePhase.RECOVERY -> "REGEN"
 }

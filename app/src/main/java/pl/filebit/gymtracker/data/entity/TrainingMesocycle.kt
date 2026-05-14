@@ -21,12 +21,13 @@ enum class MesocyclePhase {
     RECOVERY;
 
     /** v1.20.2 — polskie label fazy (single source of truth, używany przez UI + AI prompts). */
+    /** v1.24.50: pełne PL nazwy (anglicyzmy → tłumaczenia + nawias EN dla AI/Glossary). */
     fun labelPl(): String = when (this) {
         ACCUMULATION -> "Akumulacja"
         INTENSIFICATION -> "Intensyfikacja"
-        DELOAD -> "Deload"
-        PEAKING -> "Peaking"
-        RECOVERY -> "Recovery"
+        DELOAD -> "Tydzień lżejszy"
+        PEAKING -> "Szczyt formy"
+        RECOVERY -> "Pełna regeneracja"
     }
 }
 

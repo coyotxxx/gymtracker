@@ -76,7 +76,7 @@ fun MealPrepScreen(
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(modifier = Modifier.fillMaxSize()) {
-            ScreenHeader(title = "Meal prep", onBack = onBack)
+            ScreenHeader(title = "Gotowanie na zapas", onBack = onBack)
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),

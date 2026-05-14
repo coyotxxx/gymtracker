@@ -34,12 +34,13 @@ fun DietPhaseDialog(
     onAccept: () -> Unit,
     onDismiss: () -> Unit
 ) {
+    // v1.24.50: PL terminologia (anglicyzmy do Glossary)
     val (emoji, label) = when (suggestion.proposedType) {
-        DietPhaseType.DIET_BREAK -> "🛑" to "Diet break — propozycja silnika"
-        DietPhaseType.MAINTENANCE -> "⏸ Maintenance" to "Faza maintenance — propozycja silnika"
-        DietPhaseType.REFEED_DAY -> "🍝" to "Refeed day — propozycja"
-        DietPhaseType.CUT -> "↘️" to "Faza CUT"
-        DietPhaseType.BULK -> "↗️" to "Faza BULK"
+        DietPhaseType.DIET_BREAK -> "🛑" to "Przerwa w diecie — propozycja silnika"
+        DietPhaseType.MAINTENANCE -> "⏸" to "Faza utrzymania — propozycja silnika"
+        DietPhaseType.REFEED_DAY -> "🍝" to "Dzień doładowania — propozycja"
+        DietPhaseType.CUT -> "↘️" to "Faza redukcji"
+        DietPhaseType.BULK -> "↗️" to "Faza budowania masy"
         null -> "" to "Faza"
     }
     ScrollableDialogShell(

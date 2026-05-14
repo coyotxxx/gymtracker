@@ -90,7 +90,7 @@ private fun AdjustmentRow(adj: DietAdjustment) {
         "INCREASE_KCAL" -> "↑ Dodano" to SuccessGreen
         "HOLD" -> "= Trzymaj plan" to DarkOnSurfaceVariant
         "SIMPLIFY_PLAN" -> "🛠 Uprość plan" to AccentOrange
-        "DELOAD" -> "🔄 Deload" to AccentOrange
+        "DELOAD" -> "🔄 Lżejszy tydzień" to AccentOrange  // v1.24.50: PL terminologia
         else -> adj.actionCode to DarkOnSurfaceVariant
     }
     val statusBadge = when {

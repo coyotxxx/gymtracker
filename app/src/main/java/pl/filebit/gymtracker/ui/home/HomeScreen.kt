@@ -552,7 +552,9 @@ private fun DeloadExplainDialog(
             // z deloadu klasycznego — sprzeczne z kartą "REFEED ZALECANY" gdzie
             // trening zostaje BEZ zmian. Teraz osobne treści dla obu wariantów.
             Text(
-                if (isRefeed) "Co to jest refeed?" else "Co to jest deload?",
+                // v1.24.50: PL terminologia w tytule, anglicyzm w nawiasie
+                if (isRefeed) "Co to jest doładowanie węglami (refeed)?"
+                else "Co to jest lżejszy tydzień (deload)?",
                 fontWeight = FontWeight.Bold
             )
         },
@@ -1262,10 +1264,11 @@ private fun DeloadSuggestionCard(
     }
     val severityLabel = when {
         // v1.24.41: dla CUT alert mówi o refeedzie, nie o deloadzie wag
-        isRefeed -> "REFEED ZALECANY"
+        // v1.24.50: anglicyzmy → polskie terminy (Glossary zachowuje wyjaśnienia EN)
+        isRefeed -> "DOŁADOWANIE WĘGLAMI"
         recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.HIGH -> "MOCNY SYGNAŁ"
-        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.MED -> "DELOAD ZALECANY"
-        else -> "ROZWAŻ DELOAD"
+        recommendation.severity == pl.filebit.gymtracker.util.DeloadSeverity.MED -> "LŻEJSZY TYDZIEŃ ZALECANY"
+        else -> "ROZWAŻ LŻEJSZY TYDZIEŃ"
     }
     androidx.compose.foundation.layout.Box(
         modifier = androidx.compose.ui.Modifier
@@ -1549,7 +1552,8 @@ private fun DeloadActiveCard(
                 )
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    if (active.isFinished) "DELOAD ZAKOŃCZONY" else "DELOAD TRWA",
+                    // v1.24.50: DELOAD → LŻEJSZY TYDZIEŃ (PL terminologia)
+                    if (active.isFinished) "LŻEJSZY TYDZIEŃ ZAKOŃCZONY" else "LŻEJSZY TYDZIEŃ TRWA",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
                         fontSize = 11.sp,
@@ -1861,7 +1865,8 @@ private fun DeloadActiveBanner(
             Text("💤", fontSize = 14.sp)
             Spacer(Modifier.width(6.dp))
             Text(
-                "DELOAD · −$pctOff% · ${active.daysRemaining} ${if (active.daysRemaining == 1) "dzień" else "dni"}",
+                // v1.24.50: DELOAD → LŻEJSZY TYDZIEŃ (PL terminologia)
+                "LŻEJSZY TYDZIEŃ · −$pctOff% · ${active.daysRemaining} ${if (active.daysRemaining == 1) "dzień" else "dni"}",
                 style = MaterialTheme.typography.labelMedium.copy(
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 12.sp,
@@ -1891,7 +1896,7 @@ private fun DeloadActiveBanner(
     if (showDialog) {
         androidx.compose.material3.AlertDialog(
             onDismissRequest = { showDialog = false },
-            title = { Text("Deload w toku") },
+            title = { Text("Lżejszy tydzień w toku") },
             text = {
                 Text(
                     "Plan '${active.state.planName}' z wagami −$pctOff%. " +
@@ -1916,7 +1921,7 @@ private fun DeloadActiveBanner(
                         onManageCancel()
                     }
                 ) {
-                    Text("Zamknij deload bez przywracania", color = DarkOnSurfaceVariant)
+                    Text("Zamknij lżejszy tydzień bez przywracania", color = DarkOnSurfaceVariant)
                 }
             },
             containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
@@ -2055,8 +2060,8 @@ private fun TrainingPhaseCard(
     if (showConfirm) {
         androidx.compose.material3.AlertDialog(
             onDismissRequest = { showConfirm = false },
-            title = { androidx.compose.material3.Text("Zastosować deload?", fontWeight = FontWeight.Bold) },
-            text = { androidx.compose.material3.Text("${status.weeksSinceLastDeload} tygodni bez deloadu — algorytm sugeruje tydzień lekki (-30% obciążenie). Możesz w każdej chwili przywrócić oryginalne wagi.") },
+            title = { androidx.compose.material3.Text("Zastosować lżejszy tydzień?", fontWeight = FontWeight.Bold) },
+            text = { androidx.compose.material3.Text("${status.weeksSinceLastDeload} tygodni bez lżejszego tygodnia — algorytm sugeruje go teraz (-30% obciążenie). Możesz w każdej chwili przywrócić oryginalne wagi.") },
             confirmButton = {
                 androidx.compose.material3.TextButton(onClick = { showConfirm = false; onApplyDeload() }) {
                     androidx.compose.material3.Text("Zastosuj", color = accent, fontWeight = FontWeight.Bold)
@@ -2149,7 +2154,7 @@ private fun TrainingPhaseCard(
                     ),
                     shape = RoundedCornerShape(12.dp)
                 ) {
-                    androidx.compose.material3.Text("Zastosuj deload (-30%)", fontWeight = FontWeight.Bold)
+                    androidx.compose.material3.Text("Zastosuj lżejszy tydzień (-30%)", fontWeight = FontWeight.Bold)
                 }
             }
         }
