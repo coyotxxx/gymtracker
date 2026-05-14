@@ -130,6 +130,26 @@ interface ExerciseDao {
     )
 
     /**
+     * v1.25.9: internal cleanup — bootstrap czyści pola ExerciseDB gdy externalId
+     * wskazuje na ćwiczenie z martwym gifUrl (HTTP 404 na CDN). Zachowuje user
+     * data (name, primaryMuscle, equipment, isFavorite, history). NIE jest
+     * wystawione w UI.
+     */
+    @Query("""
+        UPDATE exercises
+        SET externalId = NULL,
+            gifUrl = NULL,
+            instructionsEnJson = NULL,
+            instructionsPlJson = NULL,
+            targetMusclesCsv = NULL,
+            secondaryMusclesCsv = NULL,
+            equipmentDbCsv = NULL,
+            bodyPartCsv = NULL
+        WHERE id = :id
+    """)
+    suspend fun clearExerciseDbFields(id: Long)
+
+    /**
      * v1.25.7: re-link FK referencji z duplicate exercise na kanoniczne ID.
      * Po przepięciu wszystkich FK można bezpiecznie usunąć duplikat.
      * Cztery tabele odwołują się do exercises.id:

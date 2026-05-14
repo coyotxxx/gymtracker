@@ -271,8 +271,33 @@ class ExerciseDbBootstrap @Inject constructor(
             }
         }
 
+        // v1.25.9 — Etap H: cleanup ćwiczeń z martwym gifUrl. 171 wpisów w
+        // ExerciseDB ma URL z HTTP 404 — większość (168) ma zamiennik w
+        // alias_map, ale 3 nie mają sensownego ekwiwalentu. Dla tych odłączamy
+        // pola ExerciseDB (zachowując user data: name, primaryMuscle, eq, fav,
+        // history) — bez tego user widziałby pustą ramkę "ANIMACJA WYKONANIA".
+        val deadIds = loadDeadIds().toSet()
+        if (deadIds.isNotEmpty()) {
+            for (ex in dao.getAll()) {
+                val extId = ex.externalId ?: continue
+                if (extId in deadIds) {
+                    dao.clearExerciseDbFields(ex.id)
+                }
+            }
+        }
+
         return matchedCount to importedCount
     }
+
+    /** v1.25.9: lista exerciseId z martwym gifUrl (HTTP 404). */
+    private fun loadDeadIds(): List<String> = runCatching {
+        context.assets.open("exercisedb_v1_dead.json").use { stream ->
+            val json = Json { ignoreUnknownKeys = true }
+            val root = json.parseToJsonElement(stream.bufferedReader().readText())
+                as kotlinx.serialization.json.JsonArray
+            root.map { (it as kotlinx.serialization.json.JsonPrimitive).content }
+        }
+    }.getOrDefault(emptyList())
 
     /** v1.25.7: alias map — exerciseId które zostały zlane do kanonicznych w pre-dedup. */
     private fun loadAliases(): Map<String, String> = runCatching {
