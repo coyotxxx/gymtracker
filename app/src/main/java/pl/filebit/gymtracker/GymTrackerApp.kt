@@ -96,8 +96,8 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
             // v1.20.3: napraw wagi planu po cumulative deload bug (np. 41.99 zamiast 42.5).
             // Idempotentny — działa tylko gdy aktywny deload + wykryje korupcję.
             runCatching { deloadService.repairWeightsIfCorrupted() }
-            // v1.25.0: fuzzy match istniejących ćwiczeń z ExerciseDB (1500 ćw + GIFy).
-            // Idempotentny — pomija gdy >50% ćwiczeń już zmatchowane.
+            // v1.25.1: fuzzy match istniejących + import wszystkich 1500 ćwiczeń.
+            // Idempotentny przez externalId — duplikatów nie tworzy.
             runCatching { exerciseDbBootstrap.bootstrap() }
         }
         observeActiveWorkoutForReminder()

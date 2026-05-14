@@ -719,6 +719,9 @@ private fun ExerciseMusclesEquipmentCard(
     secondaryMuscles: List<String>,
     equipment: List<String>
 ) {
+    // v1.25.1: tłumacz EN → PL przez statyczny mapping (zero AI cost)
+    val mapMuscle: (String) -> String = { pl.filebit.gymtracker.util.ExerciseDbLabels.muscle(it) }
+    val mapEquip: (String) -> String = { pl.filebit.gymtracker.util.ExerciseDbLabels.equipment(it) }
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -736,7 +739,7 @@ private fun ExerciseMusclesEquipmentCard(
                 )
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    targetMuscles.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    targetMuscles.joinToString(", ") { mapMuscle(it) },
                     style = MaterialTheme.typography.bodyMedium,
                     color = DarkOnSurface
                 )
@@ -752,7 +755,7 @@ private fun ExerciseMusclesEquipmentCard(
                 )
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    secondaryMuscles.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    secondaryMuscles.joinToString(", ") { mapMuscle(it) },
                     style = MaterialTheme.typography.bodyMedium,
                     color = DarkOnSurface
                 )
@@ -768,7 +771,7 @@ private fun ExerciseMusclesEquipmentCard(
                 )
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    equipment.joinToString(", ") { it.trim().replaceFirstChar { c -> c.uppercase() } },
+                    equipment.joinToString(", ") { mapEquip(it) },
                     style = MaterialTheme.typography.bodyMedium,
                     color = DarkOnSurface
                 )

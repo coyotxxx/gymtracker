@@ -6,10 +6,11 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import pl.filebit.gymtracker.data.db.dao.ExerciseDao
 import pl.filebit.gymtracker.data.entity.Equipment
+import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.MetricType
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import javax.inject.Inject
 import javax.inject.Singleton
-import kotlin.math.max
 
 /**
  * v1.25.0 — Bootstrap ExerciseDB (1500 ćwiczeń, MIT, GIFy z CDN Cloudflare).
@@ -49,42 +50,165 @@ class ExerciseDbBootstrap @Inject constructor(
     )
 
     /**
-     * Główne entry point. Idempotentne — można wywoływać przy każdym starcie.
-     * @return liczba ćwiczeń zmatchowanych w tym wywołaniu (0 jeśli już zrobione lub brak match'ów)
+     * v1.25.1: pre-translated PL nazwy + instrukcje (skrypt offline /tmp/translate_exercises.py).
+     * Format: { "trmte8s": { "namePl": "...", "instructionsPl": ["...", "..."] } }
      */
-    suspend fun bootstrap(): Int {
-        // Idempotencja: jeśli już mamy ≥50% pokrycia z externalId, nie powtarzaj
-        val total = dao.count()
-        if (total == 0) return 0
-        val matched = dao.countWithExternalId()
-        if (matched > total / 2) return 0  // już zbootstrapowane
+    @Serializable
+    data class ExerciseDbPlEntry(
+        val namePl: String,
+        val instructionsPl: List<String> = emptyList()
+    )
 
-        val entries = loadEntries() ?: return 0
-        val existingExercises = dao.getAll().filter { it.externalId == null }
-        if (existingExercises.isEmpty()) return 0
+    /**
+     * Główne entry point. Idempotentne — można wywoływać przy każdym starcie.
+     *
+     * Etap A: fuzzy match istniejących PL ćwiczeń z ExerciseDB (zostaje user.name).
+     * Etap B: import wszystkich pozostałych entries z DB jako nowe Exercise (name=EN).
+     *   Po imporcie user ma ~1500 ćwiczeń (istniejące + nowe z ExerciseDB).
+     *
+     * @return Pair(matched, imported) — liczba zmatchowanych + nowo zaimportowanych
+     */
+    suspend fun bootstrap(): Pair<Int, Int> {
+        val entries = loadEntries() ?: return 0 to 0
+        if (entries.isEmpty()) return 0 to 0
+        // v1.25.1: pre-translated PL data — name + instructions po polsku
+        val plMap = loadPlEntries()
 
+        // Etap A: fuzzy match istniejących PL ćwiczeń bez externalId
+        val unmatched = dao.getAll().filter { it.externalId == null }
         var matchedCount = 0
-        for (exercise in existingExercises) {
+        val usedExternalIds = mutableSetOf<String>()
+        // Dodaj externalIds z już zmatchowanych (ze starszych bootstrap)
+        dao.getAll().mapNotNull { it.externalId }.forEach { usedExternalIds.add(it) }
+
+        for (exercise in unmatched) {
             val candidate = findBestMatch(exercise.name, exercise.primaryMuscle, entries)
-            if (candidate != null) {
+            if (candidate != null && candidate.exerciseId !in usedExternalIds) {
+                // v1.25.1: zachowaj user.name (PL już), ale dodaj instructionsPl od razu z cache
+                val plData = plMap[candidate.exerciseId]
                 dao.applyExerciseDbMatch(
                     id = exercise.id,
                     externalId = candidate.exerciseId,
                     gifUrl = candidate.gifUrl,
-                    instructionsEnJson = kotlinx.serialization.json.buildJsonArray {
-                        candidate.instructions.forEach {
-                            add(kotlinx.serialization.json.JsonPrimitive(it))
-                        }
-                    }.toString(),
+                    instructionsEnJson = serializeInstructions(candidate.instructions),
                     targetMusclesCsv = candidate.targetMuscles.joinToString(",").takeIf { it.isNotBlank() },
                     secondaryMusclesCsv = candidate.secondaryMuscles.joinToString(",").takeIf { it.isNotBlank() },
                     equipmentDbCsv = candidate.equipments.joinToString(",").takeIf { it.isNotBlank() },
                     bodyPartCsv = candidate.bodyParts.joinToString(",").takeIf { it.isNotBlank() }
                 )
+                // Polskie instrukcje od razu z pre-translated JSON
+                plData?.instructionsPl?.takeIf { it.isNotEmpty() }?.let { steps ->
+                    dao.updateInstructionsPl(exercise.id, serializeInstructions(steps) ?: return@let)
+                }
+                usedExternalIds.add(candidate.exerciseId)
                 matchedCount++
             }
         }
-        return matchedCount
+
+        // Etap B: import niezmatchowanych entries jako nowe Exercise
+        // v1.25.1: TYLKO z GIF + użyj pre-translated PL nazwy/instrukcji
+        val toImport = entries.filter {
+            it.exerciseId !in usedExternalIds && !it.gifUrl.isNullOrBlank()
+        }
+        var importedCount = 0
+        val newExercises = toImport.map { entry ->
+            val plData = plMap[entry.exerciseId]
+            val name = plData?.namePl?.takeIf { it.isNotBlank() }
+                ?: entry.name.replaceFirstChar { c -> c.uppercase() }
+            val instructionsPlJson = plData?.instructionsPl
+                ?.takeIf { it.isNotEmpty() }
+                ?.let { serializeInstructions(it) }
+            Exercise(
+                name = name,
+                primaryMuscle = inferMuscleGroup(entry),
+                equipment = inferEquipment(entry),
+                isCustom = false,
+                metricType = MetricType.WEIGHT_REPS,
+                description = "",
+                isFavorite = false,
+                isAvoided = false,
+                externalId = entry.exerciseId,
+                gifUrl = entry.gifUrl,
+                instructionsEnJson = serializeInstructions(entry.instructions),
+                instructionsPlJson = instructionsPlJson,
+                targetMusclesCsv = entry.targetMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                secondaryMusclesCsv = entry.secondaryMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                equipmentDbCsv = entry.equipments.joinToString(",").takeIf { it.isNotBlank() },
+                bodyPartCsv = entry.bodyParts.joinToString(",").takeIf { it.isNotBlank() }
+            )
+        }
+        if (newExercises.isNotEmpty()) {
+            val ids = dao.insertAll(newExercises)
+            importedCount = ids.count { it > 0 }
+        }
+        return matchedCount to importedCount
+    }
+
+    private fun loadPlEntries(): Map<String, ExerciseDbPlEntry> = runCatching {
+        context.assets.open("exercisedb_v1_pl.json").use { stream ->
+            val json = Json { ignoreUnknownKeys = true }
+            val root = json.parseToJsonElement(stream.bufferedReader().readText())
+                as kotlinx.serialization.json.JsonObject
+            root.mapValues { (_, value) ->
+                json.decodeFromJsonElement(ExerciseDbPlEntry.serializer(), value)
+            }
+        }
+    }.getOrDefault(emptyMap())
+
+    private fun serializeInstructions(instructions: List<String>): String? {
+        if (instructions.isEmpty()) return null
+        return kotlinx.serialization.json.buildJsonArray {
+            instructions.forEach {
+                add(kotlinx.serialization.json.JsonPrimitive(it))
+            }
+        }.toString()
+    }
+
+    /**
+     * Mapowanie ExerciseDB bodyParts/targetMuscles → MuscleGroup enum.
+     * Pierwsze pasujące keyword wygrywa. Default: OTHER.
+     */
+    private fun inferMuscleGroup(entry: ExerciseDbEntry): MuscleGroup {
+        val all = (entry.bodyParts + entry.targetMuscles).map { it.lowercase() }
+        return when {
+            all.any { it.contains("chest") || it.contains("pec") } -> MuscleGroup.CHEST
+            all.any { it.contains("back") || it.contains("lat") || it.contains("trap") || it.contains("rhomboid") } -> MuscleGroup.BACK
+            all.any { it.contains("shoulder") || it.contains("delt") } -> MuscleGroup.SHOULDERS
+            all.any { it.contains("biceps") || it.contains("brachi") } -> MuscleGroup.BICEPS
+            all.any { it.contains("triceps") } -> MuscleGroup.TRICEPS
+            all.any { it.contains("quad") } -> MuscleGroup.QUADS
+            all.any { it.contains("hamstring") } -> MuscleGroup.HAMSTRINGS
+            all.any { it.contains("glute") } -> MuscleGroup.GLUTES
+            all.any { it.contains("calf") || it.contains("calves") } -> MuscleGroup.CALVES
+            all.any { it.contains("abs") || it.contains("abdom") || it.contains("core") || it.contains("oblique") || it.contains("waist") } -> MuscleGroup.CORE
+            all.any { it.contains("cardio") } -> MuscleGroup.CARDIO
+            // Upper arm bez biceps/triceps → BICEPS jako default
+            all.any { it.contains("upper arm") } -> MuscleGroup.BICEPS
+            // Lower legs bez calf → CALVES default
+            all.any { it.contains("lower leg") } -> MuscleGroup.CALVES
+            // Upper legs bez quad/hamstring/glute → QUADS default
+            all.any { it.contains("upper leg") || it.contains("thigh") } -> MuscleGroup.QUADS
+            // Neck → BACK (trapezius zwykle)
+            all.any { it.contains("neck") } -> MuscleGroup.BACK
+            // Forearms → BICEPS (najbliższe)
+            all.any { it.contains("forearm") } -> MuscleGroup.BICEPS
+            else -> MuscleGroup.OTHER
+        }
+    }
+
+    /**
+     * Mapowanie ExerciseDB equipments → Equipment enum.
+     */
+    private fun inferEquipment(entry: ExerciseDbEntry): Equipment {
+        val all = entry.equipments.map { it.lowercase() }
+        return when {
+            all.any { it.contains("barbell") || it.contains("ez barbell") || it.contains("trap bar") } -> Equipment.BARBELL
+            all.any { it.contains("dumbbell") } -> Equipment.DUMBBELLS
+            all.any { it.contains("cable") || it.contains("rope") } -> Equipment.CABLE
+            all.any { it.contains("machine") || it.contains("smith") || it.contains("leverage") || it.contains("sled") || it.contains("hammer") } -> Equipment.MACHINE
+            all.any { it.contains("body weight") || it.contains("bodyweight") || it.isBlank() } -> Equipment.BODYWEIGHT
+            else -> Equipment.OTHER
+        }
     }
 
     private fun loadEntries(): List<ExerciseDbEntry>? = runCatching {
