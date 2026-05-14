@@ -185,8 +185,104 @@ class ExerciseDbBootstrap @Inject constructor(
             rematchedCount++
         }
 
+        // v1.25.7 — Etap F: alias remap. Po pre-dedup w assets niektóre stare
+        // externalIds nie istnieją już w bazie (zostały zlane w grupę z kanonicznym
+        // ID). aliasMap mówi old_id → canonical_id; jeśli user ma w bazie stary
+        // externalId, podmieniamy go na canonical + przepisujemy wszystkie pola
+        // z nowego entry.
+        val aliasMap = loadAliases()
+        if (aliasMap.isNotEmpty()) {
+            for (ex in dao.getAll()) {
+                val oldId = ex.externalId ?: continue
+                val canonicalId = aliasMap[oldId] ?: continue
+                val newEntry = entriesById[canonicalId] ?: continue
+                val plData = plMap[canonicalId]
+                dao.forceReplaceExerciseDbMatch(
+                    id = ex.id,
+                    externalId = newEntry.exerciseId,
+                    gifUrl = newEntry.gifUrl,
+                    instructionsEnJson = serializeInstructions(newEntry.instructions),
+                    instructionsPlJson = plData?.instructionsPl
+                        ?.takeIf { it.isNotEmpty() }
+                        ?.let { serializeInstructions(it) },
+                    targetMusclesCsv = newEntry.targetMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                    secondaryMusclesCsv = newEntry.secondaryMuscles.joinToString(",").takeIf { it.isNotBlank() },
+                    equipmentDbCsv = newEntry.equipments.joinToString(",").takeIf { it.isNotBlank() },
+                    bodyPartCsv = newEntry.bodyParts.joinToString(",").takeIf { it.isNotBlank() }
+                )
+            }
+        }
+
+        // v1.25.7 — Etap G: runtime deduplikacja w bazie aplikacji. Po wszystkich
+        // poprzednich etapach mogą zostać duplikaty (różne ćwiczenia z tą samą
+        // znormalizowaną nazwą + tym samym primaryMuscle):
+        //  • user-defined "Pompki" + zaimportowane "pompki"
+        //  • dwa importy z różnych v. bootstrap'u
+        //  • re-match wprowadził kolizję z istniejącym ćwiczeniem
+        //
+        // Algorytm:
+        //  1. Grupuj Exercise po (normalize(name), primaryMuscle)
+        //  2. Dla grup >1: wybierz KANONICZNE wg priorytetu
+        //  3. Re-link FK referencji (workout_sets, plan_exercises, goals, training_events)
+        //  4. Usuń duplikaty Exercise
+        //
+        // Priorytet wyboru kanonicznego (najwyższy → najniższy):
+        //  a. ma externalId i jest w CANONICAL_PL_MATCH (kanoniczna nazwa)
+        //  b. ma externalId (z ExerciseDB — GIF + instrukcje)
+        //  c. isFavorite (user oznaczył)
+        //  d. ma więcej WorkoutSet history (był używany)
+        //  e. najmniejsze id (najstarszy wpis)
+        val allExercises = dao.getAll()
+        val groupedByNorm = allExercises.groupBy {
+            normalize(it.name) to it.primaryMuscle
+        }
+        var dedupedCount = 0
+        for ((_, group) in groupedByNorm) {
+            if (group.size <= 1) continue
+            // Wybór kanonicznego
+            val canonical = group.maxWithOrNull(Comparator { a, b ->
+                // wyższy priorytet = wygrywa
+                fun priority(e: Exercise): Int {
+                    var p = 0
+                    if (e.externalId != null && CANONICAL_PL_MATCH.containsValue(e.externalId)) p += 1000
+                    if (e.externalId != null) p += 100
+                    if (e.isFavorite) p += 10
+                    // mniejsze id = starszy = +1 (lekka preferencja)
+                    return p
+                }
+                val pa = priority(a); val pb = priority(b)
+                if (pa != pb) pa.compareTo(pb)
+                else b.id.compareTo(a.id)  // przy remisie: mniejsze id wygrywa (-> b<a -> b.compareTo(a) odwrotne)
+            }) ?: continue
+
+            for (dup in group) {
+                if (dup.id == canonical.id) continue
+                // Re-link wszystkich FK
+                dao.relinkWorkoutSets(dup.id, canonical.id)
+                dao.relinkPlanExercises(dup.id, canonical.id)
+                dao.relinkGoals(dup.id, canonical.id)
+                dao.relinkTrainingEvents(dup.id, canonical.id)
+                // Zachowaj isFavorite/isAvoided na kanonicznym jeśli był w duplikacie
+                if (dup.isFavorite && !canonical.isFavorite) {
+                    dao.setFavorite(canonical.id, true)
+                }
+                dao.deleteById(dup.id)
+                dedupedCount++
+            }
+        }
+
         return matchedCount to importedCount
     }
+
+    /** v1.25.7: alias map — exerciseId które zostały zlane do kanonicznych w pre-dedup. */
+    private fun loadAliases(): Map<String, String> = runCatching {
+        context.assets.open("exercisedb_v1_aliases.json").use { stream ->
+            val json = Json { ignoreUnknownKeys = true }
+            val root = json.parseToJsonElement(stream.bufferedReader().readText())
+                as kotlinx.serialization.json.JsonObject
+            root.mapValues { (_, v) -> (v as kotlinx.serialization.json.JsonPrimitive).content }
+        }
+    }.getOrDefault(emptyMap())
 
     private fun loadPlEntries(): Map<String, ExerciseDbPlEntry> = runCatching {
         context.assets.open("exercisedb_v1_pl.json").use { stream ->

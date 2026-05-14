@@ -147,4 +147,37 @@ interface ExerciseDao {
         WHERE id = :id
     """)
     suspend fun detachFromExerciseDb(id: Long)
+
+    /** v1.25.7: lookup po externalId (do alias remap'u). */
+    @Query("SELECT * FROM exercises WHERE externalId = :externalId LIMIT 1")
+    suspend fun findByExternalId(externalId: String): Exercise?
+
+    /** v1.25.7: tylko update externalId (do remap'u gdy ID się zmieniło w ExerciseDB). */
+    @Query("UPDATE exercises SET externalId = :newExternalId WHERE id = :id")
+    suspend fun updateExternalId(id: Long, newExternalId: String)
+
+    /**
+     * v1.25.7: re-link FK referencji z duplicate exercise na kanoniczne ID.
+     * Po przepięciu wszystkich FK można bezpiecznie usunąć duplikat.
+     * Cztery tabele odwołują się do exercises.id:
+     *  - workout_sets (FK RESTRICT)
+     *  - plan_exercises (FK RESTRICT)
+     *  - goals.exerciseId (nullable, brak FK constraint)
+     *  - training_events.exerciseId (nullable, brak FK constraint)
+     */
+    @Query("UPDATE workout_sets SET exerciseId = :newId WHERE exerciseId = :oldId")
+    suspend fun relinkWorkoutSets(oldId: Long, newId: Long)
+
+    @Query("UPDATE plan_exercises SET exerciseId = :newId WHERE exerciseId = :oldId")
+    suspend fun relinkPlanExercises(oldId: Long, newId: Long)
+
+    @Query("UPDATE goals SET exerciseId = :newId WHERE exerciseId = :oldId")
+    suspend fun relinkGoals(oldId: Long, newId: Long)
+
+    @Query("UPDATE training_events SET exerciseId = :newId WHERE exerciseId = :oldId")
+    suspend fun relinkTrainingEvents(oldId: Long, newId: Long)
+
+    /** v1.25.7: bezpieczne usuwanie ćwiczenia (po wcześniejszym re-link FK). */
+    @Query("DELETE FROM exercises WHERE id = :id")
+    suspend fun deleteById(id: Long)
 }
