@@ -125,11 +125,12 @@ class PeriodizationPromptHelperTest {
 
     @Test
     fun `phaseLabelPl - wszystkie 5 faz po polsku`() {
+        // v1.24.50: PL terminologia zamiast anglicyzmów (Deload/Peaking/Recovery → PL)
         assertEquals("Akumulacja", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.ACCUMULATION))
         assertEquals("Intensyfikacja", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.INTENSIFICATION))
-        assertEquals("Deload", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.DELOAD))
-        assertEquals("Peaking", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.PEAKING))
-        assertEquals("Recovery", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.RECOVERY))
+        assertEquals("Tydzień lżejszy", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.DELOAD))
+        assertEquals("Szczyt formy", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.PEAKING))
+        assertEquals("Pełna regeneracja", PeriodizationPromptHelper.phaseLabelPl(MesocyclePhase.RECOVERY))
     }
 
     @Test
