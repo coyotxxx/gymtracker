@@ -63,9 +63,16 @@ data class AiTrainerUiState(
         get() = availablePlans.firstOrNull { it.id == targetPlanId }
 }
 
-enum class QuickAction(val labelKey: String, val prompt: String) {
+/**
+ * v1.24.48 fix E2E Bug #5: każda akcja ma displayText (UI — krótkie, user-friendly)
+ * + prompt (do AI — szczegółowe instrukcje techniczne). Wcześniej displayText==prompt,
+ * przez co w czacie pojawiał się techniczny prompt template z literałami kodu jak
+ * `recent_workouts` — nieprofesjonalne.
+ */
+enum class QuickAction(val labelKey: String, val displayText: String, val prompt: String) {
     PROPOSE_PLAN(
         "ai_action_plan",
+        "Zaproponuj mi plan treningowy",
         "Na podstawie moich celów, doświadczenia, dostępnego sprzętu i historii treningów zaproponuj kompletny plan treningowy. " +
             "SPRAWDŹ pole `painArea` i `wellbeing` w `recent_workouts` — jeśli zgłaszałem ból konkretnej partii, UNIKAJ ćwiczeń ją mocno obciążających lub zaproponuj alternatywy. " +
             "Zwróć go jako blok JSON wewnątrz ```json ... ``` z polami: name, description, daysOfWeek, days [{dayOfWeek, exercises [{exerciseName, sets[{reps, weightKg, restSec}]}]}]. " +
@@ -74,37 +81,44 @@ enum class QuickAction(val labelKey: String, val prompt: String) {
     ),
     TODAY(
         "ai_action_today",
+        "Co dziś trenować?",
         "Zaproponuj konkretną sesję treningową na dziś biorąc pod uwagę kiedy ostatnio trenowałem każdą partię, mój cel, mój poziom siły i ewentualne stagnacje. " +
             "SPRAWDŹ wellbeing/painArea w ostatnich `recent_workouts` — jeśli niski wellbeing (1-2) lub świeży ból, zaproponuj LŻEJSZĄ sesję lub pomiń bolące partie. " +
             "Podaj konkretne ćwiczenia, sety, powtórzenia i ciężary."
     ),
     ANALYZE_PROGRESS(
         "ai_action_progress",
+        "Przeanalizuj mój progres",
         "Zrób szczegółową analizę mojego progresu z ostatnich tygodni: które ćwiczenia rosną, które stoją, czy są dysbalanse mięśniowe, jak wygląda moja objętość treningowa, czy progresja jest zdrowa. " +
             "Uwzględnij wellbeing/painArea — częsty ból lub niski wellbeing wpływa na jakość progresu. " +
             "Konkretnie cytuj liczby i daty."
     ),
     DELOAD(
         "ai_action_deload",
+        "Czy potrzebuję deloadu?",
         "Oceń czy potrzebuję deloadu lub zmiany strategii. Patrz na: stagnacje, częstotliwość treningów, poziom RPE, jakość snu jeśli ma w notatkach, łączną objętość, " +
             "ORAZ wellbeing/painArea z `recent_workouts` — powtarzający się ból lub seria niskiego wellbeing to silny sygnał na deload. " +
             "Daj konkretną rekomendację."
     ),
     FULL_STATS(
         "ai_action_stats",
+        "Zrób pełną analizę statystyk",
         "Zrób pełną analizę moich statystyk: PR per ćwiczenie, łączna objętość, treningi w tygodniu/miesiącu, mapa zaangażowania mięśni, poziomy siły względem standardów, streaki, postęp wagi ciała vs cel. " +
             "Zorganizuj w sekcje: Overview, Główne podnoszenia, Zaangażowanie mięśni, Pomiary ciała, Mocne strony, Słabe strony, Następne kroki."
     ),
     WEEKLY_SUMMARY(
         "ai_action_weekly",
+        "Podsumuj mi ostatni tydzień",
         "Zrób podsumowanie ostatniego tygodnia treningowego: ile treningów, jakie partie, łączna objętość, najlepsze sety (PR), porównanie do tygodnia poprzedniego. Wnioski + co zrobić w nadchodzącym tygodniu."
     ),
     GOAL_PROGRESS(
         "ai_action_goal",
+        "Jak idą moje cele?",
         "Zanalizuj mój postęp do aktywnych celów (active_goals). Dla każdego celu: czy idę zgodnie z planem, czy dotrę na czas, co konkretnie zmienić w treningu/diecie/cardio żeby przyspieszyć. Cytuj liczby i daty."
     ),
     PAIN_RECOVERY(
         "ai_action_pain_recovery",
+        "Mam ból — co dalej?",
         "Sprawdź pola painArea/painNotes/wellbeing w moich ostatnich treningach (recent_workouts). " +
             "Jeśli zgłosiłem ból (painArea) lub niskie samopoczucie (wellbeing 1-2) — zaproponuj " +
             "konkretne zmiany w planie / sesji najbliższego dnia: które ćwiczenia pominąć, czym " +
@@ -210,17 +224,23 @@ class AiTrainerViewModel @Inject constructor(
     }
 
     fun runQuickAction(action: QuickAction) {
-        sendInternal(action.prompt)
+        // v1.24.48: displayText to user-friendly forma w UI/DB; prompt (instrukcje
+        // techniczne dla AI) idzie do API jako pełen kontekst. Bez tego user widział
+        // w czacie "SPRAWDŹ wellbeing/painArea w `recent_workouts`" — nieprofesjonalne.
+        sendInternal(prompt = action.prompt, displayText = action.displayText)
     }
 
-    private fun sendInternal(prompt: String) {
+    private fun sendInternal(prompt: String, displayText: String? = null) {
         val cfg = prefs.load()
         if (!cfg.isConnected) {
             _state.value = _state.value.copy(error = "Skonfiguruj klucz API w ustawieniach")
             return
         }
         val isFirstMessage = _state.value.messages.isEmpty()
-        val userMsgUi = ChatMessage(role = AiRole.USER, text = prompt)
+        // UI i DB widzą displayText (krótka forma). API dostaje pełen prompt
+        // (przez `combined` poniżej). Jeśli user pisał ręcznie — displayText==prompt.
+        val uiText = displayText ?: prompt
+        val userMsgUi = ChatMessage(role = AiRole.USER, text = uiText)
         _state.value = _state.value.copy(
             messages = _state.value.messages + userMsgUi,
             isLoading = true,
@@ -237,7 +257,7 @@ class AiTrainerViewModel @Inject constructor(
                 AiChatMessageEntity(
                     conversationId = convId,
                     role = AiRole.USER.name,
-                    text = prompt
+                    text = uiText  // v1.24.48: DB zapisuje user-friendly displayText
                 )
             )
             // przepnij ostatnią user wiadomość na zapisaną wersję z id
