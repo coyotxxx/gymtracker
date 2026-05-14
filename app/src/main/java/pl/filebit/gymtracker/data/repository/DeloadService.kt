@@ -119,7 +119,8 @@ class DeloadService @Inject constructor(
         return detectReturnAfterBreak(
             sessionsLast14d = ctx.sessions14d,
             sessionsLast35d = ctx.sessions35d,
-            daysSinceLastWorkout = ctx.daysSinceLastWorkout
+            daysSinceLastWorkout = ctx.daysSinceLastWorkout,
+            sessionsLast70d = ctx.sessions70d
         )
     }
 
@@ -142,6 +143,7 @@ class DeloadService @Inject constructor(
         val avgRpe14d: Double?,
         val sessions14d: Int,
         val sessions35d: Int,
+        val sessions70d: Int,
         val stagnationCount: Int,
         val daysSinceLastWorkout: Int?,
         val weightGoalType: WeightGoalType?
@@ -151,10 +153,13 @@ class DeloadService @Inject constructor(
         val now = System.currentTimeMillis()
         val ms14d = 14L * 24 * 60 * 60 * 1000
         val ms35d = 35L * 24 * 60 * 60 * 1000
+        val ms70d = 70L * 24 * 60 * 60 * 1000
 
         val finishedWorkouts = workoutDao.observeAllOnce().filter { it.finishedAt != null }
         val sessions14d = finishedWorkouts.count { it.startedAt >= now - ms14d }
         val sessions35d = finishedWorkouts.count { it.startedAt >= now - ms35d }
+        // v1.24.42: 70-dniowe okno wykrywa LONG_BREAK gdy user trenował 36-70 dni temu
+        val sessions70d = finishedWorkouts.count { it.startedAt >= now - ms70d }
         val recent14dWorkouts = finishedWorkouts.filter { it.startedAt >= now - ms14d }
         val rpeValues = recent14dWorkouts.flatMap { w ->
             setDao.getForWorkout(w.id)
@@ -175,6 +180,7 @@ class DeloadService @Inject constructor(
             avgRpe14d = avgRpe14d,
             sessions14d = sessions14d,
             sessions35d = sessions35d,
+            sessions70d = sessions70d,
             stagnationCount = stagnationCount,
             daysSinceLastWorkout = daysSinceLastWorkout,
             weightGoalType = weightGoalType

@@ -117,19 +117,32 @@ enum class DeloadSeverity { LOW, MED, HIGH }
  * Logika ma PRIORYTET wyższy niż deload — pojedynczy workout z RPE 10
  * po przerwie 14 dni to nie "przetrenowanie", tylko szok powrotu.
  *
+ * v1.24.42: dodatkowo wspiera LONG_BREAK gdy ostatni regularny okres treningu
+ * jest WCZEŚNIEJ niż 35 dni (np. user trenował 6× w okresie 36-70 dni temu,
+ * potem przestał). Bez `sessionsLast70d` algorytm gubił takie przypadki —
+ * widział tylko `sessions35d == sessions14d == 0` i nie miał "powrotu".
+ *
  * @param sessionsLast14d liczba treningów w ostatnich 14 dniach
  * @param sessionsLast35d liczba treningów w ostatnich 35 dniach (włącznie z 14d)
  * @param daysSinceLastWorkout ile dni temu był ostatni workout
+ * @param sessionsLast70d liczba treningów w ostatnich 70 dniach. Gdy `null`
+ *   lub 0, algorytm zachowuje się jak przed v1.24.42 (tylko 35-dniowe okno).
  * @return rekomendacja powrotu lub null gdy nie wykryto przerwy
  */
 fun detectReturnAfterBreak(
     sessionsLast14d: Int,
     sessionsLast35d: Int,
-    daysSinceLastWorkout: Int?
+    daysSinceLastWorkout: Int?,
+    sessionsLast70d: Int? = null
 ): ReturnAfterBreakRecommendation? {
-    // Wymagamy historii regularnego treningu (przynajmniej 6 sesji w 35 dni przed przerwą)
+    // Wymagamy historii regularnego treningu (przynajmniej 6 sesji w 35 dni przed przerwą).
+    // v1.24.42: dla LONG_BREAK (przerwa >14 dni) akceptujemy też regularny trening
+    // w okresie 36-70 dni temu (sessionsLast70d >= 6) — bez tego user który zerwał
+    // 30 dni temu i ma <6 sesji w 35d nie dostawał karty POWRÓT PO PRZERWIE.
     val sessionsBeforeRecent = sessionsLast35d - sessionsLast14d
-    if (sessionsBeforeRecent < 6) return null  // user nie był regularny, nie ma "powrotu"
+    val hasRegularHistory35d = sessionsBeforeRecent >= 6
+    val hasRegularHistory70d = (sessionsLast70d ?: 0) >= 6
+    if (!hasRegularHistory35d && !hasRegularHistory70d) return null
 
     // Wymagamy przerwy: aktywnie <2 sesje w 14 dni
     if (sessionsLast14d > 2) return null
