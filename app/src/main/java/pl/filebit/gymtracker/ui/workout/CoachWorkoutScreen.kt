@@ -24,6 +24,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Notes
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -583,6 +584,15 @@ private fun CoachActiveContent(
     val exercise = state.currentExercise ?: return
     val progress = if (state.totalSets > 0) state.completedSets.toFloat() / state.totalSets else 0f
 
+    // v1.25.4: bottom sheet "Jak wykonać" — GIF + technika + mięśnie + sprzęt
+    var showExerciseInfo by remember(exercise.id) { mutableStateOf(false) }
+    if (showExerciseInfo) {
+        pl.filebit.gymtracker.ui.exercises.ExerciseInfoBottomSheet(
+            exercise = exercise,
+            onDismiss = { showExerciseInfo = false }
+        )
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -619,13 +629,32 @@ private fun CoachActiveContent(
 
         Spacer(Modifier.height(8.dp))
 
-        // ──── Nazwa ćwiczenia ────
-        Text(
-            exercise.name,
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold,
-            maxLines = 2
-        )
+        // ──── Nazwa ćwiczenia + ikona "Jak wykonać?" (v1.25.4) ────
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                exercise.name,
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+                maxLines = 2,
+                modifier = Modifier.weight(1f)
+            )
+            // Ikona widoczna tylko gdy ćwiczenie ma GIF lub instrukcje w bazie
+            if (!exercise.gifUrl.isNullOrBlank() ||
+                !exercise.instructionsPlJson.isNullOrBlank() ||
+                !exercise.instructionsEnJson.isNullOrBlank()) {
+                IconButton(onClick = { showExerciseInfo = true }) {
+                    Icon(
+                        Icons.Outlined.Info,
+                        contentDescription = "Jak wykonać",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(28.dp)
+                    )
+                }
+            }
+        }
 
         // ──── Etykieta serii ────
         Text(

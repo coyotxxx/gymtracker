@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -456,6 +457,14 @@ private fun ExerciseGroupCard(
     onRemoveExercise: () -> Unit
 ) {
     var menuExpanded by remember { mutableStateOf(false) }
+    var showExerciseInfo by remember(group.exercise.id) { mutableStateOf(false) }
+
+    if (showExerciseInfo) {
+        pl.filebit.gymtracker.ui.exercises.ExerciseInfoBottomSheet(
+            exercise = group.exercise,
+            onDismiss = { showExerciseInfo = false }
+        )
+    }
 
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -499,6 +508,17 @@ private fun ExerciseGroupCard(
                             style = MaterialTheme.typography.bodySmall,
                             color = pl.filebit.gymtracker.ui.theme.SuccessGreen,
                             fontWeight = FontWeight.Medium
+                        )
+                    }
+                }
+                if (!group.exercise.gifUrl.isNullOrBlank() ||
+                    !group.exercise.instructionsPlJson.isNullOrBlank() ||
+                    !group.exercise.instructionsEnJson.isNullOrBlank()) {
+                    IconButton(onClick = { showExerciseInfo = true }) {
+                        Icon(
+                            Icons.Outlined.Info,
+                            contentDescription = "Jak wykonać",
+                            tint = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
