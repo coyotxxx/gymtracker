@@ -76,16 +76,40 @@ abstract class TestHarness {
     /**
      * Ładuje scenariusz z app/src/test/resources/scenarios/<name>.json
      * przez prawdziwy BackupImporter (seed + import + backfill mesocykli).
+     *
+     * Placeholdery czasu — scenariusz jest "wieczny", daty zawsze relatywne
+     * do uruchomienia testu (detektory liczą "ostatnie 14 dni" od teraz):
+     *   {{NOW}}    → bieżący timestamp
+     *   {{D-7}}    → 7 dni temu
+     *   {{D-3H6}}  → 3 dni i 6 godzin temu
      */
     protected fun loadScenario(name: String): BackupImportResult = runBlocking {
         val stream = javaClass.classLoader!!.getResourceAsStream("scenarios/$name.json")
             ?: error("Brak scenariusza: scenarios/$name.json")
+        val resolved = resolveTimePlaceholders(stream.readBytes().decodeToString())
         val tmp = File.createTempFile("scenario_$name", ".json")
-        tmp.writeBytes(stream.readBytes())
+        tmp.writeText(resolved)
         try {
             backupImporter.importFromFile(tmp)
         } finally {
             tmp.delete()
         }
+    }
+
+    /** Zamienia placeholdery czasu na absolutne timestampy względem teraz. */
+    private fun resolveTimePlaceholders(text: String): String {
+        val now = System.currentTimeMillis()
+        val dayMs = 86_400_000L
+        val hourMs = 3_600_000L
+        var out = text.replace("{{NOW}}", now.toString())
+        // {{D-3H6}} — dni i godziny
+        out = Regex("""\{\{D-(\d+)H(\d+)\}\}""").replace(out) { m ->
+            (now - m.groupValues[1].toLong() * dayMs - m.groupValues[2].toLong() * hourMs).toString()
+        }
+        // {{D-7}} — same dni
+        out = Regex("""\{\{D-(\d+)\}\}""").replace(out) { m ->
+            (now - m.groupValues[1].toLong() * dayMs).toString()
+        }
+        return out
     }
 }

@@ -1,0 +1,366 @@
+{
+  "version": 2,
+  "exportedAt": {{NOW}},
+  "profile": {
+    "goal": "GENERAL_FITNESS",
+    "experience": "BEGINNER",
+    "daysPerWeek": 4,
+    "sessionMinutes": 60,
+    "preferredUnit": "KG",
+    "defaultRestSeconds": 120,
+    "injuriesNotes": "",
+    "weightGoalType": "MAINTAIN"
+  },
+  "exercises": [
+    {
+      "id": 1,
+      "name": "Wyciskanie sztangi leżąc",
+      "primaryMuscle": "CHEST",
+      "equipment": "BARBELL",
+      "isCustom": false,
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "name": "Przysiad ze sztangą (back squat)",
+      "primaryMuscle": "QUADS",
+      "equipment": "BARBELL",
+      "isCustom": false,
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Martwy ciąg klasyczny",
+      "primaryMuscle": "BACK",
+      "equipment": "BARBELL",
+      "isCustom": false,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "Podciąganie nachwytem",
+      "primaryMuscle": "BACK",
+      "equipment": "BODYWEIGHT",
+      "isCustom": false,
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "name": "Wiosłowanie sztangą",
+      "primaryMuscle": "BACK",
+      "equipment": "BARBELL",
+      "isCustom": false,
+      "notes": ""
+    }
+  ],
+  "workouts": [
+    {
+      "id": 1,
+      "startedAt": {{D-2}},
+      "finishedAt": {{D-1H23}},
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "startedAt": {{D-5}},
+      "finishedAt": {{D-4H23}},
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "startedAt": {{D-9}},
+      "finishedAt": {{D-8H23}},
+      "notes": ""
+    }
+  ],
+  "sets": [
+    {
+      "id": 1,
+      "workoutId": 1,
+      "exerciseId": 1,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 2,
+      "workoutId": 1,
+      "exerciseId": 1,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 3,
+      "workoutId": 1,
+      "exerciseId": 1,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 4,
+      "workoutId": 1,
+      "exerciseId": 2,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 5,
+      "workoutId": 1,
+      "exerciseId": 2,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 6,
+      "workoutId": 1,
+      "exerciseId": 2,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 7,
+      "workoutId": 1,
+      "exerciseId": 3,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 8,
+      "workoutId": 1,
+      "exerciseId": 3,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-2}}
+    },
+    {
+      "id": 9,
+      "workoutId": 2,
+      "exerciseId": 1,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 10,
+      "workoutId": 2,
+      "exerciseId": 1,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 11,
+      "workoutId": 2,
+      "exerciseId": 1,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 12,
+      "workoutId": 2,
+      "exerciseId": 2,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 13,
+      "workoutId": 2,
+      "exerciseId": 2,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 14,
+      "workoutId": 2,
+      "exerciseId": 2,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 15,
+      "workoutId": 2,
+      "exerciseId": 3,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 16,
+      "workoutId": 2,
+      "exerciseId": 3,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 6,
+      "createdAt": {{D-5}}
+    },
+    {
+      "id": 17,
+      "workoutId": 3,
+      "exerciseId": 1,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 18,
+      "workoutId": 3,
+      "exerciseId": 1,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 19,
+      "workoutId": 3,
+      "exerciseId": 1,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 8,
+      "weightKg": 80,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 20,
+      "workoutId": 3,
+      "exerciseId": 2,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 21,
+      "workoutId": 3,
+      "exerciseId": 2,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 22,
+      "workoutId": 3,
+      "exerciseId": 2,
+      "setNumber": 3,
+      "orderIndex": 2,
+      "reps": 6,
+      "weightKg": 100,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 23,
+      "workoutId": 3,
+      "exerciseId": 3,
+      "setNumber": 1,
+      "orderIndex": 0,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    },
+    {
+      "id": 24,
+      "workoutId": 3,
+      "exerciseId": 3,
+      "setNumber": 2,
+      "orderIndex": 1,
+      "reps": 5,
+      "weightKg": 140,
+      "isCompleted": true,
+      "rpe": 7,
+      "createdAt": {{D-9}}
+    }
+  ]
+}

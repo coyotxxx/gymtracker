@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "exportedAt": 1747000000000,
+  "exportedAt": {{NOW}},
   "profile": {
     "goal": "HYPERTROPHY",
     "experience": "INTERMEDIATE",
@@ -15,12 +15,12 @@
     {"id": 2, "name": "Przysiad ze sztangą (back squat)", "primaryMuscle": "QUADS", "equipment": "BARBELL", "isCustom": false, "notes": ""}
   ],
   "workouts": [
-    {"id": 1, "startedAt": 1746900000000, "finishedAt": 1746903600000, "notes": ""},
-    {"id": 2, "startedAt": 1746550000000, "finishedAt": 1746553600000, "notes": ""}
+    {"id": 1, "startedAt": {{D-2}}, "finishedAt": {{D-1H23}}, "notes": ""},
+    {"id": 2, "startedAt": {{D-5}}, "finishedAt": {{D-4H23}}, "notes": ""}
   ],
   "sets": [
-    {"id": 1, "workoutId": 1, "exerciseId": 1, "setNumber": 1, "orderIndex": 0, "reps": 8, "weightKg": 80.0, "isCompleted": true, "rpe": 8, "createdAt": 1746900600000},
-    {"id": 2, "workoutId": 1, "exerciseId": 1, "setNumber": 2, "orderIndex": 1, "reps": 8, "weightKg": 80.0, "isCompleted": true, "rpe": 9, "createdAt": 1746901200000},
-    {"id": 3, "workoutId": 2, "exerciseId": 2, "setNumber": 1, "orderIndex": 0, "reps": 5, "weightKg": 100.0, "isCompleted": true, "rpe": 7, "createdAt": 1746550600000}
+    {"id": 1, "workoutId": 1, "exerciseId": 1, "setNumber": 1, "orderIndex": 0, "reps": 8, "weightKg": 80.0, "isCompleted": true, "rpe": 8, "createdAt": {{D-2}}},
+    {"id": 2, "workoutId": 1, "exerciseId": 1, "setNumber": 2, "orderIndex": 1, "reps": 8, "weightKg": 80.0, "isCompleted": true, "rpe": 9, "createdAt": {{D-2}}},
+    {"id": 3, "workoutId": 2, "exerciseId": 2, "setNumber": 1, "orderIndex": 0, "reps": 5, "weightKg": 100.0, "isCompleted": true, "rpe": 7, "createdAt": {{D-5}}}
   ]
 }
