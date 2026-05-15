@@ -79,17 +79,19 @@ fun computeDailyGoal(
             ActivityLevel.VERY_ACTIVE -> 1.725
             ActivityLevel.EXTREME -> 1.9
         }
-        // Plus dodatkowy bonus za treningi (jeśli activity level nie obejmuje)
-        val trainingBonus = profile.daysPerWeek * 30
-        // Cardio: średni dzienny kcal z bieżni/roweru/itp z 7 ostatnich dni
-        tdee = (bmr * activityMult + trainingBonus + avgDailyCardioKcal).toInt()
+        // v1.27.0: mnożnik aktywności (Mifflin-St Jeor) JUŻ obejmuje treningi
+        // siłowe — definicja ActivityLevel: MODERATE = "3-5 treningów",
+        // VERY_ACTIVE = "6-7 treningów". Dawny bonus `dni × 30` był PODWÓJNYM
+        // liczeniem (zawyżał TDEE o ~90-150 kcal → zawyżony cel kaloryczny).
+        // Cardio liczone osobno z realnych danych trackera (opcjonalne).
+        tdee = (bmr * activityMult + avgDailyCardioKcal).toInt()
         tdeeFormula = if (avgDailyCardioKcal > 0)
-            "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 + cardio %d kcal/dzień = %d kcal".format(
-                bmr, activityMult, profile.daysPerWeek, avgDailyCardioKcal, tdee
+            "BMR (Mifflin) %.0f × aktywność %.3f + cardio %d kcal/dzień = %d kcal".format(
+                bmr, activityMult, avgDailyCardioKcal, tdee
             )
         else
-            "BMR (Mifflin) %.0f + aktywność ×%.3f + treningi %d × 30 = %d kcal".format(
-                bmr, activityMult, profile.daysPerWeek, tdee
+            "BMR (Mifflin) %.0f × aktywność %.3f = %d kcal".format(
+                bmr, activityMult, tdee
             )
     } else {
         // Fallback gdy brak UserDietProfile (przed onboardingiem diety)

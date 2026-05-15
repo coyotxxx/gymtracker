@@ -248,6 +248,10 @@ class DietBackupManager @Inject constructor(
     private suspend fun applyAll(backup: DietBackup): ImportSummary {
         var customProductsImported = 0
         var mealsImported = 0
+        // v1.27.0: posiłki pominięte przy imporcie (brak produktu o tej nazwie)
+        // — wcześniej cichy `continue` gubił dane bez ostrzeżenia.
+        var mealsSkipped = 0
+        val skippedMealProducts = mutableSetOf<String>()
         var feedbackImported = 0
         var hydrationImported = 0
         var recoveryImported = 0
@@ -296,7 +300,14 @@ class DietBackupManager @Inject constructor(
         val productsByNameAfter = foodDao.getAll().associateBy { it.name.lowercase() }
         val mealDao = db.mealEntryDao()
         for (dto in backup.mealEntries) {
-            val product = productsByNameAfter[dto.productName.lowercase()] ?: continue
+            val product = productsByNameAfter[dto.productName.lowercase()]
+            if (product == null) {
+                // produkt nie istnieje w bazie po imporcie — NIE pomijaj po cichu,
+                // zlicz i zaraportuj userowi (inaczej posiłki "znikają" bez śladu)
+                mealsSkipped++
+                skippedMealProducts += dto.productName
+                continue
+            }
             mealDao.upsert(MealEntry(
                 dateMs = dto.dateMs,
                 mealType = runCatching { MealType.valueOf(dto.mealType) }.getOrDefault(MealType.LUNCH),
@@ -432,7 +443,9 @@ class DietBackupManager @Inject constructor(
             recoveryImported = recoveryImported,
             adherenceImported = adherenceImported,
             adjustmentsImported = adjustmentsImported,
-            fastingImported = fastingImported
+            fastingImported = fastingImported,
+            mealsSkipped = mealsSkipped,
+            skippedProductNames = skippedMealProducts.toList()
         )
     }
 
@@ -510,7 +523,10 @@ data class ImportSummary(
     // v1.24.4 — wcześniej pomijane (utrata danych)
     val adherenceImported: Int = 0,
     val adjustmentsImported: Int = 0,
-    val fastingImported: Int = 0
+    val fastingImported: Int = 0,
+    // v1.27.0 — posiłki pominięte bo brak produktu o danej nazwie
+    val mealsSkipped: Int = 0,
+    val skippedProductNames: List<String> = emptyList()
 ) {
     fun toUserMessage(): String = buildString {
         append("Zaimportowano: $customProductsImported produktów własnych, $mealsImported posiłków")
@@ -521,5 +537,13 @@ data class ImportSummary(
         if (adjustmentsImported > 0) append(", $adjustmentsImported korekt diety")
         if (fastingImported > 0) append(", $fastingImported okien IF")
         append(".")
+        if (mealsSkipped > 0) {
+            append("\n\n⚠ Pominięto $mealsSkipped posiłków — w bazie brakuje produktów: ")
+            append(skippedProductNames.take(5).joinToString(", "))
+            if (skippedProductNames.size > 5) {
+                append(" i ${skippedProductNames.size - 5} innych")
+            }
+            append(". Dodaj te produkty i zaimportuj backup ponownie, aby odzyskać posiłki.")
+        }
     }
 }

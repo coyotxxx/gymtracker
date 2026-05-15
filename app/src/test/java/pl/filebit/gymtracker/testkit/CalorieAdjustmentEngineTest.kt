@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.testkit
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
@@ -122,5 +123,63 @@ class CalorieAdjustmentEngineTest {
         report("no-goal", d)
         assertEquals(AdjustmentAction.HOLD, d.action)
         assertEquals("no_goal_set", d.reason)
+    }
+
+    // ── v1.27.0 — silnik korekt zna wszystkie 8 celów diety (bug B) ────────
+
+    @Test
+    fun `dietGoal RECOMP - silnik dziala mimo WeightGoalType NONE`() {
+        // user z celem REKOMPOZYCJA w profilu diety, ale bez celu wagowego
+        // treningu — dawniej silnik mówił "brak celu" i nic nie robił.
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = UserProfile(weightGoalType = WeightGoalType.NONE, bodyweightKg = 80.0),
+            currentKcal = 2400,
+            weightTrend = trend(stagnation = true),
+            adherence14d = adherence(), adherence7d = adherence(),
+            recovery = RecoverySnapshot.EMPTY, neat = NeatSnapshot.EMPTY,
+            dietGoal = pl.filebit.gymtracker.data.entity.DietGoalType.RECOMP
+        )
+        report("recomp", d)
+        assertTrue("RECOMP NIE jest traktowane jak 'brak celu'",
+            d.reason != "no_goal_set")
+    }
+
+    @Test
+    fun `dietGoal FAT_LOSS - strategia CUT (recovery override dziala)`() {
+        // FAT_LOSS mapuje się na strategię CUT — zła regeneracja blokuje cięcie
+        val recovery = RecoverySnapshot.EMPTY.copy(
+            sampleDays = 7, avgSleepHours = 5.0, avgStress = 4.5,
+            badSleep = true, highStress = true
+        )
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = UserProfile(weightGoalType = WeightGoalType.NONE, bodyweightKg = 80.0),
+            currentKcal = 2400,
+            weightTrend = trend(stagnation = true),
+            adherence14d = adherence(), adherence7d = adherence(),
+            recovery = recovery,
+            dietGoal = pl.filebit.gymtracker.data.entity.DietGoalType.FAT_LOSS
+        )
+        report("fat-loss-cut", d)
+        assertEquals("FAT_LOSS=strategia CUT → recovery override blokuje cięcie",
+            AdjustmentAction.HOLD, d.action)
+        assertEquals("cut_recovery_poor_sleep_stress", d.reason)
+    }
+
+    @Test
+    fun `dietGoal ma pierwszenstwo nad WeightGoalType`() {
+        // profil ma WeightGoalType.CUT, ale dietGoal=MUSCLE_GAIN — liczy dieta
+        val d = CalorieAdjustmentEngine.analyze(
+            profile = UserProfile(weightGoalType = WeightGoalType.CUT, bodyweightKg = 80.0),
+            currentKcal = 2400,
+            weightTrend = trend(direction = TrendDirection.FLAT, stagnation = true),
+            adherence14d = adherence(), adherence7d = adherence(),
+            recovery = RecoverySnapshot.EMPTY, neat = NeatSnapshot.EMPTY,
+            dietGoal = pl.filebit.gymtracker.data.entity.DietGoalType.MUSCLE_GAIN
+        )
+        report("diet-overrides-weight", d)
+        // MUSCLE_GAIN=BULK; przy stagnacji BULK proponuje zwiększenie kcal,
+        // a NIE cięcie/refeed jak przy CUT
+        assertTrue("strategia z dietGoal (BULK), nie z WeightGoalType (CUT)",
+            d.action != AdjustmentAction.REFEED_DAY)
     }
 }

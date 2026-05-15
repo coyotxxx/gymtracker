@@ -96,7 +96,10 @@ class AutoAdjustmentService @Inject constructor(
             hydrationAdherencePct = hydrationAdherence,
             neat = neat,
             cutDurationDays = cutDurationDays,
-            daysSinceLastRefeed = daysSinceLastRefeed
+            daysSinceLastRefeed = daysSinceLastRefeed,
+            // v1.27.0: cel diety steruje strategią korekt — wszystkie 8 typów
+            // (wcześniej silnik znał tylko 4 cele wagowe, ignorował RECOMP itd.)
+            dietGoal = dietProfile?.goalType
         )
 
         // SafetyGuard cap — v1.24.23: przekazujemy BMR z dietProfile (jeśli dostępne)

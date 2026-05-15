@@ -1,6 +1,7 @@
 package pl.filebit.gymtracker.util
 
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.repository.AdherenceSummary
 import pl.filebit.gymtracker.data.repository.NeatSnapshot
@@ -49,6 +50,26 @@ enum class Confidence { LOW, MEDIUM, HIGH }
  *
  * Każda decyzja MA wyjaśnienie po ludzku — to klucz spec usera.
  */
+/** Kierunek strategii kalorycznej — 8 typów [DietGoalType] mapuje się na 3. */
+enum class CalorieStrategy { CUT, BULK, MAINTAIN }
+
+/**
+ * Mapuje cel diety (8 typów [DietGoalType]) na strategię korekty kalorii.
+ * v1.27.0: wcześniej silnik korekt znał tylko WeightGoalType (4 wartości),
+ * więc RECOMP/STRENGTH/ENDURANCE/HEALTH/EVENT_PREP były ignorowane —
+ * user z celem rekompozycji nie dostawał właściwych korekt.
+ */
+fun DietGoalType.toCalorieStrategy(): CalorieStrategy = when (this) {
+    DietGoalType.FAT_LOSS, DietGoalType.EVENT_PREP -> CalorieStrategy.CUT
+    DietGoalType.MUSCLE_GAIN -> CalorieStrategy.BULK
+    // RECOMP: waga ma STAĆ (mięśnie ↑, tłuszcz ↓) — monitorujemy jak
+    // utrzymanie, żeby silnik nie panikował "stagnacja" widząc stałą wagę
+    // (dla recompu to cel, nie problem). STRENGTH/HEALTH/ENDURANCE też
+    // celują w stabilną wagę.
+    DietGoalType.RECOMP, DietGoalType.MAINTAIN, DietGoalType.STRENGTH,
+    DietGoalType.HEALTH, DietGoalType.ENDURANCE -> CalorieStrategy.MAINTAIN
+}
+
 object CalorieAdjustmentEngine {
 
     fun analyze(
@@ -64,7 +85,10 @@ object CalorieAdjustmentEngine {
          *  ≥56 dni + brak ostatniego refeed → propose diet break (ISSN/Helms). */
         cutDurationDays: Int = 0,
         /** v1.24.23: dni od ostatniego REFEED_DAY/diet break. Domyślnie 999 (brak). */
-        daysSinceLastRefeed: Int = 999
+        daysSinceLastRefeed: Int = 999,
+        /** v1.27.0: cel diety (8 typów). Gdy podany — wyznacza strategię korekt.
+         *  Gdy null — fallback do `profile.weightGoalType` (cel wagowy treningu). */
+        dietGoal: DietGoalType? = null
     ): AdjustmentDecision {
 
         // === Brak danych → poczekaj ===
@@ -81,8 +105,18 @@ object CalorieAdjustmentEngine {
             )
         }
 
+        // v1.27.0: strategia korekt z celu DIETY (8 typów). Brak dietProfile →
+        // fallback do WeightGoalType (cel wagowy z onboardingu treningu).
+        val strategy: CalorieStrategy? = dietGoal?.toCalorieStrategy()
+            ?: when (profile.weightGoalType) {
+                WeightGoalType.CUT -> CalorieStrategy.CUT
+                WeightGoalType.BULK -> CalorieStrategy.BULK
+                WeightGoalType.MAINTAIN -> CalorieStrategy.MAINTAIN
+                WeightGoalType.NONE -> null
+            }
+
         // === Recovery override — przed cięciem kcal sprawdzamy regenerację ===
-        if (recovery.hasEnoughData && profile.weightGoalType == WeightGoalType.CUT) {
+        if (recovery.hasEnoughData && strategy == CalorieStrategy.CUT) {
             // Bardzo zła regeneracja przy cut → zatrzymaj cięcia
             if (recovery.badSleep && recovery.highStress) {
                 return AdjustmentDecision(
@@ -164,16 +198,16 @@ object CalorieAdjustmentEngine {
             adherence14d.workoutsDone * 100 / adherence14d.workoutsPlanned
         } else 100
 
-        return when (profile.weightGoalType) {
-            WeightGoalType.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct, cutDurationDays, daysSinceLastRefeed)
-            WeightGoalType.BULK -> analyzeBulk(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct)
-            WeightGoalType.MAINTAIN -> analyzeMaintain(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence)
-            WeightGoalType.NONE -> AdjustmentDecision(
+        return when (strategy) {
+            CalorieStrategy.CUT -> analyzeCut(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct, cutDurationDays, daysSinceLastRefeed)
+            CalorieStrategy.BULK -> analyzeBulk(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence, workoutsCompletionPct)
+            CalorieStrategy.MAINTAIN -> analyzeMaintain(currentKcal, weightTrend, adherence14d, highAdherence, lowAdherence)
+            null -> AdjustmentDecision(
                 action = AdjustmentAction.HOLD,
                 kcalDeltaProposed = 0,
                 newKcal = currentKcal,
                 reason = "no_goal_set",
-                explanation = "Brak ustalonego celu wagi — silnik nie podejmuje korekt.",
+                explanation = "Brak ustalonego celu — silnik nie podejmuje korekt.",
                 confidence = Confidence.LOW
             )
         }
