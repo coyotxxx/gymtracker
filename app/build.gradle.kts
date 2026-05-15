@@ -72,6 +72,15 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    // v1.27 — system testów: Robolectric potrzebuje dostępu do zasobów i assetów
+    // aplikacji (ExerciseSeeder czyta assets/exercises.json przy imporcie scenariuszy).
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
+    }
 }
 
 // v1.14.1: eksportuj Room schema JSON do app/schemas/ (per version DB).
@@ -153,6 +162,12 @@ dependencies {
 
     // Testing — pure logic unit testy (CI: ./gradlew :app:testDebugUnitTest)
     testImplementation(libs.junit)
+    // v1.27 — system testów: Robolectric uruchamia Room in-memory + Context
+    // w JVM unit teście (CI bez emulatora). Headless E2E harness.
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.room.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     // androidTest — Room migration testing (v1.14.1)
     // Wymaga emulatora / urządzenia — uruchamiane przez ./gradlew :app:connectedDebugAndroidTest
