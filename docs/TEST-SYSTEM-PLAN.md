@@ -56,11 +56,13 @@ smoke test na urządzeniu przed release.
 
 ## FAZA 1 — Pilot: ekran Home (walidacja wzorca)
 
-- [ ] 1.1 `HomeCardsResolver` — wyciągnięcie logiki "co pokazać/ukryć/kolejność" z `HomeScreen.kt` do pure function
-- [ ] 1.2 Home snapshot test: scenariusz → `HomeUiState` → `HomeCardsResolver` → raport
-- [ ] 1.3 Trace: werdykt każdego detektora + uzasadnienie + sekcja pokrycia danych
-- [ ] 1.4 Scenariusze A-E dla Home → wygenerowane raporty
-- [ ] 1.5 **PUNKT KONTROLNY** — Maciej ocenia raport, ewentualna korekta wzorca
+- [x] 1.1 `HomeCardsResolver` — wyciągnięcie logiki "co pokazać/ukryć/kolejność" z `HomeScreen.kt` do pure function
+- [x] 1.2 Snapshot test v1 — syntetyczne stany → resolver → TraceReport (6 stanów)
+- [~] 1.3 **PUNKT KONTROLNY #1** — ocena: pilot v1 wykrywa tylko reguły kart, za mało. Decyzja: dokończyć pełny E2E przed skalowaniem.
+- [ ] 1.4 Pełny E2E — scenariusz danych → prawdziwe detektory liczą stan → resolver
+- [ ] 1.5 Sekcja DANE/pokrycie + werdykty z liczbami + pełne komunikaty kart
+- [ ] 1.6 Aktywny detektor sprzeczności sygnałów + sekcja OCENA (auto-flagi jakości)
+- [ ] 1.7 **PUNKT KONTROLNY #2** — ocena kompletnego raportu, wzorzec do skalowania
 
 ## FAZA 2 — Logika: pełne pokrycie serwisów (warstwa 3)
 
@@ -113,9 +115,16 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 0 UKOŃCZONA → FAZA 1 (pilot Home)
-**Postęp:** 4 / 38 zadań
-**Następne zadanie:** 1.1 HomeCardsResolver
+**Aktualna faza:** FAZA 1 — pilot Home (w toku)
+**Postęp:** 6 / 40 zadań (FAZA 1 rozbita 5→7 po punkcie kontrolnym #1)
+**Następne zadanie:** 1.4 Pełny E2E Home — detektory na scenariuszu
+
+### Punkt kontrolny #1 (2026-05-15)
+Pilot v1 (snapshot na syntetycznych stanach) wykrywa TYLKO błędne reguły
+kompozycji kart (~15% problemów). NIE wykrywa: bugów detektorów,
+niespójności stanu, braków danych, złych komunikatów, "złej filozofii".
+Decyzja: dokończyć pilot Home do pełnego E2E (detektory na realnych
+danych + pokrycie + sprzeczności + oceny) ZANIM skalować na 47 ekranów.
 
 ### Baseline pokrycia (2026-05-15, przed FAZĄ 1)
 Pomiar JaCoCo — punkt wyjścia, mapa białych plam:
@@ -133,6 +142,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 0.2 | TraceReport — framework raportu (section/coverage/verdict/shows/hidden/note + emit do build/reports/traces). Test zielony w CI. | b13a74c |
 | 2026-05-15 | 0.3 | 5 scenariuszy bazowych (fresh/healthy/overtraining_cut/return_after_break/injury) + smoke. Placeholdery czasu {{D-N}} — scenariusz wieczny. Generator gen_test_scenarios.py. ScenarioLoadTest 8/8 zielony w CI. | d1cc9eb |
 | 2026-05-15 | 0.4 | JaCoCo: plugin + task jacocoTestReport + krok CI + artefakt coverage-report. Baseline zmierzony (logika repo 20%, util 33%). **FAZA 0 UKOŃCZONA.** | cb14c03 |
+| 2026-05-15 | 1.1-1.2 | HomeCardsResolver (pure function: stan→karty visible/hidden) + HomeSnapshotTest (6 stanów→TraceReport). Artefakt trace-reports w CI. | bde2b3d, f7e4a8f |
+| 2026-05-15 | 1.3 | Punkt kontrolny #1: pilot v1 za wąski (tylko reguły kart). FAZA 1 rozbita na pełny E2E. | — |
 
 ---
 
