@@ -82,7 +82,11 @@ data class ProfileDto(
     val bodyweightKg: Double? = null,
     val flashOnTimerEnd: Boolean = false,
     val aiOverlayEnabled: Boolean = false,
-    val displayName: String = ""
+    val displayName: String = "",
+    // v1.26.5 — wcześniej gubione przy backup/restore (sprzęt + obszar zainteresowania)
+    val availableEquipmentCsv: String = "",
+    val preferredMuscleGroupsCsv: String = "",
+    val equipmentCategoriesCsv: String = ""
 )
 
 @Serializable
@@ -265,7 +269,10 @@ class BackupViewModel @Inject constructor(
                         bodyweightKg = profile.bodyweightKg,
                         flashOnTimerEnd = profile.flashOnTimerEnd,
                         aiOverlayEnabled = profile.aiOverlayEnabled,
-                        displayName = profile.displayName
+                        displayName = profile.displayName,
+                        availableEquipmentCsv = profile.availableEquipmentCsv,
+                        preferredMuscleGroupsCsv = profile.preferredMuscleGroupsCsv,
+                        equipmentCategoriesCsv = profile.equipmentCategoriesCsv
                     ),
                     exercises = allExercises.map {
                         ExerciseDto(

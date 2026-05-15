@@ -519,11 +519,13 @@ class AiContextBuilder @Inject constructor(
             //   4. Limit 500 (AI nie potrzebuje 1500 do dobrego planu)
             //   5. Format CSV pipe-separated zamiast JSON array (50% mniej tokenów)
             if (targetPlanId != null || includeExerciseLibrary) {
-                val availableEquipment = profile.availableEquipmentCsv
-                    .split(",")
-                    .map { it.trim().uppercase() }
-                    .filter { it.isNotBlank() }
-                    .toSet()
+                // v1.26.5: filtr po praktycznych kategoriach sprzętu (EquipmentCategory)
+                // → surowe ExerciseDB equipment stringi (Exercise.equipmentDbCsv).
+                val allowedDbEquipment = pl.filebit.gymtracker.data.entity.EquipmentCategory
+                    .dbEquipmentsFor(
+                        pl.filebit.gymtracker.data.entity.EquipmentCategory
+                            .parse(profile.equipmentCategoriesCsv)
+                    )
                 // v1.25.3 koszt-aware default: jeśli user oznaczył ≥10 ulubionych,
                 // domyślnie używaj TYLKO ich (drastyczna redukcja kosztów AI).
                 // Inaczej (mało ulubionych albo brak) — pełna biblioteka z filtrem.
@@ -533,10 +535,14 @@ class AiContextBuilder @Inject constructor(
                     .filter { !it.isAvoided }
                     .filter { !useFavoritesOnly || it.isFavorite }
                 val filtered = baseSequence
-                    .filter {
-                        availableEquipment.isEmpty() ||
-                            it.equipment.name in availableEquipment ||
-                            it.equipment.name == "BODYWEIGHT"  // bodyweight zawsze dostępne
+                    .filter { ex ->
+                        if (allowedDbEquipment.isEmpty()) return@filter true
+                        val dbEq = ex.equipmentDbCsv
+                        if (dbEq.isNullOrBlank()) {
+                            true  // user-defined bez ExerciseDB equipment — nie blokuj
+                        } else {
+                            dbEq.split(",").any { it.trim().lowercase() in allowedDbEquipment }
+                        }
                     }
                     .sortedWith(compareByDescending<pl.filebit.gymtracker.data.entity.Exercise> { it.isFavorite }
                         .thenBy { it.name.lowercase() })

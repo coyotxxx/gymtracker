@@ -129,6 +129,26 @@ class OnboardingViewModel @Inject constructor(
     }
     fun setTargetWeight(kg: Double?) = _state.update { it.copy(targetWeightKg = kg) }
     fun setEquipment(csv: String) = _state.update { it.copy(availableEquipmentCsv = csv) }
+
+    /**
+     * v1.26.5 — mapuje ogólny Equipment (5 typów z onboardingu) na praktyczne
+     * EquipmentCategory (11). BARBELL → sztanga + gryf EZ, MACHINE → maszyny +
+     * wyciąg. Pusty wybór zostaje pusty (= siłownia kompletna).
+     */
+    private fun mapEquipmentToCategories(equipmentCsv: String): String {
+        if (equipmentCsv.isBlank()) return ""
+        val map = mapOf(
+            "BARBELL" to listOf("BARBELL", "EZ_BAR"),
+            "DUMBBELLS" to listOf("DUMBBELL", "KETTLEBELL"),
+            "MACHINE" to listOf("MACHINE"),
+            "CABLE" to listOf("CABLE"),
+            "BODYWEIGHT" to listOf("BODYWEIGHT")
+        )
+        return equipmentCsv.split(",")
+            .flatMap { map[it.trim().uppercase()] ?: emptyList() }
+            .distinct()
+            .joinToString(",")
+    }
     fun setActivityLevel(level: ActivityLevel) = _state.update { it.copy(activityLevel = level) }
     fun setWantsDietProfile(v: Boolean) = _state.update { it.copy(wantsDietProfile = v) }
     fun setDietPreference(p: DietPreference) = _state.update { it.copy(dietPreference = p) }
@@ -163,6 +183,11 @@ class OnboardingViewModel @Inject constructor(
                     weightGoalType = s.weightGoalType,
                     targetWeightKg = s.targetWeightKg,
                     availableEquipmentCsv = s.availableEquipmentCsv,
+                    // v1.26.5: mapuj ogólny Equipment (5 typów onboardingu) na
+                    // praktyczne EquipmentCategory (11) — żeby generator planu
+                    // i AI context od razu miały dane. User doszczegóławia
+                    // później w Ustawieniach treningu.
+                    equipmentCategoriesCsv = mapEquipmentToCategories(s.availableEquipmentCsv),
                     onboardingCompleted = true
                 )
             )

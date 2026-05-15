@@ -356,6 +356,13 @@ object AppModule {
         }
     }
 
+    // v1.26.5 — praktyczne kategorie sprzętu (EquipmentCategory)
+    private val MIGRATION_59_60 = object : Migration(59, 60) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `equipmentCategoriesCsv` TEXT NOT NULL DEFAULT ''")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -370,7 +377,8 @@ object AppModule {
                 MIGRATION_55_56,
                 MIGRATION_56_57,
                 MIGRATION_57_58,
-                MIGRATION_58_59
+                MIGRATION_58_59,
+                MIGRATION_59_60
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

@@ -60,5 +60,14 @@ data class UserProfile(
      *  - wizualnego "obszaru zainteresowania" w ustawieniach treningu
      *  - filtrowania kontekstu AI (v1.26.3: ~600 zamiast 1213 ćwiczeń)
      */
-    val preferredMuscleGroupsCsv: String = ""
+    val preferredMuscleGroupsCsv: String = "",
+    /**
+     * v1.26.5 — dostępny sprzęt jako praktyczne kategorie (CSV nazw
+     * EquipmentCategory enum: BARBELL, EZ_BAR, DUMBBELL, KETTLEBELL, MACHINE,
+     * CABLE, BODYWEIGHT, BANDS, BALL, CARDIO, OTHER_GEAR).
+     * Pusty = brak ograniczeń (siłownia kompletna).
+     * AI generator planu filtruje ćwiczenia po `Exercise.equipmentDbCsv`
+     * (28 surowych typów z ExerciseDB) mapowanych przez EquipmentCategory.
+     */
+    val equipmentCategoriesCsv: String = ""
 )

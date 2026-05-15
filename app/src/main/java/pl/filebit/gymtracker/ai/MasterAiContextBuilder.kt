@@ -172,8 +172,10 @@ class MasterAiContextBuilder @Inject constructor(
             usualTrainingHour = dietProfile?.usualTrainingHour,
             dietProfileFilled = dietProfile?.isOnboardingDone == true,
 
-            // Sprzęt
-            availableEquipmentCsv = profile.availableEquipmentCsv,
+            // Sprzęt — v1.26.5: praktyczne kategorie (EquipmentCategory) jako czytelne labele
+            availableEquipmentCsv = pl.filebit.gymtracker.data.entity.EquipmentCategory
+                .parse(profile.equipmentCategoriesCsv)
+                .joinToString(", ") { it.label },
 
             // Ulubione
             favoriteExercises = favoriteExercises,

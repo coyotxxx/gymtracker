@@ -189,8 +189,8 @@ fun TrainingSettingsScreen(
             // Mój sprzęt — używany przez AI generator planu
             item {
                 EquipmentPickerCard(
-                    selectedCsv = draft.availableEquipmentCsv,
-                    onChange = { draft = draft.copy(availableEquipmentCsv = it) }
+                    selectedCsv = draft.equipmentCategoriesCsv,
+                    onChange = { draft = draft.copy(equipmentCategoriesCsv = it) }
                 )
             }
 
@@ -502,20 +502,21 @@ private fun PickerTile(
     label: String,
     isSelected: Boolean,
     modifier: Modifier = Modifier,
-    emoji: String? = null,
+    iconRes: Int? = null,
     onClick: () -> Unit
 ) {
+    val accent = pl.filebit.gymtracker.ui.theme.AccentOrange
     Box(
         modifier = modifier
-            .height(if (emoji != null) 76.dp else 56.dp)
+            .height(if (iconRes != null) 84.dp else 56.dp)
             .background(
-                if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
+                if (isSelected) accent.copy(alpha = 0.18f)
                 else pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
                 RoundedCornerShape(12.dp)
             )
             .border(
                 width = if (isSelected) 2.dp else 1.dp,
-                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                color = if (isSelected) accent
                 else pl.filebit.gymtracker.ui.theme.DarkOutline,
                 shape = RoundedCornerShape(12.dp)
             )
@@ -527,26 +528,33 @@ private fun PickerTile(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            if (emoji != null) {
-                Text(emoji, style = MaterialTheme.typography.titleLarge)
-                Spacer(Modifier.height(2.dp))
+            if (iconRes != null) {
+                androidx.compose.material3.Icon(
+                    painter = androidx.compose.ui.res.painterResource(id = iconRes),
+                    contentDescription = null,
+                    tint = if (isSelected) accent
+                    else pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                    modifier = Modifier.size(30.dp)
+                )
+                Spacer(Modifier.height(4.dp))
             }
             Text(
                 label,
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontWeight = FontWeight.SemiBold, fontSize = 11.sp
                 ),
-                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                color = if (isSelected) accent
                 else pl.filebit.gymtracker.ui.theme.DarkOnSurface,
                 maxLines = 2,
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                lineHeight = 13.sp
             )
         }
         if (isSelected) {
             Text(
                 "✓",
                 style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
-                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                color = accent,
                 modifier = Modifier.align(Alignment.TopEnd)
             )
         }
@@ -627,10 +635,9 @@ private fun EquipmentPickerCard(
     onChange: (String) -> Unit
 ) {
     val selected = remember(selectedCsv) {
-        selectedCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+        pl.filebit.gymtracker.data.entity.EquipmentCategory.parse(selectedCsv)
     }
-    val all = pl.filebit.gymtracker.data.entity.Equipment.values()
-        .filter { it != pl.filebit.gymtracker.data.entity.Equipment.OTHER }
+    val all = pl.filebit.gymtracker.data.entity.EquipmentCategory.entries
 
     androidx.compose.material3.Card(
         modifier = Modifier.fillMaxWidth(),
@@ -651,28 +658,28 @@ private fun EquipmentPickerCard(
             Spacer(Modifier.height(4.dp))
             Text(
                 "Zaznacz co masz dostępne. AI będzie generował plany TYLKO z ćwiczeń " +
-                    "na tym sprzęcie. Pusty wybór = brak ograniczeń (siłownia z pełnym wyposażeniem).",
+                    "na tym sprzęcie. Pusty wybór = brak ograniczeń (siłownia kompletna).",
                 style = MaterialTheme.typography.bodySmall,
                 color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
             Spacer(Modifier.height(12.dp))
-            // v1.26.2 — wizualne kafle, grid 3 kolumny
-            val rows = all.toList().chunked(3)
+            // v1.26.5 — wizualne kafle z ikonami SVG, grid 3 kolumny
+            val rows = all.chunked(3)
             for (row in rows) {
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    row.forEach { eq ->
-                        val isSelected = eq.name in selected
+                    row.forEach { cat ->
+                        val isSelected = cat in selected
                         PickerTile(
-                            emoji = equipmentEmoji(eq),
-                            label = eq.displayName(),
+                            iconRes = cat.iconRes,
+                            label = cat.label,
                             isSelected = isSelected,
                             modifier = Modifier.weight(1f),
                             onClick = {
-                                val newSet = if (isSelected) selected - eq.name else selected + eq.name
-                                onChange(newSet.joinToString(","))
+                                val newSet = if (isSelected) selected - cat else selected + cat
+                                onChange(newSet.joinToString(",") { it.name })
                             }
                         )
                     }
@@ -680,66 +687,45 @@ private fun EquipmentPickerCard(
                 }
             }
             Spacer(Modifier.height(10.dp))
-            // Quick presets
+            // Presety
+            EquipmentPreset("🏟 Siłownia kompletna") { onChange("") }
+            Spacer(Modifier.height(4.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
-                        .clickable {
-                            // Maciej preset (z xlsx)
-                            onChange("BARBELL,DUMBBELLS,BODYWEIGHT,CABLE")
-                        }
-                        .padding(8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        "🏠 Dom (sztanga + sztangielki + drążek)",
-                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
-                    )
+                Box(Modifier.weight(1f)) {
+                    EquipmentPreset("🏠 Dom") {
+                        onChange(pl.filebit.gymtracker.data.entity.EquipmentCategory.HOME
+                            .joinToString(",") { it.name })
+                    }
                 }
-            }
-            Row(modifier = Modifier.padding(top = 4.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
-                        .clickable { onChange("BODYWEIGHT") }
-                        .padding(8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        "💪 Tylko masa ciała",
-                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
-                    )
-                }
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .background(pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f), RoundedCornerShape(6.dp))
-                        .clickable { onChange("") }
-                        .padding(8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        "🏋 Pełna siłownia (wszystko)",
-                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                        color = pl.filebit.gymtracker.ui.theme.SuccessGreen
-                    )
+                Box(Modifier.weight(1f)) {
+                    EquipmentPreset("🤸 Tylko masa ciała") {
+                        onChange(pl.filebit.gymtracker.data.entity.EquipmentCategory.BODYWEIGHT_ONLY
+                            .joinToString(",") { it.name })
+                    }
                 }
             }
         }
     }
 }
 
-/** v1.26.2 — emoji per sprzęt (wizualny picker). */
-private fun equipmentEmoji(e: pl.filebit.gymtracker.data.entity.Equipment): String = when (e) {
-    pl.filebit.gymtracker.data.entity.Equipment.BARBELL -> "🏋️"
-    pl.filebit.gymtracker.data.entity.Equipment.DUMBBELLS -> "💪"
-    pl.filebit.gymtracker.data.entity.Equipment.MACHINE -> "⚙️"
-    pl.filebit.gymtracker.data.entity.Equipment.CABLE -> "🔗"
-    pl.filebit.gymtracker.data.entity.Equipment.BODYWEIGHT -> "🤸"
-    pl.filebit.gymtracker.data.entity.Equipment.OTHER -> "📦"
+@Composable
+private fun EquipmentPreset(label: String, onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                pl.filebit.gymtracker.ui.theme.SuccessGreen.copy(alpha = 0.10f),
+                RoundedCornerShape(6.dp)
+            )
+            .clickable(onClick = onClick)
+            .padding(vertical = 8.dp, horizontal = 8.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.SemiBold),
+            color = pl.filebit.gymtracker.ui.theme.SuccessGreen
+        )
+    }
 }
+

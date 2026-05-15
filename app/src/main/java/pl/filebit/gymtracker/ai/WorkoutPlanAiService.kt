@@ -4,7 +4,6 @@ import android.util.Log
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import pl.filebit.gymtracker.data.entity.Equipment
 import pl.filebit.gymtracker.data.entity.Exercise
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.PlanExercise
@@ -68,7 +67,7 @@ class WorkoutPlanAiService @Inject constructor(
         val cfg = prefs.load()
         val all = exerciseRepo.observeAll().first()
         val profile = profileRepo.get()
-        val available = filterByEquipment(all, profile.availableEquipmentCsv)
+        val available = filterByEquipment(all, profile.equipmentCategoriesCsv)
         val pool = if (favoritesOnly) {
             val favs = available.filter { it.isFavorite }
             if (favs.size < 12) {
@@ -521,13 +520,26 @@ class WorkoutPlanAiService @Inject constructor(
     // === HELPERS (wspólne dla obu ścieżek)
     // =====================================================================
 
-    private fun filterByEquipment(all: List<Exercise>, equipmentCsv: String): List<Exercise> {
-        if (equipmentCsv.isBlank()) return all
-        val allowed = equipmentCsv.split(",").mapNotNull {
-            runCatching { Equipment.valueOf(it.trim()) }.getOrNull()
-        }.toSet()
-        if (allowed.isEmpty()) return all
-        return all.filter { it.equipment in allowed }
+    /**
+     * v1.26.5: filtr po praktycznych kategoriach sprzętu (EquipmentCategory).
+     * Filtruje po surowym `Exercise.equipmentDbCsv` (28 typów z ExerciseDB)
+     * mapowanym przez EquipmentCategory.dbEquipments. Ćwiczenia user-defined
+     * bez `equipmentDbCsv` przepuszczamy (user sam je dodał — nie blokujemy).
+     */
+    private fun filterByEquipment(all: List<Exercise>, categoriesCsv: String): List<Exercise> {
+        if (categoriesCsv.isBlank()) return all
+        val categories = pl.filebit.gymtracker.data.entity.EquipmentCategory.parse(categoriesCsv)
+        if (categories.isEmpty()) return all
+        val allowedDbEq = pl.filebit.gymtracker.data.entity.EquipmentCategory
+            .dbEquipmentsFor(categories)
+        return all.filter { ex ->
+            val dbEq = ex.equipmentDbCsv
+            if (dbEq.isNullOrBlank()) {
+                true  // user-defined bez ExerciseDB equipment — nie blokuj
+            } else {
+                dbEq.split(",").any { it.trim().lowercase() in allowedDbEq }
+            }
+        }
     }
 
     /**

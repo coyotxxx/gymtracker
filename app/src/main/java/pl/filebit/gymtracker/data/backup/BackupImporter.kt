@@ -184,7 +184,10 @@ class BackupImporter @Inject constructor(
                     bodyweightKg = p.bodyweightKg,
                     flashOnTimerEnd = p.flashOnTimerEnd,
                     aiOverlayEnabled = p.aiOverlayEnabled,
-                    displayName = p.displayName
+                    displayName = p.displayName,
+                    availableEquipmentCsv = p.availableEquipmentCsv,
+                    preferredMuscleGroupsCsv = p.preferredMuscleGroupsCsv,
+                    equipmentCategoriesCsv = p.equipmentCategoriesCsv
                 )
             )
         }
