@@ -69,9 +69,9 @@ smoke test na urządzeniu przed release.
 
 41 plików logiki bez testu. Repozytoria-przejściówki (samo delegowanie do DAO) pomijamy.
 
-- [ ] 2.1 Deload/load: `DeloadService`, `LoadIncreaseService`, `AutoAdjustmentService`
+- [x] 2.1 Deload/load: `DeloadService`, `LoadIncreaseService` (AutoAdjustmentService → 2.3, to serwis diety)
 - [ ] 2.2 Cele/osiągnięcia: `GoalAchievementService`, `GoalRepository` (logika)
-- [ ] 2.3 Dieta — analiza: `DietVolatilityAnalyzer`, `AdherenceCalculator`, `CardioKcalEstimator`
+- [ ] 2.3 Dieta — analiza: `DietVolatilityAnalyzer`, `AdherenceCalculator`, `CardioKcalEstimator`, `AutoAdjustmentService`
 - [ ] 2.4 Dieta — generowanie: `MealPrepPlanner`, `ShoppingListGenerator`, `QuickComposeService`, `EmergencyFoodEstimates`
 - [ ] 2.5 Bootstrap: `ExerciseDbBootstrap` (seed match, alias, dedup, dead cleanup)
 - [ ] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
@@ -116,9 +116,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 1 UKOŃCZONA → FAZA 2 (logika)
-**Postęp:** 10 / 41 zadań
-**Następne zadanie:** 2.1 testy Deload/load services
+**Aktualna faza:** FAZA 2 — logika (w toku)
+**Postęp:** 11 / 41 zadań
+**Następne zadanie:** 2.2 testy GoalAchievementService / GoalRepository
 
 ### Punkt kontrolny #1 (2026-05-15)
 Pilot v1 (snapshot na syntetycznych stanach) wykrywa TYLKO błędne reguły
@@ -148,6 +148,7 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 1.4-1.5 | Pełny E2E Home (HomeDetectors 12 obiektów + HomeFullE2ETest 5 scenariuszy). Raporty wykryły 4 ANOMALIE: (B1) świeży user 3 treningi → "DELOAD/stagnacja"; (B2) healthy 24 treningi stała waga → "stagnacja"; (B3) TrainingLoad zawsze INSUFFICIENT/ACWR=0 (karta ACWR nigdy dla normalnego usera); (B4) sprzeczność DeloadSuggestion vs Readiness GOOD. | f9bd8e9 |
 | 2026-05-15 | 1.6 | HomeConsistencyChecker — 5 reguł sprzeczności sygnałów. Raport OCENA flaguje B4 jako [KONFLIKT] automatycznie. Wzorzec raportu kompletny. | bed473c |
 | 2026-05-15 | 1.7 | Punkt kontrolny #2: wzorzec raportu ZAAKCEPTOWANY. **FAZA 1 UKOŃCZONA.** Skalujemy na FAZĘ 2. | 8a1c60e |
+| 2026-05-15 | 2.1 | DeloadServiceTest (5 scenariuszy, werdykty deload/injury/return zielone) + LoadIncreaseServiceTest (cykl apply/restore, restore=dokładnie oryginalne wagi). | a8246bb, 7c53116 |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
