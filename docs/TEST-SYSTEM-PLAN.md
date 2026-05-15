@@ -70,8 +70,8 @@ smoke test na urządzeniu przed release.
 41 plików logiki bez testu. Repozytoria-przejściówki (samo delegowanie do DAO) pomijamy.
 
 - [x] 2.1 Deload/load: `DeloadService`, `LoadIncreaseService` (AutoAdjustmentService → 2.3, to serwis diety)
-- [ ] 2.2 Cele/osiągnięcia: `GoalAchievementService`, `GoalRepository` (logika)
-- [ ] 2.3 Dieta — analiza: `DietVolatilityAnalyzer`, `AdherenceCalculator`, `CardioKcalEstimator`, `AutoAdjustmentService`
+- [x] 2.2 Cele/osiągnięcia: `GoalAchievementService` (4 przypadki graniczne)
+- [~] 2.3 Dieta — analiza: `DietVolatilityAnalyzer` ✓, `CardioKcalEstimator`, `AdherenceCalculator`, `AutoAdjustmentService`
 - [ ] 2.4 Dieta — generowanie: `MealPrepPlanner`, `ShoppingListGenerator`, `QuickComposeService`, `EmergencyFoodEstimates`
 - [ ] 2.5 Bootstrap: `ExerciseDbBootstrap` (seed match, alias, dedup, dead cleanup)
 - [ ] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
@@ -117,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 2 — logika (w toku)
-**Postęp:** 11 / 41 zadań
-**Następne zadanie:** 2.2 testy GoalAchievementService / GoalRepository
+**Postęp:** 12 / 41 zadań
+**Następne zadanie:** 2.3 dieta — CardioKcalEstimator, AdherenceCalculator
 
 ### Punkt kontrolny #1 (2026-05-15)
 Pilot v1 (snapshot na syntetycznych stanach) wykrywa TYLKO błędne reguły
@@ -149,6 +149,7 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 1.6 | HomeConsistencyChecker — 5 reguł sprzeczności sygnałów. Raport OCENA flaguje B4 jako [KONFLIKT] automatycznie. Wzorzec raportu kompletny. | bed473c |
 | 2026-05-15 | 1.7 | Punkt kontrolny #2: wzorzec raportu ZAAKCEPTOWANY. **FAZA 1 UKOŃCZONA.** Skalujemy na FAZĘ 2. | 8a1c60e |
 | 2026-05-15 | 2.1 | DeloadServiceTest (5 scenariuszy, werdykty deload/injury/return zielone) + LoadIncreaseServiceTest (cykl apply/restore, restore=dokładnie oryginalne wagi). | a8246bb, 7c53116 |
+| 2026-05-15 | 2.2 | GoalAchievementServiceTest — 4 przypadki graniczne karty CEL OSIĄGNIĘTY (reguła ISSN 7 dni stabilności). | 127836e |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
