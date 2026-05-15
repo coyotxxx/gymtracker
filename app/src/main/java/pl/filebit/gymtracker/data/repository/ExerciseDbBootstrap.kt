@@ -157,15 +157,22 @@ class ExerciseDbBootstrap @Inject constructor(
             backfilledPl++
         }
 
-        // v1.25.6: Re-match po kanonicznym katalogu (CANONICAL_PL_MATCH). Jeśli
-        // ćwiczenie ma externalId które różni się od katalogu (typowo: w v1.25.0 fuzzy
-        // przypisało "push-up" do "Pompki na poręczach (dipy)" zamiast "chest dip"),
-        // zamień na poprawne ID + przepisz wszystkie pola z ExerciseDB.
+        // v1.25.6 + v1.26.7: Re-match po katalogu. Dwa źródła mapowań PL→exerciseId:
+        //  1. CANONICAL_PL_MATCH — ~65 wpisów ręcznie zweryfikowanych
+        //  2. exercisedb_v1_seed_match.json — 193 domyślne ćwiczenia (seed aplikacji),
+        //     zmapowane przez AI + walidator słów kluczowych. Dzięki temu KAŻDE
+        //     seed ćwiczenie dostaje GIF + instrukcje (wcześniej fuzzy match
+        //     gubił ~120 z nich → user widział "Bieżnia", "Plank", "Hip thrust"
+        //     bez GIFu w trakcie treningu).
+        //
+        // CANONICAL ma priorytet (ręcznie zweryfikowane). Etap działa też dla
+        // ćwiczeń BEZ externalId (seed bez GIFu) — przypisuje brakujące dane.
         val entriesById = entries.associateBy { it.exerciseId }
+        val seedMatch = loadSeedMatch()
         var rematchedCount = 0
         for (ex in dao.getAll()) {
-            if (ex.externalId == null) continue
-            val canonicalId = CANONICAL_PL_MATCH[normalize(ex.name)] ?: continue
+            val key = normalize(ex.name)
+            val canonicalId = CANONICAL_PL_MATCH[key] ?: seedMatch[key] ?: continue
             if (canonicalId == ex.externalId) continue  // już dobrze
             val newEntry = entriesById[canonicalId] ?: continue
             val plData = plMap[canonicalId]
@@ -302,6 +309,20 @@ class ExerciseDbBootstrap @Inject constructor(
     /** v1.25.7: alias map — exerciseId które zostały zlane do kanonicznych w pre-dedup. */
     private fun loadAliases(): Map<String, String> = runCatching {
         context.assets.open("exercisedb_v1_aliases.json").use { stream ->
+            val json = Json { ignoreUnknownKeys = true }
+            val root = json.parseToJsonElement(stream.bufferedReader().readText())
+                as kotlinx.serialization.json.JsonObject
+            root.mapValues { (_, v) -> (v as kotlinx.serialization.json.JsonPrimitive).content }
+        }
+    }.getOrDefault(emptyMap())
+
+    /**
+     * v1.26.7: seed match — 193 domyślne ćwiczenia aplikacji (assets/exercises.json)
+     * zmapowane na exerciseId z ExerciseDB. Klucz = znormalizowana nazwa PL.
+     * Wygenerowane offline (AI mapping GPT-4o + walidator słów kluczowych).
+     */
+    private fun loadSeedMatch(): Map<String, String> = runCatching {
+        context.assets.open("exercisedb_v1_seed_match.json").use { stream ->
             val json = Json { ignoreUnknownKeys = true }
             val root = json.parseToJsonElement(stream.bufferedReader().readText())
                 as kotlinx.serialization.json.JsonObject
