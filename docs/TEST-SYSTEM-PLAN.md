@@ -49,10 +49,10 @@ smoke test na urządzeniu przed release.
 
 ## FAZA 0 — Fundament / infrastruktura
 
-- [ ] 0.1 Test harness: in-memory Room + `BackupImporter` loader + helper scenariuszy
-- [ ] 0.2 Trace Reporter — framework formatujący raport (dane + pokrycie + kroki + werdykty + wynik)
-- [ ] 0.3 Scenariusze bazowe jako pliki JSON w test resources (A-E + edge z sesji)
-- [ ] 0.4 Coverage report (JaCoCo) w CI + pierwszy pomiar białych plam
+- [x] 0.1 Test harness: in-memory Room + `BackupImporter` loader + helper scenariuszy
+- [x] 0.2 Trace Reporter — framework formatujący raport (dane + pokrycie + kroki + werdykty + wynik)
+- [x] 0.3 Scenariusze bazowe jako pliki JSON w test resources (A-E + edge z sesji)
+- [x] 0.4 Coverage report (JaCoCo) w CI + pierwszy pomiar białych plam
 
 ## FAZA 1 — Pilot: ekran Home (walidacja wzorca)
 
@@ -113,14 +113,26 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 0 — nierozpoczęta
-**Postęp:** 0 / 38 zadań
+**Aktualna faza:** FAZA 0 UKOŃCZONA → FAZA 1 (pilot Home)
+**Postęp:** 4 / 38 zadań
+**Następne zadanie:** 1.1 HomeCardsResolver
+
+### Baseline pokrycia (2026-05-15, przed FAZĄ 1)
+Pomiar JaCoCo — punkt wyjścia, mapa białych plam:
+- **Total: 4%** (z UI Compose — zawyżone "missed", UI to FAZA 3-5)
+- Logika: `data.repository` 20%, `util` 33%, `ai` 7%, `data.entity` 32%
+- `ui.*` — prawie wszystko 0% (brak testów UI — spodziewane)
+Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 
 ## Dziennik realizacji
 
 | Data | Zadanie | Co zrobiono | Wersja/commit |
 |------|---------|-------------|---------------|
-| 2026-05-15 | — | Plan utworzony i zatwierdzony | — |
+| 2026-05-15 | — | Plan utworzony i zatwierdzony | d7f4a0c |
+| 2026-05-15 | 0.1 | Harness: Robolectric + in-memory Room + loadScenario przez BackupImporter. Fix: AiPreferences lazy crypto (KeyStore niedostępny w JVM). Sanity test zielony w CI. | 171b63f |
+| 2026-05-15 | 0.2 | TraceReport — framework raportu (section/coverage/verdict/shows/hidden/note + emit do build/reports/traces). Test zielony w CI. | b13a74c |
+| 2026-05-15 | 0.3 | 5 scenariuszy bazowych (fresh/healthy/overtraining_cut/return_after_break/injury) + smoke. Placeholdery czasu {{D-N}} — scenariusz wieczny. Generator gen_test_scenarios.py. ScenarioLoadTest 8/8 zielony w CI. | d1cc9eb |
+| 2026-05-15 | 0.4 | JaCoCo: plugin + task jacocoTestReport + krok CI + artefakt coverage-report. Baseline zmierzony (logika repo 20%, util 33%). **FAZA 0 UKOŃCZONA.** | cb14c03 |
 
 ---
 
