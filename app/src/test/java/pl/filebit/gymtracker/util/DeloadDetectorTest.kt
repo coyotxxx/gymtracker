@@ -59,6 +59,28 @@ class DeloadDetectorTest {
         assertNull(r)
     }
 
+    /**
+     * B1 — świeży user (3 treningi) NIE dostaje deloadu za "stagnację".
+     * 3 ćwiczenia × 3 treningi z tą samą wagą to normalne wdrażanie,
+     * nie stagnacja po progresji. Guard: sessionsLast35d >= 9.
+     */
+    @Test
+    fun `B1 - fresh user 3 sessions with stagnations does NOT trigger deload`() {
+        val r = detectDeloadNeed(
+            avgRpe14d = 6.5, sessionsLast14d = 3, sessionsLast35d = 3, stagnationCount = 3)
+        assertNull("świeży user (3 sesje) nie dostaje deloadu za stagnację", r)
+    }
+
+    @Test
+    fun `B1 - stagnations DO trigger deload gdy user ma realna historie`() {
+        // 9 sesji w 35 dni = ~3 tygodnie regularnego treningu — stagnacja
+        // teraz znaczy realne utknięcie po progresji.
+        val r = detectDeloadNeed(
+            avgRpe14d = 7.0, sessionsLast14d = 4, sessionsLast35d = 9, stagnationCount = 3)
+        assertNotNull("user z historią 9 sesji → stagnacja uzasadnia deload", r)
+        assertEquals(DeloadSeverity.MED, r!!.severity)
+    }
+
     @Test
     fun `boundary RPE 8_5 with 15 sessions triggers HIGH`() {
         val r = detectDeloadNeed(avgRpe14d = 8.5, sessionsLast14d = 6, sessionsLast35d = 15)

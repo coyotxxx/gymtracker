@@ -1,5 +1,6 @@
 package pl.filebit.gymtracker.testkit
 
+import pl.filebit.gymtracker.ai.DataMaturity
 import pl.filebit.gymtracker.ai.LoadZone
 import pl.filebit.gymtracker.ai.ReadinessZone
 import pl.filebit.gymtracker.ai.TrainingPhase
@@ -35,9 +36,13 @@ object HomeConsistencyChecker {
         val loadZone = state.trainingLoad?.zone
         val readinessZone = state.trainingReadiness?.zone
 
-        // 1. Deload zalecany, ale gotowość wysoka — sprzeczne sygnały
+        // 1. Deload zalecany, ale gotowość wysoka — sprzeczne sygnały.
+        // B4: liczy się TYLKO gdy readiness jest DOJRZAŁY (MATURE). Przy
+        // maturity=LEARNING readiness to wartość domyślna (brak danych
+        // recovery), resolver i tak ukrywa kartę — user nie widzi sprzeczności.
         if (deload is DeloadCardState.Suggestion &&
-            readinessZone in setOf(ReadinessZone.PEAK, ReadinessZone.GOOD)) {
+            readinessZone in setOf(ReadinessZone.PEAK, ReadinessZone.GOOD) &&
+            state.trainingReadiness?.maturity == DataMaturity.MATURE) {
             issues += Inconsistency(
                 Inconsistency.Severity.KONFLIKT,
                 "DeloadService zaleca deload (przeciążenie), ale TrainingReadiness " +
@@ -72,9 +77,12 @@ object HomeConsistencyChecker {
             )
         }
 
-        // 5. Recovery wysoki, ale deload zalecany
+        // 5. Recovery wysoki, ale deload zalecany.
+        // B4: tylko gdy RecoveryScore DOJRZAŁY — przy LEARNING score=75 to
+        // wartość domyślna (0 dni danych HRV/sen), nie realny pomiar.
         val recovery = state.recoveryScore
-        if (deload is DeloadCardState.Suggestion && recovery != null && recovery.score >= 75) {
+        if (deload is DeloadCardState.Suggestion && recovery != null &&
+            recovery.score >= 75 && recovery.maturity == DataMaturity.MATURE) {
             issues += Inconsistency(
                 Inconsistency.Severity.OSTRZEZENIE,
                 "DeloadService zaleca deload, ale RecoveryScore = ${recovery.score} " +

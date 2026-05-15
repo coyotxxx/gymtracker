@@ -63,7 +63,7 @@ smoke test na urządzeniu przed release.
 - [x] 1.5 Sekcja DANE/pokrycie + werdykty z liczbami — zrobione w 1.4
 - [x] 1.6 Aktywny detektor sprzeczności sygnałów (HomeConsistencyChecker, 5 reguł) + sekcja OCENA
 - [x] 1.7 **PUNKT KONTROLNY #2** — wzorzec ZAAKCEPTOWANY przez Macieja, skalujemy
-- [ ] 1.8 Bugi wykryte przez E2E (B1-B4) — osobne zadania po FAZIE 2
+- [x] 1.8 Bugi wykryte przez E2E (B1-B4) — przeanalizowane: B1 i B4 naprawione (kod), B2/B3 to artefakty scenariuszy testowych (detektory poprawne). Patrz tabela niżej.
 
 ## FAZA 2 — Logika: pełne pokrycie serwisów (warstwa 3)
 
@@ -126,9 +126,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** WSZYSTKIE FAZY (0-6) ZAKOŃCZONE. Pozostaje zadanie 1.8 — naprawa bugów B1-B4 wykrytych przez E2E.
-**Postęp:** SYSTEM TESTÓW UKOŃCZONY — 569 testów, 71 snapshotów ekranów
-**Następne zadanie:** zadanie 1.8 — naprawa 4 bugów (B1-B4) wykrytych przez E2E Home
+**Aktualna faza:** PLAN UKOŃCZONY — wszystkie fazy (0-6) + zadanie 1.8 zamknięte.
+**Postęp:** PLAN UKOŃCZONY — 571 testów, 71 snapshotów ekranów, B1-B4 rozpatrzone
+**Następne zadanie:** brak — system testów kompletny. Bugi B1/B4 naprawione → release.
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -186,16 +186,17 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 4.2-4.3 | BackupRoundTripTest — eksport ZIP → clear → import bezstratny (30 treningów/240 serii/12 pomiarów). 4.3 ExerciseDB bootstrap pokryty w 2.5. **FAZA 4 zakończona.** | 7939eab |
 | 2026-05-15 | 5.1 | TrainingFlowTest — flow treningu (start→loguj 6 serii→zakończ→historia) + flow planowane serie z planu→confirm. | 59c8594 |
 | 2026-05-15 | 5.2-5.5 | DietFlowTest (posiłki→adherence 13/36/48%) + InteractionFlowTest (plan AI extract/validate/apply/start, dismiss kart, ulubione, toggle logów). **FAZA 5 zakończona.** | ed71e3f |
-| 2026-05-15 | 6.1-6.3 | CI: krok testów obejmuje pełny suite, krok „Pre-release summary" (GitHub Actions panel: 569 testów, 71 snapshotów). Coverage gate odrzucony świadomie. **SYSTEM TESTÓW UKOŃCZONY.** | (ten commit) |
+| 2026-05-15 | 6.1-6.3 | CI: krok testów obejmuje pełny suite, krok „Pre-release summary" (GitHub Actions panel: 569 testów, 71 snapshotów). Coverage gate odrzucony świadomie. **SYSTEM TESTÓW UKOŃCZONY.** | 5fca49e |
+| 2026-05-15 | 1.8 | Bugi B1-B4: B1 naprawiony (guard stagnacji `sessionsLast35d>=9`), B4 naprawiony (checker flaguje tylko sygnały MATURE). B2/B3 = artefakty scenariuszy (detektory poprawne). +2 testy regresji. **PLAN UKOŃCZONY.** | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
 | # | Opis | Scenariusz | Status |
 |---|------|-----------|--------|
-| B1 | Świeży user (3 treningi, RPE 6-7) dostaje "DELOAD ZALECANY — stagnacja na 3 ćwiczeniach". 3 treningi to za mało na werdykt stagnacji. | fresh | do analizy |
-| B2 | healthy (24 treningi, stała waga) → "stagnacja". Częściowo artefakt scenariusza (generator nie progresuje wag), do weryfikacji czy detektor też za czuły. | healthy | do analizy |
-| B3 | TrainingLoadAnalyzer zawsze INSUFFICIENT (ACWR=0.00) — nawet przy 30 treningach. Karta ACWR nigdy nie pokaże się userowi trenującemu 3×/tydz. Próg "daysOfData" za wysoki? | wszystkie | do analizy |
-| B4 | Sprzeczność: DeloadService→Suggestion (przeciążenie) ale TrainingReadiness→GOOD(80). Dwa systemy, sprzeczne werdykty. | overtraining_cut, healthy | do analizy |
+| B1 | Świeży user (3 treningi, RPE 6-7) dostaje "DELOAD ZALECANY — stagnacja na 3 ćwiczeniach". 3 treningi to za mało na werdykt stagnacji. | fresh | ✅ NAPRAWIONY — `detectDeloadNeed` Reguła 3 dostała guard `sessionsLast35d >= 9` (≈3 tyg historii). E2E potwierdza: fresh → `DeloadService=None`. |
+| B2 | healthy (24 treningi, stała waga) → "stagnacja". | healthy | ARTEFAKT SCENARIUSZA — generator scenariuszy daje 24 identyczne treningi (zero progresji wag). 24 treningi z tą samą wagą TO realna stagnacja — detektor poprawny. Fix należy do generatora scenariuszy, nie kodu aplikacji. |
+| B3 | TrainingLoadAnalyzer zawsze INSUFFICIENT (ACWR=0.00). | wszystkie | ARTEFAKT SCENARIUSZA — generator rozkłada treningi rzadko (~4/14d). `TrainingLoadAnalyzer` świadomie wymaga ≥6 treningów/14d (ACWR bez tego nie ma sensu — Gabbett). Analyzer poprawny; scenariusze potrzebują gęstszego rozkładu. |
+| B4 | Sprzeczność: DeloadService→Suggestion ale TrainingReadiness→GOOD(80). | healthy, overtraining_cut | ✅ NAPRAWIONY — `HomeConsistencyChecker` reguły 1/5 flagują sprzeczność tylko gdy sygnał DOJRZAŁY (`maturity=MATURE`). Przy LEARNING readiness/recovery to wartości domyślne (brak danych), resolver i tak ukrywa karty — user nie widzi sprzeczności. E2E: „Sprzeczności sygnałów: brak". |
 
 ---
 

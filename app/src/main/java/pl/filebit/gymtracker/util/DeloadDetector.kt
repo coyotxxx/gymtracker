@@ -75,8 +75,12 @@ fun detectDeloadNeed(
             )
         }
     }
-    // Reguła 3: MED — wiele stagnacji jednocześnie
-    if (stagnationCount >= 3) {
+    // Reguła 3: MED — wiele stagnacji jednocześnie.
+    // Guard sessionsLast35d >= 9 (B1): stagnacja → deload TYLKO gdy user ma
+    // realną historię (≈3 tyg regularnego treningu). Świeży user z 3 treningami
+    // ma 3 ćwiczenia "stagnujące" (3× ta sama waga to normalne wdrażanie, nie
+    // utknięcie po progresji) — bez guarda dostawał fałszywy "DELOAD ZALECANY".
+    if (stagnationCount >= 3 && sessionsLast35d >= 9) {
         return DeloadRecommendation(
             severity = DeloadSeverity.MED,
             reason = "Stagnacja na $stagnationCount ćwiczeniach jednocześnie. " +
