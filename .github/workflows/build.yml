@@ -55,6 +55,16 @@ jobs:
       - name: Run unit tests (pure logic)
         run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
 
+      # v1.27 — raporty Trace Reporter (snapshoty ekranów: co user widzi i dlaczego)
+      - name: Upload trace reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trace-reports
+          path: app/build/reports/traces/
+          if-no-files-found: warn
+          retention-days: 14
+
       # v1.27 FAZA 0.4 — raport pokrycia testami (nie blokuje buildu APK)
       - name: Coverage report (JaCoCo)
         run: ./gradlew :app:jacocoTestReport --no-daemon --stacktrace
