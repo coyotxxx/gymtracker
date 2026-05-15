@@ -36,7 +36,7 @@ object AppModule {
      * Migracja 49→50 (v1.2.0): dodaje Exercise.isAvoided. Bez kasowania danych —
      * od tego release'u trzymamy zachowanie historyczne (treningi, logi AI, ćwiczenia).
      */
-    private val MIGRATION_49_50 = object : Migration(49, 50) {
+    internal val MIGRATION_49_50 = object : Migration(49, 50) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE exercises ADD COLUMN isAvoided INTEGER NOT NULL DEFAULT 0")
         }
@@ -47,7 +47,7 @@ object AppModule {
      * (tętno spoczynkowe, SpO2, HRV, VO2Max, kroki, kalorie aktywne).
      * Wszystkie kolumny nullable — brak kasowania danych.
      */
-    private val MIGRATION_50_51 = object : Migration(50, 51) {
+    internal val MIGRATION_50_51 = object : Migration(50, 51) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE recovery_logs ADD COLUMN restingHeartRateBpm INTEGER DEFAULT NULL")
             db.execSQL("ALTER TABLE recovery_logs ADD COLUMN spO2Pct INTEGER DEFAULT NULL")
@@ -66,7 +66,7 @@ object AppModule {
      *
      * Bez tej migracji: użytkownicy z bazą v51 dostawali silent wipe przez fallbackToDestructiveMigration.
      */
-    private val MIGRATION_51_52 = object : Migration(51, 52) {
+    internal val MIGRATION_51_52 = object : Migration(51, 52) {
         override fun migrate(db: SupportSQLiteDatabase) {
             // training_events — entity TrainingEvent (v1.11.59)
             db.execSQL(
@@ -125,7 +125,7 @@ object AppModule {
      *  - weekly_rollups, monthly_rollups, quarterly_rollups (period rollups dla AI context)
      *  - meal_consumptions (status posiłku per slot per dzień: PLANNED/CONSUMED/SKIPPED)
      */
-    private val MIGRATION_52_53 = object : Migration(52, 53) {
+    internal val MIGRATION_52_53 = object : Migration(52, 53) {
         override fun migrate(db: SupportSQLiteDatabase) {
             // weekly_rollups
             db.execSQL(
@@ -216,7 +216,7 @@ object AppModule {
      *
      * Wszystkie nowe kolumny ALTER są nullable — bezpieczne dla istniejących wierszy.
      */
-    private val MIGRATION_53_54 = object : Migration(53, 54) {
+    internal val MIGRATION_53_54 = object : Migration(53, 54) {
         override fun migrate(db: SupportSQLiteDatabase) {
             // training_mesocycles — fundament periodyzacji
             db.execSQL(
@@ -266,7 +266,7 @@ object AppModule {
      * Lekcja z v1.13.0: nowe pola wymagają entity match. Tu pole NIE jest dodawane do
      * istniejących tabel — tylko nowa tabela, więc nie ma ryzyka schema mismatch.
      */
-    private val MIGRATION_54_55 = object : Migration(54, 55) {
+    internal val MIGRATION_54_55 = object : Migration(54, 55) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL(
                 """
@@ -294,7 +294,7 @@ object AppModule {
      * Wszystkie indices dodawane przez `CREATE INDEX IF NOT EXISTS` — idempotentne, bezpieczne
      * dla danych usera (żadne ALTER TABLE / DROP / data manipulation).
      */
-    private val MIGRATION_55_56 = object : Migration(55, 56) {
+    internal val MIGRATION_55_56 = object : Migration(55, 56) {
         override fun migrate(db: SupportSQLiteDatabase) {
             // Exercise — search po nazwie (Library), filter po muscle, ulubione w AI generatorze
             db.execSQL("CREATE INDEX IF NOT EXISTS `index_exercises_name` ON `exercises` (`name`)")
@@ -314,7 +314,7 @@ object AppModule {
      * staje się aktywnym — żeby user który ma już plany nie obudził się z brakiem
      * "aktywnego" po update.
      */
-    private val MIGRATION_56_57 = object : Migration(56, 57) {
+    internal val MIGRATION_56_57 = object : Migration(56, 57) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE `training_plans` ADD COLUMN `isActive` INTEGER NOT NULL DEFAULT 0")
             // Backfill: oznacz najnowszy plan jako aktywny (jeśli istnieje)
@@ -335,7 +335,7 @@ object AppModule {
      * istniejące ćwiczenia z bazą EN — nadpisując externalId/gifUrl/instructions.
      * Istniejące dane usera (name, primaryMuscle, equipment, isFavorite, isAvoided) zostają.
      */
-    private val MIGRATION_57_58 = object : Migration(57, 58) {
+    internal val MIGRATION_57_58 = object : Migration(57, 58) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE `exercises` ADD COLUMN `externalId` TEXT")
             db.execSQL("ALTER TABLE `exercises` ADD COLUMN `gifUrl` TEXT")
@@ -350,14 +350,14 @@ object AppModule {
     }
 
     // v1.26.2 — preferowane grupy mięśniowe ("obszar zainteresowania")
-    private val MIGRATION_58_59 = object : Migration(58, 59) {
+    internal val MIGRATION_58_59 = object : Migration(58, 59) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `preferredMuscleGroupsCsv` TEXT NOT NULL DEFAULT ''")
         }
     }
 
     // v1.26.5 — praktyczne kategorie sprzętu (EquipmentCategory)
-    private val MIGRATION_59_60 = object : Migration(59, 60) {
+    internal val MIGRATION_59_60 = object : Migration(59, 60) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `equipmentCategoriesCsv` TEXT NOT NULL DEFAULT ''")
         }

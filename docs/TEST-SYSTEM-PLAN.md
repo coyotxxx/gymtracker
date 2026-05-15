@@ -98,7 +98,7 @@ smoke test na urządzeniu przed release.
 
 ## FAZA 4 — Migracje + dane
 
-- [ ] 4.1 Test każdej migracji Room (49→60) — round-trip z danymi
+- [x] 4.1 Migracje Room — round-trip 56→60 (odtworzenie bazy v56 z JSON, migracja, walidacja schematu, dane przeżywają) + test ciągłości łańcucha 49→60. Schematy 49-55 nie eksportowane historycznie — najnowsze 4 migracje pokryte round-trip.
 - [ ] 4.2 Backup/restore round-trip — eksport → import → identyczność danych
 - [ ] 4.3 Bootstrap ExerciseDB — pełna ścieżka na realnych assetach
 
@@ -120,9 +120,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 3 ZAKOŃCZONA → FAZA 4 (migracje + dane)
-**Postęp:** 35 / 41 zadań
-**Następne zadanie:** FAZA 4 — migracje Room + backup/restore
+**Aktualna faza:** FAZA 4 — migracje + dane (w toku)
+**Postęp:** 36 / 41 zadań
+**Następne zadanie:** 4.2 Backup/restore round-trip
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -175,7 +175,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 3.7 | MeasurementsSnapshotTest — Measurements (3 pomiary, trend wagi), ProgressPhotos (empty state). | ed5802c |
 | 2026-05-15 | 3.8 | AiSnapshotTest — AiTrainer/AiConversations/AiSettings/AiLog/WeeklyReport. AiPreferences.secure: fallback do plain prefs gdy KeyStore niedostępny (też hardening produkcyjny — brak crashu). | ac7cf5f |
 | 2026-05-15 | 3.9 | ProfileSnapshotTest — Profile (dane usera), Goals, Backup, Notifications (empty states). | 78bb491 |
-| 2026-05-15 | 3.10 | ToolsSnapshotTest — Onboarding, PeriodizationPlan, Debug, HealthHistory, Update. **FAZA 3 zakończona.** | (ten commit) |
+| 2026-05-15 | 3.10 | ToolsSnapshotTest — Onboarding, PeriodizationPlan, Debug, HealthHistory, Update. **FAZA 3 zakończona.** | 5070539 |
+| 2026-05-15 | 4.1 | MigrationTest — round-trip 56→60 (baza v56 z JSON → migracja → walidacja, dane przeżywają) + ciągłość łańcucha 49→60. Migracje AppModule: private→internal. | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
