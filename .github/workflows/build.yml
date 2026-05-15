@@ -52,7 +52,10 @@ jobs:
             echo "debug.keystore already exists, using it"
           fi
 
-      - name: Run unit tests (pure logic)
+      # v1.27 FAZA 6 — pełny system testów: logika (FAZA 2) + snapshoty
+      # ekranów (FAZA 3) + migracje/backup (FAZA 4) + flow użytkownika
+      # (FAZA 5). Wszystko JVM/Robolectric — bez emulatora.
+      - name: Run test suite (logika + snapshoty + migracje + flow)
         run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
 
       # v1.27 — raporty Trace Reporter (snapshoty ekranów: co user widzi i dlaczego)
@@ -77,6 +80,49 @@ jobs:
           path: app/build/reports/jacoco/jacocoTestReport/html/
           if-no-files-found: warn
           retention-days: 14
+
+      # v1.27 FAZA 6.2/6.3 — zbiorczy raport stanu przed release.
+      # Pisze do panelu GitHub Actions Summary: wynik testów, pokrycie,
+      # liczba snapshotów ekranów. Jeden rzut oka = stan aplikacji.
+      - name: Pre-release summary
+        if: always()
+        run: |
+          python3 - <<'EOF'
+          import glob, os, xml.etree.ElementTree as ET
+          tests = failed = skipped = 0
+          for f in glob.glob('app/build/test-results/testDebugUnitTest/*.xml'):
+              try:
+                  r = ET.parse(f).getroot()
+              except Exception:
+                  continue
+              tests += int(r.get('tests', 0))
+              failed += int(r.get('failures', 0)) + int(r.get('errors', 0))
+              skipped += int(r.get('skipped', 0))
+          passed = tests - failed - skipped
+          traces = sorted(glob.glob('app/build/reports/traces/*.txt'))
+          out = os.environ.get('GITHUB_STEP_SUMMARY')
+          if not out:
+              raise SystemExit(0)
+          with open(out, 'a') as o:
+              o.write('## System testów GymTracker — stan przed release\n\n')
+              status = 'WSZYSTKO ZIELONE' if failed == 0 and tests > 0 else 'UWAGA — sprawdz'
+              o.write(f'**{status}**\n\n')
+              o.write('| Metryka | Wartosc |\n|---|---|\n')
+              o.write(f'| Testy zielone | {passed} / {tests} |\n')
+              if failed:
+                  o.write(f'| Testy FAIL | {failed} |\n')
+              if skipped:
+                  o.write(f'| Testy pominiete | {skipped} |\n')
+              o.write(f'| Snapshoty ekranow (trace) | {len(traces)} |\n')
+              o.write('\nSzczegolowe pokrycie per-pakiet: artifact `coverage-report`.\n')
+              o.write('Snapshoty ekranow (co widzi user): artifact `trace-reports`.\n\n')
+              if traces:
+                  o.write('<details><summary>Snapshoty ekranow</summary>\n\n')
+                  for t in traces:
+                      o.write(f'- {os.path.basename(t)[:-4]}\n')
+                  o.write('\n</details>\n')
+          print(f'Summary: {passed}/{tests} zielone, {len(traces)} snapshotow')
+          EOF
 
       - name: Build debug APK
         run: ./gradlew :app:assembleDebug --no-daemon --stacktrace
