@@ -73,8 +73,8 @@ smoke test na urządzeniu przed release.
 - [x] 2.2 Cele/osiągnięcia: `GoalAchievementService` (4 przypadki graniczne)
 - [x] 2.3 Dieta — lekkie: `DietVolatilityAnalyzer` ✓, `CardioKcalEstimator` ✓
 - [ ] 2.4 BLOK DIETOWY (wspólny setup danych diety): scenariusz dietetyczny + helper, potem `AdherenceCalculator`, `AutoAdjustmentService`, `MealPrepPlanner`, `ShoppingListGenerator`, `QuickComposeService`, `EmergencyFoodEstimates`
-- [ ] 2.5 Bootstrap: `ExerciseDbBootstrap` (seed match, alias, dedup, dead cleanup)
-- [ ] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
+- [x] 2.5 Bootstrap: `ExerciseDbBootstrap` (import + GIFy + dedup zweryfikowane)
+- [x] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
 - [ ] 2.7 Pozostałe serwisy z realną logiką (przegląd reszty 41)
 
 ## FAZA 3 — Snapshoty wszystkich ekranów (warstwa 2)
@@ -117,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 2 — logika (w toku)
-**Postęp:** 13 / 41 zadań
-**Następne zadanie:** 2.6 TrainingDietBridge / 2.5 ExerciseDbBootstrap
+**Postęp:** 16 / 41 zadań
+**Następne zadanie:** 2.4 blok dietowy / 2.7 pozostałe serwisy
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -155,6 +155,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.1 | DeloadServiceTest (5 scenariuszy, werdykty deload/injury/return zielone) + LoadIncreaseServiceTest (cykl apply/restore, restore=dokładnie oryginalne wagi). | a8246bb, 7c53116 |
 | 2026-05-15 | 2.2 | GoalAchievementServiceTest — 4 przypadki graniczne karty CEL OSIĄGNIĘTY (reguła ISSN 7 dni stabilności). | 127836e |
 | 2026-05-15 | 2.3 | DietVolatilityAnalyzerTest (wahania kcal, 3 przyp.) + CardioKcalEstimatorTest (kcal cardio 7d, 3 przyp.). Dietowe ciężkie serwisy → blok 2.4. | 98c88a8, d433b83 |
+| 2026-05-15 | 2.6 | TrainingDietBridgeTest (Workout→TrainingDaySummary) + StatsCacheServiceTest (spójność snapshotu). Lokalny build JDK17. | 723e71d |
+| 2026-05-15 | 2.5 | ExerciseDbBootstrapTest — bootstrap importuje, >50% z GIF, zero duplikatów (dedup zweryfikowany). | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
