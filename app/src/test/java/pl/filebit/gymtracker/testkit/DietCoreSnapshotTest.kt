@@ -14,12 +14,19 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
+import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.DietGoalType
+import pl.filebit.gymtracker.data.entity.FoodCategory
+import pl.filebit.gymtracker.data.entity.FoodProduct
 import pl.filebit.gymtracker.data.entity.Gender
+import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealFeedback
+import pl.filebit.gymtracker.data.entity.MealType
+import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.ui.diet.DietOnboardingViewModel
+import pl.filebit.gymtracker.ui.diet.DietViewModel
 import pl.filebit.gymtracker.ui.diet.MealPreferencesViewModel
 
 /**
@@ -93,4 +100,53 @@ class DietCoreSnapshotTest : TestHarness() {
 
     private fun MealFeedbackRepoFor() =
         pl.filebit.gymtracker.data.repository.MealFeedbackRepository(db.mealFeedbackDao())
+
+    @Test
+    fun `Diet glowny ekran sklada cel kcal i posilki dnia`() = runBlocking {
+        UserProfileRepository(db.userProfileDao()).save(
+            UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
+        db.userDietProfileDao().upsert(UserDietProfile(
+            ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
+            goalType = DietGoalType.MAINTAIN,
+            onboardingCompletedAt = System.currentTimeMillis()))
+        val chickenId = db.foodProductDao().upsert(FoodProduct(
+            name = "Kurczak", category = FoodCategory.PROTEIN,
+            kcalPer100g = 165.0, proteinPer100g = 31.0, carbsPer100g = 0.0, fatPer100g = 3.6))
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = System.currentTimeMillis(), mealType = MealType.LUNCH,
+            productId = chickenId, grams = 250.0))
+
+        val kit = ViewModelKit(db, context)
+        val vm = DietViewModel(
+            kit.dietRepo, kit.userProfileRepo, kit.dietProfileRepo, kit.dietPrefs,
+            kit.dietReminderScheduler, kit.dietAiService, kit.trainingDietBridge,
+            kit.adherenceCalc, kit.autoAdjust, kit.dietAutoAdjustmentScheduler,
+            kit.mealFeedbackRepo, kit.substituteService, kit.hydrationRepo,
+            kit.hydrationCalc, kit.recoveryRepo, kit.qualityScorer, kit.weeklyBudgetCalc,
+            kit.activityRepo, kit.dietPhaseRepo, kit.phaseManager, kit.recoveryAnalyzer,
+            kit.dietVolatilityAnalyzer, kit.emergencyMealGen, kit.damageControl,
+            kit.healthConnectManager, kit.healthConnectScheduler, kit.mealConsumptionRepo,
+            kit.quickComposeService, kit.cardioKcalEstimator, db.bodyMeasurementDao(),
+            db.trainingMesocycleDao()
+        )
+        val s = withTimeout(8_000) { vm.state.first { !it.loading } }
+
+        TraceReport("diet-main")
+            .section("CO WIDZI USER")
+            .verdict("loading", s.loading.toString(), "false = załadowano")
+            .kv("cel kcal", s.goal.kcal.toString())
+            .kv("cel B/W/T", "${s.goal.proteinG}/${s.goal.carbsG}/${s.goal.fatG} g")
+            .kv("posiłki dnia", "${s.mealsConfirmed}/${s.mealsTotal}")
+            .kv("grupy posiłków", s.groups.size.toString())
+            .kv("produkty w bazie", s.productsAll.size.toString())
+            .verdict("needsOnboarding", vm.needsOnboarding.value.toString(),
+                "false = profil diety gotowy")
+            .emit()
+
+        assertFalse("ekran diety załadowany", s.loading)
+        assertTrue("cel kcal policzony (>2000 dla 80 kg M)", s.goal.kcal > 2000)
+        assertTrue("makra policzone", s.goal.proteinG > 0)
+        assertFalse("onboarding niepotrzebny — profil diety istnieje",
+            vm.needsOnboarding.value)
+    }
 }

@@ -2,8 +2,12 @@ package pl.filebit.gymtracker.testkit
 
 import android.content.Context
 import pl.filebit.gymtracker.ai.AiClientImpl
+import pl.filebit.gymtracker.ai.AiDecisionExplainer
+import pl.filebit.gymtracker.ai.AiMealJsonValidator
 import pl.filebit.gymtracker.ai.AiPlanApplier
 import pl.filebit.gymtracker.ai.AiPreferences
+import pl.filebit.gymtracker.ai.DietAiService
+import pl.filebit.gymtracker.ai.EmergencyMealGenerator
 import pl.filebit.gymtracker.ai.EventDetectorService
 import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
 import pl.filebit.gymtracker.ai.MasterAiContextBuilder
@@ -23,23 +27,39 @@ import pl.filebit.gymtracker.data.health.HealthConnectManager
 import pl.filebit.gymtracker.data.repository.AdherenceCalculator
 import pl.filebit.gymtracker.data.repository.AiLogRepository
 import pl.filebit.gymtracker.data.repository.ActivityRepository
+import pl.filebit.gymtracker.data.repository.AutoAdjustmentService
+import pl.filebit.gymtracker.data.repository.CardioKcalEstimator
+import pl.filebit.gymtracker.data.repository.ConstraintResolver
+import pl.filebit.gymtracker.data.repository.DailyQualityScorer
+import pl.filebit.gymtracker.data.repository.DamageControl
 import pl.filebit.gymtracker.data.repository.DietPhaseRepository
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.DietRepository
+import pl.filebit.gymtracker.data.repository.DietVolatilityAnalyzer
+import pl.filebit.gymtracker.data.repository.DietaryKnowledgeRepository
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.HydrationCalculator
 import pl.filebit.gymtracker.data.repository.HydrationRepository
 import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
 import pl.filebit.gymtracker.data.repository.MealFeedbackRepository
+import pl.filebit.gymtracker.data.repository.NeatAnalyzer
+import pl.filebit.gymtracker.data.repository.PhaseManager
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.QuickComposeService
 import pl.filebit.gymtracker.data.repository.RecoveryAnalyzer
 import pl.filebit.gymtracker.data.repository.RecoveryRepository
 import pl.filebit.gymtracker.data.repository.StatsCacheService
 import pl.filebit.gymtracker.data.repository.StatsRepository
+import pl.filebit.gymtracker.data.repository.SubstituteService
 import pl.filebit.gymtracker.data.repository.TrainingDietBridge
 import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
+import pl.filebit.gymtracker.data.repository.WeeklyBudgetCalculator
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
+import pl.filebit.gymtracker.data.repository.WorkoutTimeAnalyzer
+import pl.filebit.gymtracker.service.DietAutoAdjustmentScheduler
+import pl.filebit.gymtracker.service.DietReminderScheduler
+import pl.filebit.gymtracker.service.HealthConnectSyncScheduler
 
 /**
  * v1.27 — FAZA 3 — buduje prawdziwy graf DI potrzebny ViewModelom
@@ -145,4 +165,37 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         db.planExerciseSetDao(), db.exerciseDao(), userProfileRepo, aiPlanApplier,
         db.workoutDao(), masterAiContext, stagnationAnalyzer, phaseAnalyzer, healthAnalyzer
     )
+    private val aiDecisionExplainer = AiDecisionExplainer(aiClient, aiPrefs, masterAiContext)
+    val emergencyMealGen = EmergencyMealGenerator(
+        aiClient, aiPrefs, userProfileRepo, dietProfileRepo, dietRepo, masterAiContext
+    )
+
+    // ── dieta — serwisy zaawansowane (ekran Diet) ─────────────────────────
+    val cardioKcalEstimator = CardioKcalEstimator(trainingDietBridge)
+    val dietVolatilityAnalyzer = DietVolatilityAnalyzer(db.adherenceLogDao())
+    val substituteService = SubstituteService()
+    val qualityScorer = DailyQualityScorer()
+    val weeklyBudgetCalc = WeeklyBudgetCalculator()
+    val phaseManager = PhaseManager()
+    val damageControl = DamageControl()
+    private val neatAnalyzer = NeatAnalyzer()
+    val quickComposeService = QuickComposeService()
+    private val constraintResolver = ConstraintResolver()
+    private val aiMealJsonValidator = AiMealJsonValidator(constraintResolver)
+    private val workoutTimeAnalyzer = WorkoutTimeAnalyzer()
+    private val dietaryKnowledgeRepo = DietaryKnowledgeRepository(context)
+    val autoAdjust = AutoAdjustmentService(
+        userProfileRepo, dietProfileRepo, dietPrefs, db.bodyMeasurementDao(),
+        adherenceCalc, db.dietAdjustmentDao(), aiDecisionExplainer, recoveryRepo,
+        recoveryAnalyzer, hydrationRepo, hydrationCalc, activityRepo, neatAnalyzer
+    )
+    val dietAiService = DietAiService(
+        aiClient, aiPrefs, userProfileRepo, dietProfileRepo, dietRepo, workoutRepo,
+        planRepo, statsRepo, trainingDietBridge, db.bodyMeasurementDao(), mealFeedbackRepo,
+        constraintResolver, aiMealJsonValidator, workoutTimeAnalyzer, dietaryKnowledgeRepo,
+        masterAiContext
+    )
+    val dietReminderScheduler = DietReminderScheduler(context)
+    val dietAutoAdjustmentScheduler = DietAutoAdjustmentScheduler(context)
+    val healthConnectScheduler = HealthConnectSyncScheduler(context)
 }
