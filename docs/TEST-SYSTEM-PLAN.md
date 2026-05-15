@@ -72,7 +72,7 @@ smoke test na urządzeniu przed release.
 - [x] 2.1 Deload/load: `DeloadService`, `LoadIncreaseService` (AutoAdjustmentService → 2.3, to serwis diety)
 - [x] 2.2 Cele/osiągnięcia: `GoalAchievementService` (4 przypadki graniczne)
 - [x] 2.3 Dieta — lekkie: `DietVolatilityAnalyzer` ✓, `CardioKcalEstimator` ✓
-- [~] 2.4 BLOK DIETOWY: lekkie (bez DB) ✅ `QuickComposeService`, `EmergencyFoodEstimates`, `DietaryKnowledgeRepository` → DietLightServicesTest. Pozostają ciężkie (wspólny setup danych diety): `AdherenceCalculator`, `AutoAdjustmentService`, `MealPrepPlanner`, `ShoppingListGenerator`
+- [~] 2.4 BLOK DIETOWY: lekkie ✅ `QuickComposeService`, `EmergencyFoodEstimates`, `DietaryKnowledgeRepository` → DietLightServicesTest. Planujące ✅ `ShoppingListGenerator`, `MealPrepPlanner` → DietPlanningServicesTest. Pozostają: `AdherenceCalculator` (8 dep), `AutoAdjustmentService` (13 dep + AI) → 2.4c
 - [x] 2.5 Bootstrap: `ExerciseDbBootstrap` (import + GIFy + dedup zweryfikowane)
 - [x] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
 - [ ] 2.7 Pozostałe serwisy z realną logiką (przegląd reszty 41)
@@ -117,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 2 — logika (w toku)
-**Postęp:** 19 / 41 zadań
-**Następne zadanie:** 2.4 ciężkie dietowe (setup danych) / 2.7 pozostałe serwisy
+**Postęp:** 21 / 41 zadań
+**Następne zadanie:** 2.4c AdherenceCalculator + AutoAdjustmentService / 2.7 pozostałe
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -157,7 +157,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.3 | DietVolatilityAnalyzerTest (wahania kcal, 3 przyp.) + CardioKcalEstimatorTest (kcal cardio 7d, 3 przyp.). Dietowe ciężkie serwisy → blok 2.4. | 98c88a8, d433b83 |
 | 2026-05-15 | 2.6 | TrainingDietBridgeTest (Workout→TrainingDaySummary) + StatsCacheServiceTest (spójność snapshotu). Lokalny build JDK17. | 723e71d |
 | 2026-05-15 | 2.5 | ExerciseDbBootstrapTest — bootstrap importuje, >50% z GIF, zero duplikatów (dedup zweryfikowany). | 9399d4a |
-| 2026-05-15 | 2.4a | DietLightServicesTest — QuickCompose (gramatura pod target, +11% kcal raportowane), EmergencyFood (lookup + POPULAR), DietaryKnowledge (JSON z assetów). | (ten commit) |
+| 2026-05-15 | 2.4a | DietLightServicesTest — QuickCompose (gramatura pod target, +11% kcal raportowane), EmergencyFood (lookup + POPULAR), DietaryKnowledge (JSON z assetów). | 1f74825 |
+| 2026-05-15 | 2.4b | DietPlanningServicesTest — ShoppingListGenerator (agregacja 2 dni, zaokrągl. do opakowań) + MealPrepPlanner (plan 4 kroki, 65 min). | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
