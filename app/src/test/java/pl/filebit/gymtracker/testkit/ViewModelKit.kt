@@ -121,8 +121,8 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     )
 
     // ── AI ────────────────────────────────────────────────────────────────
-    private val aiPrefs = AiPreferences(context)
-    private val aiClient = AiClientImpl(AiLogRepository(db.aiLogDao()), aiPrefs)
+    val aiPrefs = AiPreferences(context)
+    val aiClient = AiClientImpl(AiLogRepository(db.aiLogDao()), aiPrefs)
     val workoutAiSummary = WorkoutAiSummaryService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao()
     )
