@@ -217,6 +217,10 @@ class DietAiService @Inject constructor(
         val perSlotCarbsTargets = computePerSlotCarbsDistribution(goal.carbsG, mealsCount)
         val perSlotFatTargets = computePerSlotFatDistribution(goal.fatG, mealsCount)
 
+        // v1.27.2: styl per posiłek wpleciony BEZPOŚREDNIO w opis slotu —
+        // wcześniej był w osobnej sekcji, AI gubiło powiązanie i słabo
+        // reagowało na wybór usera.
+        val slotMealTypes = mealTypesForSlots(mealsCount)
         val slotLabels = mealHours.indices.map { idx ->
             val time = config.formatTime(mealHours[idx])
             val label = labelForSlot(idx + 1, mealsCount)
@@ -230,7 +234,12 @@ class DietAiService @Inject constructor(
             val pSlot = perSlotProteinTargets.getOrElse(idx) { perMealProtein }
             val cSlot = perSlotCarbsTargets.getOrElse(idx) { perMealCarbs }
             val fSlot = perSlotFatTargets.getOrElse(idx) { perMealFat }
-            "$label (godz. $time, **$kcalSlot kcal ±15%**, B${pSlot}g W${cSlot}g T${fSlot}g)$ctxTag"
+            val styleTag = slotMealTypes.getOrNull(idx)
+                ?.let { mt -> stylePrefs.slotStyles[mt] }
+                ?.takeIf { it != MealStyle.DEFAULT && it != MealStyle.NO_PREFERENCE }
+                ?.let { "\n    → STYL WYMAGANY: ${it.label} — ${it.promptHint}" }
+                ?: ""
+            "$label (godz. $time, **$kcalSlot kcal ±15%**, B${pSlot}g W${cSlot}g T${fSlot}g)$ctxTag$styleTag"
         }
 
         val goalLabel = when (profile.weightGoalType) {
@@ -394,30 +403,33 @@ class DietAiService @Inject constructor(
             append("- Cel kcal/posiłek: ~$perMealKcal kcal\n")
             append("- Cel makro/posiłek: B${perMealProtein}g W${perMealCarbs}g T${perMealFat}g\n")
 
-            // === STYL PLANU (od usera, przed wygenerowaniem) ===
+            // === STYL PLANU — WYBÓR USERA (v1.27.2: wzmocnione) ===
+            // User narzekał że "pomimo zaznaczenia słabo reaguje" — styl był
+            // miękką sugestią obok twardych wymogów makro, więc AI go olewało.
+            // Teraz: styl globalny mocno, styl per-posiłek wpleciony przy
+            // slotach (→ STYL WYMAGANY), uwagi usera bez furtki "zignoruj".
             if (stylePrefs.globalStyle != PlanStyle.CLASSIC ||
                 stylePrefs.slotStyles.isNotEmpty() ||
                 stylePrefs.freeText.isNotBlank()) {
-                append("\n=== STYL PLANU (preferencje usera dla TEJ generacji) ===\n")
+                append("\n=== ⚠ STYL PLANU — ŚWIADOMY WYBÓR USERA (WYMÓG, nie sugestia) ===\n")
+                append("User celowo wybrał poniższe preferencje. Wygeneruj posiłki ")
+                append("ZGODNE z nimi. Styl ORAZ targety makro/kcal obowiązują ")
+                append("JEDNOCZEŚNIE — trafiaj w jedno i drugie, nie wybieraj.\n")
                 if (stylePrefs.globalStyle != PlanStyle.CLASSIC) {
-                    append("Styl globalny: **${stylePrefs.globalStyle.label}** — ${stylePrefs.globalStyle.promptHint}\n")
+                    append("Styl WSZYSTKICH posiłków: **${stylePrefs.globalStyle.label}** ")
+                    append("— ${stylePrefs.globalStyle.promptHint}\n")
                 }
                 if (stylePrefs.slotStyles.isNotEmpty()) {
-                    append("Per slot:\n")
-                    val typesForSlots = mealTypesForSlots(mealsCount)
-                    typesForSlots.forEachIndexed { idx, type ->
-                        val style = stylePrefs.slotStyles[type] ?: return@forEachIndexed
-                        if (style == MealStyle.DEFAULT || style == MealStyle.NO_PREFERENCE) return@forEachIndexed
-                        val slotLabel = labelForSlot(idx + 1, mealsCount)
-                        append("  - $slotLabel: **${style.label}** — ${style.promptHint}\n")
-                    }
+                    append("Styl konkretnych posiłków: oznaczony przy slotach niżej ")
+                    append("(\"→ STYL WYMAGANY\") — bezwzględnie go zastosuj.\n")
                 }
                 if (stylePrefs.freeText.isNotBlank()) {
-                    append("\n=== UWAGI UŻYTKOWNIKA (zastosuj jeśli sensowne — w innym wypadku zignoruj) ===\n")
+                    append("\n--- UWAGI UŻYTKOWNIKA (jego świadoma decyzja — ZASTOSUJ) ---\n")
                     append(stylePrefs.freeText.take(800))
-                    append("\n")
+                    append("\nZastosuj te uwagi. Jeśli któraś koliduje z bezpieczeństwem ")
+                    append("lub targetami makro — dostosuj najlepiej jak się da, ale NIE ")
+                    append("pomijaj jej w całości.\n")
                 }
-                append("→ Honor preferencje stylu przy generowaniu, ALE makro/kcal targety dalej obowiązują.\n")
             }
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
