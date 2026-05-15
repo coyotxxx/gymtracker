@@ -99,8 +99,10 @@ smoke test na urządzeniu przed release.
 ## FAZA 4 — Migracje + dane
 
 - [x] 4.1 Migracje Room — round-trip 56→60 (odtworzenie bazy v56 z JSON, migracja, walidacja schematu, dane przeżywają) + test ciągłości łańcucha 49→60. Schematy 49-55 nie eksportowane historycznie — najnowsze 4 migracje pokryte round-trip.
-- [ ] 4.2 Backup/restore round-trip — eksport → import → identyczność danych
-- [ ] 4.3 Bootstrap ExerciseDB — pełna ścieżka na realnych assetach
+- [x] 4.2 Backup/restore round-trip — eksport ZIP → clearAllTables → import → identyczność (30 treningów, 240 serii, 12 pomiarów bezstratnie).
+- [x] 4.3 Bootstrap ExerciseDB — pokryty w 2.5 (ExerciseDbBootstrapTest: import z realnych assetów exercisedb_v1.json, >50% z GIF, zero duplikatów).
+
+**FAZA 4 KOMPLETNA** — migracje + backup zweryfikowane, zero utraty danych.
 
 ## FAZA 5 — UI interaction (warstwa 4)
 
@@ -120,9 +122,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 4 — migracje + dane (w toku)
-**Postęp:** 36 / 41 zadań
-**Następne zadanie:** 4.2 Backup/restore round-trip
+**Aktualna faza:** FAZA 4 ZAKOŃCZONA → FAZA 5 (UI interaction)
+**Postęp:** 38 / 41 zadań
+**Następne zadanie:** FAZA 5 — UI interaction (krytyczne flow)
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -176,7 +178,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 3.8 | AiSnapshotTest — AiTrainer/AiConversations/AiSettings/AiLog/WeeklyReport. AiPreferences.secure: fallback do plain prefs gdy KeyStore niedostępny (też hardening produkcyjny — brak crashu). | ac7cf5f |
 | 2026-05-15 | 3.9 | ProfileSnapshotTest — Profile (dane usera), Goals, Backup, Notifications (empty states). | 78bb491 |
 | 2026-05-15 | 3.10 | ToolsSnapshotTest — Onboarding, PeriodizationPlan, Debug, HealthHistory, Update. **FAZA 3 zakończona.** | 5070539 |
-| 2026-05-15 | 4.1 | MigrationTest — round-trip 56→60 (baza v56 z JSON → migracja → walidacja, dane przeżywają) + ciągłość łańcucha 49→60. Migracje AppModule: private→internal. | (ten commit) |
+| 2026-05-15 | 4.1 | MigrationTest — round-trip 56→60 (baza v56 z JSON → migracja → walidacja, dane przeżywają) + ciągłość łańcucha 49→60. Migracje AppModule: private→internal. | f4f63a7 |
+| 2026-05-15 | 4.2-4.3 | BackupRoundTripTest — eksport ZIP → clear → import bezstratny (30 treningów/240 serii/12 pomiarów). 4.3 ExerciseDB bootstrap pokryty w 2.5. **FAZA 4 zakończona.** | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
