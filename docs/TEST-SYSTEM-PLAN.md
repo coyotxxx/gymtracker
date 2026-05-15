@@ -62,8 +62,8 @@ smoke test na urządzeniu przed release.
 - [x] 1.4 Pełny E2E — scenariusz danych → prawdziwe detektory → resolver. Raport: DANE/pokrycie + DETEKTORY z liczbami + CO WIDZI USER + OCENA. **Wykrył 4 realne anomalie** (patrz Dziennik).
 - [x] 1.5 Sekcja DANE/pokrycie + werdykty z liczbami — zrobione w 1.4
 - [x] 1.6 Aktywny detektor sprzeczności sygnałów (HomeConsistencyChecker, 5 reguł) + sekcja OCENA
-- [~] 1.7 **PUNKT KONTROLNY #2** — ocena kompletnego raportu, wzorzec do skalowania
-- [ ] 1.8 Bugi wykryte przez E2E (B1-B4) — osobne zadania po akceptacji wzorca
+- [x] 1.7 **PUNKT KONTROLNY #2** — wzorzec ZAAKCEPTOWANY przez Macieja, skalujemy
+- [ ] 1.8 Bugi wykryte przez E2E (B1-B4) — osobne zadania po FAZIE 2
 
 ## FAZA 2 — Logika: pełne pokrycie serwisów (warstwa 3)
 
@@ -116,9 +116,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 1 — pilot Home (punkt kontrolny #2)
-**Postęp:** 9 / 41 zadań
-**Następne zadanie:** 1.7 ocena wzorca → skalowanie / 1.8 bugi B1-B4
+**Aktualna faza:** FAZA 1 UKOŃCZONA → FAZA 2 (logika)
+**Postęp:** 10 / 41 zadań
+**Następne zadanie:** 2.1 testy Deload/load services
 
 ### Punkt kontrolny #1 (2026-05-15)
 Pilot v1 (snapshot na syntetycznych stanach) wykrywa TYLKO błędne reguły
@@ -147,6 +147,7 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 1.3 | Punkt kontrolny #1: pilot v1 za wąski (tylko reguły kart). FAZA 1 rozbita na pełny E2E. | — |
 | 2026-05-15 | 1.4-1.5 | Pełny E2E Home (HomeDetectors 12 obiektów + HomeFullE2ETest 5 scenariuszy). Raporty wykryły 4 ANOMALIE: (B1) świeży user 3 treningi → "DELOAD/stagnacja"; (B2) healthy 24 treningi stała waga → "stagnacja"; (B3) TrainingLoad zawsze INSUFFICIENT/ACWR=0 (karta ACWR nigdy dla normalnego usera); (B4) sprzeczność DeloadSuggestion vs Readiness GOOD. | f9bd8e9 |
 | 2026-05-15 | 1.6 | HomeConsistencyChecker — 5 reguł sprzeczności sygnałów. Raport OCENA flaguje B4 jako [KONFLIKT] automatycznie. Wzorzec raportu kompletny. | bed473c |
+| 2026-05-15 | 1.7 | Punkt kontrolny #2: wzorzec raportu ZAAKCEPTOWANY. **FAZA 1 UKOŃCZONA.** Skalujemy na FAZĘ 2. | 8a1c60e |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
