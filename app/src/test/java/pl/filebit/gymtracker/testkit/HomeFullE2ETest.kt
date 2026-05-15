@@ -88,7 +88,7 @@ class HomeFullE2ETest : TestHarness() {
         tr.section("UKRYTE (${cards.hidden.size})")
         cards.hidden.forEach { tr.hidden(it.key, it.reason) }
 
-        // — OCENA: auto-flagi jakości —
+        // — OCENA: auto-flagi jakości + sprzeczności sygnałów —
         tr.section("OCENA")
         if (recoveryDays == 0) {
             tr.note("brak danych recovery (HRV/sen) — score regeneracji oparty na domyślnych")
@@ -99,6 +99,13 @@ class HomeFullE2ETest : TestHarness() {
         if (cards.visible.none { it.key.startsWith("DELOAD") || it.key == "TRAINING_LOAD" }
             && workouts.size >= 20) {
             tr.note("dużo treningów a brak karty obciążenia/deloadu — sprawdź detektory")
+        }
+        // FAZA 1.6 — sprzeczności sygnałów (HomeConsistencyChecker)
+        val inconsistencies = HomeConsistencyChecker.check(state)
+        if (inconsistencies.isEmpty()) {
+            tr.line("Sprzeczności sygnałów: brak")
+        } else {
+            inconsistencies.forEach { tr.note("[${it.severity}] ${it.message}") }
         }
         tr.emit()
 
