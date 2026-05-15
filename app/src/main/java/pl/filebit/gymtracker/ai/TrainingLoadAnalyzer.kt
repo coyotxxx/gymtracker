@@ -49,8 +49,16 @@ class TrainingLoadAnalyzer @Inject constructor(
         val now = System.currentTimeMillis()
         val msPerDay = 24L * 3600 * 1000
 
-        val finished = workoutDao.observeAllOnce()
-            .filter { it.finishedAt != null && it.startedAt >= now - 28 * msPerDay }
+        val allFinished = workoutDao.observeAllOnce().filter { it.finishedAt != null }
+        val finished = allFinished.filter { it.startedAt >= now - 28 * msPerDay }
+
+        // v1.26.9: rozpiętość całej historii treningowej. ACWR (Gabbett) wymaga
+        // pełnego 28-dniowego baseline chronic-load — przy krótszej historii
+        // średnia 28d jest zaniżona (dzielimy przez 28, a tonaż pochodzi tylko
+        // z np. 21 dni), co sztucznie zawyża ACWR. Nowicjusz w fazie ramp-up
+        // dostawał fałszywe RISKY. Dlatego: <28 dni historii → INSUFFICIENT.
+        val historySpanDays = allFinished.minOfOrNull { it.startedAt }
+            ?.let { ((now - it) / msPerDay).toInt() } ?: 0
 
         // Tonaż per dzień
         val volumeByDay = mutableMapOf<Int, Double>()  // klucz = dni-temu (0..27)
@@ -69,7 +77,7 @@ class TrainingLoadAnalyzer @Inject constructor(
         val daysOfData = volumeByDay.keys.size
 
         // Walidacja — bez wystarczających danych nie liczymy
-        if (workoutsIn14d < 6) {
+        if (workoutsIn14d < 6 || historySpanDays < 28) {
             return TrainingLoad(
                 acuteLoad7d = acute7d,
                 chronicLoad28d = chronic28d,
@@ -77,10 +85,14 @@ class TrainingLoadAnalyzer @Inject constructor(
                 zone = LoadZone.INSUFFICIENT,
                 daysOfData = daysOfData,
                 workoutsCount14d = workoutsIn14d,
-                recommendation = if (workoutsIn14d == 0)
-                    "Brak treningów w 14 dni. Zacznij regularnie (3-4×/tydz) zanim algorytm zacznie analizować obciążenie."
-                else
-                    "Trenujesz $workoutsIn14d×/14d — potrzeba ≥6 do oceny ACWR."
+                recommendation = when {
+                    workoutsIn14d == 0 ->
+                        "Brak treningów w 14 dni. Zacznij regularnie (3-4×/tydz) zanim algorytm zacznie analizować obciążenie."
+                    workoutsIn14d < 6 ->
+                        "Trenujesz $workoutsIn14d×/14d — potrzeba ≥6 do oceny ACWR."
+                    else ->
+                        "Trenujesz regularnie od $historySpanDays dni — ACWR nabiera wiarygodności po 28 dniach (pełny baseline obciążenia)."
+                }
             )
         }
 
@@ -140,6 +152,10 @@ fun computeTrainingLoadFromSnapshot(
     val finished = snapshot.finishedWorkouts
         .filter { it.startedAt >= now - 28 * msPerDay }
 
+    // v1.26.9: ACWR wymaga pełnego 28-dniowego baseline (patrz analyze()).
+    val historySpanDays = snapshot.finishedWorkouts.minOfOrNull { it.startedAt }
+        ?.let { ((now - it) / msPerDay).toInt() } ?: 0
+
     val volumeByDay = mutableMapOf<Int, Double>()
     for (w in finished) {
         val daysAgo = ((now - w.startedAt) / msPerDay).toInt().coerceIn(0, 27)
@@ -153,7 +169,7 @@ fun computeTrainingLoadFromSnapshot(
     val workoutsIn14d = finished.count { it.startedAt >= now - 14 * msPerDay }
     val daysOfData = volumeByDay.keys.size
 
-    if (workoutsIn14d < 6) {
+    if (workoutsIn14d < 6 || historySpanDays < 28) {
         return TrainingLoad(
             acuteLoad7d = acute7d,
             chronicLoad28d = chronic28d,
@@ -161,10 +177,14 @@ fun computeTrainingLoadFromSnapshot(
             zone = LoadZone.INSUFFICIENT,
             daysOfData = daysOfData,
             workoutsCount14d = workoutsIn14d,
-            recommendation = if (workoutsIn14d == 0)
-                "Brak treningów w 14 dni. Zacznij regularnie (3-4×/tydz) zanim algorytm zacznie analizować obciążenie."
-            else
-                "Trenujesz $workoutsIn14d×/14d — potrzeba ≥6 do oceny ACWR."
+            recommendation = when {
+                workoutsIn14d == 0 ->
+                    "Brak treningów w 14 dni. Zacznij regularnie (3-4×/tydz) zanim algorytm zacznie analizować obciążenie."
+                workoutsIn14d < 6 ->
+                    "Trenujesz $workoutsIn14d×/14d — potrzeba ≥6 do oceny ACWR."
+                else ->
+                    "Trenujesz regularnie od $historySpanDays dni — ACWR nabiera wiarygodności po 28 dniach (pełny baseline obciążenia)."
+            }
         )
     }
 

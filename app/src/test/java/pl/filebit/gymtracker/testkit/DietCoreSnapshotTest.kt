@@ -1,18 +1,11 @@
 package pl.filebit.gymtracker.testkit
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.DietGoalType
@@ -36,11 +29,8 @@ import pl.filebit.gymtracker.ui.diet.MealPreferencesViewModel
  * UserDietProfile). MealPreferences: lista ocenionych dań.
  * Główny ekran Diet (DietViewModel, 31 zależności) — patrz nota w planie.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class DietCoreSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     @Test
     fun `DietOnboarding pre-fill z profilu i zapis profilu diety`() = runBlocking {

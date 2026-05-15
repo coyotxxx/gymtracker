@@ -1,17 +1,10 @@
 package pl.filebit.gymtracker.testkit
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.ui.history.WorkoutDetailUiState
 import pl.filebit.gymtracker.ui.history.WorkoutDetailViewModel
@@ -27,11 +20,8 @@ import pl.filebit.gymtracker.ui.history.WorkoutDetailViewModel
  * suspend-query Room wykonuje się na własnym executorze, więc test czeka
  * aż stan faktycznie się zmieni, zamiast advance'ować scheduler.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class WorkoutDetailSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     private suspend fun WorkoutDetailViewModel.loadAndAwait(id: Long): WorkoutDetailUiState {
         load(id)

@@ -66,7 +66,10 @@ class TrainingLoadAnalyzerFastTest {
 
     @Test
     fun `6 treningow w 14d - nie INSUFFICIENT`() {
-        val workouts = (0..5).map { workout((it + 1).toLong(), daysAgo = it.toLong() * 2) }
+        // 6 treningów w 14d + kotwica historii ≥28 dni temu — ACWR (Gabbett)
+        // wymaga pełnego 28-dniowego baseline chronic-load (v1.26.9).
+        val workouts = (0..5).map { workout((it + 1).toLong(), daysAgo = it.toLong() * 2) } +
+            workout(99L, daysAgo = 30L)
         val ex = listOf(ex(10))
         val sets = workouts.mapIndexed { i, w ->
             set(wid = w.id, exId = 10, reps = 10, weight = 100.0).copy(id = (i + 100).toLong())
@@ -177,7 +180,10 @@ class TrainingLoadAnalyzerFastTest {
             workout(7L, daysAgo = 13L),
         )
         val older = (8..14).map { i -> workout(i.toLong(), daysAgo = (10L + i)) }
-        val workouts = recent7d + recent14d + older
+        // kotwica historii ≥28 dni — ACWR wymaga pełnego baseline (v1.26.9);
+        // 30 dni temu = poza oknem 28d, nie wpływa na liczony ACWR
+        val historyAnchor = workout(99L, daysAgo = 30L)
+        val workouts = recent7d + recent14d + older + historyAnchor
         val ex = listOf(ex(10))
         val sets = workouts.mapIndexed { i, w ->
             val volume = if (w.id in 1L..2L) 100.0 else 1500.0

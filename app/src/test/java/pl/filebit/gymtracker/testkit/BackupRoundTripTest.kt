@@ -1,18 +1,11 @@
 package pl.filebit.gymtracker.testkit
 
 import android.net.Uri
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.ai.AiPreferences
 import pl.filebit.gymtracker.data.backup.DietBackupManager
@@ -28,11 +21,8 @@ import java.io.File
  * identyczny ze stanem przed eksportem — backup na Drive/USB to jedyna
  * ochrona danych usera przed utratą telefonu. Każda rozbieżność = bug.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class BackupRoundTripTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     private data class DbSnapshot(
         val workouts: Int, val sets: Int, val measurements: Int,

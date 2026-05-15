@@ -100,6 +100,13 @@ object HomeCardsResolver {
             // już to mówi — duplikat z 2 systemów (DeloadService + TrainingPhaseAnalyzer)
             val duplicatesDeload = p.phase == TrainingPhase.NEEDS_DELOAD &&
                 state.deloadCard is DeloadCardState.Suggestion
+            // v1.26.9 (symulacja realnego użytkowania): po przerwie treningowej
+            // tonaż jest niski, więc TrainingPhaseAnalyzer (liczy fazę z tonażu)
+            // klasyfikuje to jako DELOAD. To myli — user nie jest w deloadzie,
+            // wrócił z przerwy. Karta "POWRÓT PO PRZERWIE" jest właściwym
+            // komunikatem; faza ją tylko zaciemnia.
+            val misleadingAfterBreak =
+                state.deloadCard is DeloadCardState.ReturnAfterBreak
             when {
                 p.phase == TrainingPhase.NO_DATA ->
                     hidden += HiddenCard("TRAINING_PHASE", "faza NO_DATA (za mało historii)")
@@ -109,6 +116,12 @@ object HomeCardsResolver {
                     hidden += HiddenCard(
                         "TRAINING_PHASE",
                         "duplikat z karty DELOAD ZALECANY (reguła v1.24.40)"
+                    )
+                misleadingAfterBreak ->
+                    hidden += HiddenCard(
+                        "TRAINING_PHASE",
+                        "powrót po przerwie — niski tonaż naturalnie wygląda jak " +
+                            "deload, faza wprowadzałaby w błąd"
                     )
                 else ->
                     visible += HomeCard("TRAINING_PHASE", "FAZA CYKLU")

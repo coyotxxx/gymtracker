@@ -11,6 +11,7 @@ import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
+import pl.filebit.gymtracker.ai.LoadZone
 import pl.filebit.gymtracker.data.repository.DeloadCardState
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.seed.ExerciseSeeder
@@ -195,11 +196,15 @@ class RealUsageSimulationTest : TestHarness() {
             rpeFor = { _, _ -> 6 })
 
         val issues = analyzeHome("D-beginner-liniowy")
-        val deload = HomeDetectors(db, context).buildHomeState().deloadCard
+        val state = HomeDetectors(db, context).buildHomeState()
 
         // regresja B1 + brak fałszywej stagnacji przy rosnących wagach
         assertTrue("początkujący z progresją NIE dostaje deloadu",
-            deload is DeloadCardState.None)
+            state.deloadCard is DeloadCardState.None)
+        // ACWR przy <28 dni historii (ramp-up nowicjusza) jest niewiarygodny —
+        // chronic-load baseline niekompletny. Nie wolno krzyczeć RISKY.
+        assertEquals("ACWR niewiarygodny przy krótkiej historii → INSUFFICIENT",
+            LoadZone.INSUFFICIENT, state.trainingLoad?.zone)
         assertTrue("brak sprzeczności sygnałów", issues.isEmpty())
     }
 
@@ -217,10 +222,17 @@ class RealUsageSimulationTest : TestHarness() {
             rpeFor = { _, _ -> 8 })
 
         val issues = analyzeHome("E-powrot-po-przerwie")
-        val deload = HomeDetectors(db, context).buildHomeState().deloadCard
+        val state = HomeDetectors(db, context).buildHomeState()
+        val cards = HomeCardsResolver.resolve(state)
 
         assertTrue("po 32-dniowej przerwie → karta powrotu",
-            deload is DeloadCardState.ReturnAfterBreak)
+            state.deloadCard is DeloadCardState.ReturnAfterBreak)
+        // faza analizuje tonaż — po przerwie niski tonaż wygląda jak DELOAD;
+        // karta fazy musi być ukryta, żeby nie myliła powrotu z deloadem
+        assertFalse("karta FAZA CYKLU NIE jest widoczna przy powrocie",
+            cards.visible.any { it.key == "TRAINING_PHASE" })
+        assertTrue("faza ukryta z jawnym powodem",
+            cards.hidden.any { it.key == "TRAINING_PHASE" })
         assertTrue("brak sprzeczności sygnałów", issues.isEmpty())
     }
 

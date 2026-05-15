@@ -1,16 +1,9 @@
 package pl.filebit.gymtracker.testkit
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.data.repository.DeloadPreferences
 import pl.filebit.gymtracker.data.repository.DeloadService
@@ -29,11 +22,8 @@ import pl.filebit.gymtracker.ui.update.UpdateViewModel
  * Debug, HealthHistory, Update. Kalkulatory (OneRm, PlateCalc) i skanery
  * (Barcode, FoodImage) — czyste UI / CameraX, poza zakresem headless.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class ToolsSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     @Test
     fun `Onboarding wizard startuje od pustego kroku 0`() = runBlocking {

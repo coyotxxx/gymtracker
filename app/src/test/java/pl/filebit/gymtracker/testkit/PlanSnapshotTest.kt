@@ -1,19 +1,12 @@
 package pl.filebit.gymtracker.testkit
 
 import androidx.lifecycle.SavedStateHandle
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.data.entity.PlanExercise
 import pl.filebit.gymtracker.data.entity.TrainingPlan
@@ -26,11 +19,8 @@ import pl.filebit.gymtracker.ui.plans.PlanListViewModel
  * PlanList: lista planów z liczbą ćwiczeń. PlanEdit: edytor pojedynczego
  * planu (nowy lub istniejący — przez SavedStateHandle "planId").
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class PlanSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     /** Tworzy plan "Push" z 2 ćwiczeniami w dniu 1. Zwraca planId. */
     private suspend fun ViewModelKit.seedPlan(): Long {

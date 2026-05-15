@@ -1,18 +1,11 @@
 package pl.filebit.gymtracker.testkit
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.ui.workout.ActiveWorkoutViewModel
 import pl.filebit.gymtracker.ui.workout.CoachWorkoutViewModel
@@ -24,11 +17,8 @@ import pl.filebit.gymtracker.ui.workout.CoachWorkoutViewModel
  * obserwują aktywny trening. Test tworzy aktywny trening z 3 seriami
  * (2 ćwiczenia) i raportuje co user widzi na każdym ekranie.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class ActiveTrainingSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     /** Tworzy aktywny trening: 2 serie ćwiczenia A + 1 seria ćwiczenia B. */
     private suspend fun ViewModelKit.seedActiveWorkout() {

@@ -3,7 +3,11 @@ package pl.filebit.gymtracker.testkit
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
 import org.junit.runner.RunWith
@@ -46,6 +50,25 @@ abstract class TestHarness {
     protected lateinit var context: Context
     protected lateinit var db: AppDatabase
     protected lateinit var backupImporter: BackupImporter
+
+    companion object {
+        // v1.26.9: Dispatchers.Main ustawiany RAZ dla całego procesu testowego
+        // (test dispatcher), nigdy nie resetowany. Snapshoty ViewModeli tworzą
+        // viewModelScope coroutines, które przeżywają test (stateIn +
+        // WhileSubscribed). Gdyby każdy test robił setMain/resetMain, reset
+        // jednego testu kolidowałby z żywą coroutine innego —
+        // "Dispatchers.Main is used concurrently with setting it" (flaky).
+        // Jeden setMain bez resetów = zero kolizji.
+        @OptIn(ExperimentalCoroutinesApi::class)
+        private val mainDispatcherInstalled: Unit = run {
+            Dispatchers.setMain(UnconfinedTestDispatcher())
+        }
+    }
+
+    init {
+        // wymusza inicjalizację companion (setMain) zanim ruszą testy
+        mainDispatcherInstalled
+    }
 
     @Before
     fun setupHarness() {

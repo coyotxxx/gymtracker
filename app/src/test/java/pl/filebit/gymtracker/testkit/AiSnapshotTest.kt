@@ -1,19 +1,12 @@
 package pl.filebit.gymtracker.testkit
 
 import androidx.lifecycle.SavedStateHandle
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.ui.ai.AiConversationsViewModel
 import pl.filebit.gymtracker.ui.ai.AiLogViewModel
@@ -28,11 +21,8 @@ import pl.filebit.gymtracker.ui.ai.WeeklyReportViewModel
  * sprawdza stan początkowy bez klucza API (BYOK) — ekrany muszą się
  * składać i pokazywać "AI nieskonfigurowane" zamiast crashować.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class AiSnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     @Test
     fun `AiTrainer startuje nowa rozmowe bez klucza API`() = runBlocking {

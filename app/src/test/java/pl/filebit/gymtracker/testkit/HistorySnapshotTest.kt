@@ -1,16 +1,9 @@
 package pl.filebit.gymtracker.testkit
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withTimeout
-import org.junit.After
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import pl.filebit.gymtracker.ui.history.HistoryViewModel
 
@@ -21,11 +14,8 @@ import pl.filebit.gymtracker.ui.history.HistoryViewModel
  * dla każdego treningu liczy serie, objętość, liczbę ćwiczeń, PR, fazę
  * mesocyklu. Test sprawdza co zobaczy user na liście historii.
  */
-@OptIn(ExperimentalCoroutinesApi::class)
 class HistorySnapshotTest : TestHarness() {
 
-    @Before fun setMainDispatcher() { Dispatchers.setMain(UnconfinedTestDispatcher()) }
-    @After fun resetMainDispatcher() { Dispatchers.resetMain() }
 
     private fun viewModel(): HistoryViewModel {
         val kit = ViewModelKit(db, context)
