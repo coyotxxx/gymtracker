@@ -59,10 +59,11 @@ smoke test na urządzeniu przed release.
 - [x] 1.1 `HomeCardsResolver` — wyciągnięcie logiki "co pokazać/ukryć/kolejność" z `HomeScreen.kt` do pure function
 - [x] 1.2 Snapshot test v1 — syntetyczne stany → resolver → TraceReport (6 stanów)
 - [~] 1.3 **PUNKT KONTROLNY #1** — ocena: pilot v1 wykrywa tylko reguły kart, za mało. Decyzja: dokończyć pełny E2E przed skalowaniem.
-- [ ] 1.4 Pełny E2E — scenariusz danych → prawdziwe detektory liczą stan → resolver
-- [ ] 1.5 Sekcja DANE/pokrycie + werdykty z liczbami + pełne komunikaty kart
-- [ ] 1.6 Aktywny detektor sprzeczności sygnałów + sekcja OCENA (auto-flagi jakości)
+- [x] 1.4 Pełny E2E — scenariusz danych → prawdziwe detektory → resolver. Raport: DANE/pokrycie + DETEKTORY z liczbami + CO WIDZI USER + OCENA. **Wykrył 4 realne anomalie** (patrz Dziennik).
+- [x] 1.5 Sekcja DANE/pokrycie + werdykty z liczbami — zrobione w 1.4
+- [ ] 1.6 Aktywny detektor sprzeczności sygnałów + rozbudowa sekcji OCENA
 - [ ] 1.7 **PUNKT KONTROLNY #2** — ocena kompletnego raportu, wzorzec do skalowania
+- [ ] 1.8 Bugi wykryte przez E2E — decyzja: naprawić / zalogować (osobne zadania)
 
 ## FAZA 2 — Logika: pełne pokrycie serwisów (warstwa 3)
 
@@ -116,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 1 — pilot Home (w toku)
-**Postęp:** 6 / 40 zadań (FAZA 1 rozbita 5→7 po punkcie kontrolnym #1)
-**Następne zadanie:** 1.4 Pełny E2E Home — detektory na scenariuszu
+**Postęp:** 8 / 41 zadań
+**Następne zadanie:** 1.6 detektor sprzeczności + decyzja o bugach B1-B4
 
 ### Punkt kontrolny #1 (2026-05-15)
 Pilot v1 (snapshot na syntetycznych stanach) wykrywa TYLKO błędne reguły
@@ -144,6 +145,16 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 0.4 | JaCoCo: plugin + task jacocoTestReport + krok CI + artefakt coverage-report. Baseline zmierzony (logika repo 20%, util 33%). **FAZA 0 UKOŃCZONA.** | cb14c03 |
 | 2026-05-15 | 1.1-1.2 | HomeCardsResolver (pure function: stan→karty visible/hidden) + HomeSnapshotTest (6 stanów→TraceReport). Artefakt trace-reports w CI. | bde2b3d, f7e4a8f |
 | 2026-05-15 | 1.3 | Punkt kontrolny #1: pilot v1 za wąski (tylko reguły kart). FAZA 1 rozbita na pełny E2E. | — |
+| 2026-05-15 | 1.4-1.5 | Pełny E2E Home (HomeDetectors 12 obiektów + HomeFullE2ETest 5 scenariuszy). Raporty wykryły 4 ANOMALIE: (B1) świeży user 3 treningi → "DELOAD/stagnacja"; (B2) healthy 24 treningi stała waga → "stagnacja"; (B3) TrainingLoad zawsze INSUFFICIENT/ACWR=0 (karta ACWR nigdy dla normalnego usera); (B4) sprzeczność DeloadSuggestion vs Readiness GOOD. | f9bd8e9 |
+
+## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
+
+| # | Opis | Scenariusz | Status |
+|---|------|-----------|--------|
+| B1 | Świeży user (3 treningi, RPE 6-7) dostaje "DELOAD ZALECANY — stagnacja na 3 ćwiczeniach". 3 treningi to za mało na werdykt stagnacji. | fresh | do analizy |
+| B2 | healthy (24 treningi, stała waga) → "stagnacja". Częściowo artefakt scenariusza (generator nie progresuje wag), do weryfikacji czy detektor też za czuły. | healthy | do analizy |
+| B3 | TrainingLoadAnalyzer zawsze INSUFFICIENT (ACWR=0.00) — nawet przy 30 treningach. Karta ACWR nigdy nie pokaże się userowi trenującemu 3×/tydz. Próg "daysOfData" za wysoki? | wszystkie | do analizy |
+| B4 | Sprzeczność: DeloadService→Suggestion (przeciążenie) ale TrainingReadiness→GOOD(80). Dwa systemy, sprzeczne werdykty. | overtraining_cut, healthy | do analizy |
 
 ---
 
