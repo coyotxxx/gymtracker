@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -215,7 +216,6 @@ fun DietScreen(
                     MiniTilesRow(
                         hydrationToday = hydrationToday,
                         hydrationGoal = hydrationGoal,
-                        onAddHydration = { ml -> vm.addHydration(ml) },
                         onOpenHydration = { vm.openHydrationLogDialog() },
                         stepsToday = stepsToday,
                         hcConnected = hcHasPermission && state.config.healthConnectSyncEnabled,
@@ -1265,13 +1265,16 @@ private fun MealGroupCard(
                 }
             }
             Spacer(Modifier.height(8.dp))
-            // Akcje w karcie: dodaj produkt + (opcjonalnie) inna opcja AI
+            // Akcje w karcie — v1.27.3: "+ Dodaj" z obramowaniem,
+            // "Inna" z liczbą w osobnym badge, "Przepis".
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                // + Dodaj — wyróżniony obramowaniem
                 Box(
                     modifier = Modifier
                         .weight(1f)
                         .height(40.dp)
                         .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(10.dp))
+                        .border(1.5.dp, AccentOrange, RoundedCornerShape(10.dp))
                         .clickable(onClick = onAdd),
                     contentAlignment = Alignment.Center
                 ) {
@@ -1282,11 +1285,11 @@ private fun MealGroupCard(
                             tint = AccentOrange,
                             modifier = Modifier.size(16.dp)
                         )
-                        Spacer(Modifier.width(6.dp))
+                        Spacer(Modifier.width(5.dp))
                         Text(
-                            "Dodaj produkt",
+                            "Dodaj",
                             style = MaterialTheme.typography.labelMedium.copy(
-                                fontWeight = FontWeight.SemiBold,
+                                fontWeight = FontWeight.Bold,
                                 fontSize = 13.sp
                             ),
                             color = AccentOrange
@@ -1302,14 +1305,43 @@ private fun MealGroupCard(
                             .clickable(onClick = onShowAlternatives),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(
-                            "🔁 Inna opcja ($alternativesCount)",
-                            style = MaterialTheme.typography.labelMedium.copy(
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 13.sp
-                            ),
-                            color = DarkOnSurface
-                        )
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.SwapHoriz,
+                                contentDescription = null,
+                                tint = DarkOnSurfaceVariant,
+                                modifier = Modifier.size(17.dp)
+                            )
+                            Spacer(Modifier.width(5.dp))
+                            Text(
+                                "Inna",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 13.sp
+                                ),
+                                color = DarkOnSurface
+                            )
+                            Spacer(Modifier.width(5.dp))
+                            // badge z liczbą alternatyw
+                            Box(
+                                modifier = Modifier
+                                    .background(
+                                        DarkOnSurfaceVariant.copy(alpha = 0.22f),
+                                        RoundedCornerShape(8.dp)
+                                    )
+                                    .padding(horizontal = 6.dp, vertical = 1.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    "$alternativesCount",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 11.sp
+                                    ),
+                                    color = DarkOnSurface
+                                )
+                            }
+                        }
                     }
                 }
                 if (hasRecipe) {
@@ -1443,146 +1475,147 @@ private fun formatStepsCompact(steps: Int): String {
 private fun MiniTilesRow(
     hydrationToday: Int,
     hydrationGoal: Int,
-    onAddHydration: (Int) -> Unit,
     onOpenHydration: () -> Unit,
     stepsToday: Int,
     hcConnected: Boolean,
     onOpenSteps: () -> Unit,
     onOpenRecovery: () -> Unit
 ) {
-    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-        // Woda
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .background(DarkSurface, RoundedCornerShape(10.dp))
-                .clickable(onClick = onOpenHydration)
-                .padding(8.dp)
+    // v1.27.3: kafelki bez przycisków akcji — cały kafelek klikalny otwiera
+    // dialog wprowadzania danych. Postęp pokazuje pasek, nie przyciski.
+    val stepsGoal = 8000
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        // WODA
+        MiniTile(
+            label = "WODA", icon = "💧", onClick = onOpenHydration,
+            modifier = Modifier.weight(1f)
         ) {
-            Column {
-                Text(
-                    "💧 WODA",
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
-                    ),
-                    color = AccentOrange
-                )
-                // v1.24.30: format kompaktowy "1.3k / 2.6L" wg mockupu.
-                Text(
-                    "${formatHydrationCompact(hydrationToday)} / ${formatHydrationGoalCompact(hydrationGoal)}",
-                    style = MaterialTheme.typography.labelMedium.copy(
-                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 13.sp
-                    ),
-                    color = DarkOnSurface
-                )
-                Spacer(Modifier.height(4.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
-                    listOf(250, 500).forEach { ml ->
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(22.dp)
-                                .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(5.dp))
-                                .clickable { onAddHydration(ml) },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "+$ml",
-                                style = MaterialTheme.typography.labelSmall.copy(
-                                    fontSize = 9.sp, fontWeight = FontWeight.SemiBold
-                                ),
-                                color = AccentOrange
-                            )
-                        }
-                    }
-                }
-            }
+            TileValue(
+                main = formatHydrationCompact(hydrationToday),
+                goal = "/ ${formatHydrationGoalCompact(hydrationGoal)}"
+            )
+            Spacer(Modifier.height(7.dp))
+            TileProgressBar(
+                if (hydrationGoal > 0) hydrationToday.toFloat() / hydrationGoal else 0f
+            )
         }
-        // Kroki
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .background(DarkSurface, RoundedCornerShape(10.dp))
-                .clickable(onClick = onOpenSteps)
-                .padding(8.dp)
+        // KROKI
+        MiniTile(
+            label = if (hcConnected) "KROKI 🔗" else "KROKI",
+            icon = "🚶", onClick = onOpenSteps,
+            modifier = Modifier.weight(1f)
         ) {
-            Column {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        "🚶 KROKI",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
-                        ),
-                        color = AccentOrange
-                    )
-                    if (hcConnected) {
-                        Spacer(Modifier.width(4.dp))
-                        Text(
-                            "🔗",
-                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
-                            color = AccentOrange
-                        )
-                    }
-                }
-                // v1.24.30: format kompaktowy "5.2k / 8k" wg mockupu.
-                val stepsGoal = 8000
-                Text(
-                    if (stepsToday > 0) "${formatStepsCompact(stepsToday)} / ${formatStepsCompact(stepsGoal)}"
-                    else "— / ${formatStepsCompact(stepsGoal)}",
-                    style = MaterialTheme.typography.labelMedium.copy(
-                        fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 13.sp
-                    ),
-                    color = DarkOnSurface
-                )
-                Spacer(Modifier.height(4.dp))
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(22.dp)
-                        .background(AccentOrange.copy(alpha = 0.15f), RoundedCornerShape(5.dp))
-                        .clickable(onClick = onOpenSteps),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        "Wpisz",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 10.sp, fontWeight = FontWeight.SemiBold
-                        ),
-                        color = AccentOrange
-                    )
-                }
-            }
+            TileValue(
+                main = if (stepsToday > 0) formatStepsCompact(stepsToday) else "—",
+                goal = "/ ${formatStepsCompact(stepsGoal)}"
+            )
+            Spacer(Modifier.height(7.dp))
+            TileProgressBar(
+                if (stepsToday > 0) stepsToday.toFloat() / stepsGoal else 0f
+            )
         }
-        // Regeneracja
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .background(DarkSurface, RoundedCornerShape(10.dp))
-                .clickable(onClick = onOpenRecovery)
-                .padding(8.dp)
+        // REGEN — brak liczby, akcja oceny
+        MiniTile(
+            label = "REGEN", icon = "🛌", onClick = onOpenRecovery,
+            modifier = Modifier.weight(1f)
         ) {
-            Column {
+            Text(
+                "Sen·Stres",
+                style = MaterialTheme.typography.labelMedium.copy(
+                    fontWeight = FontWeight.Bold, fontSize = 14.sp
+                ),
+                color = DarkOnSurface
+            )
+            Spacer(Modifier.height(3.dp))
+            Text(
+                "OCEŃ",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.2.sp
+                ),
+                color = AccentOrange
+            )
+        }
+    }
+}
+
+/** Wspólny szkielet mini-kafelka: label + ikona w rogu, pod spodem treść. */
+@Composable
+private fun MiniTile(
+    label: String,
+    icon: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable ColumnScope.() -> Unit
+) {
+    Box(
+        modifier = modifier
+            .background(DarkSurface, RoundedCornerShape(14.dp))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 11.dp, vertical = 10.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Text(
-                    "🩺 REGEN.",
+                    label,
                     style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 9.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
+                        fontSize = 10.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.0.sp
                     ),
-                    color = AccentOrange
-                )
-                Text(
-                    "Oceń dziś",
-                    style = MaterialTheme.typography.labelMedium.copy(
-                        fontWeight = FontWeight.Bold, fontSize = 11.sp
-                    ),
-                    color = DarkOnSurface
-                )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "Sen-Stres",
-                    style = MaterialTheme.typography.labelSmall.copy(fontSize = 9.sp),
                     color = DarkOnSurfaceVariant
                 )
+                Text(icon, style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp))
             }
+            Spacer(Modifier.height(8.dp))
+            content()
+        }
+    }
+}
+
+/** Wartość kafelka: duża liczba + mniejszy cel obok. */
+@Composable
+private fun TileValue(main: String, goal: String) {
+    Row(verticalAlignment = Alignment.Bottom) {
+        Text(
+            main,
+            style = MaterialTheme.typography.titleMedium.copy(
+                fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold, fontSize = 19.sp
+            ),
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.width(4.dp))
+        Text(
+            goal,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontFamily = FontFamily.Monospace, fontSize = 11.sp
+            ),
+            color = DarkOnSurfaceVariant,
+            modifier = Modifier.padding(bottom = 2.dp)
+        )
+    }
+}
+
+/** Cienki pasek postępu — pomarańczowe wypełnienie na ciemnym torze. */
+@Composable
+private fun TileProgressBar(fraction: Float) {
+    val f = fraction.coerceIn(0f, 1f)
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(5.dp)
+            .clip(RoundedCornerShape(3.dp))
+            .background(DarkSurfaceVariant)
+    ) {
+        if (f > 0f) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(f)
+                    .height(5.dp)
+                    .clip(RoundedCornerShape(3.dp))
+                    .background(AccentOrange)
+            )
         }
     }
 }
@@ -1595,11 +1628,13 @@ private fun PhaseRibbon(
     currentPhase: pl.filebit.gymtracker.data.entity.DietPhase?,
     onCheck: () -> Unit
 ) {
+    // v1.27.3: osobny kafelek z tłem i zaokrągleniem (wcześniej goły wiersz).
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .background(DarkSurface, RoundedCornerShape(12.dp))
             .clickable(onClick = onCheck)
-            .padding(vertical = 6.dp, horizontal = 4.dp),
+            .padding(horizontal = 14.dp, vertical = 13.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (currentPhase == null) {
@@ -1626,7 +1661,7 @@ private fun PhaseRibbon(
             )
         }
         Text(
-            "SPRAWDŹ",
+            "SPRAWDŹ ›",
             style = MaterialTheme.typography.labelSmall.copy(
                 fontWeight = FontWeight.Bold, fontSize = 11.sp, letterSpacing = 1.4.sp
             ),
