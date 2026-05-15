@@ -107,10 +107,12 @@ smoke test na urządzeniu przed release.
 ## FAZA 5 — UI interaction (warstwa 4)
 
 - [x] 5.1 Flow: rozpocznij trening → loguj set → zakończ → historia (TrainingFlowTest, 4 kroki + flow planned/confirm). Timer = foreground service, poza headless.
-- [ ] 5.2 Flow: generuj plan AI → zastosuj → start
-- [ ] 5.3 Flow: dieta — dodaj posiłek → logowanie → adherence
+- [x] 5.2 Flow: plan AI (symulowana odpowiedź) → extract → validate (3/3) → apply → start z planu (InteractionFlowTest).
+- [x] 5.3 Flow: dieta — logowanie posiłków → adherence rośnie 13%→36%→48% (DietFlowTest).
 - [x] 5.4 Flow: backup → restore — pokryty w 4.2 (BackupRoundTripTest).
-- [ ] 5.5 Reprezentatywne "banalne": toggles, dialogi, nawigacja, dismiss kart
+- [x] 5.5 Reprezentatywne "banalne": dismiss kart Home, ulubione ćwiczenia, toggle logowania AI (InteractionFlowTest).
+
+**FAZA 5 KOMPLETNA** — krytyczne flow użytkownika pokryte interakcyjnie.
 
 ## FAZA 6 — Integracja CI + pre-release
 
@@ -122,9 +124,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 5 — UI interaction (w toku)
-**Postęp:** 39 / 41 zadań (5.1, 5.4 done)
-**Następne zadanie:** 5.2 plan AI flow / 5.3 dieta flow / 5.5 banalne
+**Aktualna faza:** FAZA 5 ZAKOŃCZONA → FAZA 6 (integracja CI)
+**Postęp:** FAZY 0-5 zakończone
+**Następne zadanie:** FAZA 6 — integracja CI + pre-release checklist
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -180,7 +182,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 3.10 | ToolsSnapshotTest — Onboarding, PeriodizationPlan, Debug, HealthHistory, Update. **FAZA 3 zakończona.** | 5070539 |
 | 2026-05-15 | 4.1 | MigrationTest — round-trip 56→60 (baza v56 z JSON → migracja → walidacja, dane przeżywają) + ciągłość łańcucha 49→60. Migracje AppModule: private→internal. | f4f63a7 |
 | 2026-05-15 | 4.2-4.3 | BackupRoundTripTest — eksport ZIP → clear → import bezstratny (30 treningów/240 serii/12 pomiarów). 4.3 ExerciseDB bootstrap pokryty w 2.5. **FAZA 4 zakończona.** | 7939eab |
-| 2026-05-15 | 5.1 | TrainingFlowTest — flow treningu (start→loguj 6 serii→zakończ→historia) + flow planowane serie z planu→confirm. | (ten commit) |
+| 2026-05-15 | 5.1 | TrainingFlowTest — flow treningu (start→loguj 6 serii→zakończ→historia) + flow planowane serie z planu→confirm. | 59c8594 |
+| 2026-05-15 | 5.2-5.5 | DietFlowTest (posiłki→adherence 13/36/48%) + InteractionFlowTest (plan AI extract/validate/apply/start, dismiss kart, ulubione, toggle logów). **FAZA 5 zakończona.** | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
