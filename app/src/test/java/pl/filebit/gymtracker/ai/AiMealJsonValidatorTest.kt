@@ -420,6 +420,34 @@ class AiMealJsonValidatorTest {
         assertTrue("nadmiar białka NIE powinien być ERROR", result.errors.none { it.code.contains("protein") })
     }
 
+    // ── v1.27.1 — limit tłuszczu per posiłek (regresja: kolacja B42/W12/T47) ──
+
+    @Test
+    fun `posilek z ponad 55 procent kcal z tluszczu → ERROR slot_fat_too_high`() {
+        // 100 g migdałów = 579 kcal, 50 g tłuszczu → 77% kcal z tłuszczu.
+        // To wzorzec patologii "kolacja jajka+awokado+oliwa" (B42/W12/T47).
+        val plan = AiDayPlan(meals = listOf(
+            AiMealRecipe(
+                name = "Tłusta kolacja",
+                ingredients = listOf(AiRecipeIngredient("Migdały", 100)),
+                instructions = "...", prepMinutes = 5,
+                kcal = 579, proteinG = 21, carbsG = 22, fatG = 50
+            )
+        ))
+        val result = validator.validate(plan, ctx(meals = 1))
+        assertFalse("posiłek za tłusty → niewalidny", result.isValid)
+        assertTrue("ERROR slot_fat_too_high",
+            result.errors.any { it.code == "slot_fat_too_high" })
+    }
+
+    @Test
+    fun `posilek o normalnym tluszczu nie triggeruje slot_fat_too_high`() {
+        // goodPlan: posiłki mają 1/9/2 g tłuszczu — daleko poniżej 55% kcal
+        val result = validator.validate(goodPlan(), ctx())
+        assertTrue("normalne posiłki nie są flagowane jako za tłuste",
+            result.errors.none { it.code == "slot_fat_too_high" })
+    }
+
     @Test
     fun `fat too low produces ERROR`() {
         // Niedobór tłuszczu — istotny problem hormonalny

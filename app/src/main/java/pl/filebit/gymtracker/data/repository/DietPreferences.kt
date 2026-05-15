@@ -5,6 +5,10 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import pl.filebit.gymtracker.ai.MealStyle
+import pl.filebit.gymtracker.ai.MealStylePreferences
+import pl.filebit.gymtracker.ai.PlanStyle
+import pl.filebit.gymtracker.data.entity.MealType
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -75,8 +79,45 @@ class DietPreferences @Inject constructor(
         _state.value = config
     }
 
+    /**
+     * v1.27.1: preferencje generowania planu AI (styl, preferencje per posiłek,
+     * uwagi) — żeby wybór usera ZOSTAWAŁ między otwarciami okna generowania.
+     */
+    fun loadMealStylePreferences(): MealStylePreferences {
+        val global = runCatching {
+            PlanStyle.valueOf(prefs.getString(KEY_STYLE_GLOBAL, PlanStyle.CLASSIC.name)!!)
+        }.getOrDefault(PlanStyle.CLASSIC)
+        val slots = (prefs.getString(KEY_STYLE_SLOTS, null) ?: "")
+            .split(",")
+            .mapNotNull { entry ->
+                val parts = entry.split("=")
+                if (parts.size != 2) return@mapNotNull null
+                val type = runCatching { MealType.valueOf(parts[0].trim()) }.getOrNull()
+                val style = runCatching { MealStyle.valueOf(parts[1].trim()) }.getOrNull()
+                if (type != null && style != null) type to style else null
+            }
+            .toMap()
+        return MealStylePreferences(
+            globalStyle = global,
+            slotStyles = slots,
+            freeText = prefs.getString(KEY_STYLE_FREETEXT, "") ?: ""
+        )
+    }
+
+    fun saveMealStylePreferences(p: MealStylePreferences) {
+        prefs.edit()
+            .putString(KEY_STYLE_GLOBAL, p.globalStyle.name)
+            .putString(KEY_STYLE_SLOTS,
+                p.slotStyles.entries.joinToString(",") { "${it.key.name}=${it.value.name}" })
+            .putString(KEY_STYLE_FREETEXT, p.freeText)
+            .apply()
+    }
+
     companion object {
         private const val KEY_MEALS = "meals_per_day"
+        private const val KEY_STYLE_GLOBAL = "plan_style_global"
+        private const val KEY_STYLE_SLOTS = "plan_style_slots"
+        private const val KEY_STYLE_FREETEXT = "plan_style_freetext"
         private const val KEY_WINDOW_HOURS = "eating_window_hours"
         private const val KEY_WINDOW_START = "window_start_hour"
         private const val KEY_REMINDERS = "meal_reminders_enabled"

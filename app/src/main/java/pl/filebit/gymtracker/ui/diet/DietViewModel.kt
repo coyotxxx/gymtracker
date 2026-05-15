@@ -1053,10 +1053,17 @@ class DietViewModel @Inject constructor(
      * (case-insensitive) → zapisuje MealEntry per posiłek + Recipe.
      * Stan AI loading/success/error eksponuje przez aiPlanState.
      */
+    /** v1.27.1: ostatnio użyte preferencje stylu — okno generowania otwiera
+     *  się z nimi zamiast resetować do domyślnych. */
+    fun mealStylePreferences(): pl.filebit.gymtracker.ai.MealStylePreferences =
+        dietPrefs.loadMealStylePreferences()
+
     fun generateAiDayPlan(
         stylePrefs: pl.filebit.gymtracker.ai.MealStylePreferences = pl.filebit.gymtracker.ai.MealStylePreferences()
     ) {
         if (_aiPlanState.value is AiPlanState.Loading) return
+        // v1.27.1: zapamiętaj wybór stylu — następnym razem okno startuje z nim
+        dietPrefs.saveMealStylePreferences(stylePrefs)
         _aiPlanState.value = AiPlanState.Loading
         viewModelScope.launch {
             val config = dietPrefs.load()

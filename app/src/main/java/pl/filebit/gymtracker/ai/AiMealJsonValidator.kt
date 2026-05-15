@@ -211,6 +211,25 @@ class AiMealJsonValidator @Inject constructor(
                 }
             }
 
+            // v1.27.1: limit udziału tłuszczu w POJEDYNCZYM posiłku.
+            // Bez tego AI komponowało patologie typu kolacja jajka+łosoś+
+            // awokado+oliwa = 68% kcal z tłuszczu (B42/W12/T47). Walidacja
+            // dnia tego nie łapała, bo suma kcal/białka się zgadzała.
+            // Próg 55% kcal — normalne posiłki mają 20-45%, powyżej 55% to
+            // prawie zawsze błąd doboru składników. Guard >200 kcal chroni
+            // małe przekąski (gdzie wysoki % nie znaczy patologii).
+            val mealFatKcal = mealFatReal * 9.0
+            if (mealKcalReal > 200 && mealFatKcal > mealKcalReal * 0.55) {
+                val fatPct = (mealFatKcal * 100 / mealKcalReal).toInt()
+                errors += ValidationIssue(
+                    ValidationSeverity.ERROR, mIdx, "slot_fat_too_high",
+                    "Slot $mIdx ('${meal.name}'): ${mealFatReal.toInt()}g tłuszczu = " +
+                        "$fatPct% kcal posiłku (limit 55%). Posiłek za tłusty — " +
+                        "zmniejsz tłuste składniki (oliwa/orzechy/awokado/tłuste " +
+                        "mięso), dodaj chude białko lub węglowodany."
+                )
+            }
+
             totalKcalReal += mealKcalReal.toInt()
             totalProteinReal += mealProteinReal.toInt()
             totalCarbsReal += mealCarbsReal.toInt()

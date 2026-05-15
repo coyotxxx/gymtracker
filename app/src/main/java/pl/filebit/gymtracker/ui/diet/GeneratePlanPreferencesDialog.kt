@@ -58,11 +58,14 @@ import pl.filebit.gymtracker.ui.theme.SelectableChip
 fun GeneratePlanPreferencesDialog(
     mealsCount: Int,
     onGenerate: (MealStylePreferences) -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    /** v1.27.1: ostatnio użyte preferencje — okno otwiera się z nimi
+     *  zamiast resetować do CLASSIC przy każdym wejściu. */
+    initial: MealStylePreferences = MealStylePreferences()
 ) {
-    var globalStyle by remember { mutableStateOf(PlanStyle.CLASSIC) }
-    val slotStyles = remember { mutableStateOf<Map<MealType, MealStyle>>(emptyMap()) }
-    var freeText by remember { mutableStateOf("") }
+    var globalStyle by remember { mutableStateOf(initial.globalStyle) }
+    val slotStyles = remember { mutableStateOf(initial.slotStyles) }
+    var freeText by remember { mutableStateOf(initial.freeText) }
 
     val typesForSlots: List<MealType> = when (mealsCount) {
         2 -> listOf(MealType.BREAKFAST, MealType.DINNER)

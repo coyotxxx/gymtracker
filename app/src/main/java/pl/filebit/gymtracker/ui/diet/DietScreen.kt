@@ -353,6 +353,7 @@ fun DietScreen(
     if (showStylePicker) {
         GeneratePlanPreferencesDialog(
             mealsCount = state.config.mealsPerDay,
+            initial = vm.mealStylePreferences(),
             onGenerate = { stylePrefs ->
                 showStylePicker = false
                 vm.generateAiDayPlan(stylePrefs)
