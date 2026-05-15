@@ -66,14 +66,21 @@ class AiPreferences @Inject constructor(
             .build()
     }
 
-    private val secure by lazy {
-        EncryptedSharedPreferences.create(
-            context,
-            "ai_secure_prefs",
-            masterKey,
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-        )
+    // v1.27: gdy AndroidKeyStore niedostępny (środowisko testowe JVM lub
+    // skrajna awaria crypto na urządzeniu) — fallback do zwykłych prefs
+    // zamiast crashu. Na realnym Androidzie 6+ KeyStore zawsze działa.
+    private val secure: android.content.SharedPreferences by lazy {
+        runCatching {
+            EncryptedSharedPreferences.create(
+                context,
+                "ai_secure_prefs",
+                masterKey,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        }.getOrElse {
+            context.getSharedPreferences("ai_secure_fallback", Context.MODE_PRIVATE)
+        }
     }
 
     private val plain = context.getSharedPreferences("ai_prefs", Context.MODE_PRIVATE)

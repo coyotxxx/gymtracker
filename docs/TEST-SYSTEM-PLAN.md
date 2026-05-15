@@ -90,7 +90,7 @@ smoke test na urządzeniu przed release.
 - [x] 3.5 Dieta rozszerzenia: AdherenceReport ✓, AdjustmentHistory ✓, MealPrep ✓, ShoppingList ✓, RecipeBrowser ✓
 - [x] 3.6 Statystyki: Stats ✓, Achievements ✓ (modal), MuscleEngagement ✓, StrengthStandards ✓
 - [x] 3.7 Pomiary/ciało: Measurements ✓ (pomiary + trendy), ProgressPhotos ✓. MeasurementAdd/BodyMap = ekrany formularza/wizualizacji bez własnego ViewModelu.
-- [ ] 3.8 AI: AiTrainer, AiConversations, AiSettings, AiLog, AiWeeklyReport
+- [x] 3.8 AI: AiTrainer ✓, AiConversations ✓, AiSettings ✓, AiLog ✓, AiWeeklyReport ✓ (AiPreferences.secure — fallback gdy KeyStore niedostępny)
 - [ ] 3.9 Profil/ustawienia: Profile, TrainingSettings, Goals, Backup, Glossary, Notifications
 - [ ] 3.10 Narzędzia + reszta: Calculators, OneRm, PlateCalc, PeriodizationPlan, Onboarding, Health*, BarcodeScanner, FoodImageAnalyzer, Debug
 
@@ -119,8 +119,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 3 — snapshoty ekranów (w toku)
-**Postęp:** 32 / 41 zadań
-**Następne zadanie:** 3.8 AI (AiTrainer, AiConversations, AiSettings, AiLog, AiWeeklyReport)
+**Postęp:** 33 / 41 zadań
+**Następne zadanie:** 3.9 Profil/ustawienia (Profile, TrainingSettings, Goals, Backup, Glossary, Notifications)
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -170,7 +170,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 3.4 | DietCoreSnapshotTest — DietOnboarding (wizard), MealPreferences, Diet (DietViewModel 31 dep — graf DI kompletny: cel 2879 kcal, posiłki, grupy). | 8d6c6a7, 70da9c8 |
 | 2026-05-15 | 3.5 | DietExtSnapshotTest — AdherenceReport, AdjustmentHistory, MealPrep, ShoppingList, RecipeBrowser (empty state każdego). | 89826d2 |
 | 2026-05-15 | 3.6 | StatsSnapshotTest — Stats (5120 kg, 3 PR, 24 dni heatmapy), MuscleEngagement, StrengthStandards, Achievement modal. | 01e83d6 |
-| 2026-05-15 | 3.7 | MeasurementsSnapshotTest — Measurements (3 pomiary, trend wagi), ProgressPhotos (empty state). | (ten commit) |
+| 2026-05-15 | 3.7 | MeasurementsSnapshotTest — Measurements (3 pomiary, trend wagi), ProgressPhotos (empty state). | ed5802c |
+| 2026-05-15 | 3.8 | AiSnapshotTest — AiTrainer/AiConversations/AiSettings/AiLog/WeeklyReport. AiPreferences.secure: fallback do plain prefs gdy KeyStore niedostępny (też hardening produkcyjny — brak crashu). | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 

@@ -2,13 +2,16 @@ package pl.filebit.gymtracker.testkit
 
 import android.content.Context
 import pl.filebit.gymtracker.ai.AiClientImpl
+import pl.filebit.gymtracker.ai.AiContextBuilder
 import pl.filebit.gymtracker.ai.AiDecisionExplainer
 import pl.filebit.gymtracker.ai.AiMealJsonValidator
 import pl.filebit.gymtracker.ai.AiPlanApplier
 import pl.filebit.gymtracker.ai.AiPreferences
+import pl.filebit.gymtracker.ai.AiToolHandler
 import pl.filebit.gymtracker.ai.DietAiService
 import pl.filebit.gymtracker.ai.EmergencyMealGenerator
 import pl.filebit.gymtracker.ai.EventDetectorService
+import pl.filebit.gymtracker.ai.WeeklyReportService
 import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
 import pl.filebit.gymtracker.ai.MasterAiContextBuilder
 import pl.filebit.gymtracker.ai.MuscleRecoveryAnalyzer
@@ -25,8 +28,13 @@ import pl.filebit.gymtracker.ai.WorkoutPlanAiService
 import pl.filebit.gymtracker.data.db.AppDatabase
 import pl.filebit.gymtracker.data.health.HealthConnectManager
 import pl.filebit.gymtracker.data.repository.AdherenceCalculator
+import pl.filebit.gymtracker.data.repository.AiChatRepository
 import pl.filebit.gymtracker.data.repository.AiLogRepository
 import pl.filebit.gymtracker.data.repository.ActivityRepository
+import pl.filebit.gymtracker.data.repository.BodyRepository
+import pl.filebit.gymtracker.data.repository.GoalRepository
+import pl.filebit.gymtracker.data.repository.ProgressPhotoRepository
+import pl.filebit.gymtracker.data.repository.StrengthRepository
 import pl.filebit.gymtracker.data.repository.AutoAdjustmentService
 import pl.filebit.gymtracker.data.repository.CardioKcalEstimator
 import pl.filebit.gymtracker.data.repository.ConstraintResolver
@@ -198,4 +206,31 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     val dietReminderScheduler = DietReminderScheduler(context)
     val dietAutoAdjustmentScheduler = DietAutoAdjustmentScheduler(context)
     val healthConnectScheduler = HealthConnectSyncScheduler(context)
+
+    // ── AI — ekrany (Trener, rozmowy, raport tygodniowy) ──────────────────
+    val bodyRepo = BodyRepository(db.bodyMeasurementDao())
+    val strengthRepo = StrengthRepository(
+        db.exerciseDao(), db.workoutSetDao(), statsRepo, userProfileRepo, bodyRepo
+    )
+    val progressPhotoRepo = ProgressPhotoRepository(db.progressPhotoDao(), context)
+    val goalRepo = GoalRepository(db.goalDao(), bodyRepo, db.workoutSetDao(), statsRepo)
+    val aiChatRepo = AiChatRepository(db.aiConversationDao(), db.aiChatMessageDao())
+    val aiLogRepo = AiLogRepository(db.aiLogDao())
+    val aiContextBuilder = AiContextBuilder(
+        userProfileRepo, bodyRepo, statsRepo, strengthRepo, progressPhotoRepo, goalRepo,
+        db.trainingPlanDao(), db.planExerciseDao(), db.planExerciseSetDao(),
+        db.workoutDao(), db.workoutSetDao(), db.exerciseDao(), statsCacheService,
+        db.trainingEventDao(), db.weeklyRollupDao(), db.monthlyRollupDao(),
+        db.quarterlyRollupDao()
+    )
+    val aiToolHandler = AiToolHandler(
+        statsCacheService, db.bodyMeasurementDao(), db.trainingEventDao(),
+        db.weeklyRollupDao(), db.monthlyRollupDao(), db.quarterlyRollupDao(),
+        db.trainingMesocycleDao(), db.pendingPeriodizationDecisionDao()
+    )
+    val weeklyReportService = WeeklyReportService(
+        aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
+        db.aiWeeklyReportDao(), statsRepo, userProfileRepo, planRepo,
+        db.planExerciseDao(), db.planExerciseSetDao(), aiPlanApplier, masterAiContext
+    )
 }
