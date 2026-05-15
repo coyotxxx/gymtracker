@@ -68,6 +68,15 @@ class HomeDetectors(db: AppDatabase, context: Context) {
         deloadPrefs
     )
 
+    // v1.27 FAZA 2.3 — most trening↔dieta + estymator kcal cardio
+    val trainingDietBridge = pl.filebit.gymtracker.data.repository.TrainingDietBridge(
+        db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
+        planRepo, db.trainingDaySummaryDao()
+    )
+    val cardioKcalEstimator = pl.filebit.gymtracker.data.repository.CardioKcalEstimator(
+        trainingDietBridge
+    )
+
     /**
      * Woła wszystkie detektory na danych scenariusza i składa `HomeUiState`
      * — tak jak robi to HomeViewModel.combine(...).
