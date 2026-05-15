@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    jacoco  // v1.27 — coverage report systemu testów
 }
 
 android {
@@ -40,6 +41,7 @@ android {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             signingConfig = signingConfigs.getByName("debug")
+            enableUnitTestCoverage = true  // v1.27 — JaCoCo .exec z testDebugUnitTest
         }
         release {
             isMinifyEnabled = false
@@ -176,4 +178,36 @@ dependencies {
     androidTestImplementation(libs.room.testing)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.runner)
+}
+
+// v1.27 — FAZA 0.4 systemu testów: raport pokrycia (JaCoCo).
+// ./gradlew :app:jacocoTestReport → app/build/reports/jacoco/jacocoTestReport/
+tasks.register<JacocoReport>("jacocoTestReport") {
+    dependsOn("testDebugUnitTest")
+    group = "verification"
+    description = "Raport pokrycia testami JVM unit (FAZA 0.4)"
+
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        csv.required.set(false)
+    }
+
+    // Wykluczenia — kod generowany (nie liczy się do pokrycia logiki)
+    val generated = listOf(
+        "**/R.class", "**/R$*.class", "**/BuildConfig.*", "**/Manifest*.*",
+        "**/*_Hilt*.*", "**/Hilt_*.*", "**/Dagger*.*",
+        "**/*_Factory.*", "**/*_MembersInjector.*", "**/*Module_*.*",
+        "**/*_Impl.*", "**/*ComposableSingletons*.*", "**/*\$\$serializer.*",
+        "**/databinding/**", "**/BR.*"
+    )
+    classDirectories.setFrom(
+        fileTree("${layout.buildDirectory.get()}/tmp/kotlin-classes/debug") {
+            exclude(generated)
+        }
+    )
+    sourceDirectories.setFrom(files("src/main/java"))
+    executionData.setFrom(
+        fileTree(layout.buildDirectory.get()) { include("**/testDebugUnitTest.exec") }
+    )
 }

@@ -55,6 +55,19 @@ jobs:
       - name: Run unit tests (pure logic)
         run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
 
+      # v1.27 FAZA 0.4 — raport pokrycia testami (nie blokuje buildu APK)
+      - name: Coverage report (JaCoCo)
+        run: ./gradlew :app:jacocoTestReport --no-daemon --stacktrace
+        continue-on-error: true
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: app/build/reports/jacoco/jacocoTestReport/html/
+          if-no-files-found: warn
+          retention-days: 14
+
       - name: Build debug APK
         run: ./gradlew :app:assembleDebug --no-daemon --stacktrace
 
