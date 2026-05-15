@@ -74,7 +74,11 @@ class WorkoutPlanAiService @Inject constructor(
             if (favs.size < 12) {
                 (favs + available.filter { !it.isFavorite }).distinctBy { it.id }
             } else favs
-        } else available
+        } else {
+            // v1.26.3: smart filter — zamiast całej bazy (~1200) AI dostaje
+            // ograniczoną pulę: preferowane partie więcej, reszta mniej.
+            smartFilterPool(available, profile.preferredMuscleGroupsCsv)
+        }
 
         Log.d("WorkoutPlanAi", "generate(): pool=${pool.size} favs=${pool.count { it.isFavorite }} cfg.isConnected=${cfg.isConnected} provider=${cfg.provider}")
 
@@ -231,6 +235,19 @@ class WorkoutPlanAiService @Inject constructor(
                 4 -> append("  - Pn: UPPER | Wt: LOWER | Czw: UPPER | Pt: LOWER\n")
                 5 -> append("  - Pn: PUSH | Wt: PULL | Śr: LEGS | Pt: UPPER | Sob: LOWER\n")
                 6 -> append("  - Pn-Sb: Push/Pull/Legs × 2 (advanced)\n")
+            }
+
+            // v1.26.3: OBSZAR ZAINTERESOWANIA — preferowane partie z UserProfile.
+            // AI ma priorytetyzować objętość na tych grupach, ale plan dalej całościowy.
+            val preferredMuscles = profile.preferredMuscleGroupsCsv
+                .split(",")
+                .mapNotNull { runCatching { MuscleGroup.valueOf(it.trim()) }.getOrNull() }
+            if (preferredMuscles.isNotEmpty()) {
+                append("\n=== OBSZAR ZAINTERESOWANIA (preferencje usera) ===\n")
+                append("User chce się skupić na: ")
+                append(preferredMuscles.joinToString(", ") { it.displayName() })
+                append("\n→ Priorytetyzuj objętość (więcej serii/ćwiczeń) na tych partiach, ")
+                append("ale plan MUSI dalej pokrywać całe ciało (split bez luk).\n")
             }
 
             // v1.26.0: UWAGI UŻYTKOWNIKA — wolny tekst od usera (cardio, czas, kontuzje, preferencje)
@@ -511,6 +528,36 @@ class WorkoutPlanAiService @Inject constructor(
         }.toSet()
         if (allowed.isEmpty()) return all
         return all.filter { it.equipment in allowed }
+    }
+
+    /**
+     * v1.26.3: smart filter puli dla AI. Cała baza (~1200 ćwiczeń) w prompcie to
+     * ~30k tokenów. Redukcja BEZ utraty pokrycia splitu:
+     *  - grupuj po primaryMuscle
+     *  - preferowane partie (UserProfile.preferredMuscleGroupsCsv): limit 60/grupa
+     *  - pozostałe partie: limit 20/grupa (wystarczy do uzupełnienia splitu)
+     *  - w każdej grupie: favorites first, potem alfabetycznie
+     *  - jeśli preferredMuscleGroupsCsv puste → wszystkie grupy po 40
+     *
+     * Efekt: ~1200 → ~350-550 ćwiczeń, plan dalej całościowy, preferowane
+     * partie mają bogatszy wybór dla AI.
+     */
+    private fun smartFilterPool(available: List<Exercise>, preferredCsv: String): List<Exercise> {
+        val preferred = preferredCsv.split(",").mapNotNull {
+            runCatching { MuscleGroup.valueOf(it.trim()) }.getOrNull()
+        }.toSet()
+        val limitPreferred = 60
+        val limitOther = if (preferred.isEmpty()) 40 else 20
+
+        return available.groupBy { it.primaryMuscle }.flatMap { (muscle, list) ->
+            val limit = if (preferred.isEmpty() || muscle in preferred) {
+                if (preferred.isEmpty()) limitOther else limitPreferred
+            } else limitOther
+            list.sortedWith(
+                compareByDescending<Exercise> { it.isFavorite }
+                    .thenBy { it.name.lowercase() }
+            ).take(limit)
+        }
     }
 
     private fun splitFor(days: Int): List<Set<MuscleGroup>> {
