@@ -2,28 +2,55 @@ package pl.filebit.gymtracker.testkit
 
 import android.content.Context
 import pl.filebit.gymtracker.ai.AiClientImpl
+import pl.filebit.gymtracker.ai.AiPlanApplier
 import pl.filebit.gymtracker.ai.AiPreferences
 import pl.filebit.gymtracker.ai.EventDetectorService
+import pl.filebit.gymtracker.ai.HealthInsightAnalyzer
+import pl.filebit.gymtracker.ai.MasterAiContextBuilder
+import pl.filebit.gymtracker.ai.MuscleRecoveryAnalyzer
 import pl.filebit.gymtracker.ai.PeriodRollupService
+import pl.filebit.gymtracker.ai.PlanAuditService
+import pl.filebit.gymtracker.ai.RecoveryScoreCalculator
 import pl.filebit.gymtracker.ai.RpeOpinionService
+import pl.filebit.gymtracker.ai.StagnationAnalyzer
+import pl.filebit.gymtracker.ai.TrainingLoadAnalyzer
+import pl.filebit.gymtracker.ai.TrainingPhaseAnalyzer
+import pl.filebit.gymtracker.ai.TrainingReadinessAnalyzer
 import pl.filebit.gymtracker.ai.WorkoutAiSummaryService
+import pl.filebit.gymtracker.ai.WorkoutPlanAiService
 import pl.filebit.gymtracker.data.db.AppDatabase
+import pl.filebit.gymtracker.data.health.HealthConnectManager
+import pl.filebit.gymtracker.data.repository.AdherenceCalculator
 import pl.filebit.gymtracker.data.repository.AiLogRepository
+import pl.filebit.gymtracker.data.repository.ActivityRepository
+import pl.filebit.gymtracker.data.repository.DietPhaseRepository
+import pl.filebit.gymtracker.data.repository.DietPreferences
+import pl.filebit.gymtracker.data.repository.DietRepository
 import pl.filebit.gymtracker.data.repository.ExerciseRepository
+import pl.filebit.gymtracker.data.repository.HydrationCalculator
+import pl.filebit.gymtracker.data.repository.HydrationRepository
+import pl.filebit.gymtracker.data.repository.MealConsumptionRepository
+import pl.filebit.gymtracker.data.repository.MealFeedbackRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
+import pl.filebit.gymtracker.data.repository.RecoveryAnalyzer
+import pl.filebit.gymtracker.data.repository.RecoveryRepository
 import pl.filebit.gymtracker.data.repository.StatsCacheService
 import pl.filebit.gymtracker.data.repository.StatsRepository
 import pl.filebit.gymtracker.data.repository.TrainingDietBridge
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.repository.WorkoutRepository
 
 /**
- * v1.27 — FAZA 3 — buduje prawdziwe repozytoria potrzebne ViewModelom
+ * v1.27 — FAZA 3 — buduje prawdziwy graf DI potrzebny ViewModelom
  * z in-memory Room (żaden mock). Analog [HomeDetectors] dla warstwy
- * snapshotów ekranów: pozwala skonstruować ViewModel z realnym grafem DI.
+ * snapshotów ekranów. Zbudowany RAZ kompletny — także ciężkie serwisy
+ * AI (MasterAiContextBuilder, 17 zależności) — żeby ekrany AI-heavy
+ * (Plans, Diet, AiTrainer) dało się skonstruować bez powielania grafu.
  */
 class ViewModelKit(val db: AppDatabase, val context: Context) {
 
+    // ── statystyki / zdarzenia ────────────────────────────────────────────
     val statsCacheService = StatsCacheService(
         db.workoutDao(), db.exerciseDao(), db.workoutSetDao()
     )
@@ -36,13 +63,15 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
         db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
         db.trainingEventDao(), statsRepo, statsCacheService
     )
-    val planRepo = PlanRepository(
-        db.trainingPlanDao(), db.planExerciseDao(), db.planExerciseSetDao(),
-        db.weeklyPlanOverrideDao(), eventDetector
-    )
     private val periodRollup = PeriodRollupService(
         statsCacheService, db.bodyMeasurementDao(), db.trainingEventDao(),
         db.weeklyRollupDao(), db.monthlyRollupDao(), db.quarterlyRollupDao()
+    )
+
+    // ── repozytoria ───────────────────────────────────────────────────────
+    val planRepo = PlanRepository(
+        db.trainingPlanDao(), db.planExerciseDao(), db.planExerciseSetDao(),
+        db.weeklyPlanOverrideDao(), eventDetector
     )
     val workoutRepo = WorkoutRepository(
         db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
@@ -50,11 +79,48 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     )
     val exerciseRepo = ExerciseRepository(db.exerciseDao())
     val userProfileRepo = UserProfileRepository(db.userProfileDao())
+    val dietProfileRepo = UserDietProfileRepository(db.userDietProfileDao())
+    val dietRepo = DietRepository(
+        db.foodProductDao(), db.mealEntryDao(), db.fastingWindowDao(), db.recipeDao()
+    )
+    val mealFeedbackRepo = MealFeedbackRepository(db.mealFeedbackDao())
+    val dietPhaseRepo = DietPhaseRepository(db.dietPhaseDao())
+    val recoveryRepo = RecoveryRepository(db.recoveryLogDao())
+    val activityRepo = ActivityRepository(db.dailyActivityLogDao())
+    val hydrationRepo = HydrationRepository(db.hydrationLogDao())
+    val mealConsumptionRepo = MealConsumptionRepository(db.mealConsumptionDao())
+    val dietPrefs = DietPreferences(context)
+
+    // ── most trening↔dieta ────────────────────────────────────────────────
     val trainingDietBridge = TrainingDietBridge(
         db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
         planRepo, db.trainingDaySummaryDao()
     )
 
+    // ── analyzery ─────────────────────────────────────────────────────────
+    val recoveryScoreCalculator = RecoveryScoreCalculator(db.recoveryLogDao())
+    val trainingLoadAnalyzer = TrainingLoadAnalyzer(db.workoutDao(), db.workoutSetDao())
+    val muscleRecoveryAnalyzer = MuscleRecoveryAnalyzer(
+        db.workoutDao(), db.workoutSetDao(), db.exerciseDao()
+    )
+    val readinessAnalyzer = TrainingReadinessAnalyzer(
+        recoveryScoreCalculator, trainingLoadAnalyzer, muscleRecoveryAnalyzer
+    )
+    val phaseAnalyzer = TrainingPhaseAnalyzer(db.workoutDao(), db.workoutSetDao())
+    val recoveryAnalyzer = RecoveryAnalyzer()
+    val hydrationCalc = HydrationCalculator()
+    val stagnationAnalyzer = StagnationAnalyzer(
+        db.workoutDao(), db.workoutSetDao(), db.planExerciseDao(), db.exerciseDao()
+    )
+    val healthConnectManager = HealthConnectManager(context)
+    val healthAnalyzer = HealthInsightAnalyzer(healthConnectManager, db.recoveryLogDao())
+
+    val adherenceCalc = AdherenceCalculator(
+        dietRepo, dietPrefs, userProfileRepo, dietProfileRepo, trainingDietBridge,
+        db.bodyMeasurementDao(), db.adherenceLogDao(), mealConsumptionRepo
+    )
+
+    // ── AI ────────────────────────────────────────────────────────────────
     private val aiPrefs = AiPreferences(context)
     private val aiClient = AiClientImpl(AiLogRepository(db.aiLogDao()), aiPrefs)
     val workoutAiSummary = WorkoutAiSummaryService(
@@ -62,5 +128,21 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     )
     val rpeOpinion = RpeOpinionService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao()
+    )
+    val masterAiContext = MasterAiContextBuilder(
+        userProfileRepo, dietProfileRepo, db.bodyMeasurementDao(), dietRepo,
+        mealFeedbackRepo, exerciseRepo, adherenceCalc, recoveryRepo, recoveryAnalyzer,
+        activityRepo, hydrationRepo, hydrationCalc, dietPhaseRepo, trainingDietBridge,
+        muscleRecoveryAnalyzer, readinessAnalyzer, statsRepo
+    )
+    val aiPlanApplier = AiPlanApplier(planRepo, db.exerciseDao())
+    val workoutPlanAi = WorkoutPlanAiService(
+        aiClient, aiPrefs, exerciseRepo, userProfileRepo, dietProfileRepo,
+        planRepo, masterAiContext
+    )
+    val planAuditService = PlanAuditService(
+        aiClient, aiPrefs, db.trainingPlanDao(), db.planExerciseDao(),
+        db.planExerciseSetDao(), db.exerciseDao(), userProfileRepo, aiPlanApplier,
+        db.workoutDao(), masterAiContext, stagnationAnalyzer, phaseAnalyzer, healthAnalyzer
     )
 }

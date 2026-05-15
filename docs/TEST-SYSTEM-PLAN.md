@@ -84,7 +84,7 @@ smoke test na urządzeniu przed release.
 48 ekranów. Każdy: ViewModel → State → raport "co user widzi".
 
 - [x] 3.1 Trening: Home (Faza 1) ✓, WorkoutDetail ✓, History ✓, CoachWorkout ✓, ActiveWorkout ✓ — ViewModelKit + snapshoty
-- [ ] 3.2 Plany: Plans, PlanEdit, PlanTemplates
+- [x] 3.2 Plany: Plans ✓, PlanEdit ✓ (nowy + istniejący). PlanTemplates = statyczny obiekt danych (bez ViewModelu/logiki stanu).
 - [ ] 3.3 Ćwiczenia: ExerciseLibrary, ExerciseDetail, ExercisePicker
 - [ ] 3.4 Dieta core: Diet, DietOnboarding, MealPreferences
 - [ ] 3.5 Dieta rozszerzenia: AdherenceReport, AdjustmentHistory, MealPrep, ShoppingList, RecipeBrowser
@@ -119,8 +119,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 3 — snapshoty ekranów (w toku)
-**Postęp:** 26 / 41 zadań
-**Następne zadanie:** 3.2 Plany (Plans, PlanEdit, PlanTemplates)
+**Postęp:** 27 / 41 zadań
+**Następne zadanie:** 3.3 Ćwiczenia (ExerciseLibrary, ExerciseDetail, ExercisePicker)
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -164,7 +164,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.4c1 | AdherenceCalculatorTest — pipeline goal (Mifflin 2879 kcal) → spożycie (755 kcal co do grama) → AdherenceLog. Zostaje AutoAdjustmentService. | 22fe58e |
 | 2026-05-15 | 2.4c2 | CalorieAdjustmentEngineTest (5 bramek silnika: NEEDS_MORE_DATA, recovery override, REFEED, no-goal) + SafetyGuardTest (floor kcal, BMR floor, Block/Warn). Zamyka blok dietowy. | db5b839 |
 | 2026-05-15 | 2.7 | TrendAnalyzerTest (kierunki trendu wagi: NO_DATA / FALLING+fastLoss / FLAT+stagnacja / RISING+fastGain). **FAZA 2 zakończona.** | 89476bd |
-| 2026-05-15 | 3.1 | ViewModelKit (graf repo) + snapshoty: WorkoutDetail, History, CoachWorkout, ActiveWorkout. Wzorzec ViewModel-snapshot ustalony. | 174f058, 309ea14, (ten commit) |
+| 2026-05-15 | 3.1 | ViewModelKit (graf repo) + snapshoty: WorkoutDetail, History, CoachWorkout, ActiveWorkout. Wzorzec ViewModel-snapshot ustalony. | 174f058, 309ea14, 4226336 |
+| 2026-05-15 | 3.2 | ViewModelKit rozbudowany o MasterAiContextBuilder (17 dep) — graf AI kompletny. Snapshoty PlanList + PlanEdit (nowy/istniejący). | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
