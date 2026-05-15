@@ -56,17 +56,25 @@ event_log, weekly_volume_trend_12w, body_inflections, historical_summary).
 class AiPreferences @Inject constructor(
     @ApplicationContext context: Context
 ) {
-    private val masterKey = MasterKey.Builder(context)
-        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-        .build()
+    // v1.27: masterKey + secure jako `by lazy` — Android KeyStore (crypto)
+    // tworzony dopiero przy PIERWSZYM dostępie do klucza AI, nie w konstruktorze.
+    // Bez tego AiPreferences nie da się zbudować w teście JVM (Robolectric nie
+    // ma AndroidKeyStore). Zachowanie aplikacji bez zmian — lazy init.
+    private val masterKey by lazy {
+        MasterKey.Builder(context)
+            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+            .build()
+    }
 
-    private val secure = EncryptedSharedPreferences.create(
-        context,
-        "ai_secure_prefs",
-        masterKey,
-        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-    )
+    private val secure by lazy {
+        EncryptedSharedPreferences.create(
+            context,
+            "ai_secure_prefs",
+            masterKey,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
+    }
 
     private val plain = context.getSharedPreferences("ai_prefs", Context.MODE_PRIVATE)
 
