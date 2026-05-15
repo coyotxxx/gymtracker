@@ -39,7 +39,7 @@ class HomeDetectors(db: AppDatabase, context: Context) {
         db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),
         db.trainingEventDao(), statsRepo, statsCacheService
     )
-    private val planRepo = PlanRepository(
+    val planRepo = PlanRepository(
         db.trainingPlanDao(), db.planExerciseDao(), db.planExerciseSetDao(),
         db.weeklyPlanOverrideDao(), eventDetector
     )
@@ -60,6 +60,13 @@ class HomeDetectors(db: AppDatabase, context: Context) {
         recoveryScoreCalculator, trainingLoadAnalyzer, muscleRecoveryAnalyzer
     )
     val phaseAnalyzer = TrainingPhaseAnalyzer(db.workoutDao(), db.workoutSetDao())
+
+    // v1.27 FAZA 2.1 — serwis zwiększania obciążenia (mutuje wagi planu)
+    val loadIncreaseService = pl.filebit.gymtracker.data.repository.LoadIncreaseService(
+        planRepo,
+        pl.filebit.gymtracker.data.repository.LoadIncreasePreferences(context),
+        deloadPrefs
+    )
 
     /**
      * Woła wszystkie detektory na danych scenariusza i składa `HomeUiState`
