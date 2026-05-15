@@ -499,15 +499,15 @@ private fun experienceLabel(e: ExperienceLevel): String = when (e) {
  */
 @Composable
 private fun PickerTile(
-    emoji: String,
     label: String,
     isSelected: Boolean,
     modifier: Modifier = Modifier,
+    emoji: String? = null,
     onClick: () -> Unit
 ) {
     Box(
         modifier = modifier
-            .height(76.dp)
+            .height(if (emoji != null) 76.dp else 56.dp)
             .background(
                 if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
                 else pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
@@ -527,8 +527,10 @@ private fun PickerTile(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(emoji, style = MaterialTheme.typography.titleLarge)
-            Spacer(Modifier.height(2.dp))
+            if (emoji != null) {
+                Text(emoji, style = MaterialTheme.typography.titleLarge)
+                Spacer(Modifier.height(2.dp))
+            }
             Text(
                 label,
                 style = MaterialTheme.typography.labelSmall.copy(
@@ -593,7 +595,7 @@ private fun MuscleGroupPickerCard(
                 color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
             Spacer(Modifier.height(12.dp))
-            // Grid 3 kolumny
+            // v1.26.4 — proste kafle tekstowe (bez ikon), grid 3 kolumny
             val rows = all.toList().chunked(3)
             for (row in rows) {
                 Row(
@@ -603,7 +605,6 @@ private fun MuscleGroupPickerCard(
                     row.forEach { mg ->
                         val isSelected = mg.name in selected
                         PickerTile(
-                            emoji = muscleEmoji(mg),
                             label = mg.displayName(),
                             isSelected = isSelected,
                             modifier = Modifier.weight(1f),
@@ -731,22 +732,6 @@ private fun EquipmentPickerCard(
             }
         }
     }
-}
-
-/** v1.26.2 — emoji per grupa mięśniowa (wizualny picker). */
-private fun muscleEmoji(m: pl.filebit.gymtracker.data.entity.MuscleGroup): String = when (m) {
-    pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST -> "🫀"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.BACK -> "🔙"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS -> "🎽"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS -> "💪"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS -> "🦾"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS -> "🦵"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS -> "🦿"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES -> "🍑"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES -> "🦶"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.CORE -> "🎯"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO -> "🏃"
-    pl.filebit.gymtracker.data.entity.MuscleGroup.OTHER -> "⚙️"
 }
 
 /** v1.26.2 — emoji per sprzęt (wizualny picker). */
