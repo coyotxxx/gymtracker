@@ -413,7 +413,9 @@ class DietAiService @Inject constructor(
                     }
                 }
                 if (stylePrefs.freeText.isNotBlank()) {
-                    append("Dodatkowe życzenia usera: \"${stylePrefs.freeText}\"\n")
+                    append("\n=== UWAGI UŻYTKOWNIKA (zastosuj jeśli sensowne — w innym wypadku zignoruj) ===\n")
+                    append(stylePrefs.freeText.take(800))
+                    append("\n")
                 }
                 append("→ Honor preferencje stylu przy generowaniu, ALE makro/kcal targety dalej obowiązują.\n")
             }

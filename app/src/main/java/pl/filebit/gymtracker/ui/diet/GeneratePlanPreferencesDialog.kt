@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -167,22 +168,32 @@ fun GeneratePlanPreferencesDialog(
 
                 Spacer(Modifier.height(14.dp))
 
-                // === FREE TEXT ===
+                // v1.26.1: pole "Twoje uwagi do AI" — multiline 500 znaków
                 Text(
-                    "Dodatkowe życzenia (opcjonalnie)",
+                    "Twoje uwagi do AI (opcjonalnie)",
                     style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
                     color = DarkOnSurface
                 )
                 Spacer(Modifier.height(6.dp))
                 OutlinedTextField(
                     value = freeText,
-                    onValueChange = { freeText = it.take(160) },
-                    modifier = Modifier.fillMaxWidth(),
+                    onValueChange = { if (it.length <= 500) freeText = it },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 96.dp),
                     placeholder = {
                         Text(
-                            "np. Mam tylko 5 min na śniadanie, dziś bez nabiału",
+                            "np. Mam tylko 5 min na śniadanie, dziś bez nabiału, mocniejszy posiłek przedtreningowy, wolę kurczaka niż wołowinę…",
                             color = DarkOnSurfaceVariant,
                             style = MaterialTheme.typography.bodySmall
+                        )
+                    },
+                    maxLines = 6,
+                    supportingText = {
+                        Text(
+                            "${freeText.length}/500 znaków • AI uwzględni jeśli sensowne",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = DarkOnSurfaceVariant
                         )
                     },
                     shape = RoundedCornerShape(12.dp),
