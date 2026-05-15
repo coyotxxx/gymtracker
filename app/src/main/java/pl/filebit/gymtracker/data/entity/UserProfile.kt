@@ -53,5 +53,12 @@ data class UserProfile(
      * Pusty = brak ograniczeń (pełna siłownia).
      * AI generator planu treningowego filtruje ćwiczenia po tym polu.
      */
-    val availableEquipmentCsv: String = ""
+    val availableEquipmentCsv: String = "",
+    /**
+     * v1.26.2 — preferowane grupy mięśniowe (CSV nazw MuscleGroup enum).
+     * Pusty = brak preferencji (wszystkie partie). Używane do:
+     *  - wizualnego "obszaru zainteresowania" w ustawieniach treningu
+     *  - filtrowania kontekstu AI (v1.26.3: ~600 zamiast 1213 ćwiczeń)
+     */
+    val preferredMuscleGroupsCsv: String = ""
 )

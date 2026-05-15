@@ -111,7 +111,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.TrainingMesocycle::class,
         pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision::class
     ],
-    version = 58,
+    version = 59,
     // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
     exportSchema = true
 )

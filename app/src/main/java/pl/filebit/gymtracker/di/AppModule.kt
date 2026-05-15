@@ -349,6 +349,13 @@ object AppModule {
         }
     }
 
+    // v1.26.2 — preferowane grupy mięśniowe ("obszar zainteresowania")
+    private val MIGRATION_58_59 = object : Migration(58, 59) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `preferredMuscleGroupsCsv` TEXT NOT NULL DEFAULT ''")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -362,7 +369,8 @@ object AppModule {
                 MIGRATION_54_55,
                 MIGRATION_55_56,
                 MIGRATION_56_57,
-                MIGRATION_57_58
+                MIGRATION_57_58,
+                MIGRATION_58_59
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

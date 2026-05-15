@@ -2,6 +2,7 @@ package pl.filebit.gymtracker.ui.profile
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.Arrangement
@@ -174,6 +175,14 @@ fun TrainingSettingsScreen(
                     value = draft.daysPerWeek,
                     range = 1..7,
                     onChange = { draft = draft.copy(daysPerWeek = it) }
+                )
+            }
+
+            // v1.26.2 — Obszar zainteresowania (preferowane partie mięśniowe)
+            item {
+                MuscleGroupPickerCard(
+                    selectedCsv = draft.preferredMuscleGroupsCsv,
+                    onChange = { draft = draft.copy(preferredMuscleGroupsCsv = it) }
                 )
             }
 
@@ -483,6 +492,134 @@ private fun experienceLabel(e: ExperienceLevel): String = when (e) {
     ExperienceLevel.ADVANCED -> "Zaawansowany"
 }
 
+/**
+ * v1.26.2 — wizualny kafel wyboru (mięsień/sprzęt). Wyraźny stan zaznaczenia:
+ * accent border 2dp + tło accent + ✓ badge w rogu. Niezaznaczony — neutralne
+ * tło, subtelny border. "Szybko pomaga ustawić wizualnie" (feedback Macieja).
+ */
+@Composable
+private fun PickerTile(
+    emoji: String,
+    label: String,
+    isSelected: Boolean,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = modifier
+            .height(76.dp)
+            .background(
+                if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
+                else pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
+                RoundedCornerShape(12.dp)
+            )
+            .border(
+                width = if (isSelected) 2.dp else 1.dp,
+                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                else pl.filebit.gymtracker.ui.theme.DarkOutline,
+                shape = RoundedCornerShape(12.dp)
+            )
+            .clickable(onClick = onClick)
+            .padding(6.dp)
+    ) {
+        Column(
+            modifier = Modifier.align(Alignment.Center),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(emoji, style = MaterialTheme.typography.titleLarge)
+            Spacer(Modifier.height(2.dp))
+            Text(
+                label,
+                style = MaterialTheme.typography.labelSmall.copy(
+                    fontWeight = FontWeight.SemiBold, fontSize = 11.sp
+                ),
+                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
+                else pl.filebit.gymtracker.ui.theme.DarkOnSurface,
+                maxLines = 2,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+        }
+        if (isSelected) {
+            Text(
+                "✓",
+                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
+                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                modifier = Modifier.align(Alignment.TopEnd)
+            )
+        }
+    }
+}
+
+/**
+ * v1.26.2 — "Obszar zainteresowania": wizualny wybór preferowanych grup
+ * mięśniowych. Pusty wybór = brak preferencji (wszystkie partie).
+ */
+@Composable
+private fun MuscleGroupPickerCard(
+    selectedCsv: String,
+    onChange: (String) -> Unit
+) {
+    val selected = remember(selectedCsv) {
+        selectedCsv.split(",").mapNotNull { it.trim().takeIf { s -> s.isNotEmpty() } }.toSet()
+    }
+    val all = pl.filebit.gymtracker.data.entity.MuscleGroup.values()
+        .filter {
+            it != pl.filebit.gymtracker.data.entity.MuscleGroup.OTHER &&
+            it != pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO
+        }
+
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            1.dp, pl.filebit.gymtracker.ui.theme.DarkOutline
+        ),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "🎯 Obszar zainteresowania",
+                style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurface
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                "Zaznacz partie na których chcesz się skupić. AI będzie priorytetyzował " +
+                    "te grupy w generowanych planach. Pusty wybór = trening całego ciała.",
+                style = MaterialTheme.typography.bodySmall,
+                color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
+            )
+            Spacer(Modifier.height(12.dp))
+            // Grid 3 kolumny
+            val rows = all.toList().chunked(3)
+            for (row in rows) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    row.forEach { mg ->
+                        val isSelected = mg.name in selected
+                        PickerTile(
+                            emoji = muscleEmoji(mg),
+                            label = mg.displayName(),
+                            isSelected = isSelected,
+                            modifier = Modifier.weight(1f),
+                            onClick = {
+                                val newSet = if (isSelected) selected - mg.name else selected + mg.name
+                                onChange(newSet.joinToString(","))
+                            }
+                        )
+                    }
+                    repeat(3 - row.size) { Spacer(Modifier.weight(1f)) }
+                }
+            }
+        }
+    }
+}
+
 @Composable
 private fun EquipmentPickerCard(
     selectedCsv: String,
@@ -517,41 +654,28 @@ private fun EquipmentPickerCard(
                 style = MaterialTheme.typography.bodySmall,
                 color = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
             )
-            Spacer(Modifier.height(10.dp))
-            // Grid 2 kolumny
-            val pairs = all.chunked(2)
-            for (pair in pairs) {
+            Spacer(Modifier.height(12.dp))
+            // v1.26.2 — wizualne kafle, grid 3 kolumny
+            val rows = all.toList().chunked(3)
+            for (row in rows) {
                 Row(
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    pair.forEach { eq ->
+                    row.forEach { eq ->
                         val isSelected = eq.name in selected
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .background(
-                                    if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f)
-                                    else pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant,
-                                    RoundedCornerShape(8.dp)
-                                )
-                                .clickable {
-                                    val newSet = if (isSelected) selected - eq.name else selected + eq.name
-                                    onChange(newSet.joinToString(","))
-                                }
-                                .padding(horizontal = 10.dp, vertical = 8.dp)
-                        ) {
-                            Text(
-                                "${if (isSelected) "✓" else "○"} ${equipmentLabel(eq)}",
-                                style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
-                                color = if (isSelected) pl.filebit.gymtracker.ui.theme.AccentOrange
-                                       else pl.filebit.gymtracker.ui.theme.DarkOnSurface
-                            )
-                        }
+                        PickerTile(
+                            emoji = equipmentEmoji(eq),
+                            label = eq.displayName(),
+                            isSelected = isSelected,
+                            modifier = Modifier.weight(1f),
+                            onClick = {
+                                val newSet = if (isSelected) selected - eq.name else selected + eq.name
+                                onChange(newSet.joinToString(","))
+                            }
+                        )
                     }
-                    if (pair.size == 1) {
-                        Spacer(Modifier.weight(1f))
-                    }
+                    repeat(3 - row.size) { Spacer(Modifier.weight(1f)) }
                 }
             }
             Spacer(Modifier.height(10.dp))
@@ -609,11 +733,28 @@ private fun EquipmentPickerCard(
     }
 }
 
-private fun equipmentLabel(e: pl.filebit.gymtracker.data.entity.Equipment): String = when (e) {
-    pl.filebit.gymtracker.data.entity.Equipment.BARBELL -> "Sztanga olimpijska"
-    pl.filebit.gymtracker.data.entity.Equipment.DUMBBELLS -> "Sztangielki / hantle"
-    pl.filebit.gymtracker.data.entity.Equipment.MACHINE -> "Maszyny siłowe"
-    pl.filebit.gymtracker.data.entity.Equipment.CABLE -> "Wyciąg / linki"
-    pl.filebit.gymtracker.data.entity.Equipment.BODYWEIGHT -> "Masa ciała / drążek"
-    pl.filebit.gymtracker.data.entity.Equipment.OTHER -> "Inne"
+/** v1.26.2 — emoji per grupa mięśniowa (wizualny picker). */
+private fun muscleEmoji(m: pl.filebit.gymtracker.data.entity.MuscleGroup): String = when (m) {
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST -> "🫀"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BACK -> "🔙"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS -> "🎽"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS -> "💪"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS -> "🦾"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS -> "🦵"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS -> "🦿"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES -> "🍑"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES -> "🦶"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CORE -> "🎯"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO -> "🏃"
+    pl.filebit.gymtracker.data.entity.MuscleGroup.OTHER -> "⚙️"
+}
+
+/** v1.26.2 — emoji per sprzęt (wizualny picker). */
+private fun equipmentEmoji(e: pl.filebit.gymtracker.data.entity.Equipment): String = when (e) {
+    pl.filebit.gymtracker.data.entity.Equipment.BARBELL -> "🏋️"
+    pl.filebit.gymtracker.data.entity.Equipment.DUMBBELLS -> "💪"
+    pl.filebit.gymtracker.data.entity.Equipment.MACHINE -> "⚙️"
+    pl.filebit.gymtracker.data.entity.Equipment.CABLE -> "🔗"
+    pl.filebit.gymtracker.data.entity.Equipment.BODYWEIGHT -> "🤸"
+    pl.filebit.gymtracker.data.entity.Equipment.OTHER -> "📦"
 }
