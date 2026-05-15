@@ -72,7 +72,7 @@ smoke test na urządzeniu przed release.
 - [x] 2.1 Deload/load: `DeloadService`, `LoadIncreaseService` (AutoAdjustmentService → 2.3, to serwis diety)
 - [x] 2.2 Cele/osiągnięcia: `GoalAchievementService` (4 przypadki graniczne)
 - [x] 2.3 Dieta — lekkie: `DietVolatilityAnalyzer` ✓, `CardioKcalEstimator` ✓
-- [~] 2.4 BLOK DIETOWY: lekkie ✅ `QuickComposeService`, `EmergencyFoodEstimates`, `DietaryKnowledgeRepository` → DietLightServicesTest. Planujące ✅ `ShoppingListGenerator`, `MealPrepPlanner` → DietPlanningServicesTest. Pozostają: `AdherenceCalculator` (8 dep), `AutoAdjustmentService` (13 dep + AI) → 2.4c
+- [x] 2.4 BLOK DIETOWY ✅ lekkie (DietLightServicesTest), planujące (DietPlanningServicesTest), `AdherenceCalculator` (AdherenceCalculatorTest), silnik korekt kcal `CalorieAdjustmentEngine` + `SafetyGuard`. **UWAGA:** `AutoAdjustmentService.analyzeNow()` jako orkiestrator (13 dep + AI) nie pokryty E2E — sedno logiki jest w silniku (pokryty); orkiestracja → ręczny smoke.
 - [x] 2.5 Bootstrap: `ExerciseDbBootstrap` (import + GIFy + dedup zweryfikowane)
 - [x] 2.6 Statystyki/most: `StatsCacheService`, `TrainingDietBridge`
 - [ ] 2.7 Pozostałe serwisy z realną logiką (przegląd reszty 41)
@@ -117,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 2 — logika (w toku)
-**Postęp:** 22 / 41 zadań
-**Następne zadanie:** 2.4c AutoAdjustmentService (13 dep + AI) / 2.7 pozostałe
+**Postęp:** 24 / 41 zadań
+**Następne zadanie:** 2.7 pozostałe serwisy z realną logiką
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -159,7 +159,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.5 | ExerciseDbBootstrapTest — bootstrap importuje, >50% z GIF, zero duplikatów (dedup zweryfikowany). | 9399d4a |
 | 2026-05-15 | 2.4a | DietLightServicesTest — QuickCompose (gramatura pod target, +11% kcal raportowane), EmergencyFood (lookup + POPULAR), DietaryKnowledge (JSON z assetów). | 1f74825 |
 | 2026-05-15 | 2.4b | DietPlanningServicesTest — ShoppingListGenerator (agregacja 2 dni, zaokrągl. do opakowań) + MealPrepPlanner (plan 4 kroki, 65 min). | 9354169 |
-| 2026-05-15 | 2.4c1 | AdherenceCalculatorTest — pipeline goal (Mifflin 2879 kcal) → spożycie (755 kcal co do grama) → AdherenceLog. Zostaje AutoAdjustmentService. | (ten commit) |
+| 2026-05-15 | 2.4c1 | AdherenceCalculatorTest — pipeline goal (Mifflin 2879 kcal) → spożycie (755 kcal co do grama) → AdherenceLog. Zostaje AutoAdjustmentService. | 22fe58e |
+| 2026-05-15 | 2.4c2 | CalorieAdjustmentEngineTest (5 bramek silnika: NEEDS_MORE_DATA, recovery override, REFEED, no-goal) + SafetyGuardTest (floor kcal, BMR floor, Block/Warn). Zamyka blok dietowy. | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
