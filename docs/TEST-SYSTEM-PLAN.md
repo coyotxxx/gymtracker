@@ -117,8 +117,8 @@ smoke test na urządzeniu przed release.
 ## Status
 
 **Aktualna faza:** FAZA 2 — logika (w toku)
-**Postęp:** 21 / 41 zadań
-**Następne zadanie:** 2.4c AdherenceCalculator + AutoAdjustmentService / 2.7 pozostałe
+**Postęp:** 22 / 41 zadań
+**Następne zadanie:** 2.4c AutoAdjustmentService (13 dep + AI) / 2.7 pozostałe
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -158,7 +158,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.6 | TrainingDietBridgeTest (Workout→TrainingDaySummary) + StatsCacheServiceTest (spójność snapshotu). Lokalny build JDK17. | 723e71d |
 | 2026-05-15 | 2.5 | ExerciseDbBootstrapTest — bootstrap importuje, >50% z GIF, zero duplikatów (dedup zweryfikowany). | 9399d4a |
 | 2026-05-15 | 2.4a | DietLightServicesTest — QuickCompose (gramatura pod target, +11% kcal raportowane), EmergencyFood (lookup + POPULAR), DietaryKnowledge (JSON z assetów). | 1f74825 |
-| 2026-05-15 | 2.4b | DietPlanningServicesTest — ShoppingListGenerator (agregacja 2 dni, zaokrągl. do opakowań) + MealPrepPlanner (plan 4 kroki, 65 min). | (ten commit) |
+| 2026-05-15 | 2.4b | DietPlanningServicesTest — ShoppingListGenerator (agregacja 2 dni, zaokrągl. do opakowań) + MealPrepPlanner (plan 4 kroki, 65 min). | 9354169 |
+| 2026-05-15 | 2.4c1 | AdherenceCalculatorTest — pipeline goal (Mifflin 2879 kcal) → spożycie (755 kcal co do grama) → AdherenceLog. Zostaje AutoAdjustmentService. | (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
