@@ -83,7 +83,7 @@ smoke test na urządzeniu przed release.
 
 48 ekranów. Każdy: ViewModel → State → raport "co user widzi".
 
-- [ ] 3.1 Trening: Home (z Fazy 1), CoachWorkout, ActiveWorkout, WorkoutDetail, History
+- [x] 3.1 Trening: Home (Faza 1) ✓, WorkoutDetail ✓, History ✓, CoachWorkout ✓, ActiveWorkout ✓ — ViewModelKit + snapshoty
 - [ ] 3.2 Plany: Plans, PlanEdit, PlanTemplates
 - [ ] 3.3 Ćwiczenia: ExerciseLibrary, ExerciseDetail, ExercisePicker
 - [ ] 3.4 Dieta core: Diet, DietOnboarding, MealPreferences
@@ -118,9 +118,9 @@ smoke test na urządzeniu przed release.
 
 ## Status
 
-**Aktualna faza:** FAZA 2 ZAKOŃCZONA → FAZA 3 (snapshoty ekranów)
-**Postęp:** 25 / 41 zadań — FAZA 2 zakończona
-**Następne zadanie:** FAZA 3 — snapshoty ekranów
+**Aktualna faza:** FAZA 3 — snapshoty ekranów (w toku)
+**Postęp:** 26 / 41 zadań
+**Następne zadanie:** 3.2 Plany (Plans, PlanEdit, PlanTemplates)
 
 ### Lokalny build (od 2026-05-15)
 JDK 17 + Android SDK lokalnie — testy ~1-2 min zamiast 7 min CI.
@@ -163,7 +163,8 @@ Cel: po FAZA 1-3 logika i stany ekranów znacząco w górę.
 | 2026-05-15 | 2.4b | DietPlanningServicesTest — ShoppingListGenerator (agregacja 2 dni, zaokrągl. do opakowań) + MealPrepPlanner (plan 4 kroki, 65 min). | 9354169 |
 | 2026-05-15 | 2.4c1 | AdherenceCalculatorTest — pipeline goal (Mifflin 2879 kcal) → spożycie (755 kcal co do grama) → AdherenceLog. Zostaje AutoAdjustmentService. | 22fe58e |
 | 2026-05-15 | 2.4c2 | CalorieAdjustmentEngineTest (5 bramek silnika: NEEDS_MORE_DATA, recovery override, REFEED, no-goal) + SafetyGuardTest (floor kcal, BMR floor, Block/Warn). Zamyka blok dietowy. | db5b839 |
-| 2026-05-15 | 2.7 | TrendAnalyzerTest (kierunki trendu wagi: NO_DATA / FALLING+fastLoss / FLAT+stagnacja / RISING+fastGain). **FAZA 2 zakończona.** | (ten commit) |
+| 2026-05-15 | 2.7 | TrendAnalyzerTest (kierunki trendu wagi: NO_DATA / FALLING+fastLoss / FLAT+stagnacja / RISING+fastGain). **FAZA 2 zakończona.** | 89476bd |
+| 2026-05-15 | 3.1 | ViewModelKit (graf repo) + snapshoty: WorkoutDetail, History, CoachWorkout, ActiveWorkout. Wzorzec ViewModel-snapshot ustalony. | 174f058, 309ea14, (ten commit) |
 
 ## Bugi wykryte przez system testów (do rozpatrzenia — zadanie 1.8)
 
