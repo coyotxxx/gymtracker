@@ -87,6 +87,8 @@ data class DietUiState(
     val productsAll: List<FoodProduct> = emptyList(),
     val searchQuery: String = "",
     val categoryFilter: FoodCategory? = null,
+    /** v1.27.5: pokazuj tylko produkty oznaczone ❤ (filtr "Ulubione"). */
+    val favoritesOnly: Boolean = false,
     val filteredProducts: List<FoodProduct> = emptyList(),
     val config: DietConfig = DietConfig(),
     val perMealKcal: Int = 0,         // cel kcal podzielony przez liczbę posiłków
@@ -800,6 +802,36 @@ class DietViewModel @Inject constructor(
             _slotRecipes.value = _slotRecipes.value.toMutableMap().apply {
                 put(mealType, alternative.toRecipe())
             }
+            persistPlanRecipes()
+        }
+    }
+
+    /**
+     * v1.27.5: zapisuje przepisy + alternatywy ostatniego planu do SharedPreferences.
+     * Klucze map = MealType.name. Bez tego slotRecipes/slotAlternatives ginęły po
+     * restarcie i wygenerowany posiłek tracił przyciski "Inna"/"Przepis".
+     */
+    private fun persistPlanRecipes() {
+        runCatching {
+            dietPrefs.saveLastPlanRecipes(
+                pl.filebit.gymtracker.ai.DayPlanRecipes(
+                    recipesByType = _slotRecipes.value.entries.associate { (t, r) -> t.name to r },
+                    alternativesByType = _slotAlternatives.value.entries.associate { (t, a) -> t.name to a }
+                )
+            )
+        }
+    }
+
+    /** v1.27.5: przy starcie VM przywraca przepisy/alternatywy ostatniego planu. */
+    private fun restorePlanRecipes() {
+        runCatching {
+            val snap = dietPrefs.loadLastPlanRecipes()
+            _slotRecipes.value = snap.recipesByType.mapNotNull { (k, v) ->
+                runCatching { MealType.valueOf(k) }.getOrNull()?.let { it to v }
+            }.toMap()
+            _slotAlternatives.value = snap.alternativesByType.mapNotNull { (k, v) ->
+                runCatching { MealType.valueOf(k) }.getOrNull()?.let { it to v }
+            }.toMap()
         }
     }
 
@@ -867,6 +899,8 @@ class DietViewModel @Inject constructor(
             // v1.27.4: plan posiłków przenosi się na nowy dzień — gdy dziś
             // brak planu, kopiujemy go z ostatniego dnia który go miał.
             runCatching { carryOverPlanIfEmpty(_selectedDateMs.value) }
+            // v1.27.5: przywróć przepisy/alternatywy ostatniego planu (przyciski Inna/Przepis).
+            runCatching { restorePlanRecipes() }
         }
     }
 
@@ -894,6 +928,7 @@ class DietViewModel @Inject constructor(
 
     private val _searchQuery = MutableStateFlow("")
     private val _categoryFilter = MutableStateFlow<FoodCategory?>(null)
+    private val _favoritesOnly = MutableStateFlow(false)
     private val _selectedDateMs = MutableStateFlow(todayStartMs())
     private val _aiPlanState = MutableStateFlow<AiPlanState>(AiPlanState.Idle)
     val aiPlanState: StateFlow<AiPlanState> = _aiPlanState.asStateFlow()
@@ -902,6 +937,7 @@ class DietViewModel @Inject constructor(
         val dateMs: Long,
         val query: String,
         val cat: FoodCategory?,
+        val favoritesOnly: Boolean,
         val config: DietConfig
     )
 
@@ -909,9 +945,10 @@ class DietViewModel @Inject constructor(
         _selectedDateMs,
         _searchQuery,
         _categoryFilter,
+        _favoritesOnly,
         dietPrefs.state
-    ) { dateMs, query, cat, config ->
-        FilterTuple(dateMs, query, cat, config)
+    ) { dateMs, query, cat, favOnly, config ->
+        FilterTuple(dateMs, query, cat, favOnly, config)
     }
         .let { tuple ->
             @OptIn(ExperimentalCoroutinesApi::class)
@@ -919,6 +956,7 @@ class DietViewModel @Inject constructor(
                 val dateMs = t.dateMs
                 val query = t.query
                 val cat = t.cat
+                val favoritesOnly = t.favoritesOnly
                 val config = t.config
                 combine(
                     repo.observeMealsForDate(dateMs),
@@ -997,10 +1035,16 @@ class DietViewModel @Inject constructor(
                         )
                     )
 
+                    // v1.27.5: filtr kategorii + filtr "Ulubione" + wyszukiwarka.
+                    // Ulubione zawsze sortowane na górę listy (niezależnie od filtra).
                     val filtered = allProducts.let { list ->
                         val byCat = if (cat == null) list else list.filter { it.category == cat }
-                        if (query.isBlank()) byCat
-                        else byCat.filter { it.name.contains(query, ignoreCase = true) }
+                        val byFav = if (favoritesOnly) byCat.filter { it.isFavorite } else byCat
+                        val byQuery = if (query.isBlank()) byFav
+                            else byFav.filter { it.name.contains(query, ignoreCase = true) }
+                        byQuery.sortedWith(
+                            compareByDescending<FoodProduct> { it.isFavorite }.thenBy { it.name }
+                        )
                     }
 
                     DietUiState(
@@ -1014,6 +1058,7 @@ class DietViewModel @Inject constructor(
                         productsAll = allProducts,
                         searchQuery = query,
                         categoryFilter = cat,
+                        favoritesOnly = favoritesOnly,
                         filteredProducts = filtered,
                         config = cfg,
                         perMealKcal = if (cfg.mealsPerDay > 0) goal.kcal / cfg.mealsPerDay else 0
@@ -1025,6 +1070,7 @@ class DietViewModel @Inject constructor(
 
     fun setSearchQuery(q: String) { _searchQuery.value = q }
     fun setCategoryFilter(c: FoodCategory?) { _categoryFilter.value = c }
+    fun setFavoritesOnly(only: Boolean) { _favoritesOnly.value = only }
 
     fun addMeal(productId: Long, grams: Double, mealType: MealType) {
         viewModelScope.launch {
@@ -1129,12 +1175,15 @@ class DietViewModel @Inject constructor(
                     }
 
                     runCatching { adherenceCalc.computeForDate(_selectedDateMs.value) }
-                    // Zachowaj alternatywy per slot (transient — do następnej generacji)
+                    // Alternatywy per slot
                     _slotAlternatives.value = plan.mealsForSlots
                         .associate { (type, recipe) -> type to recipe.alternatives }
                         .filterValues { it.isNotEmpty() }
                     // Recipe per slot — do wyświetlenia "Pokaż przepis"
                     _slotRecipes.value = plan.mealsForSlots.associate { (type, recipe) -> type to recipe }
+                    // v1.27.5: zapisz snapshot — przeżyje restart aplikacji, więc
+                    // przeniesiony przez carry-over posiłek zachowa przyciski Inna/Przepis.
+                    persistPlanRecipes()
                     // (Ocena posiłków przeniesiona — pojawi się PO zjedzeniu, nie zaraz po wygenerowaniu)
                     _aiPlanState.value = AiPlanState.Success(
                         if (skippedIngredients > 0)

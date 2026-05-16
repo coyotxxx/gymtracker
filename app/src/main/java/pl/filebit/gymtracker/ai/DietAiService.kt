@@ -79,6 +79,18 @@ data class AiDayPlan(
     val meals: List<AiMealRecipe>
 )
 
+/**
+ * Snapshot przepisów + alternatyw ostatnio wygenerowanego planu AI.
+ * Persystowany w DietPreferences — przeżywa restart aplikacji, dzięki czemu
+ * przeniesiony przez carry-over posiłek zachowuje przyciski "Inna"/"Przepis".
+ * Klucze map = MealType.name (enum jako String — przenośne w JSON).
+ */
+@Serializable
+data class DayPlanRecipes(
+    val recipesByType: Map<String, AiMealRecipe> = emptyMap(),
+    val alternativesByType: Map<String, List<AiAlternative>> = emptyMap()
+)
+
 data class GeneratedDayPlan(
     val mealsForSlots: List<Pair<MealType, AiMealRecipe>>,
     /** SOFT warnings z walidatora — pokaż userowi (nie blokujące). */
@@ -535,14 +547,18 @@ class DietAiService @Inject constructor(
             }
 
             // === ULUBIONE PRODUKTY USERA (oznaczone ❤ w aplikacji) ===
-            if (favoriteProducts.isNotEmpty()) {
-                append("\n=== ULUBIONE PRODUKTY USERA (oznaczone ❤ — UŻYWAJ ICH JAKO BAZY) ===\n")
-                append("User wybrał te produkty jako preferowane. Plan MUSI je wykorzystywać:\n")
+            // v1.27.5: emitowane TYLKO gdy user świadomie włączył opcję
+            // "Generuj z ulubionych" w oknie generowania. Wcześniej sekcja była
+            // zawsze aktywna i twarda ("każdy posiłek MUSI") — co wymuszało
+            // ulubione nawet gdy user tego nie chciał. Teraz: priorytet, nie wyłączność.
+            if (favoriteProducts.isNotEmpty() && stylePrefs.preferFavorites) {
+                append("\n=== ⭐ ULUBIONE PRODUKTY USERA — PRIORYTET (świadomy wybór: 'Generuj z ulubionych') ===\n")
+                append("User włączył opcję generowania z ulubionych. W PIERWSZEJ KOLEJNOŚCI komponuj posiłki z tych produktów:\n")
                 favoriteProducts.forEach { fp ->
                     append("- ⭐ ${fp.name} (${fp.kcalPer100g.toInt()} kcal/100g, B${fp.proteinPer100g.toInt()}/W${fp.carbsPer100g.toInt()}/T${fp.fatPer100g.toInt()})\n")
                 }
-                append("ZASADA: każdy posiłek MUSI zawierać ≥1 produkt z tej listy ulubionych.\n")
-                append("ZASADA: użyj co najmniej ${favoriteProducts.size.coerceAtMost(mealsCount)} różnych ulubionych produktów w całym planie dnia.\n\n")
+                append("ZASADA: traktuj te produkty jako preferowaną bazę — sięgaj po nie kiedy tylko się da.\n")
+                append("ZASADA: jeśli z samych ulubionych NIE DA SIĘ trafić w cel kcal/makro lub wymagany styl posiłku — DOBIERZ brakujące produkty z pełnej listy DOSTĘPNYCH PRODUKTÓW. Ulubione = priorytet w pierwszej kolejności, NIE wyłączność.\n\n")
             }
 
             // === RÓŻNORODNOŚĆ — wymuszamy żeby AI nie generowało zawsze tego samego ===

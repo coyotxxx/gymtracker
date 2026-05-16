@@ -690,6 +690,8 @@ substitutePrompt?.let { sp ->
             },
             onSearchQueryChange = vm::setSearchQuery,
             onCategoryFilterChange = vm::setCategoryFilter,
+            favoritesOnly = state.favoritesOnly,
+            onFavoritesOnlyChange = vm::setFavoritesOnly,
             searchQuery = state.searchQuery,
             categoryFilter = state.categoryFilter,
             filteredProducts = state.filteredProducts,

@@ -3,11 +3,16 @@ package pl.filebit.gymtracker.data.repository
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import pl.filebit.gymtracker.ai.AiAlternative
+import pl.filebit.gymtracker.ai.AiMealRecipe
+import pl.filebit.gymtracker.ai.AiRecipeIngredient
+import pl.filebit.gymtracker.ai.DayPlanRecipes
 import pl.filebit.gymtracker.ai.MealStyle
 import pl.filebit.gymtracker.ai.MealStylePreferences
 import pl.filebit.gymtracker.ai.PlanStyle
@@ -63,5 +68,60 @@ class DietPreferencesMealStyleTest {
         p.saveMealStylePreferences(MealStylePreferences(globalStyle = PlanStyle.FIT_BOWL))
         assertEquals("ostatni zapis wygrywa",
             PlanStyle.FIT_BOWL, prefs().loadMealStylePreferences().globalStyle)
+    }
+
+    // === v1.27.5: opcja "Generuj z ulubionych" + snapshot przepisów planu ===
+
+    @Test
+    fun `preferFavorites zapisuje sie i wraca po odczycie`() {
+        prefs().saveMealStylePreferences(MealStylePreferences(preferFavorites = true))
+        assertTrue("wybór 'generuj z ulubionych' zachowany",
+            prefs().loadMealStylePreferences().preferFavorites)
+    }
+
+    @Test
+    fun `domyslnie preferFavorites jest wylaczone`() {
+        assertFalse("opcja ulubionych domyślnie OFF (opt-in)",
+            prefs().loadMealStylePreferences().preferFavorites)
+    }
+
+    @Test
+    fun `snapshot przepisow planu przezywa zapis i odczyt`() {
+        val recipe = AiMealRecipe(
+            name = "Owsianka z twarogiem",
+            ingredients = listOf(AiRecipeIngredient("Płatki owsiane", 60)),
+            instructions = "1. Zalej gorącym mlekiem.",
+            kcal = 480, proteinG = 35, carbsG = 60, fatG = 8,
+            alternatives = listOf(
+                AiAlternative(
+                    name = "Jajecznica na maśle",
+                    ingredients = listOf(AiRecipeIngredient("Jajka", 150)),
+                    kcal = 470, proteinG = 32, carbsG = 45, fatG = 18
+                )
+            )
+        )
+        val snap = DayPlanRecipes(
+            recipesByType = mapOf("BREAKFAST" to recipe),
+            alternativesByType = mapOf("BREAKFAST" to recipe.alternatives)
+        )
+        prefs().saveLastPlanRecipes(snap)
+
+        // świeża instancja — jak po restarcie aplikacji
+        val loaded = prefs().loadLastPlanRecipes()
+        assertEquals("przepis slotu zachowany",
+            "Owsianka z twarogiem", loaded.recipesByType["BREAKFAST"]?.name)
+        assertEquals("instrukcje zachowane",
+            "1. Zalej gorącym mlekiem.", loaded.recipesByType["BREAKFAST"]?.instructions)
+        assertEquals("alternatywa zachowana",
+            1, loaded.alternativesByType["BREAKFAST"]?.size)
+        assertEquals("nazwa alternatywy zachowana",
+            "Jajecznica na maśle", loaded.alternativesByType["BREAKFAST"]?.first()?.name)
+    }
+
+    @Test
+    fun `bez zapisanego snapshotu zwraca pusty DayPlanRecipes`() {
+        val loaded = prefs().loadLastPlanRecipes()
+        assertTrue("brak przepisów", loaded.recipesByType.isEmpty())
+        assertTrue("brak alternatyw", loaded.alternativesByType.isEmpty())
     }
 }

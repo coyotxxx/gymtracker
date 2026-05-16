@@ -68,6 +68,8 @@ fun AddMealDialog(
     filteredProducts: List<FoodProduct>,
     onSearchQueryChange: (String) -> Unit,
     onCategoryFilterChange: (FoodCategory?) -> Unit,
+    favoritesOnly: Boolean = false,
+    onFavoritesOnlyChange: (Boolean) -> Unit = {},
     onAdd: (productId: Long, grams: Double) -> Unit,
     onDismiss: () -> Unit,
     onToggleFavorite: ((FoodProduct) -> Unit)? = null
@@ -129,6 +131,13 @@ fun AddMealDialog(
                     Spacer(Modifier.height(10.dp))
 
                     LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        item {
+                            SelectableChip(
+                                text = "❤ Ulubione",
+                                selected = favoritesOnly,
+                                onClick = { onFavoritesOnlyChange(!favoritesOnly) }
+                            )
+                        }
                         item {
                             SelectableChip(
                                 text = "Wszystkie",

@@ -66,6 +66,7 @@ fun GeneratePlanPreferencesDialog(
     var globalStyle by remember { mutableStateOf(initial.globalStyle) }
     val slotStyles = remember { mutableStateOf(initial.slotStyles) }
     var freeText by remember { mutableStateOf(initial.freeText) }
+    var preferFavorites by remember { mutableStateOf(initial.preferFavorites) }
 
     val typesForSlots: List<MealType> = when (mealsCount) {
         2 -> listOf(MealType.BREAKFAST, MealType.DINNER)
@@ -171,6 +172,28 @@ fun GeneratePlanPreferencesDialog(
 
                 Spacer(Modifier.height(14.dp))
 
+                // === ULUBIONE PRODUKTY (v1.27.5) ===
+                Text(
+                    "Ulubione produkty",
+                    style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
+                    color = DarkOnSurface
+                )
+                Spacer(Modifier.height(6.dp))
+                SelectableChip(
+                    text = if (preferFavorites) "❤ Generuję z ulubionych" else "❤ Generuj z ulubionych",
+                    selected = preferFavorites,
+                    onClick = { preferFavorites = !preferFavorites }
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "AI w pierwszej kolejności użyje produktów oznaczonych ❤. " +
+                        "Jeśli z samych ulubionych nie wyjdą makro — dobierze pozostałe.",
+                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                    color = DarkOnSurfaceVariant
+                )
+
+                Spacer(Modifier.height(14.dp))
+
                 // v1.26.1: pole "Twoje uwagi do AI" — multiline 500 znaków
                 Text(
                     "Twoje uwagi do AI (opcjonalnie)",
@@ -233,7 +256,8 @@ fun GeneratePlanPreferencesDialog(
                             MealStylePreferences(
                                 globalStyle = globalStyle,
                                 slotStyles = slotStyles.value,
-                                freeText = freeText.trim()
+                                freeText = freeText.trim(),
+                                preferFavorites = preferFavorites
                             )
                         )
                     }) {

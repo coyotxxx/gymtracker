@@ -24,6 +24,7 @@ class DietPreferences @Inject constructor(
     @ApplicationContext context: Context
 ) {
     private val prefs = context.getSharedPreferences("diet_prefs", Context.MODE_PRIVATE)
+    private val recipesJson = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
 
     private val _state = MutableStateFlow(load())
     val state: StateFlow<DietConfig> = _state.asStateFlow()
@@ -100,7 +101,8 @@ class DietPreferences @Inject constructor(
         return MealStylePreferences(
             globalStyle = global,
             slotStyles = slots,
-            freeText = prefs.getString(KEY_STYLE_FREETEXT, "") ?: ""
+            freeText = prefs.getString(KEY_STYLE_FREETEXT, "") ?: "",
+            preferFavorites = prefs.getBoolean(KEY_STYLE_PREFER_FAV, false)
         )
     }
 
@@ -110,7 +112,34 @@ class DietPreferences @Inject constructor(
             .putString(KEY_STYLE_SLOTS,
                 p.slotStyles.entries.joinToString(",") { "${it.key.name}=${it.value.name}" })
             .putString(KEY_STYLE_FREETEXT, p.freeText)
+            .putBoolean(KEY_STYLE_PREFER_FAV, p.preferFavorites)
             .apply()
+    }
+
+    /**
+     * v1.27.5: przepisy + alternatywy ostatnio wygenerowanego planu AI.
+     *
+     * slotRecipes/slotAlternatives w DietViewModel były transient — ginęły po
+     * restarcie aplikacji / następnego dnia, więc przeniesiony przez carry-over
+     * posiłek miał tylko przycisk "Dodaj" (bez "Inna"/"Przepis"). Snapshot
+     * przeżywa restart i przywraca komplet przycisków.
+     */
+    fun loadLastPlanRecipes(): pl.filebit.gymtracker.ai.DayPlanRecipes {
+        val raw = prefs.getString(KEY_LAST_PLAN_RECIPES, null) ?: return pl.filebit.gymtracker.ai.DayPlanRecipes()
+        return runCatching {
+            recipesJson.decodeFromString(
+                pl.filebit.gymtracker.ai.DayPlanRecipes.serializer(), raw
+            )
+        }.getOrDefault(pl.filebit.gymtracker.ai.DayPlanRecipes())
+    }
+
+    fun saveLastPlanRecipes(snapshot: pl.filebit.gymtracker.ai.DayPlanRecipes) {
+        val raw = runCatching {
+            recipesJson.encodeToString(
+                pl.filebit.gymtracker.ai.DayPlanRecipes.serializer(), snapshot
+            )
+        }.getOrNull() ?: return
+        prefs.edit().putString(KEY_LAST_PLAN_RECIPES, raw).apply()
     }
 
     companion object {
@@ -118,6 +147,8 @@ class DietPreferences @Inject constructor(
         private const val KEY_STYLE_GLOBAL = "plan_style_global"
         private const val KEY_STYLE_SLOTS = "plan_style_slots"
         private const val KEY_STYLE_FREETEXT = "plan_style_freetext"
+        private const val KEY_STYLE_PREFER_FAV = "plan_style_prefer_favorites"
+        private const val KEY_LAST_PLAN_RECIPES = "last_plan_recipes_json"
         private const val KEY_WINDOW_HOURS = "eating_window_hours"
         private const val KEY_WINDOW_START = "window_start_hour"
         private const val KEY_REMINDERS = "meal_reminders_enabled"

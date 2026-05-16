@@ -13,7 +13,13 @@ data class MealStylePreferences(
     /** Per-slot preferencja stylu pojedynczego posiłku — np. śniadanie=SMOOTHIE. */
     val slotStyles: Map<MealType, MealStyle> = emptyMap(),
     /** Wolne pole — np. "Mam tylko 5 min na śniadanie", "wegetariańska kolacja". */
-    val freeText: String = ""
+    val freeText: String = "",
+    /**
+     * Gdy true — AI komponuje posiłki PRIORYTETOWO z produktów oznaczonych ❤.
+     * Jeśli z samych ulubionych nie wychodzi makro/kcal/styl — dobiera pozostałe.
+     * Domyślnie false (opt-in z okna generowania).
+     */
+    val preferFavorites: Boolean = false
 )
 
 /** Globalny styl planu — wpływa na charakter wszystkich posiłków. */
