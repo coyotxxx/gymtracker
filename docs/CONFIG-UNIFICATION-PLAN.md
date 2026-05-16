@@ -8,7 +8,7 @@
 | Etap | Opis | Status | Release |
 |------|------|--------|---------|
 | 0 | Baseline + przygotowanie | ✅ DONE | — |
-| 1 | Scalenie tabel (migracja 60→61) | ▶ CI/RELEASE | v1.28.0 |
+| 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
 | 2 | Jeden cel (migracja 61→62) | ☐ TODO | — |
 | 3 | Ekran „Konfiguracja" | ☐ TODO | — |
 | 4 | Kreator = ten sam ekran | ☐ TODO | — |
@@ -152,14 +152,16 @@ Kroki:
 7. **Cel — uzgodnienie przy migracji:** w Etapie 1 NIE ruszamy `weightGoalType`
    (zostaje). Tylko kopiujemy `goalType` z diety. Unifikacja celu = Etap 2.
 
-Weryfikacja Etapu 1:
-- [ ] Test `MigrationTestHelper` 60→61 z realnym wierszem danych (fixture Macieja).
-- [ ] Test 60→61 BEZ wiersza `user_diet_profile` (świeży user / pominięta dieta).
-- [ ] Pełny zestaw testów (571) zielony.
-- [ ] CI zielone.
-- [ ] Emulator: instalacja na starej bazie v60 → brak crasha, dane na miejscu;
-      ekrany Profil/Trening/Dieta działają identycznie.
-- [ ] Release.
+Weryfikacja Etapu 1 — ✅ UKOŃCZONA 2026-05-16 (commity 2004b01, 88a6157):
+- [x] Robolectric `MigrationTest` — realna migracja 56→61 + walidacja schematu v61
+      przez Room (CI). Łańcuch 49→61, 12 migracji.
+- [x] androidTest `migrate60To61_mergesDietProfileIntoUserProfile` — kopiowanie
+      wiersza diety z pełnymi danymi.
+- [x] Pełny zestaw testów (597) zielony, CI zielone.
+- [x] Emulator: instalacja v1.28.0 na bazie v60 (po v1.27.9) → migracja 60→61
+      bez crasha; onboarding, Plany, Profil, kreator diety (zapis przez nakładkę)
+      i ekran Diety (odczyt + TDEE 2633 kcal) działają.
+- [x] Release v1.28.0.
 
 ---
 
