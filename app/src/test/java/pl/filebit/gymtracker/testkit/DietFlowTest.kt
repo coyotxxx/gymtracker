@@ -13,6 +13,7 @@ import pl.filebit.gymtracker.data.entity.MealEntry
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 
 /**
@@ -28,10 +29,11 @@ class DietFlowTest : TestHarness() {
     fun `flow - logowanie posilkow podnosi adherence dnia`() = runBlocking {
         UserProfileRepository(db.userProfileDao()).save(
             UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
-        db.userDietProfileDao().upsert(UserDietProfile(
-            ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
-            goalType = DietGoalType.MAINTAIN,
-            onboardingCompletedAt = System.currentTimeMillis()))
+        UserDietProfileRepository(UserProfileRepository(db.userProfileDao())).save(
+            UserDietProfile(
+                ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
+                goalType = DietGoalType.MAINTAIN,
+                onboardingCompletedAt = System.currentTimeMillis()))
         val kit = ViewModelKit(db, context)
         val now = System.currentTimeMillis()
 

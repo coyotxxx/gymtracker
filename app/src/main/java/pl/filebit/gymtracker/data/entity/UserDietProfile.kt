@@ -1,8 +1,5 @@
 package pl.filebit.gymtracker.data.entity
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
 enum class ActivityLevel {
     SEDENTARY,      // siedzący tryb (biuro, mało ruchu) — ×1.2
     LIGHT,          // lekko aktywny (chodzenie, lekkie prace) — ×1.375
@@ -32,16 +29,16 @@ enum class DietGoalType {
 }
 
 /**
- * Rozszerzona konfiguracja dla modułu DIETY.
- * Singleton (id=1). Tworzony przez DietOnboardingWizard po wejściu w Dietę
- * (NIE w głównym onboardingu treningu — bo niektórzy użytkownicy chcą tylko trening).
+ * Widok pól diety profilu użytkownika.
  *
- * Dane wspólne (waga, płeć, dni treningowe) zostają w UserProfile —
- * tutaj tylko pola SPECYFICZNE dla diety.
+ * v1.28 (refaktor "jedno źródło prawdy", Etap 1): to JUŻ NIE jest encja Room —
+ * dane fizycznie żyją w scalonej encji [UserProfile] / tabeli `user_profile`.
+ * Ten data class zostaje jako DTO/widok: `UserDietProfileRepository` mapuje go
+ * w obie strony na `UserProfile`, dzięki czemu konsumenci (DietViewModel,
+ * DietAiService, backup itd.) działają bez zmian. Patrz docs/CONFIG-UNIFICATION-PLAN.md.
  */
-@Entity(tableName = "user_diet_profile")
 data class UserDietProfile(
-    @PrimaryKey val id: Int = 1,
+    val id: Int = 1,
 
     // === Krok 1: Dane podstawowe (potrzebne do dokładnego BMR Mifflin-St Jeor) ===
     val ageYears: Int = 30,

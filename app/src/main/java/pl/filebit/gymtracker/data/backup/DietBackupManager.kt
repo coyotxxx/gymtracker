@@ -20,6 +20,7 @@ import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.RecoveryLog
 import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.repository.DietPreferences
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -146,7 +147,8 @@ data class DietPreferencesDto(
 class DietBackupManager @Inject constructor(
     @ApplicationContext private val context: Context,
     private val db: AppDatabase,
-    private val dietPrefs: DietPreferences
+    private val dietPrefs: DietPreferences,
+    private val dietProfileRepo: UserDietProfileRepository
 ) {
     private val json = Json { ignoreUnknownKeys = true; prettyPrint = true; isLenient = true }
 
@@ -180,7 +182,6 @@ class DietBackupManager @Inject constructor(
         val adjustmentDao = db.dietAdjustmentDao()
         val hydrationDao = db.hydrationLogDao()
         val recoveryDao = db.recoveryLogDao()
-        val dietProfileDao = db.userDietProfileDao()
 
         val now = System.currentTimeMillis()
         val allProducts = foodDao.getAll()
@@ -194,7 +195,7 @@ class DietBackupManager @Inject constructor(
         return DietBackup(
             version = 1,
             exportedAt = now,
-            userDietProfile = dietProfileDao.get()?.toDto(),
+            userDietProfile = dietProfileRepo.get()?.toDto(),
             customFoodProducts = allCustomProducts.map { it.toDto() },
             mealEntries = meals.mapNotNull { e ->
                 val p = productById[e.productId] ?: return@mapNotNull null
@@ -258,8 +259,7 @@ class DietBackupManager @Inject constructor(
 
         // 1. UserDietProfile
         backup.userDietProfile?.let { dto ->
-            val dao = db.userDietProfileDao()
-            dao.upsert(UserDietProfile(
+            dietProfileRepo.save(UserDietProfile(
                 id = 1,
                 ageYears = dto.ageYears, heightCm = dto.heightCm,
                 activityLevel = runCatching { pl.filebit.gymtracker.data.entity.ActivityLevel.valueOf(dto.activityLevel) }.getOrDefault(pl.filebit.gymtracker.data.entity.ActivityLevel.MODERATE),

@@ -37,7 +37,7 @@ class AdherenceCalculatorTest : TestHarness() {
                 db.fastingWindowDao(), db.recipeDao()),
             dietPrefs = DietPreferences(context),
             profileRepo = UserProfileRepository(db.userProfileDao()),
-            dietProfileRepo = UserDietProfileRepository(db.userDietProfileDao()),
+            dietProfileRepo = UserDietProfileRepository(UserProfileRepository(db.userProfileDao())),
             trainingDietBridge = kit.trainingDietBridge,
             bodyDao = db.bodyMeasurementDao(),
             dao = db.adherenceLogDao(),
@@ -48,9 +48,10 @@ class AdherenceCalculatorTest : TestHarness() {
     private suspend fun seedProfile() {
         UserProfileRepository(db.userProfileDao()).save(
             UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
-        db.userDietProfileDao().upsert(UserDietProfile(
-            ageYears = 30, heightCm = 180,
-            activityLevel = ActivityLevel.MODERATE, goalType = DietGoalType.MAINTAIN))
+        UserDietProfileRepository(UserProfileRepository(db.userProfileDao())).save(
+            UserDietProfile(
+                ageYears = 30, heightCm = 180,
+                activityLevel = ActivityLevel.MODERATE, goalType = DietGoalType.MAINTAIN))
     }
 
     @Test

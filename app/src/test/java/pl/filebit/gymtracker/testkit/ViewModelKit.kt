@@ -107,7 +107,7 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     )
     val exerciseRepo = ExerciseRepository(db.exerciseDao())
     val userProfileRepo = UserProfileRepository(db.userProfileDao())
-    val dietProfileRepo = UserDietProfileRepository(db.userDietProfileDao())
+    val dietProfileRepo = UserDietProfileRepository(userProfileRepo)
     val dietRepo = DietRepository(
         db.foodProductDao(), db.mealEntryDao(), db.fastingWindowDao(), db.recipeDao()
     )

@@ -363,6 +363,76 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.28 (refaktor "jedno źródło prawdy", Etap 1 — docs/CONFIG-UNIFICATION-PLAN.md):
+     * scala encje `UserProfile` + `UserDietProfile` w jedną tabelę `user_profile`.
+     *
+     * 1) ALTER TABLE — dodaje 22 kolumny diety do `user_profile` (wszystkie z DEFAULT,
+     *    żeby istniejące wiersze były poprawne i ALTER NOT NULL przeszedł).
+     * 2) UPDATE — kopiuje wiersz z `user_diet_profile` (id=1) do `user_profile` (id=1).
+     *    Guard `(SELECT COUNT(*) ...) > 0` chroni usera który nigdy nie otwierał
+     *    diety (brak wiersza) — bez guardu subquery zwróciłaby NULL do kolumn NOT NULL.
+     *
+     * Tabela `user_diet_profile` ZOSTAJE w bazie (osierocona — Room toleruje nieznane
+     * tabele). Bezpiecznik: dane fizycznie są aż do Etapu 5, cofnięcie możliwe.
+     */
+    internal val MIGRATION_60_61 = object : Migration(60, 61) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `ageYears` INTEGER NOT NULL DEFAULT 30")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `heightCm` INTEGER NOT NULL DEFAULT 175")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `activityLevel` TEXT NOT NULL DEFAULT 'MODERATE'")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `avgStepsPerDay` INTEGER NOT NULL DEFAULT 7000")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `goalType` TEXT NOT NULL DEFAULT 'MAINTAIN'")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `paceKgPerWeek` REAL NOT NULL DEFAULT 0.0")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `customDeficitKcal` INTEGER")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `dietPreference` TEXT NOT NULL DEFAULT 'STANDARD'")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `allergies` TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `intolerances` TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `dislikedFoods` TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `lovedFoods` TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `cookingTimePerMealMin` INTEGER NOT NULL DEFAULT 15")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `eatsAtWork` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `hasMicrowaveAtWork` INTEGER NOT NULL DEFAULT 1")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `mealPrepInterested` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `weeklyBudgetPln` INTEGER")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `medicalConditions` TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `medicalAwareness` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `usualTrainingHour` INTEGER")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `dietOnboardingCompletedAt` INTEGER")
+            db.execSQL("ALTER TABLE `user_profile` ADD COLUMN `dietUpdatedAt` INTEGER NOT NULL DEFAULT 0")
+
+            // Kopiowanie danych diety do scalonego wiersza (tylko jeśli wiersz diety istnieje).
+            db.execSQL(
+                """
+                UPDATE `user_profile` SET
+                    `ageYears` = (SELECT `ageYears` FROM `user_diet_profile` WHERE `id` = 1),
+                    `heightCm` = (SELECT `heightCm` FROM `user_diet_profile` WHERE `id` = 1),
+                    `activityLevel` = (SELECT `activityLevel` FROM `user_diet_profile` WHERE `id` = 1),
+                    `avgStepsPerDay` = (SELECT `avgStepsPerDay` FROM `user_diet_profile` WHERE `id` = 1),
+                    `goalType` = (SELECT `goalType` FROM `user_diet_profile` WHERE `id` = 1),
+                    `paceKgPerWeek` = (SELECT `paceKgPerWeek` FROM `user_diet_profile` WHERE `id` = 1),
+                    `customDeficitKcal` = (SELECT `customDeficitKcal` FROM `user_diet_profile` WHERE `id` = 1),
+                    `dietPreference` = (SELECT `dietPreference` FROM `user_diet_profile` WHERE `id` = 1),
+                    `allergies` = (SELECT `allergies` FROM `user_diet_profile` WHERE `id` = 1),
+                    `intolerances` = (SELECT `intolerances` FROM `user_diet_profile` WHERE `id` = 1),
+                    `dislikedFoods` = (SELECT `dislikedFoods` FROM `user_diet_profile` WHERE `id` = 1),
+                    `lovedFoods` = (SELECT `lovedFoods` FROM `user_diet_profile` WHERE `id` = 1),
+                    `cookingTimePerMealMin` = (SELECT `cookingTimePerMealMin` FROM `user_diet_profile` WHERE `id` = 1),
+                    `eatsAtWork` = (SELECT `eatsAtWork` FROM `user_diet_profile` WHERE `id` = 1),
+                    `hasMicrowaveAtWork` = (SELECT `hasMicrowaveAtWork` FROM `user_diet_profile` WHERE `id` = 1),
+                    `mealPrepInterested` = (SELECT `mealPrepInterested` FROM `user_diet_profile` WHERE `id` = 1),
+                    `weeklyBudgetPln` = (SELECT `weeklyBudgetPln` FROM `user_diet_profile` WHERE `id` = 1),
+                    `medicalConditions` = (SELECT `medicalConditions` FROM `user_diet_profile` WHERE `id` = 1),
+                    `medicalAwareness` = (SELECT `medicalAwareness` FROM `user_diet_profile` WHERE `id` = 1),
+                    `usualTrainingHour` = (SELECT `usualTrainingHour` FROM `user_diet_profile` WHERE `id` = 1),
+                    `dietOnboardingCompletedAt` = (SELECT `onboardingCompletedAt` FROM `user_diet_profile` WHERE `id` = 1),
+                    `dietUpdatedAt` = (SELECT `updatedAt` FROM `user_diet_profile` WHERE `id` = 1)
+                WHERE `id` = 1 AND (SELECT COUNT(*) FROM `user_diet_profile` WHERE `id` = 1) > 0
+                """.trimIndent()
+            )
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -378,7 +448,8 @@ object AppModule {
                 MIGRATION_56_57,
                 MIGRATION_57_58,
                 MIGRATION_58_59,
-                MIGRATION_59_60
+                MIGRATION_59_60,
+                MIGRATION_60_61
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
@@ -412,7 +483,6 @@ object AppModule {
     @Provides fun provideMealEntryDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.MealEntryDao = db.mealEntryDao()
     @Provides fun provideFastingWindowDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.FastingWindowDao = db.fastingWindowDao()
     @Provides fun provideRecipeDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.RecipeDao = db.recipeDao()
-    @Provides fun provideUserDietProfileDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.UserDietProfileDao = db.userDietProfileDao()
     @Provides fun provideTrainingDaySummaryDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.TrainingDaySummaryDao = db.trainingDaySummaryDao()
     @Provides fun provideAdherenceLogDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.AdherenceLogDao = db.adherenceLogDao()
     @Provides fun provideDietAdjustmentDao(db: AppDatabase): pl.filebit.gymtracker.data.db.dao.DietAdjustmentDao = db.dietAdjustmentDao()

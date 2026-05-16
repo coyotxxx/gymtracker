@@ -95,13 +95,74 @@ class MigrationTest {
     }
 
     /**
-     * Placeholder dla przyszłej migracji 54→55 (v1.15.0 — PendingPeriodizationDecision).
-     * Po dodaniu Migration_54_55 ten test sprawdzi że:
-     *  1. Schema bazy v55 jest tworzone poprawnie.
-     *  2. Dane z v54 są zachowane.
-     *  3. Nowa tabela pending_periodization_decisions istnieje + ma poprawny schemat.
+     * v1.28 Etap 1 — refaktor "jedno źródło prawdy" (docs/CONFIG-UNIFICATION-PLAN.md).
      *
-     * Dla v1.14.1 — test pominięty (brak Migration_54_55 jeszcze).
+     * Migracja 60→61 scala `user_diet_profile` w `user_profile`. Test sprawdza że:
+     *  1. ALTER TABLE dodaje kolumny diety i migracja nie rzuca błędu.
+     *  2. Dane diety z `user_diet_profile` trafiają do scalonego wiersza `user_profile`.
+     *  3. Pola treningu w `user_profile` zostają nienaruszone.
+     *
+     * validateDroppedTables = false — `user_diet_profile` ZOSTAJE w bazie celowo
+     * (osierocona tabela, bezpiecznik do Etapu 5). Room runtime też ją toleruje.
      */
-    // @Test fun migrate54To55_addsPendingDecisionsTable() { ... }
+    @Test
+    @Throws(IOException::class)
+    fun migrate60To61_mergesDietProfileIntoUserProfile() {
+        helper.createDatabase(TEST_DB, 60).use { db ->
+            db.execSQL(
+                """
+                INSERT INTO user_profile
+                (id, displayName, goal, experience, daysPerWeek, sessionMinutes,
+                 preferredUnit, defaultRestSeconds, injuriesNotes, showAdvancedSetFields,
+                 weightGoalType, targetWeightKg, unfinishedWorkoutNotifyEnabled,
+                 unfinishedWorkoutNotifyHours, gender, bodyweightKg, flashOnTimerEnd,
+                 aiOverlayEnabled, onboardingCompleted, aiProactiveChecksEnabled,
+                 availableEquipmentCsv, preferredMuscleGroupsCsv, equipmentCategoriesCsv)
+                VALUES (1, 'Maciej', 'HYPERTROPHY', 'ADVANCED', 5, 75, 'KG', 120, '', 0,
+                        'CUT', 78.0, 1, 3, 'MALE', 84.0, 0, 0, 1, 0, '', '', 'BARBELL')
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                INSERT INTO user_diet_profile
+                (id, ageYears, heightCm, activityLevel, avgStepsPerDay, goalType,
+                 paceKgPerWeek, customDeficitKcal, dietPreference, allergies, intolerances,
+                 dislikedFoods, lovedFoods, cookingTimePerMealMin, eatsAtWork,
+                 hasMicrowaveAtWork, mealPrepInterested, weeklyBudgetPln, medicalConditions,
+                 medicalAwareness, usualTrainingHour, onboardingCompletedAt, updatedAt)
+                VALUES (1, 35, 182, 'LIGHT', 8000, 'FAT_LOSS', 0.5, NULL, 'STANDARD',
+                        'laktoza', '', 'brokuł', 'twaróg', 20, 1, 1, 0, 350, '', 0, 18,
+                        1700000000000, 1700000000000)
+                """.trimIndent()
+            )
+        }
+
+        val db = helper.runMigrationsAndValidate(
+            TEST_DB, 61, false, pl.filebit.gymtracker.di.AppModule.MIGRATION_60_61
+        )
+
+        // Dane diety przeniesione do user_profile
+        db.query(
+            "SELECT ageYears, heightCm, activityLevel, goalType, paceKgPerWeek, " +
+                "allergies, lovedFoods, weeklyBudgetPln, usualTrainingHour, " +
+                "dietOnboardingCompletedAt, bodyweightKg, weightGoalType " +
+                "FROM user_profile WHERE id = 1"
+        ).use { c ->
+            assertEquals(true, c.moveToFirst())
+            assertEquals(35, c.getInt(0))
+            assertEquals(182, c.getInt(1))
+            assertEquals("LIGHT", c.getString(2))
+            assertEquals("FAT_LOSS", c.getString(3))
+            assertEquals(0.5, c.getDouble(4), 0.001)
+            assertEquals("laktoza", c.getString(5))
+            assertEquals("twaróg", c.getString(6))
+            assertEquals(350, c.getInt(7))
+            assertEquals(18, c.getInt(8))
+            assertEquals(1700000000000L, c.getLong(9))
+            // pola treningu nienaruszone
+            assertEquals(84.0, c.getDouble(10), 0.001)
+            assertEquals("CUT", c.getString(11))
+        }
+        db.close()
+    }
 }

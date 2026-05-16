@@ -50,7 +50,7 @@ class BackupRoundTripTest : TestHarness() {
         val vm = BackupViewModel(
             context, kit.workoutRepo, kit.exerciseRepo, kit.userProfileRepo,
             AiPreferences(context), db, ExerciseSeeder(context, db.exerciseDao()),
-            DietBackupManager(context, db, DietPreferences(context)), backupImporter
+            DietBackupManager(context, db, DietPreferences(context), kit.dietProfileRepo), backupImporter
         )
 
         // EKSPORT do pliku ZIP

@@ -69,5 +69,51 @@ data class UserProfile(
      * AI generator planu filtruje ćwiczenia po `Exercise.equipmentDbCsv`
      * (28 surowych typów z ExerciseDB) mapowanych przez EquipmentCategory.
      */
-    val equipmentCategoriesCsv: String = ""
+    val equipmentCategoriesCsv: String = "",
+
+    // ======================================================================
+    // === POLA DIETY (v1.28 — scalone z dawnej encji UserDietProfile) ======
+    // Refaktor "jedno źródło prawdy": konfiguracja diety i treningu żyje
+    // w jednej encji. Patrz docs/CONFIG-UNIFICATION-PLAN.md (Etap 1).
+    // ======================================================================
+    /** Wiek — potrzebny do dokładnego BMR Mifflin-St Jeor. */
+    val ageYears: Int = 30,
+    /** Wzrost w cm — BMR. */
+    val heightCm: Int = 175,
+    /** Poziom aktywności POZA treningiem (mnożnik TDEE). */
+    val activityLevel: ActivityLevel = ActivityLevel.MODERATE,
+    /** Średnie kroki/dzień — fallback NEAT gdy brak danych z urządzenia. */
+    val avgStepsPerDay: Int = 7000,
+    /** Cel dietetyczny — 8 wartości (FAT_LOSS/MUSCLE_GAIN/RECOMP/…). */
+    val goalType: DietGoalType = DietGoalType.MAINTAIN,
+    /** Tempo zmiany wagi kg/tydzień (zawsze dodatnie — kierunek z goalType). */
+    val paceKgPerWeek: Double = 0.0,
+    /** Wybrany przez usera deficyt/nadwyżka kcal (override automatu). */
+    val customDeficitKcal: Int? = null,
+    /** Styl diety (STANDARD/VEGETARIAN/VEGAN/…). */
+    val dietPreference: DietPreference = DietPreference.STANDARD,
+    /** CSV alergeny. */
+    val allergies: String = "",
+    /** CSV nietolerancje. */
+    val intolerances: String = "",
+    /** Produkty których user UNIKA (CSV) — AI omija. */
+    val dislikedFoods: String = "",
+    /** Ulubione produkty (CSV) — AI preferuje. */
+    val lovedFoods: String = "",
+    /** Czas gotowania na posiłek (min). */
+    val cookingTimePerMealMin: Int = 15,
+    val eatsAtWork: Boolean = false,
+    val hasMicrowaveAtWork: Boolean = true,
+    val mealPrepInterested: Boolean = false,
+    val weeklyBudgetPln: Int? = null,
+    /** CSV stany zdrowotne (medical flags). */
+    val medicalConditions: String = "",
+    /** True = user zaakceptował info "skonsultuj ze specjalistą". */
+    val medicalAwareness: Boolean = false,
+    /** Modalna godzina treningu (0-23) — do pre/post-WO matching. Null = nieznana. */
+    val usualTrainingHour: Int? = null,
+    /** Znacznik ukończenia onboardingu diety (osobny od onboardingCompleted treningu). */
+    val dietOnboardingCompletedAt: Long? = null,
+    /** Znacznik ostatniej zmiany pól diety. */
+    val dietUpdatedAt: Long = System.currentTimeMillis()
 )

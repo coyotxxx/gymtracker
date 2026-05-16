@@ -17,6 +17,7 @@ import pl.filebit.gymtracker.data.entity.MealFeedback
 import pl.filebit.gymtracker.data.entity.MealType
 import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.ui.diet.DietOnboardingViewModel
 import pl.filebit.gymtracker.ui.diet.DietViewModel
@@ -95,10 +96,11 @@ class DietCoreSnapshotTest : TestHarness() {
     fun `Diet glowny ekran sklada cel kcal i posilki dnia`() = runBlocking {
         UserProfileRepository(db.userProfileDao()).save(
             UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
-        db.userDietProfileDao().upsert(UserDietProfile(
-            ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
-            goalType = DietGoalType.MAINTAIN,
-            onboardingCompletedAt = System.currentTimeMillis()))
+        UserDietProfileRepository(UserProfileRepository(db.userProfileDao())).save(
+            UserDietProfile(
+                ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
+                goalType = DietGoalType.MAINTAIN,
+                onboardingCompletedAt = System.currentTimeMillis()))
         val chickenId = db.foodProductDao().upsert(FoodProduct(
             name = "Kurczak", category = FoodCategory.PROTEIN,
             kcalPer100g = 165.0, proteinPer100g = 31.0, carbsPer100g = 0.0, fatPer100g = 3.6))
@@ -149,10 +151,11 @@ class DietCoreSnapshotTest : TestHarness() {
     fun `plan posilkow przenosi sie na nowy dzien`() = runBlocking {
         UserProfileRepository(db.userProfileDao()).save(
             UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
-        db.userDietProfileDao().upsert(UserDietProfile(
-            ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
-            goalType = DietGoalType.MAINTAIN,
-            onboardingCompletedAt = System.currentTimeMillis()))
+        UserDietProfileRepository(UserProfileRepository(db.userProfileDao())).save(
+            UserDietProfile(
+                ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
+                goalType = DietGoalType.MAINTAIN,
+                onboardingCompletedAt = System.currentTimeMillis()))
         val productId = db.foodProductDao().upsert(FoodProduct(
             name = "Ryż", category = FoodCategory.CARBS,
             kcalPer100g = 130.0, proteinPer100g = 2.7, carbsPer100g = 28.0, fatPer100g = 0.3))

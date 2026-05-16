@@ -24,7 +24,6 @@ import pl.filebit.gymtracker.data.db.dao.UnlockedAchievementDao
 import pl.filebit.gymtracker.data.db.dao.AdherenceLogDao
 import pl.filebit.gymtracker.data.db.dao.DietAdjustmentDao
 import pl.filebit.gymtracker.data.db.dao.TrainingDaySummaryDao
-import pl.filebit.gymtracker.data.db.dao.UserDietProfileDao
 import pl.filebit.gymtracker.data.db.dao.BodyMeasurementDao
 import pl.filebit.gymtracker.data.db.dao.GoalDao
 import pl.filebit.gymtracker.data.db.dao.PlanExerciseDao
@@ -57,7 +56,6 @@ import pl.filebit.gymtracker.data.entity.UnlockedAchievement
 import pl.filebit.gymtracker.data.entity.AdherenceLog
 import pl.filebit.gymtracker.data.entity.DietAdjustment
 import pl.filebit.gymtracker.data.entity.TrainingDaySummary
-import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.Goal
 import pl.filebit.gymtracker.data.entity.PlanExercise
@@ -89,7 +87,6 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         MealEntry::class,
         FastingWindow::class,
         Recipe::class,
-        UserDietProfile::class,
         TrainingDaySummary::class,
         AdherenceLog::class,
         DietAdjustment::class,
@@ -111,7 +108,7 @@ import pl.filebit.gymtracker.data.entity.WorkoutSet
         pl.filebit.gymtracker.data.entity.TrainingMesocycle::class,
         pl.filebit.gymtracker.data.entity.PendingPeriodizationDecision::class
     ],
-    version = 60,
+    version = 61,
     // v1.14.1: eksportowane do app/schemas/. Wymagane dla MigrationTestHelper.
     exportSchema = true
 )
@@ -136,7 +133,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun mealEntryDao(): MealEntryDao
     abstract fun fastingWindowDao(): FastingWindowDao
     abstract fun recipeDao(): RecipeDao
-    abstract fun userDietProfileDao(): UserDietProfileDao
     abstract fun trainingDaySummaryDao(): TrainingDaySummaryDao
     abstract fun adherenceLogDao(): AdherenceLogDao
     abstract fun dietAdjustmentDao(): DietAdjustmentDao

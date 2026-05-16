@@ -20,6 +20,8 @@ import pl.filebit.gymtracker.data.backup.BackupImportResult
 import pl.filebit.gymtracker.data.db.AppDatabase
 import pl.filebit.gymtracker.data.repository.DietPreferences
 import pl.filebit.gymtracker.data.repository.MesocycleBackfillService
+import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
+import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.data.seed.ExerciseSeeder
 import java.io.File
 
@@ -81,7 +83,10 @@ abstract class TestHarness {
             db,
             AiPreferences(context),
             ExerciseSeeder(context, db.exerciseDao()),
-            DietBackupManager(context, db, DietPreferences(context)),
+            DietBackupManager(
+                context, db, DietPreferences(context),
+                UserDietProfileRepository(UserProfileRepository(db.userProfileDao()))
+            ),
             MesocycleBackfillService(
                 db.trainingMesocycleDao(),
                 db.trainingEventDao(),
