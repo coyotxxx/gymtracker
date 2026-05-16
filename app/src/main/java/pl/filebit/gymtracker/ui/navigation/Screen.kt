@@ -48,7 +48,6 @@ sealed class Screen(val route: String) {
     // v1.21.0 — ukryty ekran Debug (5×click w stopkę wersji)
     object Debug : Screen("debug")
     object Diet : Screen("diet")
-    object DietOnboarding : Screen("diet/onboarding")
     object DietAdherenceReport : Screen("diet/adherence")
     object DietAdjustmentHistory : Screen("diet/adjustments")
     object MealPreferences : Screen("diet/preferences")

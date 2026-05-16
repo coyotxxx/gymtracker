@@ -590,30 +590,16 @@ fun AppNavigation(
             composable(Screen.Diet.route) {
                 pl.filebit.gymtracker.ui.diet.DietScreen(
                     onBack = { navController.popBackStack() },
-                    onNeedsOnboarding = {
-                        navController.navigate(Screen.DietOnboarding.route) {
-                            popUpTo(Screen.Diet.route) { inclusive = true }
-                        }
-                    },
                     onOpenAdherenceReport = { navController.navigate(Screen.DietAdherenceReport.route) },
                     onOpenAdjustmentHistory = { navController.navigate(Screen.DietAdjustmentHistory.route) },
                     onOpenMealPreferences = { navController.navigate(Screen.MealPreferences.route) },
                     onOpenShoppingList = { navController.navigate(Screen.ShoppingList.route) },
-                    onEditDietProfile = { navController.navigate(Screen.DietOnboarding.route) },
+                    // v1.28.3 (Etap 4): pełna konfiguracja diety w centralnym ekranie „Konfiguracja".
+                    onEditDietProfile = { navController.navigate(Screen.TrainingSettings.route) },
                     onOpenMealPrep = { navController.navigate(Screen.MealPrep.route) },
                     onOpenBarcodeScanner = { navController.navigate(Screen.BarcodeScanner.route) },
                     onOpenFoodImageAnalyzer = { navController.navigate(Screen.FoodImageAnalyzer.route) },
                     onOpenRecipeBrowser = { navController.navigate(Screen.RecipeBrowser.route) }
-                )
-            }
-            composable(Screen.DietOnboarding.route) {
-                pl.filebit.gymtracker.ui.diet.DietOnboardingScreen(
-                    onCompleted = {
-                        navController.navigate(Screen.Diet.route) {
-                            popUpTo(Screen.Profile.route)
-                        }
-                    },
-                    onBack = { navController.popBackStack() }
                 )
             }
             composable(Screen.DietAdherenceReport.route) {

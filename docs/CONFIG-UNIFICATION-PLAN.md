@@ -11,7 +11,7 @@
 | 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
 | 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ✅ DONE | v1.28.2 |
-| 4 | Kreator = ten sam ekran | ☐ TODO | — |
+| 4 | Kreator = ten sam ekran | ▶ CI/RELEASE | v1.28.3 |
 | 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
 
 Legenda: ☐ TODO · ▶ W TRAKCIE · ✅ DONE
@@ -225,13 +225,20 @@ Weryfikacja: CI + emulator (sekcje renderują się i zapisują) + release.
 
 **Cel:** koniec dublowania pytań w 2 kreatorach.
 
-Kroki:
-1. Kreator pierwszego uruchomienia przechodzi przez sekcje ekranu Konfiguracja.
-2. `DietOnboarding` (Screen + ViewModel) usunięty jako osobny byt.
-3. Bug A znika — nie ma osobnego `upsert(UserDietProfile(...))`.
-4. `onboardingCompleted` / `dietOnboardingCompletedAt` — uspójnić logikę flag.
+**ZREALIZOWANO (v1.28.3, 2026-05-16) — decyzje implementacyjne:**
+- Zamiast przebudowy 8-stopniowego głównego kreatora (ryzykowne) — usunięty
+  REDUNDANTNY `DietOnboarding`. Główny kreator i tak zbiera wszystko
+  (wiek/wzrost/cel/aktywność + opcjonalna sekcja diety), więc drugi kreator
+  tylko dublował pytania.
+- `DietOnboardingScreen` + `DietOnboardingViewModel` USUNIĘTE. `Screen.DietOnboarding`
+  usunięty. Ekran Diety nie przekierowuje już do kreatora — zawsze działa.
+- Bug A znika (nie ma osobnego `upsert(UserDietProfile(...))`).
+- `OnboardingViewModel.complete()` zawsze oznacza `dietOnboardingCompletedAt`.
+- Doszczegóławianie diety: `DietSettingsDialog` „⚙ Pełna konfiguracja" →
+  ekran „Konfiguracja" (Etap 3). Jeden kreator + jeden ekran konfiguracji.
+- `needsOnboarding`/`_onboardingChecked` usunięte z `DietViewModel` (martwe).
 
-Weryfikacja: testy + CI + emulator (przejście kreatora od zera + ponowne) + release.
+Weryfikacja: CI + emulator + release.
 
 ---
 

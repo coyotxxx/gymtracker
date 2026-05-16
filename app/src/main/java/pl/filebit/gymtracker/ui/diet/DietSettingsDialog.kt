@@ -336,12 +336,12 @@ fun DietSettingsDialog(
                 ) {
                     Column {
                         Text(
-                            "🩺 Edytuj profil dietetyczny",
+                            "⚙ Pełna konfiguracja",
                             style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                             color = DarkOnSurface
                         )
                         Text(
-                            "Wiek, wzrost, alergie, preferencje, budżet, stany zdrowia",
+                            "Dane podstawowe, aktywność, preferencje żywieniowe, budżet, zdrowie",
                             style = MaterialTheme.typography.labelSmall,
                             color = DarkOnSurfaceVariant
                         )

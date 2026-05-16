@@ -874,15 +874,10 @@ class DietViewModel @Inject constructor(
         _adjustmentPreview.value = null
     }
 
-    private val _onboardingChecked = MutableStateFlow(false)
-    private val _needsOnboarding = MutableStateFlow(false)
-    val needsOnboarding: StateFlow<Boolean> = _needsOnboarding.asStateFlow()
+    // v1.28.3 (Etap 4): osobny kreator diety usunięty — brak flagi needsOnboarding.
 
     init {
         viewModelScope.launch {
-            val done = dietProfileRepo.isOnboardingDone()
-            _needsOnboarding.value = !done
-            _onboardingChecked.value = true
             // Ensure today's TrainingDaySummary istnieje (lazy)
             runCatching { trainingDietBridge.ensureForToday() }
             // Refresh hydration today

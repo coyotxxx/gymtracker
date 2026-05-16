@@ -19,7 +19,6 @@ import pl.filebit.gymtracker.data.entity.UserDietProfile
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
-import pl.filebit.gymtracker.ui.diet.DietOnboardingViewModel
 import pl.filebit.gymtracker.ui.diet.DietViewModel
 import pl.filebit.gymtracker.ui.diet.MealPreferencesViewModel
 
@@ -31,44 +30,6 @@ import pl.filebit.gymtracker.ui.diet.MealPreferencesViewModel
  * Główny ekran Diet (DietViewModel, 31 zależności) — patrz nota w planie.
  */
 class DietCoreSnapshotTest : TestHarness() {
-
-
-    @Test
-    fun `DietOnboarding pre-fill z profilu i zapis profilu diety`() = runBlocking {
-        UserProfileRepository(db.userProfileDao()).save(
-            UserProfile(bodyweightKg = 82.0, gender = Gender.MALE, daysPerWeek = 4))
-        val kit = ViewModelKit(db, context)
-        val vm = DietOnboardingViewModel(kit.dietProfileRepo, kit.userProfileRepo)
-        val s = withTimeout(5_000) { vm.state.first { !it.isLoading } }
-
-        TraceReport("diet-onboarding")
-            .section("PRE-FILL z UserProfile")
-            .kv("knownWeightKg", s.knownWeightKg?.toString() ?: "null")
-            .kv("knownDaysPerWeek", s.knownDaysPerWeek.toString())
-            .section("DOMYŚLNE")
-            .kv("wiek/wzrost", "${s.ageYears} lat / ${s.heightCm} cm")
-            .kv("cel", s.goalType.name)
-            .emit()
-
-        assertFalse("onboarding załadowany", s.isLoading)
-        assertEquals("waga pre-fill z UserProfile", 82.0, s.knownWeightKg)
-
-        // user wypełnia wizard
-        vm.setAge(28)
-        vm.setHeight(183)
-        vm.setGoalType(DietGoalType.FAT_LOSS)
-        vm.complete { }
-
-        // complete() zapisuje przez viewModelScope.launch — czekamy na zapis
-        val saved = withTimeout(5_000) {
-            var p = kit.dietProfileRepo.get()
-            while (p == null) { kotlinx.coroutines.delay(20); p = kit.dietProfileRepo.get() }
-            p
-        }
-        assertEquals("wiek zapisany", 28, saved.ageYears)
-        assertEquals("wzrost zapisany", 183, saved.heightCm)
-        assertEquals("cel zapisany", DietGoalType.FAT_LOSS, saved.goalType)
-    }
 
     @Test
     fun `MealPreferences pokazuje ocenione dania`() = runBlocking {
@@ -131,15 +92,11 @@ class DietCoreSnapshotTest : TestHarness() {
             .kv("posiłki dnia", "${s.mealsConfirmed}/${s.mealsTotal}")
             .kv("grupy posiłków", s.groups.size.toString())
             .kv("produkty w bazie", s.productsAll.size.toString())
-            .verdict("needsOnboarding", vm.needsOnboarding.value.toString(),
-                "false = profil diety gotowy")
             .emit()
 
         assertFalse("ekran diety załadowany", s.loading)
         assertTrue("cel kcal policzony (>2000 dla 80 kg M)", s.goal.kcal > 2000)
         assertTrue("makra policzone", s.goal.proteinG > 0)
-        assertFalse("onboarding niepotrzebny — profil diety istnieje",
-            vm.needsOnboarding.value)
     }
 
     /**

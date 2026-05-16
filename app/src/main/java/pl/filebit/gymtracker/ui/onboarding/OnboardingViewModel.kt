@@ -229,7 +229,10 @@ class OnboardingViewModel @Inject constructor(
                 weeklyBudgetPln = if (s.wantsDietProfile) s.weeklyBudgetPln else existingDiet?.weeklyBudgetPln,
                 medicalConditions = if (s.wantsDietProfile) s.medicalConditionsCsv else (existingDiet?.medicalConditions ?: ""),
                 cookingTimePerMealMin = if (s.wantsDietProfile) s.cookingTimePerMealMin else (existingDiet?.cookingTimePerMealMin ?: 15),
-                onboardingCompletedAt = if (s.wantsDietProfile) System.currentTimeMillis() else existingDiet?.onboardingCompletedAt,
+                // v1.28.3 (Etap 4): osobny kreator diety usunięty — główny kreator
+                // zawsze zbiera wiek/wzrost/cel/aktywność, więc profil diety jest
+                // gotowy. Zawsze oznaczamy jako ukończony (sekcja preferencji opcjonalna).
+                onboardingCompletedAt = System.currentTimeMillis(),
                 updatedAt = System.currentTimeMillis()
             )
             runCatching { dietProfileRepo.save(newDietProfile) }

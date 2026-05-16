@@ -73,7 +73,6 @@ import kotlin.math.roundToInt
 @Composable
 fun DietScreen(
     onBack: () -> Unit,
-    onNeedsOnboarding: () -> Unit,
     onOpenAdherenceReport: () -> Unit = {},
     onOpenAdjustmentHistory: () -> Unit = {},
     onOpenMealPreferences: () -> Unit = {},
@@ -113,11 +112,9 @@ fun DietScreen(
     val damageControlResult by vm.damageControlResult.collectAsStateWithLifecycle()
     val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
-    val needsOnboarding by vm.needsOnboarding.collectAsStateWithLifecycle()
+    // v1.28.3 (Etap 4): osobny kreator diety usunięty — ekran Diety zawsze się
+    // pokazuje; pełną konfigurację diety user robi w ekranie „Konfiguracja".
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
-    androidx.compose.runtime.LaunchedEffect(needsOnboarding) {
-        if (needsOnboarding) onNeedsOnboarding()
-    }
     var addMealForType by remember { mutableStateOf<MealType?>(null) }
     var showSettings by remember { mutableStateOf(false) }
     var showGoalBreakdown by remember { mutableStateOf(false) }
