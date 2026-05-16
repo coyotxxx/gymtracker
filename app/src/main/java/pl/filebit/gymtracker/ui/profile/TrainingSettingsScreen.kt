@@ -466,11 +466,20 @@ fun TrainingSettingsScreen(
 
             item {
                 TsSectionCard(
-                    title = "Zdrowie",
-                    subtitle = "Stany zdrowotne — AI zachowuje wtedy ostrożność. To nie zastępuje konsultacji z lekarzem."
+                    title = "Zdrowie i kontuzje",
+                    subtitle = "AI uwzględnia to przy planach treningu i diety. To nie zastępuje konsultacji z lekarzem."
                 ) {
                     CfgTextField("Stany zdrowotne", draft.medicalConditions, "np. nadciśnienie, cukrzyca") {
                         draft = draft.copy(medicalConditions = it)
+                    }
+                    Spacer(Modifier.height(10.dp))
+                    CfgTextField(
+                        label = "Kontuzje i ograniczenia ruchowe",
+                        value = draft.injuriesNotes,
+                        placeholder = "np. ból barku przy wyciskaniu nad głowę, problem z kolanem",
+                        singleLine = false
+                    ) {
+                        draft = draft.copy(injuriesNotes = it)
                     }
                 }
             }
@@ -677,6 +686,7 @@ private fun CfgTextField(
     label: String,
     value: String,
     placeholder: String,
+    singleLine: Boolean = true,
     onChange: (String) -> Unit
 ) {
     OutlinedTextField(
@@ -684,7 +694,8 @@ private fun CfgTextField(
         onValueChange = onChange,
         label = { Text(label) },
         placeholder = { Text(placeholder, color = DarkOnSurfaceVariant) },
-        singleLine = true,
+        singleLine = singleLine,
+        minLines = if (singleLine) 1 else 3,
         modifier = Modifier.fillMaxWidth()
     )
 }

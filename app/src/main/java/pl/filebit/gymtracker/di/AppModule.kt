@@ -470,6 +470,21 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.28.4 (refaktor "jedno źródło prawdy", Etap 5 — finał): usunięcie
+     * osieroconej tabeli `user_diet_profile`.
+     *
+     * Od Etapu 1 (migracja 60→61) dane diety żyją w scalonej tabeli `user_profile`.
+     * Stara tabela była celowo zostawiona jako bezpiecznik — przez 4 release'y
+     * (v1.28.0-v1.28.3) potwierdzono w boju że scalenie działa. Teraz ją usuwamy.
+     * `DROP TABLE IF EXISTS` — idempotentne, bezpieczne (tabela nieużywana, brak FK).
+     */
+    internal val MIGRATION_62_63 = object : Migration(62, 63) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("DROP TABLE IF EXISTS `user_diet_profile`")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -487,7 +502,8 @@ object AppModule {
                 MIGRATION_58_59,
                 MIGRATION_59_60,
                 MIGRATION_60_61,
-                MIGRATION_61_62
+                MIGRATION_61_62,
+                MIGRATION_62_63
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

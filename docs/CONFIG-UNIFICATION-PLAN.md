@@ -12,7 +12,7 @@
 | 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ✅ DONE | v1.28.2 |
 | 4 | Kreator = ten sam ekran | ✅ DONE | v1.28.3 |
-| 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
+| 5 | Sprzątanie (migracja 62→63) | ▶ CI/RELEASE | v1.28.4 |
 
 Legenda: ☐ TODO · ▶ W TRAKCIE · ✅ DONE
 
@@ -244,20 +244,26 @@ Weryfikacja: CI + emulator + release.
 
 ## ETAP 5 — Sprzątanie (migracja 62→63)
 
-**Cel:** usunąć martwy kod i dług.
+**Cel:** domknąć refaktor.
 
-Kroki:
-1. Migracja `MIGRATION_62_63`: `DROP TABLE user_diet_profile` (dopiero teraz —
-   po 4 release'ach potwierdzenia w boju).
-2. Usunąć martwe pola: `availableEquipmentCsv` (legacy, zastąpione
-   `equipmentCategoriesCsv`), `customDeficitKcal` (duplikat `DietConfig.customDeficit`)
-   — po weryfikacji że faktycznie nieużywane.
-3. Dodać brakujące edytory UI: `avgStepsPerDay`, `usualTrainingHour`,
-   `injuriesNotes`, `aiOverlayEnabled` (dziś bez UI).
-4. Usunąć `UserDietProfile` data class jeśli nigdzie już niepotrzebny (lub
-   zostawić jako DTO backupu — sprawdzić `DietBackupManager`).
+**ZREALIZOWANO (v1.28.4, 2026-05-16) — finał refaktoru:**
+- Migracja `MIGRATION_62_63`: `DROP TABLE IF EXISTS user_diet_profile` — osierocona
+  tabela usunięta po 4 release'ach potwierdzenia w boju. AppDatabase v=63.
+- Dodany brakujący edytor `injuriesNotes` (sekcja „Zdrowie i kontuzje" ekranu
+  Konfiguracja) — pole wieloliniowe, AI je uwzględnia.
+- `MigrationTest` zaktualizowany do v63 (łańcuch 49→63, 14 migracji).
 
-Weryfikacja: testy + CI + emulator + release.
+**ŚWIADOMIE POMINIĘTE (decyzja: ryzyko > wartość):**
+- Usunięcie martwych kolumn `availableEquipmentCsv` / `customDeficitKcal` —
+  wymagałoby rebuildu 44-kolumnowej tabeli `user_profile` (najryzykowniejszy typ
+  migracji). Kolumny są nieszkodliwe (po prostu nieużywane). Zasada „zero utraty
+  danych" > kosmetyka. Zostają.
+- Edytory `avgStepsPerDay` / `usualTrainingHour` — wartości auto-wyliczane
+  (fallback / wykrywane z historii); ręczny edytor = clutter za marginalną wartość.
+- `UserDietProfile` data class ZOSTAJE — to aktywne DTO (`UserDietProfileRepository`
+  + `DietBackupManager`), nie martwy kod.
+
+Weryfikacja: CI + emulator + release.
 
 ---
 
