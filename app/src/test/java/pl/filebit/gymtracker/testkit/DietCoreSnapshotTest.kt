@@ -139,4 +139,69 @@ class DietCoreSnapshotTest : TestHarness() {
         assertFalse("onboarding niepotrzebny — profil diety istnieje",
             vm.needsOnboarding.value)
     }
+
+    /**
+     * v1.27.4 — regresja: plan posiłków NIE znika z dnia na dzień.
+     * User zgłosił "wczoraj wygenerowałem plan, dziś tylko kalorie bez
+     * posiłków". Plan z poprzedniego dnia ma się przenosić na nowy.
+     */
+    @Test
+    fun `plan posilkow przenosi sie na nowy dzien`() = runBlocking {
+        UserProfileRepository(db.userProfileDao()).save(
+            UserProfile(bodyweightKg = 80.0, gender = Gender.MALE, daysPerWeek = 4))
+        db.userDietProfileDao().upsert(UserDietProfile(
+            ageYears = 30, heightCm = 180, activityLevel = ActivityLevel.MODERATE,
+            goalType = DietGoalType.MAINTAIN,
+            onboardingCompletedAt = System.currentTimeMillis()))
+        val productId = db.foodProductDao().upsert(FoodProduct(
+            name = "Ryż", category = FoodCategory.CARBS,
+            kcalPer100g = 130.0, proteinPer100g = 2.7, carbsPer100g = 28.0, fatPer100g = 0.3))
+
+        // start dnia 00:00 — tak jak liczy to DietViewModel.todayStartMs()
+        val cal = java.util.Calendar.getInstance().apply {
+            set(java.util.Calendar.HOUR_OF_DAY, 0)
+            set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0)
+            set(java.util.Calendar.MILLISECOND, 0)
+        }
+        val todayStart = cal.timeInMillis
+        val dayMs = 24L * 60 * 60 * 1000
+
+        // plan WCZORAJ, dziś pusto
+        db.mealEntryDao().upsert(MealEntry(
+            dateMs = todayStart - dayMs, mealType = MealType.LUNCH,
+            productId = productId, grams = 200.0, notes = "Obiad wczorajszy"))
+        assertTrue("dziś na starcie brak posiłków",
+            db.mealEntryDao().getForDateRange(todayStart, todayStart + dayMs).isEmpty())
+
+        // budowa DietViewModel uruchamia carry-over w init{}
+        val kit = ViewModelKit(db, context)
+        DietViewModel(
+            kit.dietRepo, kit.userProfileRepo, kit.dietProfileRepo, kit.dietPrefs,
+            kit.dietReminderScheduler, kit.dietAiService, kit.trainingDietBridge,
+            kit.adherenceCalc, kit.autoAdjust, kit.dietAutoAdjustmentScheduler,
+            kit.mealFeedbackRepo, kit.substituteService, kit.hydrationRepo,
+            kit.hydrationCalc, kit.recoveryRepo, kit.qualityScorer, kit.weeklyBudgetCalc,
+            kit.activityRepo, kit.dietPhaseRepo, kit.phaseManager, kit.recoveryAnalyzer,
+            kit.dietVolatilityAnalyzer, kit.emergencyMealGen, kit.damageControl,
+            kit.healthConnectManager, kit.healthConnectScheduler, kit.mealConsumptionRepo,
+            kit.quickComposeService, kit.cardioKcalEstimator, db.bodyMeasurementDao(),
+            db.trainingMesocycleDao()
+        )
+
+        val todayMeals = withTimeout(8_000) {
+            var m = db.mealEntryDao().getForDateRange(todayStart, todayStart + dayMs)
+            while (m.isEmpty()) {
+                kotlinx.coroutines.delay(30)
+                m = db.mealEntryDao().getForDateRange(todayStart, todayStart + dayMs)
+            }
+            m
+        }
+
+        assertEquals("plan z wczoraj skopiowany na dziś", 1, todayMeals.size)
+        assertEquals("ten sam produkt", productId, todayMeals.first().productId)
+        assertEquals("ta sama gramatura", 200.0, todayMeals.first().grams, 0.01)
+        assertTrue("wczorajszy plan nadal w bazie (nieprzeniesiony, skopiowany)",
+            db.mealEntryDao().getForDateRange(todayStart - dayMs, todayStart).isNotEmpty())
+    }
 }

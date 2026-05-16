@@ -864,6 +864,31 @@ class DietViewModel @Inject constructor(
             // Refresh Health Connect availability + steps
             runCatching { refreshHealthConnect() }
             runCatching { refreshConsumptions() }
+            // v1.27.4: plan posiłków przenosi się na nowy dzień — gdy dziś
+            // brak planu, kopiujemy go z ostatniego dnia który go miał.
+            runCatching { carryOverPlanIfEmpty(_selectedDateMs.value) }
+        }
+    }
+
+    /**
+     * v1.27.4: gdy wybrany dzień nie ma żadnego posiłku, a któryś z ostatnich
+     * 14 dni miał plan — kopiuje ten plan na dziś (jako zaplanowany).
+     * Dzięki temu wygenerowany plan to trwały jadłospis, nie znika z dnia
+     * na dzień. Idempotentne — gdy dzień ma już posiłki, nic nie robi.
+     */
+    private suspend fun carryOverPlanIfEmpty(dateMs: Long) {
+        if (repo.getMealsForDate(dateMs).isNotEmpty()) return
+        val dayMs = 24L * 60 * 60 * 1000
+        for (daysBack in 1..14) {
+            val prevMeals = repo.getMealsForDate(dateMs - daysBack * dayMs)
+            if (prevMeals.isNotEmpty()) {
+                val now = System.currentTimeMillis()
+                prevMeals.forEach { m ->
+                    repo.addMeal(m.copy(id = 0, dateMs = dateMs, createdAt = now))
+                }
+                runCatching { adherenceCalc.computeForDate(dateMs) }
+                return
+            }
         }
     }
 
