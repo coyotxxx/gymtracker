@@ -194,6 +194,18 @@ class AiMealJsonValidator @Inject constructor(
                     }
                 }
 
+            // v1.27.6: AI nie może rozdzielać jajek na same białka — w praktyce
+            // nie da się "rozbić jajka na białko" bez wyrzucania żółtka. Plan ma
+            // używać produktu 'Jajko całe', nie 'Białko jaja'.
+            if (productsInMeal.any { it.name.equals("Białko jaja", ignoreCase = true) }) {
+                errors += ValidationIssue(
+                    ValidationSeverity.ERROR, mIdx, "egg_white_split_not_allowed",
+                    "Posiłek '${meal.name}' używa 'Białko jaja' — użytkownik nie rozdziela " +
+                        "jajek na białka. Zastąp produktem 'Jajko całe' i przelicz gramaturę " +
+                        "tak, by trafić w kcal/makro slotu."
+                )
+            }
+
             // === PER-SLOT KCAL TARGET ===
             // Po auto-skalowaniu gramatur w AutoScaler slot powinien być idealny.
             // ERROR tylko przy drastycznych odchyleniach których auto-scale nie naprawił

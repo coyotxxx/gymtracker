@@ -194,10 +194,15 @@ class DietAiService @Inject constructor(
         val perMealCarbs = if (mealsCount > 0) goal.carbsG / mealsCount else 0
         val perMealFat = if (mealsCount > 0) goal.fatG / mealsCount else 0
 
-        val productsListing = products.joinToString("\n") { p ->
-            val star = if (p.isFavorite) " ⭐" else ""
-            "- ${p.name}$star (${p.kcalPer100g.toInt()} kcal/100g, B${p.proteinPer100g.toInt()}/W${p.carbsPer100g.toInt()}/T${p.fatPer100g.toInt()})"
-        }
+        // v1.27.6: 'Białko jaja' wykluczone z listy dla AI — user nie rozdziela
+        // jajek na białka. Produkt zostaje w bazie (ręczne dodanie nadal działa),
+        // ale AI komponuje plany z 'Jajko całe'.
+        val productsListing = products
+            .filterNot { it.name.equals("Białko jaja", ignoreCase = true) }
+            .joinToString("\n") { p ->
+                val star = if (p.isFavorite) " ⭐" else ""
+                "- ${p.name}$star (${p.kcalPer100g.toInt()} kcal/100g, B${p.proteinPer100g.toInt()}/W${p.carbsPer100g.toInt()}/T${p.fatPer100g.toInt()})"
+            }
 
         // Ulubione produkty oznaczone przez usera (heart icon w AddMealDialog)
         val favoriteProducts = runCatching { dietRepo.getFavoriteProducts() }.getOrNull().orEmpty()
@@ -626,6 +631,8 @@ class DietAiService @Inject constructor(
             append("   - prepMinutes ≤ 15 (śniadanie ≤ 8, kolacja ≤ 10)\n")
             append("   - Polskie codzienne dania (NIC egzotycznego)\n")
             append("   - productName **DOKŁADNIE** z listy (literówki = błąd)\n")
+            append("   - JAJA: używaj WYŁĄCZNIE produktu 'Jajko całe'. ZAKAZ użycia 'Białko jaja' — ")
+            append("użytkownik nie rozdziela jajek na białka i żółtka. Jajeczny posiłek = całe jaja.\n")
             append("   - Każdy krok instrukcji w nowej linii (numerowany 1. 2. 3.)\n\n")
 
             append("6. **AUTOWERYFIKACJA — przed wysłaniem JSON sprawdź:**\n")
@@ -634,6 +641,7 @@ class DietAiService @Inject constructor(
             append("   - Czy suma kcal = ${goal.kcal} ±10%? (czyli ${(goal.kcal*0.9).toInt()}-${(goal.kcal*1.1).toInt()})\n")
             append("   - Czy posiłki nie powtarzają się? (różnorodność)\n")
             append("   - Czy każdy productName istnieje w liście?\n")
+            append("   - Czy żaden posiłek nie używa 'Białko jaja'? (jeśli tak — zamień na 'Jajko całe')\n")
 
             append("\n=== ALTERNATYWY PER SLOT ===\n")
             append("Dla KAŻDEGO posiłku podaj 2 alternatywy (`alternatives` w JSON) — różnorodność:\n")

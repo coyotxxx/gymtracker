@@ -33,9 +33,12 @@ class AiMealJsonValidatorTest {
     private val curd = product(4, "Twaróg chudy", FoodCategory.PROTEIN, 100.0, 19.0, 3.5, 0.5)
     private val tofu = product(5, "Tofu naturalne", FoodCategory.PROTEIN, 144.0, 17.0, 2.8, 8.7)
     private val almonds = product(6, "Migdały", FoodCategory.FAT, 579.0, 21.2, 21.6, 49.9)
+    private val eggWhole = product(7, "Jajko całe", FoodCategory.PROTEIN, 155.0, 13.0, 1.1, 11.0)
+    private val eggWhite = product(8, "Białko jaja", FoodCategory.PROTEIN, 52.0, 10.9, 0.7, 0.2)
 
-    private val productMap: Map<String, FoodProduct> = listOf(rice, chicken, broccoli, curd, tofu, almonds)
-        .associateBy { it.name.lowercase() }
+    private val productMap: Map<String, FoodProduct> =
+        listOf(rice, chicken, broccoli, curd, tofu, almonds, eggWhole, eggWhite)
+            .associateBy { it.name.lowercase() }
 
     private val profileMale = UserProfile(
         id = 1, gender = Gender.MALE, bodyweightKg = 80.0,
@@ -446,6 +449,42 @@ class AiMealJsonValidatorTest {
         val result = validator.validate(goodPlan(), ctx())
         assertTrue("normalne posiłki nie są flagowane jako za tłuste",
             result.errors.none { it.code == "slot_fat_too_high" })
+    }
+
+    // ── v1.27.6 — AI nie rozdziela jajek na same białka ──
+
+    @Test
+    fun `posilek z Bialko jaja → ERROR egg_white_split_not_allowed`() {
+        val plan = AiDayPlan(meals = listOf(
+            AiMealRecipe(
+                name = "Omlet białkowy",
+                ingredients = listOf(
+                    AiRecipeIngredient("Jajko całe", 100),
+                    AiRecipeIngredient("Białko jaja", 150)
+                ),
+                instructions = "...", prepMinutes = 8,
+                kcal = 233, proteinG = 29, carbsG = 2, fatG = 11
+            )
+        ))
+        val result = validator.validate(plan, ctx(meals = 1))
+        assertFalse("rozdzielanie jajek na białka → niewalidny", result.isValid)
+        assertTrue("ERROR egg_white_split_not_allowed",
+            result.errors.any { it.code == "egg_white_split_not_allowed" })
+    }
+
+    @Test
+    fun `posilek z samym Jajko cale nie triggeruje egg_white error`() {
+        val plan = AiDayPlan(meals = listOf(
+            AiMealRecipe(
+                name = "Jajecznica",
+                ingredients = listOf(AiRecipeIngredient("Jajko całe", 200)),
+                instructions = "...", prepMinutes = 6,
+                kcal = 310, proteinG = 26, carbsG = 2, fatG = 22
+            )
+        ))
+        val result = validator.validate(plan, ctx(meals = 1))
+        assertTrue("całe jaja są w porządku",
+            result.errors.none { it.code == "egg_white_split_not_allowed" })
     }
 
     @Test
