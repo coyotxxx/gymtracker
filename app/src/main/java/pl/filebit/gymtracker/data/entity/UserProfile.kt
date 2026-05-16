@@ -117,3 +117,27 @@ data class UserProfile(
     /** Znacznik ostatniej zmiany pól diety. */
     val dietUpdatedAt: Long = System.currentTimeMillis()
 )
+
+// ======================================================================
+// === JEDEN CEL (v1.28.1 — refaktor "jedno źródło prawdy", Etap 2) =====
+// `goalType` (DietGoalType, 8 wartości) jest JEDYNYM celem aplikacji.
+// `weightGoalType` (4 wartości) zostaje jako pole legacy — wielu konsumentów
+// treningu wciąż je czyta — ale jest AUTO-NORMALIZOWANY z `goalType` przy
+// każdym zapisie (UserProfileRepository.save). Nie da się ich rozjechać.
+// Patrz docs/CONFIG-UNIFICATION-PLAN.md (Etap 2).
+// ======================================================================
+
+/** Kanoniczny cel (8 wart.) → kierunek wagi (4 wart., legacy mirror). */
+fun DietGoalType.toWeightGoal(): WeightGoalType = when (this) {
+    DietGoalType.FAT_LOSS, DietGoalType.EVENT_PREP -> WeightGoalType.CUT
+    DietGoalType.MUSCLE_GAIN -> WeightGoalType.BULK
+    DietGoalType.MAINTAIN, DietGoalType.RECOMP, DietGoalType.STRENGTH,
+    DietGoalType.ENDURANCE, DietGoalType.HEALTH -> WeightGoalType.MAINTAIN
+}
+
+/** Kierunek wagi (legacy) → kanoniczny cel. Używane gdy stary kod ustawia cel. */
+fun WeightGoalType.toDietGoal(): DietGoalType = when (this) {
+    WeightGoalType.CUT -> DietGoalType.FAT_LOSS
+    WeightGoalType.BULK -> DietGoalType.MUSCLE_GAIN
+    WeightGoalType.MAINTAIN, WeightGoalType.NONE -> DietGoalType.MAINTAIN
+}

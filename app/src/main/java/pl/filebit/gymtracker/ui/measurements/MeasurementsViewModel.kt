@@ -14,6 +14,7 @@ import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.PhotoType
 import pl.filebit.gymtracker.data.entity.ProgressPhoto
 import pl.filebit.gymtracker.data.entity.WeightGoalType
+import pl.filebit.gymtracker.data.entity.toDietGoal
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
 import pl.filebit.gymtracker.util.TrendInfo
 import pl.filebit.gymtracker.util.computeTrend
@@ -174,7 +175,8 @@ class MeasurementsViewModel @Inject constructor(
     fun setWeightGoal(target: Double?, type: WeightGoalType) {
         viewModelScope.launch {
             val cur = profileRepo.get()
-            profileRepo.save(cur.copy(targetWeightKg = target, weightGoalType = type))
+            // v1.28.1 (Etap 2): cel = `goalType`. `weightGoalType` znormalizuje repo.
+            profileRepo.save(cur.copy(targetWeightKg = target, goalType = type.toDietGoal()))
         }
     }
 

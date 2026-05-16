@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Goal
 import pl.filebit.gymtracker.data.entity.GoalType
 import pl.filebit.gymtracker.data.entity.WeightGoalType
+import pl.filebit.gymtracker.data.entity.toDietGoal
 import pl.filebit.gymtracker.data.repository.GoalProgress
 import pl.filebit.gymtracker.data.repository.GoalRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
@@ -70,9 +71,10 @@ class GoalsViewModel @Inject constructor(
         // Tylko aktualizuj jeśli coś się zmieniło (idempotent)
         if (profile.weightGoalType == newWeightGoal && profile.targetWeightKg == goal.targetValue) return
 
+        // v1.28.1 (Etap 2): cel = `goalType`. `weightGoalType` znormalizuje repo.
         profileRepo.save(
             profile.copy(
-                weightGoalType = newWeightGoal,
+                goalType = newWeightGoal.toDietGoal(),
                 targetWeightKg = goal.targetValue
             )
         )

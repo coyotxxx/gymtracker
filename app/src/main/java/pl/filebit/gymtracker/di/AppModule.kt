@@ -433,6 +433,43 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.28.1 (refaktor "jedno źródło prawdy", Etap 2): jeden cel.
+     *
+     * Brak zmian SCHEMATU — migracja tylko UZGADNIA dane. Po Etapie 1 użytkownik
+     * mógł mieć rozjechane pola: `weightGoalType` (cel z Ustawień treningu) vs
+     * `goalType` (cel diety, często nietknięty default MAINTAIN). Od Etapu 2
+     * `goalType` jest jedynym źródłem prawdy. Promujemy intencjonalny cel z
+     * `weightGoalType` (CUT/BULK) do `goalType` TYLKO gdy `goalType` to wciąż
+     * domyślny MAINTAIN — czyli dieta nie była świadomie konfigurowana.
+     * Jeśli user ustawił świadomie cel diety (goalType != MAINTAIN) — szanujemy go.
+     */
+    internal val MIGRATION_61_62 = object : Migration(61, 62) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                UPDATE `user_profile` SET `goalType` = CASE
+                    WHEN `goalType` = 'MAINTAIN' AND `weightGoalType` = 'CUT'  THEN 'FAT_LOSS'
+                    WHEN `goalType` = 'MAINTAIN' AND `weightGoalType` = 'BULK' THEN 'MUSCLE_GAIN'
+                    ELSE `goalType`
+                END
+                WHERE `id` = 1
+                """.trimIndent()
+            )
+            // Normalizacja legacy mirror na podstawie (uzgodnionego) goalType.
+            db.execSQL(
+                """
+                UPDATE `user_profile` SET `weightGoalType` = CASE
+                    WHEN `goalType` IN ('FAT_LOSS', 'EVENT_PREP') THEN 'CUT'
+                    WHEN `goalType` = 'MUSCLE_GAIN' THEN 'BULK'
+                    ELSE 'MAINTAIN'
+                END
+                WHERE `id` = 1
+                """.trimIndent()
+            )
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -449,7 +486,8 @@ object AppModule {
                 MIGRATION_57_58,
                 MIGRATION_58_59,
                 MIGRATION_59_60,
-                MIGRATION_60_61
+                MIGRATION_60_61,
+                MIGRATION_61_62
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

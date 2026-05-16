@@ -24,6 +24,7 @@ import pl.filebit.gymtracker.data.entity.ProgressPhoto
 import pl.filebit.gymtracker.data.entity.SetType
 import pl.filebit.gymtracker.data.entity.TrainingPlan
 import pl.filebit.gymtracker.data.entity.UserProfile
+import pl.filebit.gymtracker.data.entity.toDietGoal
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.ai.detectInjuryFromWorkout
@@ -176,6 +177,11 @@ class BackupImporter @Inject constructor(
                     showAdvancedSetFields = p.showAdvancedSetFields,
                     weightGoalType = runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
                         .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE),
+                    // v1.28.1 (Etap 2): backup treningu zna tylko legacy weightGoalType —
+                    // wyprowadzamy kanoniczny goalType, by importowany profil był spójny.
+                    goalType = runCatching { pl.filebit.gymtracker.data.entity.WeightGoalType.valueOf(p.weightGoalType) }
+                        .getOrDefault(pl.filebit.gymtracker.data.entity.WeightGoalType.NONE)
+                        .toDietGoal(),
                     targetWeightKg = p.targetWeightKg,
                     unfinishedWorkoutNotifyEnabled = p.unfinishedWorkoutNotifyEnabled,
                     unfinishedWorkoutNotifyHours = p.unfinishedWorkoutNotifyHours,

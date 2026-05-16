@@ -9,7 +9,7 @@
 |------|------|--------|---------|
 | 0 | Baseline + przygotowanie | ✅ DONE | — |
 | 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
-| 2 | Jeden cel (migracja 61→62) | ☐ TODO | — |
+| 2 | Jeden cel (migracja 61→62) | ▶ CI/RELEASE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ☐ TODO | — |
 | 4 | Kreator = ten sam ekran | ☐ TODO | — |
 | 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
@@ -186,8 +186,17 @@ Kroki:
    pole `goalType`. Bug B znika.
 6. `ProfileViewModel.save` — usunąć kod sync celu (linie ~75-94, już niepotrzebny).
 
-Weryfikacja: testy migracji + pełne testy + CI + emulator (cel spójny w obu
-ekranach) + release.
+**ZREALIZOWANO (v1.28.1, 2026-05-16) — decyzje implementacyjne:**
+- `weightGoalType` NIE usunięty z encji (drop kolumny = ryzykowny rebuild tabeli).
+  Zostaje jako legacy pole **auto-normalizowane** z `goalType` w
+  `UserProfileRepository.save()` — dwa pola nie mogą się rozjechać. Fizyczny
+  drop kolumny ewentualnie w Etapie 5.
+- Migracja 61→62 = TYLKO dane (UPDATE), bez zmian schematu: jednorazowo promuje
+  intencjonalny CUT/BULK do `goalType` gdy `goalType` był domyślnym MAINTAIN.
+- `goalType` (8 wart.) edytowalny w Ustawieniach treningu i Konfiguracji diety —
+  to samo pole. Helpery `DietGoalType.toWeightGoal()` / `WeightGoalType.toDietGoal()`.
+- ~30 konsumentów `weightGoalType` NIE ruszanych — czytają spójny mirror.
+- Weryfikacja: GoalUnificationTest + MigrationTest 56→62 + CI + emulator + release.
 
 ---
 

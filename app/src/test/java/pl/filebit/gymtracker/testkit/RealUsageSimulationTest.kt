@@ -9,6 +9,7 @@ import pl.filebit.gymtracker.data.entity.BodyMeasurement
 import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.UserProfile
 import pl.filebit.gymtracker.data.entity.WeightGoalType
+import pl.filebit.gymtracker.data.entity.toDietGoal
 import pl.filebit.gymtracker.data.entity.Workout
 import pl.filebit.gymtracker.data.entity.WorkoutSet
 import pl.filebit.gymtracker.ai.LoadZone
@@ -85,9 +86,10 @@ class RealUsageSimulationTest : TestHarness() {
     }
 
     private suspend fun setProfile(goal: WeightGoalType, weightKg: Double) {
+        // v1.28.1 (Etap 2): cel = `goalType`; repo normalizuje legacy `weightGoalType`.
         UserProfileRepository(db.userProfileDao()).save(UserProfile(
             bodyweightKg = weightKg, gender = Gender.MALE, daysPerWeek = 4,
-            weightGoalType = goal
+            goalType = goal.toDietGoal()
         ))
     }
 

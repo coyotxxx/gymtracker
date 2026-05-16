@@ -43,9 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.data.entity.DietGoalType
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
 import pl.filebit.gymtracker.data.entity.TrainingGoal
-import pl.filebit.gymtracker.data.entity.WeightGoalType
 import pl.filebit.gymtracker.data.entity.WeightUnit
 import pl.filebit.gymtracker.ui.theme.DarkBg
 import pl.filebit.gymtracker.ui.theme.DarkOnSurface
@@ -147,19 +147,25 @@ fun TrainingSettingsScreen(
                     title = stringResource(R.string.profile_weight_goal),
                     subtitle = "Określa kierunek bilansu kalorycznego sugerowanego przez AI."
                 ) {
+                    // v1.28.1 (Etap 2): jeden cel — edytujemy `goalType` (8 wartości),
+                    // to samo pole co "Cel diety". Legacy `weightGoalType` jest
+                    // auto-normalizowany przy zapisie (UserProfileRepository.save).
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         contentPadding = PaddingValues(vertical = 4.dp)
                     ) {
-                        items(WeightGoalType.entries.toList()) { g ->
+                        items(DietGoalType.entries.toList()) { g ->
                             pl.filebit.gymtracker.ui.theme.SelectableChip(
-                                text = weightGoalLabel(g),
-                                selected = draft.weightGoalType == g,
-                                onClick = { draft = draft.copy(weightGoalType = g) }
+                                text = dietGoalLabel(g),
+                                selected = draft.goalType == g,
+                                onClick = { draft = draft.copy(goalType = g) }
                             )
                         }
                     }
-                    if (draft.weightGoalType != WeightGoalType.NONE) {
+                    if (draft.goalType == DietGoalType.FAT_LOSS ||
+                        draft.goalType == DietGoalType.MUSCLE_GAIN ||
+                        draft.goalType == DietGoalType.EVENT_PREP
+                    ) {
                         Spacer(Modifier.height(12.dp))
                         TsTargetWeightField(
                             value = draft.targetWeightKg,
@@ -471,12 +477,15 @@ private fun TsToggleSection(
     }
 }
 
-@Composable
-private fun weightGoalLabel(g: WeightGoalType): String = when (g) {
-    WeightGoalType.NONE -> stringResource(R.string.weight_goal_none)
-    WeightGoalType.CUT -> stringResource(R.string.weight_goal_cut)
-    WeightGoalType.BULK -> stringResource(R.string.weight_goal_bulk)
-    WeightGoalType.MAINTAIN -> stringResource(R.string.weight_goal_maintain)
+private fun dietGoalLabel(g: DietGoalType): String = when (g) {
+    DietGoalType.FAT_LOSS -> "Redukcja"
+    DietGoalType.MUSCLE_GAIN -> "Masa"
+    DietGoalType.RECOMP -> "Recomp"
+    DietGoalType.MAINTAIN -> "Utrzymanie"
+    DietGoalType.STRENGTH -> "Siła"
+    DietGoalType.ENDURANCE -> "Wytrzymałość"
+    DietGoalType.HEALTH -> "Zdrowie"
+    DietGoalType.EVENT_PREP -> "Event prep"
 }
 
 private fun trainingGoalLabel(g: TrainingGoal): String = when (g) {

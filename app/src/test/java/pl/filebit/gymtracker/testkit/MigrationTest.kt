@@ -85,12 +85,12 @@ class MigrationTest {
             .addMigrations(
                 AppModule.MIGRATION_56_57, AppModule.MIGRATION_57_58,
                 AppModule.MIGRATION_58_59, AppModule.MIGRATION_59_60,
-                AppModule.MIGRATION_60_61
+                AppModule.MIGRATION_60_61, AppModule.MIGRATION_61_62
             )
             .build()
 
     @Test
-    fun `migracja 56 do 61 wykonuje sie i waliduje schemat`() = runBlocking {
+    fun `migracja 56 do 62 wykonuje sie i waliduje schemat`() = runBlocking {
         buildV56Database()
         val db = openWithMigrations()
         // pierwsze zapytanie wymusza otwarcie + migrację + walidację schematu.
@@ -98,10 +98,10 @@ class MigrationTest {
         val count = db.exerciseDao().count()
         db.close()
 
-        val tr = TraceReport("migration-56-to-61")
+        val tr = TraceReport("migration-56-to-62")
             .section("MIGRACJA")
-            .verdict("ścieżka 56→57→58→59→60→61", "wykonana", "bez wyjątku")
-            .verdict("walidacja schematu v61", "OK", "Room potwierdził zgodność")
+            .verdict("ścieżka 56→…→62", "wykonana", "bez wyjątku")
+            .verdict("walidacja schematu v62", "OK", "Room potwierdził zgodność")
             .kv("ćwiczeń po migracji", count.toString())
             .emit()
 
@@ -109,7 +109,7 @@ class MigrationTest {
     }
 
     @Test
-    fun `dane wstawione w v56 przezywaja migracje do v61`() = runBlocking {
+    fun `dane wstawione w v56 przezywaja migracje do v62`() = runBlocking {
         buildV56Database()
         // wstaw ćwiczenie do bazy v56 (surowy SQL — kolumny schematu v56)
         val raw = SQLiteDatabase.openDatabase(dbFile.path, null, SQLiteDatabase.OPEN_READWRITE)
@@ -129,19 +129,19 @@ class MigrationTest {
         val tr = TraceReport("migration-data-survival")
             .section("OCENA — zero utraty danych")
             .kv("ćwiczeń przed migracją (v56)", "1")
-            .kv("ćwiczeń po migracji (v61)", exercises.size.toString())
+            .kv("ćwiczeń po migracji (v62)", exercises.size.toString())
             .verdict("dane przetrwały update",
                 if (exercises.size == 1) "OK" else "UTRATA DANYCH",
                 "fallbackToDestructiveMigration usunięty — migracja musi zachować dane")
             .emit()
 
-        assertEquals("ćwiczenie przetrwało migrację 56→61", 1, exercises.size)
+        assertEquals("ćwiczenie przetrwało migrację 56→62", 1, exercises.size)
         assertEquals("nazwa ćwiczenia zachowana",
             "Wyciskanie testowe", exercises.first().name)
     }
 
     @Test
-    fun `lancuch migracji 49 do 61 jest ciagly`() {
+    fun `lancuch migracji 49 do 62 jest ciagly`() {
         // Room znajduje ścieżkę migracji tylko gdy łańcuch jest ciągły.
         // Brak którejkolwiek migracji = przerwa = destructive fallback/crash.
         val migrations = listOf(
@@ -150,7 +150,8 @@ class MigrationTest {
             AppModule.MIGRATION_53_54, AppModule.MIGRATION_54_55,
             AppModule.MIGRATION_55_56, AppModule.MIGRATION_56_57,
             AppModule.MIGRATION_57_58, AppModule.MIGRATION_58_59,
-            AppModule.MIGRATION_59_60, AppModule.MIGRATION_60_61
+            AppModule.MIGRATION_59_60, AppModule.MIGRATION_60_61,
+            AppModule.MIGRATION_61_62
         )
         var version = 49
         for (m in migrations) {
@@ -160,7 +161,7 @@ class MigrationTest {
                 version + 1, m.endVersion)
             version = m.endVersion
         }
-        assertEquals("łańcuch kończy się na wersji bazy danych", 61, version)
-        assertTrue("12 migracji 49→61", migrations.size == 12)
+        assertEquals("łańcuch kończy się na wersji bazy danych", 62, version)
+        assertTrue("13 migracji 49→62", migrations.size == 13)
     }
 }
