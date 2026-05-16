@@ -246,8 +246,8 @@ fun ProfileScreen(
             item {
                 ProfileNavRow(
                     icon = Icons.Default.FitnessCenter,
-                    title = "Ustawienia treningu",
-                    subtitle = "Cel, doświadczenie, jednostka, dni, czas, rest, powiadomienia",
+                    title = "Konfiguracja",
+                    subtitle = "Cel, trening, periodyzacja, dane do diety, preferencje, zdrowie",
                     onClick = onOpenTrainingSettings
                 )
             }

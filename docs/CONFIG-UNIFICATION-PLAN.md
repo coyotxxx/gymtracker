@@ -10,7 +10,7 @@
 | 0 | Baseline + przygotowanie | ✅ DONE | — |
 | 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
 | 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
-| 3 | Ekran „Konfiguracja" | ☐ TODO | — |
+| 3 | Ekran „Konfiguracja" | ▶ CI/RELEASE | v1.28.2 |
 | 4 | Kreator = ten sam ekran | ☐ TODO | — |
 | 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
 
@@ -204,15 +204,20 @@ Kroki:
 
 **Cel:** jedno miejsce edycji całej konfiguracji.
 
-Kroki:
-1. Nowy `Screen.Configuration` + route w `navigation/`.
-2. Nowy ekran z sekcjami: Dane podstawowe / Cel / Trening / Periodyzacja /
-   Aktywność i dieta / Zdrowie / Powiadomienia / AI.
-3. Wchłonąć logikę `TrainingSettingsScreen` + `DietSettingsDialog` jako sekcje.
-4. `ProfileScreen` — pozycja „Konfiguracja" zamiast osobnych „Ustawienia treningu".
-5. Bez zmian w bazie.
+**ZREALIZOWANO (v1.28.2, 2026-05-16):**
+- `TrainingSettingsScreen` przekształcony w centralny ekran „Konfiguracja"
+  (nazwa kompozytu/route historyczna — user widzi „Konfiguracja").
+- Dodane sekcje (wszystkie edytują pola scalonej encji `UserProfile`):
+  Dane podstawowe (płeć/wiek/wzrost), Aktywność poza treningiem, Styl diety,
+  Preferencje żywieniowe (alergeny/nietolerancje/unikane/ulubione), Dieta —
+  praktyczne (czas gotowania/budżet/warunki), Zdrowie. Tempo w sekcji Cel.
+- `ProfileScreen`: pozycja „Konfiguracja" zamiast „Ustawienia treningu".
+- Bez zmian w bazie.
+- **Odłożone:** `DietConfig` (liczba posiłków / okno IF / powiadomienia diety)
+  zostaje w szybkim dostępie z zakładki Dieta (⚙ DietSettingsDialog) — te same
+  dane, brak rozjazdu. Pełne wchłonięcie ewentualnie w Etapie 4/5.
 
-Weryfikacja: testy + CI + emulator (każda sekcja zapisuje poprawnie) + release.
+Weryfikacja: CI + emulator (sekcje renderują się i zapisują) + release.
 
 ---
 

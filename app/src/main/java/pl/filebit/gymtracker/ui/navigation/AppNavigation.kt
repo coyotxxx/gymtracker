@@ -934,7 +934,7 @@ private fun screenTitle(route: String?): String = when (route) {
     Screen.Measurements.route -> "Pomiary"
     Screen.MeasurementAdd.route -> "Dodaj pomiar"
     Screen.BodyMap.route -> "Mapa pomiarów"
-    Screen.TrainingSettings.route -> "Ustawienia treningu"
+    Screen.TrainingSettings.route -> "Konfiguracja"
     Screen.Goals.route -> "Cele"
     Screen.Glossary.route -> "Słowniczek"
     Screen.Backup.route -> "Kopia zapasowa"

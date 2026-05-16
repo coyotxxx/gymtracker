@@ -43,8 +43,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import pl.filebit.gymtracker.R
+import pl.filebit.gymtracker.data.entity.ActivityLevel
 import pl.filebit.gymtracker.data.entity.DietGoalType
+import pl.filebit.gymtracker.data.entity.DietPreference
 import pl.filebit.gymtracker.data.entity.ExperienceLevel
+import pl.filebit.gymtracker.data.entity.Gender
 import pl.filebit.gymtracker.data.entity.TrainingGoal
 import pl.filebit.gymtracker.data.entity.WeightUnit
 import pl.filebit.gymtracker.ui.theme.DarkBg
@@ -55,9 +58,11 @@ import pl.filebit.gymtracker.ui.theme.DarkSurface
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 
 /**
- * Pod-ekran ustawień treningu, wydzielony z Profilu (v0.72.0).
- * W Profilu zostają tylko: cel treningowy, doświadczenie, jednostki —
- * to "kim jestem" (identity). Tutaj: parametry techniczne sesji.
+ * Centralny ekran KONFIGURACJI (v1.28.2 — Etap 3 refaktoru "jedno źródło prawdy").
+ * Jedno miejsce dla całej konfiguracji potrzebnej do uruchomienia planów i diety:
+ * cel, trening, periodyzacja, dane do BMR, aktywność, preferencje żywieniowe,
+ * zdrowie. Wszystkie pola żyją w scalonej encji UserProfile (Etap 1).
+ * Nazwa kompozytu/route historyczna (TrainingSettings) — user widzi "Konfiguracja".
  */
 @Composable
 fun TrainingSettingsScreen(
@@ -82,7 +87,7 @@ fun TrainingSettingsScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 24.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            item { ScreenHeader(title = "Ustawienia treningu", onBack = onBack) }
+            item { ScreenHeader(title = "Konfiguracja", onBack = onBack) }
 
             // Cel treningu
             item {
@@ -170,6 +175,12 @@ fun TrainingSettingsScreen(
                         TsTargetWeightField(
                             value = draft.targetWeightKg,
                             onChange = { draft = draft.copy(targetWeightKg = it) }
+                        )
+                        Spacer(Modifier.height(12.dp))
+                        CfgDecimalField(
+                            label = "Tempo zmiany wagi (kg/tydzień)",
+                            value = draft.paceKgPerWeek,
+                            onChange = { draft = draft.copy(paceKgPerWeek = kotlin.math.abs(it)) }
                         )
                     }
                 }
@@ -326,6 +337,140 @@ fun TrainingSettingsScreen(
                                 color = DarkOnSurfaceVariant
                             )
                         }
+                    }
+                }
+            }
+
+            // ===== KONFIGURACJA DIETY (v1.28.2 — Etap 3: jeden centralny ekran) =====
+
+            item {
+                TsSectionCard(
+                    title = "Dane podstawowe",
+                    subtitle = "Potrzebne do dokładnego wyliczenia zapotrzebowania kalorycznego (BMR)."
+                ) {
+                    Text(
+                        "Płeć",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Medium,
+                        color = DarkOnSurface
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        items(Gender.entries.toList()) { g ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = genderLabel(g),
+                                selected = draft.gender == g,
+                                onClick = { draft = draft.copy(gender = g) }
+                            )
+                        }
+                    }
+                    Spacer(Modifier.height(12.dp))
+                    PeriodizationNumberField(
+                        label = "Wiek (lata)",
+                        value = draft.ageYears,
+                        range = 13..100,
+                        onChange = { draft = draft.copy(ageYears = it) }
+                    )
+                    Spacer(Modifier.height(10.dp))
+                    PeriodizationNumberField(
+                        label = "Wzrost (cm)",
+                        value = draft.heightCm,
+                        range = 120..230,
+                        onChange = { draft = draft.copy(heightCm = it) }
+                    )
+                }
+            }
+
+            item {
+                TsSectionCard(
+                    title = "Aktywność poza treningiem",
+                    subtitle = "Liczy się TYLKO ruch poza siłownią — treningi są doliczane osobno."
+                ) {
+                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        items(ActivityLevel.entries.toList()) { a ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = activityLabel(a),
+                                selected = draft.activityLevel == a,
+                                onClick = { draft = draft.copy(activityLevel = a) }
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
+                TsSectionCard(title = "Styl diety") {
+                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        items(DietPreference.entries.toList()) { p ->
+                            pl.filebit.gymtracker.ui.theme.SelectableChip(
+                                text = dietPrefLabel(p),
+                                selected = draft.dietPreference == p,
+                                onClick = { draft = draft.copy(dietPreference = p) }
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
+                TsSectionCard(
+                    title = "Preferencje żywieniowe",
+                    subtitle = "Produkty po przecinku. AI uwzględnia to przy generowaniu posiłków."
+                ) {
+                    CfgTextField("Alergeny", draft.allergies, "np. laktoza, orzechy") {
+                        draft = draft.copy(allergies = it)
+                    }
+                    Spacer(Modifier.height(10.dp))
+                    CfgTextField("Nietolerancje", draft.intolerances, "np. gluten") {
+                        draft = draft.copy(intolerances = it)
+                    }
+                    Spacer(Modifier.height(10.dp))
+                    CfgTextField("Produkty których unikam", draft.dislikedFoods, "np. brokuł, wątróbka") {
+                        draft = draft.copy(dislikedFoods = it)
+                    }
+                    Spacer(Modifier.height(10.dp))
+                    CfgTextField("Ulubione produkty", draft.lovedFoods, "np. twaróg, ryż, kurczak") {
+                        draft = draft.copy(lovedFoods = it)
+                    }
+                }
+            }
+
+            item {
+                TsSectionCard(title = "Dieta — praktyczne") {
+                    PeriodizationNumberField(
+                        label = "Czas gotowania na posiłek (min)",
+                        value = draft.cookingTimePerMealMin,
+                        range = 5..120,
+                        onChange = { draft = draft.copy(cookingTimePerMealMin = it) }
+                    )
+                    Spacer(Modifier.height(10.dp))
+                    CfgNullableNumberField(
+                        label = "Budżet tygodniowy na jedzenie (zł) — opcjonalnie",
+                        value = draft.weeklyBudgetPln,
+                        onChange = { draft = draft.copy(weeklyBudgetPln = it) }
+                    )
+                    Spacer(Modifier.height(12.dp))
+                    CfgInlineToggle("Jadam posiłki w pracy", draft.eatsAtWork) {
+                        draft = draft.copy(eatsAtWork = it)
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    CfgInlineToggle("Mam mikrofalówkę w pracy", draft.hasMicrowaveAtWork) {
+                        draft = draft.copy(hasMicrowaveAtWork = it)
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    CfgInlineToggle("Interesuje mnie meal prep", draft.mealPrepInterested) {
+                        draft = draft.copy(mealPrepInterested = it)
+                    }
+                }
+            }
+
+            item {
+                TsSectionCard(
+                    title = "Zdrowie",
+                    subtitle = "Stany zdrowotne — AI zachowuje wtedy ostrożność. To nie zastępuje konsultacji z lekarzem."
+                ) {
+                    CfgTextField("Stany zdrowotne", draft.medicalConditions, "np. nadciśnienie, cukrzyca") {
+                        draft = draft.copy(medicalConditions = it)
                     }
                 }
             }
@@ -500,6 +645,118 @@ private fun experienceLabel(e: ExperienceLevel): String = when (e) {
     ExperienceLevel.BEGINNER -> "Początkujący"
     ExperienceLevel.INTERMEDIATE -> "Średnio zaawansowany"
     ExperienceLevel.ADVANCED -> "Zaawansowany"
+}
+
+// ===== v1.28.2 (Etap 3) — helpery sekcji konfiguracji diety =====
+
+private fun genderLabel(g: Gender): String = when (g) {
+    Gender.MALE -> "Mężczyzna"
+    Gender.FEMALE -> "Kobieta"
+}
+
+private fun activityLabel(a: ActivityLevel): String = when (a) {
+    ActivityLevel.SEDENTARY -> "Siedzący"
+    ActivityLevel.LIGHT -> "Lekko aktywny"
+    ActivityLevel.MODERATE -> "Umiarkowanie"
+    ActivityLevel.VERY_ACTIVE -> "Bardzo aktywny"
+    ActivityLevel.EXTREME -> "Ekstremalnie"
+}
+
+private fun dietPrefLabel(p: DietPreference): String = when (p) {
+    DietPreference.STANDARD -> "Standardowa"
+    DietPreference.VEGETARIAN -> "Wegetariańska"
+    DietPreference.VEGAN -> "Wegańska"
+    DietPreference.PESCATARIAN -> "Pescatariańska"
+    DietPreference.KETO -> "Keto"
+    DietPreference.MEDITERRANEAN -> "Śródziemnomorska"
+}
+
+/** Tekstowe pole konfiguracji (CSV / wolny tekst) — sterowane wartością draftu. */
+@Composable
+private fun CfgTextField(
+    label: String,
+    value: String,
+    placeholder: String,
+    onChange: (String) -> Unit
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onChange,
+        label = { Text(label) },
+        placeholder = { Text(placeholder, color = DarkOnSurfaceVariant) },
+        singleLine = true,
+        modifier = Modifier.fillMaxWidth()
+    )
+}
+
+/** Przełącznik inline (bez własnej ramki — do użycia wewnątrz TsSectionCard). */
+@Composable
+private fun CfgInlineToggle(label: String, checked: Boolean, onChange: (Boolean) -> Unit) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Switch(checked = checked, onCheckedChange = onChange)
+        Spacer(Modifier.width(12.dp))
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyLarge,
+            color = DarkOnSurface,
+            modifier = Modifier.weight(1f)
+        )
+    }
+}
+
+/** Pole liczbowe opcjonalne — puste = null. */
+@Composable
+private fun CfgNullableNumberField(label: String, value: Int?, onChange: (Int?) -> Unit) {
+    var text by remember(value) { mutableStateOf(value?.toString() ?: "") }
+    Column {
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.Medium,
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.height(4.dp))
+        OutlinedTextField(
+            value = text,
+            onValueChange = { v ->
+                text = v.filter { it.isDigit() }
+                onChange(text.toIntOrNull())
+            },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+
+/** Pole dziesiętne (np. tempo kg/tydz). */
+@Composable
+private fun CfgDecimalField(label: String, value: Double, onChange: (Double) -> Unit) {
+    var text by remember(value) {
+        mutableStateOf(if (value == 0.0) "" else "%.2f".format(value).replace(',', '.'))
+    }
+    Column {
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.Medium,
+            color = DarkOnSurface
+        )
+        Spacer(Modifier.height(4.dp))
+        OutlinedTextField(
+            value = text,
+            onValueChange = { v ->
+                text = v
+                v.replace(',', '.').toDoubleOrNull()?.let { onChange(it) }
+            },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
 }
 
 /**
