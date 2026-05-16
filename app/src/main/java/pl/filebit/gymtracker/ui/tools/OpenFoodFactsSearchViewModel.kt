@@ -72,8 +72,9 @@ class OpenFoodFactsSearchViewModel @Inject constructor(
         when (searchState) {
             is SearchState.Idle -> UiState(
                 query = query, categoryFilter = category,
-                message = "Wpisz nazwę produktu i naciśnij Szukaj. " +
-                    "Wyniki pochodzą z bazy Open Food Facts (polski rynek)."
+                message = "Wpisz nazwę produktu i naciśnij Szukaj, albo wybierz " +
+                    "kategorię powyżej — pokażemy produkty wartościowe pod trening. " +
+                    "Dane z bazy Open Food Facts (polski rynek)."
             )
             is SearchState.Loading -> UiState(
                 query = query, categoryFilter = category, loading = true
@@ -87,9 +88,7 @@ class OpenFoodFactsSearchViewModel @Inject constructor(
                 message = "Błąd: ${searchState.message}. Sprawdź połączenie z internetem."
             )
             is SearchState.Results -> {
-                val filtered = if (category == null) searchState.products
-                    else searchState.products.filter { it.category == category }
-                val rows = filtered.map { p ->
+                val rows = searchState.products.map { p ->
                     val inDb = p.name.lowercase() in existing || p.name.lowercase() in addedSession
                     ResultRow(product = p, alreadyInDb = inDb)
                 }
@@ -97,15 +96,27 @@ class OpenFoodFactsSearchViewModel @Inject constructor(
                     query = query,
                     categoryFilter = category,
                     rows = rows,
-                    message = if (rows.isEmpty())
-                        "Brak wyników w wybranej kategorii." else null
+                    message = if (rows.isEmpty()) "Brak wyników." else null
                 )
             }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), UiState())
 
     fun setQuery(q: String) { _query.value = q }
-    fun setCategoryFilter(c: FoodCategory?) { _categoryFilter.value = c }
+
+    /** Klik kategorii — wyszukuje w OFF kuratorowane produkty "pod siłownię". */
+    fun searchCategory(category: FoodCategory) {
+        _query.value = ""
+        _categoryFilter.value = category
+        _searchState.value = SearchState.Loading
+        viewModelScope.launch {
+            _searchState.value = when (val r = offClient.searchByCategory(category)) {
+                is OffSearchResult.Success -> SearchState.Results(r.products)
+                is OffSearchResult.Empty -> SearchState.Empty
+                is OffSearchResult.Error -> SearchState.Error(r.message)
+            }
+        }
+    }
 
     fun search() {
         val q = _query.value.trim()

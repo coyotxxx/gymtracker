@@ -1,6 +1,9 @@
 package pl.filebit.gymtracker.data.network
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
@@ -103,6 +106,36 @@ class OpenFoodFactsClient @Inject constructor() {
     }
 
     /**
+     * Kuratorowane hasła "pod siłownię" per kategoria — wartościowe produkty
+     * dla osoby trenującej (białko, węgle złożone, zdrowe tłuszcze, warzywa,
+     * owoce, nabiał). Klik kategorii w ekranie "Dodaj produkt" wyszukuje je
+     * w OFF, zamiast zwracać losowy przekrój 3 mln produktów bazy.
+     */
+    private val categorySearchTerms: Map<FoodCategory, List<String>> = mapOf(
+        FoodCategory.PROTEIN to listOf(
+            "pierś z kurczaka", "indyk", "twaróg", "skyr", "jajka",
+            "tuńczyk", "dorsz", "łosoś"
+        ),
+        FoodCategory.CARBS to listOf(
+            "ryż", "płatki owsiane", "kasza gryczana", "makaron pełnoziarnisty",
+            "ziemniaki", "chleb razowy", "bataty"
+        ),
+        FoodCategory.FAT to listOf(
+            "masło orzechowe", "orzechy włoskie", "migdały", "oliwa z oliwek",
+            "awokado", "siemię lniane"
+        ),
+        FoodCategory.VEGETABLE to listOf(
+            "brokuł", "pomidor", "papryka", "marchew", "szpinak", "ogórek"
+        ),
+        FoodCategory.FRUIT to listOf(
+            "banan", "jabłko", "jagody", "truskawki", "maliny", "pomarańcza"
+        ),
+        FoodCategory.DAIRY to listOf(
+            "jogurt naturalny", "kefir", "serek wiejski", "mleko 2%"
+        )
+    )
+
+    /**
      * Wyszukiwanie produktów po nazwie. Subdomena pl. ogranicza do polskiego
      * rynku; dodatkowo odfiltrowujemy produkty których countries_tags jawnie
      * NIE zawiera Polski. Zwracamy tylko pozycje z kompletnym makro.
@@ -110,10 +143,42 @@ class OpenFoodFactsClient @Inject constructor() {
     suspend fun searchByName(query: String): OffSearchResult = withContext(Dispatchers.IO) {
         val q = query.trim()
         if (q.length < 2) return@withContext OffSearchResult.Empty
+        try {
+            val products = searchSingleTerm(q, pageSize = 50)
+            val unique = products.distinctBy { it.name.lowercase() }
+            if (unique.isEmpty()) OffSearchResult.Empty else OffSearchResult.Success(unique)
+        } catch (e: Exception) {
+            OffSearchResult.Error("Sieć: ${e.message}")
+        }
+    }
 
-        val encoded = java.net.URLEncoder.encode(q, "UTF-8")
+    /**
+     * Wyszukiwanie produktów "pod siłownię" dla danej kategorii — równoległe
+     * zapytania OFF dla każdego kuratorowanego hasła, wyniki połączone i
+     * odduplikowane.
+     */
+    suspend fun searchByCategory(category: FoodCategory): OffSearchResult = withContext(Dispatchers.IO) {
+        val terms = categorySearchTerms[category] ?: return@withContext OffSearchResult.Empty
+        try {
+            val all = coroutineScope {
+                terms.map { term ->
+                    async {
+                        runCatching { searchSingleTerm(term, pageSize = 6) }.getOrDefault(emptyList())
+                    }
+                }.awaitAll().flatten()
+            }
+            val unique = all.distinctBy { it.name.lowercase() }
+            if (unique.isEmpty()) OffSearchResult.Empty else OffSearchResult.Success(unique)
+        } catch (e: Exception) {
+            OffSearchResult.Error("Sieć: ${e.message}")
+        }
+    }
+
+    /** Pojedyncze zapytanie OFF — surowe wyniki bez deduplikacji. Rzuca przy błędzie sieci. */
+    private fun searchSingleTerm(query: String, pageSize: Int): List<FoodProduct> {
+        val encoded = java.net.URLEncoder.encode(query, "UTF-8")
         val url = "https://pl.openfoodfacts.org/cgi/search.pl" +
-            "?search_terms=$encoded&search_simple=1&action=process&json=1&page_size=50" +
+            "?search_terms=$encoded&search_simple=1&action=process&json=1&page_size=$pageSize" +
             "&fields=code,product_name,product_name_pl,product_name_en,brands," +
             "nutriments,categories_tags,countries_tags"
         val req = Request.Builder()
@@ -121,33 +186,21 @@ class OpenFoodFactsClient @Inject constructor() {
             .header("User-Agent", userAgent)
             .get()
             .build()
-
-        try {
-            http.newCall(req).execute().use { resp ->
-                if (!resp.isSuccessful) {
-                    return@withContext OffSearchResult.Error("HTTP ${resp.code}")
+        http.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) throw java.io.IOException("HTTP ${resp.code}")
+            val body = resp.body?.string().orEmpty()
+            val root = json.parseToJsonElement(body).jsonObject
+            val products = root["products"] as? kotlinx.serialization.json.JsonArray
+                ?: return emptyList()
+            return products.mapNotNull { el ->
+                val obj = el as? kotlinx.serialization.json.JsonObject ?: return@mapNotNull null
+                if (!isPolishMarket(obj)) return@mapNotNull null
+                val code = obj["code"]?.jsonPrimitive?.content.orEmpty()
+                when (val r = parse(obj, code)) {
+                    is OpenFoodFactsResult.Found -> r.product
+                    else -> null  // PartialData/NotFound → pomijamy (niekompletne makro)
                 }
-                val body = resp.body?.string().orEmpty()
-                val root = json.parseToJsonElement(body).jsonObject
-                val products = root["products"] as? kotlinx.serialization.json.JsonArray
-                    ?: return@withContext OffSearchResult.Empty
-
-                val mapped = products.mapNotNull { el ->
-                    val obj = el as? kotlinx.serialization.json.JsonObject ?: return@mapNotNull null
-                    if (!isPolishMarket(obj)) return@mapNotNull null
-                    val code = obj["code"]?.jsonPrimitive?.content.orEmpty()
-                    when (val r = parse(obj, code)) {
-                        is OpenFoodFactsResult.Found -> r.product
-                        else -> null  // PartialData/NotFound → pomijamy (niekompletne makro)
-                    }
-                }
-                // Deduplikacja po nazwie (OFF bywa zaszumione duplikatami)
-                val unique = mapped.distinctBy { it.name.lowercase() }
-                if (unique.isEmpty()) OffSearchResult.Empty
-                else OffSearchResult.Success(unique)
             }
-        } catch (e: Exception) {
-            OffSearchResult.Error("Sieć: ${e.message}")
         }
     }
 

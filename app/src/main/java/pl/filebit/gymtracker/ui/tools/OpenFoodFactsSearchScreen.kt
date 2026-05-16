@@ -80,7 +80,7 @@ fun OpenFoodFactsSearchScreen(
                     trailingIcon = {
                         Box(
                             modifier = Modifier
-                                .padding(end = 4.dp)
+                                .padding(end = 10.dp)
                                 .background(AccentOrange, RoundedCornerShape(8.dp))
                                 .clickable { vm.search() }
                                 .padding(horizontal = 12.dp, vertical = 6.dp)
@@ -105,24 +105,21 @@ fun OpenFoodFactsSearchScreen(
                     )
                 )
 
-                // === FILTR KATEGORII (na wynikach) ===
-                if (state.rows.isNotEmpty() || state.categoryFilter != null) {
-                    Spacer(Modifier.height(10.dp))
-                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        item {
-                            SelectableChip(
-                                text = "Wszystkie",
-                                selected = state.categoryFilter == null,
-                                onClick = { vm.setCategoryFilter(null) }
-                            )
-                        }
-                        items(FoodCategory.entries.filter { it != FoodCategory.OTHER }) { c ->
-                            SelectableChip(
-                                text = categoryLabelFood(c),
-                                selected = state.categoryFilter == c,
-                                onClick = { vm.setCategoryFilter(c) }
-                            )
-                        }
+                // === KATEGORIE — szybkie wyszukiwanie produktów "pod siłownię" ===
+                Spacer(Modifier.height(10.dp))
+                Text(
+                    "Lub wybierz kategorię — produkty wartościowe pod trening:",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = DarkOnSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    items(FoodCategory.entries.filter { it != FoodCategory.OTHER }) { c ->
+                        SelectableChip(
+                            text = categoryLabelFood(c),
+                            selected = state.categoryFilter == c,
+                            onClick = { vm.searchCategory(c) }
+                        )
                     }
                 }
 
