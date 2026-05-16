@@ -81,6 +81,7 @@ fun ProfileScreen(
     onOpenBackup: () -> Unit,
     onOpenStats: () -> Unit,
     onOpenCalculators: () -> Unit,
+    onOpenFoodDatabase: () -> Unit = {},
     onOpenMeasurements: () -> Unit,
     onOpenPhotos: () -> Unit,
     onOpenAiTrainer: () -> Unit,
@@ -229,6 +230,14 @@ fun ProfileScreen(
                     title = "Kalkulatory",
                     subtitle = "1RM, obciążenia (talerze)",
                     onClick = onOpenCalculators
+                )
+            }
+            item {
+                ProfileNavRow(
+                    icon = Icons.Default.Restaurant,
+                    title = "Baza produktów",
+                    subtitle = "Przeglądaj produkty, oznacz ulubione, sortuj",
+                    onClick = onOpenFoodDatabase
                 )
             }
 

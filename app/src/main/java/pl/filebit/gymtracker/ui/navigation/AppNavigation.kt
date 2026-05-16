@@ -362,6 +362,7 @@ fun AppNavigation(
                     onOpenBackup = { navController.navigate(Screen.Backup.route) },
                     onOpenStats = { navController.navigate(Screen.Stats.route) },
                     onOpenCalculators = { navController.navigate(Screen.Calculators.route) },
+                    onOpenFoodDatabase = { navController.navigate(Screen.FoodDatabase.route) },
                     onOpenMeasurements = { navController.navigate(Screen.Measurements.route) },
                     onOpenPhotos = { navController.navigate(Screen.ProgressPhotos.route) },
                     onOpenAiTrainer = { navController.navigate(Screen.AiConversations.route) },
@@ -415,6 +416,11 @@ fun AppNavigation(
             }
             composable(Screen.MuscleEngagement.route) {
                 MuscleEngagementScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Screen.FoodDatabase.route) {
+                pl.filebit.gymtracker.ui.tools.FoodDatabaseScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
             composable(Screen.ProgressPhotos.route) {
                 ProgressPhotosScreen(onBack = { navController.popBackStack() })
@@ -911,6 +917,7 @@ private fun screenTitle(route: String?): String = when (route) {
     Screen.PlateCalc.route -> "Kalkulator obciążeń"
     Screen.PlanTemplates.route -> "Szablony planów"
     Screen.MuscleEngagement.route -> "Mapa mięśni"
+    Screen.FoodDatabase.route -> "Baza produktów"
     Screen.ProgressPhotos.route -> "Zdjęcia progresu"
     Screen.StrengthStandards.route -> "Standardy siłowe"
     Screen.AiConversations.route -> "Asystent AI"

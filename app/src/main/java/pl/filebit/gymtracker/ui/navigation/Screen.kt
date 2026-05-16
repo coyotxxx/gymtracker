@@ -17,6 +17,7 @@ sealed class Screen(val route: String) {
     object PlateCalc : Screen("tools/plate")
     object PlanTemplates : Screen("plans/templates")
     object MuscleEngagement : Screen("tools/muscles")
+    object FoodDatabase : Screen("tools/food-database")
     object ProgressPhotos : Screen("tools/photos")
     object StrengthStandards : Screen("tools/strength")
     object AiConversations : Screen("ai/conversations")
