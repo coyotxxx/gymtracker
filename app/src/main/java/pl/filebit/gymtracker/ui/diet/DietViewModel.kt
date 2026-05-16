@@ -1222,13 +1222,14 @@ class DietViewModel @Inject constructor(
      * profil i kcal/makro recalc'uje natychmiast.
      */
     /**
-     * v1.24.25: reactive flow profilu dietetycznego — odświeża się po
-     * saveDietProfileQuick (DietSettingsDialog czyta go żeby ustawić initial state).
+     * Reactive flow profilu dietetycznego — czytany przez DietSettingsDialog
+     * dla initial state. v1.28.1 (Etap 2): w pełni reaktywny na `user_profile`
+     * (przez dietProfileRepo.observe). Wcześniej był odświeżany tylko "tickiem"
+     * z saveDietProfileQuick, więc zmiana celu z Ustawień treningu nie była tu
+     * widoczna (Konfiguracja diety pokazywała stary cel).
      */
-    private val _dietProfileTick = MutableStateFlow(0)
     val dietProfileFlow: StateFlow<pl.filebit.gymtracker.data.entity.UserDietProfile?> =
-        _dietProfileTick
-            .map { dietProfileRepo.get() }
+        dietProfileRepo.observe()
             .stateIn(viewModelScope, kotlinx.coroutines.flow.SharingStarted.WhileSubscribed(5_000), null)
 
     fun saveDietProfileQuick(
@@ -1245,8 +1246,7 @@ class DietViewModel @Inject constructor(
                 updatedAt = System.currentTimeMillis()
             )
             dietProfileRepo.save(updated)
-            // Wybudź dietProfileFlow (dla DietSettingsDialog initial state).
-            _dietProfileTick.value = _dietProfileTick.value + 1
+            // dietProfileFlow jest teraz reaktywny (observe) — odświeży się sam.
             // Force recompute karty DZIŚ — touch dietPrefs.updatedAt żeby
             // combine() w state-flow zauważył zmianę.
             val cfg = dietPrefs.load()
