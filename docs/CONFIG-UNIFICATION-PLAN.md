@@ -9,7 +9,7 @@
 |------|------|--------|---------|
 | 0 | Baseline + przygotowanie | ✅ DONE | — |
 | 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
-| 2 | Jeden cel (migracja 61→62) | ▶ CI/RELEASE | v1.28.1 |
+| 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ☐ TODO | — |
 | 4 | Kreator = ten sam ekran | ☐ TODO | — |
 | 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
