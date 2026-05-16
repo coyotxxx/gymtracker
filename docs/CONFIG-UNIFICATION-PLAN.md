@@ -12,7 +12,9 @@
 | 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ✅ DONE | v1.28.2 |
 | 4 | Kreator = ten sam ekran | ✅ DONE | v1.28.3 |
-| 5 | Sprzątanie (migracja 62→63) | ▶ CI/RELEASE | v1.28.4 |
+| 5 | Sprzątanie (migracja 62→63) | ✅ DONE | v1.28.4 |
+
+**🏁 REFAKTOR ZAKOŃCZONY — wszystkie 5 etapów wdrożone i zweryfikowane (2026-05-16).**
 
 Legenda: ☐ TODO · ▶ W TRAKCIE · ✅ DONE
 
