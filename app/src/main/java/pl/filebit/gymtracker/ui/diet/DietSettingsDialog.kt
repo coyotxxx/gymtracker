@@ -66,17 +66,20 @@ fun DietSettingsDialog(
     var reminders by remember { mutableStateOf(initial.mealRemindersEnabled) }
     var autoCheck by remember { mutableStateOf(initial.autoCheckAdjustments) }
     var hcSync by remember { mutableStateOf(initial.healthConnectSyncEnabled) }
-    // v1.24.25: state dla profilu dietetycznego
-    var goalType by remember {
+    // v1.24.25: state dla profilu dietetycznego.
+    // v1.28.1 (Etap 2): klucz `currentDietProfile` — gdy profil doładuje się PO
+    // otwarciu dialogu (flow async), stan re-inicjalizuje się prawdziwymi danymi
+    // zamiast zostać na wartościach domyślnych.
+    var goalType by remember(currentDietProfile) {
         mutableStateOf(
             currentDietProfile?.goalType
                 ?: pl.filebit.gymtracker.data.entity.DietGoalType.MAINTAIN
         )
     }
-    var paceKgPerWeek by remember {
+    var paceKgPerWeek by remember(currentDietProfile) {
         mutableStateOf(currentDietProfile?.paceKgPerWeek?.let { kotlin.math.abs(it) } ?: 0.5)
     }
-    var activityLevel by remember {
+    var activityLevel by remember(currentDietProfile) {
         mutableStateOf(
             currentDietProfile?.activityLevel
                 ?: pl.filebit.gymtracker.data.entity.ActivityLevel.LIGHT

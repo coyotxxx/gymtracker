@@ -311,8 +311,11 @@ fun DietScreen(
         }
     }
 
+    // v1.28.1 (Etap 2): zbierane na poziomie ekranu (nie w `if`), żeby profil był
+    // już załadowany zanim user otworzy dialog — inaczej dialog łapał null i
+    // pokazywał domyślny cel zamiast prawdziwego.
+    val currentDietProfile by vm.dietProfileFlow.collectAsStateWithLifecycle()
     if (showSettings) {
-        val currentDietProfile by vm.dietProfileFlow.collectAsStateWithLifecycle()
         DietSettingsDialog(
             initial = state.config,
             onSave = { vm.saveConfig(it) },
