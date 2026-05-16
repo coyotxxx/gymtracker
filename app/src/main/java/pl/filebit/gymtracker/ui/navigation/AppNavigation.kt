@@ -419,6 +419,12 @@ fun AppNavigation(
             }
             composable(Screen.FoodDatabase.route) {
                 pl.filebit.gymtracker.ui.tools.FoodDatabaseScreen(
+                    onBack = { navController.popBackStack() },
+                    onAddProduct = { navController.navigate(Screen.FoodSearch.route) }
+                )
+            }
+            composable(Screen.FoodSearch.route) {
+                pl.filebit.gymtracker.ui.tools.OpenFoodFactsSearchScreen(
                     onBack = { navController.popBackStack() }
                 )
             }
@@ -918,6 +924,7 @@ private fun screenTitle(route: String?): String = when (route) {
     Screen.PlanTemplates.route -> "Szablony planów"
     Screen.MuscleEngagement.route -> "Mapa mięśni"
     Screen.FoodDatabase.route -> "Baza produktów"
+    Screen.FoodSearch.route -> "Dodaj produkt"
     Screen.ProgressPhotos.route -> "Zdjęcia progresu"
     Screen.StrengthStandards.route -> "Standardy siłowe"
     Screen.AiConversations.route -> "Asystent AI"

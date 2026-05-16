@@ -28,6 +28,18 @@ sealed class OpenFoodFactsResult {
 }
 
 /**
+ * Wynik wyszukiwania OpenFoodFacts po nazwie (Etap 2 — ekran "Dodaj produkt").
+ *  - Success: lista produktów z kompletnym makro, z polskiego rynku
+ *  - Empty: brak wyników (lub za krótkie zapytanie)
+ *  - Error: problem sieci/parsowania
+ */
+sealed class OffSearchResult {
+    data class Success(val products: List<FoodProduct>) : OffSearchResult()
+    object Empty : OffSearchResult()
+    data class Error(val message: String) : OffSearchResult()
+}
+
+/**
  * Klient OpenFoodFacts API v2.
  *
  * Endpoint: https://world.openfoodfacts.org/api/v2/product/{barcode}.json
@@ -88,6 +100,67 @@ class OpenFoodFactsClient @Inject constructor() {
         } catch (e: Exception) {
             OpenFoodFactsResult.Error("Sieć: ${e.message}")
         }
+    }
+
+    /**
+     * Wyszukiwanie produktów po nazwie. Subdomena pl. ogranicza do polskiego
+     * rynku; dodatkowo odfiltrowujemy produkty których countries_tags jawnie
+     * NIE zawiera Polski. Zwracamy tylko pozycje z kompletnym makro.
+     */
+    suspend fun searchByName(query: String): OffSearchResult = withContext(Dispatchers.IO) {
+        val q = query.trim()
+        if (q.length < 2) return@withContext OffSearchResult.Empty
+
+        val encoded = java.net.URLEncoder.encode(q, "UTF-8")
+        val url = "https://pl.openfoodfacts.org/cgi/search.pl" +
+            "?search_terms=$encoded&search_simple=1&action=process&json=1&page_size=50" +
+            "&fields=code,product_name,product_name_pl,product_name_en,brands," +
+            "nutriments,categories_tags,countries_tags"
+        val req = Request.Builder()
+            .url(url)
+            .header("User-Agent", userAgent)
+            .get()
+            .build()
+
+        try {
+            http.newCall(req).execute().use { resp ->
+                if (!resp.isSuccessful) {
+                    return@withContext OffSearchResult.Error("HTTP ${resp.code}")
+                }
+                val body = resp.body?.string().orEmpty()
+                val root = json.parseToJsonElement(body).jsonObject
+                val products = root["products"] as? kotlinx.serialization.json.JsonArray
+                    ?: return@withContext OffSearchResult.Empty
+
+                val mapped = products.mapNotNull { el ->
+                    val obj = el as? kotlinx.serialization.json.JsonObject ?: return@mapNotNull null
+                    if (!isPolishMarket(obj)) return@mapNotNull null
+                    val code = obj["code"]?.jsonPrimitive?.content.orEmpty()
+                    when (val r = parse(obj, code)) {
+                        is OpenFoodFactsResult.Found -> r.product
+                        else -> null  // PartialData/NotFound → pomijamy (niekompletne makro)
+                    }
+                }
+                // Deduplikacja po nazwie (OFF bywa zaszumione duplikatami)
+                val unique = mapped.distinctBy { it.name.lowercase() }
+                if (unique.isEmpty()) OffSearchResult.Empty
+                else OffSearchResult.Success(unique)
+            }
+        } catch (e: Exception) {
+            OffSearchResult.Error("Sieć: ${e.message}")
+        }
+    }
+
+    /**
+     * Produkt z polskiego rynku — countries_tags zawiera Polskę, LUB tag jest
+     * pusty (brak danych — nie odrzucamy, subdomena pl. już zawęża wyniki).
+     */
+    private fun isPolishMarket(p: kotlinx.serialization.json.JsonObject): Boolean {
+        val tags = (p["countries_tags"] as? kotlinx.serialization.json.JsonArray)
+            ?.mapNotNull { it.jsonPrimitive.content }
+            ?: emptyList()
+        if (tags.isEmpty()) return true
+        return tags.any { it.contains("poland", ignoreCase = true) || it.contains("polska", ignoreCase = true) }
     }
 
     private fun parse(p: kotlinx.serialization.json.JsonObject, barcode: String): OpenFoodFactsResult {

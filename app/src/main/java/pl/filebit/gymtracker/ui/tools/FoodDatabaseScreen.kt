@@ -23,7 +23,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -31,12 +30,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
@@ -60,24 +55,24 @@ import kotlin.math.roundToInt
 @Composable
 fun FoodDatabaseScreen(
     onBack: () -> Unit,
+    onAddProduct: () -> Unit,
     vm: FoodDatabaseViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsStateWithLifecycle()
-    var showAddInfo by remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize().background(DarkBg)) {
         Column(modifier = Modifier.fillMaxSize()) {
             ScreenHeader(title = "Baza produktów", onBack = onBack)
 
             Column(modifier = Modifier.padding(horizontal = 16.dp)) {
-                // === DODAJ PRODUKT (Etap 2 — Open Food Facts) ===
+                // === DODAJ PRODUKT (z Open Food Facts) ===
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(46.dp)
                         .background(AccentOrange.copy(alpha = 0.10f), RoundedCornerShape(12.dp))
                         .border(1.5.dp, AccentOrange, RoundedCornerShape(12.dp))
-                        .clickable { showAddInfo = true },
+                        .clickable(onClick = onAddProduct),
                     contentAlignment = Alignment.Center
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -209,25 +204,6 @@ fun FoodDatabaseScreen(
                 }
             }
         }
-    }
-
-    if (showAddInfo) {
-        AlertDialog(
-            onDismissRequest = { showAddInfo = false },
-            title = { Text("Dodawanie produktów", fontWeight = FontWeight.Bold) },
-            text = {
-                Text(
-                    "Dodawanie produktów z zewnętrznej bazy Open Food Facts " +
-                        "pojawi się w kolejnej aktualizacji. Wyszukasz tam produkt " +
-                        "i dodasz go do swojej bazy — AI będzie z niego korzystać przy generowaniu planów."
-                )
-            },
-            confirmButton = {
-                TextButton(onClick = { showAddInfo = false }) {
-                    Text("OK", color = AccentOrange, fontWeight = FontWeight.Bold)
-                }
-            }
-        )
     }
 }
 
