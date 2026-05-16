@@ -11,7 +11,7 @@
 | 1 | Scalenie tabel (migracja 60→61) | ✅ DONE | v1.28.0 |
 | 2 | Jeden cel (migracja 61→62) | ✅ DONE | v1.28.1 |
 | 3 | Ekran „Konfiguracja" | ✅ DONE | v1.28.2 |
-| 4 | Kreator = ten sam ekran | ▶ CI/RELEASE | v1.28.3 |
+| 4 | Kreator = ten sam ekran | ✅ DONE | v1.28.3 |
 | 5 | Sprzątanie (migracja 62→63) | ☐ TODO | — |
 
 Legenda: ☐ TODO · ▶ W TRAKCIE · ✅ DONE
