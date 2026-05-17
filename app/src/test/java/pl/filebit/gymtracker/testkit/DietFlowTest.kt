@@ -86,7 +86,7 @@ class DietFlowTest : TestHarness() {
         assertTrue("kolacja dalej podnosi adherence", after3 > after2)
 
         val log = db.adherenceLogDao().getRecent(1).first()
-        assertEquals("4 posiłki zalogowane (śniadanie+2×obiad+kolacja)",
-            4, log.mealsLoggedCount)
+        assertEquals("3 posiłki zalogowane (śniadanie+obiad+kolacja) — 2 produkty w obiedzie to wciąż 1 posiłek",
+            3, log.mealsLoggedCount)
     }
 }

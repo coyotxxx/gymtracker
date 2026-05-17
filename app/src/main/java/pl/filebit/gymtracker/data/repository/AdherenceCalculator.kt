@@ -59,7 +59,9 @@ class AdherenceCalculator @Inject constructor(
         var actualProtein = 0.0
         var actualCarbs = 0.0
         var actualFat = 0.0
-        var countedMeals = 0
+        // v1.28.9: liczymy POSIŁKI (sloty mealType), nie wpisy produktów. MealEntry to
+        // jeden produkt — dzień z 17 produktami w 3 posiłkach dawał wcześniej "17/3 posiłków".
+        val loggedMealTypes = mutableSetOf<pl.filebit.gymtracker.data.entity.MealType>()
         for (m in meals) {
             if (m.mealType in skippedTypes) continue   // pomijaj SKIPPED
             val p = products[m.productId] ?: continue
@@ -68,7 +70,7 @@ class AdherenceCalculator @Inject constructor(
             actualProtein += p.proteinPer100g * factor
             actualCarbs += p.carbsPer100g * factor
             actualFat += p.fatPer100g * factor
-            countedMeals++
+            loggedMealTypes.add(m.mealType)
         }
 
         // Trening — z TrainingDaySummary
@@ -93,7 +95,8 @@ class AdherenceCalculator @Inject constructor(
                 actualFatG = actualFat.roundToInt(),
                 fatAdherencePct = pct(actualFat, goal.fatG.toDouble()),
                 // v1.24.14: liczymy posiłki które user faktycznie zjadł (nie pominął)
-                mealsLoggedCount = countedMeals,
+                // v1.28.9: liczba slotów posiłkowych z jedzeniem, nie wpisów produktów
+                mealsLoggedCount = loggedMealTypes.size,
                 mealsPlannedCount = config.mealsPerDay,
                 wasTrainingPlanned = wasTrainingPlanned,
                 wasTrainingDone = wasTrainingDone
