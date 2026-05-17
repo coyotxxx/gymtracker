@@ -304,15 +304,11 @@ fun HomeScreen(
                 }
             }
 
-            // Streak compact card — klik otwiera ekran Odznak (streak to odznaka)
+            // v1.28.5 — dzienne kafelki WODA / KROKI / REGEN (przeniesione z Diety;
+            // codzienne logi na wierzchu). Wcześniej była tu karta streaka/odznak —
+            // odznaki dostępne z Profilu + pełnoekranowy komunikat przy zdobyciu.
             item {
-                StreakCompactCard(
-                    weeks = state.streakWeeks,
-                    best = state.streakBest,
-                    weekCurrent = state.workoutsThisWeek,
-                    weekTarget = state.weeklyTarget,
-                    onClick = onOpenAchievements
-                )
+                DailyTilesSection()
             }
 
             // v1.9.0: Training Readiness + Muscle Recovery (na samej górze — primary metric)
@@ -1039,108 +1035,6 @@ private fun QuickCard(
                 ),
                 color = DarkOnSurfaceVariant,
                 maxLines = 2
-            )
-        }
-    }
-}
-
-@Composable
-private fun StreakCompactCard(
-    weeks: Int,
-    best: Int,
-    weekCurrent: Int,
-    weekTarget: Int,
-    onClick: () -> Unit = {}
-) {
-    val percent = if (weekTarget > 0) (weekCurrent * 100 / weekTarget).coerceAtMost(100) else 0
-    Card(
-        onClick = onClick,
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = DarkSurface),
-        border = BorderStroke(1.dp, DarkOutlineSoft),
-        shape = RoundedCornerShape(18.dp)
-    ) {
-        Column(modifier = Modifier.padding(14.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                // Ikona flame w żółtym kwadracie
-                Box(
-                    modifier = Modifier
-                        .size(38.dp)
-                        .background(
-                            color = AccentOrange.copy(alpha = 0.10f),
-                            shape = RoundedCornerShape(12.dp)
-                        )
-                        .padding(1.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        Icons.Default.LocalFireDepartment,
-                        contentDescription = null,
-                        tint = AccentOrange,
-                        modifier = Modifier.size(20.dp)
-                    )
-                }
-                Spacer(Modifier.width(12.dp))
-                // Środek: liczba tygodni + label
-                Column(modifier = Modifier.weight(1f)) {
-                    Row(verticalAlignment = Alignment.Bottom) {
-                        Text(
-                            "$weeks",
-                            style = MaterialTheme.typography.titleLarge.copy(
-                                fontFamily = FontFamily.Monospace,
-                                fontSize = 22.sp,
-                                fontWeight = FontWeight.ExtraBold
-                            ),
-                            color = AccentOrange
-                        )
-                        Spacer(Modifier.width(6.dp))
-                        Text(
-                            "tyg. z rzędu",
-                            style = MaterialTheme.typography.bodyMedium.copy(
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        )
-                    }
-                    Text(
-                        "Najlepszy: $best tyg.".uppercase(),
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 10.sp,
-                            fontWeight = FontWeight.Bold,
-                            letterSpacing = 1.2.sp
-                        ),
-                        color = DarkOnSurfaceVariant
-                    )
-                }
-                // Po prawej: tygodniowy postęp
-                Column(horizontalAlignment = Alignment.End) {
-                    Text(
-                        "$weekCurrent / $weekTarget",
-                        style = MaterialTheme.typography.titleMedium.copy(
-                            fontFamily = FontFamily.Monospace,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 16.sp
-                        )
-                    )
-                    Text(
-                        "TEN TYDZIEŃ",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontSize = 10.sp,
-                            fontWeight = FontWeight.Bold,
-                            letterSpacing = 1.2.sp
-                        ),
-                        color = DarkOnSurfaceVariant
-                    )
-                }
-            }
-            Spacer(Modifier.height(10.dp))
-            LinearProgressIndicator(
-                progress = { percent / 100f },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(4.dp)
-                    .clip(RoundedCornerShape(2.dp)),
-                color = AccentOrange,
-                trackColor = Color.White.copy(alpha = 0.05f)
             )
         }
     }
