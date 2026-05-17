@@ -109,6 +109,7 @@ fun DietScreen(
     val damageControlResult by vm.damageControlResult.collectAsStateWithLifecycle()
     val slotRecipes by vm.slotRecipes.collectAsStateWithLifecycle()
     val shownRecipeFor by vm.shownRecipeFor.collectAsStateWithLifecycle()
+    val recipeVariantError by vm.recipeVariantError.collectAsStateWithLifecycle()
     // v1.28.3 (Etap 4): osobny kreator diety usunięty — ekran Diety zawsze się
     // pokazuje; pełną konfigurację diety user robi w ekranie „Konfiguracja".
     var showAlternativesFor by remember { mutableStateOf<MealType?>(null) }
@@ -518,8 +519,14 @@ substitutePrompt?.let { sp ->
 
     shownRecipeFor?.let { type ->
         slotRecipes[type]?.let { recipe ->
+            val homeTag = recipe.device?.takeIf { it.isNotBlank() } ?: "Klasyczny"
+            val deviceChips = (listOf("Klasyczny") + recipe.applicableDevices + homeTag)
+                .distinct()
             RecipeDialog(
                 recipe = recipe,
+                deviceChips = deviceChips,
+                errorTag = recipeVariantError,
+                onSelectDevice = { tag -> vm.loadRecipeVariant(type, tag) },
                 onDismiss = { vm.dismissRecipe() }
             )
         }

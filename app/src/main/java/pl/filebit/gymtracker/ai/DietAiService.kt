@@ -42,6 +42,16 @@ data class AiMealRecipe(
      * "Thermomix" itp.). null = zwykły przepis (patelnia/piekarnik).
      */
     val device: String? = null,
+    /**
+     * v1.29.2: tagi urządzeń, na których danie DA SIĘ sensownie zrobić —
+     * sterują chipami przełącznika w przepisie. Patelnia/klasyk zawsze możliwe.
+     */
+    val applicableDevices: List<String> = emptyList(),
+    /**
+     * v1.29.2: warianty instrukcji pobrane NA ŻĄDANIE (tag urządzenia →
+     * instrukcje). Raz pobrane = zapisane, kolejne otwarcia bez zapytania AI.
+     */
+    val instructionsByDevice: Map<String, String> = emptyMap(),
     /** 0..2 alternatywne dania na ten sam slot (taka sama suma kcal/makro ±10%). */
     val alternatives: List<AiAlternative> = emptyList()
 )
@@ -137,6 +147,38 @@ class DietAiService @Inject constructor(
     private val masterContextBuilder: MasterAiContextBuilder
 ) {
     private val json = Json { ignoreUnknownKeys = true; isLenient = true }
+
+    /**
+     * v1.29.2: NA ŻĄDANIE przepisuje instrukcje dania pod konkretne urządzenie
+     * (device=null → klasycznie). Krótkie zapytanie — jeden przepis, nie cały
+     * plan. Wynik woła się raz i zapisuje (DietViewModel.loadRecipeVariant).
+     */
+    suspend fun rewriteRecipeForDevice(
+        recipe: AiMealRecipe,
+        device: CookingDevice?
+    ): Result<String> {
+        val cfg = prefs.load()
+        if (!cfg.isConnected) {
+            return Result.failure(
+                IllegalStateException("Skonfiguruj klucz AI w ustawieniach (Profil → Połączenie AI)")
+            )
+        }
+        val target = if (device == null || device == CookingDevice.PAN_OVEN)
+            "klasycznie — patelnia, garnek lub piekarnik"
+        else "${device.label} — ${device.promptHint}"
+        val prompt = buildString {
+            append("Danie: \"${recipe.name}\" (${recipe.kcal} kcal, ")
+            append("B${recipe.proteinG} W${recipe.carbsG} T${recipe.fatG}).\n")
+            append("Składniki:\n")
+            recipe.ingredients.forEach { append("- ${it.productName} ${it.grams} g\n") }
+            append("\nNapisz instrukcję przygotowania TEGO dania na: $target\n")
+            append("Kroki numerowane (1. 2. 3.), zwięźle, każdy w nowej linii. ")
+            append("Jeśli to urządzenie — podaj tryb/program, temperaturę °C i czas.\n")
+            append("Zwróć TYLKO kroki instrukcji — bez nazwy dania, bez wstępu, bez komentarzy.")
+        }
+        return client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)), source = "DietAiVariant")
+            .map { it.trim() }
+    }
 
     suspend fun generateDayPlan(
         config: DietConfig,
@@ -474,6 +516,10 @@ class DietAiService @Inject constructor(
                 realDevices.forEach { d ->
                     append("- ${d.label}: ${d.promptHint} → w polu device wpisz \"${d.tag}\"\n")
                 }
+                append("Dla KAŻDEGO posiłku podaj też `applicableDevices` — listę tagów ")
+                append("urządzeń z powyższych, na których to danie DA SIĘ sensownie zrobić ")
+                append("(pomijając patelnię — klasyk jest zawsze możliwy). Sałatka, koktajl, ")
+                append("kanapka czy twaróg na zimno → applicableDevices: [].\n")
             }
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
@@ -699,6 +745,7 @@ class DietAiService @Inject constructor(
                   "carbsG": 60,
                   "fatG": 8,
                   "device": null,
+                  "applicableDevices": [],
                   "alternatives": [
                     {
                       "name": "Jajecznica na maśle z pieczywem razowym",

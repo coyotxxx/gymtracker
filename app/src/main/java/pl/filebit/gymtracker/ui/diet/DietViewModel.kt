@@ -751,6 +751,46 @@ class DietViewModel @Inject constructor(
     fun showRecipeFor(type: MealType) { _shownRecipeFor.value = type }
     fun dismissRecipe() { _shownRecipeFor.value = null }
 
+    /** v1.29.2: tag wariantu w trakcie pobierania — wewnętrzny guard przed równoległymi zapytaniami. */
+    private val _recipeVariantLoading = MutableStateFlow<String?>(null)
+
+    /** v1.29.2: tag, dla którego pobranie wariantu się nie udało (do retry w UI). */
+    private val _recipeVariantError = MutableStateFlow<String?>(null)
+    val recipeVariantError: StateFlow<String?> = _recipeVariantError.asStateFlow()
+
+    /**
+     * v1.29.2: pobiera (raz) wariant instrukcji przepisu pod wybrane urządzenie
+     * i zapisuje go w przepisie planu. Kolejne otwarcia czytają z zapisu —
+     * bez ponownego zapytania do AI (oszczędność tokenów).
+     */
+    fun loadRecipeVariant(mealType: MealType, deviceTag: String) {
+        val recipe = _slotRecipes.value[mealType] ?: return
+        val homeTag = recipe.device?.takeIf { it.isNotBlank() } ?: "Klasyczny"
+        if (deviceTag == homeTag || recipe.instructionsByDevice.containsKey(deviceTag)) return
+        if (_recipeVariantLoading.value != null) return
+        viewModelScope.launch {
+            _recipeVariantError.value = null
+            _recipeVariantLoading.value = deviceTag
+            val device = pl.filebit.gymtracker.ai.CookingDevice.entries
+                .firstOrNull { it.tag == deviceTag }
+            val instructions = runCatching {
+                dietAi.rewriteRecipeForDevice(recipe, device).getOrNull()
+            }.getOrNull()
+            if (!instructions.isNullOrBlank()) {
+                val updated = recipe.copy(
+                    instructionsByDevice = recipe.instructionsByDevice + (deviceTag to instructions)
+                )
+                _slotRecipes.value = _slotRecipes.value.toMutableMap().apply {
+                    put(mealType, updated)
+                }
+                persistPlanRecipes()
+            } else {
+                _recipeVariantError.value = deviceTag
+            }
+            _recipeVariantLoading.value = null
+        }
+    }
+
     fun rateMeal(displayName: String, rating: Int, tags: String = "", notes: String = "") {
         viewModelScope.launch {
             runCatching { mealFeedbackRepo.rate(displayName, rating, tags, notes) }
