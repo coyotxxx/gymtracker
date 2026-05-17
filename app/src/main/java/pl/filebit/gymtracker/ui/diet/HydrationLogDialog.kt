@@ -103,6 +103,8 @@ fun HydrationLogDialog(
             HydrationAddRow("🍵 Herbata", HydrationSource.TEA, listOf(200, 300), onAdd)
             HydrationAddRow("☕ Kawa", HydrationSource.COFFEE, listOf(150, 250), onAdd)
             HydrationAddRow("🍊 Sok / 🥛 inne", HydrationSource.JUICE, listOf(200, 300), onAdd)
+            HydrationAddRow("🥤 Cola/Pepsi zero", HydrationSource.SOFT_DRINK_ZERO, listOf(330, 500), onAdd)
+            HydrationAddRow("🍺 Piwo bezalk.", HydrationSource.NA_BEER, listOf(330, 500), onAdd)
             Spacer(Modifier.height(4.dp))
         }
 
@@ -140,6 +142,8 @@ private fun HydrationRow(
         HydrationSource.TEA -> "🍵 herbata"
         HydrationSource.COFFEE -> "☕ kawa"
         HydrationSource.JUICE -> "🍊 sok"
+        HydrationSource.SOFT_DRINK_ZERO -> "🥤 cola/pepsi zero"
+        HydrationSource.NA_BEER -> "🍺 piwo bezalk."
         HydrationSource.OTHER -> "🥛 inne"
     }
     Card(

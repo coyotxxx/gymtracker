@@ -9,6 +9,8 @@ enum class HydrationSource {
     TEA,        // herbata (zlicza się 1:1)
     COFFEE,     // kawa (zlicza się 1:1, ale max 4 kawy/dzień bo diuretyk)
     JUICE,      // sok (zlicza się 0.7:1 — cukier)
+    SOFT_DRINK_ZERO,  // cola/pepsi zero — zero cukru, zlicza się 1:1
+    NA_BEER,    // piwo bezalkoholowe — głównie woda, zlicza się 1:1
     OTHER       // inne (np. zupa, mleko)
 }
 
