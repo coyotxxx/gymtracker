@@ -94,13 +94,8 @@ fun DailyTilesSection(
 
 // === UI kafelków (przeniesione z DietScreen — v1.28.5) ===
 
+/** Hydratacja w litrach — 2000 → „2L", 2600 → „2.6L", 800 → „800ml". */
 private fun formatHydrationCompact(ml: Int): String {
-    if (ml < 1000) return "$ml"
-    val l = ml / 1000.0
-    return if (l >= 10) "${l.toInt()}k" else "%.1fk".format(l).replace(",", ".")
-}
-
-private fun formatHydrationGoalCompact(ml: Int): String {
     if (ml < 1000) return "${ml}ml"
     val l = ml / 1000.0
     return if (l == l.toInt().toDouble()) "${l.toInt()}L" else "%.1fL".format(l).replace(",", ".")
@@ -136,7 +131,7 @@ private fun MiniTilesRow(
         ) {
             TileValue(
                 main = formatHydrationCompact(hydrationToday),
-                goal = "/ ${formatHydrationGoalCompact(hydrationGoal)}"
+                goal = "/ ${formatHydrationCompact(hydrationGoal)}"
             )
             Spacer(Modifier.height(7.dp))
             TileProgressBar(
