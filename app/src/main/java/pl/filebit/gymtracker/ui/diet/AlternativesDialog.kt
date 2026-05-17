@@ -42,7 +42,7 @@ fun AlternativesDialog(
     onSelect: (AiAlternative) -> Unit,
     onDismiss: () -> Unit
 ) {
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "🔁 Inne opcje na ${mealTypeLabel(mealType).lowercase()}",
         onDismiss = onDismiss,
         actions = {

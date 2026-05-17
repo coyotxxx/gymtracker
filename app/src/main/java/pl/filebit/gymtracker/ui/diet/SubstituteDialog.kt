@@ -59,7 +59,7 @@ fun SubstituteDialog(
     onSelect: (FoodProduct, Double) -> Unit,
     onDismiss: () -> Unit
 ) {
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "🔄 Zamień produkt",
         onDismiss = onDismiss,
         actions = {

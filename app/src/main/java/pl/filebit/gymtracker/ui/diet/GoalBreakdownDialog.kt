@@ -60,7 +60,7 @@ fun GoalBreakdownDialog(
     val livePreviewKcal = br.tdeeKcal + deficitPick.toInt()
     val livePreviewWeeklyKg = -deficitPick.toInt() / 1100.0
 
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "Twój dzienny cel — breakdown",
         onDismiss = onDismiss,
         actions = {

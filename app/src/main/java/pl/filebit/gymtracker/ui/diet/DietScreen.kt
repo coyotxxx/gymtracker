@@ -27,11 +27,14 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -1363,31 +1366,57 @@ private fun MealEntryRow(
             color = DarkOnSurface
         )
         Spacer(Modifier.width(4.dp))
-        Box(
-            modifier = Modifier
-                .size(28.dp)
-                .clickable(onClick = onSwap),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                Icons.Default.SwapHoriz,
-                contentDescription = "Zamień",
-                tint = AccentOrange,
-                modifier = Modifier.size(18.dp)
-            )
-        }
-        Box(
-            modifier = Modifier
-                .size(28.dp)
-                .clickable(onClick = onDelete),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                Icons.Default.Delete,
-                contentDescription = "Usuń",
-                tint = DarkOnSurfaceVariant,
-                modifier = Modifier.size(16.dp)
-            )
+        // v1.28.8: zamiast dwóch sąsiednich ikon (zamiana/kosz, ryzyko pomyłki)
+        // jedno menu 3 kropek z wyborem akcji.
+        Box {
+            var menuOpen by remember { mutableStateOf(false) }
+            IconButton(
+                onClick = { menuOpen = true },
+                modifier = Modifier.size(32.dp)
+            ) {
+                Icon(
+                    Icons.Default.MoreVert,
+                    contentDescription = "Opcje produktu",
+                    tint = DarkOnSurfaceVariant,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+            DropdownMenu(
+                expanded = menuOpen,
+                onDismissRequest = { menuOpen = false },
+                containerColor = DarkSurface
+            ) {
+                DropdownMenuItem(
+                    text = { Text("Zmień produkt", color = DarkOnSurface) },
+                    leadingIcon = {
+                        Icon(
+                            Icons.Default.SwapHoriz,
+                            contentDescription = null,
+                            tint = AccentOrange,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    },
+                    onClick = {
+                        menuOpen = false
+                        onSwap()
+                    }
+                )
+                DropdownMenuItem(
+                    text = { Text("Usuń", color = DarkOnSurface) },
+                    leadingIcon = {
+                        Icon(
+                            Icons.Default.Delete,
+                            contentDescription = null,
+                            tint = DarkOnSurfaceVariant,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    },
+                    onClick = {
+                        menuOpen = false
+                        onDelete()
+                    }
+                )
+            }
         }
     }
 }

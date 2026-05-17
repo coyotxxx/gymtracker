@@ -51,7 +51,7 @@ fun MealRatingDialog(
     val ratings = remember { mutableStateMapOf<String, Int>() }
     var savedCount by remember { mutableStateOf(0) }
 
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "Oceń wygenerowany plan",
         onDismiss = onDismiss,
         actions = {
