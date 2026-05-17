@@ -17,7 +17,6 @@ import pl.filebit.gymtracker.data.entity.ShoppingList
 import pl.filebit.gymtracker.data.entity.ShoppingListItem
 import pl.filebit.gymtracker.data.repository.ShoppingListGenerator
 import javax.inject.Inject
-import java.util.Calendar
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
@@ -48,22 +47,13 @@ class ShoppingListViewModel @Inject constructor(
         }
     }
 
-    fun generate(daysAhead: Int) {
+    fun generate(days: Int) {
         if (_generating.value) return
         viewModelScope.launch {
             _generating.value = true
             try {
-                val cal = Calendar.getInstance().apply {
-                    set(Calendar.HOUR_OF_DAY, 0)
-                    set(Calendar.MINUTE, 0)
-                    set(Calendar.SECOND, 0)
-                    set(Calendar.MILLISECOND, 0)
-                }
-                val from = cal.timeInMillis
-                cal.add(Calendar.DAY_OF_YEAR, daysAhead)
-                val to = cal.timeInMillis
-                val name = "Plan zakupów na $daysAhead dni"
-                val newId = generator.generate(from, to, name)
+                val name = if (days == 1) "Zakupy na 1 dzień" else "Zakupy na $days dni"
+                val newId = generator.generate(days, name)
                 _list.value = dao.getById(newId)
                 _statusMessage.value = "Lista wygenerowana"
             } finally {

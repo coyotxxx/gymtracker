@@ -53,48 +53,8 @@ class DietPlanningServicesTest : TestHarness() {
         return (dayA - 3600_000L) to (now)
     }
 
-    @Test
-    fun `ShoppingListGenerator agreguje posilki w liste zakupow`() = runBlocking {
-        val (from, to) = seedTwoDaysOfMeals()
-        val gen = ShoppingListGenerator(
-            db.mealEntryDao(), db.foodProductDao(), db.shoppingListDao())
-
-        val listId = gen.generate(from, to, "Zakupy testowe", safetyMarginPct = 0.10)
-        val items = db.shoppingListDao().getItems(listId)
-
-        val tr = TraceReport("shopping-list")
-            .section("DANE")
-            .kv("posiłki", "2 dni × 3 produkty")
-            .section("WYGENEROWANA LISTA")
-        items.sortedBy { it.productName }.forEach {
-            tr.kv(it.productName, "${it.grams} g (×${it.occurrences} dni, ${it.category})")
-        }
-        val chicken = items.first { it.productName.contains("kurcz", ignoreCase = true) }
-        tr.section("OCENA")
-            .verdict("kurczak: 2×200g + 10% margines",
-                if (chicken.grams >= 400.0) "OK" else "ZA MAŁO",
-                "${chicken.grams} g (surowo 400 g)")
-            .verdict("occurrences = liczba dni", "${chicken.occurrences}", "oczekiwane 2")
-            .emit()
-
-        assertEquals("lista ma 3 produkty", 3, items.size)
-        assertTrue("każda pozycja ma nazwę", items.all { it.productName.isNotBlank() })
-        assertTrue("kurczak: 400 g surowo + margines → ≥ 400 g", chicken.grams >= 400.0)
-        assertEquals("kurczak występuje w 2 dniach", 2, chicken.occurrences)
-    }
-
-    @Test
-    fun `ShoppingListGenerator pusty zakres daje pusta ale istniejaca liste`() = runBlocking {
-        val gen = ShoppingListGenerator(
-            db.mealEntryDao(), db.foodProductDao(), db.shoppingListDao())
-        val future = System.currentTimeMillis() + 10 * day
-        val listId = gen.generate(future, future + day, "Pusta")
-
-        assertTrue("lista istnieje mimo braku posiłków",
-            db.shoppingListDao().getById(listId) != null)
-        assertTrue("lista nie ma pozycji",
-            db.shoppingListDao().getItems(listId).isEmpty())
-    }
+    // Testy ShoppingListGenerator przeniesione do dedykowanego ShoppingListGeneratorTest
+    // (v1.29.5 — nowy model „aktualny plan × N dni").
 
     @Test
     fun `MealPrepPlanner generuje plan z krokami przygotowania`() = runBlocking {

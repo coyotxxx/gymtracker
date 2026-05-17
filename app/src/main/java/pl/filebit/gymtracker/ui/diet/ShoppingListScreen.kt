@@ -145,30 +145,10 @@ fun ShoppingListScreen(
                                 )
                                 val df = SimpleDateFormat("d MMM yyyy", Locale("pl", "PL"))
                                 Text(
-                                    "${df.format(Date(l.fromDateMs))} – ${df.format(Date(l.toDateMs - 1))}",
+                                    "wg planu z ${df.format(Date(l.fromDateMs))}",
                                     style = MaterialTheme.typography.labelSmall,
                                     color = DarkOnSurfaceVariant
                                 )
-                                // Lista przeterminowana — cały zakres w przeszłości
-                                if (l.toDateMs <= System.currentTimeMillis()) {
-                                    Spacer(Modifier.height(6.dp))
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .background(
-                                                AccentOrange.copy(alpha = 0.15f),
-                                                RoundedCornerShape(8.dp)
-                                            )
-                                            .padding(horizontal = 10.dp, vertical = 6.dp)
-                                    ) {
-                                        Text(
-                                            "⚠ Lista nieaktualna — dotyczy minionych dni. " +
-                                                "Wygeneruj nową na aktualny plan.",
-                                            style = MaterialTheme.typography.labelSmall,
-                                            color = AccentOrange
-                                        )
-                                    }
-                                }
                                 if (items.isNotEmpty()) {
                                     val purchased = items.count { it.isPurchased }
                                     Spacer(Modifier.height(4.dp))

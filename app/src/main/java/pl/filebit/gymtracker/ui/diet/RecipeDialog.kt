@@ -1,5 +1,7 @@
 package pl.filebit.gymtracker.ui.diet
 
+import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -61,6 +64,7 @@ fun RecipeDialog(
     val homeTag = recipe.device?.takeIf { it.isNotBlank() } ?: CLASSIC_TAG
     val showSwitcher = deviceChips.size > 1
     var selectedTag by remember(recipe.name) { mutableStateOf(homeTag) }
+    val context = LocalContext.current
 
     fun instructionsFor(tag: String): String? =
         if (tag == homeTag) recipe.instructions else recipe.instructionsByDevice[tag]
@@ -69,6 +73,12 @@ fun RecipeDialog(
         title = recipe.name,
         onDismiss = onDismiss,
         actions = {
+            TextButton(onClick = {
+                shareRecipe(context, recipe, selectedTag,
+                    instructionsFor(selectedTag) ?: recipe.instructions)
+            }) {
+                Text("Udostępnij", color = DarkOnSurfaceVariant)
+            }
             TextButton(onClick = onDismiss) {
                 Text("Zamknij", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
@@ -218,6 +228,36 @@ fun RecipeDialog(
             }
         }
     }
+}
+
+/** v1.29.5: udostępnia przepis jako tekst (systemowy arkusz udostępniania). */
+private fun shareRecipe(
+    context: Context,
+    recipe: AiMealRecipe,
+    deviceTag: String,
+    instructions: String
+) {
+    val text = buildString {
+        appendLine("🍽 ${recipe.name}")
+        appendLine(
+            "${recipe.kcal} kcal · B${recipe.proteinG} W${recipe.carbsG} " +
+                "T${recipe.fatG} · ⏱ ${recipe.prepMinutes} min"
+        )
+        appendLine()
+        appendLine("Składniki:")
+        recipe.ingredients.forEach { appendLine("• ${it.productName} ${it.grams} g") }
+        appendLine()
+        val devSuffix = if (deviceTag != CLASSIC_TAG) " ($deviceTag)" else ""
+        appendLine("Przygotowanie$devSuffix:")
+        appendLine(instructions.ifBlank { "—" })
+    }
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        putExtra(Intent.EXTRA_TEXT, text)
+    }
+    val chooser = Intent.createChooser(intent, "Udostępnij przepis")
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    context.startActivity(chooser)
 }
 
 /** Chip urządzenia przy tytule przepisu — np. „Cosori", „Thermomix". */

@@ -12,16 +12,18 @@ import kotlin.math.ceil
 import kotlin.math.roundToInt
 
 /**
- * Generuje listę zakupów z faktycznych wpisów MealEntry w zakresie dat.
+ * Generuje listę zakupów z AKTUALNEGO planu dnia × liczba dni.
+ *
+ * v1.29.5: przejście z „zakresu dat" na „aktualny plan × N". Plan diety i tak
+ * się powtarza dzień w dzień (carry-over), więc lista = składniki najnowszego
+ * zaplanowanego dnia pomnożone przez 1 / 3 / 7. Generujesz nowy plan → lista
+ * liczy się od nowego; stare dni nie mieszają się do wyniku.
  *
  * Algorytm:
- *  1. Pobierz wszystkie MealEntry z zakresu [fromMs, toMs)
- *  2. Pogrupuj po productId, zsumuj gramy, policz unique dni (occurrences)
- *  3. Dorzuć narzut bezpieczeństwa (~10%) bo:
- *     - świeże produkty trzeba kupić w typowych opakowaniach
- *     - czasem zostanie nadwyżka, ale lepsze niż pójście drugi raz po brakującą rzecz
- *  4. Zaokrąglij gramaturę do "rozsądnej" wartości (najbliższe 50/100/250g)
- *  5. Posortuj alfabetycznie wewnątrz kategorii
+ *  1. Znajdź najnowszy dzień z posiłkami = „aktualny plan"
+ *  2. Zsumuj gramy per produkt dla tego JEDNEGO dnia
+ *  3. Pomnóż przez liczbę dni + narzut bezpieczeństwa (~10%)
+ *  4. Zaokrąglij gramaturę do kupowalnych wartości (50/100/250 g)
  */
 @Singleton
 class ShoppingListGenerator @Inject constructor(
@@ -30,57 +32,54 @@ class ShoppingListGenerator @Inject constructor(
     private val shoppingDao: ShoppingListDao
 ) {
     /**
-     * Generuje listę z [fromMs] do [toMs] (exclusive). Stara lista usuwana — utrzymujemy 1 aktywną.
-     * Zwraca id nowo utworzonej listy.
+     * Generuje listę: składniki aktualnego planu dnia × [days]. Stara lista
+     * usuwana — utrzymujemy 1 aktywną. Zwraca id nowo utworzonej listy.
      */
     suspend fun generate(
-        fromMs: Long,
-        toMs: Long,
+        days: Int,
         listName: String,
         safetyMarginPct: Double = 0.10
     ): Long {
-        require(toMs > fromMs) { "toMs musi być > fromMs" }
-        val entries = mealDao.getForDateRange(fromMs, toMs)
-        if (entries.isEmpty()) {
-            // Pusta lista — i tak zapisz, żeby UI mógł pokazać "brak posiłków"
+        require(days > 0) { "days musi być > 0" }
+        val dayMs = 24 * 3600 * 1000L
+        // Szukamy najnowszego dnia z posiłkami w ostatnich 90 dniach.
+        val windowEnd = System.currentTimeMillis() + dayMs
+        val recent = mealDao.getForDateRange(windowEnd - 90 * dayMs, windowEnd)
+        if (recent.isEmpty()) {
+            val today = startOfDay(System.currentTimeMillis())
             return shoppingDao.replaceWithSingleList(
-                ShoppingList(name = listName, fromDateMs = fromMs, toDateMs = toMs),
+                ShoppingList(name = listName, fromDateMs = today, toDateMs = today + dayMs),
                 emptyList()
             )
         }
-        // ProductId → pair(grams, set of unique days)
-        val byProduct = HashMap<Long, ProductAgg>()
-        for (e in entries) {
-            val agg = byProduct.getOrPut(e.productId) { ProductAgg() }
-            agg.grams += e.grams
-            agg.dayKeys += startOfDay(e.dateMs)
+        // Aktualny plan = najnowszy dzień, dla którego są wpisy.
+        val planDay = recent.maxOf { startOfDay(it.dateMs) }
+        val planEntries = recent.filter { startOfDay(it.dateMs) == planDay }
+
+        // Suma gramów per produkt dla tego jednego dnia.
+        val byProduct = HashMap<Long, Double>()
+        for (e in planEntries) {
+            byProduct[e.productId] = (byProduct[e.productId] ?: 0.0) + e.grams
         }
 
-        val productIds = byProduct.keys.toList()
-        val products = productDao.getByIds(productIds).associateBy { it.id }
-
-        val items = byProduct.mapNotNull { (pid, agg) ->
+        val products = productDao.getByIds(byProduct.keys.toList()).associateBy { it.id }
+        val items = byProduct.mapNotNull { (pid, gramsOneDay) ->
             val p = products[pid] ?: return@mapNotNull null
-            val totalGrams = agg.grams * (1.0 + safetyMarginPct)
+            val total = gramsOneDay * days * (1.0 + safetyMarginPct)
             ShoppingListItem(
                 listId = 0L, // ustawione w replaceWithSingleList
                 productId = pid,
                 productName = p.name,
                 category = p.category,
-                grams = roundShoppingGrams(totalGrams, p.category),
-                occurrences = agg.dayKeys.size
+                grams = roundShoppingGrams(total, p.category),
+                occurrences = 1
             )
         }
         return shoppingDao.replaceWithSingleList(
-            ShoppingList(name = listName, fromDateMs = fromMs, toDateMs = toMs),
+            ShoppingList(name = listName, fromDateMs = planDay, toDateMs = planDay + days * dayMs),
             items
         )
     }
-
-    private class ProductAgg(
-        var grams: Double = 0.0,
-        val dayKeys: MutableSet<Long> = HashSet()
-    )
 
     private fun startOfDay(ms: Long): Long {
         // Bierzemy "kalendarzowy" początek dnia w UTC dla uproszczenia (klucz unikatowy)
