@@ -56,7 +56,7 @@ fun HydrationLogDialog(
     onDismiss: () -> Unit,
     onAdd: ((Int, HydrationSource) -> Unit)? = null
 ) {
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "💧 Woda dzisiaj",
         onDismiss = onDismiss,
         actions = {

@@ -63,70 +63,32 @@ fun RecoveryDialog(
     var soreness by remember { mutableStateOf(3) }
     var difficulty by remember { mutableStateOf(3) }
 
-    Dialog(
-        onDismissRequest = onDismiss,
-        properties = DialogProperties(usePlatformDefaultWidth = false)
-    ) {
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(0.92f)
-                .padding(8.dp),
-            colors = CardDefaults.cardColors(containerColor = DarkBg),
-            shape = RoundedCornerShape(20.dp)
-        ) {
-            Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-                Text(
-                    "🛌 Jak się dziś czujesz?",
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.ExtraBold),
-                    color = DarkOnSurface
+    ScrollableSheetShell(
+        title = "🛌 Jak się dziś czujesz?",
+        headerSubtitle = "30 sekund — pomoże silnikowi nie ciąć kcal kiedy nie powinien.",
+        onDismiss = onDismiss,
+        actions = {
+            TextButton(onClick = onDismiss) {
+                Text("Pomiń", color = DarkOnSurfaceVariant)
+            }
+            TextButton(onClick = {
+                onSave(
+                    sleep.toDouble(),
+                    sleepQ, stress, hunger, energy, soreness, difficulty
                 )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "30 sekund — pomoże silnikowi nie ciąć kcal kiedy nie powinien.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = DarkOnSurfaceVariant
-                )
-                Spacer(Modifier.height(8.dp))
-
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth()
-                        .verticalScroll(rememberScrollState()),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    SleepHoursRow(sleep, onChange = { sleep = it })
-                    Rating15Row("😴 Jakość snu", sleepQ, onChange = { sleepQ = it }, low = "źle", high = "świetnie")
-                    Rating15Row("😰 Stres", stress, onChange = { stress = it }, low = "spokój", high = "skrajny")
-                    Rating15Row("🍽️ Głód", hunger, onChange = { hunger = it }, low = "brak", high = "ciągły")
-                    Rating15Row("⚡ Energia", energy, onChange = { energy = it }, low = "wyczerpana", high = "pełna")
-                    Rating15Row("💪 Soreness", soreness, onChange = { soreness = it }, low = "brak", high = "ciężki DOMS")
-                    Rating15Row("🎯 Trudność diety", difficulty, onChange = { difficulty = it }, low = "łatwo", high = "bardzo trudno")
-                }
-
-                Spacer(Modifier.height(8.dp))
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.End,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    TextButton(onClick = onDismiss) {
-                        Text("Pomiń", color = DarkOnSurfaceVariant)
-                    }
-                    TextButton(onClick = {
-                        onSave(
-                            sleep.toDouble(),
-                            sleepQ, stress, hunger, energy, soreness, difficulty
-                        )
-                        onDismiss()
-                    }) {
-                        Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
-                    }
-                }
+                onDismiss()
+            }) {
+                Text("Zapisz", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
         }
+    ) {
+        SleepHoursRow(sleep, onChange = { sleep = it })
+        Rating15Row("😴 Jakość snu", sleepQ, onChange = { sleepQ = it }, low = "źle", high = "świetnie")
+        Rating15Row("😰 Stres", stress, onChange = { stress = it }, low = "spokój", high = "skrajny")
+        Rating15Row("🍽️ Głód", hunger, onChange = { hunger = it }, low = "brak", high = "ciągły")
+        Rating15Row("⚡ Energia", energy, onChange = { energy = it }, low = "wyczerpana", high = "pełna")
+        Rating15Row("💪 Soreness", soreness, onChange = { soreness = it }, low = "brak", high = "ciężki DOMS")
+        Rating15Row("🎯 Trudność diety", difficulty, onChange = { difficulty = it }, low = "łatwo", high = "bardzo trudno")
     }
 }
 

@@ -45,7 +45,7 @@ fun StepsDialog(
 ) {
     var text by remember { mutableStateOf(if (currentSteps > 0) currentSteps.toString() else "") }
 
-    ScrollableDialogShell(
+    ScrollableSheetShell(
         title = "🚶 Kroki dziś",
         onDismiss = onDismiss,
         actions = {
