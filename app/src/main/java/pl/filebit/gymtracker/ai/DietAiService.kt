@@ -37,6 +37,11 @@ data class AiMealRecipe(
     val proteinG: Int,
     val carbsG: Int,
     val fatG: Int,
+    /**
+     * v1.29.1: urządzenie, pod które AI napisało instrukcję (tag: "Cosori",
+     * "Thermomix" itp.). null = zwykły przepis (patelnia/piekarnik).
+     */
+    val device: String? = null,
     /** 0..2 alternatywne dania na ten sam slot (taka sama suma kcal/makro ±10%). */
     val alternatives: List<AiAlternative> = emptyList()
 )
@@ -456,6 +461,21 @@ class DietAiService @Inject constructor(
                 }
             }
 
+            // === URZĄDZENIA KUCHENNE USERA ===
+            val realDevices = stylePrefs.devices.filter { it != CookingDevice.PAN_OVEN }
+            if (realDevices.isNotEmpty()) {
+                append("\n=== URZĄDZENIA KUCHENNE USERA ===\n")
+                append("User gotuje na tym sprzęcie. Dla KAŻDEGO posiłku, gdzie danie ")
+                append("NATURALNIE pasuje do któregoś urządzenia — napisz `instructions` ")
+                append("jako kroki pod to urządzenie (tryb/program, temperatura °C, czas) ")
+                append("i ustaw pole `device` na podany tag. Gdy danie nie pasuje do ")
+                append("żadnego urządzenia (sałatka, koktajl, kanapka, twaróg na zimno) ")
+                append("— zwykłe `instructions`, `device` = null. NIE wpychaj dania na siłę.\n")
+                realDevices.forEach { d ->
+                    append("- ${d.label}: ${d.promptHint} → w polu device wpisz \"${d.tag}\"\n")
+                }
+            }
+
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
             slotLabels.forEach { append("- $it\n") }
 
@@ -678,6 +698,7 @@ class DietAiService @Inject constructor(
                   "proteinG": 35,
                   "carbsG": 60,
                   "fatG": 8,
+                  "device": null,
                   "alternatives": [
                     {
                       "name": "Jajecznica na maśle z pieczywem razowym",

@@ -35,6 +35,7 @@ fun RecipeDialog(
     recipe: AiMealRecipe,
     onDismiss: () -> Unit
 ) {
+    val device = recipe.device?.takeIf { it.isNotBlank() }
     ScrollableSheetShell(
         title = recipe.name,
         onDismiss = onDismiss,
@@ -43,6 +44,9 @@ fun RecipeDialog(
                 Text("Zamknij", color = AccentOrange, fontWeight = FontWeight.Bold)
             }
         },
+        headerExtra = if (device != null) {
+            { DeviceTag(device) }
+        } else null,
         bodyArrangement = Arrangement.spacedBy(10.dp)
     ) {
         // Makro / czas
@@ -131,5 +135,23 @@ fun RecipeDialog(
                 color = DarkOnSurface
             )
         }
+    }
+}
+
+/** Chip urządzenia przy tytule przepisu — np. „Cosori", „Thermomix". */
+@Composable
+private fun DeviceTag(name: String) {
+    Box(
+        modifier = Modifier
+            .background(AccentOrange.copy(alpha = 0.18f), RoundedCornerShape(8.dp))
+            .padding(horizontal = 8.dp, vertical = 3.dp)
+    ) {
+        Text(
+            name,
+            style = MaterialTheme.typography.labelSmall.copy(
+                fontWeight = FontWeight.Bold, fontSize = 11.sp
+            ),
+            color = AccentOrange
+        )
     }
 }
