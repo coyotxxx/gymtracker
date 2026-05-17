@@ -5,9 +5,11 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import pl.filebit.gymtracker.ai.CookingDevice
 import pl.filebit.gymtracker.ai.MealStyle
 import pl.filebit.gymtracker.ai.MealStylePreferences
 import pl.filebit.gymtracker.ai.PlanStyle
+import pl.filebit.gymtracker.ai.StyleKind
 import pl.filebit.gymtracker.data.entity.MealType
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -85,9 +87,20 @@ class DietPreferences @Inject constructor(
      * uwagi) — żeby wybór usera ZOSTAWAŁ między otwarciami okna generowania.
      */
     fun loadMealStylePreferences(): MealStylePreferences {
-        val global = runCatching {
-            PlanStyle.valueOf(prefs.getString(KEY_STYLE_GLOBAL, PlanStyle.CLASSIC.name)!!)
+        val character = runCatching {
+            PlanStyle.valueOf(prefs.getString(KEY_STYLE_CHARACTER, PlanStyle.CLASSIC.name)!!)
         }.getOrDefault(PlanStyle.CLASSIC)
+            .let { if (it.kind == StyleKind.CHARACTER) it else PlanStyle.CLASSIC }
+        val modifiers = (prefs.getString(KEY_STYLE_MODIFIERS, null) ?: "")
+            .split(",")
+            .mapNotNull { runCatching { PlanStyle.valueOf(it.trim()) }.getOrNull() }
+            .filter { it.kind == StyleKind.MODIFIER }
+            .toSet()
+        val devices = (prefs.getString(KEY_STYLE_DEVICES, null) ?: CookingDevice.PAN_OVEN.name)
+            .split(",")
+            .mapNotNull { runCatching { CookingDevice.valueOf(it.trim()) }.getOrNull() }
+            .toSet()
+            .ifEmpty { setOf(CookingDevice.PAN_OVEN) }
         val slots = (prefs.getString(KEY_STYLE_SLOTS, null) ?: "")
             .split(",")
             .mapNotNull { entry ->
@@ -99,8 +112,10 @@ class DietPreferences @Inject constructor(
             }
             .toMap()
         return MealStylePreferences(
-            globalStyle = global,
+            character = character,
+            modifiers = modifiers,
             slotStyles = slots,
+            devices = devices,
             freeText = prefs.getString(KEY_STYLE_FREETEXT, "") ?: "",
             preferFavorites = prefs.getBoolean(KEY_STYLE_PREFER_FAV, false)
         )
@@ -108,7 +123,9 @@ class DietPreferences @Inject constructor(
 
     fun saveMealStylePreferences(p: MealStylePreferences) {
         prefs.edit()
-            .putString(KEY_STYLE_GLOBAL, p.globalStyle.name)
+            .putString(KEY_STYLE_CHARACTER, p.character.name)
+            .putString(KEY_STYLE_MODIFIERS, p.modifiers.joinToString(",") { it.name })
+            .putString(KEY_STYLE_DEVICES, p.devices.joinToString(",") { it.name })
             .putString(KEY_STYLE_SLOTS,
                 p.slotStyles.entries.joinToString(",") { "${it.key.name}=${it.value.name}" })
             .putString(KEY_STYLE_FREETEXT, p.freeText)
@@ -144,7 +161,9 @@ class DietPreferences @Inject constructor(
 
     companion object {
         private const val KEY_MEALS = "meals_per_day"
-        private const val KEY_STYLE_GLOBAL = "plan_style_global"
+        private const val KEY_STYLE_CHARACTER = "plan_style_character"
+        private const val KEY_STYLE_MODIFIERS = "plan_style_modifiers"
+        private const val KEY_STYLE_DEVICES = "plan_style_devices"
         private const val KEY_STYLE_SLOTS = "plan_style_slots"
         private const val KEY_STYLE_FREETEXT = "plan_style_freetext"
         private const val KEY_STYLE_PREFER_FAV = "plan_style_prefer_favorites"

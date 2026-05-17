@@ -198,24 +198,28 @@ fun GymPrimaryButton(
 /**
  * Klikalny chip z ✓ ikoną przy wybranym stanie. Większy niż GymChip,
  * lepiej pasuje do ustawień profilu (Cel treningowy, Doświadczenie itd.).
- * - Selected: lekkie żółte tło + border AccentOrange + ✓ + tekst żółty
- * - Unselected: DarkSurfaceVariant + tekst szary
+ * - Selected: PEŁNE pomarańczowe tło + ciemny tekst + ✓ — widać jednym rzutem oka
+ * - Unselected: DarkSurfaceVariant + subtelny border + tekst jasny
+ * - [pill] = true → kształt pigułki (sygnalizuje wybór pojedynczy, np. „charakter dań")
  */
 @Composable
 fun SelectableChip(
     text: String,
     selected: Boolean,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    pill: Boolean = false
 ) {
-    val bg = if (selected) AccentOrange.copy(alpha = 0.10f) else DarkSurfaceVariant
-    val borderColor = if (selected) AccentOrange.copy(alpha = 0.55f) else Color.Transparent
-    val textColor = if (selected) AccentOrange else DarkOnSurface
+    val shape = RoundedCornerShape(if (pill) 999.dp else 12.dp)
+    val bg = if (selected) AccentOrange else DarkSurfaceVariant
+    val borderColor = if (selected) AccentOrange else DarkOutline
+    val onAccent = Color(0xFF1A1200)
+    val textColor = if (selected) onAccent else DarkOnSurface
     Box(
         modifier = modifier
             .clickable(onClick = onClick)
-            .background(bg, RoundedCornerShape(12.dp))
-            .border(1.dp, borderColor, RoundedCornerShape(12.dp))
+            .background(bg, shape)
+            .border(1.dp, borderColor, shape)
             .padding(horizontal = 14.dp, vertical = 10.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -224,7 +228,7 @@ fun SelectableChip(
                 Icon(
                     androidx.compose.material.icons.Icons.Default.Check,
                     contentDescription = null,
-                    tint = AccentOrange,
+                    tint = onAccent,
                     modifier = Modifier.size(14.dp)
                 )
                 androidx.compose.foundation.layout.Spacer(Modifier.size(6.dp))
@@ -232,7 +236,7 @@ fun SelectableChip(
             Text(
                 text,
                 style = MaterialTheme.typography.bodyMedium.copy(
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = if (selected) FontWeight.Bold else FontWeight.SemiBold
                 ),
                 color = textColor
             )

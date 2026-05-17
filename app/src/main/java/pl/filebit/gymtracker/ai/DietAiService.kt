@@ -425,16 +425,23 @@ class DietAiService @Inject constructor(
             // miękką sugestią obok twardych wymogów makro, więc AI go olewało.
             // Teraz: styl globalny mocno, styl per-posiłek wpleciony przy
             // slotach (→ STYL WYMAGANY), uwagi usera bez furtki "zignoruj".
-            if (stylePrefs.globalStyle != PlanStyle.CLASSIC ||
+            val hasCharacter = stylePrefs.character != PlanStyle.CLASSIC
+            val hasModifiers = stylePrefs.modifiers.isNotEmpty()
+            if (hasCharacter || hasModifiers ||
                 stylePrefs.slotStyles.isNotEmpty() ||
                 stylePrefs.freeText.isNotBlank()) {
                 append("\n=== ⚠ STYL PLANU — ŚWIADOMY WYBÓR USERA (WYMÓG, nie sugestia) ===\n")
                 append("User celowo wybrał poniższe preferencje. Wygeneruj posiłki ")
                 append("ZGODNE z nimi. Styl ORAZ targety makro/kcal obowiązują ")
                 append("JEDNOCZEŚNIE — trafiaj w jedno i drugie, nie wybieraj.\n")
-                if (stylePrefs.globalStyle != PlanStyle.CLASSIC) {
-                    append("Styl WSZYSTKICH posiłków: **${stylePrefs.globalStyle.label}** ")
-                    append("— ${stylePrefs.globalStyle.promptHint}\n")
+                if (hasCharacter) {
+                    append("Charakter WSZYSTKICH posiłków: **${stylePrefs.character.label}** ")
+                    append("— ${stylePrefs.character.promptHint}\n")
+                }
+                if (hasModifiers) {
+                    stylePrefs.modifiers.forEach { m ->
+                        append("Dodatkowo (łączy się z charakterem): **${m.label}** — ${m.promptHint}\n")
+                    }
                 }
                 if (stylePrefs.slotStyles.isNotEmpty()) {
                     append("Styl konkretnych posiłków: oznaczony przy slotach niżej ")
