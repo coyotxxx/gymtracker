@@ -200,6 +200,9 @@ fun CoachWorkoutScreen(
         val metric = state.currentExercise?.metricType
         val isCardio = metric == pl.filebit.gymtracker.data.entity.MetricType.DURATION ||
             metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
+        // Po ostatniej serii całego treningu nie ma sensu uruchamiać przerwy —
+        // dalej jest już tylko ekran "trening zakończony".
+        val isLastSetOfWorkout = state.completedSets + 1 >= state.totalSets
         if (isCardio) {
             ConfirmCardioDialog(
                 withSpeed = metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION,
@@ -211,8 +214,10 @@ fun CoachWorkoutScreen(
                     showConfirmDialog = false
                     val flash = state.flashOnTimerEnd
                     vm.confirmCurrentSetCardio(durSec, distM, actualRpe) {
-                        safeCoachTimer {
-                            RestTimerService.start(context, restSec, flash)
+                        if (!isLastSetOfWorkout) {
+                            safeCoachTimer {
+                                RestTimerService.start(context, restSec, flash)
+                            }
                         }
                     }
                 },
@@ -228,8 +233,10 @@ fun CoachWorkoutScreen(
                     showConfirmDialog = false
                     val flash = state.flashOnTimerEnd
                     vm.confirmCurrentSet(actualReps, actualRpe) {
-                        safeCoachTimer {
-                            RestTimerService.start(context, restSec, flash)
+                        if (!isLastSetOfWorkout) {
+                            safeCoachTimer {
+                                RestTimerService.start(context, restSec, flash)
+                            }
                         }
                     }
                 },
