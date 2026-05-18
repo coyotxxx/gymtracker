@@ -61,6 +61,10 @@ class ExerciseSeeder(
 
         // v1.29.10: napraw cardio, które przez starszą ścieżkę ma metricType WEIGHT_REPS
         runCatching { dao.fixCardioMetricType() }
+
+        // v1.29.15: po naprawie metricType — przepisz reps → durationSec w planach
+        // cardio (start treningu pokaże wtedy zaplanowany czas).
+        runCatching { dao.fixCardioPlanSetDurations() }
     }
 
     /**

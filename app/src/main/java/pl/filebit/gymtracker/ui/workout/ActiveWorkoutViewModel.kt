@@ -209,7 +209,9 @@ class ActiveWorkoutViewModel @Inject constructor(
                     exerciseId = s.exerciseId,
                     reps = s.reps,
                     weightKg = s.weightKg,
-                    setType = s.setType
+                    setType = s.setType,
+                    durationSec = s.durationSec,
+                    distanceM = s.distanceM
                 )
             }
             onReady()

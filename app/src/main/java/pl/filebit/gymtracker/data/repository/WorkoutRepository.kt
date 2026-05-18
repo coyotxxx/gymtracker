@@ -138,7 +138,9 @@ class WorkoutRepository @Inject constructor(
         exerciseId: Long,
         reps: Int,
         weightKg: Double,
-        setType: pl.filebit.gymtracker.data.entity.SetType = pl.filebit.gymtracker.data.entity.SetType.NORMAL
+        setType: pl.filebit.gymtracker.data.entity.SetType = pl.filebit.gymtracker.data.entity.SetType.NORMAL,
+        durationSec: Int? = null,
+        distanceM: Double? = null
     ): WorkoutSet {
         val sets = setDao.getForWorkout(workoutId)
         val existingForExercise = sets.filter { it.exerciseId == exerciseId }
@@ -154,6 +156,8 @@ class WorkoutRepository @Inject constructor(
             reps = reps,
             weightKg = weightKg,
             setType = setType,
+            durationSec = durationSec,
+            distanceM = distanceM,
             isCompleted = false
         )
         val id = setDao.insert(set)

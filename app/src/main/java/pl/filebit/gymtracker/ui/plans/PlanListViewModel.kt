@@ -198,7 +198,9 @@ class PlanListViewModel @Inject constructor(
                         workoutId = active.id,
                         exerciseId = pe.exerciseId,
                         reps = spec.reps,
-                        weightKg = spec.weightKg ?: 0.0
+                        weightKg = spec.weightKg ?: 0.0,
+                        durationSec = spec.durationSec,
+                        distanceM = spec.distanceM
                     )
                 }
             }

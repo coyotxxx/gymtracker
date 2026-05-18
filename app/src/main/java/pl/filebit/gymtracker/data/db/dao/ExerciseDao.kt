@@ -74,6 +74,22 @@ interface ExerciseDao {
     )
     suspend fun fixCardioMetricType(): Int
 
+    /**
+     * v1.29.15: serie cardio w planach utworzonych zanim cardio miało osobne pola
+     * mają czas trwania w `reps` (np. bieżnia "25" = 25 minut), a `durationSec` puste.
+     * Przepisujemy reps → durationSec (reps traktowane jako minuty), żeby start
+     * treningu z planu pokazywał zaplanowany czas. Idempotentne — tylko gdy
+     * durationSec puste. Uruchamiać PO fixCardioMetricType (potrzebny poprawny metricType).
+     */
+    @Query(
+        "UPDATE plan_exercise_sets SET durationSec = reps * 60 " +
+            "WHERE durationSec IS NULL AND reps > 0 AND planExerciseId IN (" +
+            "SELECT pe.id FROM plan_exercises pe " +
+            "JOIN exercises e ON e.id = pe.exerciseId " +
+            "WHERE e.metricType = 'DURATION' OR e.metricType = 'DISTANCE_DURATION')"
+    )
+    suspend fun fixCardioPlanSetDurations(): Int
+
     /** Ćwiczenia które user oznaczył jako "unikaj" (np. boli kolano przy wykrokach). AI ich nie zaproponuje. */
     @Query("SELECT * FROM exercises WHERE isAvoided = 1 ORDER BY name COLLATE NOCASE ASC")
     suspend fun getAvoided(): List<Exercise>
