@@ -32,7 +32,9 @@ class WorkoutDetailSnapshotTest : TestHarness() {
     fun `WorkoutDetail pokazuje trening z grupami cwiczen`() = runBlocking {
         loadScenario("healthy")
         val kit = ViewModelKit(db, context)
-        val vm = WorkoutDetailViewModel(kit.workoutRepo, kit.planRepo, kit.statsRepo)
+        val vm = WorkoutDetailViewModel(
+            kit.workoutRepo, kit.planRepo, kit.statsRepo, kit.workoutAiSummary
+        )
 
         val workout = db.workoutDao().observeAllOnce()
             .filter { !it.isActive }
@@ -65,7 +67,9 @@ class WorkoutDetailSnapshotTest : TestHarness() {
     @Test
     fun `WorkoutDetail dla nieistniejacego treningu - pusty stan`() = runBlocking {
         val kit = ViewModelKit(db, context)
-        val vm = WorkoutDetailViewModel(kit.workoutRepo, kit.planRepo, kit.statsRepo)
+        val vm = WorkoutDetailViewModel(
+            kit.workoutRepo, kit.planRepo, kit.statsRepo, kit.workoutAiSummary
+        )
         val s = vm.loadAndAwait(999_999L)
 
         assertFalse("load zakończony nawet dla brakującego id", s.loading)
