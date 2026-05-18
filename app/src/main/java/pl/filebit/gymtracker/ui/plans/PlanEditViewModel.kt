@@ -355,8 +355,12 @@ class PlanEditViewModel @Inject constructor(
         reps: Int? = null,
         weightKg: Double? = null,
         restSeconds: Int? = null,
+        durationSec: Int? = null,
+        distanceM: Double? = null,
         clearWeight: Boolean = false,
-        clearRest: Boolean = false
+        clearRest: Boolean = false,
+        clearDuration: Boolean = false,
+        clearDistance: Boolean = false
     ) = _state.update { st ->
         val newList = st.exercises.map { ped ->
             if (ped.planEx.id != planExerciseId) ped
@@ -374,6 +378,16 @@ class PlanEditViewModel @Inject constructor(
                             clearRest -> null
                             restSeconds != null -> restSeconds
                             else -> s.restSeconds
+                        },
+                        durationSec = when {
+                            clearDuration -> null
+                            durationSec != null -> durationSec
+                            else -> s.durationSec
+                        },
+                        distanceM = when {
+                            clearDistance -> null
+                            distanceM != null -> distanceM
+                            else -> s.distanceM
                         }
                     )
                 }

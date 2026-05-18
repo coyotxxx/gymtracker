@@ -76,6 +76,7 @@ import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.ErrorRed
 import pl.filebit.gymtracker.ui.theme.GymPrimaryButton
 import pl.filebit.gymtracker.ui.theme.LabelUp
+import pl.filebit.gymtracker.data.entity.MetricType
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.util.filterWeightInput
 import pl.filebit.gymtracker.util.summarizeSets
@@ -245,6 +246,16 @@ fun PlanEditScreen(
                             restSeconds = rest,
                             clearWeight = clearWeight,
                             clearRest = clearRest
+                        )
+                    },
+                    onUpdateSetCardio = { setId, durationSec, distanceM, clearDuration, clearDistance ->
+                        vm.updatePlanSet(
+                            planExerciseId = item.planEx.id,
+                            setId = setId,
+                            durationSec = durationSec,
+                            distanceM = distanceM,
+                            clearDuration = clearDuration,
+                            clearDistance = clearDistance
                         )
                     },
                     onUpdateSetAdvanced = { setId, rpe, rir, tempo, clearRpe, clearRir, clearTempo ->
@@ -743,6 +754,7 @@ private fun PlanExerciseCard(
     onMoveDown: () -> Unit,
     onToggleSuperset: () -> Unit,
     onUpdateSet: (setId: Long, reps: Int?, weight: Double?, rest: Int?, clearWeight: Boolean, clearRest: Boolean) -> Unit,
+    onUpdateSetCardio: (setId: Long, durationSec: Int?, distanceM: Double?, clearDuration: Boolean, clearDistance: Boolean) -> Unit,
     onUpdateSetAdvanced: (setId: Long, rpe: Int?, rir: Int?, tempo: String?, clearRpe: Boolean, clearRir: Boolean, clearTempo: Boolean) -> Unit,
     onAddSet: () -> Unit,
     onRemoveSet: (Long) -> Unit,
@@ -898,6 +910,7 @@ private fun PlanExerciseCard(
             item.sets.forEachIndexed { rowIdx, setSpec ->
                 SetEditRow(
                     setSpec = setSpec,
+                    metricType = metric,
                     previousWorkingSet = previousWorking.getOrNull(rowIdx),
                     onReps = { v -> onUpdateSet(setSpec.id, v, null, null, false, false) },
                     onWeight = { v ->
@@ -908,6 +921,12 @@ private fun PlanExerciseCard(
                     },
                     onRpe = { v ->
                         onUpdateSetAdvanced(setSpec.id, v, null, null, v == null, false, false)
+                    },
+                    onDuration = { v ->
+                        onUpdateSetCardio(setSpec.id, v, null, v == null, false)
+                    },
+                    onDistance = { v ->
+                        onUpdateSetCardio(setSpec.id, null, v, false, v == null)
                     },
                     onDelete = { onRemoveSet(setSpec.id) }
                 )
@@ -1009,17 +1028,43 @@ private fun MiniNumField(
 @Composable
 private fun SetEditRow(
     setSpec: pl.filebit.gymtracker.data.entity.PlanExerciseSet,
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
     previousWorkingSet: pl.filebit.gymtracker.data.entity.WorkoutSet?,
     onReps: (Int?) -> Unit,
     onWeight: (Double?) -> Unit,
     onRest: (Int?) -> Unit,
     onRpe: (Int?) -> Unit,
+    onDuration: (Int?) -> Unit,
+    onDistance: (Double?) -> Unit,
     onDelete: () -> Unit
 ) {
+    // KOLUMNA 1 = czas (dla cardio/izometr.) lub powtórzenia. Dla DISTANCE_DURATION
+    // czas wpisuje się w minutach (zapis ×60 s), dla DURATION w sekundach.
+    val col1IsDuration = metricType == MetricType.DURATION ||
+        metricType == MetricType.DISTANCE_DURATION || metricType == MetricType.DURATION_WEIGHT
+    val durationInMinutes = metricType == MetricType.DISTANCE_DURATION
+    val col2IsWeight = metricType == MetricType.WEIGHT_REPS ||
+        metricType == MetricType.DURATION_WEIGHT
+    val col2IsDistance = metricType == MetricType.DISTANCE_DURATION
+
     var repsText by remember(setSpec.id) { mutableStateOf(setSpec.reps.toString()) }
     var weightText by remember(setSpec.id) { mutableStateOf(setSpec.weightKg?.toString() ?: "") }
     var restText by remember(setSpec.id) { mutableStateOf(setSpec.restSeconds?.toString() ?: "") }
     var rpeText by remember(setSpec.id) { mutableStateOf(setSpec.rpe?.toString() ?: "") }
+    var durationText by remember(setSpec.id) {
+        val dur = setSpec.durationSec
+        mutableStateOf(
+            when {
+                dur != null -> if (durationInMinutes) (dur / 60).toString() else dur.toString()
+                // AI/starsze plany: cardio z wartością wpisaną w polu `reps`
+                col1IsDuration && setSpec.reps > 0 -> setSpec.reps.toString()
+                else -> ""
+            }
+        )
+    }
+    var distanceText by remember(setSpec.id) {
+        mutableStateOf(setSpec.distanceM?.let { (it / 1000.0).toString() } ?: "")
+    }
 
     Row(
         modifier = Modifier
@@ -1038,38 +1083,79 @@ private fun SetEditRow(
             modifier = Modifier.width(28.dp).padding(top = 10.dp),
             textAlign = TextAlign.Center
         )
-        FieldWithHistory(
-            modifier = Modifier.weight(1f),
-            historyValue = previousWorkingSet?.reps?.toString(),
-            historyColorHint = compareIntForColor(setSpec.reps, previousWorkingSet?.reps)
-        ) {
-            MiniNumField(
-                value = repsText,
-                keyboardType = KeyboardType.Number,
-                modifier = Modifier.fillMaxWidth(),
-                onValueChange = {
-                    repsText = it.filter { c -> c.isDigit() }
-                    if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
-                }
-            )
+        // === KOLUMNA 1: powtórzenia LUB czas ===
+        if (col1IsDuration) {
+            FieldWithHistory(
+                modifier = Modifier.weight(1f),
+                historyValue = null,
+                historyColorHint = HistoryColor.NEUTRAL
+            ) {
+                MiniNumField(
+                    value = durationText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.fillMaxWidth(),
+                    onValueChange = {
+                        durationText = it.filter { c -> c.isDigit() }
+                        val n = durationText.toIntOrNull()
+                        onDuration(n?.let { v -> if (durationInMinutes) v * 60 else v })
+                    }
+                )
+            }
+        } else {
+            FieldWithHistory(
+                modifier = Modifier.weight(1f),
+                historyValue = previousWorkingSet?.reps?.toString(),
+                historyColorHint = compareIntForColor(setSpec.reps, previousWorkingSet?.reps)
+            ) {
+                MiniNumField(
+                    value = repsText,
+                    keyboardType = KeyboardType.Number,
+                    modifier = Modifier.fillMaxWidth(),
+                    onValueChange = {
+                        repsText = it.filter { c -> c.isDigit() }
+                        if (repsText.isBlank()) onReps(null) else repsText.toIntOrNull()?.let(onReps)
+                    }
+                )
+            }
         }
         Spacer(Modifier.width(4.dp))
-        FieldWithHistory(
-            modifier = Modifier.weight(1f),
-            historyValue = previousWorkingSet?.weightKg?.let { pl.filebit.gymtracker.util.formatWeight(it) },
-            historyColorHint = compareDoubleForColor(setSpec.weightKg, previousWorkingSet?.weightKg)
-        ) {
-            MiniNumField(
-                value = weightText,
-                keyboardType = KeyboardType.Decimal,
-                modifier = Modifier.fillMaxWidth(),
-                onValueChange = {
-                    val filtered = filterWeightInput(it)
-                    weightText = filtered
-                    if (filtered.isBlank()) onWeight(null)
-                    else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
-                }
-            )
+        // === KOLUMNA 2: waga / dystans / pusta ===
+        when {
+            col2IsWeight -> FieldWithHistory(
+                modifier = Modifier.weight(1f),
+                historyValue = previousWorkingSet?.weightKg?.let { pl.filebit.gymtracker.util.formatWeight(it) },
+                historyColorHint = compareDoubleForColor(setSpec.weightKg, previousWorkingSet?.weightKg)
+            ) {
+                MiniNumField(
+                    value = weightText,
+                    keyboardType = KeyboardType.Decimal,
+                    modifier = Modifier.fillMaxWidth(),
+                    onValueChange = {
+                        val filtered = filterWeightInput(it)
+                        weightText = filtered
+                        if (filtered.isBlank()) onWeight(null)
+                        else filtered.replace(',', '.').toDoubleOrNull()?.let(onWeight)
+                    }
+                )
+            }
+            col2IsDistance -> FieldWithHistory(
+                modifier = Modifier.weight(1f),
+                historyValue = null,
+                historyColorHint = HistoryColor.NEUTRAL
+            ) {
+                MiniNumField(
+                    value = distanceText,
+                    keyboardType = KeyboardType.Decimal,
+                    modifier = Modifier.fillMaxWidth(),
+                    onValueChange = {
+                        val filtered = filterWeightInput(it)
+                        distanceText = filtered
+                        if (filtered.isBlank()) onDistance(null)
+                        else filtered.replace(',', '.').toDoubleOrNull()?.let { km -> onDistance(km * 1000.0) }
+                    }
+                )
+            }
+            else -> Spacer(Modifier.weight(1f))
         }
         Spacer(Modifier.width(4.dp))
         // ODP — bez historii (rest nie jest progresowany)
