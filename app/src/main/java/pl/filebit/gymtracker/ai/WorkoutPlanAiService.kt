@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import pl.filebit.gymtracker.data.entity.Exercise
+import pl.filebit.gymtracker.data.entity.MetricType
 import pl.filebit.gymtracker.data.entity.MuscleGroup
 import pl.filebit.gymtracker.data.entity.PlanExercise
 import pl.filebit.gymtracker.data.entity.PlanExerciseSet
@@ -17,6 +18,7 @@ import pl.filebit.gymtracker.data.repository.ExerciseRepository
 import pl.filebit.gymtracker.data.repository.PlanRepository
 import pl.filebit.gymtracker.data.repository.UserDietProfileRepository
 import pl.filebit.gymtracker.data.repository.UserProfileRepository
+import pl.filebit.gymtracker.util.cardioDistanceM
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -128,10 +130,12 @@ class WorkoutPlanAiService @Inject constructor(
     private data class AiExercise(
         val name: String,
         val movementType: String = "ACCESSORY",      // COMPOUND / ISOLATION / ACCESSORY
-        val sets: Int,
-        val repsMin: Int,
-        val repsMax: Int,
-        val restSeconds: Int,
+        val sets: Int = 3,
+        val repsMin: Int = 8,
+        val repsMax: Int = 12,
+        val restSeconds: Int = 90,
+        val durationMin: Int? = null,                // cardio/izometria: czas serii w minutach
+        val speedKmh: Double? = null,                // cardio DISTANCE_DURATION: prędkość km/h
         val notes: String = ""
     )
 
@@ -154,7 +158,12 @@ class WorkoutPlanAiService @Inject constructor(
         // zawiera (...), przez co AI wklejało dopisek partia/sprzęt do nazwy.
         val poolListing = pool.joinToString("\n") { ex ->
             val fav = if (ex.isFavorite) " ⭐" else ""
-            "- ${ex.name}$fav | ${ex.primaryMuscle.name} | ${ex.equipment.name}"
+            val metricTag = when (ex.metricType) {
+                MetricType.DISTANCE_DURATION -> " | ⏱CARDIO(czas+prędkość)"
+                MetricType.DURATION -> " | ⏱CZAS(izometria)"
+                else -> ""
+            }
+            "- ${ex.name}$fav | ${ex.primaryMuscle.name} | ${ex.equipment.name}$metricTag"
         }
 
         val (defaultSets, defaultReps, defaultRest) = setsConfigFor(profile.goal)
@@ -271,7 +280,11 @@ class WorkoutPlanAiService @Inject constructor(
             append("\n=== DOSTĘPNE ĆWICZENIA (TYLKO Z TEJ LISTY) ===\n")
             append("⭐ = ulubione użytkownika (PREFERUJ jak najczęściej)\n")
             append("Format: nazwa | partia | sprzęt. W JSON jako `name` wpisz TYLKO ")
-            append("część PRZED pierwszym `|` (bez ⭐, bez partii, bez sprzętu).\n\n")
+            append("część PRZED pierwszym `|` (bez ⭐, bez partii, bez sprzętu).\n")
+            append("⏱CARDIO(czas+prędkość) — bieżnia/rower/orbitrek: w JSON podaj ")
+            append("`durationMin` (minuty) i `speedKmh` (km/h) ZAMIAST repsMin/repsMax. ")
+            append("⏱CZAS(izometria) — np. plank: podaj tylko `durationMin`. ")
+            append("Pozostałe ćwiczenia — repsMin/repsMax jak zwykle.\n\n")
             append(poolListing)
 
             // OUTPUT
@@ -302,6 +315,15 @@ class WorkoutPlanAiService @Inject constructor(
                       "repsMax": 15,
                       "restSeconds": 60,
                       "notes": ""
+                    },
+                    {
+                      "name": "Bieżnia (bieg)",
+                      "movementType": "ACCESSORY",
+                      "sets": 1,
+                      "durationMin": 25,
+                      "speedKmh": 9,
+                      "restSeconds": 60,
+                      "notes": "Cardio — 25 min, tempo 9 km/h"
                     }
                   ]
                 }
@@ -410,14 +432,26 @@ class WorkoutPlanAiService @Inject constructor(
                 )
                 val peId = planRepo.upsertPlanExercise(pe)
                 val avgReps = ((aiEx.repsMin + aiEx.repsMax) / 2).coerceIn(1, 30)
+                val isCardio = match.metricType == MetricType.DISTANCE_DURATION ||
+                    match.metricType == MetricType.DURATION
+                // Cardio: czas (durationMin) + prędkość (speedKmh dla DISTANCE_DURATION).
+                // Gdy AI nie poda czasu — fallback na avgReps potraktowane jako minuty.
+                val durSec = if (isCardio) {
+                    ((aiEx.durationMin?.takeIf { it > 0 } ?: avgReps).coerceIn(1, 180)) * 60
+                } else null
+                val distM = if (match.metricType == MetricType.DISTANCE_DURATION) {
+                    cardioDistanceM(aiEx.speedKmh, durSec)
+                } else null
                 repeat(aiEx.sets.coerceIn(1, 8)) { i ->
                     planRepo.upsertPlanSet(
                         PlanExerciseSet(
                             planExerciseId = peId,
                             setNumber = i + 1,
-                            reps = avgReps,
+                            reps = if (isCardio) 0 else avgReps,
                             weightKg = null,
                             restSeconds = aiEx.restSeconds.coerceIn(20, 600),
+                            durationSec = durSec,
+                            distanceM = distM,
                             setType = SetType.NORMAL
                         )
                     )
