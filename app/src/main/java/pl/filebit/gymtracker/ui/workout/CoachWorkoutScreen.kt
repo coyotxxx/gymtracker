@@ -56,7 +56,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -195,22 +197,45 @@ fun CoachWorkoutScreen(
         val setNum = state.currentSetIndexInExercise + 1
         val totalSets = state.totalSetsInCurrentExercise
         val restSec = state.defaultRestSeconds
-        ConfirmRepsDialog(
-            plannedReps = planned,
-            plannedWeightKg = plannedWeight,
-            setNumber = setNum,
-            totalSets = totalSets,
-            onConfirm = { actualReps, actualRpe ->
-                showConfirmDialog = false
-                val flash = state.flashOnTimerEnd
-                vm.confirmCurrentSet(actualReps, actualRpe) {
-                    safeCoachTimer {
-                        RestTimerService.start(context, restSec, flash)
+        val metric = state.currentExercise?.metricType
+        val isCardio = metric == pl.filebit.gymtracker.data.entity.MetricType.DURATION ||
+            metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
+        if (isCardio) {
+            ConfirmCardioDialog(
+                withDistance = metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION,
+                plannedDurationSec = state.currentSet?.durationSec,
+                plannedDistanceM = state.currentSet?.distanceM,
+                setNumber = setNum,
+                totalSets = totalSets,
+                onConfirm = { durSec, distM, actualRpe ->
+                    showConfirmDialog = false
+                    val flash = state.flashOnTimerEnd
+                    vm.confirmCurrentSetCardio(durSec, distM, actualRpe) {
+                        safeCoachTimer {
+                            RestTimerService.start(context, restSec, flash)
+                        }
                     }
-                }
-            },
-            onDismiss = { showConfirmDialog = false }
-        )
+                },
+                onDismiss = { showConfirmDialog = false }
+            )
+        } else {
+            ConfirmRepsDialog(
+                plannedReps = planned,
+                plannedWeightKg = plannedWeight,
+                setNumber = setNum,
+                totalSets = totalSets,
+                onConfirm = { actualReps, actualRpe ->
+                    showConfirmDialog = false
+                    val flash = state.flashOnTimerEnd
+                    vm.confirmCurrentSet(actualReps, actualRpe) {
+                        safeCoachTimer {
+                            RestTimerService.start(context, restSec, flash)
+                        }
+                    }
+                },
+                onDismiss = { showConfirmDialog = false }
+            )
+        }
     }
 
     if (pendingPRs.isNotEmpty() || pendingTips.isNotEmpty() || pendingStagnation.isNotEmpty()) {
@@ -702,38 +727,110 @@ private fun CoachActiveContent(
             }
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Row(verticalAlignment = Alignment.Bottom) {
-                    Text(
-                        if (current.weightKg > 0) formatWeight(current.weightKg) else "—",
-                        fontSize = 64.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                        letterSpacing = (-2).sp
-                    )
-                    Text(
-                        " kg",
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.7f),
-                        modifier = Modifier.padding(bottom = 12.dp)
-                    )
+                when (exercise.metricType) {
+                    pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
+                        Text(
+                            current.durationSec?.let { "${it / 60}" } ?: "—",
+                            fontSize = 64.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                            letterSpacing = (-2).sp
+                        )
+                        Text(
+                            "minut",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
+                        Row(verticalAlignment = Alignment.Bottom) {
+                            Text(
+                                current.distanceM?.let {
+                                    "%.2f".format(it / 1000.0).replace(',', '.')
+                                } ?: "—",
+                                fontSize = 56.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                                letterSpacing = (-2).sp
+                            )
+                            Text(
+                                " km",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.7f),
+                                modifier = Modifier.padding(bottom = 10.dp)
+                            )
+                        }
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            current.durationSec?.let { "${it / 60} min" }
+                                ?: "czas i dystans do wpisania",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
+                        Text(
+                            "${current.reps}",
+                            fontSize = 64.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                            letterSpacing = (-2).sp
+                        )
+                        Text(
+                            "powtórzeń",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
+                    else -> {
+                        Row(verticalAlignment = Alignment.Bottom) {
+                            Text(
+                                if (current.weightKg > 0) formatWeight(current.weightKg) else "—",
+                                fontSize = 64.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                                letterSpacing = (-2).sp
+                            )
+                            Text(
+                                " kg",
+                                fontSize = 22.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.7f),
+                                modifier = Modifier.padding(bottom = 12.dp)
+                            )
+                        }
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            "× ${current.reps} powt.",
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    }
                 }
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    "× ${current.reps} powt.",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
             }
         }
 
         // ──── Subtitle: ostatnio (mały, szary) ────
-        val lastSummary = state.previousSessionSummaryForCurrent
-        val lastFallback = state.lastSetForCurrent?.let { ls ->
-            "${formatWeight(ls.weightKg)} kg × ${ls.reps}"
+        val lastText = when (exercise.metricType) {
+            pl.filebit.gymtracker.data.entity.MetricType.DURATION ->
+                state.lastSetForCurrent?.durationSec?.let { "${it / 60} min" }
+            pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ->
+                state.lastSetForCurrent?.let { ls ->
+                    listOfNotNull(
+                        ls.distanceM?.let { "%.2f km".format(it / 1000.0).replace(',', '.') },
+                        ls.durationSec?.let { "${it / 60} min" }
+                    ).joinToString(" · ").ifBlank { null }
+                }
+            pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY ->
+                state.lastSetForCurrent?.let { "${it.reps} powt." }
+            else -> state.previousSessionSummaryForCurrent
+                ?: state.lastSetForCurrent?.let { ls -> "${formatWeight(ls.weightKg)} kg × ${ls.reps}" }
         }
-        val lastText = lastSummary ?: lastFallback
         if (lastText != null) {
             Text(
                 "🕐 Ostatnio: $lastText",
@@ -961,6 +1058,153 @@ private fun ConfirmRepsDialog(
                         shape = RoundedCornerShape(12.dp)
                     ) {
                         Text(stringResource(R.string.coach_confirm_button, actualReps))
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Coach mode — dialog potwierdzenia dla cardio (DURATION / DISTANCE_DURATION).
+ * Zamiast suwaka powtórzeń: pola czas (minuty) i — dla DISTANCE_DURATION — dystans (km).
+ */
+@Composable
+private fun ConfirmCardioDialog(
+    withDistance: Boolean,
+    plannedDurationSec: Int?,
+    plannedDistanceM: Double?,
+    setNumber: Int,
+    totalSets: Int,
+    onConfirm: (Int?, Double?, Int?) -> Unit,
+    onDismiss: () -> Unit
+) {
+    var minutesText by remember {
+        mutableStateOf(plannedDurationSec?.takeIf { it > 0 }?.let { (it / 60).toString() } ?: "")
+    }
+    var kmText by remember {
+        mutableStateOf(
+            plannedDistanceM?.takeIf { it > 0 }
+                ?.let { "%.2f".format(it / 1000.0).replace(',', '.') } ?: ""
+        )
+    }
+    var rpe by remember { mutableStateOf(0) }
+
+    androidx.compose.ui.window.Dialog(
+        onDismissRequest = onDismiss,
+        properties = androidx.compose.ui.window.DialogProperties(
+            usePlatformDefaultWidth = false
+        )
+    ) {
+        androidx.compose.material3.Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            shape = RoundedCornerShape(20.dp),
+            color = MaterialTheme.colorScheme.surface,
+            tonalElevation = 6.dp
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp)
+            ) {
+                Text(
+                    "Seria $setNumber/$totalSets",
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "Zapisz wynik",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(Modifier.height(20.dp))
+
+                OutlinedTextField(
+                    value = minutesText,
+                    onValueChange = { v -> minutesText = v.filter { it.isDigit() } },
+                    label = { Text("Czas (minuty)") },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    modifier = Modifier.fillMaxWidth()
+                )
+                if (withDistance) {
+                    Spacer(Modifier.height(12.dp))
+                    OutlinedTextField(
+                        value = kmText,
+                        onValueChange = { v ->
+                            kmText = v.filter { it.isDigit() || it == '.' || it == ',' }
+                        },
+                        label = { Text("Dystans (km)") },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+
+                Spacer(Modifier.height(24.dp))
+
+                // ──── RPE ────
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        "Trudność (RPE)",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.weight(1f)
+                    )
+                    pl.filebit.gymtracker.ui.glossary.InfoIcon(glossaryKey = "RPE")
+                    Text(
+                        if (rpe == 0) "—" else "$rpe/10",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = if (rpe == 0) MaterialTheme.colorScheme.onSurfaceVariant
+                        else MaterialTheme.colorScheme.primary
+                    )
+                }
+                Slider(
+                    value = rpe.toFloat(),
+                    onValueChange = { rpe = it.roundToInt() },
+                    valueRange = 0f..10f,
+                    steps = 9
+                )
+                Text(
+                    rpeHint(rpe),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    "Opcjonalne — 0 = pomiń.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+
+                Spacer(Modifier.height(24.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text(stringResource(R.string.common_cancel))
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    Button(
+                        onClick = {
+                            val durSec = minutesText.toIntOrNull()
+                                ?.takeIf { it > 0 }?.let { it * 60 }
+                            val distM = if (withDistance) {
+                                kmText.replace(',', '.').toDoubleOrNull()
+                                    ?.takeIf { it > 0 }?.let { it * 1000.0 }
+                            } else null
+                            onConfirm(durSec, distM, if (rpe == 0) null else rpe)
+                        },
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text("Zapisz serię")
                     }
                 }
             }

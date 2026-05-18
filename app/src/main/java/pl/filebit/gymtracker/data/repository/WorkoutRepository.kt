@@ -175,6 +175,17 @@ class WorkoutRepository @Inject constructor(
         setDao.update(set.copy(reps = actualReps, isCompleted = true))
     }
 
+    /**
+     * Coach mode — wariant cardio (DURATION / DISTANCE_DURATION): zatwierdza serię
+     * podając czas i/lub dystans zamiast powtórzeń.
+     */
+    suspend fun confirmSetCardio(setId: Long, durationSec: Int?, distanceM: Double?) {
+        val set = setDao.getById(setId) ?: return
+        setDao.update(
+            set.copy(durationSec = durationSec, distanceM = distanceM, isCompleted = true)
+        )
+    }
+
     /** Usuwa wszystkie serie danego ćwiczenia z aktualnego treningu. */
     suspend fun removeExerciseFromWorkout(workoutId: Long, exerciseId: Long) {
         setDao.deleteAllForExerciseInWorkout(workoutId, exerciseId)

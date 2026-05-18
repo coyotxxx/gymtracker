@@ -305,6 +305,29 @@ class CoachWorkoutViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Coach mode — wariant cardio: zatwierdza bieżącą serię czasem i/lub dystansem
+     * (DURATION / DISTANCE_DURATION) zamiast powtórzeń.
+     */
+    fun confirmCurrentSetCardio(
+        durationSec: Int?,
+        distanceM: Double?,
+        rpe: Int? = null,
+        onDone: () -> Unit = {}
+    ) {
+        val setId = state.value.currentSet?.id ?: return
+        viewModelScope.launch {
+            workoutRepo.confirmSetCardio(setId, durationSec, distanceM)
+            if (rpe != null) {
+                val updated = workoutRepo.getSet(setId)
+                if (updated != null) {
+                    workoutRepo.updateSet(updated.copy(rpe = rpe))
+                }
+            }
+            onDone()
+        }
+    }
+
     fun skipCurrentSet() {
         val set = state.value.currentSet ?: return
         viewModelScope.launch {

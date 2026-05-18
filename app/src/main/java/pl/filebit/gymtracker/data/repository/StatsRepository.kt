@@ -597,7 +597,12 @@ class StatsRepository @Inject constructor(
         val tips = mutableListOf<ProgressionTip>()
 
         for ((exId, list) in byExercise) {
-            val name = exerciseDao.getById(exId)?.name ?: "?"
+            val ex = exerciseDao.getById(exId)
+            val name = ex?.name ?: "?"
+            // Progresja oparta na ciężarze/powtórzeniach ma sens tylko dla ćwiczeń
+            // siłowych. Cardio (czas/dystans) pomijamy — inaczej silnik proponowałby
+            // bezsensowne "+2.5 kg" dla bieżni czy roweru.
+            if (ex?.metricType != pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS) continue
             val workingSets = list.filter { it.isCompleted }
             if (workingSets.isEmpty()) continue
 
