@@ -202,7 +202,7 @@ fun CoachWorkoutScreen(
             metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
         if (isCardio) {
             ConfirmCardioDialog(
-                withDistance = metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION,
+                withSpeed = metric == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION,
                 plannedDurationSec = state.currentSet?.durationSec,
                 plannedDistanceM = state.currentSet?.distanceM,
                 setNumber = setNum,
@@ -744,31 +744,30 @@ private fun CoachActiveContent(
                         )
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
-                        Row(verticalAlignment = Alignment.Bottom) {
-                            Text(
-                                current.distanceM?.let {
-                                    "%.2f".format(it / 1000.0).replace(',', '.')
-                                } ?: "—",
-                                fontSize = 56.sp,
-                                fontWeight = FontWeight.ExtraBold,
-                                color = pl.filebit.gymtracker.ui.theme.AccentOrange,
-                                letterSpacing = (-2).sp
-                            )
-                            Text(
-                                " km",
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.SemiBold,
-                                color = pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.7f),
-                                modifier = Modifier.padding(bottom = 10.dp)
-                            )
-                        }
-                        Spacer(Modifier.height(4.dp))
                         Text(
-                            current.durationSec?.let { "${it / 60} min" }
-                                ?: "czas i dystans do wpisania",
+                            current.durationSec?.let { "${it / 60}" } ?: "—",
+                            fontSize = 64.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = pl.filebit.gymtracker.ui.theme.AccentOrange,
+                            letterSpacing = (-2).sp
+                        )
+                        Text(
+                            "minut",
                             fontSize = 22.sp,
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(Modifier.height(4.dp))
+                        val plannedSpeed = pl.filebit.gymtracker.util.cardioSpeedKmh(
+                            current.durationSec, current.distanceM
+                        )
+                        Text(
+                            plannedSpeed?.let {
+                                "${pl.filebit.gymtracker.util.formatCardioNumber(it)} km/h"
+                            } ?: "prędkość do wpisania",
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                     pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY -> {
@@ -822,8 +821,9 @@ private fun CoachActiveContent(
             pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ->
                 state.lastSetForCurrent?.let { ls ->
                     listOfNotNull(
-                        ls.distanceM?.let { "%.2f km".format(it / 1000.0).replace(',', '.') },
-                        ls.durationSec?.let { "${it / 60} min" }
+                        ls.durationSec?.let { "${it / 60} min" },
+                        pl.filebit.gymtracker.util.cardioSpeedKmh(ls.durationSec, ls.distanceM)
+                            ?.let { "${pl.filebit.gymtracker.util.formatCardioNumber(it)} km/h" }
                     ).joinToString(" · ").ifBlank { null }
                 }
             pl.filebit.gymtracker.data.entity.MetricType.REPS_ONLY ->
@@ -1067,11 +1067,12 @@ private fun ConfirmRepsDialog(
 
 /**
  * Coach mode — dialog potwierdzenia dla cardio (DURATION / DISTANCE_DURATION).
- * Zamiast suwaka powtórzeń: pola czas (minuty) i — dla DISTANCE_DURATION — dystans (km).
+ * Zamiast suwaka powtórzeń: pole czas (minuty) i — dla DISTANCE_DURATION —
+ * prędkość (km/h). Dystans liczy się sam (prędkość × czas) i jest pokazany.
  */
 @Composable
 private fun ConfirmCardioDialog(
-    withDistance: Boolean,
+    withSpeed: Boolean,
     plannedDurationSec: Int?,
     plannedDistanceM: Double?,
     setNumber: Int,
@@ -1082,13 +1083,17 @@ private fun ConfirmCardioDialog(
     var minutesText by remember {
         mutableStateOf(plannedDurationSec?.takeIf { it > 0 }?.let { (it / 60).toString() } ?: "")
     }
-    var kmText by remember {
+    var speedText by remember {
         mutableStateOf(
-            plannedDistanceM?.takeIf { it > 0 }
-                ?.let { "%.2f".format(it / 1000.0).replace(',', '.') } ?: ""
+            pl.filebit.gymtracker.util.cardioSpeedKmh(plannedDurationSec, plannedDistanceM)
+                ?.let { pl.filebit.gymtracker.util.formatCardioNumber(it) } ?: ""
         )
     }
     var rpe by remember { mutableStateOf(0) }
+
+    val durSecLive = minutesText.toIntOrNull()?.takeIf { it > 0 }?.let { it * 60 }
+    val speedLive = speedText.replace(',', '.').toDoubleOrNull()?.takeIf { it > 0 }
+    val distanceLive = pl.filebit.gymtracker.util.cardioDistanceM(speedLive, durSecLive)
 
     androidx.compose.ui.window.Dialog(
         onDismissRequest = onDismiss,
@@ -1131,17 +1136,25 @@ private fun ConfirmCardioDialog(
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
-                if (withDistance) {
+                if (withSpeed) {
                     Spacer(Modifier.height(12.dp))
                     OutlinedTextField(
-                        value = kmText,
+                        value = speedText,
                         onValueChange = { v ->
-                            kmText = v.filter { it.isDigit() || it == '.' || it == ',' }
+                            speedText = v.filter { it.isDigit() || it == '.' || it == ',' }
                         },
-                        label = { Text("Dystans (km)") },
+                        label = { Text("Prędkość (km/h)") },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                         modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Text(
+                        distanceLive?.let {
+                            "→ Dystans: ${pl.filebit.gymtracker.util.formatCardioNumber(it / 1000.0)} km (wyliczony)"
+                        } ?: "→ Dystans policzy się z czasu i prędkości",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
 
@@ -1194,13 +1207,8 @@ private fun ConfirmCardioDialog(
                     Spacer(Modifier.width(8.dp))
                     Button(
                         onClick = {
-                            val durSec = minutesText.toIntOrNull()
-                                ?.takeIf { it > 0 }?.let { it * 60 }
-                            val distM = if (withDistance) {
-                                kmText.replace(',', '.').toDoubleOrNull()
-                                    ?.takeIf { it > 0 }?.let { it * 1000.0 }
-                            } else null
-                            onConfirm(durSec, distM, if (rpe == 0) null else rpe)
+                            val distM = if (withSpeed) distanceLive else null
+                            onConfirm(durSecLive, distM, if (rpe == 0) null else rpe)
                         },
                         shape = RoundedCornerShape(12.dp)
                     ) {

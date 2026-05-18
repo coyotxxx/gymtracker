@@ -881,7 +881,7 @@ private fun PlanExerciseCard(
             val col2Label = when (metric) {
                 pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS,
                 pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> "Waga"
-                pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> "Dystans"
+                pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> "Prędk. km/h"
                 else -> "—"
             }
             Row(
@@ -1045,7 +1045,9 @@ private fun SetEditRow(
     val durationInMinutes = metricType == MetricType.DISTANCE_DURATION
     val col2IsWeight = metricType == MetricType.WEIGHT_REPS ||
         metricType == MetricType.DURATION_WEIGHT
-    val col2IsDistance = metricType == MetricType.DISTANCE_DURATION
+    // DISTANCE_DURATION: kolumna 2 = prędkość km/h. Dystans nie jest wpisywany
+    // wprost — liczony z prędkości × czas i tak zapisywany do distanceM.
+    val col2IsSpeed = metricType == MetricType.DISTANCE_DURATION
 
     var repsText by remember(setSpec.id) { mutableStateOf(setSpec.reps.toString()) }
     var weightText by remember(setSpec.id) { mutableStateOf(setSpec.weightKg?.toString() ?: "") }
@@ -1062,8 +1064,11 @@ private fun SetEditRow(
             }
         )
     }
-    var distanceText by remember(setSpec.id) {
-        mutableStateOf(setSpec.distanceM?.let { (it / 1000.0).toString() } ?: "")
+    var speedText by remember(setSpec.id) {
+        mutableStateOf(
+            pl.filebit.gymtracker.util.cardioSpeedKmh(setSpec.durationSec, setSpec.distanceM)
+                ?.let { pl.filebit.gymtracker.util.formatCardioNumber(it) } ?: ""
+        )
     }
 
     Row(
@@ -1097,7 +1102,13 @@ private fun SetEditRow(
                     onValueChange = {
                         durationText = it.filter { c -> c.isDigit() }
                         val n = durationText.toIntOrNull()
-                        onDuration(n?.let { v -> if (durationInMinutes) v * 60 else v })
+                        val durSec = n?.let { v -> if (durationInMinutes) v * 60 else v }
+                        onDuration(durSec)
+                        // DISTANCE_DURATION: dystans = prędkość × czas — przelicz na zmianę czasu
+                        if (col2IsSpeed) {
+                            val sp = speedText.replace(',', '.').toDoubleOrNull()
+                            onDistance(pl.filebit.gymtracker.util.cardioDistanceM(sp, durSec))
+                        }
                     }
                 )
             }
@@ -1138,20 +1149,22 @@ private fun SetEditRow(
                     }
                 )
             }
-            col2IsDistance -> FieldWithHistory(
+            col2IsSpeed -> FieldWithHistory(
                 modifier = Modifier.weight(1f),
                 historyValue = null,
                 historyColorHint = HistoryColor.NEUTRAL
             ) {
                 MiniNumField(
-                    value = distanceText,
+                    value = speedText,
                     keyboardType = KeyboardType.Decimal,
                     modifier = Modifier.fillMaxWidth(),
                     onValueChange = {
                         val filtered = filterWeightInput(it)
-                        distanceText = filtered
-                        if (filtered.isBlank()) onDistance(null)
-                        else filtered.replace(',', '.').toDoubleOrNull()?.let { km -> onDistance(km * 1000.0) }
+                        speedText = filtered
+                        val sp = filtered.replace(',', '.').toDoubleOrNull()
+                        val durSec = durationText.toIntOrNull()
+                            ?.let { v -> if (durationInMinutes) v * 60 else v }
+                        onDistance(pl.filebit.gymtracker.util.cardioDistanceM(sp, durSec))
                     }
                 )
             }

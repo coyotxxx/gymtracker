@@ -32,6 +32,29 @@ fun formatTimerSeconds(remainingSec: Int): String {
     return String.format(Locale.US, "%d:%02d", m, s)
 }
 
+/** Prędkość km/h wyliczona z czasu i dystansu. null gdy brak danych albo czas = 0. */
+fun cardioSpeedKmh(durationSec: Int?, distanceM: Double?): Double? {
+    if (durationSec == null || durationSec <= 0) return null
+    if (distanceM == null || distanceM <= 0) return null
+    return (distanceM / 1000.0) / (durationSec / 3600.0)
+}
+
+/** Dystans w metrach wyliczony z prędkości km/h i czasu. null gdy brak danych. */
+fun cardioDistanceM(speedKmh: Double?, durationSec: Int?): Double? {
+    if (speedKmh == null || speedKmh <= 0) return null
+    if (durationSec == null || durationSec <= 0) return null
+    return speedKmh * (durationSec / 3600.0) * 1000.0
+}
+
+/** "6" lub "6.5" — prędkość/dystans do wyświetlenia (bez zbędnego ".0"). */
+fun formatCardioNumber(value: Double): String {
+    return if (value == value.toLong().toDouble()) {
+        "${value.toLong()}"
+    } else {
+        String.format(Locale.US, "%.1f", value)
+    }
+}
+
 fun formatDate(epochMillis: Long): String {
     val dt = Instant.fromEpochMilliseconds(epochMillis)
         .toLocalDateTime(TimeZone.currentSystemDefault())
