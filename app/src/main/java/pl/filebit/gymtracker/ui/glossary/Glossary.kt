@@ -55,6 +55,17 @@ object Glossary {
             "Główny driver hipertrofii — utrzymanie/zwiększanie volume w czasie = wzrost. " +
             "Dla siły mniej istotne niż intensywność (% 1RM)."),
 
+        "CARDIO" to ("Cardio — czas i prędkość" to
+            "Ćwiczenia cardio (bieżnia, rower, orbitrek) mierzymy inaczej niż siłowe — " +
+            "nie ciężarem i powtórzeniami, tylko CZASEM i PRĘDKOŚCIĄ.\n\n" +
+            "• Wpisujesz czas (minuty) i prędkość (km/h) — to wartości które realnie " +
+            "ustawiasz na maszynie\n" +
+            "• Dystans liczy się sam: dystans = prędkość × czas\n" +
+            "• Nie ma tu 1RM ani tonażu kg — cardio nie wchodzi do objętości siłowej " +
+            "ani do rekordów osobistych\n\n" +
+            "Progresja cardio = trenuj DŁUŻEJ albo SZYBCIEJ. Ćwiczenia izometryczne " +
+            "(plank, deska) mierzymy samym czasem."),
+
         "DELOAD" to ("Deload (rozładowanie)" to
             "Tydzień zmniejszonego obciążenia (-10% do -20% wagi lub -30% objętości) co 4-8 " +
             "tygodni.\n\n" +

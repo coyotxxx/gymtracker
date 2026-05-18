@@ -18,7 +18,7 @@ data class AiConfig(
     val isConnected: Boolean get() = apiKey.isNotBlank()
 
     companion object {
-        const val DEFAULT_ANTHROPIC = "claude-opus-4-7"
+        const val DEFAULT_ANTHROPIC = "claude-sonnet-4-6"
         const val DEFAULT_OPENAI = "gpt-5.5"
 
         // Domyślny system prompt po polsku — opisuje rolę trenera

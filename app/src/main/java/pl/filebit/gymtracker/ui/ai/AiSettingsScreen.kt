@@ -122,7 +122,14 @@ fun AiSettingsScreen(
                                         AiProvider.ANTHROPIC -> "Anthropic Claude"
                                         AiProvider.OPENAI -> "OpenAI GPT"
                                     })
-                                }
+                                },
+                                colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
+                                    containerColor = pl.filebit.gymtracker.ui.theme.DarkSurface,
+                                    labelColor = pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant,
+                                    selectedContainerColor =
+                                        pl.filebit.gymtracker.ui.theme.AccentOrange.copy(alpha = 0.18f),
+                                    selectedLabelColor = pl.filebit.gymtracker.ui.theme.AccentOrange
+                                )
                             )
                         }
                     }
