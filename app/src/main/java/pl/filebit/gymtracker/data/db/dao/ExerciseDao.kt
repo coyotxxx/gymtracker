@@ -55,10 +55,22 @@ interface ExerciseDao {
      * v1.29.10: ćwiczenia cardio, które przez starszą ścieżkę dodawania trafiły
      * z metricType WEIGHT_REPS — naprawiamy na DISTANCE_DURATION (czas/dystans).
      * Idempotentne — uruchamiane przy każdym starcie z seedera.
+     *
+     * v1.29.12: dopasowanie również po nazwie — łapie cardio z grupą inną niż
+     * CARDIO (np. własne ćwiczenie "Marsz na bieżni pod górkę"), które samo
+     * filtrowanie po primaryMuscle pomijało.
      */
     @Query(
         "UPDATE exercises SET metricType = 'DISTANCE_DURATION' " +
-            "WHERE primaryMuscle = 'CARDIO' AND metricType = 'WEIGHT_REPS'"
+            "WHERE metricType = 'WEIGHT_REPS' AND (" +
+            "primaryMuscle = 'CARDIO' " +
+            "OR LOWER(name) LIKE '%bieżni%' " +
+            "OR LOWER(name) LIKE '%rower%' " +
+            "OR LOWER(name) LIKE '%orbitrek%' " +
+            "OR LOWER(name) LIKE '%eliptyczn%' " +
+            "OR LOWER(name) LIKE '%wioślar%' " +
+            "OR LOWER(name) LIKE '%skakank%' " +
+            "OR LOWER(name) LIKE '%spinning%')"
     )
     suspend fun fixCardioMetricType(): Int
 

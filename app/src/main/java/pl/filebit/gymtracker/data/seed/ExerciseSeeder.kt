@@ -159,8 +159,8 @@ class ExerciseSeeder(
      */
     private fun inferMetricType(name: String, muscle: String): MetricType {
         val lowercase = name.lowercase()
-        if (muscle == "CARDIO" || lowercase.contains("bieżnia") ||
-            lowercase.contains("biega") || lowercase.contains("rower") ||
+        if (muscle == "CARDIO" || lowercase.contains("bieżni") ||
+            lowercase.contains("bieg") || lowercase.contains("rower") ||
             lowercase.contains("orbitrek") || lowercase.contains("eliptyczn") ||
             lowercase.contains("wioślar") || lowercase.contains("skakank") ||
             lowercase.contains("spinning")
