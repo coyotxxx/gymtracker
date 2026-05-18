@@ -247,7 +247,9 @@ private fun GoalCard(gp: GoalProgress, onDelete: () -> Unit) {
             Spacer(Modifier.height(10.dp))
 
             // Status — emoji + tekst w 1 linii
-            val (statusEmoji, statusText, statusColor) = when {
+            // statusText zawiera już emoji (np. "⚠️ Za wolno…") — emoji z Triple
+            // nie renderujemy osobno, inaczej pojawia się podwójnie.
+            val (_, statusText, statusColor) = when {
                 gp.achieved -> Triple("🏆", stringResource(R.string.goals_status_achieved), accent)
                 gp.daysRemaining == 0 && !gp.achieved -> Triple(
                     "⏰",
@@ -270,16 +272,12 @@ private fun GoalCard(gp: GoalProgress, onDelete: () -> Unit) {
                     pl.filebit.gymtracker.ui.theme.ErrorRed
                 )
             }
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(statusEmoji, style = MaterialTheme.typography.bodyMedium)
-                Spacer(Modifier.padding(horizontal = 3.dp))
-                Text(
-                    statusText,
-                    style = MaterialTheme.typography.bodySmall,
-                    fontWeight = FontWeight.SemiBold,
-                    color = statusColor
-                )
-            }
+            Text(
+                statusText,
+                style = MaterialTheme.typography.bodySmall,
+                fontWeight = FontWeight.SemiBold,
+                color = statusColor
+            )
         }
     }
 }
