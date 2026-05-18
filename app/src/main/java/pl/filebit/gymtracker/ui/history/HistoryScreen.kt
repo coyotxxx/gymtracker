@@ -292,7 +292,14 @@ private fun HistoryRow(item: HistoryItem, onClick: () -> Unit) {
                 StatChip("Czas", formatDuration(item.workout.durationMillis))
                 StatChip("Ćwicz.", "${item.exerciseCount}")
                 StatChip("Serie", "${item.totalSets}")
-                StatChip("Vol", "${formatWeight(item.totalVolumeKg)}kg")
+                if (item.totalVolumeKg <= 0.0 && item.cardioDistanceM > 0.0) {
+                    StatChip(
+                        "Dystans",
+                        "${pl.filebit.gymtracker.util.formatCardioNumber(item.cardioDistanceM / 1000.0)}km"
+                    )
+                } else {
+                    StatChip("Vol", "${formatWeight(item.totalVolumeKg)}kg")
+                }
             }
         }
     }

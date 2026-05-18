@@ -1078,12 +1078,21 @@ private fun RecentWorkoutCard(item: RecentWorkoutItem, onClick: () -> Unit) {
                 )
                 MiniStat("${item.exerciseCount}", "Ćwicz.", Modifier.weight(1f))
                 MiniStat("${item.totalSets}", "Serie", Modifier.weight(1f))
-                MiniStat(
-                    formatWeight(item.totalVolumeKg),
-                    "Vol.",
-                    Modifier.weight(1f),
-                    smallSuffix = "kg"
-                )
+                if (item.totalVolumeKg <= 0.0 && item.cardioDistanceM > 0.0) {
+                    MiniStat(
+                        pl.filebit.gymtracker.util.formatCardioNumber(item.cardioDistanceM / 1000.0),
+                        "Dystans",
+                        Modifier.weight(1f),
+                        smallSuffix = "km"
+                    )
+                } else {
+                    MiniStat(
+                        formatWeight(item.totalVolumeKg),
+                        "Vol.",
+                        Modifier.weight(1f),
+                        smallSuffix = "kg"
+                    )
+                }
             }
         }
     }

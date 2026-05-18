@@ -146,6 +146,13 @@ fun WorkoutDetailScreen(
             val totalVolume = state.groups.sumOf { g ->
                 g.sets.sumOf { it.reps * it.weightKg }
             }
+            // Cardio: gdy brak tonażu (kg×powt.), 4. kafelek pokazuje dystans/czas.
+            val totalCardioDistanceM = state.groups.sumOf { g ->
+                g.sets.sumOf { it.distanceM ?: 0.0 }
+            }
+            val totalCardioSec = state.groups.sumOf { g ->
+                g.sets.sumOf { it.durationSec ?: 0 }
+            }
             val planName = state.planName
             val dayLabel = state.planDayOfWeek?.let { dayLongLabel(it) }
 
@@ -220,7 +227,20 @@ fun WorkoutDetailScreen(
                         StatCol("Czas", formatDuration(workout.durationMillis), null)
                         StatCol("Ćwicz.", "${state.groups.size}", null)
                         StatCol("Serie", "$totalSets", null)
-                        StatCol("Vol.", formatVolumeDisplay(totalVolume), "kg")
+                        when {
+                            totalVolume > 0.0 ->
+                                StatCol("Vol.", formatVolumeDisplay(totalVolume), "kg")
+                            totalCardioDistanceM > 0.0 ->
+                                StatCol(
+                                    "Dystans",
+                                    pl.filebit.gymtracker.util.formatCardioNumber(totalCardioDistanceM / 1000.0),
+                                    "km"
+                                )
+                            totalCardioSec > 0 ->
+                                StatCol("Cardio", "${totalCardioSec / 60}", "min")
+                            else ->
+                                StatCol("Vol.", formatVolumeDisplay(totalVolume), "kg")
+                        }
                     }
                 }
 
@@ -261,6 +281,7 @@ fun WorkoutDetailScreen(
                 items(state.groups, key = { it.exercise.id }) { group ->
                     ExerciseDetailCard(
                         name = group.exercise.name,
+                        metricType = group.exercise.metricType,
                         sets = group.sets,
                         previousSession = state.previousByExercise[group.exercise.id]
                     )
@@ -292,6 +313,7 @@ fun WorkoutDetailScreen(
 @Composable
 private fun ExerciseDetailCard(
     name: String,
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
     sets: List<pl.filebit.gymtracker.data.entity.WorkoutSet>,
     previousSession: pl.filebit.gymtracker.data.repository.PreviousSession?
 ) {
@@ -343,8 +365,11 @@ private fun ExerciseDetailCard(
                 val previousForRow = currentWorkingIdx[idx]?.let { wIdx -> prevWorking.getOrNull(wIdx) }
                 SetRow(
                     setNumber = s.setNumber,
+                    metricType = metricType,
                     weightKg = s.weightKg,
                     reps = s.reps,
+                    durationSec = s.durationSec,
+                    distanceM = s.distanceM,
                     rpe = s.rpe,
                     previousSet = previousForRow
                 )
@@ -361,11 +386,27 @@ private fun ExerciseDetailCard(
 @Composable
 private fun SetRow(
     setNumber: Int,
+    metricType: pl.filebit.gymtracker.data.entity.MetricType,
     weightKg: Double,
     reps: Int,
+    durationSec: Int?,
+    distanceM: Double?,
     rpe: Int?,
     previousSet: pl.filebit.gymtracker.data.entity.WorkoutSet?
 ) {
+    val isCardioDist = metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION
+    val isDuration = metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+
+    fun setLabel(durSec: Int?, distM: Double?, w: Double, r: Int): String = when {
+        isCardioDist -> listOfNotNull(
+            durSec?.takeIf { it > 0 }?.let { "${it / 60} min" },
+            pl.filebit.gymtracker.util.cardioSpeedKmh(durSec, distM)
+                ?.let { "${pl.filebit.gymtracker.util.formatCardioNumber(it)} km/h" }
+        ).joinToString(" · ").ifBlank { "—" }
+        isDuration -> durSec?.takeIf { it > 0 }?.let { "${it / 60} min" } ?: "—"
+        else -> "${formatWeight(w)}×$r"
+    }
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -380,27 +421,37 @@ private fun SetRow(
         )
         Column(horizontalAlignment = Alignment.End) {
             Text(
-                "${formatWeight(weightKg)}×$reps",
+                setLabel(durationSec, distanceM, weightKg, reps),
                 style = MaterialTheme.typography.bodyLarge.copy(
                     fontWeight = FontWeight.SemiBold,
                     fontFamily = FontFamily.Monospace
                 ),
                 color = DarkOnSurface
             )
-            // Subtitle z poprzedniego treningu — tylko WAGA z kolorem porównania
+            // Subtitle z poprzedniego treningu — porównanie właściwej metryki
             previousSet?.let { prev ->
+                val curVal = when {
+                    isCardioDist -> pl.filebit.gymtracker.util.cardioSpeedKmh(durationSec, distanceM) ?: 0.0
+                    isDuration -> (durationSec ?: 0).toDouble()
+                    else -> weightKg
+                }
+                val prevVal = when {
+                    isCardioDist -> pl.filebit.gymtracker.util.cardioSpeedKmh(prev.durationSec, prev.distanceM) ?: 0.0
+                    isDuration -> (prev.durationSec ?: 0).toDouble()
+                    else -> prev.weightKg
+                }
                 val color = when {
-                    weightKg > prev.weightKg -> SuccessGreen          // progres
-                    weightKg < prev.weightKg -> ErrorRed                // regres
-                    else -> AccentOrange.copy(alpha = 0.7f)             // równe
+                    curVal > prevVal -> SuccessGreen
+                    curVal < prevVal -> ErrorRed
+                    else -> AccentOrange.copy(alpha = 0.7f)
                 }
                 val arrow = when {
-                    weightKg > prev.weightKg -> "↑"
-                    weightKg < prev.weightKg -> "↓"
+                    curVal > prevVal -> "↑"
+                    curVal < prevVal -> "↓"
                     else -> "="
                 }
                 Text(
-                    "$arrow ${formatWeight(prev.weightKg)}×${prev.reps}",
+                    "$arrow ${setLabel(prev.durationSec, prev.distanceM, prev.weightKg, prev.reps)}",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontSize = 10.sp,
                         fontFamily = FontFamily.Monospace,

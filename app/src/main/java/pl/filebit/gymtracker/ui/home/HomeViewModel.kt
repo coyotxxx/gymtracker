@@ -91,7 +91,9 @@ data class RecentWorkoutItem(
     val workout: Workout,
     val totalSets: Int,
     val totalVolumeKg: Double,
-    val exerciseCount: Int
+    val exerciseCount: Int,
+    /** v1.29.20 — łączny dystans cardio (m); gdy brak tonażu pokazujemy to zamiast "0 kg". */
+    val cardioDistanceM: Double = 0.0
 )
 
 @HiltViewModel
@@ -195,7 +197,8 @@ class HomeViewModel @Inject constructor(
                 workout = w,
                 totalSets = sets.size,
                 totalVolumeKg = sets.sumOf { it.reps * it.weightKg },
-                exerciseCount = sets.map { it.exerciseId }.distinct().size
+                exerciseCount = sets.map { it.exerciseId }.distinct().size,
+                cardioDistanceM = sets.sumOf { it.distanceM ?: 0.0 }
             )
         }
         // Streak + week progress (best-effort, błędy ignorujemy)

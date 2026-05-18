@@ -32,19 +32,39 @@ class WorkoutAiSummaryService @Inject constructor(
             .filter { it.isCompleted && it.setType != SetType.WARMUP }
         if (sets.isEmpty()) return Result.failure(IllegalStateException("Brak zaliczonych serii"))
 
-        val exMap = sets.map { it.exerciseId }.distinct()
-            .associateWith { exerciseDao.getById(it)?.name ?: "?" }
+        val exById = sets.map { it.exerciseId }.distinct()
+            .associateWith { exerciseDao.getById(it) }
 
         val volumeKg = sets.sumOf { it.reps * it.weightKg }
         val totalSets = sets.size
         val durationMin = workout.durationMillis / 60_000
+        val cardioDistanceM = sets.sumOf { it.distanceM ?: 0.0 }
 
-        // Krótka tabela: ćwiczenie -> najlepszy zestaw (max kg × reps)
+        // Krótka tabela: ćwiczenie -> najlepszy zestaw. Cardio: czas + prędkość;
+        // siłowe: max kg × reps.
         val perExercise = sets.groupBy { it.exerciseId }
             .map { (exId, exSets) ->
-                val best = exSets.maxByOrNull { it.weightKg * it.reps }!!
-                val name = exMap[exId] ?: "?"
-                Triple(name, exSets.size, "${best.reps}×${formatKg(best.weightKg)}kg")
+                val ex = exById[exId]
+                val name = ex?.name ?: "?"
+                val top = when (ex?.metricType) {
+                    pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> {
+                        val best = exSets.maxByOrNull { it.distanceM ?: 0.0 } ?: exSets.first()
+                        listOfNotNull(
+                            best.durationSec?.takeIf { it > 0 }?.let { "${it / 60} min" },
+                            pl.filebit.gymtracker.util.cardioSpeedKmh(best.durationSec, best.distanceM)
+                                ?.let { "${pl.filebit.gymtracker.util.formatCardioNumber(it)} km/h" }
+                        ).joinToString(", ").ifBlank { "cardio" }
+                    }
+                    pl.filebit.gymtracker.data.entity.MetricType.DURATION -> {
+                        val best = exSets.maxByOrNull { it.durationSec ?: 0 } ?: exSets.first()
+                        best.durationSec?.takeIf { it > 0 }?.let { "${it / 60} min" } ?: "izometria"
+                    }
+                    else -> {
+                        val best = exSets.maxByOrNull { it.weightKg * it.reps }!!
+                        "${best.reps}×${formatKg(best.weightKg)}kg"
+                    }
+                }
+                Triple(name, exSets.size, top)
             }
 
         // Poprzedni trening (do porównania objętości)
@@ -66,11 +86,18 @@ class WorkoutAiSummaryService @Inject constructor(
             append("Nie zaczynaj od 'Świetny trening!' — bądź autentyczny.\n\n")
             append("Dane treningu:\n")
             append("- Czas: ${durationMin} min\n")
-            append("- Łączna objętość: ${formatKg(volumeKg)} kg (${totalSets} serii roboczych)\n")
-            if (prevVolume != null) {
-                val diff = volumeKg - prevVolume
-                val pctText = if (prevVolume > 0) " (${if (diff >= 0) "+" else ""}${(diff * 100 / prevVolume).toInt()}%)" else ""
-                append("- Poprzedni trening: ${formatKg(prevVolume)} kg → różnica ${if (diff >= 0) "+" else ""}${formatKg(diff)} kg$pctText\n")
+            if (volumeKg > 0) {
+                append("- Łączna objętość: ${formatKg(volumeKg)} kg (${totalSets} serii roboczych)\n")
+                if (prevVolume != null && prevVolume > 0) {
+                    val diff = volumeKg - prevVolume
+                    val pctText = " (${if (diff >= 0) "+" else ""}${(diff * 100 / prevVolume).toInt()}%)"
+                    append("- Poprzedni trening: ${formatKg(prevVolume)} kg → różnica ${if (diff >= 0) "+" else ""}${formatKg(diff)} kg$pctText\n")
+                }
+            } else {
+                append("- Serie robocze: ${totalSets}\n")
+            }
+            if (cardioDistanceM > 0) {
+                append("- Cardio łącznie: ${pl.filebit.gymtracker.util.formatCardioNumber(cardioDistanceM / 1000.0)} km\n")
             }
             append("- Ćwiczenia (top set):\n")
             perExercise.forEach { (name, count, top) ->

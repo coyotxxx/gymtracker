@@ -26,7 +26,9 @@ data class HistoryItem(
     val planName: String? = null,
     val hasPR: Boolean = false,
     /** v1.19.0 — faza mesocyklu w której wykonano trening (do PhaseBadge w UI). */
-    val mesocyclePhase: MesocyclePhase? = null
+    val mesocyclePhase: MesocyclePhase? = null,
+    /** v1.29.20 — łączny dystans cardio (m); gdy brak tonażu pokazujemy to zamiast "0 kg". */
+    val cardioDistanceM: Double = 0.0
 )
 
 /**
@@ -79,7 +81,8 @@ class HistoryViewModel @Inject constructor(
                     exerciseCount = sets.map { it.exerciseId }.distinct().size,
                     planName = planName,
                     hasPR = prs.isNotEmpty(),
-                    mesocyclePhase = resolveMesocyclePhase(mesocycles, w.startedAt)
+                    mesocyclePhase = resolveMesocyclePhase(mesocycles, w.startedAt),
+                    cardioDistanceM = sets.sumOf { it.distanceM ?: 0.0 }
                 )
             }
         }
