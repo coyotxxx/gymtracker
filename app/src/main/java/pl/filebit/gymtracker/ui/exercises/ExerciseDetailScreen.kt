@@ -215,6 +215,28 @@ fun ExerciseDetailScreen(
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = DarkOnSurface
                             )
+                        } else if (pr.isCardio) {
+                            Text(
+                                if (pr.bestSpeedKmh > 0)
+                                    "🏆 ${pl.filebit.gymtracker.util.formatCardioNumber(pr.bestSpeedKmh)} km/h"
+                                else "🏆 ${pr.maxDurationSec / 60} min",
+                                style = MaterialTheme.typography.headlineSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = DarkOnSurface
+                            )
+                            Text(
+                                buildString {
+                                    append("Najdłużej ${pr.maxDurationSec / 60} min")
+                                    if (pr.totalDistanceM > 0) {
+                                        append(" · łącznie ")
+                                        append(pl.filebit.gymtracker.util.formatCardioNumber(pr.totalDistanceM / 1000.0))
+                                        append(" km")
+                                    }
+                                    append(" · ${pr.totalSetsLogged} serii")
+                                },
+                                style = MaterialTheme.typography.bodySmall,
+                                color = DarkOnSurface.copy(alpha = 0.85f)
+                            )
                         } else {
                             Text(
                                 "🏆 ${formatWeight(pr.maxWeightKg)} kg × ${pr.repsAtMaxWeight}",
@@ -257,7 +279,14 @@ fun ExerciseDetailScreen(
                                 points = state.progression,
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .height(180.dp)
+                                    .height(180.dp),
+                                valueOf = when (ex.metricType) {
+                                    pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ->
+                                        { p -> p.avgSpeedKmh }
+                                    pl.filebit.gymtracker.data.entity.MetricType.DURATION ->
+                                        { p -> p.totalDurationSec.toDouble() }
+                                    else -> { p -> p.maxWeightKg }
+                                }
                             )
                             Spacer(Modifier.height(8.dp))
                             Row(
@@ -348,7 +377,17 @@ fun ExerciseDetailScreen(
                             modifier = Modifier.weight(1f)
                         )
                         Text(
-                            "${formatWeight(s.weightKg)} kg × ${s.reps}",
+                            when (ex.metricType) {
+                                pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ->
+                                    listOfNotNull(
+                                        s.durationSec?.takeIf { it > 0 }?.let { "${it / 60} min" },
+                                        pl.filebit.gymtracker.util.cardioSpeedKmh(s.durationSec, s.distanceM)
+                                            ?.let { "${pl.filebit.gymtracker.util.formatCardioNumber(it)} km/h" }
+                                    ).joinToString(" · ").ifBlank { "—" }
+                                pl.filebit.gymtracker.data.entity.MetricType.DURATION ->
+                                    s.durationSec?.takeIf { it > 0 }?.let { "${it / 60} min" } ?: "—"
+                                else -> "${formatWeight(s.weightKg)} kg × ${s.reps}"
+                            },
                             style = MaterialTheme.typography.bodyMedium,
                             fontWeight = FontWeight.Medium
                         )
@@ -392,11 +431,12 @@ fun ExerciseDetailScreen(
 @Composable
 private fun ProgressionLineChart(
     points: List<ExerciseProgressionPoint>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    valueOf: (ExerciseProgressionPoint) -> Double = { it.maxWeightKg }
 ) {
     if (points.isEmpty()) return
-    val maxW = points.maxOf { it.maxWeightKg }
-    val minW = points.minOf { it.maxWeightKg }
+    val maxW = points.maxOf { valueOf(it) }
+    val minW = points.minOf { valueOf(it) }
     val range = (maxW - minW).coerceAtLeast(1.0)
 
     val lineColor = AccentOrange
@@ -426,7 +466,7 @@ private fun ProgressionLineChart(
         val path = Path()
         points.forEachIndexed { i, p ->
             val x = padding + i * stepX
-            val ratio = if (range > 0) ((p.maxWeightKg - minW) / range).toFloat() else 0.5f
+            val ratio = if (range > 0) ((valueOf(p) - minW) / range).toFloat() else 0.5f
             val y = padding + plotH * (1 - ratio)
             if (i == 0) path.moveTo(x, y) else path.lineTo(x, y)
         }
@@ -434,7 +474,7 @@ private fun ProgressionLineChart(
         // dots
         points.forEachIndexed { i, p ->
             val x = padding + i * stepX
-            val ratio = if (range > 0) ((p.maxWeightKg - minW) / range).toFloat() else 0.5f
+            val ratio = if (range > 0) ((valueOf(p) - minW) / range).toFloat() else 0.5f
             val y = padding + plotH * (1 - ratio)
             drawCircle(color = pointColor, radius = 5f, center = Offset(x, y))
         }

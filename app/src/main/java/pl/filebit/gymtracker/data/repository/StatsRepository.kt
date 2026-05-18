@@ -24,7 +24,14 @@ data class ExercisePr(
     val repsAtMaxWeight: Int,
     val maxVolumeKg: Double,
     val estimated1RM: Double,
-    val totalSetsLogged: Int
+    val totalSetsLogged: Int,
+    // v1.29.19 — cardio: gdy isCardio=true, pola kg/1RM nie mają sensu;
+    // UI pokazuje prędkość/czas/dystans zamiast ciężaru.
+    val isCardio: Boolean = false,
+    val bestSpeedKmh: Double = 0.0,
+    val maxDurationSec: Int = 0,
+    val totalDurationSec: Int = 0,
+    val totalDistanceM: Double = 0.0
 )
 
 @Singleton
@@ -524,6 +531,26 @@ class StatsRepository @Inject constructor(
         val sets = setDao.getAllForExercise(exerciseId)
             .filter { it.isCompleted && it.setType != SetType.WARMUP }
         if (sets.isEmpty()) return null
+        val ex = exerciseDao.getById(exerciseId)
+        val isCardio = ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+            ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+        if (isCardio) {
+            val bestSpeed = sets.mapNotNull {
+                pl.filebit.gymtracker.util.cardioSpeedKmh(it.durationSec, it.distanceM)
+            }.maxOrNull() ?: 0.0
+            return ExercisePr(
+                maxWeightKg = 0.0,
+                repsAtMaxWeight = 0,
+                maxVolumeKg = 0.0,
+                estimated1RM = 0.0,
+                totalSetsLogged = sets.size,
+                isCardio = true,
+                bestSpeedKmh = bestSpeed,
+                maxDurationSec = sets.maxOf { it.durationSec ?: 0 },
+                totalDurationSec = sets.sumOf { it.durationSec ?: 0 },
+                totalDistanceM = sets.sumOf { it.distanceM ?: 0.0 }
+            )
+        }
         val maxWeightSet = sets.maxByOrNull { it.weightKg } ?: return null
         // pogrupuj per workout, wybierz max objętości
         val perWorkoutVol = sets.groupBy { it.workoutId }
@@ -546,11 +573,29 @@ class StatsRepository @Inject constructor(
         val all = setDao.getAllForExercise(exerciseId)
             .filter { it.isCompleted && it.setType != SetType.WARMUP }
         if (all.isEmpty()) return emptyList()
+        val ex = exerciseDao.getById(exerciseId)
+        val isCardio = ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+            ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
         val workoutsById = workoutDao.observeAllOnce().associateBy { it.id }
         return all.groupBy { it.workoutId }
             .mapNotNull { (workoutId, sets) ->
                 val w = workoutsById[workoutId] ?: return@mapNotNull null
                 if (w.finishedAt == null) return@mapNotNull null
+                if (isCardio) {
+                    val totalDur = sets.sumOf { it.durationSec ?: 0 }
+                    val totalDist = sets.sumOf { it.distanceM ?: 0.0 }
+                    return@mapNotNull ExerciseProgressionPoint(
+                        workoutId = workoutId,
+                        workoutDate = w.startedAt,
+                        maxWeightKg = 0.0,
+                        repsAtMax = 0,
+                        volumeKg = 0.0,
+                        estimated1RM = 0.0,
+                        avgSpeedKmh = pl.filebit.gymtracker.util.cardioSpeedKmh(totalDur, totalDist) ?: 0.0,
+                        totalDurationSec = totalDur,
+                        totalDistanceM = totalDist
+                    )
+                }
                 val maxWeight = sets.maxOf { it.weightKg }
                 val repsAtMax = sets.filter { it.weightKg == maxWeight }.maxOf { it.reps }
                 val volume = sets.sumOf { it.reps * it.weightKg }
@@ -1014,7 +1059,11 @@ data class ExerciseProgressionPoint(
     val maxWeightKg: Double,
     val repsAtMax: Int,
     val volumeKg: Double,
-    val estimated1RM: Double
+    val estimated1RM: Double,
+    // v1.29.19 — cardio: średnia prędkość / łączny czas / dystans tej sesji
+    val avgSpeedKmh: Double = 0.0,
+    val totalDurationSec: Int = 0,
+    val totalDistanceM: Double = 0.0
 )
 
 enum class ProgressionKind {

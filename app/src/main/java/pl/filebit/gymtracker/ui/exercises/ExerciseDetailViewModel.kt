@@ -132,7 +132,11 @@ class ExerciseDetailViewModel @Inject constructor(
             val pr = statsRepo.prForExercise(exerciseId)
             val progression = statsRepo.progressionForExercise(exerciseId)
             val history = statsRepo.historyForExercise(exerciseId)
-            val trend = runCatching { stagnationAnalyzer.analyzeOne(exerciseId) }.getOrNull()
+            // Trend e1RM nie ma sensu dla cardio (czas/dystans) — pomijamy.
+            val isCardio = ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+                ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+            val trend = if (isCardio) null
+            else runCatching { stagnationAnalyzer.analyzeOne(exerciseId) }.getOrNull()
             _state.value = ExerciseDetailUiState(
                 loading = false,
                 exercise = ex,
