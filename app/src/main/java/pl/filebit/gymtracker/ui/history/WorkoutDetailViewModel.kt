@@ -33,14 +33,17 @@ data class WorkoutDetailUiState(
      * Mapa exerciseId → poprzednia sesja (przed startedAt aktualnego treningu).
      * Używana do pokazania "ostatnio" pod każdym setem w detalu.
      */
-    val previousByExercise: Map<Long, PreviousSession?> = emptyMap()
+    val previousByExercise: Map<Long, PreviousSession?> = emptyMap(),
+    /** v1.29.21 — trwa ponowne generowanie podsumowania AI. */
+    val regeneratingSummary: Boolean = false
 )
 
 @HiltViewModel
 class WorkoutDetailViewModel @Inject constructor(
     private val repo: WorkoutRepository,
     private val planRepo: PlanRepository,
-    private val statsRepo: StatsRepository
+    private val statsRepo: StatsRepository,
+    private val aiSummaryService: pl.filebit.gymtracker.ai.WorkoutAiSummaryService
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(WorkoutDetailUiState())
@@ -72,6 +75,27 @@ class WorkoutDetailViewModel @Inject constructor(
                 planDayOfWeek = workout?.fromDayOfWeek,
                 loading = false,
                 previousByExercise = previousMap
+            )
+        }
+    }
+
+    /**
+     * v1.29.21 — ponownie generuje podsumowanie AI dla tego treningu.
+     * Przydatne gdy stare podsumowanie powstało przed poprawką (np. cardio
+     * opisane jako "powtórzenia"). Wymaga skonfigurowanego klucza AI.
+     */
+    fun regenerateAiSummary() {
+        val id = _state.value.workout?.id ?: return
+        if (_state.value.regeneratingSummary) return
+        viewModelScope.launch {
+            _state.value = _state.value.copy(regeneratingSummary = true)
+            aiSummaryService.generate(id).onSuccess { text ->
+                repo.setAiSummary(id, text)
+            }
+            val refreshed = repo.getWorkout(id)
+            _state.value = _state.value.copy(
+                workout = refreshed,
+                regeneratingSummary = false
             )
         }
     }
@@ -142,7 +166,9 @@ class WorkoutDetailViewModel @Inject constructor(
                             setNumber = setIdx + 1,
                             reps = ws.reps,
                             weightKg = if (ws.weightKg > 0.0) ws.weightKg else null,
-                            restSeconds = null
+                            restSeconds = null,
+                            durationSec = ws.durationSec,
+                            distanceM = ws.distanceM
                         )
                     )
                 }

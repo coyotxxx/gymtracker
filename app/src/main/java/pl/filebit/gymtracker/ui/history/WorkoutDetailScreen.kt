@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -258,15 +259,37 @@ fun WorkoutDetailScreen(
                             shape = RoundedCornerShape(12.dp)
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
-                                Text(
-                                    "✨ PODSUMOWANIE TRENERA AI",
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        fontSize = 10.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        letterSpacing = 1.4.sp
-                                    ),
-                                    color = AccentOrange
-                                )
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        "✨ PODSUMOWANIE TRENERA AI",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            fontSize = 10.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            letterSpacing = 1.4.sp
+                                        ),
+                                        color = AccentOrange,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                    if (state.regeneratingSummary) {
+                                        androidx.compose.material3.CircularProgressIndicator(
+                                            modifier = Modifier.size(16.dp),
+                                            strokeWidth = 2.dp,
+                                            color = AccentOrange
+                                        )
+                                    } else {
+                                        IconButton(
+                                            onClick = { vm.regenerateAiSummary() },
+                                            modifier = Modifier.size(28.dp)
+                                        ) {
+                                            Icon(
+                                                Icons.Default.Replay,
+                                                contentDescription = "Przegeneruj podsumowanie",
+                                                tint = AccentOrange,
+                                                modifier = Modifier.size(16.dp)
+                                            )
+                                        }
+                                    }
+                                }
                                 Spacer(Modifier.height(4.dp))
                                 Text(
                                     summary,

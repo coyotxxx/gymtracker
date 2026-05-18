@@ -972,6 +972,10 @@ class StatsRepository @Inject constructor(
     suspend fun allPersonalRecords(): List<PersonalRecordRow> {
         val allExercises = exerciseDao.observeAll().first()
         return allExercises.mapNotNull { ex ->
+            // Rekordy osobiste = leaderboard 1RM/ciężaru — cardio nie ma 1RM.
+            if (ex.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+                ex.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+            ) return@mapNotNull null
             val pr = prForExercise(ex.id) ?: return@mapNotNull null
             PersonalRecordRow(
                 exerciseId = ex.id,
@@ -1462,6 +1466,10 @@ fun computeAllPersonalRecordsFromSnapshot(
     // Pre-group: completedSets by exerciseId (raz, dla wszystkich exercises)
     val setsByExercise = snapshot.completedSets.groupBy { it.exerciseId }
     return snapshot.allExercises.mapNotNull { ex ->
+        // Rekordy osobiste = leaderboard 1RM/ciężaru — cardio nie ma 1RM.
+        if (ex.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+            ex.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+        ) return@mapNotNull null
         val sets = setsByExercise[ex.id] ?: return@mapNotNull null
         if (sets.isEmpty()) return@mapNotNull null
         val maxWeightSet = sets.maxByOrNull { it.weightKg } ?: return@mapNotNull null

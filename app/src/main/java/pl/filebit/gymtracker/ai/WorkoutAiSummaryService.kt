@@ -40,6 +40,18 @@ class WorkoutAiSummaryService @Inject constructor(
         val durationMin = workout.durationMillis / 60_000
         val cardioDistanceM = sets.sumOf { it.distanceM ?: 0.0 }
 
+        // Klasyfikacja treningu — AI musi rozróżniać siłowy od cardio.
+        val cardioExCount = exById.values.count {
+            it?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION ||
+                it?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
+        }
+        val workoutTypeLabel = when {
+            exById.isEmpty() -> "TRENING"
+            cardioExCount == exById.size -> "CARDIO (czas, dystans, prędkość — to NIE są powtórzenia ani ciężar)"
+            cardioExCount == 0 -> "SIŁOWY (ciężar × powtórzenia)"
+            else -> "MIESZANY (część siłowa + część cardio)"
+        }
+
         // Krótka tabela: ćwiczenie -> najlepszy zestaw. Cardio: czas + prędkość;
         // siłowe: max kg × reps.
         val perExercise = sets.groupBy { it.exerciseId }
@@ -84,6 +96,9 @@ class WorkoutAiSummaryService @Inject constructor(
             append("zakończonego treningu po polsku. Bądź konkretny — cytuj liczby. Wskaż jedną mocną ")
             append("stronę i opcjonalnie jedną krótką sugestię na następny raz. Nie używaj markdown ani list. ")
             append("Nie zaczynaj od 'Świetny trening!' — bądź autentyczny.\n\n")
+            append("⚠ TYP TRENINGU: $workoutTypeLabel\n")
+            append("Przy cardio NIGDY nie pisz o 'powtórzeniach' ani 'ciężarze' — opisuj czas, ")
+            append("dystans i prędkość. Przy siłowym mów o ciężarze i powtórzeniach.\n\n")
             append("Dane treningu:\n")
             append("- Czas: ${durationMin} min\n")
             if (volumeKg > 0) {
