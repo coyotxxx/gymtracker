@@ -58,6 +58,9 @@ class ExerciseSeeder(
 
         // Oznacz kanoniczne ulubione (z xlsx Macieja) — idempotentne, można uruchamiać wielokrotnie
         markMacjiejFavorites()
+
+        // v1.29.10: napraw cardio, które przez starszą ścieżkę ma metricType WEIGHT_REPS
+        runCatching { dao.fixCardioMetricType() }
     }
 
     /**

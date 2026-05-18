@@ -51,6 +51,17 @@ interface ExerciseDao {
     @Query("UPDATE exercises SET isFavorite = 1 WHERE LOWER(name) = LOWER(:name)")
     suspend fun markFavoriteByName(name: String): Int
 
+    /**
+     * v1.29.10: ćwiczenia cardio, które przez starszą ścieżkę dodawania trafiły
+     * z metricType WEIGHT_REPS — naprawiamy na DISTANCE_DURATION (czas/dystans).
+     * Idempotentne — uruchamiane przy każdym starcie z seedera.
+     */
+    @Query(
+        "UPDATE exercises SET metricType = 'DISTANCE_DURATION' " +
+            "WHERE primaryMuscle = 'CARDIO' AND metricType = 'WEIGHT_REPS'"
+    )
+    suspend fun fixCardioMetricType(): Int
+
     /** Ćwiczenia które user oznaczył jako "unikaj" (np. boli kolano przy wykrokach). AI ich nie zaproponuje. */
     @Query("SELECT * FROM exercises WHERE isAvoided = 1 ORDER BY name COLLATE NOCASE ASC")
     suspend fun getAvoided(): List<Exercise>

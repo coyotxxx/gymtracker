@@ -856,15 +856,30 @@ private fun PlanExerciseCard(
             HorizontalDivider(color = DarkOutlineSoft)
             Spacer(Modifier.height(10.dp))
 
-            // Header kolumn — kompaktowy, wycentrowany pod inputami
+            // Header kolumn — etykiety dopasowane do typu metryki ćwiczenia.
+            // v1.29.10: cardio (bieżnia, rower) → Czas/Dystans zamiast Powt./Waga.
+            val metric = item.exercise?.metricType
+                ?: pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS
+            val col1Label = when (metric) {
+                pl.filebit.gymtracker.data.entity.MetricType.DURATION,
+                pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION,
+                pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> "Czas"
+                else -> "Powt."
+            }
+            val col2Label = when (metric) {
+                pl.filebit.gymtracker.data.entity.MetricType.WEIGHT_REPS,
+                pl.filebit.gymtracker.data.entity.MetricType.DURATION_WEIGHT -> "Waga"
+                pl.filebit.gymtracker.data.entity.MetricType.DISTANCE_DURATION -> "Dystans"
+                else -> "—"
+            }
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Spacer(Modifier.width(28.dp))
-                ColumnHeader("Powt.", Modifier.weight(1f))
+                ColumnHeader(col1Label, Modifier.weight(1f))
                 Spacer(Modifier.width(4.dp))
-                ColumnHeader("Waga", Modifier.weight(1f))
+                ColumnHeader(col2Label, Modifier.weight(1f))
                 Spacer(Modifier.width(4.dp))
                 ColumnHeader("Odp.", Modifier.weight(1f))
                 Spacer(Modifier.width(4.dp))
