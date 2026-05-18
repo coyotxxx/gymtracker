@@ -174,6 +174,8 @@ class DietAiService @Inject constructor(
             append("\nNapisz instrukcję przygotowania TEGO dania na: $target\n")
             append("Kroki numerowane (1. 2. 3.), zwięźle, każdy w nowej linii. ")
             append("Jeśli to urządzenie — podaj tryb/program, temperaturę °C i czas.\n")
+            append("Gdy w kroku podajesz ilość składnika — użyj DOKŁADNIE gramatury ze ")
+            append("składników powyżej, NIE zaokrąglaj.\n")
             append("Zwróć TYLKO kroki instrukcji — bez nazwy dania, bez wstępu, bez komentarzy.")
         }
         return client.chat(cfg, listOf(AiMessage(AiRole.USER, prompt)), source = "DietAiVariant")
@@ -705,7 +707,11 @@ class DietAiService @Inject constructor(
             append("   - GRAMATURA SUROWA: ryż, makaron, kasza w bazie są SUROWE (gramatura ")
             append("przed ugotowaniem). Podawaj grams surowe; w `instructions` napisz ")
             append("ugotowanie (np. 'ugotuj 80 g ryżu wg opakowania').\n")
-            append("   - Każdy krok instrukcji w nowej linii (numerowany 1. 2. 3.)\n\n")
+            append("   - Każdy krok instrukcji w nowej linii (numerowany 1. 2. 3.)\n")
+            append("   - GRAMATURY W INSTRUKCJI = DOKŁADNIE te z `ingredients`. Gdy w kroku ")
+            append("podajesz ilość składnika, użyj liczby IDENTYCZNEJ jak w `ingredients` ")
+            append("(NIE zaokrąglaj — 69 g zostaje 69 g, nie 80 g). Lista składników i ")
+            append("instrukcja MUSZĄ się zgadzać co do gramatury.\n\n")
 
             append("6. **AUTOWERYFIKACJA — przed wysłaniem JSON sprawdź:**\n")
             append("   - Czy KOLACJA ma <30g węgli? (jeśli >30g — ZMIEŃ)\n")
