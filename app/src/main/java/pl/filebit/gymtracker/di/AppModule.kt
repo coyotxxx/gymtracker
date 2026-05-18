@@ -485,6 +485,52 @@ object AppModule {
         }
     }
 
+    /**
+     * v1.29.6: produkty zbożowe w bazie były w formie GOTOWANEJ. Przejście na
+     * SUROWE — waga ZAWSZE przed ugotowaniem (lista zakupów, instrukcje, makra).
+     * Gramy istniejących wpisów posiłków przeliczamy współczynnikiem
+     * cookedKcal/rawKcal, dzięki czemu kcal historycznych posiłków NIE zmieniają
+     * się (np. 237 g ryżu gotowanego → 82 g surowego, te same kalorie).
+     */
+    internal val MIGRATION_63_64 = object : Migration(63, 64) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            fun toRaw(
+                cooked: String, raw: String, cookedKcal: Double,
+                kcal: Double, prot: Double, carbs: Double, fat: Double,
+                convertGrams: Boolean
+            ) {
+                if (convertGrams) {
+                    db.execSQL(
+                        "UPDATE meal_entries SET grams = grams * ? " +
+                            "WHERE productId IN (SELECT id FROM food_products WHERE name = ?)",
+                        arrayOf<Any?>(cookedKcal / kcal, cooked)
+                    )
+                }
+                db.execSQL(
+                    "UPDATE food_products SET name = ?, kcalPer100g = ?, " +
+                        "proteinPer100g = ?, carbsPer100g = ?, fatPer100g = ? WHERE name = ?",
+                    arrayOf<Any?>(raw, kcal, prot, carbs, fat, cooked)
+                )
+            }
+            // Zboża — duża zmiana wagi po ugotowaniu → przeliczamy gramy wpisów.
+            toRaw("Ryż biały gotowany", "Ryż biały", 130.0, 350.0, 7.0, 78.0, 0.6, true)
+            toRaw("Ryż brązowy gotowany", "Ryż brązowy", 123.0, 360.0, 7.5, 76.0, 2.7, true)
+            toRaw("Ryż basmati gotowany", "Ryż basmati", 121.0, 350.0, 8.0, 78.0, 1.0, true)
+            toRaw("Makaron pełnoziarnisty gotowany", "Makaron pełnoziarnisty", 124.0, 340.0, 13.0, 64.0, 2.5, true)
+            toRaw("Makaron biały gotowany", "Makaron biały", 131.0, 360.0, 12.0, 72.0, 1.5, true)
+            toRaw("Kasza gryczana gotowana", "Kasza gryczana", 92.0, 340.0, 13.0, 70.0, 3.4, true)
+            toRaw("Kasza jaglana gotowana", "Kasza jaglana", 119.0, 360.0, 11.0, 72.0, 4.0, true)
+            toRaw("Kasza pęczak gotowana", "Kasza pęczak", 123.0, 350.0, 10.0, 77.0, 2.3, true)
+            // Warzywa / ziemniaki / krewetki — waga prawie bez zmian → bez przeliczania gramów.
+            toRaw("Ziemniaki gotowane", "Ziemniaki", 87.0, 77.0, 2.0, 17.0, 0.1, false)
+            toRaw("Krewetki gotowane", "Krewetki", 99.0, 85.0, 20.0, 0.0, 0.5, false)
+            toRaw("Brokuły gotowane", "Brokuły", 35.0, 34.0, 2.8, 7.0, 0.4, false)
+            toRaw("Kalafior gotowany", "Kalafior", 23.0, 25.0, 1.9, 5.0, 0.3, false)
+            toRaw("Buraki gotowane", "Buraki", 44.0, 43.0, 1.6, 10.0, 0.2, false)
+            toRaw("Brukselka gotowana", "Brukselka", 36.0, 43.0, 3.4, 9.0, 0.3, false)
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -503,7 +549,8 @@ object AppModule {
                 MIGRATION_59_60,
                 MIGRATION_60_61,
                 MIGRATION_61_62,
-                MIGRATION_62_63
+                MIGRATION_62_63,
+                MIGRATION_63_64
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

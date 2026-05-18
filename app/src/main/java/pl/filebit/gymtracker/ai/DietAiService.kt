@@ -706,6 +706,9 @@ class DietAiService @Inject constructor(
             append("   - productName **DOKŁADNIE** z listy (literówki = błąd)\n")
             append("   - JAJA: używaj WYŁĄCZNIE produktu 'Jajko całe'. ZAKAZ użycia 'Białko jaja' — ")
             append("użytkownik nie rozdziela jajek na białka i żółtka. Jajeczny posiłek = całe jaja.\n")
+            append("   - GRAMATURA SUROWA: ryż, makaron, kasza w bazie są SUROWE (gramatura ")
+            append("przed ugotowaniem). Podawaj grams surowe; w `instructions` napisz ")
+            append("ugotowanie (np. 'ugotuj 80 g ryżu wg opakowania').\n")
             append("   - Każdy krok instrukcji w nowej linii (numerowany 1. 2. 3.)\n\n")
 
             append("6. **AUTOWERYFIKACJA — przed wysłaniem JSON sprawdź:**\n")

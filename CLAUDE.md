@@ -35,6 +35,20 @@ DB version: aktualna **v=5**. Używamy `fallbackToDestructiveMigration(true)` (M
 - Material3 ExperimentalApi opt-in globalny (compiler flag)
 - Foreground service rest timer: type **specialUse** + `FOREGROUND_SERVICE_SPECIAL_USE` permission
 
+## Dieta — produkty żywnościowe (ŻELAZNA ZASADA)
+
+Wszystkie produkty (`FoodProduct`, `food_products.json`, importy) — **ZAWSZE wartości
+dla produktu SUROWEGO (przed ugotowaniem)**: nazwa, kcal i makra per 100 g surowego.
+
+- **NIGDY** nie dodawać produktów „gotowanych" (np. „Ryż basmati gotowany").
+- Ryż/makaron/kasza: ~3× różnica wagi i kalorii surowe vs gotowane — błąd tu psuje
+  listę zakupów (kupiłbyś 3× za dużo) i instrukcje przepisów.
+- Powód: lista zakupów = co kupić (surowe), a przepis gotujesz z wagi surowej.
+  Gdyby produkt był „gotowany", gramatura w przepisie i zakupach traci sens.
+- Przy zmianie istniejących produktów w `food_products.json` — seeder dodaje tylko
+  brakujące (po nazwie), więc istniejące instalacje wymagają migracji Room
+  (patrz `MIGRATION_63_64` — konwersja w miejscu + przeliczenie gramów wpisów).
+
 ## Build
 
 CI: GitHub Actions `.github/workflows/build.yml` — debug APK przy każdym pushu na main.

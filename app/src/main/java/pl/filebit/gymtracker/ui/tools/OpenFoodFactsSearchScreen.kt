@@ -105,6 +105,14 @@ fun OpenFoodFactsSearchScreen(
                     )
                 )
 
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    "Ryż, makaron, kasza — wybieraj wartości SUROWE (przed " +
+                        "ugotowaniem), nie wersje gotowane. Tak liczy cała aplikacja.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = DarkOnSurfaceVariant
+                )
+
                 // === KATEGORIE — szybkie wyszukiwanie produktów "pod siłownię" ===
                 Spacer(Modifier.height(10.dp))
                 Text(
