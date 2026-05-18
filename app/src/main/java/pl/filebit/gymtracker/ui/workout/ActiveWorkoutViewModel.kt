@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import pl.filebit.gymtracker.data.entity.Exercise
@@ -111,14 +112,20 @@ class ActiveWorkoutViewModel @Inject constructor(
             if (workout == null) {
                 flowOf(ActiveWorkoutUiState(workout = null, profile = profile))
             } else {
-                workoutRepo.observeSetsForWorkout(workout.id).let { setsFlow ->
-                    kotlinx.coroutines.flow.flow {
-                        setsFlow.collect { sets ->
-                            val groups = sets.groupBy { it.exerciseId }
+                // v1.29.13: obserwujemy też tabelę ćwiczeń — gdy seeder naprawi
+                // metricType (np. cardio WEIGHT_REPS -> DISTANCE_DURATION),
+                // trwający trening od razu przeładuje układ, bez restartu.
+                combine(
+                    workoutRepo.observeSetsForWorkout(workout.id),
+                    exerciseRepo.observeAll()
+                ) { sets, exercises -> sets to exercises }
+                    .map { (sets, allExercises) ->
+                        val exById = allExercises.associateBy { it.id }
+                        val groups = sets.groupBy { it.exerciseId }
                                 .toList()
                                 .sortedBy { (_, list) -> list.minOf { it.orderIndex } }
                                 .mapNotNull { (exerciseId, list) ->
-                                    val ex = exerciseRepo.get(exerciseId) ?: return@mapNotNull null
+                                    val ex = exById[exerciseId] ?: return@mapNotNull null
                                     val last = workoutRepo.getLastSetForExercise(exerciseId)
                                     val prevSession = statsRepo.getPreviousSessionForExercise(
                                         exerciseId, excludeWorkoutId = workout.id
@@ -151,10 +158,8 @@ class ActiveWorkoutViewModel @Inject constructor(
                                         suggestion = suggestion
                                     )
                                 }
-                            emit(ActiveWorkoutUiState(workout = workout, groups = groups, profile = profile))
-                        }
+                        ActiveWorkoutUiState(workout = workout, groups = groups, profile = profile)
                     }
-                }
             }
         }
         .stateIn(

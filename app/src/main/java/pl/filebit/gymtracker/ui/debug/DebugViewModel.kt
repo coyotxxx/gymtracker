@@ -335,7 +335,7 @@ class DebugViewModel @Inject constructor(
             runCatching {
                 helper.query(
                     """
-                    SELECT pe.id, pe.exerciseId, e.name, pe.dayOfWeek, pe.orderIndex
+                    SELECT pe.id, pe.exerciseId, e.name, e.metricType, pe.dayOfWeek, pe.orderIndex
                     FROM plan_exercises pe
                     LEFT JOIN exercises e ON e.id = pe.exerciseId
                     WHERE pe.planId = ?
@@ -347,12 +347,13 @@ class DebugViewModel @Inject constructor(
                         val peId = c.getLong(0)
                         val exId = c.getLong(1)
                         val exName = c.getString(2) ?: "?"
-                        val day = c.getInt(3)
-                        val pos = c.getInt(4)
+                        val metricType = c.getString(3) ?: "?"
+                        val day = c.getInt(4)
+                        val pos = c.getInt(5)
                         val sets = buildJsonArray {
                             runCatching {
                                 helper.query(
-                                    "SELECT setNumber, reps, weightKg FROM plan_exercise_sets WHERE planExerciseId = ? ORDER BY setNumber",
+                                    "SELECT setNumber, reps, weightKg, durationSec, distanceM FROM plan_exercise_sets WHERE planExerciseId = ? ORDER BY setNumber",
                                     arrayOf(peId)
                                 ).use { sc ->
                                     while (sc.moveToNext()) {
@@ -360,6 +361,8 @@ class DebugViewModel @Inject constructor(
                                             put("setNumber", sc.getInt(0))
                                             put("reps", sc.getInt(1))
                                             put("weightKg", sc.getDouble(2))
+                                            put("durationSec", if (sc.isNull(3)) null else sc.getInt(3))
+                                            put("distanceM", if (sc.isNull(4)) null else sc.getDouble(4))
                                         })
                                     }
                                 }
@@ -369,6 +372,7 @@ class DebugViewModel @Inject constructor(
                             put("planExerciseId", peId)
                             put("exerciseId", exId)
                             put("name", exName)
+                            put("metricType", metricType)
                             put("dayOfWeek", day)
                             put("position", pos)
                             put("sets", sets)
