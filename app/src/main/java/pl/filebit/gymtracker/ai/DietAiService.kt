@@ -43,8 +43,8 @@ data class AiMealRecipe(
      */
     val device: String? = null,
     /**
-     * v1.29.2: tagi urządzeń, na których danie DA SIĘ sensownie zrobić —
-     * sterują chipami przełącznika w przepisie. Patelnia/klasyk zawsze możliwe.
+     * v1.29.2: tagi urządzeń wg AI. v1.29.7: chipy przepisu pokazują urządzenia
+     * usera niezależnie od tego pola — zostaje dla zgodności starych snapshotów.
      */
     val applicableDevices: List<String> = emptyList(),
     /**
@@ -516,10 +516,6 @@ class DietAiService @Inject constructor(
                 realDevices.forEach { d ->
                     append("- ${d.label}: ${d.promptHint} → w polu device wpisz \"${d.tag}\"\n")
                 }
-                append("Dla KAŻDEGO posiłku podaj też `applicableDevices` — listę tagów ")
-                append("urządzeń z powyższych, na których to danie DA SIĘ sensownie zrobić ")
-                append("(pomijając patelnię — klasyk jest zawsze możliwy). Sałatka, koktajl, ")
-                append("kanapka czy twaróg na zimno → applicableDevices: [].\n")
             }
 
             append("\n=== SLOTY (z godzinami i kaloriami) ===\n")
@@ -748,7 +744,6 @@ class DietAiService @Inject constructor(
                   "carbsG": 60,
                   "fatG": 8,
                   "device": null,
-                  "applicableDevices": [],
                   "alternatives": [
                     {
                       "name": "Jajecznica na maśle z pieczywem razowym",

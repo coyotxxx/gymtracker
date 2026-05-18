@@ -936,7 +936,22 @@ class DietViewModel @Inject constructor(
             runCatching { carryOverPlanIfEmpty(_selectedDateMs.value) }
             // v1.27.5: przywróć przepisy/alternatywy ostatniego planu (przyciski Inna/Przepis).
             runCatching { restorePlanRecipes() }
+            // v1.29.7: tagi urządzeń usera — chipy przepisu pokazują je zawsze.
+            runCatching { refreshCookingDevices() }
         }
+    }
+
+    /**
+     * v1.29.7: tagi urządzeń kuchennych usera (bez patelni). Chipy przełącznika
+     * w przepisie pokazują je ZAWSZE — niezależnie od decyzji AI per danie.
+     */
+    private val _cookingDeviceTags = MutableStateFlow<List<String>>(emptyList())
+    val cookingDeviceTags: StateFlow<List<String>> = _cookingDeviceTags.asStateFlow()
+
+    private fun refreshCookingDevices() {
+        _cookingDeviceTags.value = dietPrefs.loadMealStylePreferences().devices
+            .filter { it != pl.filebit.gymtracker.ai.CookingDevice.PAN_OVEN }
+            .map { it.tag }
     }
 
     /**
@@ -1170,6 +1185,7 @@ class DietViewModel @Inject constructor(
         if (_aiPlanState.value is AiPlanState.Loading) return
         // v1.27.1: zapamiętaj wybór stylu — następnym razem okno startuje z nim
         dietPrefs.saveMealStylePreferences(stylePrefs)
+        refreshCookingDevices()  // v1.29.7: urządzenia mogły się zmienić
         _aiPlanState.value = AiPlanState.Loading
         viewModelScope.launch {
             val config = dietPrefs.load()
