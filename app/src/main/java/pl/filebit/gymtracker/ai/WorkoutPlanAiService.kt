@@ -150,9 +150,11 @@ class WorkoutPlanAiService @Inject constructor(
         val masterCtx = runCatching { contextBuilder.build() }.getOrNull()
 
         // === POOL DOSTĘPNYCH ĆWICZEŃ ===
+        // v1.29.9: separator " | " zamiast nawiasu — wiele nazw ćwiczeń samo
+        // zawiera (...), przez co AI wklejało dopisek partia/sprzęt do nazwy.
         val poolListing = pool.joinToString("\n") { ex ->
             val fav = if (ex.isFavorite) " ⭐" else ""
-            "- ${ex.name}$fav (partia: ${ex.primaryMuscle.name}, sprzęt: ${ex.equipment.name})"
+            "- ${ex.name}$fav | ${ex.primaryMuscle.name} | ${ex.equipment.name}"
         }
 
         val (defaultSets, defaultReps, defaultRest) = setsConfigFor(profile.goal)
@@ -249,10 +251,18 @@ class WorkoutPlanAiService @Inject constructor(
                 append("ale plan MUSI dalej pokrywać całe ciało (split bez luk).\n")
             }
 
-            // v1.26.0: UWAGI UŻYTKOWNIKA — wolny tekst od usera (cardio, czas, kontuzje, preferencje)
-            // AI ma je UWZGLĘDNIĆ jeśli sensowne, ale NIE NARUSZAĆ zasad metodologicznych.
+            // v1.26.0: UWAGI UŻYTKOWNIKA — wolny tekst od usera (cardio, czas, kontuzje).
+            // v1.29.9: traktowane jako WYMÓG nadrzędny. Wcześniej były „sugestią" obok
+            // sztywnych reguł (5-6 ćwiczeń/dzień, split) — gdy user pisał „tylko bieżnia",
+            // AI i tak dorzucało ćwiczenia, żeby spełnić strukturę.
             if (!userNotes.isNullOrBlank()) {
-                append("\n=== UWAGI UŻYTKOWNIKA (zastosuj jeśli sensowne — w innym wypadku zignoruj) ===\n")
+                append("\n=== ⚠ UWAGI UŻYTKOWNIKA — WYMÓG (nie sugestia) ===\n")
+                append("User świadomie to napisał. Zastosuj BEZWZGLĘDNIE — ma ")
+                append("PIERWSZEŃSTWO przed regułami struktury powyżej (liczba ćwiczeń ")
+                append("na dzień, split, pokrycie partii). Gdy user chce wyłącznie ")
+                append("jeden rodzaj treningu (np. samą bieżnię, samo cardio) — ")
+                append("generuj WYŁĄCZNIE to, choćby wyszło 1 ćwiczenie dziennie. ")
+                append("NIE dokładaj nic spoza tego, o co user prosi.\n")
                 append(userNotes.trim().take(800))
                 append("\n")
             }
@@ -260,7 +270,8 @@ class WorkoutPlanAiService @Inject constructor(
             // POOL ĆWICZEŃ
             append("\n=== DOSTĘPNE ĆWICZENIA (TYLKO Z TEJ LISTY) ===\n")
             append("⭐ = ulubione użytkownika (PREFERUJ jak najczęściej)\n")
-            append("Format: nazwa (partia, sprzęt)\n\n")
+            append("Format: nazwa | partia | sprzęt. W JSON jako `name` wpisz TYLKO ")
+            append("część PRZED pierwszym `|` (bez ⭐, bez partii, bez sprzętu).\n\n")
             append(poolListing)
 
             // OUTPUT
@@ -377,8 +388,15 @@ class WorkoutPlanAiService @Inject constructor(
         for (day in parsed.days.take(daysPerWeek)) {
             val names = mutableListOf<String>()
             for (aiEx in day.exercises) {
-                val match = byNameLower[aiEx.name.trim().lowercase()]
-                    ?: byNameLower.entries.firstOrNull { (k, _) -> k.contains(aiEx.name.lowercase()) || aiEx.name.lowercase().contains(k) }?.value
+                // v1.29.9: defensywnie — gdy AI wklei dopisek formatu do nazwy
+                // ("Mountain climbers | CARDIO | ..." lub "... (partia: ...)").
+                val cleanName = aiEx.name
+                    .substringBefore(" |")
+                    .substringBefore("(partia:")
+                    .replace("⭐", "")
+                    .trim()
+                val match = byNameLower[cleanName.lowercase()]
+                    ?: byNameLower.entries.firstOrNull { (k, _) -> k.contains(cleanName.lowercase()) || cleanName.lowercase().contains(k) }?.value
                 if (match == null) {
                     skipped++
                     warnings += "Pominięto '${aiEx.name}' — brak w bazie"
