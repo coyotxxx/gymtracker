@@ -40,11 +40,16 @@ class MealPrepPlanner @Inject constructor(
     suspend fun generate(
         fromMs: Long,
         toMs: Long,
-        planName: String
+        planName: String,
+        dayMultiplier: Int = 1
     ): Long {
         require(toMs > fromMs) { "toMs musi być > fromMs" }
 
-        val entries = mealDao.getForDateRange(fromMs, toMs)
+        // Meal prep mnoży dzienny plan ×N: czytamy posiłki TYLKO z pierwszego dnia
+        // (aktywny plan) i skalujemy gramy/porcje przez dayMultiplier.
+        val mult = dayMultiplier.coerceAtLeast(1)
+        val oneDayMs = 24L * 60 * 60 * 1000
+        val entries = mealDao.getForDateRange(fromMs, fromMs + oneDayMs)
         if (entries.isEmpty()) {
             // Pusty plan (UI pokaże "brak posiłków w zakresie")
             return planDao.replaceWithSinglePlan(
@@ -88,8 +93,9 @@ class MealPrepPlanner @Inject constructor(
 
         for ((pid, agg) in sortedProducts) {
             val product = products[pid] ?: continue
-            val totalG = (agg.grams * 1.05).toInt() // +5% margin (odparowanie/utrata przy gotowaniu)
-            val portionCount = agg.portions.size
+            // ×mult — gotowanie na N dni; +5% margin (odparowanie/utrata przy gotowaniu)
+            val totalG = (agg.grams * mult * 1.05).toInt()
+            val portionCount = agg.portions.size * mult
             containers += agg.portions
 
             val (action, minutes, desc) = stepFor(product, totalG, portionCount)
@@ -105,24 +111,27 @@ class MealPrepPlanner @Inject constructor(
             totalMinutes += minutes
         }
 
+        // Liczba pojemników = sloty z 1 dnia × liczba dni
+        val containerCount = containers.size * mult
+
         // Krok końcowy: porcjowanie do pojemników
-        if (containers.size > 1) {
+        if (containerCount > 1) {
             steps += MealPrepStep(
                 planId = 0L,
                 orderIdx = orderIdx++,
                 action = MealPrepActionType.PORTION,
-                description = "Podziel wszystko na ${containers.size} pojemników i schowaj do lodówki/zamrażarki",
-                estimatedMinutes = 5 + containers.size,
+                description = "Podziel wszystko na $containerCount pojemników i schowaj do lodówki/zamrażarki",
+                estimatedMinutes = 5 + containerCount,
                 productNames = "",
                 gramsTotal = 0.0
             )
-            totalMinutes += 5 + containers.size
+            totalMinutes += 5 + containerCount
         }
 
         return planDao.replaceWithSinglePlan(
             MealPrepPlan(
                 name = planName, fromDateMs = fromMs, toDateMs = toMs,
-                containersCount = containers.size,
+                containersCount = containerCount,
                 totalMinutes = totalMinutes
             ),
             steps

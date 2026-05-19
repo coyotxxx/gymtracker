@@ -93,7 +93,7 @@ fun MealPrepScreen(
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
                             Text(
-                                "Wygeneruj plan z posiłków zalogowanych w przyszłości:",
+                                "Bierze dzisiejszy plan posiłków i mnoży przez liczbę dni:",
                                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                                 color = DarkOnSurface
                             )
@@ -105,7 +105,8 @@ fun MealPrepScreen(
                             }
                             Spacer(Modifier.height(6.dp))
                             Text(
-                                "💡 Wskazówka: dodaj posiłki na 2-3 dni do przodu (np. wygeneruj plan AI lub skopiuj posiłki), potem wygeneruj meal prep.",
+                                "💡 Wskazówka: zaplanuj posiłki na dziś (np. wygeneruj plan diety AI), " +
+                                    "potem wybierz na ile dni gotujesz — gramatury pomnożą się same.",
                                 style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
                                 color = DarkOnSurfaceVariant
                             )
@@ -198,7 +199,7 @@ fun MealPrepScreen(
                                 contentAlignment = Alignment.Center
                             ) {
                                 Text(
-                                    "Brak posiłków zalogowanych w wybranym zakresie. Dodaj posiłki na przyszłe dni i wygeneruj ponownie.",
+                                    "Brak posiłków na dziś. Zaplanuj dzisiejsze posiłki w zakładce Dieta i wygeneruj ponownie.",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = DarkOnSurfaceVariant
                                 )

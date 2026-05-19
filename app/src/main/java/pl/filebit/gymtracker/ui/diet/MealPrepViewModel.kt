@@ -63,7 +63,7 @@ class MealPrepViewModel @Inject constructor(
                 cal.add(Calendar.DAY_OF_YEAR, daysAhead)
                 val to = cal.timeInMillis
                 val name = "Gotowanie na zapas na $daysAhead ${if (daysAhead == 1) "dzień" else "dni"}"
-                val newId = planner.generate(from, to, name)
+                val newId = planner.generate(from, to, name, dayMultiplier = daysAhead)
                 _plan.value = dao.getById(newId)
                 _statusMessage.value = "Plan wygenerowany"
             } finally {
