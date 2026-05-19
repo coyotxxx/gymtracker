@@ -93,5 +93,12 @@ data class Exercise(
     /** Sprzęt z ExerciseDB (CSV, np. "barbell" — bogatsze niż enum Equipment). */
     val equipmentDbCsv: String? = null,
     /** Partia ciała z ExerciseDB (np. "chest", "neck"). */
-    val bodyPartCsv: String? = null
+    val bodyPartCsv: String? = null,
+    /**
+     * v1.29.25 — dodatkowe terminy wyszukiwania (synonimy, nazwa w drugim
+     * języku, częste literówki). Wyszukiwarka matchuje `name LIKE ? OR
+     * searchAliases LIKE ?` — pozwala znaleźć „Martwy ciąg klasyczny"
+     * wpisując „deadlift".
+     */
+    val searchAliases: String? = null
 )

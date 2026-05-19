@@ -531,6 +531,13 @@ object AppModule {
         }
     }
 
+    // v1.29.25: searchAliases — dodatkowe terminy wyszukiwania (PL↔EN).
+    internal val MIGRATION_64_65 = object : Migration(64, 65) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE exercises ADD COLUMN searchAliases TEXT")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -550,7 +557,8 @@ object AppModule {
                 MIGRATION_60_61,
                 MIGRATION_61_62,
                 MIGRATION_62_63,
-                MIGRATION_63_64
+                MIGRATION_63_64,
+                MIGRATION_64_65
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych

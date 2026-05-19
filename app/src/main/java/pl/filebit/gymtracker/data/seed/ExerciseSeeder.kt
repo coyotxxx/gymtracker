@@ -65,6 +65,24 @@ class ExerciseSeeder(
         // v1.29.15: po naprawie metricType — przepisz reps → durationSec w planach
         // cardio (start treningu pokaże wtedy zaplanowany czas).
         runCatching { dao.fixCardioPlanSetDurations() }
+
+        // v1.29.25: aliasy wyszukiwania (PL↔EN). Idempotentne — UPDATE po nazwie.
+        runCatching { applySearchAliases() }
+    }
+
+    /**
+     * v1.29.25 — czyta `exercise_aliases.json` (mapa polska_nazwa → angielskie
+     * synonimy) i aktualizuje pole `searchAliases` istniejących ćwiczeń.
+     * Pozwala znaleźć ćwiczenie po angielskim terminie ("deadlift" → "Martwy ciąg").
+     */
+    private suspend fun applySearchAliases() {
+        val raw = context.assets.open("exercise_aliases.json").bufferedReader().use { it.readText() }
+        val map = json.decodeFromString<Map<String, String>>(raw)
+        for ((name, aliases) in map) {
+            if (name.startsWith("_")) continue          // _comment itp.
+            if (aliases.isBlank()) continue
+            runCatching { dao.setSearchAliasesByName(name, aliases) }
+        }
     }
 
     /**

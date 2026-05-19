@@ -20,6 +20,7 @@ interface ExerciseDao {
     @Query("""
         SELECT * FROM exercises
         WHERE name LIKE '%' || :query || '%' COLLATE NOCASE
+           OR searchAliases LIKE '%' || :query || '%' COLLATE NOCASE
         ORDER BY name COLLATE NOCASE ASC
     """)
     fun search(query: String): Flow<List<Exercise>>
@@ -50,6 +51,13 @@ interface ExerciseDao {
 
     @Query("UPDATE exercises SET isFavorite = 1 WHERE LOWER(name) = LOWER(:name)")
     suspend fun markFavoriteByName(name: String): Int
+
+    /**
+     * v1.29.25: ustawia searchAliases dla ćwiczenia po nazwie. Idempotentne —
+     * nadpisuje wartość, więc seeder może bezpiecznie odpalać przy każdym starcie.
+     */
+    @Query("UPDATE exercises SET searchAliases = :aliases WHERE LOWER(name) = LOWER(:name)")
+    suspend fun setSearchAliasesByName(name: String, aliases: String): Int
 
     /**
      * v1.29.10: ćwiczenia cardio, które przez starszą ścieżkę dodawania trafiły
