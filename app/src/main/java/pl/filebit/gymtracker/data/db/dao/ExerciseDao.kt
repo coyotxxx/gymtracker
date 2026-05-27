@@ -17,11 +17,34 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises WHERE primaryMuscle = :muscle ORDER BY name COLLATE NOCASE ASC")
     fun observeByMuscle(muscle: MuscleGroup): Flow<List<Exercise>>
 
+    /**
+     * v2.3.0 — ranked search:
+     *  - 100: exact slug match (np. "barbell-bench-press")
+     *  - 90: exact name/namePl (case-insensitive)
+     *  - 70: name/namePl starts-with (np. "wyciskanie")
+     *  - 50: searchIndex zawiera token (cale słowo, " q " padding)
+     *  - 30: searchIndex zawiera fragment (substring)
+     *  - 0: brak match → wyfiltrowane przez WHERE
+     *
+     * Pole searchIndex jest pre-computowane (PL+EN+ASCII fold+tokeny+slang).
+     */
     @Query("""
         SELECT * FROM exercises
-        WHERE name LIKE '%' || :query || '%' COLLATE NOCASE
-           OR searchAliases LIKE '%' || :query || '%' COLLATE NOCASE
-        ORDER BY name COLLATE NOCASE ASC
+        WHERE searchIndex LIKE '%' || LOWER(:query) || '%'
+           OR LOWER(name) LIKE '%' || LOWER(:query) || '%'
+           OR LOWER(namePl) LIKE '%' || LOWER(:query) || '%'
+        ORDER BY
+          CASE
+            WHEN LOWER(slug) = LOWER(:query) THEN 100
+            WHEN LOWER(name) = LOWER(:query) OR LOWER(namePl) = LOWER(:query) THEN 90
+            WHEN LOWER(name) LIKE LOWER(:query) || '%' OR LOWER(namePl) LIKE LOWER(:query) || '%' THEN 70
+            WHEN searchIndex LIKE '% ' || LOWER(:query) || ' %' THEN 50
+            WHEN searchIndex LIKE '%' || LOWER(:query) || '%' THEN 30
+            ELSE 10
+          END DESC,
+          isFavorite DESC,
+          name COLLATE NOCASE ASC
+        LIMIT 50
     """)
     fun search(query: String): Flow<List<Exercise>>
 

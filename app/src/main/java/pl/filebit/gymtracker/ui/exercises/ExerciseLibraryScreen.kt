@@ -32,6 +32,8 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
@@ -206,6 +208,7 @@ fun ExerciseLibraryScreen(
                 val pr = prs[ex.id]
                 ExerciseRow(
                     name = ex.name,
+                    queryHighlight = query,
                     summary = shortSummary(ex.description),
                     muscle = ex.primaryMuscle.displayName(),
                     equipment = ex.equipment.displayName(),
@@ -258,9 +261,13 @@ private fun ExerciseRow(
     prMaxWeight: Double?,
     prReps: Int?,
     isFavorite: Boolean = false,
+    queryHighlight: String = "",
     onClick: () -> Unit,
     onToggleFavorite: (() -> Unit)? = null
 ) {
+    val highlightedName = remember(name, queryHighlight) {
+        buildHighlightedName(name, queryHighlight)
+    }
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
@@ -293,7 +300,7 @@ private fun ExerciseRow(
             // Środek: nazwa + tagi
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    name,
+                    highlightedName,
                     style = MaterialTheme.typography.titleSmall.copy(
                         fontSize = 14.sp,
                         fontWeight = FontWeight.ExtraBold
@@ -382,3 +389,37 @@ private fun ExerciseRow(
 
 // v1.20.2 — usunięto duplikaty MuscleGroup.displayName() i Equipment.displayName();
 // używamy method z entity/Exercise.kt (enum class).
+
+/**
+ * v2.3.0 — buduje AnnotatedString z pogrubionym + akcentowanym fragmentem
+ * pasujacym do query. Insensitive na wielkosc liter i diakrytyki (ASCII fold).
+ */
+private fun buildHighlightedName(name: String, query: String): androidx.compose.ui.text.AnnotatedString {
+    if (query.isBlank()) return androidx.compose.ui.text.AnnotatedString(name)
+
+    val combiningMarks = Regex("[\\u0300-\\u036f]+")
+    fun fold(s: String): String = java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+        .replace(combiningMarks, "")
+        .replace("ł", "l").replace("Ł", "L")
+        .lowercase()
+
+    val nameFolded = fold(name)
+    val queryFolded = fold(query)
+    val idx = nameFolded.indexOf(queryFolded)
+    if (idx < 0) return androidx.compose.ui.text.AnnotatedString(name)
+
+    return androidx.compose.ui.text.buildAnnotatedString {
+        append(name.substring(0, idx))
+        withStyle(
+            androidx.compose.ui.text.SpanStyle(
+                color = AccentOrange,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.ExtraBold
+            )
+        ) {
+            append(name.substring(idx, (idx + query.length).coerceAtMost(name.length)))
+        }
+        if (idx + query.length < name.length) {
+            append(name.substring(idx + query.length))
+        }
+    }
+}

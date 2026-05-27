@@ -255,7 +255,8 @@ class CanonicalExerciseBootstrap @Inject constructor(
             progressionToJson = jsonArrayString(progressionTo),
             alternativesJson = jsonArrayString(alternatives),
             tagsJson = jsonArrayString(tags),
-            equipmentOptionalCsv = equipmentOptional.joinToString(",").ifBlank { null }
+            equipmentOptionalCsv = equipmentOptional.joinToString(",").ifBlank { null },
+            searchIndex = buildSearchIndex(this)
         )
     }
 
@@ -332,9 +333,103 @@ class CanonicalExerciseBootstrap @Inject constructor(
     }
 
     private fun buildSearchAliases(c: CanonicalExercise): String {
-        // Łączymy: EN name + EN aliases + PL aliases (do search'a w UI)
-        val parts = (listOf(c.name) + c.aliases + c.aliasesPl).filter { it.isNotBlank() }
+        // v2.3.0: searchAliases zostaje dla backward compat (UI moze go pokazac),
+        // ale faktyczny silnik wyszukiwania uzywa pola searchIndex (zob. buildSearchIndex).
+        val parts = (listOf(c.name) + c.aliases + listOf(c.namePl) + c.aliasesPl)
+            .filter { it.isNotBlank() }
+            .distinct()
         return parts.joinToString(", ")
+    }
+
+    /**
+     * v2.3.0 — kompleksowy pre-computowany index do wyszukiwania.
+     *
+     * Zawiera (połączone spacjami, lowercase):
+     *  1. Cale frazy: name (EN), namePl (PL), wszystkie aliases EN+PL
+     *  2. ASCII-fold wersje PL (bez diakrytykow + bez ł) - "podciaganie" matchuje "podciąganie"
+     *  3. Pojedyncze tokeny (kazde slowo z fraz) - "sztanga" matchuje "Przysiad ze sztangą"
+     *  4. Synonimy potoczne dla niektórych grup mięśni i sprzętu
+     *
+     * Format: " token1 token2 fraza1 fraza2 fold1 fold2 " (space-padded żeby LIKE '% q%' znajdował początek)
+     */
+    private fun buildSearchIndex(c: CanonicalExercise): String {
+        val combiningMarks = Regex("[\\u0300-\\u036f]+")
+        fun asciiFold(s: String): String = java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+            .replace(combiningMarks, "")
+            .replace("ł", "l").replace("Ł", "L")
+            .lowercase()
+
+        // 1. Wszystkie cale frazy (PL+EN+aliases)
+        val phrases = (listOf(c.name, c.namePl) + c.aliases + c.aliasesPl)
+            .filter { it.isNotBlank() }
+            .map { it.lowercase() }
+            .toMutableSet()
+
+        // 2. ASCII-fold dla wszystkich (bez polskich znakow)
+        val folded = phrases.map { asciiFold(it) }.toSet()
+        phrases.addAll(folded)
+
+        // 3. Tokeny: kazde slowo osobno (min 2 znaki)
+        val tokens = mutableSetOf<String>()
+        phrases.forEach { phrase ->
+            phrase.split(Regex("[\\s\\-\\(\\)/,]+"))
+                .filter { it.length >= 2 }
+                .forEach { tokens.add(it) }
+        }
+
+        // 4. Synonimy potoczne (Polish gym slang)
+        addColloquialSynonyms(c, tokens)
+
+        // Połącz: tokeny + frazy. Padding spacjami żeby LIKE '% q%' znajdował początek tokenu.
+        val all = (phrases + tokens).distinct().sorted()
+        return " " + all.joinToString(" ") + " "
+    }
+
+    private fun addColloquialSynonyms(c: CanonicalExercise, tokens: MutableSet<String>) {
+        // Mapowanie potocznych slangów polskich na canonical mięśnie
+        val musclePl = c.musclesPrimary.joinToString(" ").lowercase()
+        if ("pectoralis" in musclePl || c.musclesPrimary.contains("pectoralis_major")) {
+            tokens.addAll(listOf("klata", "klatka", "klate"))
+        }
+        if ("biceps_brachii" in musclePl) {
+            tokens.addAll(listOf("bicek", "biceps", "bicepsa"))
+        }
+        if ("triceps" in musclePl) {
+            tokens.addAll(listOf("tricek", "tris"))
+        }
+        if ("deltoid" in musclePl) {
+            tokens.addAll(listOf("bark", "barki", "delty"))
+        }
+        if ("latissimus" in musclePl || "trapezius" in musclePl) {
+            tokens.addAll(listOf("plecy", "lata", "lats"))
+        }
+        if ("quadriceps" in musclePl) {
+            tokens.addAll(listOf("uda", "czworogłowe", "czworoglowe", "quady"))
+        }
+        if ("hamstrings" in musclePl || "biceps_femoris" in musclePl) {
+            tokens.addAll(listOf("dwuglowe", "dwugłowe", "ham", "hamy"))
+        }
+        if ("gluteus" in musclePl) {
+            tokens.addAll(listOf("posladki", "pośladki", "pośladek", "tylek"))
+        }
+        if ("gastrocnemius" in musclePl || "soleus" in musclePl) {
+            tokens.addAll(listOf("lydki", "łydki", "calf"))
+        }
+        if ("rectus_abdominis" in musclePl || "obliques" in musclePl) {
+            tokens.addAll(listOf("brzuch", "abs", "core", "kaloryfer"))
+        }
+
+        // Equipment slang
+        c.equipmentRequired.forEach { eq ->
+            when (eq.lowercase()) {
+                "barbell" -> tokens.addAll(listOf("sztanga", "gryf"))
+                "dumbbell" -> tokens.addAll(listOf("hantle", "hantel", "sztangielki"))
+                "cable" -> tokens.addAll(listOf("wyciag", "wyciąg", "linka"))
+                "machine" -> tokens.addAll(listOf("maszyna"))
+                "bodyweight" -> tokens.addAll(listOf("bw", "ciezar ciala", "ciężar ciała"))
+                "kettlebell" -> tokens.addAll(listOf("kettel", "odważnik"))
+            }
+        }
     }
 
     // ---------- HISTORY REIMPORT (po Migration 65→66) ----------

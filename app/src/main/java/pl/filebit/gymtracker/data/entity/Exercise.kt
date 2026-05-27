@@ -137,5 +137,13 @@ data class Exercise(
     /** Tagi — JSON list. */
     val tagsJson: String? = null,
     /** Sprzęt opcjonalny CSV (np. "mat,bench"). */
-    val equipmentOptionalCsv: String? = null
+    val equipmentOptionalCsv: String? = null,
+
+    /**
+     * v2.3.0 — pre-computowany index do wyszukiwania PL+EN+ASCII-fold+tokeny.
+     * Zawiera: name, namePl, każdy alias EN+PL, ASCII-fold dla PL, tokeny słów.
+     * Pozwala SQLite LIKE jednym query znaleźć ćwiczenie po dowolnej formie wpisu
+     * (np. "podciaganie" znajdzie "Podciąganie nachwytem"). UNIQUE index nie potrzebny.
+     */
+    val searchIndex: String? = null
 )

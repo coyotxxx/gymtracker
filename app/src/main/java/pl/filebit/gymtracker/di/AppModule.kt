@@ -623,6 +623,17 @@ object AppModule {
         }
     }
 
+    /**
+     * v2.3.0 — dodaje kolumne `searchIndex` (pre-computowany index PL+EN+ASCII-fold).
+     * Wartosc wypelni CanonicalExerciseBootstrap przy starcie (idempotent UPDATE).
+     */
+    internal val MIGRATION_66_67 = object : Migration(66, 67) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE exercises ADD COLUMN searchIndex TEXT")
+            db.execSQL("CREATE INDEX IF NOT EXISTS index_exercises_searchIndex ON exercises(searchIndex)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -644,7 +655,8 @@ object AppModule {
                 MIGRATION_62_63,
                 MIGRATION_63_64,
                 MIGRATION_64_65,
-                MIGRATION_65_66
+                MIGRATION_65_66,
+                MIGRATION_66_67
             )
             // v1.13.0 (audit 2026-05-10): USUNIĘTO fallbackToDestructiveMigration(true).
             // Wcześniej każda zmiana schematu bez explicite migracji = silent WIPE danych
