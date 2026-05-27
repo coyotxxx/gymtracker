@@ -138,7 +138,7 @@ fun StrengthStandardsScreen(
                 }
             }
 
-            items(evaluations, key = { it.standard.exerciseNamePrefix }) { ev ->
+            items(evaluations, key = { it.standard.exerciseSlug }) { ev ->
                 EvaluationCard(ev)
             }
         }
@@ -154,7 +154,7 @@ private fun EvaluationCard(ev: StrengthEvaluation) {
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
-                ev.exercise?.name ?: ev.standard.exerciseNamePrefix,
+                ev.exercise?.name ?: pl.filebit.gymtracker.data.strength.StrengthStandards.displayLabel(ev.standard.exerciseSlug),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )

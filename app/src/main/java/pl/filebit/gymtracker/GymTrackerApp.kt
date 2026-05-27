@@ -74,9 +74,19 @@ class GymTrackerApp : Application(), Configuration.Provider, coil3.SingletonImag
         super.onCreate()
         createNotificationChannels()
         appScope.launch {
-            exerciseSeeder.seedIfEmpty()
-            foodProductSeeder.seedIfEmpty()
-            recipeSeeder.seedIfEmpty()
+            // v2.0.0: canonical bootstrap MUSI iść PRZED exerciseSeeder
+            // (seeder.markMacjiejFavorites używa slugów które dopiero canonical wstawia).
+            android.util.Log.i("GymTrackerApp", "before canonicalBootstrap")
+            runCatching { canonicalExerciseBootstrap.bootstrap() }
+                .onFailure { android.util.Log.e("GymTrackerApp", "canonicalBootstrap failed", it) }
+            android.util.Log.i("GymTrackerApp", "before exerciseSeeder.seedIfEmpty")
+            runCatching { exerciseSeeder.seedIfEmpty() }
+                .onFailure { android.util.Log.e("GymTrackerApp", "exerciseSeeder failed", it) }
+            android.util.Log.i("GymTrackerApp", "before foodProductSeeder")
+            runCatching { foodProductSeeder.seedIfEmpty() }
+                .onFailure { android.util.Log.e("GymTrackerApp", "foodProductSeeder failed", it) }
+            runCatching { recipeSeeder.seedIfEmpty() }
+                .onFailure { android.util.Log.e("GymTrackerApp", "recipeSeeder failed", it) }
             // v1.14.1: zunifikowane reschedule (WorkerRescheduler — single source of truth,
             // używane też przez BootCompletedReceiver). Wcześniej logika była zduplikowana.
             workerRescheduler.rescheduleAll(profileRepo.get(), dietPrefs.load())

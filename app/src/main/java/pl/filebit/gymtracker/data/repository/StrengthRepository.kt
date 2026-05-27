@@ -45,9 +45,7 @@ class StrengthRepository @Inject constructor(
         val allExercises = exerciseDao.getAll()
 
         return StrengthStandards.all().map { std ->
-            val ex = allExercises.firstOrNull {
-                it.name.startsWith(std.exerciseNamePrefix, ignoreCase = true)
-            }
+            val ex = allExercises.firstOrNull { it.slug == std.exerciseSlug }
             val best1RM = ex?.let { exercise ->
                 val sets = setDao.getAllForExercise(exercise.id)
                     .filter { it.isCompleted && it.setType != SetType.WARMUP }
@@ -57,10 +55,8 @@ class StrengthRepository @Inject constructor(
             // Pull-up: ratio = (BW + dodany ciężar) / BW; ale w naszym modelu weightKg
             // przy podciąganiu może oznaczać dodany ciężar lub całość. Dla MVP zakładamy
             // że user wpisuje całkowity opór (BW + obciążenie). Jeśli weightKg ~ 0 → BW.
-            val effective1RM = when {
-                std.exerciseNamePrefix.startsWith("Podciąganie", ignoreCase = true) -> {
-                    if (best1RM <= 0.0) bw else best1RM
-                }
+            val effective1RM = when (std.exerciseSlug) {
+                StrengthStandards.SLUG_PULL_UP -> if (best1RM <= 0.0) bw else best1RM
                 else -> best1RM
             }
             val hasData = bw > 0.0 && effective1RM > 0.0

@@ -5,6 +5,7 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.add
 import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
@@ -56,7 +57,10 @@ class AiToolHandler @Inject constructor(
     private val quarterlyDao: QuarterlyRollupDao,
     // v1.15.0: propose_periodization_action tool
     private val mesoDao: pl.filebit.gymtracker.data.db.dao.TrainingMesocycleDao,
-    private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao
+    private val pendingDecisionDao: pl.filebit.gymtracker.data.db.dao.PendingPeriodizationDecisionDao,
+    // v2.0.0: canonical exercise-db tools
+    private val exerciseDao: pl.filebit.gymtracker.data.db.dao.ExerciseDao,
+    private val userProfileDao: pl.filebit.gymtracker.data.db.dao.UserProfileDao
 ) {
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     private val dfTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
@@ -103,6 +107,12 @@ class AiToolHandler @Inject constructor(
             "transition_phase" -> execTransitionPhase(input)
             "schedule_next_cycle" -> execScheduleNextCycle(input)
             "get_pending_decisions" -> execGetPendingDecisions(input)
+            // v2.0.0 — canonical
+            "find_exercises_by_criteria" -> execFindExercisesByCriteria(input)
+            "get_exercise_alternatives" -> execGetExerciseAlternatives(input)
+            "get_exercise_progression" -> execGetExerciseProgression(input)
+            "get_exercise_prerequisites" -> execGetExercisePrerequisites(input)
+            "find_safe_exercises_for_user" -> execFindSafeExercisesForUser(input)
             else -> "{\"error\":\"Unknown tool: $toolName\"}"
         }
 
@@ -630,6 +640,189 @@ class AiToolHandler @Inject constructor(
                         m.thighCm?.let { put("thighCm", it.roundTo(1)) }
                         m.bodyFatPercent?.let { put("bodyFatPercent", it.roundTo(1)) }
                         if (m.notes.isNotBlank()) put("notes", m.notes)
+                    })
+                }
+            }
+        }
+        return result.toString()
+    }
+
+    // ============================================================
+    // v2.0.0 — CANONICAL EXERCISE-DB TOOL HANDLERS
+    // ============================================================
+
+    private suspend fun execFindExercisesByCriteria(input: JsonObject): String {
+        val pattern = input["movement_pattern"]?.jsonPrimitive?.content
+        val levelMax = input["level_max"]?.jsonPrimitive?.content
+        val primaryMuscle = input["primary_muscle"]?.jsonPrimitive?.content
+        val equipment = input["equipment"]?.jsonPrimitive?.content
+        val excludeC = input["exclude_contraindications"]?.let { el ->
+            try {
+                kotlinx.serialization.json.Json.parseToJsonElement(el.toString())
+                    .jsonArray.map { it.jsonPrimitive.content.lowercase() }
+            } catch (_: Throwable) {
+                emptyList()
+            }
+        } ?: emptyList()
+        val limit = input["limit"]?.jsonPrimitive?.content?.toIntOrNull()?.coerceIn(1, 30) ?: 10
+
+        val all = exerciseDao.getAll().filter { it.slug != null }
+        val levelOrder = listOf("BEGINNER", "INTERMEDIATE", "ADVANCED", "ELITE")
+        val maxLevelIdx = levelMax?.let { levelOrder.indexOf(it.uppercase()) } ?: 3
+
+        val filtered = all.filter { ex ->
+            (pattern == null || ex.movementPattern?.name?.equals(pattern, ignoreCase = true) == true) &&
+            (primaryMuscle == null || ex.primaryMuscle.name.equals(primaryMuscle, ignoreCase = true)) &&
+            (equipment == null || ex.equipment.name.equals(equipment, ignoreCase = true)) &&
+            (ex.levelMin?.let { levelOrder.indexOf(it.name) <= maxLevelIdx } ?: true) &&
+            (excludeC.isEmpty() || ex.contraindicationsJson?.let { c ->
+                excludeC.none { cond -> c.lowercase().contains(cond) }
+            } ?: true)
+        }.take(limit)
+
+        val result = buildJsonObject {
+            put("count", filtered.size)
+            putJsonArray("exercises") {
+                filtered.forEach { ex ->
+                    add(buildJsonObject {
+                        put("slug", ex.slug ?: "")
+                        put("namePl", ex.namePl ?: ex.name)
+                        put("name", ex.name)
+                        ex.movementPattern?.let { put("movementPattern", it.name) }
+                        ex.primaryMuscle.let { put("primaryMuscle", it.name) }
+                        ex.equipment.let { put("equipment", it.name) }
+                        ex.levelMin?.let { put("levelMin", it.name) }
+                        ex.difficulty1To10?.let { put("difficulty1To10", it) }
+                    })
+                }
+            }
+        }
+        return result.toString()
+    }
+
+    private suspend fun execGetExerciseAlternatives(input: JsonObject): String =
+        execGetExerciseRelated(input, "alternativesJson", "alternatives")
+
+    private suspend fun execGetExerciseProgression(input: JsonObject): String =
+        execGetExerciseRelated(input, "progressionToJson", "progression_to")
+
+    private suspend fun execGetExercisePrerequisites(input: JsonObject): String =
+        execGetExerciseRelated(input, "prerequisitesJson", "prerequisites")
+
+    private suspend fun execGetExerciseRelated(input: JsonObject, jsonField: String, resultKey: String): String {
+        val slug = input["slug"]?.jsonPrimitive?.content
+            ?: return """{"error":"missing slug"}"""
+        val ex = exerciseDao.findBySlug(slug)
+            ?: return """{"error":"exercise_not_found","slug":"$slug"}"""
+
+        val jsonStr = when (jsonField) {
+            "alternativesJson" -> ex.alternativesJson
+            "progressionToJson" -> ex.progressionToJson
+            "prerequisitesJson" -> ex.prerequisitesJson
+            else -> null
+        } ?: return """{"slug":"$slug","$resultKey":[]}"""
+
+        val slugs = try {
+            kotlinx.serialization.json.Json.parseToJsonElement(jsonStr).jsonArray
+                .map { it.jsonPrimitive.content }
+        } catch (_: Throwable) {
+            emptyList()
+        }
+
+        val resolved = mutableListOf<JsonObject>()
+        for (s in slugs) {
+            val e = exerciseDao.findBySlug(s) ?: continue
+            resolved.add(buildJsonObject {
+                put("slug", e.slug ?: "")
+                put("namePl", e.namePl ?: e.name)
+                put("name", e.name)
+                e.difficulty1To10?.let { put("difficulty1To10", it) }
+                e.levelMin?.let { put("levelMin", it.name) }
+            })
+        }
+
+        return buildJsonObject {
+            put("slug", slug)
+            put("namePl", ex.namePl ?: ex.name)
+            putJsonArray(resultKey) { resolved.forEach { add(it) } }
+        }.toString()
+    }
+
+    private suspend fun execFindSafeExercisesForUser(input: JsonObject): String {
+        val slugs = try {
+            input["slugs_to_check"]?.let { el ->
+                kotlinx.serialization.json.Json.parseToJsonElement(el.toString())
+                    .jsonArray.map { it.jsonPrimitive.content }
+            } ?: emptyList()
+        } catch (_: Throwable) {
+            emptyList()
+        }
+        if (slugs.isEmpty()) return """{"error":"slugs_to_check is empty"}"""
+        if (slugs.size > 20) return """{"error":"max 20 slugs","got":${slugs.size}}"""
+
+        val userConditions = try {
+            input["user_medical_conditions"]?.let { el ->
+                kotlinx.serialization.json.Json.parseToJsonElement(el.toString())
+                    .jsonArray.map { it.jsonPrimitive.content.lowercase() }
+            }
+        } catch (_: Throwable) {
+            null
+        } ?: run {
+            // Fallback: pobierz z UserProfile
+            val profile = userProfileDao.get()
+            profile?.medicalConditions?.split(",")?.map { it.trim().lowercase() }?.filter { it.isNotBlank() } ?: emptyList()
+        }
+
+        // Pre-resolve (suspend) wszystkie slugi i ich check status
+        data class SafetyCheckResult(
+            val slug: String,
+            val namePl: String?,
+            val status: String,
+            val matched: List<String>,
+            val contraHint: String?
+        )
+        val checks = mutableListOf<SafetyCheckResult>()
+        for (slug in slugs.take(20)) {
+            val ex = exerciseDao.findBySlug(slug)
+            if (ex == null) {
+                checks.add(SafetyCheckResult(slug, null, "not_found", emptyList(), null))
+                continue
+            }
+            val contraJson = ex.contraindicationsJson ?: "[]"
+            var matched = emptyList<String>()
+            var status = "safe"
+            if (userConditions.isNotEmpty() && contraJson.isNotBlank() && contraJson != "[]") {
+                val low = contraJson.lowercase()
+                matched = userConditions.filter { low.contains(it) }
+                if (matched.isNotEmpty()) {
+                    status = when {
+                        low.contains("\"severity\":\"avoid\"") -> "avoid"
+                        low.contains("\"severity\":\"modify\"") -> "modify"
+                        low.contains("\"severity\":\"caution\"") -> "caution"
+                        else -> "caution"
+                    }
+                }
+            }
+            checks.add(SafetyCheckResult(
+                slug, ex.namePl ?: ex.name, status, matched,
+                if (status != "safe") contraJson.take(800) else null
+            ))
+        }
+
+        val result = buildJsonObject {
+            put("user_conditions", userConditions.toString())
+            putJsonArray("results") {
+                checks.forEach { c ->
+                    add(buildJsonObject {
+                        put("slug", c.slug)
+                        c.namePl?.let { put("namePl", it) }
+                        put("status", c.status)
+                        if (c.matched.isNotEmpty()) {
+                            putJsonArray("matched_conditions") {
+                                c.matched.forEach { add(it) }
+                            }
+                        }
+                        c.contraHint?.let { put("contraindications_hint", it) }
                     })
                 }
             }

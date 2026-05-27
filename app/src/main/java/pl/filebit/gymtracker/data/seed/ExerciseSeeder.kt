@@ -36,100 +36,101 @@ class ExerciseSeeder(
      * z `assets/exercises_canonical/{slug}.json`.
      */
     suspend fun seedIfEmpty() {
+        android.util.Log.i("ExerciseSeeder", "seedIfEmpty start, exercise count=${runCatching { dao.count() }.getOrDefault(-1)}")
         markMacjiejFavorites()
         runCatching { dao.fixCardioMetricType() }
         runCatching { dao.fixCardioPlanSetDurations() }
+        val favCount = runCatching {
+            // policz po wszystkim
+            dao.getFavorites().size
+        }.getOrDefault(-1)
+        android.util.Log.i("ExerciseSeeder", "seedIfEmpty done, favorites=$favCount")
     }
 
     /**
-     * Lista nazw ćwiczeń z xlsx Macieja (3.5 roku planów). UPDATE setting isFavorite=1
-     * dla każdej nazwy która istnieje w bazie. Idempotentne.
+     * v2.0.0 — lista 55 canonical slugów odpowiadających ćwiczeniom z xlsx Macieja
+     * (3.5 roku planów). UPDATE isFavorite=1 dla każdego slugu który istnieje w bazie.
+     * Deterministyczny (slug-based zamiast LIKE po PL nazwie) i idempotentny.
      */
     private suspend fun markMacjiejFavorites() {
-        val canonical = listOf(
+        android.util.Log.i("ExerciseSeeder", "markMacjiejFavorites start")
+        val canonicalSlugs = listOf(
             // Big lifts
-            "Przysiad ze sztangą (back squat)",
-            "Wyciskanie sztangi leżąc",
-            "Martwy ciąg klasyczny",
-            "Wiosłowanie sztangą",
-            "Podciąganie nachwytem",
-            "Podciąganie podchwytem (chin-up)",
-            "Podciąganie z obciążeniem",
-            "Podciąganie szerokim chwytem",
-            "Wyciskanie żołnierskie (OHP)",
-            "Wyciskanie sztangi - skos dodatni",
-
+            "barbell-back-squat",
+            "barbell-bench-press",
+            "barbell-deadlift",
+            "barbell-bent-over-row",
+            "pull-up",
+            "chin-up",
+            "weighted-pull-up",
+            "wide-grip-pull-up",
+            "barbell-overhead-press",
+            "barbell-incline-bench-press",
             // Klatka pomocnicze
-            "Wyciskanie sztangielek leżąc",
-            "Wyciskanie sztangielek - skos dodatni",
-            "Pompki na poręczach (dipy)",
-            "Dipy z obciążeniem",
-            "Pompki",
-            "Pompki diamentowe",
-            "Pompki na barki (pike push-up)",
-            "Pompki w podporze tyłem (bench dips)",
-            "Pompki incline (dłonie na podwyższeniu)",
-            "Pompki decline (stopy na podwyższeniu)",
-            "Pompki z odrywaniem dłoni",
-            "Rozpiętki sztangielkami",
-            "Rozpiętki sztangielkami skos dodatni",
-            "Pull-over sztangielką",
-
+            "dumbbell-bench-press",
+            "dumbbell-incline-bench-press",
+            "triceps-dip",
+            "weighted-triceps-dip-on-high-parallel-bars",
+            "push-up",
+            "diamond-push-up",
+            "exercise-ball-pike-push-up",
+            "bench-dip-knees-bent",
+            "incline-push-up",
+            "decline-push-up",
+            "clap-push-up",
+            "dumbbell-fly",
+            "dumbbell-incline-fly",
+            "barbell-pullover",
             // Plecy / barki pomocnicze
-            "Wiosłowanie sztangielką (jednorącz)",
-            "Szrugsy ze sztangą",
-            "Szrugsy ze sztangielkami",
-            "Wyciskanie sztangielek nad głowę",
-            "Wyciskanie zza karku",
-            "Wznosy bokiem (lateral raise)",
-            "Wznosy przodem (front raise)",
-            "Odwrotne rozpiętki (rear delt fly)",
-            "Podciąganie sztangi pod brodę (upright row)",
-
+            "dumbbell-bent-over-row",
+            "barbell-shrug",
+            "dumbbell-shrug",
+            "barbell-seated-overhead-press",
+            "barbell-seated-behind-head-military-press",
+            "dumbbell-lateral-raise",
+            "barbell-front-raise",
+            "band-standing-rear-delt-row",
+            "barbell-upright-row",
             // Biceps / Triceps
-            "Uginanie ramion ze sztangą",
-            "Uginanie sztangielek (na biceps)",
-            "Uginanie młotkowe",
-            "Uginanie ramion z gryfem łamanym (EZ curl)",
-            "Wyciskanie francuskie ze sztangą",
-            "Skull crusher EZ (francuskie wyciskanie EZ)",
-            "Francuskie wyciskanie hantlami",
-            "Prostowanie ramion zza głowy sztangielką",
-
+            "barbell-curl",
+            "dumbbell-biceps-curl",
+            "dumbbell-cross-body-hammer-curl",
+            "ez-barbell-curl",
+            "barbell-lying-triceps-extension-skull-crusher",
+            "dumbbell-standing-triceps-extension",
             // Nogi
-            "Bułgarski przysiad",
-            "Wykrok ze sztangielkami",
-            "Wykrok kroczący (walking lunge)",
-            "Good morning sztangą",
-            "Hip thrust (wypchnięcie biodrami)",
-            "Wspięcia na palce stojąc (calf raise)",
-            "Wspięcia na palce jednonóż",
-            "Wstawanie z krzesła jednonóż",
-
+            "barbell-lunge",
+            "walking-lunge",
+            "barbell-good-morning",
+            "barbell-glute-bridge",
+            "standing-calves",
             // Core
-            "Brzuszki",
-            "Plank (deska)",
-            "Side plank (deska boczna)",
-            "Plank z przyciąganiem kolan do klatki",
-            "Wznosy nóg w zwisie",
-            "Toes to bar (T2B, palce do drążka)",
-            "Spięcia na wyciągu (cable crunch)",
-            "Russian twist (skręty rosyjskie)",
-            "Martwy robak (dead bug)",
-            "Świeca gimnastyczna",
-            "Syzyfki (kopnięcia w bok)",
-
+            "crunch-floor",
+            "side-bridge-v-2",
+            "hanging-leg-raise",
+            "hanging-pike",
+            "russian-twist",
+            "dead-bug",
             // Cardio
-            "Bieżnia (bieg)",
-            "Bieżnia interwały (HIIT)",
-            "Rower stacjonarny",
-            "Skakanka",
-            "Burpees (przysiad-pompka-skok)"
+            "jump-rope",
+            "burpee",
+            "walking-on-incline-treadmill",
+            "stationary-bike-run-v-3",
+            "walk-elliptical-cross-trainer"
         )
 
-        canonical.forEach { name ->
-            runCatching { dao.markFavoriteByName(name) }
+        var matched = 0
+        var failed = 0
+        canonicalSlugs.forEach { slug ->
+            val r = runCatching { dao.markFavoriteBySlug(slug) }
+            if (r.isSuccess) {
+                if ((r.getOrNull() ?: 0) > 0) matched++
+            } else {
+                failed++
+                android.util.Log.w("ExerciseSeeder", "markFavoriteBySlug($slug) failed: ${r.exceptionOrNull()?.message}")
+            }
         }
+        android.util.Log.i("ExerciseSeeder", "markMacjiejFavorites: matched=$matched/${canonicalSlugs.size}, failed=$failed")
     }
 
     /**

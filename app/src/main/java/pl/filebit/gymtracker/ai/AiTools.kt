@@ -36,6 +36,12 @@ object AiTools {
         add(toolTransitionPhase())
         add(toolScheduleNextCycle())
         add(toolGetPendingDecisions())
+        // v2.0.0 — canonical exercise-db tools
+        add(toolFindExercisesByCriteria())
+        add(toolGetExerciseAlternatives())
+        add(toolGetExerciseProgression())
+        add(toolGetExercisePrerequisites())
+        add(toolFindSafeExercisesForUser())
     }
 
     /** Lista nazw narzędzi (do walidacji w handlerze). */
@@ -50,7 +56,13 @@ object AiTools {
         "propose_deload",
         "transition_phase",
         "schedule_next_cycle",
-        "get_pending_decisions"
+        "get_pending_decisions",
+        // v2.0.0 — canonical
+        "find_exercises_by_criteria",
+        "get_exercise_alternatives",
+        "get_exercise_progression",
+        "get_exercise_prerequisites",
+        "find_safe_exercises_for_user"
     )
 
     /**
@@ -378,6 +390,131 @@ object AiTools {
                 }
             }
             putJsonArray("required") { add("weeks_back") }
+        }
+    }
+
+    // ============================================================
+    // v2.0.0 — CANONICAL EXERCISE-DB TOOLS
+    // ============================================================
+
+    private fun toolFindExercisesByCriteria(): JsonObject = buildJsonObject {
+        put("name", "find_exercises_by_criteria")
+        put("description", """
+            Wyszukaj ćwiczenia z canonical exercise-db po kryteriach.
+            Użyj gdy planujesz trening lub szukasz alternatyw — np. "ćwiczenia push horizontal dla intermediate
+            bez przeciwwskazań na ból dolnych pleców z dostępem do hantli". Zwraca listę slugów + namePl + krótki
+            opis. Maksymalnie 30 wyników.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("movement_pattern") {
+                    put("type", "string")
+                    put("description", "Wzorzec ruchowy: SQUAT, HINGE, LUNGE, PUSH_HORIZONTAL, PUSH_VERTICAL, PULL_HORIZONTAL, PULL_VERTICAL, CARRY, ROTATION, CORE_FLEXION, CORE_EXTENSION, ANTI_EXTENSION, ANTI_ROTATION, ANTI_LATERAL_FLEXION, JUMP, GAIT")
+                }
+                putJsonObject("level_max") {
+                    put("type", "string")
+                    put("description", "Maksymalny poziom min do filtrowania: BEGINNER (tylko początkujące), INTERMEDIATE (≤średnio), ADVANCED, ELITE")
+                }
+                putJsonObject("primary_muscle") {
+                    put("type", "string")
+                    put("description", "Główna grupa mięśniowa (enum): CHEST, BACK, SHOULDERS, BICEPS, TRICEPS, QUADS, HAMSTRINGS, GLUTES, CALVES, CORE, CARDIO, OTHER")
+                }
+                putJsonObject("equipment") {
+                    put("type", "string")
+                    put("description", "Sprzęt (enum): BARBELL, DUMBBELLS, MACHINE, CABLE, BODYWEIGHT, OTHER")
+                }
+                putJsonObject("exclude_contraindications") {
+                    put("type", "array")
+                    putJsonObject("items") { put("type", "string") }
+                    put("description", "Lista przeciwwskazań do wykluczenia (np. ['acute_lower_back_pain', 'shoulder_impingement']). Ćwiczenia mające te kontraindications nie zostaną zwrócone.")
+                }
+                putJsonObject("limit") {
+                    put("type", "integer")
+                    put("description", "Max liczba wyników (1-30, default 10)")
+                }
+            }
+        }
+    }
+
+    private fun toolGetExerciseAlternatives(): JsonObject = buildJsonObject {
+        put("name", "get_exercise_alternatives")
+        put("description", """
+            Zwraca canonical alternatives dla ćwiczenia po slug. Używaj gdy user nie może zrobić ćwiczenia
+            (kontuzja, brak sprzętu, monotonia) i potrzebujesz zamiennika. Zwraca listę slugów + nazwy PL.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("slug") {
+                    put("type", "string")
+                    put("description", "Canonical slug ćwiczenia (np. 'barbell-back-squat')")
+                }
+            }
+            putJsonArray("required") { add("slug") }
+        }
+    }
+
+    private fun toolGetExerciseProgression(): JsonObject = buildJsonObject {
+        put("name", "get_exercise_progression")
+        put("description", """
+            Zwraca cięższe wersje (progression_to) dla ćwiczenia. Użyj gdy user ma stagnację lub gotów na
+            harder variation. Np. progresja "push-up" → "decline-push-up", "weighted-push-up", "one-arm-push-up".
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("slug") {
+                    put("type", "string")
+                    put("description", "Canonical slug ćwiczenia")
+                }
+            }
+            putJsonArray("required") { add("slug") }
+        }
+    }
+
+    private fun toolGetExercisePrerequisites(): JsonObject = buildJsonObject {
+        put("name", "get_exercise_prerequisites")
+        put("description", """
+            Zwraca ćwiczenia, które user powinien opanować PRZED danym ćwiczeniem (prerequisites).
+            Np. dla "muscle-up" prerequisites = ['pull-up', 'triceps-dip']. Użyj zanim zaproponujesz
+            zaawansowane ćwiczenie — sprawdź czy user ma fundamenty.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("slug") {
+                    put("type", "string")
+                    put("description", "Canonical slug ćwiczenia (zaawansowanego)")
+                }
+            }
+            putJsonArray("required") { add("slug") }
+        }
+    }
+
+    private fun toolFindSafeExercisesForUser(): JsonObject = buildJsonObject {
+        put("name", "find_safe_exercises_for_user")
+        put("description", """
+            Sprawdza listę ćwiczeń względem przeciwwskazań usera (z UserProfile.medicalConditions).
+            Zwraca dla każdego ćwiczenia: czy jest safe / wymaga uwagi (caution) / odradzane (avoid),
+            wraz z modification cue z canonical contraindications. Niezbędne PRZED zaproponowaniem
+            planu lub konkretnego ćwiczenia.
+        """.trimIndent())
+        putJsonObject("input_schema") {
+            put("type", "object")
+            putJsonObject("properties") {
+                putJsonObject("slugs_to_check") {
+                    put("type", "array")
+                    putJsonObject("items") { put("type", "string") }
+                    put("description", "Lista canonical slugów ćwiczeń do sprawdzenia (max 20)")
+                }
+                putJsonObject("user_medical_conditions") {
+                    put("type", "array")
+                    putJsonObject("items") { put("type", "string") }
+                    put("description", "Lista warunków medycznych usera (np. ['lower_back_pain', 'shoulder_impingement']). Aplikacja może też wyciągnąć z UserProfile automatycznie jeśli puste.")
+                }
+            }
+            putJsonArray("required") { add("slugs_to_check") }
         }
     }
 }

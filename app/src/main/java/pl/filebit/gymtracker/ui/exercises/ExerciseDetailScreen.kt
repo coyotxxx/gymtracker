@@ -64,7 +64,14 @@ import pl.filebit.gymtracker.ui.theme.DarkOnSurface
 import pl.filebit.gymtracker.ui.theme.DarkOnSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.DarkOutlineSoft
 import pl.filebit.gymtracker.ui.theme.DarkSurface
+import pl.filebit.gymtracker.ui.theme.DarkSurfaceVariant
 import pl.filebit.gymtracker.ui.theme.ErrorRed
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import pl.filebit.gymtracker.ui.theme.ScreenHeader
 import pl.filebit.gymtracker.ui.theme.SuccessGreen
 import pl.filebit.gymtracker.util.formatDate
@@ -102,11 +109,15 @@ fun ExerciseDetailScreen(
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // v1.25.0: GIF animacja wykonania (ExerciseDB CDN)
+            // v2.0.0: GIF animacja wykonania (Cloudflare R2 CDN)
             if (!ex.gifUrl.isNullOrBlank()) {
                 item { ExerciseGifCard(gifUrl = ex.gifUrl) }
             }
-            // v1.25.0: Technika krok po kroku (PL z AI cache, EN fallback)
+            // v2.0.0: chipsy klasyfikacji canonical (movement_pattern, level, difficulty)
+            if (ex.movementPattern != null || ex.levelMin != null || ex.difficulty1To10 != null || ex.category != null) {
+                item { CanonicalMetadataChips(ex) }
+            }
+            // v1.25.0: Technika krok po kroku (PL z canonical, EN fallback)
             if (!ex.instructionsEnJson.isNullOrBlank() || !ex.instructionsPlJson.isNullOrBlank()) {
                 item {
                     ExerciseInstructionsCard(
@@ -116,6 +127,18 @@ fun ExerciseDetailScreen(
                         onTranslate = { vm.translateInstructionsToPl() }
                     )
                 }
+            }
+            // v2.0.0: Wskazówki coachingowe (setup + execution + oddech) z canonical
+            if (!ex.coachingCuesJson.isNullOrBlank() && ex.coachingCuesJson != "{}") {
+                item { CoachingCuesCard(coachingJson = ex.coachingCuesJson) }
+            }
+            // v2.0.0: Najczęstsze błędy z canonical
+            if (!ex.commonFaultsJson.isNullOrBlank() && ex.commonFaultsJson != "[]") {
+                item { CommonFaultsCard(faultsJson = ex.commonFaultsJson) }
+            }
+            // v2.0.0: Przeciwwskazania z canonical
+            if (!ex.contraindicationsJson.isNullOrBlank() && ex.contraindicationsJson != "[]") {
+                item { ContraindicationsCard(contraindicationsJson = ex.contraindicationsJson) }
             }
             // v1.25.0: Mięśnie i sprzęt z ExerciseDB (dokładniejsze niż enum)
             if (!ex.targetMusclesCsv.isNullOrBlank() ||
@@ -900,6 +923,256 @@ private fun ProgressionStatusCard(trend: ExerciseTrend) {
                 )
             }
         }
+    }
+}
+
+// ============================================================
+// v2.0.0 — CANONICAL EXERCISE-DB UI SECTIONS
+// ============================================================
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun CanonicalMetadataChips(ex: pl.filebit.gymtracker.data.entity.Exercise) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface)
+    ) {
+        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                ex.movementPattern?.let { mp ->
+                    MetadataChip("🎯 ${mp.displayName()}")
+                }
+                ex.category?.let { c ->
+                    MetadataChip(c.displayName())
+                }
+                ex.levelMin?.let { l ->
+                    MetadataChip("📊 ${l.displayName()}")
+                }
+                ex.difficulty1To10?.let { d ->
+                    MetadataChip("⚡ ${d}/10")
+                }
+                ex.mechanic?.let { m ->
+                    MetadataChip(m.displayName())
+                }
+                ex.force?.let { f ->
+                    MetadataChip(f.displayName())
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun MetadataChip(label: String) {
+    Box(
+        modifier = Modifier
+            .background(DarkSurfaceVariant, shape = RoundedCornerShape(8.dp))
+            .padding(horizontal = 10.dp, vertical = 6.dp)
+    ) {
+        Text(label, style = MaterialTheme.typography.labelSmall, color = DarkOnSurface)
+    }
+}
+
+/**
+ * v2.0.0 — wskazówki coaching z canonical: setup + execution + oddech.
+ * Parsing tolerujący: jeśli pole nie istnieje albo malformed, pomija sekcję.
+ */
+@Composable
+private fun CoachingCuesCard(coachingJson: String) {
+    val (setupCues, executionCues, breathing) = remember(coachingJson) {
+        parseCoachingCues(coachingJson)
+    }
+    if (setupCues.isEmpty() && executionCues.isEmpty() && breathing.isNullOrBlank()) return
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "WSKAZÓWKI TECHNICZNE",
+                style = MaterialTheme.typography.labelLarge,
+                color = DarkOnSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(8.dp))
+            if (setupCues.isNotEmpty()) {
+                Text(
+                    "Setup",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(Modifier.height(4.dp))
+                setupCues.forEach { cue ->
+                    Text("• $cue", style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+                    Spacer(Modifier.height(2.dp))
+                }
+                Spacer(Modifier.height(8.dp))
+            }
+            if (executionCues.isNotEmpty()) {
+                Text(
+                    "Wykonanie",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(Modifier.height(4.dp))
+                executionCues.forEach { cue ->
+                    Text("• $cue", style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+                    Spacer(Modifier.height(2.dp))
+                }
+                Spacer(Modifier.height(8.dp))
+            }
+            if (!breathing.isNullOrBlank()) {
+                Text(
+                    "Oddech",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(breathing, style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+            }
+        }
+    }
+}
+
+private fun parseCoachingCues(json: String): Triple<List<String>, List<String>, String?> {
+    return try {
+        val root = kotlinx.serialization.json.Json.parseToJsonElement(json).jsonObject
+        val setup = root["setup_cues_pl"]?.jsonArray?.mapNotNull { it.jsonPrimitive.content }
+            ?: root["setup_cues"]?.jsonArray?.mapNotNull { it.jsonPrimitive.content }
+            ?: emptyList()
+        val execution = root["execution_cues_pl"]?.jsonArray?.mapNotNull { it.jsonPrimitive.content }
+            ?: root["execution_cues"]?.jsonArray?.mapNotNull { it.jsonPrimitive.content }
+            ?: emptyList()
+        val breathing = root["breathingPl"]?.jsonPrimitive?.content
+            ?: root["breathing"]?.jsonPrimitive?.content
+        Triple(setup, execution, breathing)
+    } catch (_: Throwable) {
+        Triple(emptyList(), emptyList(), null)
+    }
+}
+
+@Composable
+private fun CommonFaultsCard(faultsJson: String) {
+    val faults = remember(faultsJson) { parseCommonFaults(faultsJson) }
+    if (faults.isEmpty()) return
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "NAJCZĘSTSZE BŁĘDY",
+                style = MaterialTheme.typography.labelLarge,
+                color = DarkOnSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(8.dp))
+            faults.forEachIndexed { idx, fault ->
+                Column {
+                    Text(
+                        "⚠️ ${fault.first}",
+                        style = MaterialTheme.typography.titleSmall,
+                        color = MaterialTheme.colorScheme.error,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Spacer(Modifier.height(2.dp))
+                    Text(
+                        "💡 ${fault.second}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = DarkOnSurface
+                    )
+                }
+                if (idx < faults.size - 1) {
+                    Spacer(Modifier.height(10.dp))
+                }
+            }
+        }
+    }
+}
+
+private fun parseCommonFaults(json: String): List<Pair<String, String>> {
+    return try {
+        kotlinx.serialization.json.Json.parseToJsonElement(json).jsonArray.mapNotNull { el ->
+            val o = el.jsonObject
+            val fault = o["faultPl"]?.jsonPrimitive?.content
+                ?: o["fault"]?.jsonPrimitive?.content
+                ?: return@mapNotNull null
+            val cue = o["cuePl"]?.jsonPrimitive?.content
+                ?: o["cue"]?.jsonPrimitive?.content
+                ?: ""
+            fault to cue
+        }
+    } catch (_: Throwable) {
+        emptyList()
+    }
+}
+
+@Composable
+private fun ContraindicationsCard(contraindicationsJson: String) {
+    val items = remember(contraindicationsJson) { parseContraindications(contraindicationsJson) }
+    if (items.isEmpty()) return
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "PRZECIWWSKAZANIA",
+                style = MaterialTheme.typography.labelLarge,
+                color = DarkOnSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(Modifier.height(8.dp))
+            items.forEachIndexed { idx, (condition, severity, modification) ->
+                val severityEmoji = when (severity.lowercase()) {
+                    "avoid" -> "🚫"
+                    "modify" -> "✏️"
+                    "caution" -> "⚠️"
+                    else -> "ℹ️"
+                }
+                Column {
+                    Text(
+                        "$severityEmoji ${condition.replace("_", " ").replaceFirstChar { it.uppercase() }}",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        color = if (severity == "avoid") MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary
+                    )
+                    if (modification.isNotBlank()) {
+                        Spacer(Modifier.height(2.dp))
+                        Text(modification, style = MaterialTheme.typography.bodyMedium, color = DarkOnSurface)
+                    }
+                }
+                if (idx < items.size - 1) {
+                    Spacer(Modifier.height(10.dp))
+                }
+            }
+        }
+    }
+}
+
+private fun parseContraindications(json: String): List<Triple<String, String, String>> {
+    return try {
+        kotlinx.serialization.json.Json.parseToJsonElement(json).jsonArray.mapNotNull { el ->
+            val o = el.jsonObject
+            val condition = o["condition"]?.jsonPrimitive?.content ?: return@mapNotNull null
+            val severity = o["severity"]?.jsonPrimitive?.content ?: "caution"
+            val modification = o["modificationPl"]?.jsonPrimitive?.content
+                ?: o["modification"]?.jsonPrimitive?.content
+                ?: ""
+            Triple(condition, severity, modification)
+        }
+    } catch (_: Throwable) {
+        emptyList()
     }
 }
 

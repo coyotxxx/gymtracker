@@ -79,7 +79,17 @@ class CanonicalExerciseBootstrap @Inject constructor(
                     exerciseDao.insertAll(listOf(canonical.toEntity(slug = entry.slug)))
                     inserted++
                 } else {
-                    exerciseDao.updateBySlug(canonical.toEntityForUpdate(existing.id, slug = entry.slug))
+                    // Zachowaj user fields (isFavorite, isAvoided, notes, isCustom, metricType) z existing
+                    exerciseDao.updateBySlug(
+                        canonical.toEntityForUpdate(existing.id, slug = entry.slug)
+                            .copy(
+                                isFavorite = existing.isFavorite,
+                                isAvoided = existing.isAvoided,
+                                notes = existing.notes,
+                                isCustom = existing.isCustom,
+                                metricType = existing.metricType
+                            )
+                    )
                     updated++
                 }
             } catch (t: Throwable) {

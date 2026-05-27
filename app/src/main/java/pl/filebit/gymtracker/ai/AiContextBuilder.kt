@@ -268,7 +268,7 @@ class AiContextBuilder @Inject constructor(
             putJsonArray("strength_levels") {
                 strength.filter { it.hasData }.forEach { ev ->
                     add(buildJsonObject {
-                        put("exercise", ev.exercise?.name ?: ev.standard.exerciseNamePrefix)
+                        put("exercise", ev.exercise?.name ?: pl.filebit.gymtracker.data.strength.StrengthStandards.displayLabel(ev.standard.exerciseSlug))
                         put("estimated1RMKg", ev.current1RMKg.roundTo(1))
                         put("ratioPerBodyweight", ev.ratio.roundTo(2))
                         put("level", ev.level.name)
