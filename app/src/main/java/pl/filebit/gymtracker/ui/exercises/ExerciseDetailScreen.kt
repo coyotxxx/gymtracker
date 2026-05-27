@@ -140,6 +140,20 @@ fun ExerciseDetailScreen(
             if (!ex.contraindicationsJson.isNullOrBlank() && ex.contraindicationsJson != "[]") {
                 item { ContraindicationsCard(contraindicationsJson = ex.contraindicationsJson) }
             }
+            // v2.2.0: Powiązane ćwiczenia (prerequisites, progression, alternatives)
+            val hasPrereq = !ex.prerequisitesJson.isNullOrBlank() && ex.prerequisitesJson != "[]"
+            val hasProg = !ex.progressionToJson.isNullOrBlank() && ex.progressionToJson != "[]"
+            val hasAlt = !ex.alternativesJson.isNullOrBlank() && ex.alternativesJson != "[]"
+            if (hasPrereq || hasProg || hasAlt) {
+                item {
+                    RelatedExercisesCard(
+                        prerequisitesJson = ex.prerequisitesJson,
+                        progressionToJson = ex.progressionToJson,
+                        alternativesJson = ex.alternativesJson,
+                        relatedNames = state.relatedExerciseNames
+                    )
+                }
+            }
             // v1.25.0: Mięśnie i sprzęt z ExerciseDB (dokładniejsze niż enum)
             if (!ex.targetMusclesCsv.isNullOrBlank() ||
                 !ex.secondaryMusclesCsv.isNullOrBlank() ||
@@ -1171,6 +1185,87 @@ private fun parseContraindications(json: String): List<Triple<String, String, St
                 ?: ""
             Triple(condition, severity, modification)
         }
+    } catch (_: Throwable) {
+        emptyList()
+    }
+}
+
+/**
+ * v2.2.0 — karta powiązanych ćwiczeń z canonical.
+ */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun RelatedExercisesCard(
+    prerequisitesJson: String?,
+    progressionToJson: String?,
+    alternativesJson: String?,
+    relatedNames: Map<String, String>
+) {
+    val prereq = remember(prerequisitesJson) { parseSlugArray(prerequisitesJson) }
+    val progression = remember(progressionToJson) { parseSlugArray(progressionToJson) }
+    val alternatives = remember(alternativesJson) { parseSlugArray(alternativesJson) }
+
+    if (prereq.isEmpty() && progression.isEmpty() && alternatives.isEmpty()) return
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface)
+    ) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(
+                "POWIĄZANE ĆWICZENIA",
+                style = MaterialTheme.typography.labelLarge,
+                color = DarkOnSurfaceVariant,
+                fontWeight = FontWeight.SemiBold
+            )
+            if (prereq.isNotEmpty()) {
+                RelatedSection("📋 Wymagane wcześniej (prerequisites)", prereq, relatedNames)
+            }
+            if (progression.isNotEmpty()) {
+                RelatedSection("📈 Cięższe wersje (progresja)", progression, relatedNames)
+            }
+            if (alternatives.isNotEmpty()) {
+                RelatedSection("🔁 Alternatywy", alternatives, relatedNames)
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun RelatedSection(title: String, slugs: List<String>, names: Map<String, String>) {
+    Column {
+        Text(
+            title,
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
+            fontWeight = FontWeight.SemiBold
+        )
+        Spacer(Modifier.height(6.dp))
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            slugs.forEach { slug ->
+                val name = names[slug] ?: slug
+                Box(
+                    modifier = Modifier
+                        .background(DarkSurfaceVariant, shape = RoundedCornerShape(8.dp))
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                ) {
+                    Text(name, style = MaterialTheme.typography.labelMedium, color = DarkOnSurface)
+                }
+            }
+        }
+    }
+}
+
+private fun parseSlugArray(json: String?): List<String> {
+    if (json.isNullOrBlank() || json == "[]") return emptyList()
+    return try {
+        kotlinx.serialization.json.Json.parseToJsonElement(json).jsonArray
+            .mapNotNull { it.jsonPrimitive.content }
     } catch (_: Throwable) {
         emptyList()
     }

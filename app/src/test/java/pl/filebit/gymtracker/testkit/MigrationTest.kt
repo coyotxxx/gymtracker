@@ -87,12 +87,12 @@ class MigrationTest {
                 AppModule.MIGRATION_58_59, AppModule.MIGRATION_59_60,
                 AppModule.MIGRATION_60_61, AppModule.MIGRATION_61_62,
                 AppModule.MIGRATION_62_63, AppModule.MIGRATION_63_64,
-                AppModule.MIGRATION_64_65
+                AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66
             )
             .build()
 
     @Test
-    fun `migracja 56 do 65 wykonuje sie i waliduje schemat`() = runBlocking {
+    fun `migracja 56 do 66 wykonuje sie i waliduje schemat`() = runBlocking {
         buildV56Database()
         val db = openWithMigrations()
         // pierwsze zapytanie wymusza otwarcie + migrację + walidację schematu.
@@ -111,7 +111,7 @@ class MigrationTest {
     }
 
     @Test
-    fun `dane wstawione w v56 przezywaja migracje do v65`() = runBlocking {
+    fun `dane wstawione w v56 przezywaja migracje do v66`() = runBlocking {
         buildV56Database()
         // wstaw ćwiczenie do bazy v56 (surowy SQL — kolumny schematu v56)
         val raw = SQLiteDatabase.openDatabase(dbFile.path, null, SQLiteDatabase.OPEN_READWRITE)
@@ -129,21 +129,26 @@ class MigrationTest {
         db.close()
 
         val tr = TraceReport("migration-data-survival")
-            .section("OCENA — zero utraty danych")
+            .section("OCENA — migracja v2.0.0 (Migration 65→66) intencjonalnie wymazuje exercises")
             .kv("ćwiczeń przed migracją (v56)", "1")
-            .kv("ćwiczeń po migracji (v65)", exercises.size.toString())
-            .verdict("dane przetrwały update",
-                if (exercises.size == 1) "OK" else "UTRATA DANYCH",
-                "fallbackToDestructiveMigration usunięty — migracja musi zachować dane")
+            .kv("ćwiczeń po migracji (v66)", exercises.size.toString())
+            .verdict("migracja 65→66 design",
+                if (exercises.size == 0) "OK (canonical-bootstrap reimportuje w runtime)" else "NIESPÓJNE",
+                "Migration 65→66 DELETE FROM exercises po backup historii do _backup_*. " +
+                "CanonicalExerciseBootstrap wstawia 1317 canonical rows po migracji w GymTrackerApp.")
             .emit()
 
-        assertEquals("ćwiczenie przetrwało migrację 56→65", 1, exercises.size)
-        assertEquals("nazwa ćwiczenia zachowana",
-            "Wyciskanie testowe", exercises.first().name)
+        // v2.0.0: Migration 65→66 intencjonalnie kasuje exercises po backup historii
+        // (workout_sets/plan_exercises/goals/training_events do _backup_*).
+        // CanonicalExerciseBootstrap (uruchamiany w GymTrackerApp.onCreate) ładuje
+        // 1317 canonical i reimportuje historię z _backup_* przez fuzzy match.
+        // W tym teście jednostkowym bootstrap NIE działa (tylko czysta Migration Room),
+        // więc exercises po migracji jest puste.
+        assertEquals("exercises pusty po Migration 65→66 (intentional v2.0.0)", 0, exercises.size)
     }
 
     @Test
-    fun `lancuch migracji 49 do 65 jest ciagly`() {
+    fun `lancuch migracji 49 do 66 jest ciagly`() {
         // Room znajduje ścieżkę migracji tylko gdy łańcuch jest ciągły.
         // Brak którejkolwiek migracji = przerwa = destructive fallback/crash.
         val migrations = listOf(
@@ -154,7 +159,7 @@ class MigrationTest {
             AppModule.MIGRATION_57_58, AppModule.MIGRATION_58_59,
             AppModule.MIGRATION_59_60, AppModule.MIGRATION_60_61,
             AppModule.MIGRATION_61_62, AppModule.MIGRATION_62_63,
-            AppModule.MIGRATION_63_64, AppModule.MIGRATION_64_65
+            AppModule.MIGRATION_63_64, AppModule.MIGRATION_64_65, AppModule.MIGRATION_65_66
         )
         var version = 49
         for (m in migrations) {
@@ -164,7 +169,7 @@ class MigrationTest {
                 version + 1, m.endVersion)
             version = m.endVersion
         }
-        assertEquals("łańcuch kończy się na wersji bazy danych", 65, version)
-        assertTrue("16 migracji 49→65", migrations.size == 16)
+        assertEquals("łańcuch kończy się na wersji bazy danych", 66, version)
+        assertTrue("17 migracji 49→66", migrations.size == 17)
     }
 }

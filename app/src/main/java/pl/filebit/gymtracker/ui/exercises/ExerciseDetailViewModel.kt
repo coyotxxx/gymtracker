@@ -25,7 +25,9 @@ data class ExerciseDetailUiState(
     val progression: List<ExerciseProgressionPoint> = emptyList(),
     val history: List<WorkoutSet> = emptyList(),
     val trend: ExerciseTrend? = null,
-    val translating: Boolean = false  // v1.25.0: AI tłumaczy instructionsEn → PL
+    val translating: Boolean = false,  // v1.25.0: AI tłumaczy instructionsEn → PL
+    /** v2.2.0: mapowanie slug → namePl dla powiązanych ćwiczeń (prerequisites/progression/alternatives). */
+    val relatedExerciseNames: Map<String, String> = emptyMap()
 )
 
 @HiltViewModel
@@ -137,15 +139,40 @@ class ExerciseDetailViewModel @Inject constructor(
                 ex?.metricType == pl.filebit.gymtracker.data.entity.MetricType.DURATION
             val trend = if (isCardio) null
             else runCatching { stagnationAnalyzer.analyzeOne(exerciseId) }.getOrNull()
+            // v2.2.0: resolve nazwy powiązanych ćwiczeń (prerequisites/progression/alternatives)
+            val relatedNames = resolveRelatedNames(ex)
             _state.value = ExerciseDetailUiState(
                 loading = false,
                 exercise = ex,
                 pr = pr,
                 progression = progression,
                 history = history,
-                trend = trend
+                trend = trend,
+                relatedExerciseNames = relatedNames
             )
         }
+    }
+
+    private suspend fun resolveRelatedNames(ex: Exercise?): Map<String, String> {
+        if (ex == null) return emptyMap()
+        val allSlugs = mutableSetOf<String>()
+        for (jsonStr in listOf(ex.prerequisitesJson, ex.progressionToJson, ex.alternativesJson)) {
+            if (jsonStr.isNullOrBlank() || jsonStr == "[]") continue
+            runCatching {
+                val arr = kotlinx.serialization.json.Json.parseToJsonElement(jsonStr)
+                    as? kotlinx.serialization.json.JsonArray ?: return@runCatching
+                arr.forEach { el ->
+                    (el as? kotlinx.serialization.json.JsonPrimitive)?.content?.let { allSlugs.add(it) }
+                }
+            }
+        }
+        val result = mutableMapOf<String, String>()
+        for (slug in allSlugs) {
+            exerciseDao.findBySlug(slug)?.let { e ->
+                result[slug] = e.namePl ?: e.name
+            }
+        }
+        return result
     }
 
     fun saveNotes(notes: String) {

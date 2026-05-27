@@ -150,8 +150,9 @@ class PlanListViewModel @Inject constructor(
             )
             for (day in template.days) {
                 day.exercises.forEachIndexed { idx, te ->
-                    // znajdź ćwiczenie po nazwie; jeśli nie ma — utwórz custom
-                    val ex = exerciseRepo.findByName(te.exerciseName) ?: run {
+                    // v2.2.0 — najpierw szukamy po slug (canonical), potem fallback po nazwie
+                    val ex = te.exerciseSlug?.let { exerciseRepo.findBySlug(it) }
+                        ?: exerciseRepo.findByName(te.exerciseName) ?: run {
                         val newId = exerciseRepo.upsert(
                             pl.filebit.gymtracker.data.entity.Exercise(
                                 name = te.exerciseName,

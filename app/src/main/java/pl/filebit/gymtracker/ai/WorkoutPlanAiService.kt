@@ -299,7 +299,7 @@ class WorkoutPlanAiService @Inject constructor(
                   "muscleGroups": ["CHEST","SHOULDERS","TRICEPS"],
                   "exercises": [
                     {
-                      "name": "Wyciskanie sztangi leżąc",
+                      "name": "Wyciskanie sztangi na ławce poziomej",
                       "movementType": "COMPOUND",
                       "sets": 4,
                       "repsMin": 6,
@@ -308,7 +308,7 @@ class WorkoutPlanAiService @Inject constructor(
                       "notes": "Główne — pierwsze, świeże siły"
                     },
                     {
-                      "name": "Wznosy bokiem (lateral raise)",
+                      "name": "Wznosy bokiem z hantlami",
                       "movementType": "ISOLATION",
                       "sets": 3,
                       "repsMin": 12,
@@ -317,7 +317,7 @@ class WorkoutPlanAiService @Inject constructor(
                       "notes": ""
                     },
                     {
-                      "name": "Bieżnia (bieg)",
+                      "name": "Chodzenie na bieżni z nachyleniem",
                       "movementType": "ACCESSORY",
                       "sets": 1,
                       "durationMin": 25,

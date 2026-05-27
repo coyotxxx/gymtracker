@@ -24,7 +24,10 @@ data class TemplateExercise(
     val sets: Int,
     val reps: Int,
     val restSeconds: Int? = null
-)
+) {
+    /** v2.2.0 — canonical slug resolved z mapy (lub null jeśli brak). */
+    val exerciseSlug: String? get() = PlanTemplates.resolveSlug(exerciseName)
+}
 
 enum class PlanGoalCategory(val labelPl: String, val emoji: String) {
     BEGINNER("Początkujący", "🌱"),
@@ -1031,4 +1034,96 @@ object PlanTemplates {
 
     fun byCategory(): Map<PlanGoalCategory, List<PlanTemplate>> =
         all.groupBy { it.category }
+
+    /**
+     * v2.2.0 — mapowanie nazw PL z templates na canonical slug.
+     * Pozwala PlanListViewModel.createFromTemplate najpierw szukać po slug
+     * (deterministyczny, niezależny od name PL z canonical), z fallback na name.
+     * Pokrywa 80/83 unique exerciseName z templates. Pozostałe 3
+     * (Dragon flag, Frog pump, Hollow body hold) → fallback create-custom.
+     */
+    fun resolveSlug(exerciseName: String): String? = NAME_TO_SLUG[exerciseName]
+
+    private val NAME_TO_SLUG = mapOf(
+        "Australian pull-up (inverted row)" to "barbell-incline-row",
+        "Battle ropes" to "battling-ropes",
+        "Bieżnia (bieg)" to "walking-on-incline-treadmill",
+        "Bieżnia interwały (HIIT)" to "walking-on-incline-treadmill",
+        "Bird dog" to "power-point-plank",
+        "Box jumps (skoki na skrzynię)" to "star-jump-male",
+        "Brzuszki" to "crunch-floor",
+        "Burpees" to "burpee",
+        "Bułgarski przysiad" to "dumbbell-single-leg-split-squat",
+        "Cable pull-through (przeciąganie z wyciągu)" to "cable-pull-through-with-rope",
+        "Face pull" to "cable-rear-delt-row-with-rope",
+        "Glute bridge" to "barbell-glute-bridge",
+        "Glute kickback wyciągiem" to "cable-standing-hip-extension",
+        "Goblet squat" to "dumbbell-goblet-squat",
+        "Good morning sztangą" to "barbell-good-morning",
+        "Hack squat (maszyna hack)" to "barbell-hack-squat",
+        "Hip abduction (odwodzenie)" to "side-hip-abduction",
+        "Hip thrust jednonóż" to "barbell-glute-bridge",
+        "Hip thrust" to "barbell-glute-bridge",
+        "Jumping lunges (skok wykrok)" to "scissor-jumps-male",
+        "L-sit" to "l-sit-on-floor",
+        "Lat pulldown młotkowy" to "cable-lateral-pulldown-with-rope-attachment",
+        "Martwy ciąg klasyczny" to "barbell-deadlift",
+        "Martwy ciąg rumuński" to "barbell-romanian-deadlift",
+        "Medicine ball slam" to "medicine-ball-overhead-slam",
+        "Mountain climbers" to "mountain-climber",
+        "Nordic curl (uginanie nordyckie)" to "self-assisted-inverse-leg-curl",
+        "Odwrotne rozpiętki (rear delt fly)" to "band-reverse-fly",
+        "Pallof press" to "band-horizontal-pallof-press",
+        "Pause squat (przysiad z pauzą)" to "barbell-back-squat",
+        "Pec deck (rozpiętki maszyną)" to "lever-seated-fly",
+        "Pistol squat" to "single-leg-squat-pistol",
+        "Plank (deska)" to "front-plank-with-twist",
+        "Podciąganie nachwytem" to "pull-up",
+        "Podciąganie podchwytem (chin-up)" to "chin-up",
+        "Pompki diamentowe" to "diamond-push-up",
+        "Pompki na poręczach (dipy)" to "triceps-dip",
+        "Pompki plyometryczne" to "clap-push-up",
+        "Pompki" to "push-up",
+        "Prostowanie nóg (leg extension)" to "lever-leg-extension",
+        "Prostowanie ramion na wyciągu drążkiem" to "cable-pushdown",
+        "Przysiad przedni (front squat)" to "barbell-front-squat",
+        "Przysiad ze sztangą (back squat)" to "barbell-back-squat",
+        "Pull-over sztangielką" to "barbell-pullover",
+        "Reverse pec deck" to "lever-seated-reverse-fly",
+        "Rozpiętki na bramie - środkowe" to "cable-middle-fly",
+        "Rozpiętki sztangielkami" to "dumbbell-fly",
+        "Russian twist" to "russian-twist",
+        "Side plank (deska boczna)" to "side-bridge-v-2",
+        "Skakanka" to "jump-rope",
+        "Skull crusher EZ" to "barbell-lying-triceps-extension-skull-crusher",
+        "Sprint biegowy" to "wind-sprints",
+        "Suwnica (leg press)" to "sled-45-leg-press",
+        "Suwnica szeroko (sumo leg press)" to "sled-45-leg-press",
+        "Szrugsy ze sztangielkami" to "dumbbell-shrug",
+        "Uginanie młotkowe" to "dumbbell-cross-body-hammer-curl",
+        "Uginanie na modlitewniku ze sztangą" to "barbell-preacher-curl",
+        "Uginanie na wyciągu drążkiem prostym" to "cable-curl",
+        "Uginanie nóg leżąc (leg curl)" to "lever-lying-leg-curl",
+        "Uginanie ramion ze sztangą" to "barbell-curl",
+        "Wiosłowanie T-bar" to "barbell-bent-over-row",
+        "Wiosłowanie na wyciągu siedząc" to "cable-seated-row",
+        "Wiosłowanie sztangielką (jednorącz)" to "dumbbell-bent-over-row",
+        "Wiosłowanie sztangą" to "barbell-bent-over-row",
+        "Wioślarz (rowing)" to "stationary-bike-run-v-3",
+        "Wspięcia na palce jednonóż" to "band-single-leg-calf-raise",
+        "Wspięcia na palce siedząc" to "lever-seated-calf-raise",
+        "Wspięcia na palce stojąc (calf raise)" to "standing-calves",
+        "Wyciskanie francuskie ze sztangą" to "barbell-lying-triceps-extension-skull-crusher",
+        "Wyciskanie sztangi - skos dodatni" to "barbell-incline-bench-press",
+        "Wyciskanie sztangi leżąc" to "barbell-bench-press",
+        "Wyciskanie sztangielek - skos dodatni" to "dumbbell-incline-bench-press",
+        "Wyciskanie sztangielek leżąc" to "dumbbell-bench-press",
+        "Wyciskanie sztangielek nad głowę" to "dumbbell-seated-shoulder-press",
+        "Wyciskanie żołnierskie (OHP)" to "barbell-overhead-press",
+        "Wykrok kroczący (walking lunge)" to "walking-lunge",
+        "Wykrok ze sztangielkami" to "barbell-lunge",
+        "Wznosy bokiem (lateral raise)" to "dumbbell-lateral-raise",
+        "Wznosy nóg w zwisie" to "hanging-leg-raise",
+        "Ściąganie drążka wyciągu (lat pulldown)" to "cable-pulldown"
+    )
 }

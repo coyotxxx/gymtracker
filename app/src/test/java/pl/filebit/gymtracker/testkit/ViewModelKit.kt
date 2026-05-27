@@ -226,7 +226,8 @@ class ViewModelKit(val db: AppDatabase, val context: Context) {
     val aiToolHandler = AiToolHandler(
         statsCacheService, db.bodyMeasurementDao(), db.trainingEventDao(),
         db.weeklyRollupDao(), db.monthlyRollupDao(), db.quarterlyRollupDao(),
-        db.trainingMesocycleDao(), db.pendingPeriodizationDecisionDao()
+        db.trainingMesocycleDao(), db.pendingPeriodizationDecisionDao(),
+        db.exerciseDao(), db.userProfileDao()
     )
     val weeklyReportService = WeeklyReportService(
         aiClient, aiPrefs, db.workoutDao(), db.workoutSetDao(), db.exerciseDao(),

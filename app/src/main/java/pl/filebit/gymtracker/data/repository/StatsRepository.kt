@@ -1326,8 +1326,18 @@ fun computeMuscleEngagementFromSnapshot(
         for (s in sets) {
             val ex = snapshot.exerciseForSet(s) ?: continue
             val vol = s.reps * s.weightKg
-            val (v, c) = perMuscle.getOrDefault(ex.primaryMuscle, 0.0 to 0)
-            perMuscle[ex.primaryMuscle] = (v + vol) to (c + 1)
+            // v2.2.0: ważone udziały per mięsień z canonical muscleIntensityJson
+            // (P10 = 100%, S7 = 70%, T4 = 40%). Fallback: cały volume w primaryMuscle.
+            val muscleShares = muscleSharesFromCanonical(ex.muscleIntensityJson)
+            if (muscleShares.isEmpty()) {
+                val (v, c) = perMuscle.getOrDefault(ex.primaryMuscle, 0.0 to 0)
+                perMuscle[ex.primaryMuscle] = (v + vol) to (c + 1)
+            } else {
+                muscleShares.forEach { (group, share) ->
+                    val (v, c) = perMuscle.getOrDefault(group, 0.0 to 0)
+                    perMuscle[group] = (v + vol * share) to (c + 1)
+                }
+            }
         }
     }
 
@@ -1591,4 +1601,58 @@ fun computeNewPRsFromSnapshot(
         }
     }
     return results
+}
+
+// v2.2.0 canonical muscle intensity helpers
+fun muscleSharesFromCanonical(json: String?): Map<pl.filebit.gymtracker.data.entity.MuscleGroup, Double> {
+    if (json.isNullOrBlank() || json == "{}") return emptyMap()
+    return try {
+        val obj = kotlinx.serialization.json.Json.parseToJsonElement(json) as? kotlinx.serialization.json.JsonObject
+            ?: return emptyMap()
+        val raw = mutableMapOf<pl.filebit.gymtracker.data.entity.MuscleGroup, Double>()
+        for ((muscle, intensity) in obj.entries) {
+            val intensityStr = (intensity as? kotlinx.serialization.json.JsonPrimitive)?.content ?: continue
+            val ratio = parseCanonicalIntensity(intensityStr)
+            val group = canonicalMuscleToGroup(muscle) ?: continue
+            raw[group] = (raw[group] ?: 0.0) + ratio
+        }
+        val sum = raw.values.sum()
+        if (sum <= 0) emptyMap() else raw.mapValues { it.value / sum }
+    } catch (_: Throwable) {
+        emptyMap()
+    }
+}
+
+private fun parseCanonicalIntensity(s: String): Double {
+    val grade = s.firstOrNull()?.uppercaseChar() ?: return 0.0
+    val num = s.drop(1).toIntOrNull() ?: 5
+    val base = when (grade) {
+        'P' -> 1.0
+        'S' -> 0.6
+        'T' -> 0.3
+        else -> 0.5
+    }
+    return base * (num / 10.0)
+}
+
+private fun canonicalMuscleToGroup(name: String): pl.filebit.gymtracker.data.entity.MuscleGroup? {
+    val lower = name.lowercase()
+    // fully-qualified G
+    return when {
+        lower.contains("pectoralis") || lower == "chest" -> pl.filebit.gymtracker.data.entity.MuscleGroup.CHEST
+        lower.contains("latissimus") || lower.contains("trapezius") || lower.contains("rhomboid") ||
+            lower.contains("erector_spinae") || lower.contains("teres") || lower.contains("infraspinatus") -> pl.filebit.gymtracker.data.entity.MuscleGroup.BACK
+        lower.contains("deltoid") -> pl.filebit.gymtracker.data.entity.MuscleGroup.SHOULDERS
+        lower.contains("biceps_brachii") || lower.contains("brachialis") || lower.contains("brachioradialis") -> pl.filebit.gymtracker.data.entity.MuscleGroup.BICEPS
+        lower.contains("triceps") -> pl.filebit.gymtracker.data.entity.MuscleGroup.TRICEPS
+        lower.contains("quadriceps") -> pl.filebit.gymtracker.data.entity.MuscleGroup.QUADS
+        lower.contains("hamstrings") || lower.contains("biceps_femoris") ||
+            lower.contains("semitendinosus") || lower.contains("semimembranosus") -> pl.filebit.gymtracker.data.entity.MuscleGroup.HAMSTRINGS
+        lower.contains("gluteus") -> pl.filebit.gymtracker.data.entity.MuscleGroup.GLUTES
+        lower.contains("gastrocnemius") || lower.contains("soleus") -> pl.filebit.gymtracker.data.entity.MuscleGroup.CALVES
+        lower.contains("rectus_abdominis") || lower.contains("obliques") ||
+            lower.contains("transverse_abdominis") || lower == "abs" -> pl.filebit.gymtracker.data.entity.MuscleGroup.CORE
+        lower.contains("cardiovascular") || lower == "heart" -> pl.filebit.gymtracker.data.entity.MuscleGroup.CARDIO
+        else -> null
+    }
 }

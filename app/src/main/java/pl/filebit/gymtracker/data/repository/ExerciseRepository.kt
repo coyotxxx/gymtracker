@@ -16,6 +16,7 @@ class ExerciseRepository @Inject constructor(
     fun search(query: String): Flow<List<Exercise>> = dao.search(query)
     suspend fun get(id: Long): Exercise? = dao.getById(id)
     suspend fun findByName(name: String): Exercise? = dao.findByName(name)
+    suspend fun findBySlug(slug: String): Exercise? = dao.findBySlug(slug)
     suspend fun upsert(exercise: Exercise): Long = dao.upsert(exercise)
 
     suspend fun setFavorite(id: Long, fav: Boolean) = dao.setFavorite(id, fav)
